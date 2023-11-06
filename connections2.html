@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connections</title>
+  <link rel="icon" type="image/x-icon" href="connectionsfavicon.ico?">
+
+</head>
+<body>
+  <a href="connections.html" style="
+     position: absolute;
+    display: flex;
+    width: 16%;
+    margin-right: 40vw;
+    margin-bottom: 78vh;
+    padding: 2vh;
+    padding-top: 1vh;
+    display: block;
+    width: 16vw;
+    font-size: 2.3vh;
+    padding: 1vh;">Home</a>
+    <div class="intro"> <h3>Connections</h3> Once you've selected four<br>words, click one of the selected<br>boxes again to make the guess.</div>
+
+
+    <div class="a"></div><div class="group-a" id="group1"><h3 title="Golden hour, Golden ratio, Golden age, Golden retriever.">                             Things that are Golden                      </h3></div>
+    <div class="b"></div><div class="group-b" id="group2"><h3 title="Micro, Minute, Tiny, Petite.">                             Synonyms for Small                        </h3></div>
+    <div class="c"></div><div class="group-c" id="group3"><h3 title="Gender, Race, Sex, Nationality.">                             Demographic Items                  </h3></div>
+    <div class="d"></div><div class="group-d" id="group4"><h3 title="Day, Hussein, Ocasio, Bader.">                             Middles of Politicians' Names        </h3></div>
+
+  <div class="grid-container" id="gridContainer">
+
+                <div class="grid-item">
+                                                    <p id="a1">       Hour                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="a2">       Ratio                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="a3">       Age                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="a4">       Retriever                    </p>
+                </div> <div class="grid-item">
+                                                    <p id="b1">       Micro                   </p>
+                </div> <div class="grid-item">
+                                                    <p id="b2">       Minute                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="b3">       Tiny                   </p>
+                </div> <div class="grid-item">
+                                                    <p id="b4">       Petite                      </p>
+                </div> <div class="grid-item">
+                                                    <p id="c1">       Gender                    </p>
+                </div> <div class="grid-item">
+                                                    <p id="c2">       Race                      </p>
+                </div> <div class="grid-item">  
+                                                    <p id="c3">       Sex                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="c4">       Nationality                 </p>
+                </div> <div class="grid-item">
+                                                    <p id="d1">       Day                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="d2">       Hussein                   </p>
+                </div> <div class="grid-item">
+                                                    <p id="d3">       Ocasio                     </p>
+                </div> <div class="grid-item">
+                                                    <p id="d4">       Bader                      </p>
+    </div>
+</div>
+<div class="solved">Solved!</div>
+
+<button style="background-color: lightgrey; width: 7vw; height: 4vh; position: absolute; margin-right:
+74.4vw; margin-bottom: -52vh; font-size: 1.1vw; "id="shuffleButton">Shuffle</button>
+
+<div class="linky">
+  <a class="prev" href="connections1.html">Last Puzzle<a>
+      <a class="next"  href="connections3.html">Next Puzzle<a>
+      </div>
+
+    <link rel="stylesheet" href="connectionsStyle.css">
+
+  <script>
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        array[i].parentNode.insertBefore(array[j], array[i]);}}
+  
+    const groups = [
+      ['a1', 'a2', 'a3', 'a4'],
+      ['b1', 'b2', 'b3', 'b4'],
+      ['c1', 'c2', 'c3', 'c4'],
+      ['d1', 'd2', 'd3', 'd4'],];
+  
+    let userSelections = [];
+    function handleSelection(event) {
+      const selectedItems = Array.from(document.getElementsByClassName('grid-item active'));
+      if (selectedItems.length >= 4) {
+        // If already 4 items are selected, prevent any new boxes from being clicked
+        if (!event.currentTarget.classList.contains('active')) {
+          event.preventDefault();
+          return;}}
+      // Toggle the 'active' class on the clicked grid item
+      event.currentTarget.classList.toggle('active');
+      // Update the user's selections
+      userSelections = selectedItems.map(item => item.querySelector('p').id);
+      // Check if the user's selections match any of the correct groups
+      const matchedGroup = groups.find(group => group.every(item => userSelections.includes(item)));
+  
+      if (matchedGroup) {
+        if (matchedGroup.length === 4) {
+          // Remove the "active" class from all selected items (reset selection)
+          selectedItems.forEach(item => item.classList.remove('active'));
+          selectedItems.forEach(item => item.classList.add('matched'));
+          // Hide the corresponding group heading
+          const matchedGroupId = 'group' + (groups.indexOf(matchedGroup) + 1);
+          const matchedGroupHeading = document.getElementById(matchedGroupId);
+          if (matchedGroupHeading) {
+            matchedGroupHeading.style.display = 'block';}}
+        // Remove the corresponding boxes from the board
+        matchedGroup.forEach(itemId => {
+          const itemToRemove = document.getElementById(itemId);
+          if (itemToRemove) {
+            itemToRemove.remove();}});}}
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      const gridContainer = document.getElementById('gridContainer');
+      const shuffleButton = document.getElementById('shuffleButton');
+      const squares = Array.from(gridContainer.getElementsByClassName('grid-item'));
+      squares.forEach((square) => {
+        // Add a click event listener to each grid item
+        square.addEventListener('click', handleSelection);});
+      // Shuffle the squares when the DOM content is loaded
+      shuffle(squares);
+      shuffleButton.addEventListener('click', function () {
+        shuffle(squares);});});
+  </script>
+</body>
+</html>

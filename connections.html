@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connections</title>
+  <link rel="icon" type="image/x-icon" href="connectionsfavicon.ico?">  </head>
+  <body>
+    <h1 style="font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center; ">Connections</h1>
+    </div>
+<style>
+  .links a {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    margin: 2px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+.links a:hover, .links a:active {
+    background-color: #cd6b2a;
+    color: #fff;
+}
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: calc(33.33% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: larger;
+    font-family: 'monaco', times, georgia;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 1px;
+}
+</style>
+    <div class="links">
+      <div class="columns">
+        <div class="column">
+            <a href="connections.rules.html">Tutorial</a><br>
+            <a href="connections1.html">One</a><br>
+            <a href="connections2.html">Two</a><br>
+            <a href="connections3.html">Three</a><br>
+            <a href="connections4.html">Four</a><br>
+            <a href="connections5.html">Five</a><br>
+            <a href="connections6.html">Six</a><br>
+            <a href="connections7.html">Seven</a><br>
+            <a href="connections8.html">Eight</a><br>
+        
+        </div>
+        <div class="column">
+          <a href="connections9.html">Nine</a><br>
+          <a href="connections10.html">Ten</a><br>
+            <a href="connections11.html">Eleven</a><br>
+            <a href="connections12.html">Twelve</a><br>
+            <a href="connections13.html">Thirteen</a><br>
+            <a href="connections14.html">Fourteen</a><br>
+            <a href="connections15.html">Fifteen</a><br>
+            <a href="connections16.html">Sixteen</a><br>
+            <a href="connections17.html">Seventeen</a><br>
+        </div>
+        <div class="column">
+          <a href="connections18.html">Eighteen</a><br>
+          <a href="connections19.html">Nineteen</a><br>
+          <a href="connections20.html">Twenty</a><br>
+          <a href="connections21.html">Twenty-One</a><br>
+            <a href="connections22.html">Twenty-Two</a><br>
+            <a href="connections23.html">Twenty-Three</a><br>
+            <a href="connections24.html">Twenty-Four</a><br>
+            <a href="connections25.html">Twenty-Five</a><br>
+            <a href="connections26.html">Twenty-Six</a><br>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll(".links a");
+    const colors = ["#ed9b40", "#61c9a8", "#ba3b46", "#aa8f66"]; // Array of four background colors for hover
+
+    links.forEach(link => {
+        link.addEventListener("mouseover", function() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            link.style.backgroundColor = randomColor;
+        });
+
+        link.addEventListener("mouseout", function() {
+            link.style.backgroundColor = "#fff"; // Reset to white when the mouse leaves
+        });
+    });
+});
+  </script>
+  
+</html>

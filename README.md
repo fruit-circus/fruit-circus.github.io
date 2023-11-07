@@ -1,4 +1,4 @@
-# Behold the Fruit Circus
+# Behold the Panoply of the Fruit Circus
 
 [Connections](https://fruit-circus.github.io/connections.html)
 

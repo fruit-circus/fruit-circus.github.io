@@ -1,5 +1,5 @@
-# fruit-circus.github.io
+# Behold the Fruit Circus
 
-[https://fruit-circus.github.io/connections.html]
+[Connections](https://fruit-circus.github.io/connections.html)
 
-[fruit wizard](https://fruit-circus.github.io/fruit_wizard.html)
+[Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)

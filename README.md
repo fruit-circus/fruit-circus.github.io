@@ -2,4 +2,4 @@
 
 [https://fruit-circus.github.io/connections.html]
 
-(https://fruit-circus.github.io/fruit_wizard.html)
+[fruit wizard](https://fruit-circus.github.io/fruit_wizard.html)

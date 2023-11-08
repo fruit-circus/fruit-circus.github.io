@@ -260,3 +260,38 @@
       
       }
 
+
+      @media (min-height: 1200px) {
+      
+     
+        .intro{
+            position: absolute;
+            margin-right: 90vw;
+            margin-bottom: 72vh;
+            padding: 2vh;
+            padding-top: 0vh;
+            display: block;
+            background-color: #423117;
+            width: 15.7vw;
+            font-size: 2.1vw;
+            border: 2px solid rgb(0, 0, 0);}
+  
+  
+      .grid-item {
+        border-radius: 8%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 13.7vw;
+        height: 17vh;
+        background-color: #ece7e7;
+        color: rgb(0, 0, 0);
+        font-size: 3.1vw;
+        font-family:'Gill Sans';
+        user-select: none;}
+        
+        }
+  
+  

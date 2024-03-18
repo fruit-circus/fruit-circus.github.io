@@ -19,8 +19,6 @@
                 font-size: 22px;
             }
 
-          
-
             .intro {
                 margin-left: auto;
                 margin-right: auto;
@@ -44,6 +42,15 @@
                 width: 25%;
                 text-align: center;
             }
+
+             svg {
+                 display: block;
+                 z-index: 2;
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-43%);
+  }
 
 button {
     background-color: rgb(77, 95, 197);
@@ -130,7 +137,7 @@ img {
    border: 1px solid black;
    margin-top: 10px;
    margin-left: auto;
-   top: 10px;  
+   top: 35px;  
    left: 50%;  
    align-items: center;
    justify-content: center;
@@ -422,6 +429,21 @@ img {
 </head>              
 <body>
 
+
+<svg width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- First Row -->
+    <rect id="rect1" x="30" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect2" x="110" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect3" x="190" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect4" x="270" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <!-- Second Row -->
+    <rect id="rect5" x="350" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect6" x="430" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect7" x="510" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect8" x="590" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+  </svg>
+
     <div class="intro">
     <h1>Da Capo:<br>The Music History Timeline Quiz</h1>
     <p>Can you place these 8 notable events in chronological order?</p>
@@ -500,69 +522,66 @@ img {
             <div class="event2"><div>
             <img src="1st_event.png"></div>
             <div><p class="eventtext" id="eventtext2">
-                    10,000 BCE: Mingemax climbs out of the primordial ooze.
+                    1827: Ludwig van Beethoven died.
                 </p> 
             </div></div>
 
             <div class="event9"><div>
             <img src="2nd_event.png"></div>
             <div><p class="eventtext" id="eventtext9">
-                    12 BCE: Reverse-Jesus, the Benjamin Buttoning Jesus, celebrates his 12th reverse-thday.
+                    1829: Felix Mendelssohn conducted the first modern
+                    performance of J.S. Bach's "St. Matthew Passion."
                 </p> 
             </div></div>
 
             <div class="event5"><div>
             <img src="3rd_event.png"></div>
             <div><p class="eventtext" id="eventtext5">
-                    1400: The Marquee d' Calamazoo springs forth from the great thread of Namob,
-                    beheading his foes and pledging his allengiance to King Bahram V.
+                    1830: Louis-Hector Berlioz completed his "Symphonie Fantastique."
                 </p> 
             </div></div>
         
             <div class="event8"><div>
             <img src="4th_event.png"></div>
             <div><p class="eventtext" id="eventtext8">
-                    1505: Edwin Jonkers, Duke of Flilth, becomes Earl of Eangal.
-                    Many people are eaten by the tiger.
-                    There is another parade, and lots of funnel cake.
+                    1846: Adolphe Sax patented his first saxophone.
                 </p> 
             </div></div>
 
             <div class="event1"><div>
             <img src="5th_event.png"></div>
             <div><p class="eventtext" id="eventtext1">
-                   1780: Geohge Wahington, George Washington's failed clone, becomes the president
-                   of the Secret Underground United States of America.
+                    1853: Giuseppe Verdi wrote his "La traviata."
                 </p> 
             </div></div>
 
              <div class="event6"><div>
             <img src="6th_event.png"></div>
             <div><p class="eventtext" id="eventtext6">
-                    1892: Corn on the cob becomes relevant again.
+                    1867: Amy Beach, the first major American female composer, was born.
                 </p> 
             </div></div>      
    
             <div class="event7"><div>
             <img src="7th_event.png"></div>
             <div><p class="eventtext" id="eventtext7">
-                    1920: Woodrow Wilson follows through on his campaign promise to eat
-                    America. He gives up after only one week of eating 20 pounds of dirt.
+                    1875: The opera "Carmen" by Georges Bizet was first performed in Paris.
+                    He would also pass away that year.
                 </p> 
             </div></div>
 
             <div class="event3"><div>
             <img src="8th_event.png"></div>
             <div><p class="eventtext" id="eventtext3">
-                    1960: Eobard Coggs, inventor of Coggs' Fluid, invents "Coggs' Solid,"
-                    the most solid object known to man.
+                    1883: The Metropolitan Opera Association opened in New York and
+                    Richard Wagner died after completing his final work "Parsifal."
                 </p> 
             </div></div>
 
             <div class="event4"><div>
             <img src="9th_event.png"></div>
             <div><p class="eventtext" id="eventtext4">
-                   1976: Margo Hatchet, inventor of the hatchet, dies at 1000.
+                    1897: Johannes Brahms died and Gustav Mahler became director of the Vienna Art Opera.
                 </p> 
             </div></div>
 
@@ -572,7 +591,7 @@ img {
             <div class="secret2"><div>
                     <img src="1st_event.png"></div>
                     <div><p class="secrettext" id="secrettext2">
-                            Mingemax climbs out of the primordial ooze.
+                            Ludwig van Beethoven died.
                         </p>
                     </div></div>
          
@@ -580,7 +599,8 @@ img {
                     <div class="secret9"><div>
                     <img src="2nd_event.png"></div>
                     <div><p class="secrettext" id="secrettext9">
-                            Reverse-Jesus, the Benjamin Buttoning Jesus, celebrates his 12th reverse-thday.
+                            Felix Mendelssohn conducted the first modern
+                            performance of J.S. Bach's "St. Matthew Passion."
                         </p>
                     </div></div>
          
@@ -588,17 +608,14 @@ img {
                     <div class="secret5"><div>
                     <img src="3rd_event.png"></div>
                     <div><p class="secrettext" id="secrettext5">
-                            The Marquee d' Calamazoo springs forth from the great thread of Namob,
-                            beheading his foes and pledging his allengiance to King Bahram V.
+                            Louis-Hector Berlioz completed his "Symphonie Fantastique."
                         </p>
                     </div></div>
                
                     <div class="secret8"><div>
                     <img src="4th_event.png"></div>
                     <div><p class="secrettext" id="secrettext8">
-                            Edwin Jonkers, Duke of Flilth, becomes Earl of Eangal.
-                            Many people are eaten by the tiger.
-                            There is another parade, and lots of funnel cake.
+                            Adolphe Sax patented his first saxophone.
                         </p>
                     </div></div>
          
@@ -606,16 +623,15 @@ img {
                      <div class="secret6"><div>
                     <img src="6th_event.png"></div>
                     <div><p class="secrettext" id="secrettext6">
-                            Corn on the cob becomes relevant again.
+                            Amy Beach, the first major American female composer, was born.
                         </p>
                     </div></div>     
           
                     <div class="secret7"><div>
                     <img src="7th_event.png"></div>
                     <div><p class="secrettext" id="secrettext7">
-                            Woodrow Wilson follows through on his campaign promise to eat
-                            America. He gives up after
-                            only one week of eating 20 pounds of dirt.
+                            The opera "Carmen" by Georges Bizet was first performed in Paris.
+                            He would also pass away that year.
                         </p>
                     </div></div>
          
@@ -623,8 +639,8 @@ img {
                     <div class="secret3"><div>
                     <img src="8th_event.png"></div>
                     <div><p class="secrettext" id="secrettext3">
-                            Iabard Coggs, inventor of Coggs' Fluid, invents "Coggs' Solid,"
-                            the most solid object known to man.
+                            The Metropolitan Opera Association opened in New York
+                            and Richard Wagner died after completing his final work "Parsifal."
                         </p>
                     </div></div>
          
@@ -632,7 +648,7 @@ img {
                     <div class="secret4"><div>
                     <img src="9th_event.png"></div>
                     <div><p class="secrettext" id="secrettext4">
-                           Margo Hatchet, inventor of the hatchet, dies at 1000.
+                           Johannes Brahms died and Gustav Mahler became director of the Vienna Art Opera.
                         </p>
                     </div></div>
          
@@ -657,6 +673,16 @@ img {
        var secret7 = document.getElementsByClassName("secret7")[0];
        var secret8 = document.getElementsByClassName("secret8")[0];
        var secret9 = document.getElementsByClassName("secret9")[0];
+
+var svg = document.getElementsByTagName('svg');
+var rect1 = document.getElementById('rect1');
+var rect2 = document.getElementById('rect2');
+var rect3 = document.getElementById('rect3');
+var rect4 = document.getElementById('rect4');
+var rect5 = document.getElementById('rect5');
+var rect6 = document.getElementById('rect6');
+var rect7 = document.getElementById('rect7');
+var rect8 = document.getElementById('rect8');
 
        var a1 = document.getElementById("a1");
        var a2 = document.getElementById("a2");
@@ -752,6 +778,7 @@ function begin() {
                 a2.style.display = "block";
                 after.style.display = "block";
                 before.style.display = "block";
+                svg.style.opacity = "1";
             }
         }, 15);
     }, 1300);
@@ -773,6 +800,7 @@ function begin() {
             eventtext2.style.color = "green";
             after.style.display = "none";
             before.style.display = "none";
+            rect1.style.fill = "rgb(13, 191, 137)";
         }
     }
 
@@ -791,6 +819,7 @@ function begin() {
             after.style.display = "none";
             before.style.display = "none";
             eventtext2.style.color = "red";
+            rect1.style.fill = "rgb(228, 63, 71)";
         }
     }
 
@@ -807,6 +836,9 @@ function begin() {
             c3.style.display = "block";
             c4.style.display = "block";
             eventtext3.style.color = "green";
+            rect2.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
 
         }
     }
@@ -824,6 +856,9 @@ function begin() {
             c3.style.display = "block";
             c4.style.display = "block";
             eventtext3.style.color = "red";
+            rect2.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
 
         }
     }
@@ -843,6 +878,9 @@ function begin() {
             d4.style.display = "block";
             d5.style.display = "block";
             eventtext4.style.color = "green";
+            rect3.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
         }
     }
 
@@ -861,6 +899,9 @@ function begin() {
             d5.style.display = "block";
             secret5.style.display = "flex";
             eventtext4.style.color = "red";
+            rect3.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
         }
     }
 
@@ -880,6 +921,7 @@ function begin() {
             e4.style.display = "block";
             e5.style.display = "block";
             e6.style.display = "block";
+            rect4.style.fill = "rgb(13, 191, 137)";
             eventtext5.style.color = "green";
         }
     }
@@ -900,6 +942,7 @@ function begin() {
             e5.style.display = "block";
             e6.style.display = "block";
             secret6.style.display = "flex";
+            rect4.style.fill = "rgb(228, 63, 71)";
             eventtext5.style.color = "red";
         }
     }
@@ -923,6 +966,9 @@ function begin() {
             f7.style.display = "block";
             secret7.style.display = "flex";
             eventtext6.style.color = "green";
+            rect5.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
         }
     }
 
@@ -945,6 +991,9 @@ function begin() {
             f7.style.display = "block";
             secret7.style.display = "flex";
             eventtext6.style.color = "red";
+            rect5.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
         }
     }
 
@@ -968,6 +1017,7 @@ function begin() {
             g6.style.display = "block";
             g7.style.display = "block";
             g8.style.display = "block";
+            rect6.style.fill = "rgb(13, 191, 137)";
             eventtext7.style.color = "green";
         }
     }
@@ -992,6 +1042,7 @@ function begin() {
             g6.style.display = "block";
             g7.style.display = "block";
             g8.style.display = "block";
+            rect6.style.fill = "rgb(228, 63, 71)";
             eventtext7.style.color = "red";
         }
     }
@@ -1018,6 +1069,7 @@ function begin() {
             h8.style.display = "block";
             h9.style.display = "block";
             secret9.style.display = "flex";
+            rect7.style.fill = "rgb(13, 191, 137)";
             eventtext8.style.color = "green";
         }
     }
@@ -1044,6 +1096,7 @@ function begin() {
             h7.style.display = "block";
             h8.style.display = "block";
             h9.style.display = "block";
+            rect7.style.fill = "rgb(228, 63, 71)";
             eventtext8.style.color = "red";
         }
     }
@@ -1070,6 +1123,7 @@ function begin() {
             h8.style.display = "none";
             h9.style.display = "none";
             secret9.style.display = "none";
+            rect8.style.fill = "rgb(13, 191, 137)";
             eventtext9.style.color = "green";
         }
     }
@@ -1096,6 +1150,7 @@ function begin() {
             h8.style.display = "none";
             h9.style.display = "none";
             secret9.style.display = "none";
+            rect8.style.fill = "rgb(228, 63, 71)";
             eventtext9.style.color = "red";
         }
     }

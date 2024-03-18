@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+        <head>
+    <title>Da Capo: From the Beginning</title>
+    <link rel="icon" type="image/x-icon" href="dacapofavicon.ico?">
+    <style>
+                    
+        body {
+          background-color: rgb(231, 231, 231);
+        
+            }
+
+        h1{
+            font-size: 34px;
+
+        }
+            p {
+                font-size: 22px;
+            }
+
+          
+
+            .intro {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15vh;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border: 2px solid grey;
+                padding: 20px;
+                padding-top: 8px;
+                width: 30%;
+                border-radius: 25px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(27, 27, 27);
+                text-align: center;
+            }
+
+              #wellPlaceOneEvent{
+                display: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 200px;
+                width: 25%;
+                text-align: center;
+            }
+
+button {
+    background-color: rgb(77, 95, 197);
+    color: white;
+    font-size: 22px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playButton{
+    width: 80px;
+    height: 50px;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+
+.eventtext {
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+.event1 {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS';
+    border: 1px solid grey;
+    width: 35%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+    /*transition: margin-top 0.5s ease-in-out;*/
+
+}
+
+.event2,
+.event3,
+.event4,
+.event5,
+.event6,
+.event7,
+.event8,
+.event9 {
+    display: none;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS';
+    border: 1px solid grey;
+    width: 35%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+}
+
+.secret2,
+.secret3,
+.secret4,
+.secret5,
+.secret6,
+.secret7,
+.secret8,
+.secret9 {
+   display: none;
+   position: absolute;
+   border: 1px solid black;
+   margin-top: 10px;
+   margin-left: auto;
+   top: 10px;  
+   left: 50%;  
+   align-items: center;
+   justify-content: center;
+   font-family: 'Trebuchet MS';
+   border: 1px solid grey;
+   width: 35%;
+   transform: translate(-50%,0px);
+   border-radius: 10px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(27, 27, 27);
+}
+
+#before {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-115px);
+}
+#after {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,220px);
+}
+
+.revealNext,
+.revealNext2,
+.revealNext3,
+.revealNext4,
+.revealNext5,
+.revealNext6,
+.revealNext7,
+.revealNext8 {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0px);
+}
+
+#a1{transform: translate(-50%,-60px);}
+#a2{transform: translate(-50%,175px);}
+
+#b1{transform: translate(-50%,-60px);}
+#b2{transform: translate(-50%,175px);}
+#b3{transform: translate(-50%,410px);}
+
+#c1{transform: translate(-50%,-60px);}
+#c2{transform: translate(-50%,175px);}
+#c3{transform: translate(-50%,410px);}
+#c4{transform: translate(-50%,645px);}
+
+#d1{transform: translate(-50%,-60px);}
+#d2{transform: translate(-50%,175px);}
+#d3{transform: translate(-50%,410px);}
+#d4{transform: translate(-50%,645px);}
+#d5{transform: translate(-50%,885px);}
+
+#e1{transform: translate(-50%,-60px);}
+#e2{transform: translate(-50%,175px);}
+#e3{transform: translate(-50%,410px);}
+#e4{transform: translate(-50%,645px);}
+#e5{transform: translate(-50%,885px);}
+#e6{transform: translate(-50%,1120px);}
+
+#f1{transform: translate(-50%,-60px);}
+#f2{transform: translate(-50%,175px);}
+#f3{transform: translate(-50%,410px);}
+#f4{transform: translate(-50%,645px);}
+#f5{transform: translate(-50%,885px);}
+#f6{transform: translate(-50%,1120px);}
+#f7{transform: translate(-50%,1360px);}
+
+#g1{transform: translate(-50%,-60px);}
+#g2{transform: translate(-50%,175px);}
+#g3{transform: translate(-50%,410px);}
+#g4{transform: translate(-50%,645px);}
+#g5{transform: translate(-50%,885px);}
+#g6{transform: translate(-50%,1120px);}
+#g7{transform: translate(-50%,1355px);}
+#g8{transform: translate(-50%,1595px);}
+
+#h1{transform: translate(-50%,-60px);}
+#h2{transform: translate(-50%,175px);}
+#h3{transform: translate(-50%,410px);}
+#h4{transform: translate(-50%,645px);}
+#h5{transform: translate(-50%,885px);}
+#h6{transform: translate(-50%,1120px);}
+#h7{transform: translate(-50%,1355px);}
+#h8{transform: translate(-50%,1590px);}
+#h9{transform: translate(-50%,1830px);}
+
+
+
+    </style>
+
+
+</head>              
+<body>
+
+    <div class="intro">
+    <h1>Da Capo:<br>The Music History Timeline Quiz</h1>
+    <p>Can you place these 8 notable events in chronological order?</p>
+    <button id="playButton" onclick="playGame()">Play</button>
+    </div>
+<!--
+
+<img class="placementImage" src="da1.png" usemap="#timeline">
+        <map name="timeline">
+                <area shape="circle" coords="120, 50, 50" alt="place event here" onclick="place1before()">
+                <area shape="circle" coords="350, 50, 50" alt="place event here" onclick="place1after()">
+            </map>
+
+            <img class="placementImage" src="da8.png" usemap="#timeline">
+-->
+
+<p id="wellPlaceOneEvent">We'll place one event for you:</p>
+
+<p id="before">Before</p>
+<p id="after">After</p>
+
+<button class="revealNext" id="a1" onclick="revealNext()">Place new event here</button>
+<button class="revealNext" id="a2" onclick="revealNextIncorrect()">Place new event here</button>
+
+<button class="revealNext2" id="b1" onclick="revealNext2Incorrect()">Place new event here</button>
+<button class="revealNext2" id="b2" onclick="revealNext2Incorrect()">Place new event here</button>
+<button class="revealNext2" id="b3" onclick="revealNext2()">Place new event here</button>
+
+<button class="revealNext3" id="c1" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c2" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c3" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c4" onclick="revealNext3()">Place new event here</button>
+
+<button class="revealNext4" id="d1" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d2" onclick="revealNext4()">Place new event here</button>
+<button class="revealNext4" id="d3" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d4" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d5" onclick="revealNext4Incorrect()">Place new event here</button>
+
+<button class="revealNext5" id="e1" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e2" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e3" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e4" onclick="revealNext5()">Place new event here</button>
+<button class="revealNext5" id="e5" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e6" onclick="revealNext5Incorrect()">Place new event here</button>
+
+<button class="revealNext6" id="f1" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f2" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f3" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f4" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f5" onclick="revealNext6()">Place new event here</button>
+<button class="revealNext6" id="f6" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f7" onclick="revealNext6Incorrect()">Place new event here</button>
+
+<button class="revealNext7" id="g1" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g2" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g3" onclick="revealNext7()">Place new event here</button>
+<button class="revealNext7" id="g4" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g5" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g6" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g7" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g8" onclick="revealNext7Incorrect()">Place new event here</button>
+
+<button class="revealNext8" id="h1" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h2" onclick="revealNext8()">Place new event here</button>
+<button class="revealNext8" id="h3" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h4" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h5" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h6" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h7" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h8" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h9" onclick="revealNext8Incorrect()">Place new event here</button>
+
+<!--<div id="line"></div>-->
+
+            <div class="event2"><div>
+            <img src="1st_event.png"></div>
+            <div><p class="eventtext" id="eventtext2">
+                    10,000 BCE: Mingemax climbs out of the primordial ooze.
+                </p> 
+            </div></div>
+
+            <div class="event9"><div>
+            <img src="2nd_event.png"></div>
+            <div><p class="eventtext" id="eventtext9">
+                    12 BCE: Reverse-Jesus, the Benjamin Buttoning Jesus, celebrates his 12th reverse-thday.
+                </p> 
+            </div></div>
+
+            <div class="event5"><div>
+            <img src="3rd_event.png"></div>
+            <div><p class="eventtext" id="eventtext5">
+                    1400: The Marquee d' Calamazoo springs forth from the great thread of Namob,
+                    beheading his foes and pledging his allengiance to King Bahram V.
+                </p> 
+            </div></div>
+        
+            <div class="event8"><div>
+            <img src="4th_event.png"></div>
+            <div><p class="eventtext" id="eventtext8">
+                    1505: Edwin Jonkers, Duke of Flilth, becomes Earl of Eangal.
+                    Many people are eaten by the tiger.
+                    There is another parade, and lots of funnel cake.
+                </p> 
+            </div></div>
+
+            <div class="event1"><div>
+            <img src="5th_event.png"></div>
+            <div><p class="eventtext" id="eventtext1">
+                   1780: Geohge Wahington, George Washington's failed clone, becomes the president
+                   of the Secret Underground United States of America (SUUSA).
+                </p> 
+            </div></div>
+
+             <div class="event6"><div>
+            <img src="6th_event.png"></div>
+            <div><p class="eventtext" id="eventtext6">
+                    1892: Corn on the cob becomes relevant again.
+                </p> 
+            </div></div>      
+   
+            <div class="event7"><div>
+            <img src="7th_event.png"></div>
+            <div><p class="eventtext" id="eventtext7">
+                    1920: Woodrow Wilson follows through on his campaign promise to eat
+                    America. He gives up after only one week of eating 20 pounds of dirt.
+                </p> 
+            </div></div>
+
+            <div class="event3"><div>
+            <img src="8th_event.png"></div>
+            <div><p class="eventtext" id="eventtext3">
+                    1960: Eobard Coggs, inventor of Coggs' Fluid, invents "Coggs' Solid,"
+                    the most solid object known to man.
+                </p> 
+            </div></div>
+
+            <div class="event4"><div>
+            <img src="9th_event.png"></div>
+            <div><p class="eventtext" id="eventtext4">
+                   1976: Margo Hatchet, inventor of the hatchet, dies at 1000.
+                </p> 
+            </div></div>
+
+<!--________________________________________________-->
+
+
+            <div class="secret2"><div>
+                    <img src="1st_event.png"></div>
+                    <div><p class="secrettext" id="secrettext2">
+                            Mingemax climbs out of the primordial ooze.
+                        </p>
+                    </div></div>
+         
+         
+                    <div class="secret9"><div>
+                    <img src="2nd_event.png"></div>
+                    <div><p class="secrettext" id="secrettext9">
+                            Reverse-Jesus, the Benjamin Buttoning Jesus, celebrates his 12th reverse-thday.
+                        </p>
+                    </div></div>
+         
+         
+                    <div class="secret5"><div>
+                    <img src="3rd_event.png"></div>
+                    <div><p class="secrettext" id="secrettext5">
+                            The Marquee d' Calamazoo springs forth from the great thread of Namob,
+                            beheading his foes and pledging his allengiance to King Bahram V.
+                        </p>
+                    </div></div>
+               
+                    <div class="secret8"><div>
+                    <img src="4th_event.png"></div>
+                    <div><p class="secrettext" id="secrettext8">
+                            Edwin Jonkers, Duke of Flilth, becomes Earl of Eangal.
+                            Many people are eaten by the tiger.
+                            There is another parade, and lots of funnel cake.
+                        </p>
+                    </div></div>
+         
+         
+                     <div class="secret6"><div>
+                    <img src="6th_event.png"></div>
+                    <div><p class="secrettext" id="secrettext6">
+                            Corn on the cob becomes relevant again.
+                        </p>
+                    </div></div>     
+          
+                    <div class="secret7"><div>
+                    <img src="7th_event.png"></div>
+                    <div><p class="secrettext" id="secrettext7">
+                            Woodrow Wilson follows through on his campaign promise to eat
+                            all the parts of America that nobody actually likes. He gives up after
+                            only one week of eating 20 pounds of dirt.
+                        </p>
+                    </div></div>
+         
+         
+                    <div class="secret3"><div>
+                    <img src="8th_event.png"></div>
+                    <div><p class="secrettext" id="secrettext3">
+                            Iabard Coggs, inventor of Coggs' Fluid, invents "Coggs' Solid,"
+                            the most solid object known to man.
+                        </p>
+                    </div></div>
+         
+         
+                    <div class="secret4"><div>
+                    <img src="9th_event.png"></div>
+                    <div><p class="secrettext" id="secrettext4">
+                           Margo Hatchet, inventor of the hatchet, dies at 1000.
+                        </p>
+                    </div></div>
+         
+         
+
+    <script>
+        var introStuff = document.getElementsByClassName("intro")[0];
+        var event1 = document.getElementsByClassName("event1")[0];
+        var event2 = document.getElementsByClassName("event2")[0];
+        var event3 = document.getElementsByClassName("event3")[0];
+        var event4 = document.getElementsByClassName("event4")[0];
+        var event5 = document.getElementsByClassName("event5")[0];
+        var event6 = document.getElementsByClassName("event6")[0];
+        var event7 = document.getElementsByClassName("event7")[0];
+        var event8 = document.getElementsByClassName("event8")[0];
+        var event9 = document.getElementsByClassName("event9")[0];
+       var secret2 = document.getElementsByClassName("secret2")[0];
+       var secret3 = document.getElementsByClassName("secret3")[0];
+       var secret4 = document.getElementsByClassName("secret4")[0];
+       var secret5 = document.getElementsByClassName("secret5")[0];
+       var secret6 = document.getElementsByClassName("secret6")[0];
+       var secret7 = document.getElementsByClassName("secret7")[0];
+       var secret8 = document.getElementsByClassName("secret8")[0];
+       var secret9 = document.getElementsByClassName("secret9")[0];
+
+       var a1 = document.getElementById("a1");
+       var a2 = document.getElementById("a2");
+
+       var b1 = document.getElementById("b1");
+       var b2 = document.getElementById("b2");
+       var b3 = document.getElementById("b3");
+
+        var c1 = document.getElementById("c1");
+       var c2 = document.getElementById("c2");
+       var c3 = document.getElementById("c3");
+       var c4 = document.getElementById("c4");
+
+        var d1 = document.getElementById("d1");
+       var d2 = document.getElementById("d2");
+       var d3 = document.getElementById("d3");
+       var d4 = document.getElementById("d4");
+       var d5 = document.getElementById("d5");
+
+       var e1 = document.getElementById("e1");
+       var e2 = document.getElementById("e2");
+       var e3 = document.getElementById("e3");
+       var e4 = document.getElementById("e4");
+       var e5 = document.getElementById("e5");
+       var e6 = document.getElementById("e6");
+
+         var f1 = document.getElementById("f1");
+       var f2 = document.getElementById("f2");
+       var f3 = document.getElementById("f3");
+       var f4 = document.getElementById("f4");
+       var f5 = document.getElementById("f5");
+       var f6 = document.getElementById("f6");
+       var f7 = document.getElementById("f7");
+
+         var g1 = document.getElementById("g1");
+      var g2 = document.getElementById("g2");
+      var g3 = document.getElementById("g3");
+      var g4 = document.getElementById("g4");
+      var g5 = document.getElementById("g5");
+      var g6 = document.getElementById("g6");
+      var g7 = document.getElementById("g7");
+      var g8 = document.getElementById("g8");
+
+  var h1 = document.getElementById("h1");
+      var h2 = document.getElementById("h2");
+      var h3 = document.getElementById("h3");
+      var h4 = document.getElementById("h4");
+      var h5 = document.getElementById("h5");
+      var h6 = document.getElementById("h6");
+      var h7 = document.getElementById("h7");
+      var h8 = document.getElementById("h8");
+      var h9 = document.getElementById("h9");
+
+            var before = document.getElementById("before");
+            var after = document.getElementById("after");
+
+      var eventtext1 = document.getElementById("eventtext1");
+      var eventtext2 = document.getElementById("eventtext2");
+      var eventtext3 = document.getElementById("eventtext3");
+      var eventtext4 = document.getElementById("eventtext4");
+      var eventtext5 = document.getElementById("eventtext5");
+      var eventtext6 = document.getElementById("eventtext6");
+      var eventtext7 = document.getElementById("eventtext7");
+      var eventtext8 = document.getElementById("eventtext8");
+      var eventtext9 = document.getElementById("eventtext9");
+
+        var timeline = document.getElementsByClassName("placementImage")[0];
+        var wellPlaceOneEvent = document.getElementById("wellPlaceOneEvent");
+        document.getElementById("playButton").addEventListener('click', begin);
+
+        function playGame() {
+            introStuff.style.display = "none";
+            wellPlaceOneEvent.style.display = "block";
+            event1.style.display = "flex";
+        }
+
+function begin() {
+    var fadeTarget = document.getElementById("wellPlaceOneEvent");
+    var waitToFade = setInterval(function () {
+        var fadeEffect = setInterval(function () {
+            if (!fadeTarget.style.opacity) {
+                fadeTarget.style.opacity = 1;
+            }
+            if (fadeTarget.style.opacity > 0) {
+                fadeTarget.style.opacity -= 0.02;
+            } else {
+                clearInterval(fadeEffect);
+                clearInterval(waitToFade);
+                secret2.style.display = "flex";
+                event1.style.marginTop = "400px";
+                wellPlaceOneEvent.style.display = "none";
+                a1.style.display = "block";
+                a2.style.display = "block";
+                after.style.display = "block";
+                before.style.display = "block";
+            }
+        }, 15);
+    }, 1300);
+}
+
+
+    function revealNext(){
+        if (event1.style.display = "flex") {
+            event2.style.display = "flex"
+            secret2.style.display = "none";
+            secret3.style.display = "flex";
+            event1.style.marginTop = "70px";
+            event2.style.marginTop = "400px"; //remove this if event2 is not the oldest.
+            a1.style.display = "none";
+            a2.style.display = "none";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            eventtext2.style.color = "green";
+            after.style.display = "none";
+            before.style.display = "none";
+        }
+    }
+
+     function revealNextIncorrect(){
+        if (event1.style.display = "flex") {
+            event2.style.display = "flex"
+            secret2.style.display = "none";
+            secret3.style.display = "flex";
+            event1.style.marginTop = "70px";
+            event2.style.marginTop = "400px"; //remove this if event2 is not the oldest.
+            a1.style.display = "none";
+            a2.style.display = "none";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            after.style.display = "none";
+            before.style.display = "none";
+            eventtext2.style.color = "red";
+        }
+    }
+
+    function revealNext2(){
+        if (event2.style.display = "flex") {
+            event3.style.display = "flex"
+            secret3.style.display = "none";
+            secret4.style.display = "flex";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            c1.style.display = "block";
+            c2.style.display = "block";
+            c3.style.display = "block";
+            c4.style.display = "block";
+            eventtext3.style.color = "green";
+
+        }
+    }
+
+ function revealNext2Incorrect(){
+        if (event2.style.display = "flex") {
+            event3.style.display = "flex"
+            secret3.style.display = "none";
+            secret4.style.display = "flex";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            c1.style.display = "block";
+            c2.style.display = "block";
+            c3.style.display = "block";
+            c4.style.display = "block";
+            eventtext3.style.color = "red";
+
+        }
+    }
+
+      function revealNext3(){
+        if (event3.style.display = "flex") {
+            event4.style.display = "flex"
+            secret4.style.display = "none";
+            secret5.style.display = "flex";
+            c1.style.display = "none";
+            c2.style.display = "none";
+            c3.style.display = "none";
+            c4.style.display = "none";
+            d1.style.display = "block";
+            d2.style.display = "block";
+            d3.style.display = "block";
+            d4.style.display = "block";
+            d5.style.display = "block";
+            eventtext4.style.color = "green";
+        }
+    }
+
+       function revealNext3Incorrect(){
+        if (event3.style.display = "flex") {
+            event4.style.display = "flex"
+            secret4.style.display = "none";
+            c1.style.display = "none";
+            c2.style.display = "none";
+            c3.style.display = "none";
+            c4.style.display = "none";
+            d1.style.display = "block";
+            d2.style.display = "block";
+            d3.style.display = "block";
+            d4.style.display = "block";
+            d5.style.display = "block";
+            secret5.style.display = "flex";
+            eventtext4.style.color = "red";
+        }
+    }
+
+      function revealNext4(){
+        if (event4.style.display = "flex") {
+            event5.style.display = "flex"
+            secret5.style.display = "none";
+            secret6.style.display = "flex";
+            d1.style.display = "none";
+            d2.style.display = "none";
+            d3.style.display = "none";
+            d4.style.display = "none";
+            d5.style.display = "none";
+            e1.style.display = "block";
+            e2.style.display = "block";
+            e3.style.display = "block";
+            e4.style.display = "block";
+            e5.style.display = "block";
+            e6.style.display = "block";
+            eventtext5.style.color = "green";
+        }
+    }
+
+      function revealNext4Incorrect(){
+        if (event4.style.display = "flex") {
+            event5.style.display = "flex"
+            secret5.style.display = "none";
+            d1.style.display = "none";
+            d2.style.display = "none";
+            d3.style.display = "none";
+            d4.style.display = "none";
+            d5.style.display = "none";
+            e1.style.display = "block";
+            e2.style.display = "block";
+            e3.style.display = "block";
+            e4.style.display = "block";
+            e5.style.display = "block";
+            e6.style.display = "block";
+            secret6.style.display = "flex";
+            eventtext5.style.color = "red";
+        }
+    }
+
+     function revealNext5(){
+        if (event5.style.display = "flex") {
+            event6.style.display = "flex"
+            secret6.style.display = "none";
+            e1.style.display = "none";
+            e2.style.display = "none";
+            e3.style.display = "none";
+            e4.style.display = "none";
+            e5.style.display = "none";
+            e6.style.display = "none";
+            f1.style.display = "block";
+            f2.style.display = "block";
+            f3.style.display = "block";
+            f4.style.display = "block";
+            f5.style.display = "block";
+            f6.style.display = "block";
+            f7.style.display = "block";
+            secret7.style.display = "flex";
+            eventtext6.style.color = "green";
+        }
+    }
+
+     function revealNext5Incorrect(){
+        if (event5.style.display = "flex") {
+            event6.style.display = "flex"
+            secret6.style.display = "none";
+            e1.style.display = "none";
+            e2.style.display = "none";
+            e3.style.display = "none";
+            e4.style.display = "none";
+            e5.style.display = "none";
+            e6.style.display = "none";
+            f1.style.display = "block";
+            f2.style.display = "block";
+            f3.style.display = "block";
+            f4.style.display = "block";
+            f5.style.display = "block";
+            f6.style.display = "block";
+            f7.style.display = "block";
+            secret7.style.display = "flex";
+            eventtext6.style.color = "red";
+        }
+    }
+
+     function revealNext6(){
+        if (event6.style.display = "flex") {
+            event7.style.display = "flex"
+            secret7.style.display = "none";
+            secret8.style.display = "flex";
+            f1.style.display = "none";
+            f2.style.display = "none";
+            f3.style.display = "none";
+            f4.style.display = "none";
+            f5.style.display = "none";
+            f6.style.display = "none";
+            f7.style.display = "none";
+            g1.style.display = "block";
+            g2.style.display = "block";
+            g3.style.display = "block";
+            g4.style.display = "block";
+            g5.style.display = "block";
+            g6.style.display = "block";
+            g7.style.display = "block";
+            g8.style.display = "block";
+            eventtext7.style.color = "green";
+        }
+    }
+
+ function revealNext6Incorrect(){
+        if (event6.style.display = "flex") {
+            event7.style.display = "flex"
+            secret7.style.display = "none";
+            secret8.style.display = "flex";
+            f1.style.display = "none";
+            f2.style.display = "none";
+            f3.style.display = "none";
+            f4.style.display = "none";
+            f5.style.display = "none";
+            f6.style.display = "none";
+            f7.style.display = "none";
+            g1.style.display = "block";
+            g2.style.display = "block";
+            g3.style.display = "block";
+            g4.style.display = "block";
+            g5.style.display = "block";
+            g6.style.display = "block";
+            g7.style.display = "block";
+            g8.style.display = "block";
+            eventtext7.style.color = "red";
+        }
+    }
+
+     function revealNext7(){
+        if (event7.style.display = "flex") {
+            event8.style.display = "flex"
+            secret8.style.display = "none";
+            g1.style.display = "none";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            h1.style.display = "block";
+            h2.style.display = "block";
+            h3.style.display = "block";
+            h4.style.display = "block";
+            h5.style.display = "block";
+            h6.style.display = "block";
+            h7.style.display = "block";
+            h8.style.display = "block";
+            h9.style.display = "block";
+            secret9.style.display = "flex";
+            eventtext8.style.color = "green";
+        }
+    }
+
+    function revealNext7Incorrect(){
+        if (event7.style.display = "flex") {
+            event8.style.display = "flex"
+            secret8.style.display = "none";
+            secret9.style.display = "flex";
+               g1.style.display = "none";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            h1.style.display = "block";
+            h2.style.display = "block";
+            h3.style.display = "block";
+            h4.style.display = "block";
+            h5.style.display = "block";
+            h6.style.display = "block";
+            h7.style.display = "block";
+            h8.style.display = "block";
+            h9.style.display = "block";
+            eventtext8.style.color = "red";
+        }
+    }
+
+       function revealNext8(){
+        if (event8.style.display = "flex") {
+            event9.style.display = "flex";
+            event9.style.marginTop = "10px";
+            event8.style.marginTop = "10px";
+            event7.style.marginTop = "10px";
+            event6.style.marginTop = "10px";
+            event5.style.marginTop = "10px";
+            event4.style.marginTop = "10px";
+            event3.style.marginTop = "10px";
+            event2.style.marginTop = "10px";
+            event1.style.marginTop = "10px";
+            h1.style.display = "none";
+            h2.style.display = "none";
+            h3.style.display = "none";
+            h4.style.display = "none";
+            h5.style.display = "none";
+            h6.style.display = "none";
+            h7.style.display = "none";
+            h8.style.display = "none";
+            h9.style.display = "none";
+            secret9.style.display = "none";
+            eventtext9.style.color = "green";
+        }
+    }
+
+       function revealNext8Incorrect(){
+        if (event8.style.display = "flex") {
+            event9.style.display = "flex";
+            event9.style.marginTop = "10px";
+            event8.style.marginTop = "10px";
+            event7.style.marginTop = "10px";
+            event6.style.marginTop = "10px";
+            event5.style.marginTop = "10px";
+            event4.style.marginTop = "10px";
+            event3.style.marginTop = "10px";
+            event2.style.marginTop = "10px";
+            event1.style.marginTop = "10px";
+            h1.style.display = "none";
+            h2.style.display = "none";
+            h3.style.display = "none";
+            h4.style.display = "none";
+            h5.style.display = "none";
+            h6.style.display = "none";
+            h7.style.display = "none";
+            h8.style.display = "none";
+            h9.style.display = "none";
+            secret9.style.display = "none";
+            eventtext9.style.color = "red";
+        }
+    }
+
+
+
+
+    </script>
+</body>
+</html>

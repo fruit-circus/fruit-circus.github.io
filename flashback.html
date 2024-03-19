@@ -13,10 +13,45 @@
 
         h1{
             font-size: 34px;
+        }
 
+#playAgain {
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-70%);
+            z-index: 3;
+        }
+
+        #share{
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-40%);
+            z-index: 3;
         }
             p {
                 font-size: 22px;
+            }
+
+            .outro {
+                display: none;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border: 2px solid grey;
+                padding: 20px;
+                padding-top: 8px;
+                width: 45%;
+                border-radius: 25px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(27, 27, 27);
+                text-align: center;
+                z-index: 2;
+                position: fixed;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .intro {
@@ -292,6 +327,7 @@ img {
     height: 170px;
   }
 
+.outro,
   .intro{
     width: 60%;
   }
@@ -573,16 +609,16 @@ img {
             <div class="event3"><div>
             <img src="8th_event.png"></div>
             <div><p class="eventtext" id="eventtext3">
-                    1883: The Metropolitan Opera Association opened in New York and
-                    Richard Wagner died after completing his final work "Parsifal."
+                    1913: Crowds riot at the premier of Stravinsky's ballet: Le Sacre du Printemps (The Rite of Spring).
+
                 </p> 
             </div></div>
 
             <div class="event4"><div>
             <img src="9th_event.png"></div>
             <div><p class="eventtext" id="eventtext4">
-                    1897: Johannes Brahms died and Gustav Mahler became director of the Vienna Art Opera.
-                </p> 
+            1925: Arnold Schoenberg's pupil, Alban Berg, premiers his opera: Wozzeck. 
+            </p> 
             </div></div>
 
 <!--________________________________________________-->
@@ -651,8 +687,19 @@ img {
                            Johannes Brahms died and Gustav Mahler became director of the Vienna Art Opera.
                         </p>
                     </div></div>
-         
-         
+
+                    <div class="outro">
+                    <p id="finalScore" >Nice! With xevents of 8 events correct, you scored a total of xpoints points.
+                    </p>             
+                </div>
+            
+                <a id="share" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
+                    <button>Share this wonderful number</button>
+                </a> 
+                <a id="playAgain" href="https://fruit-circus.github.io/flashback.html"> 
+                    <button>Play again</button>
+                </a> 
+               
 
     <script>
         var introStuff = document.getElementsByClassName("intro")[0];
@@ -673,6 +720,7 @@ img {
        var secret7 = document.getElementsByClassName("secret7")[0];
        var secret8 = document.getElementsByClassName("secret8")[0];
        var secret9 = document.getElementsByClassName("secret9")[0];
+       var outro = document.getElementsByClassName("outro")[0];
 
 var svg = document.getElementsByTagName('svg');
 var rect1 = document.getElementById('rect1');
@@ -748,6 +796,7 @@ var rect8 = document.getElementById('rect8');
       var eventtext7 = document.getElementById("eventtext7");
       var eventtext8 = document.getElementById("eventtext8");
       var eventtext9 = document.getElementById("eventtext9");
+      var share = document.getElementById("share");
 
         var timeline = document.getElementsByClassName("placementImage")[0];
         var wellPlaceOneEvent = document.getElementById("wellPlaceOneEvent");
@@ -800,6 +849,7 @@ function begin() {
             eventtext2.style.color = "green";
             after.style.display = "none";
             before.style.display = "none";
+            events.got++;
             rect1.style.fill = "rgb(13, 191, 137)";
         }
     }
@@ -835,6 +885,7 @@ function begin() {
             c2.style.display = "block";
             c3.style.display = "block";
             c4.style.display = "block";
+            events.got++;
             eventtext3.style.color = "green";
             rect2.style.fill = "rgb(13, 191, 137)";
             document.documentElement.scrollTop = document.documentElement.scrollHeight;
@@ -877,6 +928,7 @@ function begin() {
             d3.style.display = "block";
             d4.style.display = "block";
             d5.style.display = "block";
+            events.got++;
             eventtext4.style.color = "green";
             rect3.style.fill = "rgb(13, 191, 137)";
             document.documentElement.scrollTop = document.documentElement.scrollHeight;
@@ -921,6 +973,7 @@ function begin() {
             e4.style.display = "block";
             e5.style.display = "block";
             e6.style.display = "block";
+            events.got++;
             rect4.style.fill = "rgb(13, 191, 137)";
             eventtext5.style.color = "green";
         }
@@ -966,6 +1019,7 @@ function begin() {
             f7.style.display = "block";
             secret7.style.display = "flex";
             eventtext6.style.color = "green";
+            events.got++;
             rect5.style.fill = "rgb(13, 191, 137)";
             document.documentElement.scrollTop = document.documentElement.scrollHeight;
 
@@ -1017,6 +1071,7 @@ function begin() {
             g6.style.display = "block";
             g7.style.display = "block";
             g8.style.display = "block";
+            events.got++;
             rect6.style.fill = "rgb(13, 191, 137)";
             eventtext7.style.color = "green";
         }
@@ -1069,6 +1124,7 @@ function begin() {
             h8.style.display = "block";
             h9.style.display = "block";
             secret9.style.display = "flex";
+            events.got++;
             rect7.style.fill = "rgb(13, 191, 137)";
             eventtext8.style.color = "green";
         }
@@ -1123,8 +1179,10 @@ function begin() {
             h8.style.display = "none";
             h9.style.display = "none";
             secret9.style.display = "none";
+            events.got++;
             rect8.style.fill = "rgb(13, 191, 137)";
             eventtext9.style.color = "green";
+            theEnd();
         }
     }
 
@@ -1138,7 +1196,7 @@ function begin() {
             event5.style.marginTop = "10px";
             event4.style.marginTop = "10px";
             event3.style.marginTop = "10px";
-            event2.style.marginTop = "10px";
+            event2.style.marginTop = "150px"; //change if event 2...
             event1.style.marginTop = "10px";
             h1.style.display = "none";
             h2.style.display = "none";
@@ -1152,11 +1210,26 @@ function begin() {
             secret9.style.display = "none";
             rect8.style.fill = "rgb(228, 63, 71)";
             eventtext9.style.color = "red";
+            theEnd();
         }
     }
 
+function theEnd(){
+    outro.style.display = "flex";
+    share.style.display = "block";
+    let finalScore = document.getElementById("finalScore").innerHTML; 
+    document.getElementById("finalScore").innerHTML = finalScore.replace("xevents", events.got);
+    let finalSnore = document.getElementById("finalScore").innerHTML; 
+    document.getElementById("finalScore").innerHTML = finalSnore.replace("xpoints", scoreScore);
+
+}
 
 
+const events = {
+    got: 0,
+}
+
+const scoreScore = Math.floor(Math.random() * 100000) + 1;
 
     </script>
 </body>

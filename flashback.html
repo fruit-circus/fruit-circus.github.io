@@ -11,6 +11,14 @@
         
             }
 
+            #fruithome{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                top: -10px;
+                left: -10px;
+            }
+
         h1{
             font-size: 34px;
         }
@@ -27,9 +35,18 @@
             display: none;
             position: fixed;
             top: 110px;
-            left: 48%;
+            left: 51%;
             z-index: 3;
         }
+
+        #shareSmall{
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 51%;
+            z-index: 2;
+        }
+
             p {
                 font-size: 22px;
             }
@@ -330,6 +347,10 @@ img {
     width: 60%;
   }
 
+   #fruithome{
+                display: none;
+            }
+
   button {
     width: 35%;
     height: 50px;
@@ -340,6 +361,19 @@ img {
   #before,
   #after {
       opacity: 0;
+  }
+
+  #share{
+      opacity: 0;
+  }
+
+  #shareSmall{
+      display: none;
+      left: 55%;
+  }
+
+  #playAgain {
+      left: 20%;
   }
 
   #wellPlaceOneEvent{
@@ -377,7 +411,7 @@ img {
 
 
   button {
-    width: 60%;
+    width: 50%;
     height: 50px;
     font-size: 18px;
   }
@@ -455,15 +489,34 @@ img {
 #h8{transform: translate(-50%,1630px);}
 #h9{transform: translate(-50%,1875px);}
 
+
+#share{
+      opacity: 0;
+  }
+
+  #shareSmall{
+      display: none;
+      left: 120px;
+      top: 150px;
+      width: 50px;
+  }
+
+  #playAgain {
+
+      opacity: 0;
+
 }
+
+  }
 
     </style>
 
 
 </head>              
 <body>
-
-
+<a href="fruit-directory.html">
+<img id="fruithome" src="fruithome.png" alt="home"></img>
+</a>    
 <svg width="800" height="100" xmlns="http://www.w3.org/2000/svg">
     
     <!-- First Row -->
@@ -673,8 +726,7 @@ img {
                     <div class="secret3"><div>
                     <img src="8th_event.png"></div>
                     <div><p class="secrettext" id="secrettext3">
-                            The Metropolitan Opera Association opened in New York
-                            and Richard Wagner died after completing his final work "Parsifal."
+                            Crowds riot at the premier of Stravinsky's ballet: Le Sacre du Printemps (The Rite of Spring). 
                         </p>
                     </div></div>
          
@@ -682,7 +734,7 @@ img {
                     <div class="secret4"><div>
                     <img src="9th_event.png"></div>
                     <div><p class="secrettext" id="secrettext4">
-                           Johannes Brahms died and Gustav Mahler became director of the Vienna Art Opera.
+                            Arnold Schoenberg's pupil, Alban Berg, premiers his opera: Wozzeck.
                         </p>
                     </div></div>
 
@@ -694,6 +746,11 @@ img {
                 <a id="share" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
                     <button style="            width: 300px;   ">Share this wonderful number</button>
                 </a> 
+
+                <a id="shareSmall" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
+                    <button style="            width: 200px;   ">Share</button>
+                </a> 
+
                 <a id="playAgain" href="https://fruit-circus.github.io/flashback.html"> 
                     <button style="            width: 200px;   ">Play again</button>
                 </a> 
@@ -781,6 +838,8 @@ var rect8 = document.getElementById('rect8');
       var h7 = document.getElementById("h7");
       var h8 = document.getElementById("h8");
       var h9 = document.getElementById("h9");
+
+      var shareSmall = document.getElementById("shareSmall");
 
             var before = document.getElementById("before");
             var after = document.getElementById("after");
@@ -1217,6 +1276,7 @@ function begin() {
 function theEnd(){
     outro.style.display = "flex";
     share.style.display = "block";
+    shareSmall.style.display = "block";
     playAgain.style.display = "block";
     let finalScore = document.getElementById("finalScore").innerHTML; 
     document.getElementById("finalScore").innerHTML = finalScore.replace("xevents", events.got);
@@ -1230,7 +1290,7 @@ const events = {
     got: 0,
 }
 
-const scoreScore = Math.floor(Math.random() * 100000) + 1;
+const scoreScore = Math.floor(Math.random() * 1000) + 1;
 
     </script>
 </body>

@@ -19,8 +19,7 @@
             display: none;
             position: fixed;
             top: 110px;
-            left: 50%;
-            transform: translateX(-70%);
+            left: 27%;
             z-index: 3;
         }
 
@@ -28,8 +27,7 @@
             display: none;
             position: fixed;
             top: 110px;
-            left: 50%;
-            transform: translateX(-40%);
+            left: 48%;
             z-index: 3;
         }
             p {
@@ -694,10 +692,10 @@ img {
                 </div>
             
                 <a id="share" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
-                    <button>Share this wonderful number</button>
+                    <button style="            width: 300px;   ">Share this wonderful number</button>
                 </a> 
                 <a id="playAgain" href="https://fruit-circus.github.io/flashback.html"> 
-                    <button>Play again</button>
+                    <button style="            width: 200px;   ">Play again</button>
                 </a> 
                
 
@@ -786,6 +784,8 @@ var rect8 = document.getElementById('rect8');
 
             var before = document.getElementById("before");
             var after = document.getElementById("after");
+
+            var playAgain = document.getElementById("playAgain");
 
       var eventtext1 = document.getElementById("eventtext1");
       var eventtext2 = document.getElementById("eventtext2");
@@ -1217,6 +1217,7 @@ function begin() {
 function theEnd(){
     outro.style.display = "flex";
     share.style.display = "block";
+    playAgain.style.display = "block";
     let finalScore = document.getElementById("finalScore").innerHTML; 
     document.getElementById("finalScore").innerHTML = finalScore.replace("xevents", events.got);
     let finalSnore = document.getElementById("finalScore").innerHTML; 

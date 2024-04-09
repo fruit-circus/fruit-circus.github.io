@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+        <head>
+    <title>Da Capo: From the Beginning</title>
+    <link rel="icon" type="image/x-icon" href="dacapofavicon.ico?">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+                    
+        body {
+          background-color: rgb(231, 231, 231);
+        
+            }
+
+            #fruithome{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: -15px;
+                left: -15px;
+            }
+
+        h1{
+            font-size: 34px;
+        }
+        .close-button {
+            cursor: pointer;
+        }
+
+#playAgain {
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 27%;
+            z-index: 3;
+        }
+
+        #share{
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 51%;
+            z-index: 3;
+        }
+
+        #shareSmall{
+            display: none;
+            position: fixed;
+            top: 110px;
+            left: 51%;
+            z-index: 2;
+        }
+
+            p {
+                font-size: 22px;
+            }
+
+            .outro {
+                display: none;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border: 2px solid grey;
+                padding: 20px;
+                padding-top: 8px;
+                width: 45%;
+                border-radius: 25px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(27, 27, 27);
+                text-align: center;
+                z-index: 2;
+                position: fixed;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .intro {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15vh;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border: 2px solid grey;
+                padding: 20px;
+                padding-top: 8px;
+                width: 30%;
+                border-radius: 25px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(27, 27, 27);
+                text-align: center;
+            }
+
+              #wellPlaceOneEvent{
+                display: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 200px;
+                width: 25%;
+                text-align: center;
+            }
+
+             svg {
+                 display: block;
+                 z-index: 2;
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-43%);
+  }
+
+button {
+    background-color: rgb(77, 95, 197);
+    color: white;
+    font-size: 22px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playButton{
+    width: 80px;
+    height: 50px;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+
+.eventtext {
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+.event1 {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS';
+    border: 1px solid grey;
+    width: 35%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+    /*transition: margin-top 0.5s ease-in-out;*/
+}
+
+.event2,
+.event3,
+.event4,
+.event5,
+.event6,
+.event7,
+.event8,
+.event9 {
+    display: none;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS';
+    border: 1px solid grey;
+    width: 35%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+}
+
+.secret2,
+.secret3,
+.secret4,
+.secret5,
+.secret6,
+.secret7,
+.secret8,
+.secret9 {
+   display: none;
+   position: absolute;
+   border: 1px solid black;
+   margin-top: 10px;
+   margin-left: auto;
+   top: 35px;  
+   left: 50%;  
+   align-items: center;
+   justify-content: center;
+   font-family: 'Trebuchet MS';
+   border: 1px solid grey;
+   width: 35%;
+   transform: translate(-50%,0px);
+   border-radius: 10px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(27, 27, 27);
+}
+
+#before {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-115px);
+}
+#after {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,220px);
+}
+
+.revealNext,
+.revealNext2,
+.revealNext3,
+.revealNext4,
+.revealNext5,
+.revealNext6,
+.revealNext7,
+.revealNext8 {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0px);
+}
+
+#a1{transform: translate(-50%,-60px);}
+#a2{transform: translate(-50%,175px);}
+
+#b1{transform: translate(-50%,-60px);}
+#b2{transform: translate(-50%,175px);}
+#b3{transform: translate(-50%,410px);}
+
+#c1{transform: translate(-50%,-60px);}
+#c2{transform: translate(-50%,175px);}
+#c3{transform: translate(-50%,410px);}
+#c4{transform: translate(-50%,645px);}
+
+#d1{transform: translate(-50%,-60px);}
+#d2{transform: translate(-50%,175px);}
+#d3{transform: translate(-50%,410px);}
+#d4{transform: translate(-50%,645px);}
+#d5{transform: translate(-50%,885px);}
+
+#e1{transform: translate(-50%,-60px);}
+#e2{transform: translate(-50%,175px);}
+#e3{transform: translate(-50%,410px);}
+#e4{transform: translate(-50%,645px);}
+#e5{transform: translate(-50%,885px);}
+#e6{transform: translate(-50%,1120px);}
+
+#f1{transform: translate(-50%,-60px);}
+#f2{transform: translate(-50%,175px);}
+#f3{transform: translate(-50%,410px);}
+#f4{transform: translate(-50%,645px);}
+#f5{transform: translate(-50%,885px);}
+#f6{transform: translate(-50%,1120px);}
+#f7{transform: translate(-50%,1360px);}
+
+#g1{transform: translate(-50%,-60px);}
+#g2{transform: translate(-50%,175px);}
+#g3{transform: translate(-50%,410px);}
+#g4{transform: translate(-50%,645px);}
+#g5{transform: translate(-50%,885px);}
+#g6{transform: translate(-50%,1120px);}
+#g7{transform: translate(-50%,1355px);}
+#g8{transform: translate(-50%,1595px);}
+
+#h1{transform: translate(-50%,-60px);}
+#h2{transform: translate(-50%,175px);}
+#h3{transform: translate(-50%,410px);}
+#h4{transform: translate(-50%,645px);}
+#h5{transform: translate(-50%,885px);}
+#h6{transform: translate(-50%,1120px);}
+#h7{transform: translate(-50%,1355px);}
+#h8{transform: translate(-50%,1590px);}
+#h9{transform: translate(-50%,1830px);}
+
+
+@media screen and (max-width: 1300px) {
+  .event1,
+  .event2,
+.event3,
+.event4,
+.event5,
+.event6,
+.event7,
+.event8,
+.event9,
+.secret2,
+.secret3,
+.secret4,
+.secret5,
+.secret6,
+.secret7,
+.secret8,
+.secret9 {
+    width: 60%;
+    height: 170px;
+      }
+
+  button {
+    width: 35%;
+    height: 50px;
+    font-size: 18px;
+  }
+
+
+  #before,
+  #after {
+      opacity: 0;
+  }
+
+  #wellPlaceOneEvent{
+                margin-top: 140px;
+                width: 90%;}
+                }
+
+
+@media screen and (max-width: 800px) {
+  .event1,
+  .event2,
+.event3,
+.event4,
+.event5,
+.event6,
+.event7,
+.event8,
+.event9,
+.secret2,
+.secret3,
+.secret4,
+.secret5,
+.secret6,
+.secret7,
+.secret8,
+.secret9 {
+    width: 70%;
+    height: 170px;
+  }
+
+.outro,
+  .intro{
+    width: 60%;
+  }
+
+   #fruithome{
+                display: none;
+            }
+
+  button {
+    width: 35%;
+    height: 50px;
+    font-size: 18px;
+  }
+
+
+  #before,
+  #after {
+      opacity: 0;
+  }
+
+  #share{
+      opacity: 0;
+  }
+
+  #shareSmall{
+      display: none;
+      left: 55%;
+  }
+
+  #playAgain {
+      left: 20%;
+  }
+
+  #wellPlaceOneEvent{
+                margin-top: 140px;
+                width: 90%;}
+                }
+
+
+@media screen and (max-width: 560px) {
+  .event1,
+  .event2,
+.event3,
+.event4,
+.event5,
+.event6,
+.event7,
+.event8,
+.event9,
+.secret2,
+.secret3,
+.secret4,
+.secret5,
+.secret6,
+.secret7,
+.secret8,
+.secret9 {
+    width: 90%;
+    height: 170px;
+  }
+
+    .intro {
+    width: 90%;
+    transform: translate(-4px,0px);
+  }
+
+
+  button {
+    width: 50%;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  img {
+    width: 90px;
+    height: 90px;
+    margin: 14px;
+  }
+  .eventtext {
+    font-size: 16px;
+  }
+  .secrettext {
+    font-size: 16px;
+  }
+
+  #before,
+  #after {
+      opacity: 0;
+  }
+
+  #wellPlaceOneEvent{
+                margin-top: 100px;
+                width: 90%;}
+
+#a1{transform: translate(-50%,-60px);}
+#a2{transform: translate(-50%,180px);}
+
+#b1{transform: translate(-50%,-60px);}
+#b2{transform: translate(-50%,180px);}
+#b3{transform: translate(-50%,425px);}
+
+#c1{transform: translate(-50%,-60px);}
+#c2{transform: translate(-50%,180px);}
+#c3{transform: translate(-50%,425px);}
+#c4{transform: translate(-50%,665px);}
+
+#d1{transform: translate(-50%,-60px);}
+#d2{transform: translate(-50%,180px);}
+#d3{transform: translate(-50%,425px);}
+#d4{transform: translate(-50%,665px);}
+#d5{transform: translate(-50%,905px);}
+
+#e1{transform: translate(-50%,-60px);}
+#e2{transform: translate(-50%,180px);}
+#e3{transform: translate(-50%,425px);}
+#e4{transform: translate(-50%,665px);}
+#e5{transform: translate(-50%,905px);}
+#e6{transform: translate(-50%,1145px);}
+
+#f1{transform: translate(-50%,-60px);}
+#f2{transform: translate(-50%,180px);}
+#f3{transform: translate(-50%,425px);}
+#f4{transform: translate(-50%,665px);}
+#f5{transform: translate(-50%,905px);}
+#f6{transform: translate(-50%,1150px);}
+#f7{transform: translate(-50%,1390px);}
+
+#g1{transform: translate(-50%,-60px);}
+#g2{transform: translate(-50%,180px);}
+#g3{transform: translate(-50%,425px);}
+#g4{transform: translate(-50%,665px);}
+#g5{transform: translate(-50%,905px);}
+#g6{transform: translate(-50%,1150px);}
+#g7{transform: translate(-50%,1390px);}
+#g8{transform: translate(-50%,1630px);}
+
+#h1{transform: translate(-50%,-60px);}
+#h2{transform: translate(-50%,180px);}
+#h3{transform: translate(-50%,425px);}
+#h4{transform: translate(-50%,665px);}
+#h5{transform: translate(-50%,905px);}
+#h6{transform: translate(-50%,1150px);}
+#h7{transform: translate(-50%,1390px);}
+#h8{transform: translate(-50%,1630px);}
+#h9{transform: translate(-50%,1875px);}
+
+
+#share{
+      opacity: 0;
+  }
+
+  #shareSmall{
+      display: none;
+      left: 120px;
+      top: 150px;
+      width: 50px;
+  }
+
+  #playAgain {
+
+      opacity: 0;
+
+}
+
+  }
+
+    </style>
+
+
+</head>              
+<body>
+<a href="fruit-directory.html">
+<img id="fruithome" src="fruithome.png" alt="home"></img>
+</a>    
+<svg width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- First Row -->
+    <rect id="rect1" x="30" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect2" x="110" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect3" x="190" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect4" x="270" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <!-- Second Row -->
+    <rect id="rect5" x="350" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect6" x="430" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect7" x="510" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+    <rect id="rect8" x="590" y="20" width="70" height="13" rx="5" ry="5" fill="white" stroke="black" stroke-width="1" />
+  </svg>
+
+    <div class="intro">
+    <h1>Da Capo:<br>The Music History Timeline Quiz</h1>
+    <p>Can you place these 8 notable events in chronological order?</p>
+    <button id="playButton" onclick="playGame()">Play</button>
+    </div>
+<!--
+
+<img class="placementImage" src="da1.png" usemap="#timeline">
+        <map name="timeline">
+                <area shape="circle" coords="120, 50, 50" alt="place event here" onclick="place1before()">
+                <area shape="circle" coords="350, 50, 50" alt="place event here" onclick="place1after()">
+            </map>
+
+            <img class="placementImage" src="da8.png" usemap="#timeline">
+-->
+
+<p id="wellPlaceOneEvent">We'll place one event for you:</p>
+
+<p id="before">Before</p>
+<p id="after">After</p>
+
+<button class="revealNext" id="a1" onclick="revealNext()">Place new event here</button>
+<button class="revealNext" id="a2" onclick="revealNextIncorrect()">Place new event here</button>
+
+<button class="revealNext2" id="b1" onclick="revealNext2Incorrect()">Place new event here</button>
+<button class="revealNext2" id="b2" onclick="revealNext2Incorrect()">Place new event here</button>
+<button class="revealNext2" id="b3" onclick="revealNext2()">Place new event here</button>
+
+<button class="revealNext3" id="c1" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c2" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c3" onclick="revealNext3Incorrect()">Place new event here</button>
+<button class="revealNext3" id="c4" onclick="revealNext3()">Place new event here</button>
+
+<button class="revealNext4" id="d1" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d2" onclick="revealNext4()">Place new event here</button>
+<button class="revealNext4" id="d3" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d4" onclick="revealNext4Incorrect()">Place new event here</button>
+<button class="revealNext4" id="d5" onclick="revealNext4Incorrect()">Place new event here</button>
+
+<button class="revealNext5" id="e1" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e2" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e3" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e4" onclick="revealNext5()">Place new event here</button>
+<button class="revealNext5" id="e5" onclick="revealNext5Incorrect()">Place new event here</button>
+<button class="revealNext5" id="e6" onclick="revealNext5Incorrect()">Place new event here</button>
+
+<button class="revealNext6" id="f1" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f2" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f3" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f4" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f5" onclick="revealNext6()">Place new event here</button>
+<button class="revealNext6" id="f6" onclick="revealNext6Incorrect()">Place new event here</button>
+<button class="revealNext6" id="f7" onclick="revealNext6Incorrect()">Place new event here</button>
+
+<button class="revealNext7" id="g1" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g2" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g3" onclick="revealNext7()">Place new event here</button>
+<button class="revealNext7" id="g4" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g5" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g6" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g7" onclick="revealNext7Incorrect()">Place new event here</button>
+<button class="revealNext7" id="g8" onclick="revealNext7Incorrect()">Place new event here</button>
+
+<button class="revealNext8" id="h1" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h2" onclick="revealNext8()">Place new event here</button>
+<button class="revealNext8" id="h3" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h4" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h5" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h6" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h7" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h8" onclick="revealNext8Incorrect()">Place new event here</button>
+<button class="revealNext8" id="h9" onclick="revealNext8Incorrect()">Place new event here</button>
+
+<!--<div id="line"></div>-->
+
+            <div class="event2"><div>
+            <img src="1732.png"></div>
+            <div><p class="eventtext" id="eventtext2">
+            
+            1732: Joseph Haydn, son of a wheelwright, was born near Vienna. George Washington, son of a planter, was born in Virginia. 
+                </p> 
+            </div></div>
+
+            <div class="event9"><div>
+            <img src="1762.png"></div>
+            <div><p class="eventtext" id="eventtext9">
+                1762: Gluck sets the bar high on his “reform opera,” <i>Orfeo ed Euridice,</i> giving Mozart, Beethoven, and even Wagner ideas for their operas.
+
+            </p> 
+            </div></div>
+
+            <div class="event5"><div>
+            <img src="1770.png"></div>
+            <div><p class="eventtext" id="eventtext5">
+                1770: German composer Ludwig van Beethoven was born. In New York, Handel's "Messiah" was first performed.
+                 </p> 
+            </div></div>
+        
+            <div class="event8"><div>
+            <img src="1772.png"></div>
+            <div><p class="eventtext" id="eventtext8">
+                1772: The Chevalier de Saint-Georges wows the critics with his compositions and the ladies of France with his violin-playing.
+                </p> 
+            </div></div>
+
+            <div class="event1"><div>
+            <img src="1786.png"></div>
+            <div><p class="eventtext" id="eventtext1">
+                1786: In Vienna, Mozart's "The Marriage of Figaro" premiered. Also, German composer Carl Maria von Weber was born.
+                  </p> 
+            </div></div>
+
+             <div class="event6"><div>
+            <img src="1793.png"></div>
+            <div><p class="eventtext" id="eventtext6">
+               
+                1793: Niccolo Paganini debuted as a violin virtuoso at age 11. 
+               
+                </p> 
+            </div></div>      
+   
+            <div class="event7"><div>
+            <img src="1799.png"></div>
+            <div><p class="eventtext" id="eventtext7">
+                1799: One of the grandest musical statements of the Age of Enlightenment, Haydn’s oratorio <i>Die Schöpfung</i> premiered to the general public in Vienna.
+                
+               
+                </p> 
+            </div></div>
+
+            <div class="event3"><div>
+            <img src="1810.png"></div>
+            <div><p class="eventtext" id="eventtext3">
+                1810: Two great Romantic composers were born: Fryderyk Franciszek Chopin and Robert Schumann.
+              
+                </p> 
+            </div></div>
+
+            <div class="event4"><div>
+            <img src="1819.png"></div>
+            <div><p class="eventtext" id="eventtext4">
+                1819: Clara Schumann, the foremost female composer of the 19th century, was born. 
+
+            </p> 
+            </div></div>
+
+<!--________________________________________________-->
+
+
+            <div class="secret2"><div>
+                    <img src="1732.png"></div>
+                    <div><p class="secrettext" id="secrettext2">
+                        Joseph Haydn, son of a wheelwright, was born near Vienna. George Washington, son<br> of a planter, was born in Virginia. 
+                    </p>
+                    </div></div>
+         
+         
+                    <div class="secret9"><div>
+                    <img src="1762.png"></div>
+                    <div><p class="secrettext" id="secrettext9">
+                        Gluck sets the bar high on his “reform opera,” <i>Orfeo ed Euridice</i>, giving Mozart, Beethoven, and even Wagner ideas for their operas.
+                    </p>
+                    </div></div>
+         
+         
+                    <div class="secret5"><div>
+                    <img src="1770.png"></div>
+                    <div><p class="secrettext" id="secrettext5">
+                        German composer Ludwig van Beethoven was born. In New York, Handel's "Messiah" was first performed.
+                    </p>
+                    </div></div>
+               
+                    <div class="secret8"><div>
+                    <img src="1772.png"></div>
+                    <div><p class="secrettext" id="secrettext8">
+                        The Chevalier de Saint-Georges wows the critics with his compositions and the ladies of France with his violin-playing.
+                    </p>
+                    </div></div>
+         
+         
+                     <div class="secret6"><div>
+                    <img src="1793.png"></div>
+                    <div><p class="secrettext" id="secrettext6">
+                        Niccolo Paganini debuted as a violin virtuoso at age 11. 
+                    </div></div>     
+          
+                    <div class="secret7"><div>
+                    <img src="1799.png"></div>
+                    <div><p class="secrettext" id="secrettext7">
+                        One of the grandest musical statements of the Age of Enlightenment, Haydn’s oratorio, <i>Die Schöpfung</i>, premiered to the general public in Vienna.
+                    </p>
+                    </div></div>
+         
+         
+                    <div class="secret3"><div>
+                    <img src="1810.png"></div>
+                    <div><p class="secrettext" id="secrettext3">
+                        Two great Romantic composers were born: Fryderyk Franciszek Chopin and Robert Schumann.
+
+                    </p>
+                    </div></div>
+         
+         
+                    <div class="secret4"><div>
+                    <img src="1819.png"></div>
+                    <div><p class="secrettext" id="secrettext4">
+                        Clara Schumann, the foremost female composer of the 19th century, was born. 
+                    </p>
+                    </div></div>
+
+                    <div class="outro">
+                            <span class="close-button" onclick="closeOutro()">X</span>
+                    <p id="finalScore" >Nice! With xevents of 8 events correct, you scored a total of xpoints points.
+                    </p>             
+                </div>
+            
+                <a id="share" href="https://www.youtube.com/watch?v=nmOBAjQ6ZJ0"> 
+                    <button style="            width: 300px;   ">Lady Gaga Meat Dress</button>
+                </a> 
+
+                <a id="shareSmall" href="https://www.youtube.com/watch?v=nmOBAjQ6ZJ0"> 
+                    <button style="            width: 200px;   ">Share</button>
+                </a> 
+
+                <a id="playAgain" href="https://fruit-circus.github.io/flashback3.html"> 
+                    <button style="            width: 200px;   ">Play again</button>
+                </a> 
+               
+
+    <script>
+        var introStuff = document.getElementsByClassName("intro")[0];
+        var event1 = document.getElementsByClassName("event1")[0];
+        var event2 = document.getElementsByClassName("event2")[0];
+        var event3 = document.getElementsByClassName("event3")[0];
+        var event4 = document.getElementsByClassName("event4")[0];
+        var event5 = document.getElementsByClassName("event5")[0];
+        var event6 = document.getElementsByClassName("event6")[0];
+        var event7 = document.getElementsByClassName("event7")[0];
+        var event8 = document.getElementsByClassName("event8")[0];
+        var event9 = document.getElementsByClassName("event9")[0];
+       var secret2 = document.getElementsByClassName("secret2")[0];
+       var secret3 = document.getElementsByClassName("secret3")[0];
+       var secret4 = document.getElementsByClassName("secret4")[0];
+       var secret5 = document.getElementsByClassName("secret5")[0];
+       var secret6 = document.getElementsByClassName("secret6")[0];
+       var secret7 = document.getElementsByClassName("secret7")[0];
+       var secret8 = document.getElementsByClassName("secret8")[0];
+       var secret9 = document.getElementsByClassName("secret9")[0];
+       var outro = document.getElementsByClassName("outro")[0];
+
+var svg = document.getElementsByTagName('svg');
+var rect1 = document.getElementById('rect1');
+var rect2 = document.getElementById('rect2');
+var rect3 = document.getElementById('rect3');
+var rect4 = document.getElementById('rect4');
+var rect5 = document.getElementById('rect5');
+var rect6 = document.getElementById('rect6');
+var rect7 = document.getElementById('rect7');
+var rect8 = document.getElementById('rect8');
+
+       var a1 = document.getElementById("a1");
+       var a2 = document.getElementById("a2");
+
+       var b1 = document.getElementById("b1");
+       var b2 = document.getElementById("b2");
+       var b3 = document.getElementById("b3");
+
+        var c1 = document.getElementById("c1");
+       var c2 = document.getElementById("c2");
+       var c3 = document.getElementById("c3");
+       var c4 = document.getElementById("c4");
+
+        var d1 = document.getElementById("d1");
+       var d2 = document.getElementById("d2");
+       var d3 = document.getElementById("d3");
+       var d4 = document.getElementById("d4");
+       var d5 = document.getElementById("d5");
+
+       var e1 = document.getElementById("e1");
+       var e2 = document.getElementById("e2");
+       var e3 = document.getElementById("e3");
+       var e4 = document.getElementById("e4");
+       var e5 = document.getElementById("e5");
+       var e6 = document.getElementById("e6");
+
+         var f1 = document.getElementById("f1");
+       var f2 = document.getElementById("f2");
+       var f3 = document.getElementById("f3");
+       var f4 = document.getElementById("f4");
+       var f5 = document.getElementById("f5");
+       var f6 = document.getElementById("f6");
+       var f7 = document.getElementById("f7");
+
+         var g1 = document.getElementById("g1");
+      var g2 = document.getElementById("g2");
+      var g3 = document.getElementById("g3");
+      var g4 = document.getElementById("g4");
+      var g5 = document.getElementById("g5");
+      var g6 = document.getElementById("g6");
+      var g7 = document.getElementById("g7");
+      var g8 = document.getElementById("g8");
+
+  var h1 = document.getElementById("h1");
+      var h2 = document.getElementById("h2");
+      var h3 = document.getElementById("h3");
+      var h4 = document.getElementById("h4");
+      var h5 = document.getElementById("h5");
+      var h6 = document.getElementById("h6");
+      var h7 = document.getElementById("h7");
+      var h8 = document.getElementById("h8");
+      var h9 = document.getElementById("h9");
+
+      var shareSmall = document.getElementById("shareSmall");
+
+            var before = document.getElementById("before");
+            var after = document.getElementById("after");
+
+            var playAgain = document.getElementById("playAgain");
+
+      var eventtext1 = document.getElementById("eventtext1");
+      var eventtext2 = document.getElementById("eventtext2");
+      var eventtext3 = document.getElementById("eventtext3");
+      var eventtext4 = document.getElementById("eventtext4");
+      var eventtext5 = document.getElementById("eventtext5");
+      var eventtext6 = document.getElementById("eventtext6");
+      var eventtext7 = document.getElementById("eventtext7");
+      var eventtext8 = document.getElementById("eventtext8");
+      var eventtext9 = document.getElementById("eventtext9");
+      var share = document.getElementById("share");
+
+        var timeline = document.getElementsByClassName("placementImage")[0];
+        var wellPlaceOneEvent = document.getElementById("wellPlaceOneEvent");
+        document.getElementById("playButton").addEventListener('click', begin);
+
+        function playGame() {
+            introStuff.style.display = "none";
+            wellPlaceOneEvent.style.display = "block";
+            event1.style.display = "flex";
+        }
+
+function begin() {
+    var fadeTarget = document.getElementById("wellPlaceOneEvent");
+    var waitToFade = setInterval(function () {
+        var fadeEffect = setInterval(function () {
+            if (!fadeTarget.style.opacity) {
+                fadeTarget.style.opacity = 1;
+            }
+            if (fadeTarget.style.opacity > 0) {
+                fadeTarget.style.opacity -= 0.02;
+            } else {
+                clearInterval(fadeEffect);
+                clearInterval(waitToFade);
+                secret2.style.display = "flex";
+                event1.style.marginTop = "400px";
+                wellPlaceOneEvent.style.display = "none";
+                a1.style.display = "block";
+                a2.style.display = "block";
+                after.style.display = "block";
+                before.style.display = "block";
+                svg.style.opacity = "1";
+            }
+        }, 15);
+    }, 1300);
+}
+
+
+    function revealNext(){
+        if (event1.style.display = "flex") {
+            event2.style.display = "flex"
+            secret2.style.display = "none";
+            secret3.style.display = "flex";
+            event1.style.marginTop = "70px";
+            event2.style.marginTop = "400px"; //remove this if event2 is not the oldest.
+            a1.style.display = "none";
+            a2.style.display = "none";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            eventtext2.style.color = "green";
+            after.style.display = "none";
+            before.style.display = "none";
+            events.got++;
+            rect1.style.fill = "rgb(13, 191, 137)";
+        }
+    }
+
+     function revealNextIncorrect(){
+        if (event1.style.display = "flex") {
+            event2.style.display = "flex"
+            secret2.style.display = "none";
+            secret3.style.display = "flex";
+            event1.style.marginTop = "70px";
+            event2.style.marginTop = "400px"; //remove this if event2 is not the oldest.
+            a1.style.display = "none";
+            a2.style.display = "none";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            after.style.display = "none";
+            before.style.display = "none";
+            eventtext2.style.color = "red";
+            rect1.style.fill = "rgb(228, 63, 71)";
+        }
+    }
+
+    function revealNext2(){
+        if (event2.style.display = "flex") {
+            event3.style.display = "flex"
+            secret3.style.display = "none";
+            secret4.style.display = "flex";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            c1.style.display = "block";
+            c2.style.display = "block";
+            c3.style.display = "block";
+            c4.style.display = "block";
+            events.got++;
+            eventtext3.style.color = "green";
+            rect2.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+
+        }
+    }
+
+ function revealNext2Incorrect(){
+        if (event2.style.display = "flex") {
+            event3.style.display = "flex"
+            secret3.style.display = "none";
+            secret4.style.display = "flex";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            c1.style.display = "block";
+            c2.style.display = "block";
+            c3.style.display = "block";
+            c4.style.display = "block";
+            eventtext3.style.color = "red";
+            rect2.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+
+        }
+    }
+
+      function revealNext3(){
+        if (event3.style.display = "flex") {
+            event4.style.display = "flex"
+            secret4.style.display = "none";
+            secret5.style.display = "flex";
+            c1.style.display = "none";
+            c2.style.display = "none";
+            c3.style.display = "none";
+            c4.style.display = "none";
+            d1.style.display = "block";
+            d2.style.display = "block";
+            d3.style.display = "block";
+            d4.style.display = "block";
+            d5.style.display = "block";
+            events.got++;
+            eventtext4.style.color = "green";
+            rect3.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+        }
+    }
+
+       function revealNext3Incorrect(){
+        if (event3.style.display = "flex") {
+            event4.style.display = "flex"
+            secret4.style.display = "none";
+            c1.style.display = "none";
+            c2.style.display = "none";
+            c3.style.display = "none";
+            c4.style.display = "none";
+            d1.style.display = "block";
+            d2.style.display = "block";
+            d3.style.display = "block";
+            d4.style.display = "block";
+            d5.style.display = "block";
+            secret5.style.display = "flex";
+            eventtext4.style.color = "red";
+            rect3.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+        }
+    }
+
+      function revealNext4(){
+        if (event4.style.display = "flex") {
+            event5.style.display = "flex"
+            secret5.style.display = "none";
+            secret6.style.display = "flex";
+            d1.style.display = "none";
+            d2.style.display = "none";
+            d3.style.display = "none";
+            d4.style.display = "none";
+            d5.style.display = "none";
+            e1.style.display = "block";
+            e2.style.display = "block";
+            e3.style.display = "block";
+            e4.style.display = "block";
+            e5.style.display = "block";
+            e6.style.display = "block";
+            events.got++;
+            rect4.style.fill = "rgb(13, 191, 137)";
+            eventtext5.style.color = "green";
+        }
+    }
+
+      function revealNext4Incorrect(){
+        if (event4.style.display = "flex") {
+            event5.style.display = "flex"
+            secret5.style.display = "none";
+            d1.style.display = "none";
+            d2.style.display = "none";
+            d3.style.display = "none";
+            d4.style.display = "none";
+            d5.style.display = "none";
+            e1.style.display = "block";
+            e2.style.display = "block";
+            e3.style.display = "block";
+            e4.style.display = "block";
+            e5.style.display = "block";
+            e6.style.display = "block";
+            secret6.style.display = "flex";
+            rect4.style.fill = "rgb(228, 63, 71)";
+            eventtext5.style.color = "red";
+        }
+    }
+
+     function revealNext5(){
+        if (event5.style.display = "flex") {
+            event6.style.display = "flex"
+            secret6.style.display = "none";
+            e1.style.display = "none";
+            e2.style.display = "none";
+            e3.style.display = "none";
+            e4.style.display = "none";
+            e5.style.display = "none";
+            e6.style.display = "none";
+            f1.style.display = "block";
+            f2.style.display = "block";
+            f3.style.display = "block";
+            f4.style.display = "block";
+            f5.style.display = "block";
+            f6.style.display = "block";
+            f7.style.display = "block";
+            secret7.style.display = "flex";
+            eventtext6.style.color = "green";
+            events.got++;
+            rect5.style.fill = "rgb(13, 191, 137)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+        }
+    }
+
+     function revealNext5Incorrect(){
+        if (event5.style.display = "flex") {
+            event6.style.display = "flex"
+            secret6.style.display = "none";
+            e1.style.display = "none";
+            e2.style.display = "none";
+            e3.style.display = "none";
+            e4.style.display = "none";
+            e5.style.display = "none";
+            e6.style.display = "none";
+            f1.style.display = "block";
+            f2.style.display = "block";
+            f3.style.display = "block";
+            f4.style.display = "block";
+            f5.style.display = "block";
+            f6.style.display = "block";
+            f7.style.display = "block";
+            secret7.style.display = "flex";
+            eventtext6.style.color = "red";
+            rect5.style.fill = "rgb(228, 63, 71)";
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+        }
+    }
+
+     function revealNext6(){
+        if (event6.style.display = "flex") {
+            event7.style.display = "flex"
+            secret7.style.display = "none";
+            secret8.style.display = "flex";
+            f1.style.display = "none";
+            f2.style.display = "none";
+            f3.style.display = "none";
+            f4.style.display = "none";
+            f5.style.display = "none";
+            f6.style.display = "none";
+            f7.style.display = "none";
+            g1.style.display = "block";
+            g2.style.display = "block";
+            g3.style.display = "block";
+            g4.style.display = "block";
+            g5.style.display = "block";
+            g6.style.display = "block";
+            g7.style.display = "block";
+            g8.style.display = "block";
+            events.got++;
+            rect6.style.fill = "rgb(13, 191, 137)";
+            eventtext7.style.color = "green";
+        }
+    }
+
+ function revealNext6Incorrect(){
+        if (event6.style.display = "flex") {
+            event7.style.display = "flex"
+            secret7.style.display = "none";
+            secret8.style.display = "flex";
+            f1.style.display = "none";
+            f2.style.display = "none";
+            f3.style.display = "none";
+            f4.style.display = "none";
+            f5.style.display = "none";
+            f6.style.display = "none";
+            f7.style.display = "none";
+            g1.style.display = "block";
+            g2.style.display = "block";
+            g3.style.display = "block";
+            g4.style.display = "block";
+            g5.style.display = "block";
+            g6.style.display = "block";
+            g7.style.display = "block";
+            g8.style.display = "block";
+            rect6.style.fill = "rgb(228, 63, 71)";
+            eventtext7.style.color = "red";
+        }
+    }
+
+     function revealNext7(){
+        if (event7.style.display = "flex") {
+            event8.style.display = "flex"
+            secret8.style.display = "none";
+            g1.style.display = "none";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            h1.style.display = "block";
+            h2.style.display = "block";
+            h3.style.display = "block";
+            h4.style.display = "block";
+            h5.style.display = "block";
+            h6.style.display = "block";
+            h7.style.display = "block";
+            h8.style.display = "block";
+            h9.style.display = "block";
+            secret9.style.display = "flex";
+            events.got++;
+            rect7.style.fill = "rgb(13, 191, 137)";
+            eventtext8.style.color = "green";
+        }
+    }
+
+    function revealNext7Incorrect(){
+        if (event7.style.display = "flex") {
+            event8.style.display = "flex"
+            secret8.style.display = "none";
+            secret9.style.display = "flex";
+               g1.style.display = "none";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            h1.style.display = "block";
+            h2.style.display = "block";
+            h3.style.display = "block";
+            h4.style.display = "block";
+            h5.style.display = "block";
+            h6.style.display = "block";
+            h7.style.display = "block";
+            h8.style.display = "block";
+            h9.style.display = "block";
+            rect7.style.fill = "rgb(228, 63, 71)";
+            eventtext8.style.color = "red";
+        }
+    }
+
+       function revealNext8(){
+        if (event8.style.display = "flex") {
+            event9.style.display = "flex";
+            event9.style.marginTop = "10px";
+            event8.style.marginTop = "10px";
+            event7.style.marginTop = "10px";
+            event6.style.marginTop = "10px";
+            event5.style.marginTop = "10px";
+            event4.style.marginTop = "10px";
+            event3.style.marginTop = "10px";
+            event2.style.marginTop = "10px";
+            event1.style.marginTop = "10px";
+            h1.style.display = "none";
+            h2.style.display = "none";
+            h3.style.display = "none";
+            h4.style.display = "none";
+            h5.style.display = "none";
+            h6.style.display = "none";
+            h7.style.display = "none";
+            h8.style.display = "none";
+            h9.style.display = "none";
+            secret9.style.display = "none";
+            events.got++;
+            rect8.style.fill = "rgb(13, 191, 137)";
+            eventtext9.style.color = "green";
+            theEnd();
+        }
+    }
+
+       function revealNext8Incorrect(){
+        if (event8.style.display = "flex") {
+            event9.style.display = "flex";
+            event9.style.marginTop = "10px";
+            event8.style.marginTop = "10px";
+            event7.style.marginTop = "10px";
+            event6.style.marginTop = "10px";
+            event5.style.marginTop = "10px";
+            event4.style.marginTop = "10px";
+            event3.style.marginTop = "10px";
+            event2.style.marginTop = "150px"; //change if event 2...
+            event1.style.marginTop = "10px";
+            h1.style.display = "none";
+            h2.style.display = "none";
+            h3.style.display = "none";
+            h4.style.display = "none";
+            h5.style.display = "none";
+            h6.style.display = "none";
+            h7.style.display = "none";
+            h8.style.display = "none";
+            h9.style.display = "none";
+            secret9.style.display = "none";
+            rect8.style.fill = "rgb(228, 63, 71)";
+            eventtext9.style.color = "red";
+            theEnd();
+        }
+    }
+
+function theEnd(){
+    outro.style.display = "flex";
+    share.style.display = "block";
+    shareSmall.style.display = "block";
+    playAgain.style.display = "block";
+    let finalScore = document.getElementById("finalScore").innerHTML; 
+    document.getElementById("finalScore").innerHTML = finalScore.replace("xevents", events.got);
+    let finalSnore = document.getElementById("finalScore").innerHTML; 
+    document.getElementById("finalScore").innerHTML = finalSnore.replace("xpoints", scoreScore);
+
+}
+
+
+const events = {
+    got: 0,
+}
+
+const scoreScore = Math.floor(Math.random() * 1000) + 1;
+
+function closeOutro() {
+    outro.style.opacity = "0";
+    share.style.opacity = "0";
+    playAgain.style.opacity = "0";
+    shareSmall.style.opacity = "0";
+
+}
+
+    </script>
+</body>
+</html>

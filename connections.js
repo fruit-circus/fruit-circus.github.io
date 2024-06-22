@@ -191,10 +191,9 @@ function submitSelection() {
     
                     if (matchCount >= 3) {
                         console.log('Nearly matched group:', clickedTiles);
-                        document.getElementById("mistakas").innerHTML = "One away!";
-                        document.getElementById("gerses").innerHTML = ""; //I don't think this works, but it's okay.
-                        //Maybe i'll get around to properly replacing the "one away" alert with a little display: block one day
-                    
+                        //Maybe i'll get around to properly replacing the "one away" alert with a little *timed* display: block one day
+                        //but for now I find the "alert" bothersome, because you have to click ok to dismiss it.
+
                         //array to store matched group text content
                         let matchedGroupText = [];
                     

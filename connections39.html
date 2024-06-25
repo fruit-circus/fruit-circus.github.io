@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections</title>
+    <link rel="icon" type="image/x-icon" href="connectionsfavicon.ico?">
+    <link rel="stylesheet" href="index.css">
+</head> 
+<body> 
+
+    <p id="myNumber">39</p> <!-- Update this number every time -->
+
+
+    <div id="page-flex">
+        <div class="buttons-grid" id="top-buttons">
+            <button style="background-color: #dd6c76" onclick="linkPrev()">Previous</button>
+            <button style="background-color: #8af0cf" onclick="linkHome()">Home</button>
+            <button style="background-color: #f5b56c" onclick="linkNext()">Next</button>
+        </div>
+        
+
+        <!-- CONTAINER FOR CATEGORY DESCRIPTIONS -->
+        <div id="groupDescFlex" class="font-main">
+            <div id="group1" class="group-desc">
+                <h2>
+                    Clothing Items
+                                </h2>
+                <h3 id="replace1"></h3>
+            </div>
+            <div id="group2" class="group-desc">
+                <h2>
+                    Law ____
+                </h2>
+                <h3 id="replace2"></h3>
+            </div>
+            <div id="group3" class="group-desc">
+                <h2>
+                    Texture Words
+                </h2>
+                <h3 id="replace3"></h3>
+            </div>
+            <div id="group4" class="group-desc">
+                <!-- :p -->
+                <h2>
+                    ____ Stain
+                                                </h2>
+                <h3 id="replace4" style="display: none;"></h3> 
+                <h3>Wine, Grass, Blood, Gram. (In a remarkable coincidence, the Gram method visibly stains the microorganisms called "gram-positive bacteria.")</h3>
+
+            </div>
+        </div>
+
+
+        <!-- CONTAINER FOR WORD GROUPINGS -->
+        <div id="connections-grid" class="font-main">
+            <!-- group 1 of 4 -->
+            <div class="tile g1" id="1a">
+                Skirt</div>
+            <div class="tile g1" id="1b">
+                Shoes</div>
+            <div class="tile g1" id="1c">
+                Scarf</div>
+            <div class="tile g1" id="1d">
+                Belt</div>
+            
+            <!-- group 2 of 4 -->
+            <div class="tile g2" id="2a">
+                Suit</div>
+            <div class="tile g2" id="2b">
+                Firm</div>
+            <div class="tile g2" id="2c">
+                Abiding</div>
+            <div class="tile g2" id="2d">
+                Student</div>
+
+            <!-- group 3 of 4 -->
+            <div class="tile g3" id="3a">
+                Hard</div>
+            <div class="tile g3" id="3b">
+                Smooth</div>
+            <div class="tile g3" id="3c">
+                Greebled</div>
+            <div class="tile g3" id="3d">
+                Sticky</div>
+
+            <!-- group 4 of 4 -->
+            <div class="tile g4" id="4a">
+                Wine</div>
+            <div class="tile g4" id="4b">
+                Grass</div>
+            <div class="tile g4" id="4c">
+                Blood</div>
+            <div class="tile g4" id="4d">
+                Gram</div>
+        </div>
+        <!-- NO NEED TO EDIT BELOW THIS LINE -->
+   
+        <div class="buttons-grid" id="bottom-buttons">
+            <button style="background-color: rgb(174, 144, 98)" id="shuffle">Shuffle</button>
+            <button style="background-color: rgb(233, 205, 172)" id="deselect">Deselect</button>
+            <button style="background-color: rgb(239, 252, 210)" id="submit">Submit</button>
+        </div>
+
+        <div id="mistakes-counter" class="font-main">
+            <div id="gerses">Guesses:&nbsp;</div><div id="mistakas">0</div>
+        </div>
+
+    </div>
+    <script src="connections.js"></script> 
+
+</body>
+</html>

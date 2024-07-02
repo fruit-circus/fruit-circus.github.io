@@ -1,150 +1,112 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connections</title>
-  <link rel="icon" type="image/x-icon" href="connectionsfavicon.ico?">
-</head>
-<body>
-  <a href="connections.html" style="
-     position: absolute;
-    display: flex;
-    width: 16%;
-    margin-right: 40vw;
-    margin-bottom: 78vh;
-    padding: 2vh;
-    padding-top: 1vh;
-    display: block;
-    width: 16vw;
-    font-size: 2.3vh;
-    padding: 1vh;">Home</a>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections</title>
+    <link rel="icon" type="image/x-icon" href="connectionsfavicon.ico?">
+    <link rel="stylesheet" href="index.css">
+</head> 
+<body> 
 
-    <div class="intro"> <h3>Guest puzzle by Jai</h3> A pop themed puzzle!</div>
+    <p id="myNumber">25</p> <!-- Update this number every time -->
 
 
-    <div class="a"></div><div class="group-a" id="group1"><h3 title="Dimonds, Umbrella, Telephone, Mirrors.">                          Objects in Pop Songs                 </h3></div>
-    <div class="b"></div><div class="group-b" id="group2"><h3 title="(Doja) Cat, (Elton) John, (Whitney) Houston, (Alicia) Keys.">         Names of Pop Stars                      </h3></div>
-    <div class="c"></div><div class="group-c" id="group3"><h3 title="Lola, Rhiannon, Pepper, Pink.">                                       Title Characters in Pop Songs              </h3></div>
-    <div class="d"></div><div class="group-d" id="group4"><h3 title="Boston, (viva) Las Vegas, Philadelphia, Bel-Air.">                     Locations in Titles of Pop Songs                  </h3></div>
-
-  <div class="grid-container" id="gridContainer">
-
-                <div class="grid-item">
-                                                    <p id="a1">       Diamonds                    </p>
-                </div> <div class="grid-item">
-                                                    <p id="a2">       Umbrella                   </p>
-                </div> <div class="grid-item">
-                                                    <p id="a3">       Telephone                     </p>
-                </div> <div class="grid-item">
-                                                    <p id="a4">       Mirrors                      </p>
-
-                </div> <div class="grid-item">
-                                                    <p id="b1">       Cat                   </p>
-                </div> <div class="grid-item">
-                                                    <p id="b2">       John                     </p>
-                </div> <div class="grid-item">
-                                                    <p id="b3">       Houston                     </p>
-                </div> <div class="grid-item">
-                                                    <p id="b4">       Keys                     </p>
-
-                </div> <div class="grid-item">
-                                                    <p id="c1">       Lola                </p>
-                </div> <div class="grid-item">
-                                                    <p id="c2">       Rhiannon                      </p>
-                </div> <div class="grid-item">  
-                                                    <p id="c3">       Pepper                   </p>
-                </div> <div class="grid-item">
-                                                    <p id="c4">       Pink                     </p>
-
-                </div> <div class="grid-item">
-                                                    <p id="d1">       Boston                     </p>
-                </div> <div class="grid-item">
-                                                    <p id="d2">       Philadelphia                      </p>
-                </div> <div class="grid-item">
-                                                    <p id="d3">       Las Vegas                     </p>
-                </div> <div class="grid-item">
-                                                    <p id="d4">       Bel-Air                      </p>
-    </div>
-</div>
-
-
-<div class="solved">Solved!</div>
-
-
-<button style="background-color: lightgrey; width: 7vw; height: 4vh; position: absolute; margin-right:
-74.4vw; margin-bottom: -52vh; font-size: 1.1vw; align-items: center;" id="shuffleButton">Shuffle</button>
-
-<div class="linky">
-<a class="prev" href="connections24.html">Last Puzzle<a>
-    <a class="next" href="connections26.html">Next Puzzle<a>
-    </div>
-
-
-    <link rel="stylesheet" href="connectionsStyle.css">
-    
-  <script>
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-        array[i].parentNode.insertBefore(array[j], array[i]);}}
-  
-    const groups = [
-      ['a1', 'a2', 'a3', 'a4'],
-      ['b1', 'b2', 'b3', 'b4'],
-      ['c1', 'c2', 'c3', 'c4'],
-      ['d1', 'd2', 'd3', 'd4'],];
-  
-    let userSelections = [];
-    function handleSelection(event) {
-      const selectedItems = Array.from(document.getElementsByClassName('grid-item active'));
-      if (selectedItems.length >= 4) {
-        // If already 4 items are selected, prevent any new boxes from being clicked
-        if (!event.currentTarget.classList.contains('active')) {
-          event.preventDefault();
-          return;}}
-      // Toggle the 'active' class on the clicked grid item
-      event.currentTarget.classList.toggle('active');
-      // Update the user's selections
-      userSelections = selectedItems.map(item => item.querySelector('p').id);
-      // Check if the user's selections match any of the correct groups
-      const matchedGroup = groups.find(group => group.every(item => userSelections.includes(item)));
-  
-      if (matchedGroup) {
-        if (matchedGroup.length === 4) {
-          // Remove the "active" class from all selected items (reset selection)
-          selectedItems.forEach(item => item.classList.remove('active'));
-          selectedItems.forEach(item => item.classList.add('matched'));
-          // Show the corresponding group heading
-          const matchedGroupId = 'group' + (groups.indexOf(matchedGroup) + 1);
-          const matchedGroupHeading = document.getElementById(matchedGroupId);
-          if (matchedGroupHeading) {
-            matchedGroupHeading.style.display = 'block';}
-    }
-        // Remove the corresponding boxes from the board
-        matchedGroup.forEach(itemId => {
-          const itemToRemove = document.getElementById(itemId);
-          if (itemToRemove) {
-            itemToRemove.remove();}});}}
-  
-    document.addEventListener('DOMContentLoaded', function () {
-      const gridContainer = document.getElementById('gridContainer');
-      const shuffleButton = document.getElementById('shuffleButton');
-      const submitButton = document.getElementById('submitButton');
-      const squares = Array.from(gridContainer.getElementsByClassName('grid-item'));
-      squares.forEach((square) => {
-        // Add a click event listener to each grid item
-        square.addEventListener('click', handleSelection);});
-      // Shuffle the squares when the DOM content is loaded
-      shuffle(squares);
-      shuffleButton.addEventListener('click', function () {
-        shuffle(squares);});});
-
+    <div id="page-flex">
+        <div class="buttons-grid" id="top-buttons">
+            <button style="background-color: #dd6c76" onclick="linkPrev()">Previous</button>
+            <button style="background-color: #8af0cf" onclick="linkHome()">Home</button>
+            <button style="background-color: #f5b56c" onclick="linkNext()">Next</button>
+        </div>
         
-  </script>
+
+        <!-- CONTAINER FOR CATEGORY DESCRIPTIONS -->
+        <div id="groupDescFlex" class="font-main">
+            <div id="group1" class="group-desc">
+                <h2>
+                    Objects in Pop Songs
+                                </h2>
+                <h3 id="replace1"></h3>
+            </div>
+            <div id="group2" class="group-desc">
+                <h2>
+                    Names of Pop Stars 
+                </h2>
+                <h3 id="replace2"></h3>
+            </div>
+            <div id="group3" class="group-desc">
+                <h2>
+                    Locations in Titles of Pop Songs 
+                </h2>
+                <h3 id="replace3"></h3>
+            </div>
+            <div id="group4" class="group-desc">
+                <!-- :p -->
+                <h2>
+                       Title Characters in Pop Songs     
+                </h2>
+                <h3 id="replace4"></h3> 
+
+            </div>
+        </div>
+
+
+        <!-- CONTAINER FOR WORD GROUPINGS -->
+        <div id="connections-grid" class="font-main">
+            <!-- group 1 of 4 -->
+            <div class="tile g1" id="1a">
+                Diamonds  </div>
+            <div class="tile g1" id="1b">
+                Umbrella</div>
+            <div class="tile g1" id="1c">
+                Telephone</div>
+            <div class="tile g1" id="1d">
+                Mirrors</div>
+            
+            <!-- group 2 of 4 -->
+            <div class="tile g2" id="2a">
+                Cat</div>
+            <div class="tile g2" id="2b">
+                John</div>
+            <div class="tile g2" id="2c">
+                Houston</div>
+            <div class="tile g2" id="2d">
+                Keys</div>
+
+            <!-- group 3 of 4 -->
+            <div class="tile g3" id="3a">
+                Philadelphia </div>
+            <div class="tile g3" id="3b">
+                Boston</div>
+            <div class="tile g3" id="3c">
+                Las Vegas</div>
+            <div class="tile g3" id="3d">
+                Bel-Air</div>
+
+            <!-- group 4 of 4 -->
+            <div class="tile g4" id="4a">
+                Rhiannon</div>
+            <div class="tile g4" id="4b">
+                Lola</div>
+            <div class="tile g4" id="4c">
+                Pepper</div>
+            <div class="tile g4" id="4d">
+                Pink</div>
+        </div>
+        <!-- NO NEED TO EDIT BELOW THIS LINE -->
+   
+        <div class="buttons-grid" id="bottom-buttons">
+            <button style="background-color: rgb(174, 144, 98)" id="shuffle">Shuffle</button>
+            <button style="background-color: rgb(233, 205, 172)" id="deselect">Deselect</button>
+            <button style="background-color: rgb(239, 252, 210)" id="submit">Submit</button>
+        </div>
+
+        <div id="mistakes-counter" class="font-main">
+            <div id="gerses">Guesses:&nbsp;</div><div id="mistakas">0</div>
+        </div>
+
+    </div>
+    <script src="connections.js"></script> 
+
 </body>
 </html>
-
-
-

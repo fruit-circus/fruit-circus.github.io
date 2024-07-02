@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#myNumber {
+    display: none;
+} /* Shh, it's secret. */
+
+
+#page-flex {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 90vw;
+}
+
+#connections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in element’s total width and height. Thanks, chatgpt. */
+}
+
+/* Category descriptions box */
+#groupDescFlex {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    width: 100%;
+    max-width: 50rem;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+
+/* General tile settings */
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 7px;
+    background-color: #ece7e7;
+    font-size: 28px;
+    user-select: none;
+    min-height: 110px;
+    min-width: 190px;  
+    box-sizing: border-box;
+    flex-grow: 1;
+    word-wrap: break-word;
+    transform: translateX(-19px); /* Might want to adjust this for mobile. No idea why it's off center in the first place. */
+}
+
+/* Description box */
+.group-desc {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 110px;
+    min-width: 190px;  
+    height: 4.5rem;
+    border-radius: 7px;
+    margin-bottom: .5rem;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+/* Individual group settings */
+#group1 {
+    background-color: #ffeedb;
+}
+
+#group2 {
+    background-color: #ed9b40;
+}
+
+#group3 {
+    background-color: #61c9a8;
+}
+
+#group4 {
+    background-color: #ba3b46;
+}
+
+/* Mistakes counter */
+#mistakes-counter {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Buttons */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 50rem;
+}
+
+#top-buttons{
+    margin-top: -3rem;
+    margin-bottom: .5rem;
+
+}
+
+#bottom-buttons{
+    margin-top: .5rem;
+
+}
+
+.buttons-grid > button {
+    min-height: 3rem;
+    min-width: 6rem;
+    border-radius: 2rem;
+    margin: 4px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.buttons-grid > button:active {
+    transform: scale(.95);
+}
+
+/* Fonts/text */
+h2 {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+.font-main {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Media queries */
+@media screen and (min-width: 0px) {
+    #connections-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
+    }
+
+    .tile {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    #connections-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for small to medium screens */
+    }
+
+    .tile {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #connections-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns for medium to large screens */
+    }
+
+    .tile {
+        width: 100%;
+    }
+}

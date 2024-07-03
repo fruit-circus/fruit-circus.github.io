@@ -58,7 +58,8 @@ a:visited {
 }
 </style>
 
-With many thanks to @twowugs for the beautiful working submit button!
+With many thanks to @twowugs for the beautiful new working submit button!<br>
+Click <button onclick="send()">here</button> to visit their connections gallery. 
     <div class="links">
       <div class="columns">
         <div class="column">
@@ -80,7 +81,7 @@ With many thanks to @twowugs for the beautiful working submit button!
             <a href="connections12.html">Shape Up</a><br>
             <a href="connections13.html">Rogue-Like</a><br>
             <a href="connections14.html">Civic Engineering</a><br>
-            <a href="connections15.html">IKR? GLHF!</a><br>
+            <a href="connections15.html">IKR?</a><br>
             <a href="connections16.html">Who's WHO?</a><br>
             <a href="connections17.html">Tiger, Tiger</a><br>
             <a href="connections18.html">When in Rome</a><br>
@@ -109,7 +110,7 @@ With many thanks to @twowugs for the beautiful working submit button!
           <a href="connections35.html">Alphabet Soup</a><br>
           <a href="connections36.html">Hair, Apparently</a><br>
           <a href="connections37.html">Grok My Bae</a><br>
-          <a href="connections38.html">Calling a Spade a Spade</a><br>
+          <a href="connections38.html">Call a Spade a Spade</a><br>
           <a href="connections39.html">Positively Stained</a><br>
           <a href="connections40.html">Little Baby Bunting</a><br>
         </div>
@@ -123,7 +124,7 @@ With many thanks to @twowugs for the beautiful working submit button!
 
  document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll(".links a");
-    const colors = ["#95CC1E", "#6CD6EB", "#CB1E3A", "#FA9827"];
+    const colors = ["#D84356", "#56F7D2", "#FFB461"];
 
     links.forEach(link => {
         link.addEventListener("mouseover", function() {
@@ -136,6 +137,13 @@ With many thanks to @twowugs for the beautiful working submit button!
             link.style.backgroundColor = randomColor;        });
     });
 });
+
+
+function send(){
+    window.open("https://fruit-circus.github.io/twowugs-connections/connections.html", '_self');
+}
+
+
   </script>
   
 </html>

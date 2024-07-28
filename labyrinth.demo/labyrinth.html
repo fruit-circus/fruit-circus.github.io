@@ -4,14 +4,14 @@
 <style>
 
 /*To do*/
-/*Library dialogue? */
-/*Add cookies back to objects and for dialogue*/
-/*Verily confrontation*/
-/*Specialized dialogue portraits*/
-/*Adjust image map perhaps*/
-/*Sounds*/
-/*Inventory item names*/
+/*Add cookies back to objects and for dialogue
+Rope dialogue
+is there a way to clear the entry left in the form after submitting? */
+
 /*New Art*/
+/*Louder fish song*/
+/*papery for map, russle for inventory, candle thunk, rope thwump, sword shhhing, guest book thwump, lock clicking noises for combination, unlocking noise for opening both locked panels, card flip for deck.*/
+/*Adjust image map*/
 
 
 
@@ -99,6 +99,9 @@ display: none;
 #combinationLock,
 #alcovesUnlocked,
 #upArrow,
+#garden,
+#gardenEast,
+#gardenWest,
 #hallway {
     display: none;
 }
@@ -252,6 +255,88 @@ display: none;
 #zg16,
 #zg17,
 #zg18,
+#zm1,
+#zm2,
+#zm3,
+#zm4,
+#zm5,
+#zm6,
+#zm7,
+#zm8,
+#zm9,
+#zm10,
+#zm11,
+#zm12,
+#zm13,
+#zm14,
+#zm15,
+#zm16,
+#zm17,
+#zm18,
+#zm19,
+#zm20,
+#zm21,
+#zm22,
+#zm23,
+#zm24,
+#zm25,
+#zm26,
+#zm27,
+#zm28,
+#zm29,
+#zm30,
+#zm31,
+#zk1,
+#zk2,
+#zk3,
+#zk4,
+#zk5,
+#zk6,
+#zk7,
+#zk8,
+#zk9,
+#zk10,
+#zk11,
+#zk12,
+#zk13,
+#zk14,
+#zk15,
+#zk16,
+#zk17,
+#zk18,
+#zk19,
+#zk20,
+#zk21,
+#zk22,
+#zk23,
+#zk24,
+#zk25,
+#zk26,
+#zk27,
+#zk28,
+#zk29,
+#zk30,
+#zk31,
+#zk32,
+#zk33,
+#zk34,
+#zk35,
+#zk36,
+#zk37,
+#zk38,
+#zk39,
+#zk40,
+#zk41,
+#zk42,
+#zk43,
+#zk44,
+#zk45,
+#zk46,
+#zk47,
+#zk48,
+#zk49,
+#zk50,
+#zk51,
 #zj1,
 #zj2,
 #zj3,
@@ -272,6 +357,20 @@ display: none;
 #zj18,
 #zj19,
 #zj20,
+#zn1,
+#zn2,
+#zn3,
+#zn4,
+#zn5,
+#zn6,
+#zn7,
+#zn8,
+#zn9,
+#zn10,
+#zn11,
+#zn12,
+#zn13,
+#zm32,
 #i1,
 #i2,
 #k1,
@@ -621,6 +720,20 @@ display: none;
                 <img src="verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="verilytampering">   
             </div>
 
+            <div id="garden" usemap="#roommap">
+                <img src="southdoor.png" alt="door" usemap="#roommap" class="room">
+                <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">   
+            </div>
+
+            <div id="gardenEast" usemap="#roommap">
+                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
+                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+            </div>
+
+            <div id="gardenWest" usemap="#roommap">
+                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
+                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+            </div>
 
 
     <!--Maps-->
@@ -724,7 +837,7 @@ display: none;
         <area shape="rect" coords="1022,180,1040,320" alt="note 5" class="pointer" onclick="note5()">
         <area shape="rect" coords="1057,212,1075,330" alt="note 6" class="pointer" onclick="note6()">
         <area shape="rect" coords="1095,235,1113,350" alt="note 7" class="pointer" onclick="note7()">
-        <area shape="rect" coords="1135,285,1150,370" alt="note 8" class="pointer" onclick="note8()">
+        <area shape="rect" coords="1135,285,1150,370" alt="note 8" class="pointer" onclick="note8()" onclick="note8a()">
         <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
         <area shape="rect" coords="933,450,1100,580" alt="eastern door" class="pointer" onclick="goEast()">
     </map>
@@ -747,16 +860,16 @@ display: none;
         </map>
 
     <div class="entryform" id="entryform">
-        <form action="https://formspree.io/f/mdknkobd" method="POST">                   
-        <textarea for="comments" style="width:410px; height:100px;" id="comments" name="comments"></textarea><br><br>
+        <form action="https://formspree.io/f/mdknkobd" method="POST" target="_blank" onclick="hideGuestBook()">                   
+        <textarea for="comments" style="width:410px; height:500px;" id="comments" name="comments"></textarea><br><br>
         <input type="text" id="alias" name="alias"><br><br>
         <input type="submit" value="Submit">
         </form>
     </div>
     </div>
-    <!--Maps-->
-    <!--Maps-->
-    <!--Maps-->
+    <!--/Maps-->
+    <!--/Maps-->
+    <!--/Maps-->
 
 <!--Audio-->
 <div>
@@ -779,6 +892,9 @@ display: none;
 <audio id="string8"><source src="string8.mp3" type="audio/mpeg"></audio>
 <audio id="fishSong"><source src="fishsong.mp3" type="audio/mpeg"></audio>
 <audio id="tinkering"><source src="mummy_voice.mp3" type="audio/mpeg"></audio>
+<audio id="keypick"><source src="key.mp3" type="audio/mpeg"></audio>
+<audio id="static"><source src="radio.mp3" type="audio/mpeg"></audio>
+
 </div>
 <!--Adios-->
 
@@ -812,6 +928,7 @@ display: none;
     <img src="stymieRAAG.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieRAAG">
     <img src="stymiesuggesting.png" alt="stymie making a suggestion dialogue portrait" class="dialogue" id="stymiesuggesting">
     <img src="stymiewonder.png" alt="stymie in wonder" class="dialogue" id="stymiewonder">
+    <img src="stymieglitch.png" alt="stymie in wonder" class="dialogue" id="stymieglitch">
     
     <img src="verily.png" alt="verily's default dialogue portrait" class="dialogue" id="verily">
     <img src="shuri.png" alt="shuri's default dialogue portrait" class="dialogue" id="shuri">
@@ -984,6 +1101,7 @@ display: none;
     <p id="y7">HRRRRRRAAARRAG</p>
     <p id="y8">Okay! It should be safe to use the sauna now.</p>
     <p id="y9">Let’s check it out.</p>
+
  
     <!--Testing the waters-->
     <p id="z1">It’s not that I don’t trust Stymie, but...</p>
@@ -1067,6 +1185,107 @@ display: none;
     <p id="zj19">That’s a hypothetical list I've been working on.</p>
     <p id="zj20">...</p>
 
+    <p id="zk1">Woah— uh.</p>
+    <p id="zk2">Hello.</p>
+    <p id="zk3">Hey, guys!</p>
+    <p id="zk4">...!</p>
+    <p id="zk5">Oh!</p>
+    <p id="zk6">Hi there. Didn’t see you come in.</p>
+    <p id="zk7">I didn’t think there was anyone still here.</p>
+    <p id="zk8">Neither did we.</p>
+    <p id="zk9">Well...</p>
+    <p id="zk10">(On second thought, let’s keep our theoretical rogue soldier to ourselves for now.)</p>
+    <p id="zk11">Who are you?</p>
+    <p id="zk12">I’m Summer Verily. I was contracted to catalogue objects here by the Kestevens Institute. Nice to meet you. Sorry for the mess.</p>
+    <p id="zk13">Ah. Kestevens.</p>
+    <p id="zk14">Nice to meet you too. I’m Bridget Wong, this is Jeno Kodaly. We’re researchers from the Azzenand School.</p>
+    <p id="zk15">I wasn’t aware anyone else was given a permit to be here.</p>
+    <p id="zk16">I was about to mention the same thing. By the time we left the capital we were still the only ones who had applied for a permit.</p>
+    <p id="zk17">So, it’s impressive that you’re already deeper in than we are.</p>
+    <p id="zk18">I have a knack for puzzles.</p>
+    <p id="zk19">And technology!</p>
+    <p id="zk20">Stymie?</p>
+    <p id="zk21">That’s me!</p>
+    <p id="zk22">Stymie, are you alright? What are you doing to her?</p>
+    <p id="zk23">Relax, I’m just expanding her sensor radius. She’ll be good as new in a second.</p>
+    <p id="zk24">Stymie was so helpful in that innert floret to the south that I thought I would try to get her set up here as well.        </p>
+    <p id="zk25">She should be eventually able to integrate with her original consciousness.</p>
+    <p id="zk26">It’s very funny, this all feels so high-tech, but essentially you’re doing horticulture.</p>
+    <p id="zk27">Pruning, grafting...</p>
+    <p id="zk28">Hey, that tickles!</p>
+    <p id="zk29">Sorry. All done.</p>
+    <p id="zk30">Ho!</p>
+    <p id="zk31">Haha!</p>
+    <p id="zk32">Now we’re talking.</p>
+    <p id="zk33">Rooms branch out behind me in two florets to the east and west, but the main path continues at least 10 cells north. Oooh.</p>
+    <p id="zk34">Room 5N9W2S.</p>
+    <p id="zk35">Bridget, you'll like that one.</p>
+    <p id="zk36">Thanks a million, Verily!</p>
+    <p id="zk37">You’re welcome.</p>
+    <p id="zk38">Say, Ms. Verily— Dr. Verily?</p>
+    <p id="zk39">Have you been deeper in yet? Do you know what lies ahead?</p>
+    <p id="zk40">Eh--</p>
+    <p id="zk41">No, not yet.</p>
+    <p id="zk42">Do let me know if it’s anything interesting.</p>
+    <p id="zk43">I’ll be working in this room for a while, so you probably won’t miss me much. This is as deep as I need to go.</p>
+    <p id="zk44">I’m glad I ran into you two.</p>
+    <p id="zk45">I actually feel a lot safer now that I know there are other people in the labyrinth.</p>
+    <p id="zk46">I didn’t realize how on-edge I was.</p>
+    <p id="zk47">Happy to be of service!</p>
+    <p id="zk48">Let us know if you need any food or supplies too.</p>
+    <p id="zk49">I’m okay right now, but thank you.</p>
+    <p id="zk50">Stay safe.</p>
+
+
+    <p id="zm1">You get the feeling that Verily is up to something?</p> <!--Bridget-->
+        <p id="zm2">Oh definitely.</p>
+        <p id="zm3">I don’t like how non-chalantly she was tampering with Stymie.</p>
+        <p id="zm4">Even though Stymie seemingly consented.</p>
+    <p id="zm5">Didn’t we do the essentially same thing when we found her missing data cube?</p>
+        <p id="zm6">I don’t know... She made a specific request, didn’t she?</p>
+    <p id="zm7">Did she? I thought it was more like “if you find my data cube, then I can turn off the current for you.”</p>
+        <p id="zm8">It certainly seemed like it was part of the puzzle, though. We might not even have been able to get any deeper in without Stymie. Like the labyrinth knew what was missing and wanted us—</p>
+        <p id="zm9">Well.</p>
+        <p id="zm10">I shouldn’t assume that the labyrinth <i>wants</i> anything, but one thing is clear.</p>
+        <p id="zm11">The labyrinth always ensures that there is a way forward.</p>
+        <p id="zm12">Think about the position of the datacube.</p>
+        <p id="zm13">Why would the black-furred soldier engineer a devious puzzle for it when he could just huck it into the chasm?</p>
+        <p id="zm14">I think that’s exactly what he did. Then he cut the bridge, electrified the water, and the labyrinth gave us rope and a candle puzzle.</p>
+    <p id="zm15">It would be a similar method to how the objects we drop migrate back to their starting positions.</p>
+    <p id="zm16">The same logic applies to Stymie. There’s no reason why an STMI computer would be able to control electric output in another room.</p>
+    <p id="zm17">They’re not set up for that. Just scanning and communication.</p>
+    <p id="zm18">Stymie was given that power <i>by the labyrinth</i>.</p>
+    <p id="zm19">Some system of the labyrinth checked if passage to the heart was possible from the lobby, returned with a “no” and made adjustments to make it possible.</p>
+    <p id="zm20">What I’m stuck on is: What’s the difference between an open door and a door that could theoretically be opened?</p>
+    <p id="zm21">And: to be opened by who? Who’s the intended audience?</p>
+    <p id="zm22">And if it’s us: why us?</p>
+        <p id="zm23">And if it’s really intended, or just a byproduct of its shape or our assumptions about its shape.</p>
+    <p id="zm24">Right.</p>
+        <p id="zm25">And also why would an organism evolve that way in the first place.</p>
+        <p id="zm26">...</p>
+    <p id="zm27">Speaking of the rope bridge...</p>
+    <p id="zm28">If we’re assuming that the soldier cut the bridge, how did Verily get across?</p>
+    <p id="zm29">Unless Verily cut the bridge, the soldier must have passed her at some point.</p>
+    <p id="zm30">Unless we’re missing something.</p>
+    <p id="zm31">It seems like we dont have the whole picture.</p>
+        <p id="zm32">I think we’ll end up with a lot more questions before any of these get answered.</p>
+
+
+   <p id="zn1">Verily—</p> <!--Bridget-->
+   <p id="zn2">Hello, Dr. Wong.</p>
+   <p id="zn3">You haven’t seen anyone else down here have you?</p>
+   <p id="zn4">Anyone else?</p>
+    <p id="zn5">No, certainly not.</p>
+   <p id="zn6">Why do you ask?</p>
+    <p id="zn7">Stymie mentioned someone was tampering with her systems.</p>
+   <p id="zn8">A black-furred, male soldier.</p>
+   <p id="zn9">A mysterious green-eyed stranger—</p> <!--Stymie-->
+   <p id="zn10">He wore a patch over his eye and a grim, determined expression that betrayed nothing about him but the dire importance of his mission, his heart of gold, and his tragic past.</p>
+   <p id="zn11">I think he was a stoat.</p>
+   <p id="zn12">Interesting.</p>
+   <p id="zn13">No, I haven’t seen anyone fitting that description.</p>
+
+
 
 
  
@@ -1109,7 +1328,7 @@ display: none;
     var b = document.getElementById("bridget");
     var bs = document.getElementById("bridgetscared");
     var bf = document.getElementById("bridgetfainted");
-    var b3 = document.getElementById("bridgetcolonthree");
+    var br3 = document.getElementById("bridgetcolonthree");
     var bd = document.getElementById("bridgetdistant");
 
     var st = document.getElementById("stymie");
@@ -1119,6 +1338,9 @@ display: none;
     var strag = document.getElementById("stymieRAAG");
     var stsu = document.getElementById("stymiesuggesting");
     var stw = document.getElementById("stymiewonder");
+    var stg = document.getElementById("stymieglitch");
+    
+    var v = document.getElementById("verily");
 
     var ra = document.getElementById("radioportrait");
     var dr = document.getElementById("doorportrait");
@@ -1140,9 +1362,57 @@ display: none;
 document.addEventListener("DOMContentLoaded", (event) => {   
     penser.play(); 
     lamano.pause();
+    if (cookiesHas('open')) {
+        k.style.display = "none";
+        p1.style.display = "none";
+        terminalsleep.style.display = "none";
+        terminal.style.display = "block";
+    }
 
-        //add checking cookies and hiding items back here if we end up bringing back cookies
+    if (cookiesHas('lobby2')) {
+        lamano.play();
+        penser.pause();
+        key.gold = true;
+        ropey.set = true;
+        chasmrope.style.display = "block";
+        rope.style.display = "none";
+        current.room = "northLobby";
+        lobby.style.display = "none";
+        northLobby.style.display = "block";
+        dialogue.deeperIn = true;
+    }
+
+    if (cookiesHas('brasskey')) {
+        key.brass = true;
+    }
+    if (cookiesHas('goldkey')) {
+        key.gold = true;
+    }
+    if (cookiesHas('yowzer')){
+        water.attempted = true;
+        dialogue.sauna = false;
+    }
+    if (cookiesHas('hobby')) {
+        dialogue.hobbyists = true;
+    }
+    if (cookiesHas('ropey')) {
+        chasmrope.style.display = "block";
+        ropey.set = true;
+        rope.style.display = "none";
+    }
+    
+
 });
+
+function deleteCookies() { //reload and refresh entirely
+    document.cookie.split(';').forEach(cookie => {
+    const eqPos = cookie.indexOf('=');
+    const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';});
+    location.reload()}
+function cookiesHas(value) { //check for a sword or key e.g.
+    let cookies = document.cookie.split(';');
+    return cookies.some(cookie => cookie.trim().split('=')[1] === value);}
 
 //inventory
 const inventory = {
@@ -1179,17 +1449,17 @@ function drop1() {
             rope.style.display = "block";
         } if (inventory.slot1 === "sword") {
             sword.style.display = "block";
-        } if (inventory.slot1 === "redcandle") {
+        } if (inventory.slot1 === "red candles") {
             redcandle.style.display = "block";
-        } if (inventory.slot1 === "yellowcandle") {
+        } if (inventory.slot1 === "yellow candles") {
             yellowcandle.style.display = "block";
-        } if (inventory.slot1 === "greencandle") {
+        } if (inventory.slot1 === "green candles") {
             greencandle.style.display = "block";
-        } if (inventory.slot1 === "violetcandle") {
+        } if (inventory.slot1 === "violet candles") {
             violetcandle.style.display = "block";
         } if (inventory.slot1 === "brass key") {
             brasskey.style.display = "block";
-        } if (inventory.slot1 === "goldkey") {
+        } if (inventory.slot1 === "gold key") {
             goldkey.style.display = "block";
         } if (inventory.slot1 === "playing cards") {
             deck.style.display = "block";
@@ -1201,17 +1471,17 @@ function drop2() {
             rope.style.display = "block";
         } if (inventory.slot2 === "sword") {
             sword.style.display = "block";
-        } if (inventory.slot2 === "redcandle") {
+        } if (inventory.slot2 === "red candles") {
             redcandle.style.display = "block";
-        } if (inventory.slot2 === "yellowcandle") {
+        } if (inventory.slot2 === "yellow candles") {
             yellowcandle.style.display = "block";
-        } if (inventory.slot2 === "greencandle") {
+        } if (inventory.slot2 === "green candles") {
             greencandle.style.display = "block";
-        } if (inventory.slot2 === "violetcandle") {
+        } if (inventory.slot2 === "violet candles") {
             violetcandle.style.display = "block";
         } if (inventory.slot2 === "brass key") {
             brasskey.style.display = "block";
-        } if (inventory.slot2 === "goldkey") {
+        } if (inventory.slot2 === "gold key") {
             goldkey.style.display = "block";
         } if (inventory.slot2 === "playing cards") {
             deck.style.display = "block";
@@ -1223,17 +1493,17 @@ function drop3() {
             rope.style.display = "block";
         } if (inventory.slot3 === "sword") {
             sword.style.display = "block";
-        } if (inventory.slot3 === "redcandle") {
+        } if (inventory.slot3 === "red candles") {
             redcandle.style.display = "block";
-        } if (inventory.slot3 === "yellowcandle") {
+        } if (inventory.slot3 === "yellow candles") {
             yellowcandle.style.display = "block";
-        } if (inventory.slot3 === "greencandle") {
+        } if (inventory.slot3 === "green candles") {
             greencandle.style.display = "block";
-        } if (inventory.slot3 === "violetcandle") {
+        } if (inventory.slot3 === "violet candles") {
             violetcandle.style.display = "block";
         } if (inventory.slot3 === "brass key") {
             brasskey.style.display = "block";
-        } if (inventory.slot3 === "goldkey") {
+        } if (inventory.slot3 === "gold key") {
             goldkey.style.display = "block";
         } if (inventory.slot3 === "playing cards") {
             deck.style.display = "block";
@@ -1245,17 +1515,17 @@ function drop4() {
             rope.style.display = "block";
         } if (inventory.slot4 === "sword") {
             sword.style.display = "block";
-        } if (inventory.slot4 === "redcandle") {
+        } if (inventory.slot4 === "red candles") {
             redcandle.style.display = "block";
-        } if (inventory.slot4 === "yellowcandle") {
+        } if (inventory.slot4 === "yellow candles") {
             yellowcandle.style.display = "block";
-        } if (inventory.slot4 === "greencandle") {
+        } if (inventory.slot4 === "green candles") {
             greencandle.style.display = "block";
-        } if (inventory.slot4 === "violetcandle") {
+        } if (inventory.slot4 === "violet candles") {
             violetcandle.style.display = "block";
         } if (inventory.slot4 === "brass key") {
             brasskey.style.display = "block";
-        } if (inventory.slot4 === "goldkey") {
+        } if (inventory.slot4 === "gold key") {
             goldkey.style.display = "block";
         } if (inventory.slot4 === "playing cards") {
             deck.style.display = "block";
@@ -1272,137 +1542,137 @@ function showDiagram() {
 
 
 function dropVioletCandle() {
-    if (inventory.slot1 === "violetcandle") {
+    if (inventory.slot1 === "violet candles") {
         violetcandle.style.display = "block";
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "violetcandle") {
+    } if (inventory.slot2 === "violet candles") {
         violetcandle.style.display = "block";
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "violetcandle") {
+    } if (inventory.slot3 === "violet candles") {
         violetcandle.style.display = "block";
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "violetcandle") {
+    } if (inventory.slot4 === "violet candles") {
         violetcandle.style.display = "block";
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function dropRedCandle() {
-    if (inventory.slot1 === "redcandle") {
+    if (inventory.slot1 === "red candles") {
         redcandle.style.display = "block";
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "redcandle") {
+    } if (inventory.slot2 === "red candles") {
         redcandle.style.display = "block";
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "redcandle") {
+    } if (inventory.slot3 === "red candles") {
         redcandle.style.display = "block";
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "redcandle") {
+    } if (inventory.slot4 === "red candles") {
         redcandle.style.display = "block";
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function dropYellowCandle() {
-    if (inventory.slot1 === "yellowcandle") {
+    if (inventory.slot1 === "yellow candles") {
         yellowcandle.style.display = "block";
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "yellowcandle") {
+    } if (inventory.slot2 === "yellow candles") {
         yellowcandle.style.display = "block";
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "yellowcandle") {
+    } if (inventory.slot3 === "yellow candles") {
         yellowcandle.style.display = "block";
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "yellowcandle") {
+    } if (inventory.slot4 === "yellow candles") {
         yellowcandle.style.display = "block";
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function dropGreenCandle() {
-    if (inventory.slot1 === "greencandle") {
+    if (inventory.slot1 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "greencandle") {
+    } if (inventory.slot2 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "greencandle") {
+    } if (inventory.slot3 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "greencandle") {
+    } if (inventory.slot4 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function goneVioletCandle() {
-    if (inventory.slot1 === "violetcandle") {
+    if (inventory.slot1 === "violet candles") {
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "violetcandle") {
+    } if (inventory.slot2 === "violet candles") {
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "violetcandle") {
+    } if (inventory.slot3 === "violet candles") {
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "violetcandle") {
+    } if (inventory.slot4 === "violet candles") {
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function goneYellowCandle() {
-    if (inventory.slot1 === "yellowcandle") {
+    if (inventory.slot1 === "yellow candles") {
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "yellowcandle") {
+    } if (inventory.slot2 === "yellow candles") {
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "yellowcandle") {
+    } if (inventory.slot3 === "yellow candles") {
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "yellowcandle") {
+    } if (inventory.slot4 === "yellow candles") {
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function goneRedCandle() {
-    if (inventory.slot1 === "redcandle") {
+    if (inventory.slot1 === "red candles") {
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "redcandle") {
+    } if (inventory.slot2 === "red candles") {
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "redcandle") {
+    } if (inventory.slot3 === "red candles") {
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "redcandle") {
+    } if (inventory.slot4 === "red candles") {
         inventory.slot4 = false;
         item1.innerText = "";
     }
 }
 function goneGreenCandle() {
-    if (inventory.slot1 === "greencandle") {
+    if (inventory.slot1 === "green candles") {
         inventory.slot1 = false;
         item1.innerText = "";
-    } if (inventory.slot2 === "greencandle") {
+    } if (inventory.slot2 === "green candles") {
         inventory.slot2 = false;
         item1.innerText = "";
-    } if (inventory.slot3 === "greencandle") {
+    } if (inventory.slot3 === "green candles") {
         inventory.slot3 = false;
         item1.innerText = "";
-    } if (inventory.slot4 === "greencandle") {
+    } if (inventory.slot4 === "green candles") {
         inventory.slot4 = false;
         item1.innerText = "";
     }
@@ -1413,7 +1683,7 @@ function note1(){
     fishstrings.style.display = "none";
     pluck1.style.display = "block";
     string1.play();
-    setTimeout(function() {
+        setTimeout(function() {
         fishstrings.style.display = "block";
         pluck1.style.display = "none";
         }, 1000);
@@ -1859,24 +2129,24 @@ const ronin = {
 }
 function kSlot() {
     if (knight.none) {
-        if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+        if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
             click1Audio.play();
             kcandle1.style.display = "block";
             knight.none = false;
             knight.yellow = true;
             
-        } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+        } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
             click1Audio.play();
             ncandle1.style.display = "block";
             knight.none = false;
             knight.green = true;
-        } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+        } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
             click1Audio.play();
             wcandle1.style.display = "block";
             knight.none = false;
             knight.violet = true;
             
-        } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+        } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
             click1Audio.play();
             rcandle1.style.display = "block";
             knight.none = false;
@@ -1885,20 +2155,20 @@ function kSlot() {
         }
 
     } else if (knight.yellow) {
-       if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+       if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
            click1Audio.play();
            ncandle1.style.display = "block";
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.green = true;           
-       } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+       } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
            click1Audio.play();
            wcandle1.style.display = "block";
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.violet = true;
            
-       } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+       } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
            click1Audio.play();
            rcandle1.style.display = "block";
            kcandle1.style.display = "none";
@@ -1912,21 +2182,21 @@ function kSlot() {
        }
        
    } else if (knight.green) {
-        if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+        if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
           click1Audio.play();
           wcandle1.style.display = "block";
           ncandle1.style.display = "none";
           knight.green = false;
           knight.violet = true;
           
-      } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
           click1Audio.play();
           rcandle1.style.display = "block";
           ncandle1.style.display = "none";
           knight.green = false;
           knight.red = true;
           
-      } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+      } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
           click1Audio.play();
           ycandle1.style.display = "block";
           ncandle1.style.display = "none";
@@ -1940,21 +2210,21 @@ function kSlot() {
       }
       
   } else if (knight.violet) {
-    if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+    if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
         click1Audio.play();
         rcandle1.style.display = "block";
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.red = true;
         
-    } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+    } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
         click1Audio.play();
         ycandle1.style.display = "block";
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.yellow = true;
         
-    } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+    } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
         click1Audio.play();
         ncandle1.style.display = "block";
         wcandle1.style.display = "none";
@@ -1976,25 +2246,25 @@ function kSlot() {
 }
 function nSlot() {
   if (nymph.none) {
-      if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+      if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
           click1Audio.play();
           kcandle2.style.display = "block";
           nymph.none = false;
           nymph.yellow = true;
           
-      } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+      } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
           click1Audio.play();
           ncandle2.style.display = "block";
           nymph.none = false;
           nymph.green = true;
           
-      } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
           click1Audio.play();
           wcandle2.style.display = "block";
           nymph.none = false;
           nymph.violet = true;
           
-      } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
           click1Audio.play();
           rcandle2.style.display = "block";
           nymph.none = false;
@@ -2002,21 +2272,21 @@ function nSlot() {
       }
       
   } else if (nymph.yellow) {
-     if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+     if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
          click1Audio.play();
          ncandle2.style.display = "block";
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.green = true;
          
-     } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+     } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
          click1Audio.play();
          wcandle2.style.display = "block";
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.violet = true;
          
-     } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
          click1Audio.play();
          rcandle2.style.display = "block";
          kcandle2.style.display = "none";
@@ -2030,21 +2300,21 @@ function nSlot() {
      }
      
  } else if (nymph.green) {
-    if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+    if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
         click1Audio.play();
         wcandle2.style.display = "block";
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.violet = true;
         
-    } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+    } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
         click1Audio.play();
         rcandle2.style.display = "block";
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.red = true;
         
-    } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+    } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
         click1Audio.play();
         ycandle2.style.display = "block";
         ncandle2.style.display = "none";
@@ -2058,21 +2328,21 @@ function nSlot() {
     }
     
 } else if (nymph.violet) {
-  if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+  if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
       click1Audio.play();
       rcandle2.style.display = "block";
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.red = true;
       
-  } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+  } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
       click1Audio.play();
       ycandle2.style.display = "block";
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.yellow = true;
       
-  } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+  } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
       click1Audio.play();
       ncandle2.style.display = "block";
       wcandle2.style.display = "none";
@@ -2094,22 +2364,22 @@ function nSlot() {
 }
 function wSlot() {
   if (witch.none) {
-      if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+      if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
           click1Audio.play();
           kcandle4.style.display = "block";
           witch.none = false;
           witch.yellow = true;
-      } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+      } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
           click1Audio.play();
           ncandle4.style.display = "block";
           witch.none = false;
           witch.green = true;
-      } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
           click1Audio.play();
           wcandle4.style.display = "block";
           witch.none = false;
           witch.violet = true;
-      } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
           click1Audio.play();
           rcandle4.style.display = "block";
           witch.none = false;
@@ -2117,20 +2387,20 @@ function wSlot() {
       }
       
   } else if (witch.yellow) {
-     if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+     if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
          click1Audio.play();
          ncandle4.style.display = "block";
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.green = true;
 
-     } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+     } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
          click1Audio.play();
          wcandle4.style.display = "block";
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.violet = true;
-     } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
          click1Audio.play();
          rcandle4.style.display = "block";
          kcandle4.style.display = "none";
@@ -2143,19 +2413,19 @@ function wSlot() {
      }
      
  } else if (witch.green) {
-    if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+    if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
         click1Audio.play();
         wcandle4.style.display = "block";
         ncandle4.style.display = "none";
         witch.green = false;
         witch.violet = true;
-    } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+    } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
         click1Audio.play();
         rcandle4.style.display = "block";
         ncandle4.style.display = "none";
         witch.green = false;
         witch.red = true;
-    } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+    } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
         click1Audio.play();
         ycandle4.style.display = "block";
         ncandle4.style.display = "none";
@@ -2168,19 +2438,19 @@ function wSlot() {
     }
     
 } else if (witch.violet) {
-  if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+  if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
       click1Audio.play();
       rcandle4.style.display = "block";
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.red = true;
-  } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+  } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
       click1Audio.play();
       ycandle4.style.display = "block";
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.yellow = true;
-  } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+  } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
       click1Audio.play();
       ncandle4.style.display = "block";
       wcandle4.style.display = "none";
@@ -2200,23 +2470,23 @@ function wSlot() {
 }
 function rSlot() {
   if (ronin.none) {
-      if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+      if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
           click1Audio.play();
           kcandle5.style.display = "block";
           ronin.none = false;
           ronin.yellow = true;
-      } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+      } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
           click1Audio.play();
           ncandle5.style.display = "block";
           ronin.none = false;
           ronin.green = true;
 
-      } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
           click1Audio.play();
           wcandle5.style.display = "block";
           ronin.none = false;
           ronin.violet = true;
-      } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
           click1Audio.play();
           rcandle5.style.display = "block";
           ronin.none = false;
@@ -2224,19 +2494,19 @@ function rSlot() {
       }
       
   } else if (ronin.yellow) {
-     if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+     if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
          click1Audio.play();
          ncandle5.style.display = "block";
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.green = true;
-     } else if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+     } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
          click1Audio.play();
          wcandle5.style.display = "block";
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.violet = true;
-     } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
          click1Audio.play();
          rcandle5.style.display = "block";
          kcandle5.style.display = "none";
@@ -2249,19 +2519,19 @@ function rSlot() {
      }
      
  } else if (ronin.green) {
-    if (inventory.slot1 === "violetcandle" || inventory.slot2 === "violetcandle" || inventory.slot3 === "violetcandle" || inventory.slot4 === "violetcandle") {
+    if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
         click1Audio.play();
         wcandle5.style.display = "block";
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.violet = true;
-    } else if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+    } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
         click1Audio.play();
         rcandle5.style.display = "block";
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.red = true;
-    } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+    } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
         click1Audio.play();
         ycandle5.style.display = "block";
         ncandle5.style.display = "none";
@@ -2274,19 +2544,19 @@ function rSlot() {
     }
     
 } else if (ronin.violet) {
-  if (inventory.slot1 === "redcandle" || inventory.slot2 === "redcandle" || inventory.slot3 === "redcandle" || inventory.slot4 === "redcandle") {
+  if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
       click1Audio.play();
       rcandle5.style.display = "block";
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.red = true;
-  } else if (inventory.slot1 === "yellowcandle" || inventory.slot2 === "yellowcandle" || inventory.slot3 === "yellowcandle" || inventory.slot4 === "yellowcandle") {
+  } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
       click1Audio.play();
       ycandle5.style.display = "block";
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.yellow = true;
-  } else if (inventory.slot1 === "greencandle" || inventory.slot2 === "greencandle" || inventory.slot3 === "greencandle" || inventory.slot4 === "greencandle") {
+  } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
       click1Audio.play();
       ncandle5.style.display = "block";
       wcandle5.style.display = "none";
@@ -2369,10 +2639,12 @@ const dialogue = {
     datacubeFound: true,
     inv0: true,
     labyrinthNames: true,
+    haventSeenHim: true, //set this one to false after zm convo
     }
 
 //the initial sequence
 if (!dialogue.opening) {
+    if (!cookiesHas('open')) {
    dialogue.opening = 1;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
@@ -2472,13 +2744,17 @@ document.addEventListener("keydown", function() {
            p14.style.display = "none";
                   st.style.display = "none";
                   dialogue.opening = true;
+                  document.cookie = "open=open;";
            return;
        }
    }
-});
+   }
+);
+}
 }
 
 function stymieDialogue() {
+    if (current.room === "lobby") {
     if (!dialogue.hobbyists) {
         h1.style.display = "block";
         st.style.display = "block";
@@ -2577,7 +2853,7 @@ function stymieDialogue() {
       } else if (dialogue.hobbyists === 14) {
         h14.style.display = "none";
         h15.style.display = "block";
-        b3.style.display = "block";
+        br3.style.display = "block";
         st.style.display = "none";
           dialogue.hobbyists++;
           return;
@@ -2585,13 +2861,14 @@ function stymieDialogue() {
         h15.style.display = "none";
         h16.style.display = "block";
         k3.style.display = "block";
-        b3.style.display = "none";
+        br3.style.display = "none";
         dialogue.hobbyists++;
           return;
       } else if (dialogue.hobbyists === 16) {
         h16.style.display = "none";
         k3.style.display = "none";
         dialogue.hobbyists = true;
+        document.cookie = "hobby=hobby";
           return;
       }
   }
@@ -2791,7 +3068,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        b.style.display = "block";
        dialogue.disparateFragment = 1;
        document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.disparateFragment === 1) {
        a1.style.display = "none";
        a2.style.display = "block";
@@ -2869,8 +3146,8 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
         }
   }
-}); 
-    } else if (!dialogue.labyrinthNames) {
+});}
+    else if (!dialogue.labyrinthNames) {
         zj1.style.display = "block";
         st.style.display = "block";
         dialogue.labyNames = 1;
@@ -3034,7 +3311,440 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 });
 }
-    
+    }
+    else if (current.room === "northLobby") {
+        if (!dialogue.verilyIntro) {
+        //verily confrontation
+        zk1.style.display = "block";
+       b.style.display = "block";
+       dialogue.verilyIntro = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.verilyIntro === 1) {
+       zk1.style.display = "none";
+       zk2.style.display = "block";
+       b.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 2) {
+       zk2.style.display = "none";
+       zk3.style.display = "block";
+       stg.style.display = "block";
+       b.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 3) {
+       zk3.style.display = "none";
+       zk4.style.display = "block";
+       stg.style.display = "none";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 4) {
+       zk4.style.display = "none";
+       zk5.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 5) {
+       zk5.style.display = "none";
+       zk6.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 6) {
+       zk6.style.display = "none";
+       zk7.style.display = "block";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 7) {
+       zk7.style.display = "none";
+       zk8.style.display = "block";
+       k.style.display = "block";
+       v.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 8) {
+       zk8.style.display = "none";
+       zk9.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 9) {
+       zk9.style.display = "none";
+       zk10.style.display = "block";
+       b.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 10) {
+       zk10.style.display = "none";
+       zk11.style.display = "block";
+       k.style.display = "block"; //who are you
+       b.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 11) {
+       zk11.style.display = "none";
+       zk12.style.display = "block"; //im summer verily
+       v.style.display = "block";
+       k.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 12) {
+       zk12.style.display = "none";
+       zk13.style.display = "block";
+       k.style.display = "block";
+       v.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 13) {
+       zk13.style.display = "none";
+       zk14.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 14) {
+       zk14.style.display = "none";
+       zk15.style.display = "block";
+       v.style.display = "block";
+       b.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 15) {
+       zk15.style.display = "none";
+       zk16.style.display = "block";
+       k.style.display = "block";
+       v.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 16) {
+       zk16.style.display = "none";
+       zk17.style.display = "block";
+       k.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 17) {
+       zk17.style.display = "none";
+       zk18.style.display = "block"; //i have a knack for puzzles
+       v.style.display = "block";
+       k.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 18) {
+       zk18.style.display = "none";
+       zk19.style.display = "block";
+       stg.style.display = "block";
+       v.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 19) {
+       zk19.style.display = "none";
+       zk20.style.display = "block";
+       stg.style.display = "none";
+       k.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 20) {
+        zk20.style.display = "none";
+        zk21.style.display = "block";
+        stg.style.display = "block"; //that's me
+       k.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 21) {
+        zk21.style.display = "none";
+        zk22.style.display = "block";
+        k.style.display = "block";
+       stg.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 22) {
+       zk22.style.display = "none";
+       zk23.style.display = "block";
+       v.style.display = "block";
+       k.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 23) {
+       zk23.style.display = "none";
+       zk24.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 24) {
+       zk24.style.display = "none";
+       zk25.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 25) {
+       zk25.style.display = "none";
+       zk26.style.display = "block";
+       stg.style.display = "block";
+       v.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 26) {
+       zk26.style.display = "none";
+       zk27.style.display = "block";
+       stg.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 27) {
+       zk27.style.display = "none";
+       zk28.style.display = "block";
+       stg.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 28) {
+       zk28.style.display = "none";
+       zk29.style.display = "block";
+       stg.style.display = "none";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 29) {
+       zk29.style.display = "none";
+       zk30.style.display = "block";
+       st.style.display = "block";
+       v.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 30) {
+       zk30.style.display = "none";
+       zk31.style.display = "block";
+       st.style.display = "block";
+       v.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 31) {
+       zk31.style.display = "none";
+       zk32.style.display = "block";
+       st.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 32) {
+       zk32.style.display = "none";
+       zk33.style.display = "block";
+       st.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 33) {
+       zk33.style.display = "none";
+       zk34.style.display = "block";
+       st.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 34) {
+       zk34.style.display = "none";
+       zk35.style.display = "block";
+       st.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 35) {
+       zk35.style.display = "none";
+       zk36.style.display = "block";
+       st.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 36) {
+       zk36.style.display = "none";
+       zk37.style.display = "block";
+       st.style.display = "none";
+       v.style.display = "block"; //you're welcome
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 37) {
+       zk37.style.display = "none";
+       zk38.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 38) {
+       zk38.style.display = "none";
+       zk39.style.display = "block";
+       b.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 39) {
+        zk39.style.display = "none";
+        zk40.style.display = "block";
+       v.style.display = "block";
+       b.style.display = "none";
+       dialogue.verilyIntro++;
+         return;
+     }
+     else if (dialogue.verilyIntro === 40) {
+        zk40.style.display = "none";
+        zk41.style.display = "block";
+        v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 41) {
+       zk41.style.display = "none";
+       zk42.style.display = "block";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 42) {
+       zk42.style.display = "none";
+       zk43.style.display = "block";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 43) {
+       zk43.style.display = "none";
+       zk44.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 44) {
+       zk44.style.display = "none";
+       zk45.style.display = "block";
+       v.style.display = "block";
+       dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 45) {
+       zk45.style.display = "none";
+       zk46.style.display = "block";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 46) {
+       zk46.style.display = "none";
+       zk47.style.display = "block";
+       k.style.display = "block";
+       v.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 47) {
+       zk47.style.display = "none";
+       zk48.style.display = "block";
+       k.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 48) {
+       zk48.style.display = "none";
+       zk49.style.display = "block";
+       v.style.display = "block";
+       k.style.display = "none";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 49) {
+       zk49.style.display = "none";
+       zk50.style.display = "block";
+       v.style.display = "block";
+         dialogue.verilyIntro++;
+         return;
+     } else if (dialogue.verilyIntro === 50) {
+       zk50.style.display = "none";
+       v.style.display = "none";
+       dialogue.verilyIntro = true;
+         return;
+     }
+ }
+});
+
+        } else if (!dialogue.haventSeenHim) {
+
+        //verily confrontation 2
+        zn1.style.display = "block";
+       b.style.display = "block";
+       dialogue.haventSeenHim = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.haventSeenHim === 1) {
+       zn1.style.display = "none";
+       zn2.style.display = "block";
+       b.style.display = "none";
+       v.style.display = "block";
+       dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 2) {
+       zn2.style.display = "none";
+       zn3.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 3) {
+       zn3.style.display = "none";
+       zn4.style.display = "block";
+       b.style.display = "none"; //anyone else?
+       v.style.display = "block";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 4) {
+       zn4.style.display = "none";
+       zn5.style.display = "block";
+       v.style.display = "block";
+       dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 5) {
+       zn5.style.display = "none";
+       zn6.style.display = "block";
+       v.style.display = "block";
+       dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 6) {
+       zn6.style.display = "none";
+       zn7.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 7) {
+       zn7.style.display = "none";
+       zn8.style.display = "block";
+       b.style.display = "block";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 8) {
+       zn8.style.display = "none";
+       zn9.style.display = "block";
+       st.style.display = "block";
+       b.style.display = "none";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 9) {
+       zn9.style.display = "none";
+       zn10.style.display = "block";
+       st.style.display = "block";
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 10) {
+       zn10.style.display = "none";
+       zn11.style.display = "block";
+       st.style.display = "block"; 
+         dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 11) {
+       zn11.style.display = "none";
+       zn12.style.display = "block"; 
+       v.style.display = "block";
+       st.style.display = "none";
+       dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 12) {
+       zn12.style.display = "none";
+       zn13.style.display = "block";
+       v.style.display = "block";
+       dialogue.haventSeenHim++;
+         return;
+     } else if (dialogue.haventSeenHim === 13) {
+       zn13.style.display = "none";
+       v.style.display = "none";
+       dialogue.haventSeenHim = true;
+         return;
+     } 
+ }
+});
+        }
+    }
 }
 
 
@@ -3135,12 +3845,14 @@ function rightButton() {
         lifthas.currentlyUp = false;
     }
     else if (!lifthas.currentlyUp && !dialogue.whoopsTooFast) {
+        
         click1Audio.play();
         lift.style.display = "none";
         liftBottom.style.display = "block";
         current.room = "liftbottom";
         baseroom.style.display = "none";
         lifthas.goneDown = true;
+        if (!cookiesHas('whoops')) {
             v1.style.display = "block";
             b.style.display = "block";  //Whoops! That was fast. Are you okay down there?
             dialogue.whoopsTooFast = 1;
@@ -3192,9 +3904,15 @@ function rightButton() {
             upArrow.style.display = "block";
             dialogue.whoopsTooFast = true;
             lifthas.currentlyUp = false;
+            document.cookie = "whoops=whoops;";
             return;
         }
         }});
+    } else {
+        upArrow.style.display = "block";
+        dialogue.whoopsTooFast = true;
+        lifthas.currentlyUp = false;
+    }
         
     } else if (!lifthas.currentlyUp) {
         click1Audio.play();
@@ -3240,6 +3958,7 @@ function raiseLift() {
     }
 }
 function liftRoomDialogue() {
+    if (!cookiesHas('liftroom')) {
     //triggered when going west from the lobby for the first time
     dialogue.firstTimeInTheLiftRoom = true;
     w1.style.display = "block";
@@ -3263,9 +3982,10 @@ function liftRoomDialogue() {
     } else if (dialogue.liftInvestigation === 3) {
      w3.style.display = "none";
       b.style.display = "none";
+      document.cookie = "liftroom=liftroom;";
         return; 
     }
-}});
+}});}
 }
 
 function randomDoorAudio() {
@@ -3276,34 +3996,12 @@ function randomDoorAudio() {
 }
 
 //traveling
-    function goSouth() {
+function goSouth() {
         if (current.room === "lobby"){
             if (key.brass) {
   if (dialogue.unlocking) {
-        dialogue.unlocking = 1;
-       k1.style.display = "block"; //it fits!
-       k.style.display = "block";
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.unlocking === 1) {
-       k1.style.display = "none";
-       k2.style.display = "block"; //yay!
-       b.style.display = "block";
-       k.style.display = "none";
-         dialogue.unlocking++;
-         return;
-     } else if (dialogue.unlocking === 2) {
-       k2.style.display = "none";
-       b.style.display = "none";
-       dialogue.unlocking = false;
-       dialogue.unlocked = true;
-    lobby.style.display = "none";
-    sauna.style.display = "block";
-    current.room = "sauna";
-    return;
-       
-     } 
-   }});} else if (dialogue.unlocked || !dialogue.locked){
+      unlocking();
+  } else if (dialogue.unlocked || !dialogue.locked){
     lobby.style.display = "none";
     sauna.style.display = "block";
     current.room = "sauna";
@@ -3312,6 +4010,239 @@ document.addEventListener("keydown", function() {
                 
             else {
                 if (!dialogue.locked){
+                    itsLocked();
+                }
+}}
+        else if (current.room === "chasm"){
+            randomDoorAudio();
+                chasm.style.display = "none";
+                lobby.style.display = "block";
+                baseroom.style.display = "block";
+                explorers.style.display = "block";
+                current.room = "lobby";
+        }
+
+        else if (current.room === "northLobby"){
+            randomDoorAudio();
+                northLobby.style.display = "none";
+                hallway.style.display = "block";
+                baseroom.style.display = "none";
+                chasmexplorers.style.display = "block";
+                explorers.style.display = "none";
+                current.room = "hallway";
+        }
+
+        else if (current.room === "hallway"){
+            randomDoorAudio();
+                hallway.style.display = "none";
+                chasm.style.display = "block";
+                current.room = "chasm";
+        }
+
+        else if (current.room === "dias"){
+            randomDoorAudio();
+                dias.style.display = "none";
+                lift.style.display = "block";
+                current.room = "lift";
+                explorers.style.display = "none";                
+        }
+        else if (current.room === "garden"){
+                randomDoorAudio();
+                garden.style.display = "none";
+                northLobby.style.display = "block";
+                current.room = "northLobby";             
+        }
+    };
+function goEast() {
+        if (current.room === "lobby"){
+            randomDoorAudio();
+                lobby.style.display = "none";
+                library.style.display = "block";
+                current.room = "library";
+                }
+        else if (current.room === "pond"){
+                randomDoorAudio();
+                pond.style.display = "none";
+                lift.style.display = "block";
+                current.room = "lift";
+                penser.volume = 0.5;
+                explorers.style.display = "none";
+                }
+        else if (current.room === "lift"){
+            randomDoorAudio();
+                lift.style.display = "none";
+                lobby.style.display = "block";
+                current.room = "lobby";
+                penser.volume = 1;
+                explorers.style.display = "block";
+                }
+        else if (current.room === "northLobby"){
+                randomDoorAudio();
+                isSummerSuspicious();
+                northLobby.style.display = "none";
+                gardenEast.style.display = "block";
+                current.room = "gardenEast";
+                }
+        else if (current.room === "gardenWest"){
+                randomDoorAudio();
+                gardenWest.style.display = "none";
+                northLobby.style.display = "block";
+                current.room = "northLobby";             
+        }
+    };
+function goWest() {
+        if (current.room === "lobby"){
+            randomDoorAudio();
+                lobby.style.display = "none";
+                lift.style.display = "block";
+                current.room = "lift";
+                explorers.style.display = "none";
+                penser.volume = 0.5; 
+                if (!dialogue.firstTimeInTheLiftRoom) {liftRoomDialogue();}
+                }
+        else if (current.room === "lift"){
+            randomDoorAudio();
+                lift.style.display = "none";
+                pond.style.display = "block";
+                current.room = "pond";
+                explorers.style.display = "block";
+                penser.volume = 0.2; 
+                }
+        else if (current.room === "library"){
+            randomDoorAudio();
+                library.style.display = "none";
+                lobby.style.display = "block";
+                current.room = "lobby";
+                }
+
+        else if (current.room === "northLobby"){
+                randomDoorAudio();
+                isSummerSuspicious();
+                northLobby.style.display = "none";
+                gardenWest.style.display = "block";
+                current.room = "gardenWest";
+                }
+        else if (current.room === "gardenEast"){
+                randomDoorAudio();
+                gardenEast.style.display = "none";
+                northLobby.style.display = "block";
+                current.room = "northLobby";             
+        }
+    };
+function goNorth() {
+        if (current.room === "lobby"){
+            randomDoorAudio();
+                lobby.style.display = "none";
+                chasm.style.display = "block";
+                baseroom.style.display = "none";
+                explorers.style.display = "none";
+                current.room = "chasm";
+                }
+
+        else if (current.room === "sauna"){
+            randomDoorAudio();
+                sauna.style.display = "none";
+                lobby.style.display = "block";
+                current.room = "lobby";
+                }
+
+        else if (current.room === "lift"){
+            randomDoorAudio();
+                lift.style.display = "none";
+                dias.style.display = "block";
+                current.room = "dias";
+                explorers.style.display = "block";
+                }
+
+        else if (current.room === "library"){
+               diagram.style.display = "true";
+                }
+
+       else if (current.room === "chasm") {
+           if (ropey.set) {
+            if (key.gold) {
+                deeperInWeGo();
+                document.cookie = "lobby2=lobby2";
+                }
+                else {
+                northLocked();
+            }
+           } else {
+            tooFar();
+           }
+        }
+
+        else if (current.room === "hallway"){
+            randomDoorAudio();
+                hallway.style.display = "none";
+                northLobby.style.display = "block";
+                baseroom.style.display = "block";
+                current.room = "northLobby";
+                explorers.style.display = "block";
+                chasmexplorers.style.display = "none";
+                }
+
+        else if (current.room === "dias") {
+            if (!lock.solved){
+                //instead of "going north" this opens the combinationLock close-up
+                click1Audio.play();
+                dias.style.display = "none";
+                combinationLock.style.display = "block";
+                current.room = "dias";
+                explorers.style.display = "none";
+                baseroom.style.display = "none";
+                satchel.style.display = "none";
+                butt.style.display = "none";
+            }
+            else if (lock.solved) {
+                if (!alcove.solved){
+                //adds the green candle to the inventory
+                if (!inventory.slot1) {
+            if (inventory.slot1 !== "green candles"
+            && inventory.slot2 !== "green candles"
+            && inventory.slot3 !== "green candles"
+            && inventory.slot4 !== "green candles") {
+                greencandle.style.display = "none";
+                inventory.slot1 = "green candles";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "green candles"
+            && inventory.slot2 !== "green candles"
+            && inventory.slot3 !== "green candles"
+            && inventory.slot4 !== "green candles") {
+                greencandle.style.display = "none";
+                inventory.slot2 = "green candles";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "green candles"
+            && inventory.slot2 !== "green candles"
+            && inventory.slot3 !== "green candles"
+            && inventory.slot4 !== "green candles") {
+                greencandle.style.display = "none";
+                inventory.slot3 = "green candles";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "green candles"
+            && inventory.slot2 !== "green candles"
+            && inventory.slot3 !== "green candles"
+            && inventory.slot4 !== "green candles") {
+                greencandle.style.display = "none";
+                inventory.slot4 = "green candles";}
+        } else {
+            tooHeavy();
+        }
+    }}
+}
+    
+        else if (current.room === "northLobby"){
+                randomDoorAudio();
+                isSummerSuspicious();
+                northLobby.style.display = "none";
+                garden.style.display = "block";
+                current.room = "garden";
+                }
+    };
+
+
+//dialogue:
+function itsLocked() {
         dialogue.locked = 1;
        j1.style.display = "block"; //this one's locked...
        b.style.display = "block";
@@ -3351,196 +4282,34 @@ document.addEventListener("keydown", function() {
          dialogue.unlocking = true;
          return;
      } 
-   }});}
-}}
-        else if (current.room === "chasm"){
-            randomDoorAudio();
-                chasm.style.display = "none";
-                lobby.style.display = "block";
-                baseroom.style.display = "block";
-                explorers.style.display = "block";
-                current.room = "lobby";
-        }
-
-        else if (current.room === "northLobby"){
-            randomDoorAudio();
-                northLobby.style.display = "none";
-                hallway.style.display = "block";
-                baseroom.style.display = "none";
-                chasmexplorers.style.display = "block";
-                explorers.style.display = "none";
-                current.room = "hallway";
-        }
-
-        else if (current.room === "hallway"){
-            randomDoorAudio();
-                hallway.style.display = "none";
-                chasm.style.display = "block";
-                current.room = "chasm";
-        }
-
-        else if (current.room === "dias"){
-            randomDoorAudio();
-                dias.style.display = "none";
-                lift.style.display = "block";
-                current.room = "lift";
-                explorers.style.display = "none";                
-        }
-    };
-    function goEast() {
-        if (current.room === "lobby"){
-            randomDoorAudio();
-                lobby.style.display = "none";
-                library.style.display = "block";
-                current.room = "library";
-                }
-        else if (current.room === "pond"){
-                randomDoorAudio();
-                pond.style.display = "none";
-                lift.style.display = "block";
-                current.room = "lift";
-                penser.volume = 0.5;
-                explorers.style.display = "none";
-                }
-        else if (current.room === "lift"){
-            randomDoorAudio();
-                lift.style.display = "none";
-                lobby.style.display = "block";
-                current.room = "lobby";
-                penser.volume = 1;
-                explorers.style.display = "block";
-                }
-    };
-    function goWest() {
-        if (current.room === "lobby"){
-            randomDoorAudio();
-                lobby.style.display = "none";
-                lift.style.display = "block";
-                current.room = "lift";
-                explorers.style.display = "none";
-                penser.volume = 0.5; 
-                if (!dialogue.firstTimeInTheLiftRoom) {liftRoomDialogue();}
-                }
-        else if (current.room === "lift"){
-            randomDoorAudio();
-                lift.style.display = "none";
-                pond.style.display = "block";
-                current.room = "pond";
-                explorers.style.display = "block";
-                penser.volume = 0.2; 
-                }
-        else if (current.room === "library"){
-            randomDoorAudio();
-                library.style.display = "none";
-                lobby.style.display = "block";
-                current.room = "lobby";
-                }
-    };
-    function goNorth() {
-        if (current.room === "lobby"){
-            randomDoorAudio();
-                lobby.style.display = "none";
-                chasm.style.display = "block";
-                baseroom.style.display = "none";
-                explorers.style.display = "none";
-                current.room = "chasm";
-                }
-
-        else if (current.room === "sauna"){
-            randomDoorAudio();
-                sauna.style.display = "none";
-                lobby.style.display = "block";
-                current.room = "lobby";
-                }
-
-        else if (current.room === "lift"){
-            randomDoorAudio();
-                lift.style.display = "none";
-                dias.style.display = "block";
-                current.room = "dias";
-                explorers.style.display = "block";
-                }
-
-        else if (current.room === "library"){
-               diagram.style.display = "true";
-                }
-
-       else if (current.room === "chasm") {
-           if (ropey.set) {
-            if (key.gold) {
-                randomDoorAudio();
-                deeperInWeGo();
-                }
-                else {
-                northLocked();
-            }
-           } else {
-            tooFar();
-           }
-        }
-
-        else if (current.room === "hallway"){
-            randomDoorAudio();
-                hallway.style.display = "none";
-                northLobby.style.display = "block";
-                baseroom.style.display = "block";
-                current.room = "northLobby";
-                explorers.style.display = "block";
-                chasmexplorers.style.display = "none";
-                }
-
-        else if (current.room === "dias") {
-            if (!lock.solved){
-                //instead of "going north" this opens the combinationLock close-up
-                click1Audio.play();
-                dias.style.display = "none";
-                combinationLock.style.display = "block";
-                current.room = "dias";
-                explorers.style.display = "none";
-                baseroom.style.display = "none";
-                satchel.style.display = "none";
-                butt.style.display = "none";
-            }
-            else if (lock.solved) {
-                if (!alcove.solved){
-                //adds the green candle to the inventory
-                if (!inventory.slot1) {
-            if (inventory.slot1 !== "greencandle"
-            && inventory.slot2 !== "greencandle"
-            && inventory.slot3 !== "greencandle"
-            && inventory.slot4 !== "greencandle") {
-                greencandle.style.display = "none";
-                inventory.slot1 = "greencandle";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "greencandle"
-            && inventory.slot2 !== "greencandle"
-            && inventory.slot3 !== "greencandle"
-            && inventory.slot4 !== "greencandle") {
-                greencandle.style.display = "none";
-                inventory.slot2 = "greencandle";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "greencandle"
-            && inventory.slot2 !== "greencandle"
-            && inventory.slot3 !== "greencandle"
-            && inventory.slot4 !== "greencandle") {
-                greencandle.style.display = "none";
-                inventory.slot3 = "greencandle";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "greencandle"
-            && inventory.slot2 !== "greencandle"
-            && inventory.slot3 !== "greencandle"
-            && inventory.slot4 !== "greencandle") {
-                greencandle.style.display = "none";
-                inventory.slot4 = "greencandle";}
-        } else {
-            tooHeavy();
-        }
-    }}
+   }});
 }
-    };
-
-
-//dialogue:
+function unlocking() {
+        dialogue.unlocking = 1;
+       k1.style.display = "block"; //it fits!
+       k.style.display = "block";
+document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.unlocking === 1) {
+       k1.style.display = "none";
+       k2.style.display = "block"; //yay!
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.unlocking++;
+         return;
+     } else if (dialogue.unlocking === 2) {
+       k2.style.display = "none";
+       b.style.display = "none";
+       dialogue.unlocking = false;
+       dialogue.unlocked = true;
+    lobby.style.display = "none";
+    sauna.style.display = "block";
+    current.room = "sauna";
+    return;
+       
+     } 
+   }});
+}
 function tooHeavy() {
     if (dialogue.inv0) {
     i1.style.display = "block";
@@ -3760,6 +4529,7 @@ function testingTheWaters() {
       z6.style.display = "none";
       z7.style.display = "block";
       k.style.display = "block";
+      keypick.play();
          dialogue.waterTest++;
          return;
      } else if (dialogue.waterTest === 7) {
@@ -3814,24 +4584,28 @@ if (event.key === 'Enter' || event.key === ' ') {
             item1.innerText = "";
             inventory.slot1 = false;
             ropey.set = true;
+            document.cookie = "ropey.ropey";
         } else if (inventory.slot2 === "rope") {
             ropeToss();
             chasmrope.style.display = "block";
             item2.innerText = "";
             inventory.slot2 = false;
             ropey.set = true;
+            document.cookie = "ropey.ropey";
         } else if (inventory.slot3 === "rope") {
             ropeToss();
             chasmrope.style.display = "block";
             item3.innerText = "";
             inventory.slot3 = false;
             ropey.set = true;
+            document.cookie = "ropey.ropey";
         } else if (inventory.slot4 === "rope") {
             ropeToss();
             chasmrope.style.display = "block";
             item4.innerText = "";
             inventory.slot4 = false;
             ropey.set = true;
+            document.cookie = "ropey.ropey";
         }
       dialogue.bridgeToss++;
         return;
@@ -3954,6 +4728,7 @@ if (event.key === 'Enter' || event.key === ' ') {
       chasm.style.display = "none";
       lamano.play();
       penser.pause();
+      randomDoorAudio();
         current.room = "hallway";
         chasmexplorers.style.display = "block";
         hallway.style.display = "block";
@@ -3968,7 +4743,109 @@ if (event.key === 'Enter' || event.key === ' ') {
 }
 }
 function shrub1() {
-    if (!dialogue.shrub) {
+    if (!dialogue.shrub && dialogue.verilyIntro) {
+        zg1.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub = 1;
+        document.addEventListener("keydown", function() {
+  if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.shrub === 1) {
+        zg1.style.display = "none";
+        zg2.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 2) {
+        zg2.style.display = "none";
+        zg3.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 3) {
+        zg3.style.display = "none";
+        zg4.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 4) {
+        zg4.style.display = "none";
+        zg5.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 5) {
+        zg5.style.display = "none";
+        zg6.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 6) {
+        zg6.style.display = "none";
+        zg7.style.display = "block";
+        k.style.display = "block"; //So there’s something about this shrub that the labyrinth is using to give us a clue about how to get further in?
+        b.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 7) {
+        zg7.style.display = "none";
+        zg8.style.display = "block";
+        b.style.display = "block";
+        k.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 8) {
+        zg8.style.display = "none";
+        zg9.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 9) {
+        zg9.style.display = "none";
+        zh10.style.display = "block";
+        k.style.display = "block"; //It does kind of look like a numeral 7.
+        b.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 10) {
+        zh10.style.display = "none";
+        zh11.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 11) {
+        zh11.style.display = "none";
+        zg12.style.display = "block";
+        k.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 12) {
+        zg12.style.display = "none";
+        zg13.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 13) {
+        zg13.style.display = "none";
+        zg14.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 14) {
+        zg14.style.display = "none";
+        zg15.style.display = "block"; //that is fucked up.
+        b.style.display = "block";
+        k.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 15) {
+        zg15.style.display = "none";
+        b.style.display = "none";
+        dialogue.shrub = true;
+          return;
+      }
+  }
+}); 
+    } if (!dialogue.shrub) {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
@@ -4092,11 +4969,114 @@ function shrub1() {
       }
   }
 }); 
-    }
+    } 
 
 }
 function shrub2() {
-    if (!dialogue.shrub) {
+    if (!dialogue.shrub && dialogue.verilyIntro) {
+        zg1.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub = 1;
+        document.addEventListener("keydown", function() {
+  if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.shrub === 1) {
+        zg1.style.display = "none";
+        zg2.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 2) {
+        zg2.style.display = "none";
+        zg3.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 3) {
+        zg3.style.display = "none";
+        zg4.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 4) {
+        zg4.style.display = "none";
+        zg5.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 5) {
+        zg5.style.display = "none";
+        zg6.style.display = "block";
+        b.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 6) {
+        zg6.style.display = "none";
+        zg7.style.display = "block";
+        k.style.display = "block"; //So there’s something about this shrub that the labyrinth is using to give us a clue about how to get further in?
+        b.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 7) {
+        zg7.style.display = "none";
+        zg8.style.display = "block";
+        b.style.display = "block";
+        k.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 8) {
+        zg8.style.display = "none";
+        zg9.style.display = "block";
+        b.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 9) {
+        zg9.style.display = "none";
+        zh10.style.display = "block";
+        k.style.display = "block"; //It does kind of look like a numeral 7.
+        b.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 10) {
+        zh10.style.display = "none";
+        zh11.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 11) {
+        zh11.style.display = "none";
+        zg12.style.display = "block";
+        k.style.display = "block";
+        dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 12) {
+        zg12.style.display = "none";
+        zg13.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 13) {
+        zg13.style.display = "none";
+        zg14.style.display = "block";
+        k.style.display = "block";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 14) {
+        zg14.style.display = "none";
+        zg15.style.display = "block"; //that is fucked up.
+        b.style.display = "block";
+        k.style.display = "none";
+          dialogue.shrub++;
+          return;
+      } else if (dialogue.shrub === 15) {
+        zg15.style.display = "none";
+        b.style.display = "none";
+        dialogue.shrub = true;
+          return;
+      }
+  }
+}); 
+    }
+    if (!dialogue.shrub && !dialogue.verilyIntro) {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
@@ -4219,11 +5199,227 @@ function shrub2() {
       }
   }
 }); 
-    }
+    } 
 
 }
-
-    //adding to inventory:
+function isSummerSuspicious() {
+    if (dialogue.verilyIntro && !dialogue.upToSomething){
+        zm1.style.display = "block";
+       b.style.display = "block";
+       dialogue.upToSomething = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.upToSomething === 1) {
+       zm1.style.display = "none";
+       zm2.style.display = "block";
+       k.style.display = "block";
+       b.style.display = "none";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 2) {
+       zm2.style.display = "none";
+       zm3.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 3) {
+       zm3.style.display = "none";
+       zm4.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 4) {
+       zm4.style.display = "none";
+       zm5.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 5) {
+       zm5.style.display = "none";
+       zm6.style.display = "block";
+       k.style.display = "block";
+       b.style.display = "none";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 6) {
+       zm6.style.display = "none";
+       zm7.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 7) {
+       zm7.style.display = "none";
+       zm8.style.display = "block";
+       k.style.display = "block";
+       b.style.display = "none";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 8) {
+       zm8.style.display = "none";
+       zm9.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 9) {
+       zm9.style.display = "none";
+       zm10.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 10) {
+       zm10.style.display = "none";
+       zm11.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 11) {
+       zm11.style.display = "none";
+       zm12.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 12) {
+       zm12.style.display = "none";
+       zm13.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 13) {
+       zm13.style.display = "none";
+       zm14.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 14) {
+       zm14.style.display = "none";
+       zm15.style.display = "block";
+       k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 15) {
+       zm15.style.display = "none";
+       zm16.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 16) {
+       zm16.style.display = "none";
+       zm17.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 17) {
+       zm17.style.display = "none";
+       zm18.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 18) {
+       zm18.style.display = "none";
+       zm19.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 19) {
+       zm19.style.display = "none";
+       zm20.style.display = "block";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 20) {
+        zm20.style.display = "none";
+        zm21.style.display = "block";
+        k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 21) {
+        zm21.style.display = "none";
+        zm22.style.display = "block";
+        k.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 22) {
+       zm22.style.display = "none";
+       zm23.style.display = "block";
+       k.style.display = "none";
+       b.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 23) {
+       zm23.style.display = "none";
+       zm24.style.display = "block";
+       k.style.display = "block"; //right
+       b.style.display = "none";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 24) {
+       zm24.style.display = "none";
+       zm25.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 25) {
+       zm25.style.display = "none";
+       zm26.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 26) {
+       zm26.style.display = "none";
+       zm27.style.display = "block"; //Speaking of the rope bridge...
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 27) {
+       zm27.style.display = "none";
+       zm28.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 28) {
+       zm28.style.display = "none";
+       zm29.style.display = "block";
+       b.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 29) {
+       zm29.style.display = "none";
+       zm30.style.display = "block";
+       b.style.display = "block";
+         dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 30) {
+       zm30.style.display = "none";
+       zm31.style.display = "block";
+       b.style.display = "none";
+       k.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 31) {
+       zm31.style.display = "none";
+       zm32.style.display = "block";
+       k.style.display = "none";
+       b.style.display = "block";
+       dialogue.upToSomething++;
+         return;
+     } else if (dialogue.upToSomething === 32) {
+       zm32.style.display = "none";
+       b.style.display = "none";
+       dialogue.upToSomething = true;
+       dialogue.haventSeenHim = false;
+         return;
+     }
+ }
+});
+    }
+}
+//adding to inventory:
 //add objects to the inventory (or trigger dialogue about the object)
 //a typical object is in one of four positions in any given room (the four corners).
 //add a new object selection function by adding another "if" of the room that the object is in.
@@ -4238,16 +5434,16 @@ const door = {
 function throwRope(){
         if (inventory.slot1 === "rope") {
             ropeToss();
-          
+            document.cookie = "ropey=ropey";
         } else if (inventory.slot2 === "rope") {
             ropeToss();
-       
+            document.cookie = "ropey=ropey";
         } else if (inventory.slot3 === "rope") {
             ropeToss();
-         
+            document.cookie = "ropey=ropey";
         } else if (inventory.slot4 === "rope") {
             ropeToss();
-    
+            document.cookie = "ropey=ropey";
         } else {
             if (!ropey.set) {
                 ropeBridge();
@@ -4271,33 +5467,33 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     }}});}
         if (!inventory.slot1) {
-            if (inventory.slot1 !== "violetcandle"
-            && inventory.slot2 !== "violetcandle"
-            && inventory.slot3 !== "violetcandle"
-            && inventory.slot4 !== "violetcandle") {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                inventory.slot1 = "violetcandle";}
+                inventory.slot1 = "violet candles";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "violetcandle"
-            && inventory.slot2 !== "violetcandle"
-            && inventory.slot3 !== "violetcandle"
-            && inventory.slot4 !== "violetcandle") {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                inventory.slot2 = "violetcandle";}
+                inventory.slot2 = "violet candles";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "violetcandle"
-            && inventory.slot2 !== "violetcandle"
-            && inventory.slot3 !== "violetcandle"
-            && inventory.slot4 !== "violetcandle") {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                inventory.slot3 = "violetcandle";}
+                inventory.slot3 = "violet candles";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "violetcandle"
-            && inventory.slot2 !== "violetcandle"
-            && inventory.slot3 !== "violetcandle"
-            && inventory.slot4 !== "violetcandle") {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                inventory.slot4 = "violetcandle";}
+                inventory.slot4 = "violet candles";}
         } else {
             tooHeavy();
         }
@@ -4347,33 +5543,33 @@ function pickSW() {
     else if (current.room === "lift") {
         if (!alcove.solved){
         if (!inventory.slot1) {
-            if (inventory.slot1 !== "redcandle"
-            && inventory.slot2 !== "redcandle"
-            && inventory.slot3 !== "redcandle"
-            && inventory.slot4 !== "redcandle") {
+            if (inventory.slot1 !== "red candles"
+            && inventory.slot2 !== "red candles"
+            && inventory.slot3 !== "red candles"
+            && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                inventory.slot1 = "redcandle";}
+                inventory.slot1 = "red candles";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "redcandle"
-            && inventory.slot2 !== "redcandle"
-            && inventory.slot3 !== "redcandle"
-            && inventory.slot4 !== "redcandle") {
+            if (inventory.slot1 !== "red candles"
+            && inventory.slot2 !== "red candles"
+            && inventory.slot3 !== "red candles"
+            && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                inventory.slot2 = "redcandle";}
+                inventory.slot2 = "red candles";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "redcandle"
-            && inventory.slot2 !== "redcandle"
-            && inventory.slot3 !== "redcandle"
-            && inventory.slot4 !== "redcandle") {
+            if (inventory.slot1 !== "red candles"
+            && inventory.slot2 !== "red candles"
+            && inventory.slot3 !== "red candles"
+            && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                inventory.slot3 = "redcandle";}
+                inventory.slot3 = "red candles";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "redcandle"
-            && inventory.slot2 !== "redcandle"
-            && inventory.slot3 !== "redcandle"
-            && inventory.slot4 !== "redcandle") {
+            if (inventory.slot1 !== "red candles"
+            && inventory.slot2 !== "red candles"
+            && inventory.slot3 !== "red candles"
+            && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                inventory.slot4 = "redcandle";}
+                inventory.slot4 = "red candles";}
         } else {
             tooHeavy();
         }
@@ -4426,7 +5622,9 @@ function pickSE() {
             && inventory.slot3 !== "brass key"
             && inventory.slot4 !== "brass key") {
                 brasskey.style.display = "none";
+                document.cookie = "brasskey=brasskey";
                 key.brass = true;
+                keypick.play();
                 inventory.slot1 = "brass key";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "brass key"
@@ -4434,7 +5632,9 @@ function pickSE() {
             && inventory.slot3 !== "brass key"
             && inventory.slot4 !== "brass key") {
                 brasskey.style.display = "none";
+                document.cookie = "brasskey=brasskey";
                 key.brass = true;
+                keypick.play();
                 inventory.slot2 = "brass key";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "brass key"
@@ -4442,7 +5642,9 @@ function pickSE() {
             && inventory.slot3 !== "brass key"
             && inventory.slot4 !== "brass key") {
                 brasskey.style.display = "none";
+                document.cookie = "brasskey=brasskey";
                 key.brass = true;
+                keypick.play();
                 inventory.slot3 = "brass key";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "brass key"
@@ -4450,7 +5652,9 @@ function pickSE() {
             && inventory.slot3 !== "brass key"
             && inventory.slot4 !== "brass key") {
                 brasskey.style.display = "none";
+                document.cookie = "brasskey=brasskey";
                 key.brass = true;
+                keypick.play();
                 inventory.slot4 = "brass key";}
         } else {
             tooHeavy();
@@ -4462,6 +5666,7 @@ function pickSE() {
         if (!dialogue.radio){
       d1.style.display = "block";
       ra.style.display = "block";
+      static.play();
       dialogue.radio = 1;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
@@ -4569,33 +5774,33 @@ function pickNE() {
     else if (current.room === "sauna") {
         if (!alcove.solved){
         if (!inventory.slot1) {
-            if (inventory.slot1 !== "yellowcandle"
-            && inventory.slot2 !== "yellowcandle"
-            && inventory.slot3 !== "yellowcandle"
-            && inventory.slot4 !== "yellowcandle") {
+            if (inventory.slot1 !== "yellow candles"
+            && inventory.slot2 !== "yellow candles"
+            && inventory.slot3 !== "yellow candles"
+            && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                inventory.slot1 = "yellowcandle";}
+                inventory.slot1 = "yellow candles";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "yellowcandle"
-            && inventory.slot2 !== "yellowcandle"
-            && inventory.slot3 !== "yellowcandle"
-            && inventory.slot4 !== "yellowcandle") {
+            if (inventory.slot1 !== "yellow candles"
+            && inventory.slot2 !== "yellow candles"
+            && inventory.slot3 !== "yellow candles"
+            && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                inventory.slot2 = "yellowcandle";}
+                inventory.slot2 = "yellow candles";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "yellowcandle"
-            && inventory.slot2 !== "yellowcandle"
-            && inventory.slot3 !== "yellowcandle"
-            && inventory.slot4 !== "yellowcandle") {
+            if (inventory.slot1 !== "yellow candles"
+            && inventory.slot2 !== "yellow candles"
+            && inventory.slot3 !== "yellow candles"
+            && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                inventory.slot3 = "yellowcandle";}
+                inventory.slot3 = "yellow candles";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "yellowcandle"
-            && inventory.slot2 !== "yellowcandle"
-            && inventory.slot3 !== "yellowcandle"
-            && inventory.slot4 !== "yellowcandle") {
+            if (inventory.slot1 !== "yellow candles"
+            && inventory.slot2 !== "yellow candles"
+            && inventory.slot3 !== "yellow candles"
+            && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                inventory.slot4 = "yellowcandle";}
+                inventory.slot4 = "yellow candles";}
         } else {
             tooHeavy();
         }
@@ -4713,8 +5918,9 @@ document.addEventListener("keydown", function() {
           dialogue.yowzer++;
           return;
       } else if (dialogue.yowzer === 10) {
-             f10.style.display = "none";
-                b.style.display = "none";
+            f10.style.display = "none";
+            b.style.display = "none";
+            document.cookie = "yowzer=yowzer";
           dialogue.yowzer++;
           return;
       }
@@ -4742,40 +5948,44 @@ document.addEventListener("keydown", function() {
         else if (!water.zappy && !dialogue.waterTest){
             if (!inventory.slot1) {
             testingTheWaters();
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot1 = "goldkey";}
+                inventory.slot1 = "gold key";}
         } else if (!inventory.slot2) {
             testingTheWaters();
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot2 = "goldkey";}
+                inventory.slot2 = "gold key";}
         } else if (!inventory.slot3) {
             testingTheWaters();
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot3 = "goldkey";}
+                inventory.slot3 = "gold key";}
         }  else if (!inventory.slot4) {
             testingTheWaters();
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot4 = "goldkey";}
+                inventory.slot4 = "gold key";}
         } else {
             tooHeavy();
         }
@@ -4783,37 +5993,41 @@ document.addEventListener("keydown", function() {
                 //take gold key only
         else if (!water.zappy){
             if (!inventory.slot1) {
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot1 = "goldkey";}
+                inventory.slot1 = "gold key";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot2 = "goldkey";}
+                inventory.slot2 = "gold key";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot3 = "goldkey";}
+                inventory.slot3 = "gold key";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "goldkey"
-            && inventory.slot2 !== "goldkey"
-            && inventory.slot3 !== "goldkey"
-            && inventory.slot4 !== "goldkey") {
+            if (inventory.slot1 !== "gold key"
+            && inventory.slot2 !== "gold key"
+            && inventory.slot3 !== "gold key"
+            && inventory.slot4 !== "gold key") {
                 goldkey.style.display = "none";
+                document.cookie = "goldkey=goldkey";
                 key.gold = true;
-                inventory.slot4 = "goldkey";}
+                inventory.slot4 = "gold key";}
         } else {
             tooHeavy();
         }

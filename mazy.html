@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <title>Mazy</title>
+  <link rel="icon" type="image/x-icon" href="mazyfavicon.ico?">
+  <link rel="stylesheet" href="mazystyle.css">
+
+  <style> 
+  #knob,
+  #switch,
+  #screen {
+        cursor: pointer;
+    }
+
+
+    .channel {
+        transform: translate(0px, 90px);
+    }
+
+  #channel1 {
+        transform: translate(-70px, 35px);
+
+    }
+    
+
+    
+    @media screen and (max-width: 1290px) {
+.channel {
+transform: translate(0px, 80px);
+    }
+}
+ 
+@media screen and (max-width: 1090px) {
+.channel {
+transform: translate(0px, 70px);
+    }
+}
+ 
+@media screen and (max-width: 950px) {
+.channel {
+transform: translate(0px, 60px);
+    }
+    
+}
+ 
+@media screen and (max-width: 790px) {
+.channel {
+transform: translate(0px, 50px);
+    }
+}
+ 
+@media screen and (max-width: 640) {
+.channel {
+transform: translate(0px, 40px);
+    }
+
+    
+}
+ 
+@media screen and (max-width: 590px) {
+.channel {
+transform: translate(0px, 35px);
+    }
+    #channel1 {
+        transform: translate(-27px, 35px);
+
+    }
+}
+    
+    </style>
+</head>
+
+<body>
+
+    
+  <div class="image-flexbox">
+        <img src="channel6.gif" id="channel1" class="channel" width="56%" style="position: absolute; display: block;" onclick="changeChannel()">
+        <img src="mt3.gif" id="channel3" class="channel" width="74%" style="position: absolute; display: none;" onclick="proceed()">
+        <img src="tv.png" id="tv" width="75%" style="z-index: 3; position: absolute;" usemap="#tv-map">
+        <img src="tvflip.png" id="tvflip" width="75%" style="z-index: 4; position: absolute; display: none;" usemap="#tv-map">
+
+    </div>
+
+    <map name="tv-map">
+            <area shape="circle" id="knob" coords="950,534,50" alt="knob" onclick="changeChannel()">
+            <area shape="rect" id="switch" coords="880,320,1000,390" alt="switch" onclick="changeChannel2()">
+            <area shape="rect" id="screen" coords="60,80,820,627" alt="screen" onclick="changeChannel()">
+            </map>
+
+
+
+ 
+
+
+
+  <audio id="click1">
+    <source src="click1_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click2">
+    <source src="click2_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click3">
+    <source src="click3_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click4">
+    <source src="click4_out.m4a" type="audio/mpeg">
+  </audio>
+  
+
+
+  
+  <script>
+
+function proceed() {
+   
+    if (channel3.style.display === "block"){
+   click1Audio.play();
+        window.location.href = 'mazy.0.html';}
+        else {
+            click1Audio.play(); //replace with "thunk!" to indicate that nothing has happened
+
+        }
+    //get a different click1audio for this page and for open.globe -- a knobby sound
+};
+
+function changeChannel() {
+    if (channel1.style.display === "block") {
+        click1Audio.play();
+        channel3.style.display = "block";
+        channel1.style.display = "none";
+    } 
+    else if (channel3.style.display === "block"){
+   click1Audio.play();
+        window.location.href = 'mazy.0.html';}
+}
+
+function changeChannel2() {
+    if (channel1.style.display === "block") {
+        click1Audio.play();
+        channel3.style.display = "block";
+        channel1.style.display = "none";
+        tvflip.style.display = "block";    
+        tv.style.display = "none";   
+    } }
+    
+    
+var channel1 = document.getElementById("channel1");
+var channel2 = document.getElementById("channel2");
+var channel3 = document.getElementById("channel3");
+var channel4 = document.getElementById("channel4");
+var tvflip = document.getElementById("tvflip");
+
+
+    var click1Audio = document.getElementById("click1");
+    var click2Audio = document.getElementById("click2");
+    var click3Audio = document.getElementById("click3");
+    var click4Audio = document.getElementById("click4");
+    
+      </script>
+
+</body>
+</html>

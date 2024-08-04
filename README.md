@@ -1,10 +1,9 @@
 # Behold the Fruit Circus
 
-[Connections](https://fruit-circus.github.io/connections.html)
+Behold my Fruit Directory: [Home Page](https://fruit-circus.github.io/fruit-directory/home.html)
 
 [Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)
 
-[Da Capo](https://fruit-circus.github.io/flashback.html)
 
 - 👋 Hi, I’m @fruit-circus
 

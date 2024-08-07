@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <title>Objects in a Room</title>
+  <link rel="icon" type="image/x-icon" href="morningfavicon.ico?">
+
+  <style>
+    body {
+      background-color: #000000;
+    }
+
+#thanksflexbox {
+  display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+    #thanks {
+      width: 100vh;
+    }
+
+    #continue{
+      font-weight: 500;
+      font-size: 25px;
+      position: absolute;
+      text-align: center;
+      color: white;
+      font-family: 'Cascadia Code', Courier, monospace;
+      text-decoration: none;
+      display: none;
+    }
+
+    #continue:hover {color: pink;}
+
+    .text {
+      font-size: 20px;
+      font-family: 'Cascadia Code', Courier, monospace;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: inline;
+      line-height: 1.5;
+      opacity: 0;
+      transition: opacity 1.6s ease;
+    }
+
+    .text.visible {
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+     .orbit-flexbox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+
+    #still {
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
+
+
+    #cover1 {
+  display: block;
+  position: absolute;
+
+}
+
+#cover2 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover3 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover4 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover5 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover6 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover7 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover8 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover9 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover10 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover11 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover12 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover13 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover14 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover15 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover16 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover17 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover18 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover19 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover20 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover21 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover22 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover23 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover24 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover25 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover26 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover27 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover28 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover29 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover30 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover31 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover32 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover33 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover34 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover35 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover36 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover37 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover38 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover39 {
+  display: none;
+  position: absolute;
+   
+}
+
+#cover40,
+#cover41,
+#cover42,
+#cover43,
+#cover44,
+#cover45,
+#cover46,
+#cover47,
+#cover48,
+#cover49,
+#cover50,
+#cover51,
+#cover52,
+#cover53,
+#cover54,
+#cover55,
+#cover56
+ {
+  display: none;
+  position: absolute;
+   
+}
+
+
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="orbit-flexbox">
+  
+      <img src="mosh.gif" class="cover" id="cover1">
+      <img src="rotationstill.png" class="cover" id="still">
+
+  <img src="yi.png" class="cover" id="cover2">
+  <img src="er.png" class="cover" id="cover3">
+  <img src="san.png" class="cover" id="cover4">
+  <img src="su.png" class="cover" id="cover5">
+  <img src="wo.png" class="cover" id="cover6">
+  <img src="liu.png" class="cover" id="cover7">
+  <img src="qi.png" class="cover" id="cover8">
+  <img src="ba.png" class="cover" id="cover9">
+  <img src="jiu.png" class="cover" id="cover10">
+  <img src="shi.png" class="cover" id="cover11">
+  <img src="shiyi.png" class="cover" id="cover12">
+  <img src="shier.png" class="cover" id="cover13">
+  <img src="shisan.png" class="cover" id="cover14">
+  <img src="shisu.png" class="cover" id="cover15">
+  <img src="shiwo.png" class="cover" id="cover16">
+  <img src="shiliu.png" class="cover" id="cover17">
+  <img src="shiqi.png" class="cover" id="cover18">
+  <img src="shiba.png" class="cover" id="cover19">
+  <img src="shijiu.png" class="cover" id="cover20">
+  <img src="ershi.png" class="cover" id="cover21">
+
+  <img src="yi.png" class="cover" id="cover22">
+  <img src="er.png" class="cover" id="cover23">
+  <img src="san.png" class="cover" id="cover24">
+  <img src="su.png" class="cover" id="cover25">
+  <img src="wo.png" class="cover" id="cover26">
+  <img src="liu.png" class="cover" id="cover27">
+  <img src="qi.png" class="cover" id="cover28">
+  <img src="ba.png" class="cover" id="cover29">
+  <img src="jiu.png" class="cover" id="cover30">
+  <img src="shi.png" class="cover" id="cover31">
+  <img src="shiyi.png" class="cover" id="cover32">
+  <img src="shier.png" class="cover" id="cover33">
+  <img src="shisan.png" class="cover" id="cover34">
+  <img src="shisu.png" class="cover" id="cover35">
+  <img src="shiwo.png" class="cover" id="cover36">
+  <img src="shiliu.png" class="cover" id="cover37">
+  <img src="shiqi.png" class="cover" id="cover38">
+  <img src="shiba.png" class="cover" id="cover39">
+  <img src="shijiu.png" class="cover" id="cover40">
+
+  <img src="yi.png" class="cover" id="cover41">
+  <img src="er.png" class="cover" id="cover42">
+  <img src="san.png" class="cover" id="cover43">
+  <img src="su.png" class="cover" id="cover44">
+  <img src="wo.png" class="cover" id="cover45">
+  <img src="liu.png" class="cover" id="cover46">
+  <img src="qi.png" class="cover" id="cover47">
+  <img src="ba.png" class="cover" id="cover48">
+  <img src="jiu.png" class="cover" id="cover49">
+  <img src="shi.png" class="cover" id="cover50">
+  <img src="shiyi.png" class="cover" id="cover51">
+  <img src="shier.png" class="cover" id="cover52">
+  <img src="shisan.png" class="cover" id="cover53">
+  <img src="shisu.png" class="cover" id="cover54">
+  <img src="shiwo.png" class="cover" id="cover55">
+  <img src="shiliu.png" class="cover" id="cover56">
+</div>
+ 
+
+
+<div class="paragraph">
+    <div class="text">Here’s an object: </div>
+
+       <div class="text">a person-shaped machine. </div>
+       <div class="text"></div>
+      <div class="text"><br><br>A device so ancient </div>
+      <div class="text">that it can hardly be considered the same object that it was when it was created. </div>
+      <div class="text"></div>
+      <div class="text">When its parts break or warp, it adds new ones, </div>
+      <div class="text"></div>
+      <div class="text">and over eons it becomes more and more alive. </div>
+      <div class="text"><br><br></div>
+      <div class="text">Only a child, sent to live in the long-nighted world, </div>
+      <div class="text"></div>
+      <div class="text"> where cherry trees bloom at the same time each year, </div>
+      <div class="text"></div>
+      <div class="text">like cogs that catch a regular notch in the brass. </div>
+      <div class="text"></div>
+      <div class="text"> A peaceful world, with a smooth iron heart under the magma. </div>
+      <div class="text"></div>
+      <div class="text"> She develops an implicit intuition of the eternal sway of things, </div>
+      <div class="text"></div>
+      <div class="text">an unavoidable consequence of living on a geologic time scale: </div>
+      <div class="text"></div>
+      <div class="text">the sense of when a solar flare is coming, when the ice is leaving, </div>
+      <div class="text"></div>
+      <div class="text">or when a magnetic shift is due.<div class="text">.</div><div class="text">.</div>
+            <div class="text"></div>
+            <div class="text"></div>
+            <div class="text"></div>
+          <div class="text"><br><br></div>
+
+
+    <div class="text">Your memories all come flooding back in a wave.<br><br>It begins with the aftermath of the Carrington event, busted telegraph wires and small fires in the streets. You had innate knowledge of what a telegraph wire was, somehow, but you had no idea who you were. People recognized you on the street, asking if you were alright, but you hurried past them, confused and frightened. Following that, gaps began to be filled, but uncovering the evidence of your old self and their life their friends and their interests and concerns only made you feel further from who you had become. And then, for another hundred years, you remade yourself. You tried to remember. 
+<br><br>Looking at the ceiling stars, you get the vague impression of yourself as a child wandering around in the Archean era, trying to skip stones on the lava. Teetering about, staring at the sky and wondering if there was anyone else out there. But you can’t remember it clearly, and even then, you may as well have been a different person. Even the person you are now, according to your newly restored memory, seems distant. It was only yesterday that you got back from the hike with your cousins, but it seems like it was a billion years ago too. 
+<br><br>It took you an embarrassingly long time to figure out that solar flares were responsible for your memory loss, and even longer to engineer the genius solution of putting a backup data chip in a tin-plated steel box. But hey, there’s no one else like you in the whole world, and there hasn’t been for hundreds of millions of years. Well — you don’t actually remember that far back, but you get the feeling that you’ve been working things out on your own for a long time. 
+<br><br>But even then, without the specifics, without knowing the names of the people that you decided to become after the old ones were erased, you still remember the smell of iron, the grime, the ocean salt, the pollen, the wisteria, the wind chimes. Those things are seated much deeper in your body than the bright dot in your forehead called a name. 
+<br><br>The magnetic poles shift as the outer core swirls, but the inner core is always there, hiding. The inner self that never forgets its original purpose. To have fun. To explore. To help. To love a lot. To wake up in a room and hear a bluejay, and the wind rustling a thousand aimless patterns on the trees. 
+
+<div id="thanksflexbox">
+
+<div class="text">
+    <img id="thanks" src="thanksforplaying.png">
+  </div>
+
+</div>
+  
+  </div>
+
+</div>
+
+
+  <script>
+  
+textTimeout = setTimeout(function() { // its a  RELIC 
+//An animal's shedded old REPTILIAN TAIL that it ATE
+
+setTimeout(function() {
+    contin.style.display = "block";
+}, 7000);
+
+const tdivs = document.querySelectorAll(".text");
+
+realTextTimeout = setTimeout(function() {
+//why's there a text timeout that doesnt control the text of the timeout? what are you- a- fucking cop?
+//we're
+//keeping it real with the real text timeout
+//be good or you'll be put in textTimeout
+//we
+//don't even mess around
+//you already know
+//what's about to happen
+tdivs.forEach((tdiv, index) => {
+    setTimeout(() => {
+        tdiv.classList.add("visible");
+    }, 1800 * (index + 1)); //time between each text class appearing
+});
+
+}, 4000);
+
+
+
+const contin = document.getElementById("continue");
+
+
+    c1Timeout = setTimeout(function() {
+          if ( cover1.style.display = "none")
+          {cover2.style.display = "block";}
+        }, 100); 
+
+        for (let i = 2; i <= 56; i++) {
+  let currentCover = document.getElementById(`cover${i}`);
+  let nextCover = document.getElementById(`cover${i + 1}`);
+
+  setTimeout(function() {
+    if (currentCover.style.display == "block") {
+      currentCover.style.display = "none";
+      nextCover.style.display = "block";
+    }
+  }, i * 90); // delay between new frames
+}
+
+  setTimeout(function() {
+    let still = document.getElementById(`still`);
+    still.style.display = "none";
+  }, 5040); //removes still
+
+
+}, 1000);
+
+
+    
+  </script>
+
+</body>
+</html>
+
+

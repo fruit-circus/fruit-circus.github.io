@@ -4,16 +4,38 @@
   <title>Fruit Directory</title>
   <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">
 </head>
+<style>
+  #grape,
+  #starfruit,
+  #peach {
+    cursor: pointer;
+  }
+  #tree{
+    margin-top: 20px;
+    width: 100%;
+  }
+</style>
 
-<div style="text-align: center; font-size: 20px; margin-top: 50px;">
+<img src="fruit_tree.png" id="tree" alt="fruit tree" usemap="#fruit-map">
 
-<a href="fiction.html">Fiction</a><br>
-<a href="poetry.html">Poetry</a><br>
-<a href="games.html">Games</a><br><br>
+<map name="fruit-map">
+  <area shape="circle" id="peach" coords="490,460,42" alt="knob" onclick="peach()">
+  <area shape="rect" id="starfruit" coords="670,190,770,320" alt="starfruit" onclick="starfruit()">
+  <area shape="circle" id="grape" coords="940,484,45" alt="screen" onclick="grape()">
+  </map>
 
-Hi, I'm Fruit-Circus!<br>
-Please, pick a fruit from the tree.
 
 </div>
 </body>
+<script>
+  function starfruit() {
+    window.location.href = 'games.html';
+  }
+  function peach() {
+    window.location.href = 'fiction.html';
+  }
+  function grape() {
+    window.location.href = 'poetry.html';
+  }
+</script>
 </html>

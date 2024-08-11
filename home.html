@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit Directory</title>
+  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">
+</head>
+<style>
+  #grape,
+  #starfruit,
+  #peach,
+  #knock {
+    cursor: pointer;
+  }
+  #tree{
+    margin-top: 0px;
+    margin-left: -12px;
+  }
+  body {
+  zoom: 90%;
+  }
+</style>
+
+<img src="fruit_tree.png" id="tree" alt="fruit tree" usemap="#fruit-map">
+
+<map name="fruit-map">
+  <area shape="circle" id="peach" coords="490,460,42" alt="knob" onclick="peach()">
+  <area shape="rect" id="starfruit" coords="670,190,770,320" alt="starfruit" onclick="starfruit()">
+  <area shape="circle" id="grape" coords="940,484,45" alt="screen" onclick="grape()">
+  <area shape="rect" id="knock" coords="526,78,574,160" alt="the letter t" onclick="knock()">
+  </map>
+
+
+</div>
+</body>
+<script>
+
+  function starfruit() {
+    window.location.href = 'games.html';
+  }
+  function peach() {
+    window.location.href = 'fiction.html';
+  }
+  function grape() {
+    window.location.href = 'poetry.html';
+  }
+  //add fruit wiggle and white hover over text
+  function knock() {
+    knocking.play();
+  }
+</script>
+</html>

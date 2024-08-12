@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <title>Mazy</title>
+  <link rel="icon" type="image/x-icon" href="mazyfavicon.ico?">
+
+  <style>
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(33, 33, 28);
+}
+
+    .image-flexbox {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(5%);
+    z-index: 2;
+    top: 30px;
+}
+
+    #image {
+      display: block;
+      position: relative;
+}
+
+    #background{
+        position: absolute;
+        top: -1px;
+        height: 100vh;
+        width: 100vw;}
+
+</style>
+    </head>
+
+<body>
+  <div class="image-flexbox">
+    <img src="inventory.png" id="image">
+    </div>
+
+    <img src="mazybackground.png" id="background">
+
+
+  <audio id="click1">
+    <source src="click1_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click2">
+    <source src="click2_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click3">
+    <source src="click3_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click4">
+    <source src="click4_out.m4a" type="audio/mpeg">
+  </audio>
+  
+  <script>
+document.onkeydown = (e) => {
+
+if (e.key == 'i') {click2Audio.play(); setTimeout(function() {history.back();}, 800);}
+
+};
+
+var click1Audio = document.getElementById("click1");
+var click2Audio = document.getElementById("click2");
+var click3Audio = document.getElementById("click3");
+
+  </script>
+
+</body>
+</html>

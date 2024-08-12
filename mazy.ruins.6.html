@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+  <title>Mazy</title>
+  <link rel="icon" type="image/x-icon" href="mazyfavicon.ico?">
+
+  <style>
+
+    /* congratulations on finding the one page in this nightmarish labyrinth
+    that doesn't block you from opening the context menu. */
+
+body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(27,32,33)}
+
+        #errorImage {
+      display: none;
+      width: 440px;
+      height: 10px;
+      padding: 10px;
+    }
+
+        .image-flexbox {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(17%);
+        z-index: 1;}
+
+        #image {
+          display: block;
+          position: relative;
+          top: 50%;
+          z-index: 1;
+        }
+
+    input[type="text"] {
+      background-color: rgb(54,58,59); 
+      color: rgb(167,179,46);
+      border: 2px solid rgb(174, 174, 174); 
+      padding: 10px;
+      margin-top: 10px;
+      width: 420px;
+      font-size: 16px;
+      font-family: Courier, monospace;
+      outline: none; 
+    }
+
+    input[type="text"]:focus {
+      border: 2px solid #f5f5eb;
+      animation: blink 1s infinite;
+    }
+
+    </style>
+</head>
+
+<body>
+
+
+  <div class="image-flexbox">
+    <img src="ruin6.png" id="image">
+    <input type="text" id="keyphraseBox" placeholder="Enter keyphrase" onkeydown="handleEnter(event)">
+    <img id="errorImage" src="terminalincorrect2.png" alt="incorrect">
+
+
+  </div>
+
+  <script>
+  
+    function handleEnter(event) {
+      if (event.key === "Enter") {
+        checkKeyword();
+      }
+    }
+
+    window.onload = function() {
+      document.getElementById("keyphraseBox").value = "";
+      const leInput = document.getElementById("keyphraseBox");
+      leInput.focus();
+    };
+
+const wrong = {
+  answer: false,
+}
+
+var errimg = document.getElementById("errorImage");
+
+          if (wrong.answer) {
+            errimg.style.display = "block";
+          }
+
+          const laInterval = setInterval(() => {
+          if (wrong.answer) {
+            keyText.style.color = "rgb(167,179,46)";
+            wrong.answer = false;
+          }  }, 2000);
+
+          function checkKeyword() {
+      var enteredKeyword = document.getElementById("keyphraseBox").value.toLowerCase();
+      var requiredSubstrings = ["moon", "reflect", "water"]; // "the moon reflected in a drop of water"
+      var isValidKeyword = requiredSubstrings.every(function(substring) {
+        return enteredKeyword.includes(substring);
+      });
+
+var keyText = document.getElementById("keyphraseBox")
+
+      if (isValidKeyword) {
+        window.location.href = "open.globe.html"; // or you could cut straight to the destination
+      } else { 
+        keyText.style.color = "rgb(180,50,46)";
+        wrong.answer = true;
+        const laInterval = setTimeout(() => {
+          if (wrong.answer) {
+            keyText.style.color = "rgb(167,179,46)";
+            wrong.answer = false;
+          }  }, 900);
+            } 
+    }
+                    
+  </script>
+
+</body>
+</html>

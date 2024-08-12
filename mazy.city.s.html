@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <title>Mazy</title>
+  <link rel="icon" type="image/x-icon" href="mazyfavicon.ico?">
+  <link rel="stylesheet" href="mazystyle.css">
+
+</head>
+
+<body>
+    
+  <div class="image-flexbox">
+    <img src="citys.png" id="image">
+    </div>
+    <img src="mazybackground.png" id="background">
+
+
+  <audio id="click1">
+    <source src="click1_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click2">
+    <source src="click2_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click3">
+    <source src="click3_out.m4a" type="audio/mpeg">
+  </audio>
+  <audio id="click4">
+    <source src="click4_out.m4a" type="audio/mpeg">
+  </audio>
+  
+  <script>
+
+    document.onkeydown = (e) => {
+    
+    if (e.key == '1') {click1Audio.play(); setTimeout(function() {window.location.href = 
+    'mazy.city.s.1.html';}, 800);}
+    
+    if (e.key == 'i') {click2Audio.play(); setTimeout(function() {window.location.href = 
+    'inventory.html';}, 800);}
+    
+    };
+    
+    var click1Audio = document.getElementById("click1");
+    var click2Audio = document.getElementById("click2");
+    var click3Audio = document.getElementById("click3");
+    var click4Audio = document.getElementById("click4");
+    
+      </script>
+
+</body>
+</html>

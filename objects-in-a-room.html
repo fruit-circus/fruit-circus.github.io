@@ -5,17 +5,11 @@
   <link rel="icon" type="image/x-icon" href="morningfavicon.ico?">
   <style>
 
-/* red: rgb(251, 25, 1) */
-/* yellow: rgb(255, 191, 0) */
-/* violet: rgb(226, 125, 152) */
-/* teal: rgb(121, 199, 124) */
-/* cream: rgb(237, 221, 176) */
-/* orange: rgb(255, 118, 0) */
-
-
-/*more sounds?*/
+/*fix harp song duration... also: too loud?*/
 /*edit the_moon to remove my laugh */
-/* finish Mazy; title page for mazy */
+/* finish Mazy */
+/*cant look at stars after looking in notes app*/
+/*add cookies*/
 
 body {
         margin: 0;
@@ -723,6 +717,26 @@ window.onload = function() {
     const inputElement = document.getElementById("input");
     inputElement.focus();};
 
+
+    document.addEventListener("DOMContentLoaded", (event) => {   
+    if (cookiesHas('shown')) {
+      cover1.style.display = "none"; 
+      cover2.style.display = "none"; 
+      cover3.style.display = "none"; 
+      cover4.style.display = "none"; 
+      cover5.style.display = "none"; 
+      cover6.style.display = "none"; 
+     clickAnywhere.style.display = "none";
+     cover.shown = false;
+    }
+    });
+
+    function cookiesHas(value) {
+    let cookies = document.cookie.split(';');
+    return cookies.some(cookie => cookie.trim().split('=')[1] === value);}
+
+
+
    document.onkeydown = (e) => {
     if (e.key == 123) {
         e.preventDefault();}
@@ -1015,10 +1029,10 @@ window.onload = function() {
       else if ((input.includes('celeste') || input.includes('delta')) && general.laptop) {response = "A fairly large file, probably a videogame. You would open it, but you probably have more pressing matters to attend to."}
       else if (input.includes('stardew') && general.laptop) {response = `Compared to the others, this file is very small. It looks like most of its data is stored somewhere else. Upon further inspection, it seems the icon routes to a massive folder full of mods. You can't really make out what most of these are supposed to do just by looking at their titles, but some of them are self-evident, like: "polyamory sweet", "pastel recolor", "child-to-npc", and "slighty-hotter-wizard".`}
       else if (input.includes('notes') && phone.unlocked) {response = 'There are more than a hundred individual notes within the app. Some are out-of-context quotes, self-reminders, or book, movie, and video game recommendations. There are some song lyrics or partial verses of poetry. One note just says "This is Humbaba, his voice is the Deluge, [his speech is fire,] his breath is death!" Another is titled "Obscure Memories," another, "Wittgenstein." The most recent note is titled "Star Vigenère." It is pinned to the top.'; general.vigenere = true;}
-      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && general.vigenere)) && !messageRevealed.mazy) {response = 'The note reads: "He said to the border guard: H EB AFV LSDU PVEPTJRVC MC H BINT DM URSIG. For help, look to the stars."'; messageRevealed.mazy = true;}
-      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && general.vigenere)) && keys.copperhidden) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar twice SLT JMGOIG RCP HW JUBVQ XWL ZVC. For help, look to the stars.'}
-      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && general.vigenere)) && keys.bluehidden) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar twice SLT RCP SS IOC SKYT APLMO XZ ZVGMCK RYD TPPLKHRV VD KGI LVKVM ECK RYD APACIEEAS. For help, look to the stars.'}
-      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && general.vigenere)) && !keys.bluehidden && !keys.copperhidden && messageRevealed.mazy) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar Cipher twice. Encryption be upon ye: EITS RYD FPJI FE CDBP EDGZ. For help, look to the stars.'}
+      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && !input.includes('stars') && general.vigenere)) && !messageRevealed.mazy) {response = 'The note reads: "He said to the border guard: H EB AFV LSDU PVEPTJRVC MC H BINT DM URSIG. For help, look to the stars."'; messageRevealed.mazy = true;}
+      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && !input.includes('stars') && general.vigenere)) && keys.copperhidden) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar twice SLT JMGOIG RCP HW JUBVQ XWL ZVC. For help, look to the stars.'}
+      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && !input.includes('stars') && general.vigenere)) && keys.bluehidden) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar twice SLT RCP SS IOC SKYT APLMO XZ ZVGMCK RYD TPPLKHRV VD KGI LVKVM ECK RYD APACIEEAS. For help, look to the stars.'}
+      else if (((input.includes('vigen') && phone.unlocked) || (input.includes('star') && !input.includes('map') && !input.includes('stars') && general.vigenere)) && !keys.bluehidden && !keys.copperhidden && messageRevealed.mazy) {response = 'Vigenere was invented by Sir Thomas Vigenere in 1868 when he tried to Caesar Cipher twice. Encryption be upon ye: EITS RYD FPJI FE CDBP EDGZ. For help, look to the stars.'}
       else if (input.includes('i miss you')) {response = `I'd like to say I miss you too, but I'm not around anymore. I can still say I love you, though.`;}
       else if (input.includes('do you understand') || input.includes('can you understand')) {response = `I wish I could understand. But compared to me, you're endless.`;}
       else if (input.includes('do you know')) {response = `I wish I could say I knew more. But compared to me, you're endless. I'm just a text-parser.`;}
@@ -1088,7 +1102,7 @@ window.onload = function() {
           else {response = "You're not wearing that.";}}
           
            //doning (potential problem of "don" being in several words)
-        else if (input.includes('wear') || (input.includes('put') && input.includes('on') && !input.includes('phone') && !input.includes('computer') && !input.includes('liopleurodon')) || (input.includes('don') && !input.includes('liopleurodon'))) {
+        else if (input.includes('wear') || ((input.includes('put') && input.includes('on')))) {
           if (input.includes('leggings') && !self.jeans) {response = "You put on the black leggings."; self.leggings = true; self.pajamas = false; self.clothed = true; legs.hidden = true;}
           else if (input.includes('leggings') && self.jeans) {response = "Leggings over jeans? Are you out of your mind? Actually, I guess you wouldn't know. Maybe this is normal for you.";}
           else if (input.includes('jeans') && !self.leggings) {response = "You put on the embroidered jeans."; self.jeans = true; self.pajamas = false; self.clothed = true; legs.hidden = true;}
@@ -1203,9 +1217,9 @@ window.onload = function() {
          
           else if ((input.includes('trunk') || input.includes('blue')) && !input.includes('copper') && !input.includes('steel') && keys.bluehidden && !trunks.blue) {response = "The blue trunk is firmly locked, you'll need to find the right key in order to open it.";}
           else if ((input.includes('trunk') || input.includes('blue')) && !input.includes('copper') && !input.includes('steel') && !keys.bluehidden && !trunks.blue) {response = "The lid of the trunk pops open, revealing a slightly smaller trunk made of copper which had been fit snugly within the blue one. You remove the copper trunk and put it on the end table — it is still very heavy, suggesting that there may be still another trunk within the copper one. The inside of the blue trunk is plated in quarter-inch-thick aluminum."; trunks.blue = true;}
-          else if ((input.includes('trunk') || input.includes('copper')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('steel') && keys.copperhidden && trunks.blue && !trunks.copper) {response = "The copper trunk is firmly locked, you'll need to find the key.";}
+          else if ((input.includes('trunk') || input.includes('copper')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('steel') && keys.copperhidden && trunks.blue && !trunks.copper) {response = "The copper trunk is firmly locked, you'll need to find the right key.";}
           else if ((input.includes('trunk') || input.includes('copper')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('steel') && !keys.copperhidden && trunks.blue && !trunks.copper) {response = "Using the copper key, you open the copper trunk, revealing another trunk, made of steel, much smaller than the previous two. There is something small inside that rattles around when you shake it."; trunks.copper = true;}
-          else if ((input.includes('trunk') || input.includes('steel')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('copper') && keys.steelhidden && trunks.blue && trunks.copper && !trunks.steel) {response = "The steel trunk is firmly locked, you'll need to find the key.";}
+          else if ((input.includes('trunk') || input.includes('steel')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('copper') && keys.steelhidden && trunks.blue && trunks.copper && !trunks.steel) {response = "The steel trunk is firmly locked, you'll need to find the right key.";}
           else if ((input.includes('trunk') || input.includes('steel')) && !(input.includes('blue') || input.includes('aluminum')) && !input.includes('copper') && !keys.steelhidden && trunks.blue && trunks.copper && !trunks.steel) {response = `You open the steel trunk. Inside is a data chip no larger than your fingernail. There is a note on a scrap of lined paper beside it that reads, "Backup memory. Hopefully this wasn't fried by the flare. You might want to lie down before you plug it in, just in case."`;}
           else if ((input.includes('email') || input.includes('gmail')) && !input.includes('minecraft') && !input.includes('caving') && !input.includes('testing') && !input.includes('gender') && phone.unlocked) {response = 'There are four emails in your inbox. The subject lines are: "Power Point talk on Caving," "Gender Board," "Your Minecraft Realms Plus..." and "Re: Game Testing."'}
           else if (input.includes('bottle')) {response = "You open the bottle.";}
@@ -1310,7 +1324,7 @@ window.onload = function() {
       else if (input.includes('yodel')) {response = "You don't know how to yodel."}
       else if (input.includes('murder self')) {response = "That would be rather counter-productive."}
       else if (input.includes('kill self')) {response = "That would be rather counter-productive."}
-      else if (input.includes('murder')) {response = "There's no one you particularly want to murder."}
+      else if (input.includes('murder') && !input.includes('must')) {response = "There's no one you particularly want to murder."}
       else if (input.includes('handstand')) {response = "You try to do a handstand, but you keep falling over."}
       else if (input.includes('headstand')) {response = "You try to do a headstand, but you keep chickening out."}
       else if (input.includes('prance') || input.includes('cavort') || input.includes('frolic')) {response = "You frolic about the room."}
@@ -1335,6 +1349,7 @@ window.onload = function() {
       else if ((input.includes('say') || input.includes('speak') || input.includes('talk')) && !input.includes('sayers')) {response = "You don't feel like speaking right now."}
       else if (input.includes('recycle')) {response = "You don't want to recycle that. You also don't appear to have a dedicated recycling bin in your room."}
       else if (input.includes('bird') && input.includes('match') && input.includes('light')) {response = "The bird? The match? Light the bird with the match?"}
+      else if (input.includes('play') && input.includes('music')) {response = "Under your bed are a harp and a ukulele."}
       else if ((input.includes('play') || input.includes('strum') || input.includes('pluck')) && (input.includes('ukulele') || input.includes('uke')) && !uke.played) {response = "Since there is a baritone ukulele under your bed, it stands to reason that you know how to play the baritone ukulele. Of course, you don't remember any actual songs. When you sit down to play, muscle memory prompts your fingers to assume what your brain says is 'C Major' and you work from there. Several other chord patterns follow naturally from the first from muscle memory."; uke.played = true; self.standing = false;}
       else if ((input.includes('play') || input.includes('strum') || input.includes('pluck')) && (input.includes('ukulele') || input.includes('uke')) && uke.played) {response = "You play more notes on the ukulele. A pattern slowly emerges. You repeat it a few times, and try adding different chords at random. Most are dissonant. They're fine in their own right, but sound strange in the context of the chords you started with."}
       else if ((input.includes('play') || input.includes('strum') || input.includes('pluck')) && (input.includes('ukulele') || input.includes('uke')) && !uke.played && harp.played) {response = "As with the harp, since there is a baritone ukulele under your bed, it stands to reason that you know how to play the baritone ukulele. Of course, you don't remember any actual songs. When you sit down to play, muscle memory prompts your fingers to assume what your brain says is 'C Major' and you work from there. The uke's sound is more lively but less refined than the harp's."; uke.played = true; self.standing = false;}
@@ -1384,7 +1399,7 @@ window.onload = function() {
       else if (input.includes('wait wait')) {response = `The icon is a rolled up newspaper in the shape of an exclamation mark. It appears to be a weekly comedy show about current events.`}
       else if (input.includes('wait')) {response = "There's nothing to wait for. The time will pass anyway."}
       else if (input.includes('walk')) {response = "You get up and walk from one end of the room to the other. It takes about four steps."}
-      else if (input.includes('snap')) {response = "Snap!"}
+      else if (input.includes('lemon juice')) {response = "It would be nice to have some lemon juice, but you don't see any."}
       else if (input.includes('remove') && input.includes('screw') ) {response = "There's no reason to unscrew anything."}
       else if (input.includes('unscrew')) {response = "There's no reason to unscrew anything."}
       else if (input.includes('pull') && input.includes('drawstring')) {response = `Pulling the drawstring sinches the brown pouch shut.`}
@@ -1436,8 +1451,8 @@ window.onload = function() {
       else if (input.includes('rotate') && (input.includes('doll') || input.includes('matryoshka') || input.includes('nesting'))) {response = "You rotate the top and bottom halves of the doll relative to each other so that they line up."}
       else if (input.includes('pick') && input.includes('lock')) {response = "You don't see anything that could be used as a lockpick here."}
       else if ((input.includes('pry') && (input.includes('lock') || input.includes('trunk'))) || (input.includes('break') && (input.includes('lock') || input.includes('trunk'))) || (input.includes('bust') && (input.includes('lock') || input.includes('trunk'))) || (input.includes('rip') && (input.includes('lock') || input.includes('trunk'))) || (input.includes('with force') && (input.includes('lock') || input.includes('trunk'))) || (input.includes('tear') && (input.includes('lock') || input.includes('trunk')) (input.includes('hit') && (input.includes('lock') || input.includes('trunk'))))) {response = "It would be difficult to open the trunk with brute force."}
-      else if (((input.includes('write') && input.includes('message')) || (input.includes('text') && !input.includes('context')) || (input.includes('send') && input.includes('message')) || ((input.includes('text') || input.includes('write')) && (input.includes('will') && !input.includes('iam'))) || ((input.includes('text') || input.includes('write')) && input.includes('alex'))) && !phone.unlocked) {response = "You need to unlock your phone first."}
-      else if (((input.includes('write') && input.includes('message')) || (input.includes('text') && !input.includes('context')) || (input.includes('send') && input.includes('message')) || ((input.includes('text') || input.includes('write')) && (input.includes('will') && !input.includes('iam'))) || ((input.includes('text') || input.includes('write')) && input.includes('alex'))) && phone.unlocked) {response = "What do you want to say?"; general.sendingmessage = true;}
+      else if (((input.includes('write') && input.includes('message')) || (input.includes('text') && !input.includes('context') && !input.includes('cipher')) || (input.includes('send') && input.includes('message')) || ((input.includes('text') || input.includes('write')) && (input.includes('will') && !input.includes('iam'))) || ((input.includes('text') || input.includes('write')) && input.includes('alex'))) && !phone.unlocked) {response = "You need to unlock your phone first."}
+      else if (((input.includes('write') && input.includes('message')) || (input.includes('text') && !input.includes('context') && !input.includes('cipher')) || (input.includes('send') && input.includes('message')) || ((input.includes('text') || input.includes('write')) && (input.includes('will') && !input.includes('iam'))) || ((input.includes('text') || input.includes('write')) && input.includes('alex'))) && phone.unlocked) {response = "What do you want to say?"; general.sendingmessage = true;}
       else if (input.includes('who') && input.includes('am') && input.includes('i')) {response = "The best way to figure out who you are is by looking around the room. Glancing around, for instance, you notice a cellphone on the dresser across from you."}
       else if (input.includes('where') && input.includes('am') && input.includes('i')) {response = "The best way to figure out who and where you are is by looking around the room. Glancing around, for instance, you notice a cellphone on the dresser across from you."}
       else if (input.includes('hello') && !input.includes('kit')) {response = "Hi!"}
@@ -1951,7 +1966,7 @@ window.onload = function() {
           else if (input.includes('brass') && !keys.brasshidden) {response = 'A simple brass key.';}
           else if (input.includes('bruise')) {response = "While not visibly injured, your hips feel stiff, like a lot of weight or pressure had been put on them."}
           else if (input.includes('brass') && keys.brasshidden) {response = "You don't see a brass key.";}
-          else if (((input.includes('blue') && !input.includes('picture') && !input.includes('painting')) || input.includes('aluminum')) && !input.includes('trunk') && !keys.bluehidden) {response = 'A light blue key made of aluminum.';}
+          else if (((input.includes('blue') && !input.includes('picture') && !input.includes('flag') && !input.includes('skirt') && !input.includes('highway') && !input.includes('jay') && !input.includes('shirt') && !input.includes('case') && !input.includes('blood') && !input.includes('painting')) || input.includes('aluminum')) && !input.includes('trunk') && !keys.bluehidden) {response = 'A light blue key made of aluminum.';}
           else if (input.includes('copper') && !keys.copperhidden) {response = 'An ornate copper key.';}
           else if (input.includes('copper') && keys.copperhidden && !trunks.blue) {response = "You don't see a copper key.";}
           else if (input.includes('steel') && !keys.steelhidden) {response = 'A strong steel key.';}
@@ -2008,7 +2023,7 @@ window.onload = function() {
           else if (((input.includes('blue') && input.includes('picture')) || (input.includes('blue') && input.includes('painting')) || input.includes('busted') || (input.includes('old') && input.includes('frame')) || input.includes('ancient') || (input.includes('doodle') && input.includes('painting'))) && !self.pink) {response = `The frame is an ornate and ancient busted thing that holds a long sheet of paper with colored pencil drawings of humans and other animals. These include: a cat named Gesneriad, a girl named We Jazz June, a boy named Present Praxis, and a goblin called Galactase. The bottom is signed “Julia." There is a curious mess of red and yellow scribbles in the center of the page — what looks to be yellow highlighter and blue pen and red crayon. You can't make sense of it.`; paintingback.blue = true;}
           else if (((input.includes('blue') && input.includes('picture')) || (input.includes('blue') && input.includes('painting')) || input.includes('busted') || (input.includes('old') && input.includes('frame')) || input.includes('ancient') || (input.includes('doodle') && input.includes('painting'))) && self.pink) {response = 'With the pink glasses, the text at the center of the blue picture becomes much clearer. It reads: "19, 53, 74, 53, 27, 15, 68, 28, 29, 16."';}
           else if (input.includes('jar') && input.includes('dirt')) {response = 'Just a jar of dirt.';}
-          else if (input.includes('cat') && !input.includes('application') || input.includes('dualism') || input.includes('cartesian')) {response = 'A simple drawing of a cat with red fur that curves downward at an unlikely angle.';}
+          else if (input.includes('cat') && !input.includes('application') && !input.includes('educat') || input.includes('dualism') || input.includes('cartesian')) {response = 'A simple drawing of a cat with red fur that curves downward at an unlikely angle.';}
           else if (input.includes('goblin') || input.includes('galactase')) {response = 'A pink goblinoid creature with large fluffy ears.';}
           else if (input.includes('boy') || (input.includes('praxis') || input.includes('praxis')) ) {response = 'A boy with curly hair and rosy cheeks.';}
           else if (input.includes('girl') || input.includes('jazz') || input.includes('june')) {response = 'A girl with curly hair and a blue dress.';}
@@ -2061,8 +2076,9 @@ window.onload = function() {
           else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && keys.bluehidden && playfair.key) {response = `The cipher text reads: "HPF DGD CMAM BWMCYL XBSEJI IW" Below, there is a cut-and-pasted paragraph that reads, "Playfair ciphers are a type of block cipher. They are named for an English lord, Lyon Playfair, who advocated their use, but they were invented by Charles Wheatstone (1854). Encryption is accomplished using a square array of characters, constructed from the encryption key. Because our set of plaintext characters is the 26-letter English alphabet, for us this array will be 5 × 5, and will omit the letter Z. You wonder if this message is related to the multi-colored grid.`;}
           else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && !keys.bluehidden && !messageRevealed.mazy && !playfair.key) {response = `The text reads: "He said to the border guard: AJGX MCGRSGX MDAFDXB ELS FEQP QSBY LXBXI." Below, there is a cut-and-pasted paragraph that reads, "Playfair ciphers are a type of block cipher. They are named for an English lord, Lyon Playfair, who advocated their use, but they were invented by Charles Wheatstone (1854). Encryption is accomplished using a square array of characters, constructed from the encryption key. Because our set of plaintext characters is the 26-letter English alphabet, for us this array will be 5 × 5, and will omit the letter Z.`; playfair.text = true; messageRevealed.mazy = true;}
           else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && !keys.bluehidden && !messageRevealed.mazy && playfair.key) {response = `The text reads: "He said to the border guard: AJGX MCGRSGX MDAFDXB ELS FEQP QSBY LXBXI." Below, there is a cut-and-pasted paragraph that reads, "Playfair ciphers are a type of block cipher. They are named for an English lord, Lyon Playfair, who advocated their use, but they were invented by Charles Wheatstone (1854). Encryption is accomplished using a square array of characters, constructed from the encryption key. Because our set of plaintext characters is the 26-letter English alphabet, for us this array will be 5 × 5, and will omit the letter Z. You wonder if this message is related to the multi-colored grid.`; messageRevealed.mazy = true;}
-          else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && keys.bluehidden && messageRevealed.mazy && !playfair.key) {response = `The message reads: "Looks like you already found everything!"`; playfair.text = true;}
-          else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && keys.bluehidden && messageRevealed.mazy && playfair.key) {response = `The message reads: "Looks like you already found everything!"`;}
+          else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && keys.bluehidden && messageRevealed.mazy && !playfair.key) {response = `The message reads: "Looks like you have all the pieces already..."`; playfair.text = true;}
+          else if ((input.includes('graph') || input.includes('cipher')) && !keys.copperhidden && keys.bluehidden && messageRevealed.mazy && playfair.key) {response = `The message reads: "Looks like you have all the pieces already..."`;}
+          else if ((input.includes('graph') || input.includes('cipher'))) {response = `The message reads: "Looks like you have all the pieces already..."`;}
           else if (input.includes('permit') || (input.includes('pass') && !input.includes('code') && !input.includes('word')) || input.includes('backcountry') && !input.includes('countries') && !input.includes('code')) {response = "The permit reads: Great Smoky Mountains National Park Backcountry Permit B374950 / Permit Holder: Vincent Reid / Emergency Contact: Janet Reid / Date Processed: 7/16 / Group Size: 5 / Stock: 0 / Itinerary: AAA Unspecified Entry Point, 112 Mollies Ridge, 109 Derrick Knob, 108 Silers Bald, 106 Mt. Collins, 105 Icewater Spring, 104 Pecks Corner, 103 Tricorner Knob, 102 Cosby Knob, AAA Unspecified Exit Point."; julia.nameone = true;}
           else if (input.includes('trash') && !general.bandaid) {response = "The trash can is empty except for two things, poetry scraps and a backcountry pass. Behind the trash can is a carbon monoxide detector.";}
           else if (input.includes('trash') && general.bandaid) {response = "The trash can is empty except for three things, poetry scraps, a backcountry pass, and an old band-aid. Behind the trash can is a carbon monoxide detector.";}
@@ -2923,6 +2939,7 @@ harptwoPause();}
       cover6.style.display = "none"; 
      clickAnywhere.style.display = "none";
      cover.shown = false;
+     document.cookie = "cover=shown";
     }
 
     var popAudio = document.getElementById("pop");

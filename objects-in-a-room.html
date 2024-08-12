@@ -7,8 +7,6 @@
 
 /*fix harp song duration... also: too loud?*/
 /*edit the_moon to remove my laugh */
-/* finish Mazy */
-/*cant look at stars after looking in notes app*/
 /*add cookies*/
 
 body {
@@ -1186,7 +1184,7 @@ window.onload = function() {
           else if (input.includes('school bag')) {response = "It is solid plastic, it will not open.";}
           else if (input.includes('door')) {response = "You're content in your room, actually. Besides, you don't know who you are yet. All the clues you need are in here."}
           else if (input.includes('case') && general.woodcaseopen) {response = "Inside the wooden case are various art supplies, watercolors, colored pencils, wax crayons, etc. The watercolors look almost completely unused.";}
-          else if (input.includes('sparrow') && !sparrow.opened) {response = `You open "The Sparrow". A square piece of transfer paper falls out. On the top is written, "Starmap."`; starmap1.found = true; sparrow.opened = true;}
+          else if (input.includes('sparrow') && !sparrow.opened) {response = `You open "The Sparrow". A square piece of transfer paper falls out. On the top is written, "Starmap."`; starmap1.found = true; sparrow.opened = true; openstars1();}
           else if (input.includes('sparrow') && sparrow.opened) {response = `You open "The Sparrow". This page seems to be describing the main character, Emilio, having a very bad time on an alien planet.`;}
           else if (input.includes('globe')) {response = `There is a small latch on the far side of the globe that you hadn't seen before. You flick it, and the globe pops open. In the center of the globe is a steel key. Tied to the key is a note that says, "<3"`; keys.steelhidden = false; displaysteel();}
           else if (input.includes('drawer') && general.nightstanddrawer) {response = "The nightstand drawer contains blank index cards, a drawing of a fox doing ballet, pink needle-nosed pliers, a lighter, erasure poetry, a canadian dollar coin, an origami dragon, various cables and adaptors, and six or seven of those silica gel packets that keep food dry."; cards.index = true; general.nightstand = true; general.nightstanddrawer = false; general.lighter = true;}
@@ -1626,7 +1624,7 @@ window.onload = function() {
         else if (input.includes('shirt') && !input.includes('white') && !input.includes('bee') && !input.includes('blue') && !input.includes('stripe') && !input.includes('pastel')) {response = "Which do you want to wear? The white shirt or the green shirt?"; either.shirtwear = true;}
         else if (input.includes('skirt') && !input.includes('circus') && !input.includes('lacy') && !input.includes('blue') && !input.includes('white')) {response = "The lacy blue skirt or the simple white skirt?"; either.skirtwear = true;}
         else if (input.includes('clothes') || input.includes('clothing')) {response = "Which clothes do you want to wear? It seems like your options are limited to: flower socks or fruit socks; a green shirt, white shirt, or black turtleneck; black jeans or black leggings and a white skirt or a light blue skirt."}
-        else if (input.includes('cardstock') && panel.cardstock) {response = `Taken. Written on the cardstock is a short note that reads: "(shelf, author): (1,1) - (4,3) - (2,3) - (3,1) - (4,4) - (4,2) - (2,7)."`}
+        else if (input.includes('cardstock') && panel.cardstock) {response = `Written on the cardstock is a short note that reads: "(shelf, author last initial): (1,1) - (4,4) - (2,3) - (3,1) - (4,5) - (4,2) - (2,7)."`}
         else {response = "That's not a thing that needs to be taken.";}}
 
           //smelling
@@ -2027,7 +2025,7 @@ window.onload = function() {
           else if (input.includes('goblin') || input.includes('galactase')) {response = 'A pink goblinoid creature with large fluffy ears.';}
           else if (input.includes('boy') || (input.includes('praxis') || input.includes('praxis')) ) {response = 'A boy with curly hair and rosy cheeks.';}
           else if (input.includes('girl') || input.includes('jazz') || input.includes('june')) {response = 'A girl with curly hair and a blue dress.';}
-          else if (input.includes('cardstock') && panel.cardstock) {response = `Written on the cardstock is a short note that reads, "last initials. (1,1) - (4,3) - (2,3) - (3,1) - (4,4) - (4,2) - (2,7)." `;}
+          else if (input.includes('cardstock') && panel.cardstock) {response = `Written on the cardstock is a short note that reads, "author last initial. (1,1) - (4,4) - (2,3) - (3,1) - (4,5) - (4,2) - (2,7)." `;}
           else if (input.includes('dice') || input.includes('die')) {response = 'There’s nothing particularly striking about the dice.';}
           else if (input.includes('flag') && !input.includes('blue') && !input.includes('flags') && !input.includes('tibet') && !input.includes('red') && !input.includes('white') && !input.includes('green') && !input.includes('yellow')) {response = 'A flag with purple, grey, white, and black horizontal stripes. It is about the length of your hand.';}
           else if (input.includes('door')) {response = 'A white door with a round black knob. Above the door is a smoke detector. Beside the door is a blue picture with an ancient, busted up frame.';}
@@ -2119,6 +2117,7 @@ window.onload = function() {
           else if (input.includes('ankle')) {response = "Your ankles seem nominal.";}
           else if (input.includes('fan')) {response = "It is a simple ceiling fan with five blades and four light bulbs.";}
           else if (input.includes('ceiling') || input.includes('cieling') ) {response = "On the ceiling is a ceiling fan and an array of glow-in-the-dark ceiling stars.";}
+          else if ((input.includes('stars') || input.includes('array')) && starmap1.found) {response = "A pattern becomes apparent."; opencstars()}
           else if (input.includes('stars') || input.includes('array')) {response = "If the sticky ceiling stars have any order or secret to them, it's not immediately apparent."; opencstars()}
           else if (input.includes('tux')) {response = "A black tuxedo whose shoulders seem slightly too wide for you. It is sleek and clean.";}
           else if (input.includes('pocket')) {response = "A quick search reveals that the pockets are empty.";}
@@ -2290,7 +2289,7 @@ window.onload = function() {
           else if (input.includes('rootabaga') || input.includes('sandburg') || input.includes('rutabaga')) {response = `You flip to a random page. "Crossing Ohio and Indiana at night, the flongboos took off the roof of the car. The conductor told them, "I must have an explanation." "It was between us and the stars,' they told him. The train ran into Chicago. That afternoon there were pictures upside down in the newspapers showing the blue foxes and the yellow flongboos climbing telephone poles standing on their heads eating pink ice cream with iron axes. Each blue fox and yellow flongboo got a newspaper for himself and each one looked long and careful upside down to see how he looked in the picture in the newspaper climbing a telephone pole standing on his head eating pink ice cream with an iron ax. Crossing Minnesota the sky began to fill with the snow ghosts of Minnesota snow weather. Again the foxes and Flongboos lifted the roof off the car, telling the conductor they would rather wreck the train than miss the big show of the snow ghosts of the first Minnesota snow weather of the winter."`; book3S.play();}
           else if (input.includes('allende') || input.includes('spirits') || input.includes('house of the')) {response = `This is a very old-looking book with soft pages that have been written on in the margins by many different hands.`; bookS.play();}
           else if (input.includes('dorothy') || input.includes('sayers') || input.includes('unnatural') || input.includes('advertise')) {response = `It appears to be one of Dorothy Sayers classic Lord Peter Whimsey murder mysteries.`}
-          else if ((input.includes('sparrow') || input.includes('doria') || input.includes('russel')) && !sparrow.opened) {response = `This is a book with a beautiful dark blue cover and golden stars. When you open it, a square piece of transparent transfer paper falls out. On the top is written, "Starmap."`; starmap1.found = true; paperS.play(); sparrow.opened = true;}
+          else if ((input.includes('sparrow') || input.includes('doria') || input.includes('russel')) && !sparrow.opened) {response = `This is a book with a beautiful dark blue cover and golden stars. When you open it, a square piece of transparent transfer paper falls out. On the top is written, "Starmap."`; starmap1.found = true; paperS.play(); sparrow.opened = true; openstars1();}
           else if ((input.includes('sparrow') || input.includes('doria') || input.includes('russel')) && sparrow.opened) {response = `This is a book with a beautiful dark blue cover and golden stars. Inside it was hidden a piece of transparent transfer paper titled "Starmap."`;}
           else if (input.includes('janine') && general.jean) {response = `Janine's message reads: "Julia, I have not met anybody in my life with a vision and style as unique and developed as yours. I think that you emanate a wisdom and maturity that is hard for people not to sense, but it’s also hard to articulate exactly what gives you that quality. Hence the rumors that you are as old as time. In keeping with your whimsy, here is a copy of some Icelandic sagas. Welcome back to the tenth* century I hope you enjoy your stay and think about me along the journey. Love, Janine." And a footnote: "*ok so I got the date wrong but ... whatever close enough."`; general.jean = true;}
           else if (input.includes('saga') || input.includes('eyri') || input.includes('gisli') || input.includes('sursson')) {response = "A book with colorful Medieval art of men with swords and sheilds. There is a bookmark at page 78, but, flipping back to the beginning, you also notice there is a personal message on the title page from someone named Janine."; general.jean = true;}
@@ -2308,8 +2307,8 @@ window.onload = function() {
           else if (input.includes('weirdos') || input.includes('another planet') || input.includes('watterson') || input.includes('waterson')) {response = `A collection of Calvin and Hobbes comics.`}
 
           //shelves
-          else if (input.includes('shelf') && (input.includes('1') || input.includes('first')) || (input.includes('rainbow') && general.rainbow)) {response = 'These books are all black, white, or grey. (1) Eastern Forests, Ann Sutton and Myron Sutton (2) Because Internet, Gretchen McCulloch (3) The Sound and the Fury, William Faulkner (4) Rendezvous with Rama, Arthur C. Clark (5) Frankenstein, Mary Shelly (6) The Mysterious Benedict Society, Trenton Lee Stewart (7) Obfuscation, Finn Brunton and Helen Nissenbaum (8) The Histories, Herodotus.'}
-          else if ((input.includes('shelf') && (input.includes('2') || input.includes('second'))) || (input.includes('black') && input.includes('white')) ) {response = 'These books are aranged by color. (1) The Universal Book of Mathematics, David Darling (2) Rootabaga Stories, Carl Sandburg (3) The House of the Spirits, Isabel Allende (4) Beginning Theory, Peter Barry (5) Everfair, Nisi Shawl (6) Unnatural Death, Dorothy Sayers (7) Blandings Castle, P. G. Wodehouse.'}
+          else if ((input.includes('shelf') && (input.includes('1') || input.includes('first'))) || (input.includes('black') && input.includes('white'))) {response = 'These books are all black, white, or grey. (1) Eastern Forests, Ann Sutton and Myron Sutton (2) Because Internet, Gretchen McCulloch (3) The Sound and the Fury, William Faulkner (4) Rendezvous with Rama, Arthur C. Clark (5) Frankenstein, Mary Shelly (6) The Mysterious Benedict Society, Trenton Lee Stewart (7) Obfuscation, Finn Brunton and Helen Nissenbaum (8) The Histories, Herodotus.'}
+          else if ((input.includes('shelf') && (input.includes('2') || input.includes('second'))) || (input.includes('rainbow') && general.rainbow)) {response = 'These books are aranged by color. (1) The Universal Book of Mathematics, David Darling (2) Rootabaga Stories, Carl Sandburg (3) The House of the Spirits, Isabel Allende (4) Beginning Theory, Peter Barry (5) Everfair, Nisi Shawl (6) Unnatural Death, Dorothy Sayers (7) Blandings Castle, P. G. Wodehouse.'}
           else if (input.includes('shelf') && (input.includes('3') || input.includes('third') || input.includes('middle')) && !panel.blacklight) {response = 'On the left half of the middle shelf is the locked wooden panel. On the right half is: (1) On Becoming a Person, Carl Rogers (2) Blue Highways, William Least Heat Moon (3) The Sparrow, Mary Doria Russell (4) A Deadly Education, Naomi Novik (5) The Adventure Zone: Here be Gerblins, Clint McElroy, et al. (6) Murder Must Advertise, Dorothy Sayers (7) Weirdos from Another Planet!, Bill Watterson (8) Bird by Bird, Anne Lamott.'}
           else if (input.includes('shelf') && (input.includes('3') || input.includes('third') || input.includes('middle')) && panel.blacklight) {response = 'On the left half of the middle shelf is the locked wooden panel. On the right half is: (1) On Becoming a Person, Carl Rogers (2) Blue Highways, William Least Heat Moon (3) The Sparrow, Mary Doria Russell (4) A Deadly Education, Naomi Novik (5) The Adventure Zone: Here be Gerblins, Clint McElroy, et al. (6) Murder Must Advertise, Dorothy Sayers (7) Weirdos from Another Planet!, Bill Watterson (8) Bird by Bird, Anne Lamott.'}
           else if (input.includes('shelf') && (input.includes('4') || input.includes('fourth'))) {response = '(1) The Riverside Shakespeare, Houghton Mifflin Company (2) Blue Horses, Mary Oliver (3) Through a Window, Jane Goodall (4) His Dark Materials, Philip Pullman (5) The Masnavi, Rumi (6) Gisli Sursson’s Saga and the Saga of the People of Eyri, Penguin Classics (7) The Southern Review, Louisiana State University.'}
@@ -2692,10 +2691,6 @@ else if (input.includes('fermium') || input.includes('element 100')) {response =
         openstars("starmap");
         starmap.found = false;}
 
-         if (starmap1.found) {
-        openstars1();
-        starmap1.found = false;}
-
         if (chessboard.found) {
         openchess("chessboard");
         chessboard.found = false;}
@@ -2844,13 +2839,16 @@ harptwoPause();}
       var emptygrid = document.getElementById("emptygrid");
       var cstars = document.getElementById("stars");
       var starmap1 = document.getElementById("starmap1");
-      starmap1.style.display = "none";
-
-      starmap.style.display = "none";
+      if (starmap1.found) {
+        starmap.style.display = "block";
+        cstars.style.display = "none";
+      } else {
+        cstars.style.display = "block";
+      }
+      
       chessboard.style.display = "none";
       chessboard2.style.display = "none";
       chessboard3.style.display = "none";
-      cstars.style.display = "block";
       emptygrid.style.display = "none";
       playfairgrid.style.display = "none";
     }

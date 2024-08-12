@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <title>Mazy</title>
+  <link rel="icon" type="image/x-icon" href="mazyfavicon.ico?">
+  <link rel="stylesheet" href="mazystyle.css">
+
+  <style> 
+  #knob,
+  #switch,
+  #channel3 {
+        cursor: pointer;
+    }
+
+
+    .channel {
+        transform: translate(0px, 90px);
+    }
+
+    
+    @media screen and (max-width: 1290px) {
+.channel {
+transform: translate(0px, 80px);
+    }
+}
+ 
+@media screen and (max-width: 1090px) {
+.channel {
+transform: translate(0px, 70px);
+    }
+}
+ 
+@media screen and (max-width: 950px) {
+.channel {
+transform: translate(0px, 60px);
+    }
+}
+ 
+@media screen and (max-width: 790px) {
+.channel {
+transform: translate(0px, 50px);
+    }
+}
+ 
+@media screen and (max-width: 640) {
+.channel {
+transform: translate(0px, 40px);
+    }
+}
+ 
+@media screen and (max-width: 590px) {
+.channel {
+transform: translate(0px, 35px);
+    }
+}
+    </style>
+</head>
+
+<body>
+  
+            
+            <div class="image-flexbox">
+        <img src="openglobe3.gif" loading="lazy" id="globe" width="71%" style="z-index: 5; animation-iteration-count:1; transform: translate(-70px, 100px); position: absolute; display: none;">
+        <img src="globetv.png" id="tv" width="78%" style="z-index: 3; position: absolute;" usemap="#tv-map">
+        <img src="tvflip.png" id="tvflip" width="78%" style="z-index: 4; position: absolute; display: none;">
+    </div>
+
+    <map name="tv-map">
+            <area shape="rect" id="switch" coords="930,330,1050,400" alt="switch" onclick="display()">
+            </map>
+
+
+  <audio id="click1">
+    <source src="tvclick.mp3" type="audio/mpeg">
+  </audio>
+  
+<script>
+
+function display() {
+    click1Audio.play();
+    globe.style.display = "block";    
+    tvflip.style.display = "block";    
+    tv.style.display = "none";   
+
+    setTimeout(function() {
+        close();
+            }, 13000);
+}
+
+
+    var click1Audio = document.getElementById("click1"); //change the sound
+   
+      </script>
+
+</body>
+</html>

@@ -3,20 +3,18 @@
 <head>
 <style>
 
-/*To do*/
-/*Add cookies back to objects and for dialogue
-Rope dialogue
-is there a way to clear the entry left in the form after submitting? */
-
-/*New Art*/
-/*Louder fish song*/
-/*papery for map, russle for inventory, candle thunk, rope thwump, sword shhhing, guest book thwump, lock clicking noises for combination, unlocking noise for opening both locked panels, card flip for deck.*/
-/*Adjust image map*/
+/*Art for Verily and Chasm Explorers*/
+/*candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them*/
+/*Different portrait on K's "stymie are you alright?"
+*/
 
 
 
 
-
+body {
+    background-color: rgb(242,241,223);
+    margin: 0px;
+}
 
 .pointer {
   cursor: pointer;
@@ -30,15 +28,23 @@ is there a way to clear the entry left in the form after submitting? */
     transform: translate(100px, 100px);
 }
 
+#sword{
+    z-index: -1;
+}
+
 #kmap1 {
     z-index: 10;
 display: none;
 }
 
-#khigher,
+#khigher{
+    display: none;
+    z-index: 2;
+}
 #platformup {
     display: none;
 }
+
 
 #greencandle,
 #emptychest {
@@ -77,7 +83,7 @@ display: none;
 
 .dialogueText {
     position: absolute;
-    transform: translate(400px, 550px);
+    transform: translate(375px, 516px);
     max-width: 900px;
     height: 100px;
     font-size: 25px;
@@ -87,6 +93,12 @@ display: none;
     display: none;
     z-index: 20;
 }
+
+#eastdoor{
+    z-index: 2;
+}
+
+
 
 #sauna,
 #library,
@@ -105,6 +117,18 @@ display: none;
 #hallway {
     display: none;
 }
+
+#harp{
+    z-index: -1;
+}
+
+#chest{
+    z-index: -1;
+}
+#emptychest{
+    z-index: -1;
+}
+
 
 #kcandle1,
 #ncandle1,
@@ -417,9 +441,17 @@ display: none;
 #w3,
 #c4,
 #c5,
-#datacube
+#datacube,
+#knightCard,
+#nymphCard,
+#witchCard,
+#roninCard
  {
     display: none;
+}
+
+#fishstrings{
+    z-index: -1;
 }
 
 #pluck1,
@@ -429,7 +461,12 @@ display: none;
 #pluck5,
 #pluck6,
 #pluck7,
-#pluck8,
+#pluck8 {
+    display: none;
+    z-index: -1;
+}
+
+
 #chasmrope
  {
     display: none;
@@ -437,20 +474,20 @@ display: none;
 
 
 #explorers{
-    z-index: -2;
+    z-index: 0 ;
+    display: block;
 }
 
 .entryform{
     display: none;
     z-index: 8;
     position: absolute;
-    border: 1px solid black;
-    transform: translate(800px, 100px);
+    transform: translate(756px, 100px);
 }
 
 #inv{
     display: none;
-    z-index: 2;
+    z-index: 3;
 }
 
 #book,
@@ -464,15 +501,15 @@ display: none;
 }
 
 .left{
-    transform: translate(400px, 100px);
+    transform: translate(360px, 100px);
     position: absolute;
-    width: 300px;
+    width: 330px;
     z-index: 9;
 }
 .right{
-    transform: translate(800px, 100px);
+    transform: translate(760px, 100px);
     position: absolute;
-    width: 300px;
+    width: 330px;
     z-index: 9;
 }
 
@@ -506,7 +543,7 @@ display: none;
 }
 
 #baseroom{
-    z-index: -1;
+    z-index: -30;
 }
 
 .invFlex {
@@ -523,32 +560,36 @@ display: none;
 #item1 {
     z-index: 5;
     transform: translateY(-10px);
-    font-family: -apple-system; 
+    font-family: garamond; 
+    font-size: 20px;
     display: none;
     position: absolute;
 }
 
 #item2 {
     z-index: 5;
-    transform: translateY(120px);
-    font-family: -apple-system; 
+    transform: translateY(125px);
+    font-family: garamond; 
     display: none;
+    font-size: 20px;
     position: absolute;
 }
 
 #item3 {
     z-index: 5;
-    transform: translateY(260px);
-    font-family: -apple-system; 
+    transform: translateY(270px);
+    font-family: garamond; 
     display: none;
+    font-size: 20px;
     position: absolute;
 }
 
 #item4 {
     z-index: 5;
-    transform: translateY(390px);
-    font-family: -apple-system; 
+    transform: translateY(410px);
+    font-family: garamond; 
     display: none;
+    font-size: 20px;
     position: absolute;
 }
 
@@ -562,27 +603,27 @@ display: none;
             <img src="inv.png" alt="inv" usemap="#invmap" class="room" id="inv">
         </div>
 
-        <div> <!--This is the guest book. To write an entry, enter your message and alias on the form and press "submit." To view other guests' entries, press the right arrow. -->
+        <div> <!--This is the guest book. To write an entry, enter your message and alias on the form and press "submit." To view other guests' entries, press the right arrow. Look for other guest books deeper in the labyrinth.-->
             <img src="guestbook.png" alt="book" usemap="#bookmap" class="room" id="book">
             <img src="guestbookbody.png" alt="book" usemap="#bookmap" class="room" id="bookbody">
             <img src="nextarrow.png" alt="arrow" usemap="#bookmap" class="arrow" id="nextarrow">
             <img src="prevarrow.png" alt="arrow" usemap="#bookmap" class="arrow" id="prevarrow">
             <div class="pagetext">
                 <div class="left">
-                    <p id="page1">This is the 1st entry.</p>
-                    <p id="page3">This is the 3rd entry.</p>
-                    <p id="page5">This is the 5th entry.</p>
-                    <p id="page7">This is the 7th entry.</p>
-                    <p id="page9">This is the 9th entry.</p>
-                    <p id="page11">This is the 11th entry.</p>
+                    <p id="page1">strawberry emoji<br>--idk srry</p>
+                    <p id="page3"></p>
+                    <p id="page5"></p>
+                    <p id="page7"></p>
+                    <p id="page9"></p>
+                    <p id="page11"></p>
                 </div>
                 <div class="right">
-                    <p id="page2">This is the 2nd entry.</p>
-                    <p id="page4">This is the 4th entry.</p>
-                    <p id="page6">This is the 6th entry.</p>
-                    <p id="page8">This is the 8th entry.</p>
-                    <p id="page10">This is the 10th entry.</p>
-                    <p id="page12">This is the 12th entry.</p>
+                    <p id="page2"></p>
+                    <p id="page4"></p>
+                    <p id="page6"></p>
+                    <p id="page8"></p>
+                    <p id="page10"></p>
+                    <p id="page12"></p>
                 </div>
             </div>
         </div>
@@ -591,13 +632,18 @@ display: none;
             <img src="basicroom.png" alt="lobby" usemap="#roommap" class="room" id="baseroom">
             <img src="explorers.gif" alt="door" usemap="#roommap" class="room" id="explorers">
             <img src="kmap1.png" alt="map" class="room" id="kmap1">
-            <img src="diagram.png" alt="map" usemap="#diagrammap" class="room" id="diagram">
+            <img src="diagram.png" alt="cards diagram" usemap="#diagrammap" class="room" id="diagram">
+            <img src="knight.png" alt="knight card" usemap="#diagrammap" class="room" id="knightCard">
+            <img src="nymph.png" alt="nymph card" usemap="#diagrammap" class="room" id="nymphCard">
+            <img src="witch.png" alt="witch card" usemap="#diagrammap" class="room" id="witchCard">
+            <img src="ronin.png" alt="ronin card" usemap="#diagrammap" class="room" id="roninCard">
             
                 
             <div id="lobby"> <!--Lobby Obbies-->
                 <img src="plinth.png" alt="plinth" usemap="#roommap" class="room">
                 <img src="rope.png" alt="rope" usemap="#roommap" class="room" id="rope">
                 <img src="terminal.png" alt="stymie" usemap="#roommap" class="room" id="terminal">
+                <img src="terminalwaking.png" alt="stymie" usemap="#roommap" class="room" id="terminalwaking">
                 <img src="terminalsleep.png" alt="stymie" usemap="#roommap" class="room" id="terminalsleep">
                 <img src="sword.png" alt="sword" usemap="#roommap" class="room" id="sword">
                 <img src="radio.png" alt="radio" usemap="#roommap" class="room" id="radio">
@@ -608,9 +654,9 @@ display: none;
             </div>
 
             <div id="sauna" usemap="#sauna"> <!--Sauna-->
-                <img src="northdoor.png" alt="door" usemap="#sauna" class="room">                
+                <img src="northdoor.png" alt="door" usemap="#sauna" class="room">  
+                <img src="goldkey.png" alt="key" usemap="#sauna" class="room" id="goldkey">                              
                 <img src="pool.png" alt="pool of water" usemap="#sauna" class="room">                
-                <img src="goldkey.png" alt="key" usemap="#sauna" class="room" id="goldkey">                
                 <img src="yellowcandle.png" alt="yellow candle" usemap="#sauna" class="room" id="yellowcandle">                
             </div>
 
@@ -618,7 +664,6 @@ display: none;
                 <img src="westdoor.png" alt="door" usemap="#libmap" class="room" id="westdoor">
                 <img src="brasskey.png" alt="key" usemap="#libmap" class="room" id="brasskey">
                 <img src="deck.png" alt="deck of cards" usemap="#libmap" class="room" id="deck">
-                <img src="shelves.png" alt="bookshelves" usemap="#libmap" class="room" id="shelves">
                 <img src="poster.png" alt="poster" usemap="#libmap" class="room" id="poster">
             </div>
       
@@ -629,7 +674,7 @@ display: none;
                 <img src="redcandle.png" alt="red candle" usemap="#liftmap" class="room" id="redcandle">                
                 <img src="platform.png" alt="platform" usemap="#liftmap" class="room" id="platform">                
                 <img src="buttons.png" alt="buttons" usemap="#liftmap" class="room" id="buttons">
-                <img src="bridgetbuttons.png" alt="kodaly" usemap="#liftmap" class="room" id="bbuttons">
+                <img src="bridgetbuttons.png" alt="bridget" usemap="#liftmap" class="room" id="bbuttons">
                 <img src="kodalylift.png" alt="kodaly" usemap="#liftmap" class="room" id="klift">
                 <img src="kodalyhigher.png" alt="kodaly" usemap="#liftmap" class="room" id="khigher">
                 <img src="platformup.png" alt="lift" usemap="#liftmap" class="room" id="platformup">
@@ -669,9 +714,9 @@ display: none;
 
             <div id="dias" usemap="#roommap"> <!--Dias Room-->
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room">
-                <img src="greencandle.png" alt="chest" usemap="#roommap" class="room" id="greencandle">
                 <img src="chest.png" alt="chest" usemap="#roommap" class="room" id="chest">
                 <img src="emptychest.png" alt="empty chest and dias" usemap="#roommap" class="room" id="emptychest">
+                <img src="greencandle.png" alt="chest" usemap="#roommap" class="room" id="greencandle">
             </div>
 
             <div id="combinationLock" usemap="#lockmap"> <!--Chest Lock in Dias Room-->
@@ -685,16 +730,18 @@ display: none;
             </div>
 
             <div id="pond" usemap="#pondmap"> <!--Pond Room-->
+                <img src="fishstrings.png" alt="fish room" usemap="#pondmap" class="room" id="harp">
                 <img src="eastdoor.png" alt="door" usemap="#pondmap" class="room" id="eastdoor">
-                <img src="fishstrings.png" alt="door" usemap="#pondmap" class="room" id="fishstrings">
+                <img src="fishstrings.gif" alt="fish room" usemap="#pondmap" class="room" id="fishstrings">
                 <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck1">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck2">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck3">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck4">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck5">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck6">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck7">
-                <img src="pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck8">
+                <img src="pluck2.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck2">
+                <img src="pluck3.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck3">
+                <img src="pluck4.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck4">
+                <img src="pluck5.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck5">
+                <img src="pluck6.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck6">
+                <img src="pluck7.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck7">
+                <img src="pluck8.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck8">
+                <img src="harpnumbers.png" alt="fish room" usemap="#pondmap" class="room">
             </div>
 
             <div id="chasm" usemap="#chasmmap"> <!--Chasm Room-->
@@ -709,6 +756,7 @@ display: none;
                 <img src="chasmexplorers.png" alt="explorers" usemap="#hallmap" class="room" id="chasmexplorers"> 
                 <img src="1shrub.png" alt="shrub" usemap="#hallmap" class="room" id="1shrub"> 
                 <img src="7shrub.png" alt="shrub" usemap="#hallmap" class="room" id="7shrub"> 
+                <img src="satchel.png" alt="satchel" usemap="#hallmap" class="room" id="satchel">
             </div>
 
             <div id="northLobby" usemap="#roommap"> <!--North Lobby-->
@@ -716,8 +764,8 @@ display: none;
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">   
-                <img src="stymiebroken.png" alt="stymie" usemap="#roommap" class="room" id="stymiebroken">   
-                <img src="verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="verilytampering">   
+                <img src="verilyredhanded.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp">   
+                <img src="verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp1">   
             </div>
 
             <div id="garden" usemap="#roommap">
@@ -741,54 +789,54 @@ display: none;
     <!--Maps-->
     <div>
     <map name="roommap"> <!--Basic Room Object Positions-->
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
-        <area shape="rect" coords="577,9,720,155" alt="stymie" class="pointer" onclick="stymieDialogue()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+        <area shape="rect" coords="650,9,780,155" alt="stymie" class="pointer" onclick="stymieDialogue()">
 
-        <area shape="rect" coords="261,193,424,351" alt="western door" class="pointer" onclick="goWest()">
-        <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="goNorth()">
-        <area shape="rect" coords="933,450,1100,580" alt="eastern door" class="pointer" onclick="goEast()">
-        <area shape="rect" coords="450,500,600,660" alt="southern door" class="pointer" onclick="goSouth()">
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="rect" coords="430,500,600,660" alt="southern door" class="pointer" onclick="goSouth()">
 
-        <area shape="circle" coords="368,454,60" alt="SW object" class="pointer" onclick="pickSW()">
+        <area shape="circle" coords="355,450,90" alt="SW object" class="pointer" onclick="pickSW()">
         <area shape="rect" coords="680,575,800,695" alt="SE object" class="pointer" onclick="pickSE()">
         <area shape="rect" coords="960,145,1151,240" alt="NE object" class="pointer" onclick="pickNE()">
-        <area shape="rect" coords="484,48,623,275" alt="NW object" class="pointer" onclick="pickNW()"> <!--Guest Book may have to have its own position because the plinth is somewhat tall-->
+        <area shape="rect" coords="512,220,708,280" alt="NW object" class="pointer" onclick="pickNW()"> <!--Guest Book may have to have its own position because the plinth is somewhat tall-->
     </map>
 
     <map name="libmap"> <!--Library -->
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
-        <area shape="rect" coords="261,193,424,351" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
         <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="showDiagram()">
         <area shape="circle" coords="368,454,60" alt="SW object" class="pointer" onclick="pickSW()">
         <area shape="rect" coords="680,575,800,695" alt="SE object" class="pointer" onclick="pickSE()">
     </map>
 
     <map name="sauna"> <!--Sauna must (I think) have its own map to avoid overlapping southern basic objects-->
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
-        <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
         <area shape="rect" coords="450,500,620,600" alt="key" class="pointer" id="goldkey" onclick="pickCenterS()">
         <area shape="rect" coords="1100,345,1160,440" alt="yellow candle" class="pointer" id="yellowcandle" onclick="pickNE()">
     </map>
 
     <map name="liftmap"> <!--Buttons: left:up, right:down-->
-        <area shape="rect" coords="945,128,1018,208" alt="left button" class="pointer" onclick="leftButton()">
-        <area shape="rect" coords="1084,158,1150,238" alt="right button" class="pointer" onclick="rightButton()">
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">    
-        <area shape="rect" coords="261,193,424,351" alt="western door" class="pointer" onclick="goWest()">
-        <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="goNorth()">
-        <area shape="rect" coords="933,450,1100,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="rect" coords="1035,163,1093,213" alt="left button" class="pointer" onclick="leftButton()">
+        <area shape="rect" coords="1120,184,1176,238" alt="right button" class="pointer" onclick="rightButton()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">    
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
         <area shape="rect" coords="450,500,600,660" alt="southern door" class="pointer" onclick="goSouth()">
         <area shape="circle" coords="368,454,60" alt="SW object" class="pointer" onclick="pickSW()">
     </map>
 
     <map name="alcovemap"> <!--Five alcoves-->
-        <area shape="circle" coords="600, 100, 30" alt="slot" class="pointer" onclick="kSlot()">
-        <area shape="circle" coords="493, 257, 30" alt="slot" class="pointer" onclick="nSlot()">
-        <area shape="circle" coords="717, 250, 30" alt="slot" class="pointer" onclick="wSlot()">
-        <area shape="circle" coords="617, 355, 30" alt="slot" class="pointer" onclick="rSlot()">
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
-        <area shape="rect" coords="560,187,654,277" alt="locked hatch" class="pointer" onclick="cubePort()">
-        <area shape="rect" coords="900,30,1020,166" alt="raise lift" class="pointer" onclick="raiseLift()">
+        <area shape="circle" coords="615, 145, 40" alt="slot" class="pointer" onclick="kSlot()">
+        <area shape="circle" coords="493, 275, 40" alt="slot" class="pointer" onclick="nSlot()">
+        <area shape="circle" coords="730, 270, 40" alt="slot" class="pointer" onclick="wSlot()">
+        <area shape="circle" coords="610, 380, 40" alt="slot" class="pointer" onclick="rSlot()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="rect" coords="560,112,660,310" alt="locked hatch" class="pointer" onclick="cubePort()">
+        <area shape="rect" coords="900,30,1090,166" alt="raise lift" class="pointer" onclick="raiseLift()">
     </map>
 
     <map name="lockmap"> <!--Counters and X button-->
@@ -805,12 +853,12 @@ display: none;
         <area shape="rect" coords="1030, 70, 1150, 170" alt="subtract one D" class="pointer" onclick="dDown()">
         <area shape="rect" coords="1030, 566, 1150, 670" alt="add one D" class="pointer" onclick="dUp()">
        
-        <area shape="rect" coords="640, 690, 770, 770" alt="enter code" class="pointer" onclick="enterCode()">
+        <area shape="rect" coords="650, 640, 770, 730" alt="enter code" class="pointer" onclick="enterCode()">
     </map>
 
     <map name="invmap"> <!--Inventory-->
         <area shape="rect" coords="1008,35,1111,133" alt="close" class="pointer" onclick="hideInv()">
-        <area shape="rect" coords="7,650,160,770" alt="close" class="pointer" onclick="hideInv()">
+        <area shape="rect" coords="12,630,220,780" alt="close" class="pointer" onclick="hideInv()">
         <area shape="rect" coords="730,168,930,253" alt="drop item" class="pointer" onclick="drop1()">
         <area shape="rect" coords="730,345,930,404" alt="drop item" class="pointer" onclick="drop2()">
         <area shape="rect" coords="730,480,940,530" alt="drop item" class="pointer" onclick="drop3()">
@@ -818,13 +866,18 @@ display: none;
     </map>
 
     <map name="diagrammap"> <!--Diagram-->
-        <area shape="rect" coords="1008,35,1111,133" alt="close" class="pointer" onclick="hideDiagram()">
+        <area shape="rect" coords="1090,20,1181,113" alt="close" class="pointer" onclick="hideDiagram()">
+        <area shape="rect" coords="600,20,800,260" alt="open" class="pointer" onclick="openKnight()">
+        <area shape="rect" coords="375,275,580,510" alt="open" class="pointer" onclick="openNymph()">
+        <area shape="rect" coords="830,275,1030,510" alt="open" class="pointer" onclick="openWitch()">
+        <area shape="rect" coords="600,530,800,760" alt="open" class="pointer" onclick="openRonin()">
+        <area shape="rect" coords="220,20,335,125" alt="back" class="pointer" onclick="backToDiagram()">
     </map>
 
     <map name="bookmap"> <!--Guest Book-->
-        <area shape="rect" coords="42,15,140,110" alt="close" class="pointer" onclick="hideGuestBook()">
-        <area shape="rect" coords="63,333,177,415" alt="prev" class="pointer" onclick="prevPage()">
-        <area shape="rect" coords="1280,350,1400,420" alt="next" class="pointer" onclick="nextPage()">
+        <area shape="rect" coords="102,25,200,120" alt="close" class="pointer" onclick="hideGuestBook()">
+        <area shape="rect" coords="43,333,177,415" alt="prev" class="pointer" onclick="prevPage()">
+        <area shape="rect" coords="1240,350,1400,420" alt="next" class="pointer" onclick="nextPage()">
     </map>
 
     <map name="pondmap"> <!--Pond-->
@@ -832,38 +885,39 @@ display: none;
         <area shape="circle" coords="275,453,130" alt="fish" class="pointer" onclick="fishSing()">
         <area shape="rect" coords="845,0,865,270" alt="note 1" class="pointer" onclick="note1()">
         <area shape="rect" coords="884,24,905,285" alt="note 2" class="pointer" onclick="note2()">
-        <area shape="rect" coords="933,90,950,300" alt="note 3" class="pointer" onclick="note3()">
-        <area shape="rect" coords="975,133,996,300" alt="note 4" class="pointer" onclick="note4()">
-        <area shape="rect" coords="1022,180,1040,320" alt="note 5" class="pointer" onclick="note5()">
-        <area shape="rect" coords="1057,212,1075,330" alt="note 6" class="pointer" onclick="note6()">
-        <area shape="rect" coords="1095,235,1113,350" alt="note 7" class="pointer" onclick="note7()">
-        <area shape="rect" coords="1135,285,1150,370" alt="note 8" class="pointer" onclick="note8()" onclick="note8a()">
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
-        <area shape="rect" coords="933,450,1100,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="rect" coords="920,90,942,300" alt="note 3" class="pointer" onclick="note3()">
+        <area shape="rect" coords="955,133,985,300" alt="note 4" class="pointer" onclick="note4()">
+        <area shape="rect" coords="1002,180,1030,320" alt="note 5" class="pointer" onclick="note5()">
+        <area shape="rect" coords="1050,212,1075,330" alt="note 6" class="pointer" onclick="note6()">
+        <area shape="rect" coords="1090,235,1110,350" alt="note 7" class="pointer" onclick="note7()">
+        <area shape="rect" coords="1123,235,1150,370" alt="note 8" class="pointer" onclick="note8()" onclick="note8a()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
     </map>
 
     <map name="chasmmap"> 
-        <area shape="rect" coords="970,180,1100,380" alt="north door" class="pointer" onclick="goNorth()">
-        <area shape="rect" coords="160,490,300,690" alt="south door" class="pointer" onclick="goSouth()">
+            <area shape="circle" coords="1090,280,60" alt="northern door" class="pointer" onclick="goNorth()">
+            <area shape="rect" coords="111,367,260,550" alt="south door" class="pointer" onclick="goSouth()">
         <area shape="rect" coords="900,260,960,390" alt="post" class="pointer" onclick="throwRope()">
         <area shape="rect" coords="910,400,1040,780" alt="post" class="pointer" onclick="throwRope()">
         <area shape="rect" coords="1123,333,1214,438" alt="post" class="pointer" onclick="takeViolet()">
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
         </map>
 
     <map name="hallmap"> 
-        <area shape="circle" coords="1111,210,200" alt="north door" class="pointer" onclick="goNorth()">
-        <area shape="circle" coords="145,680,200" alt="south door" class="pointer" onclick="goSouth()">
-        <area shape="rect" coords="445,200,616,445" alt="post" class="pointer" onclick="shrub1()">
-        <area shape="circle" coords="1100,500,100" alt="post" class="pointer" onclick="shrub2()">
-        <area shape="rect" coords="7,650,160,770" alt="satchel" class="pointer" onclick="showInv()">
+            <area shape="circle" coords="1200,200,70" alt="northern door" class="pointer" onclick="goNorth()">
+            <area shape="circle" coords="390,530,200" alt="south door" class="pointer" onclick="goSouth()">
+        <area shape="circle" coords="800,230,100" alt="post" class="pointer" onclick="shrub1()">
+        <area shape="circle" coords="1250,260,100" alt="post" class="pointer" onclick="shrub2()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
         </map>
 
     <div class="entryform" id="entryform">
-        <form action="https://formspree.io/f/mdknkobd" method="POST" target="_blank" onclick="hideGuestBook()">                   
-        <textarea for="comments" style="width:410px; height:500px;" id="comments" name="comments"></textarea><br><br>
-        <input type="text" id="alias" name="alias"><br><br>
-        <input type="submit" value="Submit">
+        <form action="https://formspree.io/f/mdknkobd" method="POST" target="_blank">      
+            <span style="font-family: fantasy;">Message:</span><br>             
+        <textarea for="comments" style="width:333px; height:460px; background: transparent; resize: none;" id="comments" value="Write your message here." name="comments"></textarea><br><br>
+        <span style="font-family: fantasy;">Alias:</span> <input type="text" style="background: transparent;" id="alias" name="alias"><br><br>
+        <input type="submit" value="Submit" onclick="hideGuestBook()">
         </form>
     </div>
     </div>
@@ -878,8 +932,8 @@ display: none;
 <audio id="travel3"><source src="travel3.mp3" type="audio/mpeg"></audio>
 <audio id="travel4"><source src="travel4.mp3" type="audio/mpeg"></audio>
 <audio id="unlock"><source src="unlock.mp3" type="audio/mpeg"></audio>
-<audio id="click1Audio"><source src="soundddd.mp3" type="audio/mpeg"></audio>
-<audio id="fullInv"><source src="sound2.m4a" type="audio/mpeg"></audio>
+<audio id="click1Audio"><source src="soundddd.mp3" type="audio/mpeg"></audio> <!--Replace-->
+<audio id="fullInv"><source src="sound2.m4a" type="audio/mpeg"></audio> <!--Replace-->
     <audio id="penser" src="penser.mp3" autoplay loop></audio>
     <audio id="lamano" src="lamano.mp3" autoplay loop></audio>
 <audio id="string1"><source src="string1.mp3" type="audio/mpeg"></audio>
@@ -891,9 +945,15 @@ display: none;
 <audio id="string7"><source src="string7.mp3" type="audio/mpeg"></audio>
 <audio id="string8"><source src="string8.mp3" type="audio/mpeg"></audio>
 <audio id="fishSong"><source src="fishsong.mp3" type="audio/mpeg"></audio>
-<audio id="tinkering"><source src="mummy_voice.mp3" type="audio/mpeg"></audio>
+<audio id="tinkering"><source src="wrench.wav" type="audio/mpeg"></audio>
 <audio id="keypick"><source src="key.mp3" type="audio/mpeg"></audio>
 <audio id="static"><source src="radio.mp3" type="audio/mpeg"></audio>
+<audio id="swordsound"><source src="sword.mp3" type="audio/mpeg"></audio>
+<audio id="decksound"><source src="deck.mp3" type="audio/mpeg"></audio>
+    <audio id="stonesound"><source src="stone.mp3" type="audio/mpeg"></audio>
+<audio id="paper"><source src="paper.m4a" type="audio/mpeg"></audio>
+<audio id="lock"><source src="lock.mp3" type="audio/mpeg"></audio>
+
 
 </div>
 <!--Adios-->
@@ -928,7 +988,8 @@ display: none;
     <img src="stymieRAAG.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieRAAG">
     <img src="stymiesuggesting.png" alt="stymie making a suggestion dialogue portrait" class="dialogue" id="stymiesuggesting">
     <img src="stymiewonder.png" alt="stymie in wonder" class="dialogue" id="stymiewonder">
-    <img src="stymieglitch.png" alt="stymie in wonder" class="dialogue" id="stymieglitch">
+    <img src="stymieglitch.gif" alt="stymie glitch" class="dialogue" id="stymieglitch">
+    <img src="stymielaughglitch.gif" alt="stymie glitch" class="dialogue" id="stymielaughglitch">
     
     <img src="verily.png" alt="verily's default dialogue portrait" class="dialogue" id="verily">
     <img src="shuri.png" alt="shuri's default dialogue portrait" class="dialogue" id="shuri">
@@ -999,7 +1060,7 @@ display: none;
     <p id="b10">He went north, so I have no way of knowing for sure.</p>
     <p id="b11">So he's probably still here in the labyrinth.</p>
     <p id="b12">Possibly.</p>
-    <p id="b13">There may be other exits behind me that I don't know about. But, given that up until a few months ago the labyrinth had a room/entrance ratio of 20,004,831 to 0, I suppose it's unlikely.</p>
+    <p id="b13">There may be other exits behind me that I don't know about. But, given that up until a few months ago the labyrinth had a room/entrance ratio of 20,004,831 to 0, I've got to assume it's unlikely.</p>
     <p id="b14">But it's not impossible.</p>
     <p id="b15">On second thought, I'm not sure if he was really a soldier or not, but he looked it.</p>
     <p id="b16">Anyway, let me know if you find that data cube and I'll be happy to turn off the current in the sauna for you.        </p>
@@ -1146,7 +1207,7 @@ display: none;
     <p id="zg1">Oh man! A potted shrub!</p>
 	<p id="zg2">Drake Messel’s team in the Stal-Haberson labyrinth theorized that shrubs in l-nodes are actually independent, commensalistic organisms, and not labyrinth-constructs.</p>
 	<p id="zg3">Messel says the shrub grows in a crack in the floor, and the labyrinth falsely recognizes it as a part of itself and builds a pot around it.</p>
-	<p id="zg4">Seeing this now, though... My hypothesis has always been that it’s a mutualistic relationship.</p>
+	<p id="zg4">Seeing this now, though... It feels wrong to assume that. My hypothesis has always been that it’s a mutualistic relationship.</p>
 	<p id="zg5">There would have to be some benefit to the labyrinth in order for it to keep the shrub around.</p>
 	<p id="zg6">Otherwise it would heal the crack and the shrub would die.</p>
 	<p id="zg7">So there’s something about this shrub that the labyrinth is using to give us a clue about how to get further in?</p> <!--k--> 
@@ -1227,9 +1288,9 @@ display: none;
     <p id="zk40">Eh--</p>
     <p id="zk41">No, not yet.</p>
     <p id="zk42">Do let me know if it’s anything interesting.</p>
-    <p id="zk43">I’ll be working in this room for a while, so you probably won’t miss me much. This is as deep as I need to go.</p>
+    <p id="zk43">I’ll be working in this room for a while, so you probably won’t miss me much if you're going back and forth. This is as deep as I need to go.</p>
     <p id="zk44">I’m glad I ran into you two.</p>
-    <p id="zk45">I actually feel a lot safer now that I know there are other people in the labyrinth.</p>
+    <p id="zk45">You know, I actually feel a lot safer now that I know there are other people in the labyrinth.</p>
     <p id="zk46">I didn’t realize how on-edge I was.</p>
     <p id="zk47">Happy to be of service!</p>
     <p id="zk48">Let us know if you need any food or supplies too.</p>
@@ -1240,7 +1301,7 @@ display: none;
     <p id="zm1">You get the feeling that Verily is up to something?</p> <!--Bridget-->
         <p id="zm2">Oh definitely.</p>
         <p id="zm3">I don’t like how non-chalantly she was tampering with Stymie.</p>
-        <p id="zm4">Even though Stymie seemingly consented.</p>
+        <p id="zm4">Even though it seems like Stymie apparently consented.</p>
     <p id="zm5">Didn’t we do the essentially same thing when we found her missing data cube?</p>
         <p id="zm6">I don’t know... She made a specific request, didn’t she?</p>
     <p id="zm7">Did she? I thought it was more like “if you find my data cube, then I can turn off the current for you.”</p>
@@ -1248,7 +1309,7 @@ display: none;
         <p id="zm9">Well.</p>
         <p id="zm10">I shouldn’t assume that the labyrinth <i>wants</i> anything, but one thing is clear.</p>
         <p id="zm11">The labyrinth always ensures that there is a way forward.</p>
-        <p id="zm12">Think about the position of the datacube.</p>
+        <p id="zm12">The datacube, for instance.</p>
         <p id="zm13">Why would the black-furred soldier engineer a devious puzzle for it when he could just huck it into the chasm?</p>
         <p id="zm14">I think that’s exactly what he did. Then he cut the bridge, electrified the water, and the labyrinth gave us rope and a candle puzzle.</p>
     <p id="zm15">It would be a similar method to how the objects we drop migrate back to their starting positions.</p>
@@ -1256,7 +1317,7 @@ display: none;
     <p id="zm17">They’re not set up for that. Just scanning and communication.</p>
     <p id="zm18">Stymie was given that power <i>by the labyrinth</i>.</p>
     <p id="zm19">Some system of the labyrinth checked if passage to the heart was possible from the lobby, returned with a “no” and made adjustments to make it possible.</p>
-    <p id="zm20">What I’m stuck on is: What’s the difference between an open door and a door that could theoretically be opened?</p>
+    <p id="zm20">What I’m stuck on is: What’s the difference between an open door and a door that could <i>theoretically</i> be opened?</p>
     <p id="zm21">And: to be opened by who? Who’s the intended audience?</p>
     <p id="zm22">And if it’s us: why us?</p>
         <p id="zm23">And if it’s really intended, or just a byproduct of its shape or our assumptions about its shape.</p>
@@ -1339,6 +1400,7 @@ display: none;
     var stsu = document.getElementById("stymiesuggesting");
     var stw = document.getElementById("stymiewonder");
     var stg = document.getElementById("stymieglitch");
+    var stlag = document.getElementById("stymielaughglitch");
     
     var v = document.getElementById("verily");
 
@@ -1366,6 +1428,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         k.style.display = "none";
         p1.style.display = "none";
         terminalsleep.style.display = "none";
+        terminalwaking.style.display = "none";
         terminal.style.display = "block";
     }
 
@@ -1400,6 +1463,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ropey.set = true;
         rope.style.display = "none";
     }
+    if (cookiesHas('verily')) {
+        dialogue.verilyIntro = true;
+    }
+    if (cookiesHas('shrubbery')) {
+        dialogue.shrub = true;
+    }
+    if (cookiesHas('suspect')) {    
+        dialogue.upToSomething = true;
+        dialogue.haventSeenHim = false;
+    }
+    if (cookiesHas('haventSeenHim')) {    
+        dialogue.haventSeenHim = true;
+    }
     
 
 });
@@ -1427,7 +1503,7 @@ function showInv() {
         if (inventory.slot2) {item2.style.display = "block"; item2.innerText = inventory.slot2;}
         if (inventory.slot3) {item3.style.display = "block"; item3.innerText = inventory.slot3;}
         if (inventory.slot4) {item4.style.display = "block"; item4.innerText = inventory.slot4;}
-        click1Audio.play();
+        paper.play();
         }
 function hideInv() {
         inv.style.display = "none";
@@ -1435,7 +1511,7 @@ function hideInv() {
         item2.style.display = "none";
         item3.style.display = "none";
         item4.style.display = "none";
-        click1Audio.play();
+        paper.play();
         }
 
 //prevent spacebar scrolling
@@ -1534,6 +1610,10 @@ function drop4() {
 
 function hideDiagram() {
     diagram.style.display = "none";
+    knightCard.style.display = "none";
+    witchCard.style.display = "none";
+    roninCard.style.display = "none";
+    nymphCard.style.display = "none";
 }
 
 function showDiagram() {
@@ -1680,7 +1760,6 @@ function goneGreenCandle() {
 
 //beautiful music
 function note1(){
-    fishstrings.style.display = "none";
     pluck1.style.display = "block";
     string1.play();
         setTimeout(function() {
@@ -1689,16 +1768,16 @@ function note1(){
         }, 1000);
 }
 function note2(){
-    fishstrings.style.display = "none";
     pluck2.style.display = "block";
+    harp.style.display = "none";
     string2.play();
     setTimeout(function() {
         fishstrings.style.display = "block";
+        harp.style.display = "block";
         pluck2.style.display = "none";
         }, 1000);
 }
 function note3(){
-    fishstrings.style.display = "none";
     pluck3.style.display = "block";
     string3.play();
     setTimeout(function() {
@@ -1707,7 +1786,6 @@ function note3(){
         }, 1000);
 }
 function note4(){
-    fishstrings.style.display = "none";
     pluck4.style.display = "block";
     string4.play();
     setTimeout(function() {
@@ -1716,7 +1794,6 @@ function note4(){
         }, 1000);
 }
 function note5(){
-    fishstrings.style.display = "none";
     pluck5.style.display = "block";
     string5.play();
     setTimeout(function() {
@@ -1725,7 +1802,6 @@ function note5(){
         }, 1000);
 }
 function note6(){
-    fishstrings.style.display = "none";
     pluck6.style.display = "block";
     string6.play();
     setTimeout(function() {
@@ -1734,27 +1810,61 @@ function note6(){
         }, 1000);
 }
 function note7(){
-    fishstrings.style.display = "none";
     pluck7.style.display = "block";
+    harp.style.display = "none";
     string7.play();
     setTimeout(function() {
         fishstrings.style.display = "block";
         pluck7.style.display = "none";
+        harp.style.display = "block";
+
         }, 1000);
 }
 function note8(){
-    fishstrings.style.display = "none";
     pluck8.style.display = "block";
+    harp.style.display = "none";
     string8.play();
     setTimeout(function() {
         fishstrings.style.display = "block";
         pluck8.style.display = "none";
+        harp.style.display = "block";
         }, 1000);
 }
 function fishSing(){
     fishSong.play();
 
 }
+
+function openKnight() {
+    knightCard.style.display = "block";
+    knightCard.style.zIndex = "20";
+    diagram.style.display = "none";
+}
+function openNymph() {
+    nymphCard.style.display = "block";
+    nymphCard.style.zIndex = "20";
+    diagram.style.display = "none";
+}
+function openWitch() {
+    witchCard.style.display = "block";
+    witchCard.style.zIndex = "20";
+    diagram.style.display = "none";
+}
+function openRonin() {
+    roninCard.style.display = "block";
+    roninCard.style.zIndex = "20";
+    diagram.style.display = "none";
+}
+function backToDiagram() {
+    roninCard.style.display = "none";
+    witchCard.style.display = "none";
+    nymphCard.style.display = "none";
+    knightCard.style.display = "none";
+    diagram.style.display = "block";
+
+
+}
+
 
 //guest book navigation
 const page = {spread: 0,}
@@ -1849,6 +1959,7 @@ const page = {spread: 0,}
             nextarrow.style.display = "block";
             entryform.style.display = "block";
             bookBody.style.display = "none";
+            prevarrow.style.display = "none";
             page.spread = 0;
             break;
         case 2:
@@ -1924,6 +2035,7 @@ function aDown() {
         lock.a = 6}
         else if (lock.a === 8) {document.getElementById('lock1').innerText = 7;
         lock.a = 7}
+        lock.play();
     }
 function bDown() {
    if (lock.b === 1) {document.getElementById('lock2').innerText = 8;
@@ -1942,6 +2054,7 @@ function bDown() {
        lock.b = 6}
        else if (lock.b === 8) {document.getElementById('lock2').innerText = 7;
        lock.b = 7}
+       lock.play();
    }
 function cDown() {
    if (lock.c === 1) {document.getElementById('lock3').innerText = 8;
@@ -1960,6 +2073,7 @@ function cDown() {
        lock.c = 6}
        else if (lock.c === 8) {document.getElementById('lock3').innerText = 7;
        lock.c = 7}
+       lock.play();
    }
 function dDown() {
    if (lock.d === 1) {document.getElementById('lock4').innerText = 8;
@@ -1978,6 +2092,7 @@ function dDown() {
        lock.d = 6}
        else if (lock.d === 8) {document.getElementById('lock4').innerText = 7;
        lock.d = 7}
+       lock.play();
    }
 function aUp() {
     if (lock.a === 1) {document.getElementById('lock1').innerText = 2;
@@ -1996,6 +2111,7 @@ function aUp() {
         lock.a = 8}
         else if (lock.a === 8) {document.getElementById('lock1').innerText = 1;
         lock.a = 1}
+        lock.play();
     }
 function bUp() {
    if (lock.b === 1) {document.getElementById('lock2').innerText = 2;
@@ -2014,6 +2130,7 @@ function bUp() {
        lock.b = 8}
        else if (lock.b === 8) {document.getElementById('lock2').innerText = 1;
        lock.b = 1}
+       lock.play();
    }
 function cUp() {
    if (lock.c === 1) {document.getElementById('lock3').innerText = 2;
@@ -2032,6 +2149,7 @@ function cUp() {
        lock.c = 8}
        else if (lock.c === 8) {document.getElementById('lock3').innerText = 1;
        lock.c = 1}
+       lock.play();
    }
 function dUp() {
    if (lock.d === 1) {document.getElementById('lock4').innerText = 2;
@@ -2050,6 +2168,7 @@ function dUp() {
        lock.d = 8}
        else if (lock.d === 8) {document.getElementById('lock4').innerText = 1;
        lock.d = 1}
+       lock.play();
    }
 
 function enterCode() {
@@ -2179,6 +2298,7 @@ function kSlot() {
            click1Audio.play();
            kcandle1.style.display = "none";
            knight.yellow = false;
+           knight.none = true;
        }
        
    } else if (knight.green) {
@@ -2207,6 +2327,7 @@ function kSlot() {
           click1Audio.play();
           ncandle1.style.display = "none";
           knight.green = false;
+          knight.none = true;
       }
       
   } else if (knight.violet) {
@@ -2235,6 +2356,7 @@ function kSlot() {
         click1Audio.play();
         wcandle1.style.display = "none";
         knight.violet = false;
+        knight.none = true;
     }
 } else if (knight.red) {
         click1Audio.play();
@@ -2297,6 +2419,7 @@ function nSlot() {
          click1Audio.play();
          kcandle2.style.display = "none";
          nymph.yellow = false;
+         nymph.none = true;
      }
      
  } else if (nymph.green) {
@@ -2325,6 +2448,7 @@ function nSlot() {
         click1Audio.play();
         ncandle2.style.display = "none";
         nymph.green = false;
+        nymph.none = true;
     }
     
 } else if (nymph.violet) {
@@ -2353,6 +2477,7 @@ function nSlot() {
       click1Audio.play();
       wcandle2.style.display = "none";
       nymph.violet = false;
+      nymph.none = true;
   }
   
 } else if (nymph.red) {
@@ -2410,6 +2535,8 @@ function wSlot() {
          click1Audio.play();
          kcandle4.style.display = "none";
          witch.yellow = false;
+         witch.none = true;
+         
      }
      
  } else if (witch.green) {
@@ -2435,6 +2562,7 @@ function wSlot() {
         click1Audio.play();
         ncandle4.style.display = "none";
         witch.green = false;
+        witch.none = true;
     }
     
 } else if (witch.violet) {
@@ -2460,6 +2588,7 @@ function wSlot() {
       click1Audio.play();
       wcandle4.style.display = "none";
       witch.violet = false;
+      witch.none = true;
   }
 } else if (witch.red) {
       click1Audio.play();
@@ -2516,6 +2645,7 @@ function rSlot() {
          click1Audio.play();
          kcandle5.style.display = "none";
          ronin.yellow = false;
+         ronin.none = true;         
      }
      
  } else if (ronin.green) {
@@ -2541,6 +2671,7 @@ function rSlot() {
         click1Audio.play();
         ncandle5.style.display = "none";
         ronin.green = false;
+        ronin.none = true;         
     }
     
 } else if (ronin.violet) {
@@ -2566,6 +2697,7 @@ function rSlot() {
       click1Audio.play();
       wcandle5.style.display = "none";
       ronin.violet = false;
+      ronin.none = true;         
   }
 } else if (ronin.red) {
       click1Audio.play();
@@ -2660,6 +2792,8 @@ document.addEventListener("keydown", function() {
            p3.style.display = "block";
            b.style.display = "block";
            kn.style.display = "none";
+           terminalwaking.style.display = "block";
+           terminalsleep.style.display = "none";
            dialogue.opening++;
            return;
        } else if (dialogue.opening === 3) {
@@ -2667,7 +2801,7 @@ document.addEventListener("keydown", function() {
               p4.style.display = "block";
               b.style.display = "none";
               st.style.display = "block";
-              terminalsleep.style.display = "none";
+              terminalwaking.style.display = "none";
               terminal.style.display = "block";
            dialogue.opening++;
            return;
@@ -2820,13 +2954,14 @@ function stymieDialogue() {
       } else if (dialogue.hobbyists === 9) {
         h9.style.display = "none";
         h10.style.display = "block";
-        ksa.style.display = "block";
+        kn.style.display = "block";
         k.style.display = "none";
           dialogue.hobbyists++;
           return;
       } else if (dialogue.hobbyists === 10) {
         h10.style.display = "none";
         h11.style.display = "block";
+        kn.style.display = "none";
         ksa.style.display = "block";
           dialogue.hobbyists++;
           return;
@@ -3283,7 +3418,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 }); 
     
     }
-    else if (!dialogue.datacube) {
+    else if (!dialogue.datacube && !dialogue.anyLuck && !key.gold) {
         m1.style.display = "block";
       st.style.display = "block";
       dialogue.anyLuck = 1;
@@ -3306,6 +3441,9 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.anyLuck === 3) {
      m3.style.display = "none";
       st.style.display = "none"; //keep me posted!
+      dialogue.anyLuck = true;
+
+
         return;
         }
     }
@@ -3316,7 +3454,9 @@ if (event.key === 'Enter' || event.key === ' ') {
         if (!dialogue.verilyIntro) {
         //verily confrontation
         zk1.style.display = "block";
-       b.style.display = "block";
+        b.style.display = "block";
+        vtamp1.style.display = "none";
+        vtamp.style.display = "block";
        dialogue.verilyIntro = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -3444,14 +3584,14 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk19.style.display = "none";
        zk20.style.display = "block";
        stg.style.display = "none";
-       k.style.display = "block";
+       kstu.style.display = "block";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 20) {
         zk20.style.display = "none";
         zk21.style.display = "block";
         stg.style.display = "block"; //that's me
-       k.style.display = "none";
+       kstu.style.display = "none";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 21) {
@@ -3496,13 +3636,14 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 27) {
        zk27.style.display = "none";
        zk28.style.display = "block";
-       stg.style.display = "block";
+       stlag.style.display = "block";
+       stg.style.display = "none";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 28) {
        zk28.style.display = "none";
        zk29.style.display = "block";
-       stg.style.display = "none";
+       stlag.style.display = "none";
        v.style.display = "block";
          dialogue.verilyIntro++;
          return;
@@ -3644,6 +3785,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk50.style.display = "none";
        v.style.display = "none";
        dialogue.verilyIntro = true;
+       document.cookie = "verily=verily";
          return;
      }
  }
@@ -3739,6 +3881,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zn13.style.display = "none";
        v.style.display = "none";
        dialogue.haventSeenHim = true;
+       document.cookie = "haventSeenHim=haventSeenHim";
          return;
      } 
  }
@@ -3761,6 +3904,7 @@ function leftButton() {
     kLift.style.display = "none";
     platformup.style.display = "block";
     platform.style.display = "none";
+    stonesound.play();
     lifthas.currentlyUp = true;
     if (!lifthas.goneDown && !lifthas.goneUp){
         c1.style.display = "block";
@@ -3837,6 +3981,7 @@ function leftButton() {
     }
 }
 function rightButton() {
+    stonesound.play();
     if (lifthas.currentlyUp) {
         kHigher.style.display = "none";
         kLift.style.display = "block";
@@ -3854,7 +3999,7 @@ function rightButton() {
         lifthas.goneDown = true;
         if (!cookiesHas('whoops')) {
             v1.style.display = "block";
-            b.style.display = "block";  //Whoops! That was fast. Are you okay down there?
+            bd.style.display = "block";  //Whoops! That was fast. Are you okay down there?
             dialogue.whoopsTooFast = 1;
             document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
@@ -3862,13 +4007,13 @@ function rightButton() {
             v1.style.display = "none";
             v2.style.display = "block"; //peachy keen
             k.style.display = "block";
-            b.style.display = "none";
+            bd.style.display = "none";
             dialogue.whoopsTooFast++;
             return;
         } else if (dialogue.whoopsTooFast === 2) {
             v2.style.display = "none";
             v3.style.display = "block";
-            b.style.display = "block";
+            bd.style.display = "block";
             k.style.display = "none";
             dialogue.whoopsTooFast++;
             return;
@@ -3876,31 +4021,31 @@ function rightButton() {
             v3.style.display = "none";
             v4.style.display = "block";
             k.style.display = "block"; //locked hatch
-            b.style.display = "none";
+            bd.style.display = "none";
             dialogue.whoopsTooFast++;
             return;
         } else if (dialogue.whoopsTooFast === 4) {
             v4.style.display = "none";
             v5.style.display = "block";
-            b.style.display = "block";
+            bd.style.display = "block";
             k.style.display = "none";
             dialogue.whoopsTooFast++;
             return;
         } else if (dialogue.whoopsTooFast === 5) {
             v5.style.display = "none";
             v6.style.display = "block";
-            b.style.display = "block";
+            bd.style.display = "block";
             dialogue.whoopsTooFast++;
             return;
         }  else if (dialogue.whoopsTooFast === 6) {
             v6.style.display = "none";
             v7.style.display = "block";
-            b.style.display = "block";
+            bd.style.display = "block";
             dialogue.whoopsTooFast++;
             return;
         }  else if (dialogue.whoopsTooFast === 7) {
             v7.style.display = "none";
-            b.style.display = "none";
+            bd.style.display = "none";
             upArrow.style.display = "block";
             dialogue.whoopsTooFast = true;
             lifthas.currentlyUp = false;
@@ -4706,6 +4851,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.deeperIn === 3) {
     zf3.style.display = "none";
     kmap1.style.display = "block"; //kmap1
+    paper.play();
       k.style.display = "none";
         dialogue.deeperIn++;
         return;
@@ -4821,13 +4967,15 @@ function shrub1() {
       } else if (dialogue.shrub === 12) {
         zg12.style.display = "none";
         zg13.style.display = "block";
-        k.style.display = "block";
+        kn.style.display = "block";
+        k.style.display = "none";
           dialogue.shrub++;
           return;
       } else if (dialogue.shrub === 13) {
         zg13.style.display = "none";
         zg14.style.display = "block";
         k.style.display = "block";
+        kn.style.display = "none";
           dialogue.shrub++;
           return;
       } else if (dialogue.shrub === 14) {
@@ -4841,6 +4989,7 @@ function shrub1() {
         zg15.style.display = "none";
         b.style.display = "none";
         dialogue.shrub = true;
+        document.cookie = "shrubbery=shrubbery";
           return;
       }
   }
@@ -4965,6 +5114,7 @@ function shrub1() {
         zg18.style.display = "none";
         b.style.display = "none";
         dialogue.shrub = true;
+        document.cookie = "shrubbery=shrubbery";
           return;
       }
   }
@@ -5212,27 +5362,28 @@ function isSummerSuspicious() {
      if (dialogue.upToSomething === 1) {
        zm1.style.display = "none";
        zm2.style.display = "block";
-       k.style.display = "block";
+       ksl.style.display = "block"; //oh definitely
        b.style.display = "none";
        dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 2) {
        zm2.style.display = "none";
        zm3.style.display = "block";
-       k.style.display = "block";
+       ksl.style.display = "none";
+       kstu.style.display = "block";
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 3) {
        zm3.style.display = "none";
        zm4.style.display = "block";
-       k.style.display = "block";
+       kstu.style.display = "block";
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 4) {
        zm4.style.display = "none";
        zm5.style.display = "block";
        b.style.display = "block";
-       k.style.display = "none";
+       kstu.style.display = "none";
        dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 5) {
@@ -5258,14 +5409,16 @@ function isSummerSuspicious() {
          return;
      } else if (dialogue.upToSomething === 8) {
        zm8.style.display = "none";
-       zm9.style.display = "block";
-       k.style.display = "block";
+       zm9.style.display = "block"; //well
+       ksl.style.display = "block";
+       k.style.display = "none";
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 9) {
        zm9.style.display = "none";
        zm10.style.display = "block";
        k.style.display = "block";
+       ksl.style.display = "none";
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 10) {
@@ -5413,6 +5566,7 @@ function isSummerSuspicious() {
        b.style.display = "none";
        dialogue.upToSomething = true;
        dialogue.haventSeenHim = false;
+       document.cookie = "suspect=suspect";
          return;
      }
  }
@@ -5582,6 +5736,7 @@ function pickSW() {
             && inventory.slot3 !== "playing cards"
             && inventory.slot4 !== "playing cards") {
                 deck.style.display = "none";
+                decksound.play();
                 inventory.slot1 = "playing cards";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "playing cards"
@@ -5589,6 +5744,7 @@ function pickSW() {
             && inventory.slot3 !== "playing cards"
             && inventory.slot4 !== "playing cards") {
                 deck.style.display = "none";
+                decksound.play();
                 inventory.slot2 = "playing cards";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "playing cards"
@@ -5596,6 +5752,7 @@ function pickSW() {
             && inventory.slot3 !== "playing cards"
             && inventory.slot4 !== "playing cards") {
                 deck.style.display = "none";
+                decksound.play();
                 inventory.slot3 = "playing cards";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "playing cards"
@@ -5603,6 +5760,7 @@ function pickSW() {
             && inventory.slot3 !== "playing cards"
             && inventory.slot4 !== "playing cards") {
                 deck.style.display = "none";
+                decksound.play();
                 inventory.slot4 = "playing cards";}
         } else {
             tooHeavy();
@@ -5820,6 +5978,7 @@ function pickNW() {
             && inventory.slot3 !== "sword"
             && inventory.slot4 !== "sword") {
                 sword.style.display = "none";
+                swordsound.play();
                 inventory.slot1 = "sword";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "sword"
@@ -5827,6 +5986,7 @@ function pickNW() {
             && inventory.slot3 !== "sword"
             && inventory.slot4 !== "sword") {
                 sword.style.display = "none";
+                swordsound.play();
                 inventory.slot2 = "sword";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "sword"
@@ -5834,6 +5994,7 @@ function pickNW() {
             && inventory.slot3 !== "sword"
             && inventory.slot4 !== "sword") {
                 sword.style.display = "none";
+                swordsound.play();
                 inventory.slot3 = "sword";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "sword"
@@ -5841,6 +6002,7 @@ function pickNW() {
             && inventory.slot3 !== "sword"
             && inventory.slot4 !== "sword") {
                 sword.style.display = "none";
+                swordsound.play();
                 inventory.slot4 = "sword";}
         } else {
             tooHeavy();
@@ -5897,12 +6059,14 @@ document.addEventListener("keydown", function() {
                  f6.style.display = "none";
                 f7.style.display = "block";
                 kow.style.display = "none";
-                k.style.display = "block";
+                ksl.style.display = "block";
           dialogue.yowzer++;
           return;
       } else if (dialogue.yowzer === 7) {
          f7.style.display = "none";
                 f8.style.display = "block";
+                k.style.display = "block";
+                ksl.style.display = "none";
           dialogue.yowzer++;
           return;
       } else if (dialogue.yowzer === 8) {
@@ -5933,12 +6097,12 @@ document.addEventListener("keydown", function() {
         
         dialogue.dangerous = 1;
         g1.style.display = "block";
-        k.style.display = "block";
+        ksl.style.display = "block";
 document.addEventListener("keydown", function() {
   if (event.key === 'Enter' || event.key === ' ') {
       if (dialogue.dangerous === 1) {
         g1.style.display = "none";
-        k.style.display = "none";
+        ksl.style.display = "none";
           dialogue.dangerous = 1;
           return;
       }   

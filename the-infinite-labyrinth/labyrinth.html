@@ -92,6 +92,18 @@ display: none;
     z-index: 100;
 }
 
+
+#pressEnter {
+    position: absolute;
+    transform: translate(840px, 70px);
+    max-width: 900px;
+    height: 100px;
+    font-size: 25px;
+    z-index: 101;
+    display: block;
+    font-family: fantasy;
+}
+
 #diagram {
     display: none;
     z-index: 20;
@@ -757,7 +769,7 @@ display: none;
 
             <div id="hallway" usemap="#hallmap"> <!--North-South Hallway-->
                 <img src="hallway.png" alt="hallway" usemap="#hallmap" class="room" id="hall"> 
-                <img src="chasmexplorers.png" alt="explorers" usemap="#hallmap" class="room" id="chasmexplorers"> 
+                <img src="hallexplorers.png" alt="explorers" usemap="#hallmap" class="room" id="hallexplorers"> 
                 <img src="1shrub.png" alt="shrub" usemap="#hallmap" class="room" id="1shrub"> 
                 <img src="7shrub.png" alt="shrub" usemap="#hallmap" class="room" id="7shrub"> 
                 <img src="satchel.png" alt="satchel" usemap="#hallmap" class="room" id="satchel">
@@ -995,7 +1007,9 @@ display: none;
     <img src="stymieglitch.gif" alt="stymie glitch" class="dialogue" id="stymieglitch">
     <img src="stymielaughglitch.gif" alt="stymie glitch" class="dialogue" id="stymielaughglitch">
     
-    <img src="verily.png" alt="verily's default dialogue portrait" class="dialogue" id="verily">
+    <img src="verily.png" alt="verily's default dialogue portrait" class="dialogue" id="vdm">
+    <img src="verilydemure.png" alt="verily's default dialogue portrait" class="dialogue" id="verily">
+    <img src="verilysurprised.png" alt="verily's default dialogue portrait" class="dialogue" id="vsup">
     <img src="shuri.png" alt="shuri's default dialogue portrait" class="dialogue" id="shuri">
     <img src="radioportrait.png" alt="broken radio's default dialogue portrait" class="dialogue" id="radioportrait">
     <img src="doorportrait.png" alt="default door's default dialogue portrait" class="dialogue" id="doorportrait">
@@ -1006,6 +1020,7 @@ display: none;
 <!--Then, add the if else stuff in script function.-->
 <div class="dialogueText"> <!--Opening Dialogue-->
     <p id="p1">Alright! We made it!</p>
+    <p id="pressEnter">(Press enter)</p>
     <p id="p2">After about four hours of mucking about in the Zoza sewer system.</p>
     <p id="p3">This place is incredible. The soldiers weren't kidding... It almost feels like the room is alive.</p>
     <p id="p4">Hello!</p>
@@ -1271,7 +1286,7 @@ display: none;
     <p id="zk19">And technology!</p>
     <p id="zk20">Stymie?</p>
     <p id="zk21">That’s me!</p>
-    <p id="zk22">Stymie, are you alright? What are you doing to her?</p>
+    <p id="zk22">Stymie, are you alright? What is she doing to you?</p>
     <p id="zk23">Relax, I’m just expanding her sensor radius. She’ll be good as new in a second.</p>
     <p id="zk24">Stymie was so helpful in that innert floret to the south that I thought I would try to get her set up here as well.        </p>
     <p id="zk25">She should be eventually able to integrate with her original consciousness.</p>
@@ -1431,6 +1446,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (cookiesHas('open')) {
         k.style.display = "none";
         p1.style.display = "none";
+        pressEnter.style.display = "none";
         terminalsleep.style.display = "none";
         terminalwaking.style.display = "none";
         terminal.style.display = "block";
@@ -2778,7 +2794,7 @@ const dialogue = {
     haventSeenHim: true, //set this one to false after zm convo
     }
 
-//the initial sequence
+//the initial dialogue sequence
 if (!dialogue.opening) {
     if (!cookiesHas('open')) {
    dialogue.opening = 1;
@@ -2786,6 +2802,7 @@ document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.opening === 1) {
            p1.style.display = "none";
+           pressEnter.style.display = "none";
            p2.style.display = "block";
            k.style.display = "none";
            kn.style.display = "block";
@@ -3481,25 +3498,27 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk3.style.display = "none";
        zk4.style.display = "block";
        stg.style.display = "none";
-       v.style.display = "block";
+       vsup.style.display = "block";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 4) {
        zk4.style.display = "none";
        zk5.style.display = "block";
-       v.style.display = "block";
+       vsup.style.display = "none";
+       vdm.style.display = "block";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 5) {
        zk5.style.display = "none";
        zk6.style.display = "block";
-       v.style.display = "block";
+       vdm.style.display = "block";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 6) {
        zk6.style.display = "none";
        zk7.style.display = "block";
        v.style.display = "block";
+       vdm.style.display = "none";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 7) {
@@ -3601,7 +3620,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 21) {
         zk21.style.display = "none";
         zk22.style.display = "block";
-        k.style.display = "block";
+        kstu.style.display = "block";
        stg.style.display = "none";
          dialogue.verilyIntro++;
          return;
@@ -3609,7 +3628,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk22.style.display = "none";
        zk23.style.display = "block";
        v.style.display = "block";
-       k.style.display = "none";
+       kstu.style.display = "none";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 23) {
@@ -4176,7 +4195,7 @@ function goSouth() {
                 northLobby.style.display = "none";
                 hallway.style.display = "block";
                 baseroom.style.display = "none";
-                chasmexplorers.style.display = "block";
+                hallexplorers.style.display = "block";
                 explorers.style.display = "none";
                 current.room = "hallway";
         }
@@ -4328,7 +4347,7 @@ function goNorth() {
                 baseroom.style.display = "block";
                 current.room = "northLobby";
                 explorers.style.display = "block";
-                chasmexplorers.style.display = "none";
+                hallexplorers.style.display = "none";
                 }
 
         else if (current.room === "dias") {
@@ -4880,7 +4899,8 @@ if (event.key === 'Enter' || event.key === ' ') {
       penser.pause();
       randomDoorAudio();
         current.room = "hallway";
-        chasmexplorers.style.display = "block";
+        hallexplorers.style.display = "block";
+        chasmexplorers.style.display = "none";
         hallway.style.display = "block";
         dialogue.deeperIn = true;
         return;
@@ -4888,7 +4908,8 @@ if (event.key === 'Enter' || event.key === ' ') {
 }});} else {
     chasm.style.display = "none";
     current.room = "hallway";
-    chasmexplorers.style.display = "block";
+    chasmexplorers.style.display = "none";
+    hallexplorers.style.display = "block";
     hallway.style.display = "block";
 }
 }
@@ -5835,7 +5856,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.radio === 1) {
      d1.style.display = "none";
      d2.style.display = "block";
-      k.style.display = "block";
+      ksl.style.display = "block";
       ra.style.display = "none";
       dialogue.radio++;
         return;
@@ -5843,7 +5864,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      d2.style.display = "none";
      d3.style.display = "block";
       b.style.display = "block";
-      k.style.display = "none";
+      ksl.style.display = "none";
         dialogue.radio++;
         return;
     } else if (dialogue.radio === 3) {

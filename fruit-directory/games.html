@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        .back {
-          position: absolute;
-          width: 80px;
-          margin-top: -10px;
-      }
-      </style>
+  <style>
+    .back {
+      position: absolute;
+      width: 80px;
+      margin-top: -10px;
+  }
+  .linky {
+      color: black;
+      background-color: pink;
+      border-radius: 10%;
+      padding: 10px;
+      text-decoration: none;
+  }
+  p {
+      font-size: 22px;
+  }
+
+
+
+   .flexy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      z-index: 1;}
+
+
+  .internal-flexy {
+      font-family: 'Monaco';
+      padding-top: 15px;
+      font-size: 16px;
+      padding: 12px;
+      width: 1000px;
+      width: 80vw;
+      height: 90vh;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      z-index: 2;
+      transform: translate(0%, -9%);}
+
+  </style>
 <head>
   <title>Fruit Circus</title>
   <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
   <body>
       <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
 
-    <h1 style="font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      <h1 style=" font-family: 'Trebuchet MS', sans-serif;
       display: flex;
       justify-content: center;
-      align-items: center;">Games</h1>
+      align-items: center; font-size: 40px;">Games</h1><br><br>
      
-     <div style="text-align: center;">
+      <div class="flexy">
+        <div class="internal-flexy">
       
-  <a href="https://fruit-circus.github.io/fruit_wizard.html">Fruit Wizard</a><br>
-  A story about fruit and bones.<br><br>
+  <a class="linky"  href="https://fruit-circus.github.io/fruit_wizard.html">Fruit Wizard</a><br><br>
+  <p>A story about fruit and bones.<br><br><br><br>
 
-  <a href="https://fruit-circus.github.io/objects-in-a-room.html">Objects in a Room</a><br>
-  Puzzle out your identity with the things in your room. (Incredibly difficult)<br><br>
+  <a class="linky"  href="https://fruit-circus.github.io/objects-in-a-room.html">Objects in a Room</a><br><br>
+  <p>Puzzle out your identity with the things in your room. (Incredibly difficult)<br><br><br><br>
 
-  <a href="https://fruit-circus.github.io/connections.html">Connections</a><br>
-   An episodic word puzzle.<br><br>
+  <a class="linky"  href="https://fruit-circus.github.io/connections.html">Connections</a><br><br>
+  <p>An episodic word puzzle.<br><br><br><br>
 
-  <a href="music-history.html">Early Western Music History: The Board Game</a><br>
-  Materials for a physical board game.<br><br>
+  <a class="linky"  href="music-history.html">Early Western Music History: The Board Game</a><br><br>
+  <p>Materials for a physical board game.<br><br><br><br>
 
-  Charting the Catchment<br>
-  A pencil and paper delving game.<br>
-  <a href="Charting the Catchment.pdf">Read online</a> &nbsp; <a href="Charting the Catchment.pdf" download>Pdf Download</a><br><br>
+    <p>Charting the Catchment<br>
+  <p>A pencil and paper delving game.<br><br>
+  <a class="linky"  href="Charting the Catchment.pdf">Read online</a> &nbsp; <a class="linky"  href="Charting the Catchment.pdf" download>Pdf Download</a><br><br><br><br><br>
 
-   <a href="https://fruit-circus.github.io/mazy.html">Mazy Li: Escape from the Technotorium</a><br>
-   A game found within Objects in a Room, a multiple choice story about a space cadet saving the world.<br><br>
+   <a class="linky"  href="https://fruit-circus.github.io/mazy.html">Mazy Li: Escape from the Technotorium</a><br><br>
+   <p>From Objects in a Room, a multiple choice story about a space cadet saving the world.<br><br><br><br>
    
-   <a href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">The Infinite Labyrinth</a><br>
-   You've arrived in the infinite labyrinth.<br><br>
+   <a class="linky"  href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">The Infinite Labyrinth</a><br><br>
+   <p>Bridget and Kodaly arrive in the infinite labyrinth.<br><br>
    
 </div>
 </body>

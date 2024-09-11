@@ -5,28 +5,85 @@
           position: absolute;
           width: 80px;
           cursor: pointer;
-          margin-top: -50px;
+          transform: translateY(-40px);
       }
+      .back {
+        position: absolute;
+        width: 80px;
+        margin-top: -10px;
+    }
+    .linky {
+        color: black;
+        background-color: pink;
+        border-radius: 10%;
+        padding: 10px;
+        text-decoration: none;
+    }
+    p {
+        font-size: 18px;
+    }
+
+     .flexy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+        z-index: 1;}
+
+
+    .internal-flexy {
+        font-family: 'Monaco';
+        padding-top: 15px;
+        font-size: 16px;
+        padding: 12px;
+        width: 1000px;
+        width: 80vw;
+        height: 90vh;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        z-index: 2;
+        transform: translate(0%, -5%);}
+
+
+          @media screen and (max-width: 900px) {
+                p {
+                    margin-top: 10px;
+                }
+}
+
       </style>
 <head>
   <title>Fruit Circus</title>
   <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
   <body>
       <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
-     <div style="text-align: center; margin-top: 60px;">
-    <a href="asking-the-way.html">After Ko Un, Asking the Way</a><br><br>
-    <a href="family-outing.html">Your father is standing in the Trader Joe's meat section</a><br><br>
-    <a href="simone-biles-oatmeal.html">Simone Biles Oatmeal</a><br><br>
-    <a href="rizz.html">Whose rizz this is I do not know</a><br><br>
-    <a href="manhole-cover.html">There's a manhole cover</a><br><br>
-    <a href="silly-cosmology.html">Basically there are six things.</a><br><br>
-    <a href="chasm-row.html">Chasm Row</a><br><br>
-    <a href="onion-grass.html">I Believed Satan was Some Kind of Large Wild Dog Until I was Ten</a><br><br>
-    <a href="cutting-the-air.html">The only way to fly</a><br><br>
-    <a href="pale-voice.html">Pale Voice (From Flecks of Mica)</a><br><br>
+
+      <div class="flexy">
+        <div class="internal-flexy">
+
+    <p><a class="linky" href="asking-the-way.html">After Ko Un, Asking the Way</a><br><br></p>
+
+    <p><a class="linky" href="family-outing.html">Your father is standing in the Trader Joe's meat section</a><br><br></p>
+
+    <p><a class="linky" href="simone-biles-oatmeal.html">Simone Biles Oatmeal</a><br><br></p>
+
+    <p><a class="linky" href="rizz.html">Whose rizz this is I do not know</a><br><br></p>
+
+    <p><a class="linky" href="manhole-cover.html">There's a manhole cover</a><br><br></p>
+
+    <p><a class="linky" href="silly-cosmology.html">Basically there are six things.</a><br><br></p>
+
+    <p><a class="linky" href="chasm-row.html">Chasm Row</a><br><br></p>
+
+    <p><a class="linky" href="onion-grass.html">I Believed Satan was Some Kind of Large Wild Dog Until I was Ten</a><br><br></p>
+
+    <p><a class="linky" href="cutting-the-air.html">The only way to fly</a><br><br></p>
+
+    <p><a class="linky" href="pale-voice.html">Pale Voice (From Flecks of Mica)</a><br><br></p>
 
 
-    </div>
+</div>
+</div>
 </body>
   
 </html>

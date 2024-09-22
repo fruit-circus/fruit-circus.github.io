@@ -3,11 +3,9 @@
 <head>
 <style>
 
-/*Art for Verily and Chasm Explorers*/
-/*candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them*/
-/*Different portrait on K's "stymie are you alright?"
-restart button
-"press enter"
+/*different art for verily*/
+/*candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them
+restart button and home button
 */
 
 
@@ -27,7 +25,24 @@ body {
 
 #butt{
     z-index: 5;
-    transform: translate(100px, 100px);
+    position: absolute;
+    transform: translate(50px, 0px);
+    margin: 10px;
+    border: 1px solid black;
+    background-color: rgb(231, 215, 194);
+    height: 37px;
+    width: 90px;
+    cursor: pointer;
+}
+
+#fruithome {
+    z-index: 5;
+    margin: 10px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: tan;
+    height: 35px;
+    width: 35px;
 }
 
 #sword{
@@ -977,7 +992,9 @@ display: none;
 
 <!--Restart Button-->
 <button id="butt" onclick="deleteCookies()">Restart</button>
-
+<a id="butthome" href="https://fruit-circus.github.io/fruit-directory/home.html">
+    <img id="fruithome" src="labyfruithome.png" alt="home"></img>
+    </a> 
 <div> <!--Dialogue Boxes-->
     <img src="kodaly.png" alt="kodaly's default dialogue portrait" class="dialogue" id="kodaly">
     <img src="kodalynonplussed.png" alt="kodaly's nonplussed dialogue portrait" class="dialogue" id="kodalynonplussed">

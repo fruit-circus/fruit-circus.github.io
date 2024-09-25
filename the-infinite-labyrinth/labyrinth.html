@@ -5,7 +5,9 @@
 
 /*different art for verily*/
 /*candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them
-restart button and home button
+more sounds for click1audio
+smaller plinth?
+from the save point, when moving twice south into the chasm, chasm explorers fails to appear
 */
 
 
@@ -1067,6 +1069,8 @@ display: none;
     <img src="stymielaughglitch.gif" alt="stymie glitch" class="dialogue" id="stymielaughglitch">
     
     <img src="verily.png" alt="verily's default dialogue portrait" class="dialogue" id="vdm">
+    <img src="verilyhappy.png" alt="verily's default dialogue portrait" class="dialogue" id="vhap">
+    <img src="verilyrelax.png" alt="verily's default dialogue portrait" class="dialogue" id="vrel">
     <img src="verilydemure.png" alt="verily's default dialogue portrait" class="dialogue" id="verily">
     <img src="verilysurprised.png" alt="verily's default dialogue portrait" class="dialogue" id="vsup">
     <img src="shuri.png" alt="shuri's default dialogue portrait" class="dialogue" id="shuri">
@@ -1382,7 +1386,7 @@ display: none;
         <p id="zm4">Even though it seems like Stymie apparently consented.</p>
     <p id="zm5">Didn’t we do the essentially same thing when we found her missing data cube?</p>
         <p id="zm6">I don’t know... She made a specific request, didn’t she?</p>
-    <p id="zm7">Did she? I thought it was more like “if you find my data cube, then I can turn off the current for you.”</p>
+    <p id="zm7">Did she? I thought it was more like “if you find my data cube, then I can turn off the electric current for you.”</p>
         <p id="zm8">It certainly seemed like it was part of the puzzle, though. We might not even have been able to get any deeper in without Stymie. Like the labyrinth knew what was missing and wanted us—</p>
         <p id="zm9">Well.</p>
         <p id="zm10">I shouldn’t assume that the labyrinth <i>wants</i> anything, but one thing is clear.</p>
@@ -3745,7 +3749,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 11) {
        zk11.style.display = "none";
        zk12.style.display = "block"; //im summer verily
-       v.style.display = "block";
+       vhap.style.display = "block";
        k.style.display = "none";
        dialogue.verilyIntro++;
          return;
@@ -3753,7 +3757,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk12.style.display = "none";
        zk13.style.display = "block";
        k.style.display = "block";
-       v.style.display = "none";
+       vhap.style.display = "none";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 13) {
@@ -3828,13 +3832,15 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 23) {
        zk23.style.display = "none";
        zk24.style.display = "block";
-       v.style.display = "block";
+       vrel.style.display = "block";
+       v.style.display = "none";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 24) {
        zk24.style.display = "none";
        zk25.style.display = "block";
        v.style.display = "block";
+       vrel.style.display = "none";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 25) {
@@ -3931,7 +3937,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 39) {
         zk39.style.display = "none";
         zk40.style.display = "block";
-       v.style.display = "block";
+       vrel.style.display = "block";
        b.style.display = "none";
        dialogue.verilyIntro++;
          return;
@@ -3939,6 +3945,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      else if (dialogue.verilyIntro === 40) {
         zk40.style.display = "none";
         zk41.style.display = "block";
+        vrel.style.display = "none";
         v.style.display = "block";
        dialogue.verilyIntro++;
          return;
@@ -3969,14 +3976,15 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.verilyIntro === 45) {
        zk45.style.display = "none";
        zk46.style.display = "block";
-       v.style.display = "block";
+       v.style.display = "none";
+       vrel.style.display = "block";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 46) {
        zk46.style.display = "none";
        zk47.style.display = "block";
        k.style.display = "block";
-       v.style.display = "none";
+       vrel.style.display = "none";
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 47) {

@@ -505,12 +505,14 @@ display: none;
     display: block;
 }
 
-.entryform{
+.entryform {
     display: none;
     z-index: 8;
     position: absolute;
     transform: translate(756px, 100px);
 }
+
+
 
 #inv{
     display: none;
@@ -562,12 +564,24 @@ display: none;
 #page9,
 #page10,
 #page11,
-#page12
+#page12,
+#page1b,
+#page2b,
+#page3b,
+#page4b,
+#page5b,
+#page6b,
+#page7b,
+#page8b,
+#page9b,
+#page10b,
+#page11b,
+#page12b
  {
     display: none;
 }
 
-.arrow{
+.arrow {
     display: none;
     z-index: 7;
     position: absolute;
@@ -656,7 +670,24 @@ display: none;
                     <p id="page10"></p>
                     <p id="page12"></p>
                 </div>
+                <div class="left"> <!--north lobby book-->
+                    <p id="page1b"></p>
+                    <p id="page3b"></p>
+                    <p id="page5b"></p>
+                    <p id="page7b"></p>
+                    <p id="page9b"></p>
+                    <p id="page11b"></p>
+                </div>
+                <div class="right"> <!--north lobby book-->
+                    <p id="page2b"></p>
+                    <p id="page4b"></p>
+                    <p id="page6b"></p>
+                    <p id="page8b"></p>
+                    <p id="page10b"></p>
+                    <p id="page12b"></p>
+                </div>
             </div>
+            
         </div>
 
             <!--Basic Room-->
@@ -791,6 +822,7 @@ display: none;
             </div>
 
             <div id="northLobby" usemap="#roommap"> <!--North Lobby-->
+                <img src="plinth.png" alt="plinth" usemap="#roommap" class="room" id="plinth2">
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room">
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
@@ -951,6 +983,16 @@ display: none;
         <input type="submit" value="Submit" onclick="hideGuestBook()">
         </form>
     </div>
+
+    <div class="entryform" id="entryform2">
+        <form action="https://formspree.io/f/mdknkobd" method="POST" target="_blank">      
+            <span style="font-family: fantasy;">Message:</span><br>             
+        <textarea for="verily lobby" style="width:333px; height:460px; background: transparent; resize: none;" id="comments" value="Write your message here." name="comments"></textarea><br><br>
+        <span style="font-family: fantasy;">Alias:</span> <input type="text" style="background: transparent;" id="alias" name="alias"><br><br>
+        <input type="submit" value="Submit" onclick="hideGuestBook()">
+        </form>
+    </div>
+
     </div>
     <!--/Maps-->
     <!--/Maps-->
@@ -1905,12 +1947,14 @@ function backToDiagram() {
 
 //guest book navigation
 const page = {spread: 0,}
+const northPage = {spread: 0,}
  function hideGuestBook() {
     frontMatter.style.display = "none";
     bookBody.style.display = "none";
     nextarrow.style.display = "none";
     prevarrow.style.display = "none";
     entryform.style.display = "none";
+    entryform2.style.display = "none";
     page1.style.display = "none";
     page2.style.display = "none";
     page3.style.display = "none";
@@ -1923,65 +1967,138 @@ const page = {spread: 0,}
     page10.style.display = "none";
     page11.style.display = "none";
     page12.style.display = "none";
+    page1b.style.display = "none";
+    page2b.style.display = "none";
+    page3b.style.display = "none";
+    page4b.style.display = "none";
+    page5b.style.display = "none";
+    page6b.style.display = "none";
+    page7b.style.display = "none";
+    page8b.style.display = "none";
+    page9b.style.display = "none";
+    page10b.style.display = "none";
+    page11b.style.display = "none";
+    page12b.style.display = "none";
     click1Audio.play();}
+
  function nextPage() {
     prevarrow.style.display = "block";
     frontMatter.style.display = "none";
     bookBody.style.display = "block";
     entryform.style.display = "none";
+    entryform2.style.display = "none";
     click1Audio.play();
-    if (typeof page.spread === 'undefined') {
-        page.spread = 0;
+
+if (current.room === "lobby") {
+
+if (typeof page.spread === 'undefined') {
+    page.spread = 0;
+}
+switch (page.spread) {
+    case 0:
+        page1.style.display = "block";
+        page2.style.display = "block";
+        page.spread = 1;
+        break;
+    case 1:
+        page1.style.display = "none";
+        page2.style.display = "none";
+        page3.style.display = "block";
+        page4.style.display = "block";
+        page.spread = 2;
+        break;
+    case 2:
+        page3.style.display = "none";
+        page4.style.display = "none";
+        page5.style.display = "block";
+        page6.style.display = "block";
+        page.spread = 3;
+        break;
+    case 3:
+        page5.style.display = "none";
+        page6.style.display = "none";
+        page7.style.display = "block";
+        page8.style.display = "block";
+        page.spread = 4;
+        break;
+    case 4:
+        page7.style.display = "none";
+        page8.style.display = "none";
+        page9.style.display = "block";
+        page10.style.display = "block";
+        page.spread = 5;
+        break;
+    case 5:
+        page9.style.display = "none";
+        page10.style.display = "none";
+        page11.style.display = "block";
+        page12.style.display = "block";
+        nextarrow.style.display = "none"; 
+        page.spread = 6;
+        break;
+    default:
+    console.log("Dats da end'a da book baby");
+}
+}
+
+else if (current.room === "northLobby") {
+
+    if (typeof northPage.spread === 'undefined') {
+        northPage.spread = 0;
     }
-    switch (page.spread) {
+    switch (northPage.spread) {
         case 0:
-            page1.style.display = "block";
-            page2.style.display = "block";
-            page.spread = 1;
+            page1b.style.display = "block";
+            page2b.style.display = "block";
+            northPage.spread = 1;
             break;
         case 1:
-            page1.style.display = "none";
-            page2.style.display = "none";
-            page3.style.display = "block";
-            page4.style.display = "block";
-            page.spread = 2;
+            page1b.style.display = "none";
+            page2b.style.display = "none";
+            page3b.style.display = "block";
+            page4b.style.display = "block";
+            northPage.spread = 2;
             break;
         case 2:
-            page3.style.display = "none";
-            page4.style.display = "none";
-            page5.style.display = "block";
-            page6.style.display = "block";
-            page.spread = 3;
+            page3b.style.display = "none";
+            page4b.style.display = "none";
+            page5b.style.display = "block";
+            page6b.style.display = "block";
+            northPage.spread = 3;
             break;
         case 3:
-            page5.style.display = "none";
-            page6.style.display = "none";
-            page7.style.display = "block";
-            page8.style.display = "block";
-            page.spread = 4;
+            page5b.style.display = "none";
+            page6b.style.display = "none";
+            page7b.style.display = "block";
+            page8b.style.display = "block";
+            northPage.spread = 4;
             break;
         case 4:
-            page7.style.display = "none";
-            page8.style.display = "none";
-            page9.style.display = "block";
-            page10.style.display = "block";
-            page.spread = 5;
+            page7b.style.display = "none";
+            page8b.style.display = "none";
+            page9b.style.display = "block";
+            page10b.style.display = "block";
+            northPage.spread = 5;
             break;
         case 5:
-            page9.style.display = "none";
-            page10.style.display = "none";
-            page11.style.display = "block";
-            page12.style.display = "block";
+            page9b.style.display = "none";
+            page10b.style.display = "none";
+            page11b.style.display = "block";
+            page12b.style.display = "block";
             nextarrow.style.display = "none"; //add more cases here if 12 pages prooves insufficient
-            page.spread = 6;
+            northPage.spread = 6;
             break;
         default:
         console.log("Dats da end'a da book baby");
     }
 }
+}
  function prevPage() {
     nextarrow.style.display = "block";
     click1Audio.play();
+
+    if (current.room === "lobby") {
+    
     if (typeof page.spread === 'undefined') {
         page.spread = 0;
     }
@@ -2036,6 +2153,66 @@ const page = {spread: 0,}
             break;
         default:
         console.log("Dats da front'a da book, baby");
+    }
+}
+
+    else if (current.room === "northLobby") {
+    
+        if (typeof northPage.spread === 'undefined') {
+            northPage.spread = 0;
+        }
+        switch (northPage.spread) {
+            case 0:
+            northPage.spread = 0;
+                break;
+            case 1:
+                page1b.style.display = "none";
+                page2b.style.display = "none";
+                frontMatter.style.display = "block";
+                nextarrow.style.display = "block";
+                entryform2.style.display = "block";
+                bookBody.style.display = "none";
+                prevarrow.style.display = "none";
+                northPage.spread = 0;
+                break;
+            case 2:
+                page3b.style.display = "none";
+                page4b.style.display = "none";
+                page1b.style.display = "block";
+                page2b.style.display = "block";
+                northPage.spread = 1;
+                break;
+            case 3:
+                page5b.style.display = "none";
+                page6b.style.display = "none";
+                page4b.style.display = "block";
+                page3b.style.display = "block";
+                northPage.spread = 2;
+                break;
+            case 4:
+                page7b.style.display = "none";
+                page8b.style.display = "none";
+                page6b.style.display = "block";
+                page5b.style.display = "block";
+                northPage.spread = 3;
+                break;
+            case 5:
+                page9b.style.display = "none";
+                page10b.style.display = "none";
+                page7b.style.display = "block";
+                page8b.style.display = "block";
+                northPage.spread = 4;
+                break;
+            case 6:
+                page9b.style.display = "block";
+                page10b.style.display = "block";
+                page11b.style.display = "none";
+                page12b.style.display = "none";
+                northPage.spread = 5;
+                break;
+            default:
+            console.log("Dats da front'a da book, baby");
+        }
     }
 }
 
@@ -5968,6 +6145,12 @@ function pickNE() {
     frontMatter.style.display = "block";
     nextarrow.style.display = "block";
     entryform.style.display = "block";
+    click1Audio.play();}
+
+    else if (current.room === "northLobby") {
+    frontMatter.style.display = "block";
+    nextarrow.style.display = "block";
+    entryform2.style.display = "block";
     click1Audio.play();}
 
     //yellow candle

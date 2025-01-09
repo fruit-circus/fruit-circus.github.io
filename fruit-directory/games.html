@@ -4,7 +4,7 @@
     .back {
       position: absolute;
       width: 80px;
-      margin-top: -10px;
+      margin-top: -20px;
   }
   .linky {
       color: black;
@@ -15,6 +15,8 @@
   }
   p {
       font-size: 22px;
+      margin-top: 5px;
+      margin-bottom: 50px;
   }
 
 
@@ -41,26 +43,22 @@
       z-index: 2;
       transform: translate(0%, -9%);}
 
-  </style>
-<head>
-  <title>Fruit Circus</title>
-  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
-  <body>
-      <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Three columns with equal width */
+  grid-gap: 30px; /* Adjust this value to add spacing between images 
+  
+  
+  old style:
 
-      <h1 style=" font-family: 'Trebuchet MS', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center; font-size: 40px;">Games</h1><br><br>
-     
-      <div class="flexy">
-        <div class="internal-flexy">
-      
+
+
+
             <p><a class="linky"  href="https://fruit-circus.github.io/fruit_wizard.html">Fruit Wizard</a><br><br>
   A story about fruit and bones.<br><br><br><br>
 
   <a class="linky"  href="https://fruit-circus.github.io/objects-in-a-room.html">Objects in a Room</a><br>
-  <p>Puzzle out your identity with the things in your room. (Incredibly difficult)<br><br><br><br>
+  <p>Puzzle out your identity with the things in your room.<br>(Incredibly difficult)<br><br><br><br>
 
   <a class="linky"  href="https://fruit-circus.github.io/connections.html">Connections</a><br>
   <p>An episodic word puzzle.<br><br><br><br>
@@ -77,6 +75,216 @@
    
    <a class="linky"  href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">The Infinite Labyrinth</a><br>
    <p>Bridget and Kodaly arrive in the infinite labyrinth.<br><br>
+
+
+
+  
+  
+  
+  
+  */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.colimg {
+    width: 67vh;
+    height: 43vh;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+#baby,
+#jumb,
+#z,
+#y,
+#x,
+#w,
+#v {
+    display: none;
+}
+
+
+  </style>
+<head>
+  <title>Fruit Circus</title>
+  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
+  <body>
+      <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
+
+      <h1 style=" font-family: 'Trebuchet MS', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center; font-size: 40px;">Games</h1><br><br>
+     
+
+
+      <div class="flexy">
+            <div class="internal-flexy">
+      
+                
+    <div class="container">
+        <div class="column">
+
+            <a href="https://fruit-circus.github.io/fruit_wizard.html">
+            <img class="colimg" src="102.png" alt="" id="goodord" onmouseover="exchange()">
+            <img class="colimg" src="102b.png" alt="" id="baby" onmouseout="unexchange()"></a>
+            <p>FRUIT WIZARD</p>
+        
+            <a href="https://fruit-circus.github.io/connections.html">
+                <img class="colimg" src="304.png" id="grimp" onmouseover="exchang()" alt=""> 
+                <img class="colimg" src="304b.png" id="jumb" onmouseout="unexchang()" alt=""> </a>
+                <p>CONNECTIONS</p>
+
+             
+
+                    <a href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">
+                        <img class="colimg" src="600.png" id="glunk" onmouseover="exchan()" alt=""> 
+                        <img class="colimg" src="602b.png" id="z" onmouseout="unexchan()" alt=""> </a>
+                    <p>THE INFINITE LABYRINTH</p>
+    
+           </div>
+
+          <div class="column">
+                
+            <a href="https://fruit-circus.github.io/objects-in-a-room.html">
+            <img class="colimg" src="201.png" id="zam" onmouseover="excha()" alt="">
+            <img class="colimg" src="201b.png" id="y" onmouseout="unexcha()" alt=""> </a>
+            <p>OBJECTS IN A ROOM</p>
+           
+            <a href="https://fruit-circus.github.io/mazy.html">
+                <img class="colimg" src="501.png" id="yam" onmouseover="exch()" alt="">
+                <img class="colimg" src="500.mov" id="x" onmouseout="unexch()" alt=""> </a>
+            <p>MAZY LI: ESCAPE FROM THE TECHNOTORIUM</p>
+
+            <a href="kafwako">
+                <img class="colimg" src="404.png" id="xang" onmouseover="exc()"alt="">
+                <img class="colimg" src="404b.png" id="w" onmouseout="unexc()" alt=""> </a>
+            <p>EARLY WESTERN MUSIC HISTORY: THE BOARD GAME</p>
+
+  
+
+            </div>
+        </div>
+        <div class="container">
+ 
+        <div class="column">
+
+        <a href="kafwako">
+            <img class="colimg" id="wee" onmouseover="ex()" src="200.png" alt=""> 
+            <img class="colimg" id="v" onmouseout="unex()" src="200b.png" alt=""></a>
+            <p>CHARTING THE CATCHMENT</p>
+
+            </div>
+            </div>
+
+
+            <script>
+
+
+   function exchange() {
+    var a = document.getElementById("goodord");
+    var b = document.getElementById("baby");
+    a.style.display = "none";
+    b.style.display = "block";
+}
+
+  function unexchange() {
+    var a = document.getElementById("goodord");
+    var b = document.getElementById("baby");
+    b.style.display = "none";
+    a.style.display = "block";
+}
+
+ function exchang() {
+    var grimp = document.getElementById("grimp");
+    var jumb = document.getElementById("jumb");
+    grimp.style.display = "none";
+    jumb.style.display = "block";
+}
+
+  function unexchang() {
+    var grimp = document.getElementById("grimp");
+    var jumb = document.getElementById("jumb");
+    jumb.style.display = "none";
+    grimp.style.display = "block";
+}
+
+ function exchan() {
+    var glunk = document.getElementById("glunk");
+    var z = document.getElementById("z");
+    glunk.style.display = "none";
+    z.style.display = "block";
+}
+
+  function unexchan() {
+    var glunk = document.getElementById("glunk");
+    var z = document.getElementById("z");
+    z.style.display = "none";
+    glunk.style.display = "block";
+}
+
+function excha() {
+    var a = document.getElementById("zam");
+    var b = document.getElementById("y");
+    a.style.display = "none";
+    b.style.display = "block";
+}
+
+  function unexcha() {
+    var a = document.getElementById("zam");
+    var b = document.getElementById("y");
+    b.style.display = "none";
+    a.style.display = "block";
+}
+
+function exch() {
+    var a = document.getElementById("yam");
+    var b = document.getElementById("x");
+    a.style.display = "none";
+    b.style.display = "block";
+}
+
+  function unexch() {
+    var a = document.getElementById("yam");
+    var b = document.getElementById("x");
+    b.style.display = "none";
+    a.style.display = "block";
+}
+
+function exc() {
+    var a = document.getElementById("xang");
+    var b = document.getElementById("w");
+    a.style.display = "none";
+    b.style.display = "block";
+}
+
+  function unexc() {
+    var a = document.getElementById("xang");
+    var b = document.getElementById("w");
+    b.style.display = "none";
+    a.style.display = "block";
+}
+
+function ex() {
+    var a = document.getElementById("wee");
+    var b = document.getElementById("v");
+    a.style.display = "none";
+    b.style.display = "block";
+}
+
+  function unex() {
+    var a = document.getElementById("wee");
+    var b = document.getElementById("v");
+    b.style.display = "none";
+    a.style.display = "block";
+}
+
+
+            </script>
    
 </div>
 </body>

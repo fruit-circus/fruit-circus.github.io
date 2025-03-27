@@ -5,6 +5,7 @@
   <title>The Zambia Update</title>
   <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
   <style>
+ 
     body {
     font-family: 'EB Garamond';
       font-size: 23px;
@@ -17,36 +18,16 @@
       font-size: 50px;
     }
 
-      #zambia {
-      display: none;
-    }
-      #peacecorps {
-      display: none;
-    }
-      #pczambia {
-      display: none;
-    }
-      #mysite {
-      display: none;
-    }
-      #climate {
-      display: none;
-    }
-      #culture {
-      display: none;
-    }
-      #zenglish {
-      display: none;
-    }
-      #kiikaonde {
-      display: none;
-    }
-      #myhouse {
-      display: none;
-    }
-      #daily {
-      display: none;
-    }
+      #zambia,
+      #peacecorps,
+      #pczambia,
+      #mysite,
+      #climate,
+      #culture,
+      #zenglish,
+      #kiikaonde,
+      #myhouse,
+      #daily,
       #end {
       display: none;
     }
@@ -55,6 +36,17 @@
   <script>
     const shown = {
       zambia: false,
+      peacecorps: false,
+      pczambia: false,
+      mysite: false,
+      climate: false,
+      culture: false,
+      zenglish: false,
+      kiikaonde: false,
+      myhouse: false,
+      daily: false,
+      end: false,
+      further: false,
       }
     
     function toggle1() {
@@ -64,6 +56,116 @@
       } else {
         zambia.style.display = "none";
         shown.zambia = false;
+      }
+    }
+
+     function toggle2() {
+      if (!shown.peacecorps){
+      peacecorps.style.display = "block";
+        shown.peacecorps = true;
+      } else {
+        peacecorps.style.display = "none";
+        shown.peacecorps = false;
+      }
+    }
+
+     function toggle3() {
+      if (!shown.pczambia){
+      pczambia.style.display = "block";
+        shown.pczambia = true;
+      } else {
+        pczambia.style.display = "none";
+        shown.pczambia = false;
+      }
+    }
+
+     function toggle4() {
+      if (!shown.mysite){
+      mysite.style.display = "block";
+        shown.mysite = true;
+      } else {
+        mysite.style.display = "none";
+        shown.mysite = false;
+      }
+    }
+
+     function toggle5() {
+      if (!shown.climate){
+      climate.style.display = "block";
+        shown.climate = true;
+      } else {
+        climate.style.display = "none";
+        shown.climate = false;
+      }
+    }
+
+     function toggle6() {
+      if (!shown.culture){
+      culture.style.display = "block";
+        shown.culture = true;
+      } else {
+        culture.style.display = "none";
+        shown.culture = false;
+      }
+    }
+
+     function toggle7() {
+      if (!shown.zenglish){
+      zenglish.style.display = "block";
+        shown.zenglish = true;
+      } else {
+        zenglish.style.display = "none";
+        shown.zenglish = false;
+      }
+    }
+
+     function toggle8() {
+      if (!shown.kiikaonde){
+      kiikaonde.style.display = "block";
+        shown.kiikaonde = true;
+      } else {
+        kiikaonde.style.display = "none";
+        shown.kiikaonde = false;
+      }
+    }
+
+           function toggle9() {
+      if (!shown.myhouse){
+      myhouse.style.display = "block";
+        shown.myhouse = true;
+      } else {
+        myhouse.style.display = "none";
+        shown.myhouse = false;
+      }
+    }
+
+     function toggle10() {
+      if (!shown.daily){
+      daily.style.display = "block";
+        shown.daily = true;
+      } else {
+        daily.style.display = "none";
+        shown.daily = false;
+      }
+    }
+
+     function toggle11() {
+      if (!shown.end){
+      end.style.display = "block";
+        shown.end = true;
+      } else {
+        end.style.display = "none";
+        shown.end = false;
+      }
+    }
+
+         function toggle12() {
+      if (!shown.further){
+      further.style.display = "block";
+        shown.further = true;
+      } else {
+        further.style.display = "none";
+        shown.further = false;
       }
     }
 
@@ -88,7 +190,7 @@
 <br><br>In the dry season, most of the country turns yellow and dusty, but in Northern and Northwestern, plants stay green year-round. Southern and Western can be quite hot, according to volunteers there, even during the wet season, but, even in the middle of the hottest part of dry season, Northwestern is still fairly cool by high NC summer standards (although I burn much quicker). 
 </div>
 
-<br><br><br><br>PEACE CORPS (pronounced “Core”)
+<br><br><br><br><button onclick="toggle2()">PEACE CORPS</button>(pronounced “Core”)
 <div id="peacecorps">
 <br>Peace Corps is a U.S. organization founded in 1961 by JFK. It sends volunteers to serve in developing countries where they work to build that country’s capacity, reduce preventable diseases, and foster international friendships.  
 <br><br>The vetting process for volunteers is extensive, but the only real barrier to acceptance is not having a health condition which would make it impossible to live in an isolated, rural environment. Once you’re here, you’re kind of on your own. If you’re generally able-bodied, dedicated to helping others, and willing to do a lot of paperwork, there’s a good chance you’ll be accepted. While most volunteers are in their twenties, many people serve later in life; the oldest member of our cohort is in her sixties.
@@ -97,7 +199,7 @@
 <br><br>Peace Corps is unique among the U.S.’s federal agencies because it is fundamentally separate from all the other agencies. Most government agencies are tied very closely to one another (), but Peace Corps is not () (why?) There is often an impression among urban HCNs that Americans are spies sent by the CIA, so Peace Corps works preemptively to mitigate this impression. If you have even so much as a family member who once served in the CIA, you will not be admitted(). My friend Madison and I stayed with a host-family in Lusaka during our training, and our host-cousin Blessing just texted me a few weeks ago to confide that, now that we’re both in Northwestern sending her pictures of our work with our communities, that she’s now pretty sure we’re not spies. She also admitted that she probably watches too many American action movies.
 </div>
 
-<br><br><br><br>PEACE CORPS ZAMBIA
+<br><br><br><br><button onclick="toggle3()">PEACE CORPS ZAMBIA</button>
 <div id="pczambia">
 <br>Today, there are about a hundred () Peace Corps volunteers in Zambia, which makes Zambia the country with the largest Peace Corps presence. () Before the pandemic, there were nearly two hundred volunteers. ()
 <br><br>Peace Corps Zambia currently has four specific project sectors. These are: 
@@ -121,7 +223,7 @@
 <br><br>When you are placed at site, Peace Corps provides a bike, a solar lamp, a water filter, and a box of medicine. For everything else, you’re given a small living stipend. Transport to and from site is done by standing on the side of the road, flagging down a bus, and being reimbursed later. 
 </div>
   
-<br><br><br><br>MY SITE 
+<br><br><br><br><button onclick="toggle4()">MY SITE </button>
 <div id="mysite">
 <br>The old M8 stretches for miles in each direction. It’s an unmarked, two lane road occasionally plagued by potholes. Everything there is, except the farms, off in the vague north, is built around the road. If you follow it southwest, you’ll eventually come to the source of the Zambezi. It’s hard to define exactly where the village starts and stops, but the functional definition seems to be “which school do your children walk to?” If your children go to Kyawama Primary, then you live in Kyawama.
 <br><br>If you walk away from the road in either direction for twenty to thirty minutes, you’ll find the farms. People have smaller houses there, where they stay during planting and harvest season. 
@@ -144,7 +246,7 @@
 <br><br>While these are the failures of the education system, there are also many dedicated, intelligent, and kind teachers working tirelessly for their students’ sakes. While as a whole the system may be geared to produce good numbers rather than educated students, the actors within that system, at least as evidenced by my school, are generally positive influences. 
 </div>
 
-<br><br><br><br>CLIMATE, FLORA, AND FAUNA
+<br><br><br><br><button onclick="toggle5()">CLIMATE, FLORA, AND FAUNA</button>
 <div id="climate">
 <br>Most of Zambia is Very Flat, and Northwestern province doesn’t buck that trend (unless you go up into Mwinilunga). Northwest is mainly comprised of forests of short trees and grasslands. Most trees reach no more than 30 or 40 feet.
 <br><br>The most notable feature of the landscape are the 10-20 foot tall termite hills that dot the landscape. These are enduring structures, typically built around tall trees, which last for decades. 
@@ -175,7 +277,7 @@
 <br><br>March is apparently large cricket and fruit fly month. Orion is overhead at 7:00, and lists quickly to the side and behind the black silhouette of the trees within a matter of hours, leaving only unfamiliar constellations. 
 </div>
   
-<br><br><br><br>VARIOUS CULTURAL TIDBITS 
+<br><br><br><br><button onclick="toggle6()">VARIOUS CULTURAL TIDBITS </button>
 <div id="culture">
 <br>Church — Basically everyone is Christian, although there is a small mosque north of the boma. Holidays are celebrated either by day-drinking or going to church (and in this way are no different from any other days, except by size). Church services here are similar to services in America, but probably longer, and with no definitive start time. Usually, people trickle in from 9:00 to 10:00 while the pastor preaches in Kiikaonde with Biblical English bits sprinkled in. The choir sings, accompanied by drummers (or keyboard and electric guitar at bigger churches), and the congregation joins if they know the song, but are otherwise silent and stone-faced. There’s usually a special song for passing around the collection box(), and another song that’s very energetic, where some people ululate. The choir usually does a few songs with a simple dance or clap. (I’ve sung in the ECZ choir a few times and I can generally either sing or dance, but not both at once.) Songs are all in Kiikaonde except for “hallelujah!” and other Biblical interjections. At ECZ, men sit on the right and women sit on the left, the choir is mostly women, and the drummers are men. The drumming pattern is usually the same well-practiced pattern. Church administrators give some brief announcements after the singing, and after the service, senior church women serve lunch to certain people. I’m not sure how the subsection of people who get lunch is determined, but it weirdly always includes me.
 <br><br>ECZ is fairly mild, compared to a few of the other shows in town. One day I followed some random women to a church called Rising, which was just in the fifth grade room at the school. There was some sort of faith healing thing going on and ten or eleven people spun into wild trances and fell over. I gradually snuck closer to the door and left after about four hours. 
@@ -210,7 +312,7 @@
 <br><br>The market-block is the heart of the market. The surrounding shops have packaged goods like candy, crisps (chips), beauty products, and soda. There are lots of barber shops and liquor stores. Other shops sell tools, hair extensions, or household items like laundry baskets, tupperware, sponges, brooms, and clothes. Most stores offer very similar if not identical products to each other. Fruiticana is the most popular drink and it’s the best bottled drink I’ve ever had. (It’s like a split between plain fruit juice and a smoothie. It’s very sweet, the main flavors are guava and mango.)  
 </div>
   
-<br><br><br><br>ZAMBIAN ENGLISH 
+<br><br><br><br><button onclick="toggle7()">ZAMBIAN ENGLISH</button>
 <div id="zenglish">
 <br>You can learn a lot about a language’s grammar by paying attention to how its native speakers use English.
 <br><br>Despite the claim of my fellow volunteer’s ethnically Bemba native English-speaking girlfriend Kangwa, Zambian English is not identical to British English. I don’t know if this is a widely held belief, but even Kangwa, whose first and only language is English, still speaks with a Zambian accent and uses Zambian turns of phrase.
@@ -222,7 +324,7 @@
 <br><br>“You’ve knocked off?” — to knock off is to leave from work. Perhaps this is a Britishism.
 </div>
     
-<br><br><br><br>KIIKAONDE 
+<br><br><br><br><button onclick="toggle8()">KIIKAONDE</button>
 <div id="kiikaonde">
 <br>Kiikaonde, like all the other Bantu languages in Zambia, uses the English alphabet as its writing system. It works really well. English letters represent sounds far more accurately in Kiikaonde than they do in English. The spelling is entirely phonetic, and, aside from the occasional long versus short vowel distinction, I have no trouble hearing a clearly spoken Kiikaonde word and writing it down, which people are continually impressed by and take as evidence that I’m fluent.
 <br><br>I’m not.
@@ -233,7 +335,7 @@
 <br><br>Pronouns + tense + verb + passive / applicative
 </div>
   
-<br><br><br><br>MY HOUSE
+<br><br><br><br><button onclick="toggle9()">MY HOUSE</button>
 <div id="myhouse">
 <br>I love my house.
 <br><br>It’s made of large grey bricks that are soft and thick and held in place by an inch of mortar. The inside is plastered with a smooth seemingly termite-resistent stone-like substance which was hastily painted white about four years ago, leaving a few monochromatic Polloc-esque drips on the smooth floor and tails of brush strokes against the metal roof. The roof is held in place simply, but firmly, like all the other buildings here, with two heavy wooden planks that span the width of the house (seven and a half meters) (), on top of which are sheets of simple overlapping sheet metal laid lengthwise from a height of () at its highest to () at its lowest over the length of the house (four and a half meters (). Other houses’ roofs are held in place with bricks, but Peace Corps doesn’t fool around. 
@@ -254,7 +356,7 @@
   <br><br><br><br>OTHER THINGS I GUESS()
 <br><br>My neighbor Hilda keeps shooing away the kids that congregate in my kinzanza (with threats of violence) but, similar to chickens trying to get into a big pot of nshima, they never actually go away. Today a big group of them were gathered together and Hilda was waving a big stick around. They looked like a children’s choir, so I walked up and started conducting them through the national anthem while she looked on hopelessly.
 
-<br><br><br><br>DAILY ROUTINE 
+<br><br><br><br><button onclick="toggle10()">DAILY ROUTINE</button>
 <div id="daily">
 <br>On a typical day, I wake up around 7:00, read for a bit and then make breakfast, get water out of my water filter and take my malaria prophylaxis. I usually wind up at school around 8:00, which is when the majority of the children have arrived and settled.  
 <br><br>Sometimes, randomly all the other teachers are at a meeting in the boma and there’s two or three dedicated primary teachers. Other days it’s like “it’s a celebration day” for various reasons and I abandon the slim hope I had of getting any work done.   
@@ -264,14 +366,16 @@
 <br><br>After that the routine varies, so in the evening I do some combination of: write, read, cook, listen to podcasts, clean the house, explore, build something, exercise, play with the kids, teach random community members who come asking for a grammar lesson, play the ukulele, study language, play solitaire, collect bottle caps with kids, walk around the community and try to meet people, work on the dictionary, code my video game, draw, go to the boma to shop or watch YouTube videos, or hang out with my resource family. (Recently I’ve been teaching them how to play chess and Spades.) 
 </div>
 
-<br><br><br><br>END NOTES
+<br><br><br><br><button onclick="toggle11()">END NOTES</button>
 <div id="end">
 <br><br>While I’ve endeavored to be factual in my report, please take the things I’ve said so far with a grain of salt, and know also that this is only one person’s experience with one village. Other volunteers have already had wildly different experiences, although there are many broad common themes. The people who live here, and who grew up here, also have their own perspectives and associations, which differ vastly from mine. 
 <br><br>Most of the things I’ve observed have been slowly accumulated through interaction and passive observation. If I weren’t preoccupied with food and bodily well-being, I would probably have observed a lot more and gotten more work done at school. The former two things obviously take precedence, so I’m not really blaming myself. I also try not to impose by asking too many questions or pushing too hard for change. People share a lot with me already and make a lot of accommodations, and I try not to pester them.
 <br><br>All-in-all, I think my village is not very different from any other rural place in the world, or in North Carolina. The people are people, there are shy ones, gossips, stoics, and tricksters. The children are children: unwise, clumsy, and full of snot, but also natural scientists, avid language learners, and soooooooooo cute. The breeze sways the trees, the clouds billow, the birds sing. Economics drives behavior, people cook and talk about nothing, the hand of global capitalism is visible as a thin string connecting Gucci-branded backpacks to factories in countries no one here has heard of, and there are hidden patterns that mostly go ignored, but which will unfold themselves to those who are curious and listen.
 
-<br><br><br><br>FURTHER READING
-  ()
+<br><br><br><br><button onclick="toggle12()">FURTHER READING</button>
+  <div id="further">
+()
+  </div>
 
 </body>
 </html>

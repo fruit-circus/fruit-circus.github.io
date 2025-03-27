@@ -53,12 +53,20 @@
     </style>
 
   <script>
+    var shown = {
+      zambia: false,
+      }
     
     function toggle1() {
+      if (!shown.zambia){
       zambia.style.display = "block";
         zambia.shown = true;
-  
+      } else {
+        zambia.style.display = "none";
+        zambia.shown = false;
+      }
     }
+
   </script>
   <body>
 

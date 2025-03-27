@@ -14,7 +14,7 @@
     }
     .title {
       text-align: center;
-      font-size: 20px;
+      font-size: 50px;
     }
 
       #zambia {
@@ -53,17 +53,17 @@
     </style>
 
   <script>
-    var shown = {
+    const shown = {
       zambia: false,
       }
     
     function toggle1() {
       if (!shown.zambia){
       zambia.style.display = "block";
-        zambia.shown = true;
+        shown.zambia = true;
       } else {
         zambia.style.display = "none";
-        zambia.shown = false;
+        shown.zambia = false;
       }
     }
 

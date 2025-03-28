@@ -5,8 +5,8 @@ Harper Reese (they/them)
 
 🫐 [Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)
 
-🍑 [The Infinite Labyrinth](https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html) 
-
 🍋 [Connections](https://fruit-circus.github.io/connections.html)
+
+🍑 [The Infinite Labyrinth](https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html) 
 
 🥝 [Dictionary of Kiikaonde](https://fruit-circus.github.io/kiikaonde-dictionary.html) (Coming soon!)

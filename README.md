@@ -1,21 +1,12 @@
 # Behold the Fruit Circus
+Harper Reese (they/them)
 
-Behold my Fruit Directory: [Home Page](https://fruit-circus.github.io/fruit-directory/home.html)
+🍓 [Fruit Directory](https://fruit-circus.github.io/fruit-directory/home.html)
 
-[Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)
+🫐 [Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)
 
+🍑 [The Infinite Labyrinth](https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html) 
 
-- 👋 Hi, I’m @fruit-circus
+🍋 [Connections](https://fruit-circus.github.io/connections.html)
 
-- 👀 I’m interested in THINGS
-
-- 🌱 I’m currently GETTING BETTER ON THE DRUMS
-
-- 💞️ I’m looking to collaborate on A SONG, BUT ONLY if your name is RABBI VOLE
-
-- 📫 How to reach me: THE FRONT DOOR. I LEAVE IT UNLOCKED
-
-- 😄 Pronouns: THEY / THEM
-
-- ⚡ Fun fact: I AM A REAL WORM. AN ACTUAL WORM. 
-
+🥝 [Dictionary of Kiikaonde](https://fruit-circus.github.io/kiikaonde-dictionary.html) (Coming soon!)

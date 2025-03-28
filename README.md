@@ -1,5 +1,5 @@
 # Behold the Fruit Circus
-Harper Reese (they/them)
+a transformative multi-media experience by Harper Reese (they/them)
 
 🍓 [Fruit Directory](https://fruit-circus.github.io/fruit-directory/home.html)
 

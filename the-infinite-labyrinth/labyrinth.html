@@ -7,10 +7,12 @@
 /*
 Check all //mark s
 
+Change from five to four pilars 
+add "chapter 3, coming soon!"
+
 ART:
 make verilytinkering a gif
 redo Verilyredhanded and Verilyredhanded2
-stylize restart and home buttons
 make hall and chasm explorers gifs
 draw orchids
 simplify art for diagram
@@ -20,16 +22,14 @@ portholeview gif
 Stymiedemonstration
 Stymiedemonstration2
 shuri sprite and portrait
+wings to forehead for K on "what the fuck..."
+
 
 ONLY VISIBLE IN OTHER BROWSERS:
-#butt is disappearing when combination lock is opened
-close button and submit code on chest for green candles not functional (only a problem in the w chapter 2 file)
-harp strings fail to timeout and stop vibrating
 make sure font family is not impact (try importing garamond, as seen in a-to-z)
 automatic sizing (or centering? or zoom?) for larger screens?
 try to find a way to restrict highlihgting the images
-yellow candles cant be picked up????
-s
+
 
 NEW MUSIC:
 music: starting around 16:10 in the Martin Best Ensemle ending at 19:25 
@@ -48,13 +48,21 @@ trim and vary unlock.mp3 for easy quick little clicks
 computer bloop for clicking on stymie
 
 CODE:
+portholeRoom has some z-index problems. 
+clicking on the porthole in portholeRoom doesn't hide the explorers or satchel
+clicking the big x in portholeRoom has the chance to take you to the home page or restart the game
 check that haveyouseen him still triggers after the verily confrontation
+instead of verilyidle dialogue, it's rope dialogue
 Set up cookies, especially for after longtimenosee to have verilyidle dialogue
 prevent highlighting
-
+maybe ids should not be defined in the map area. it seems to cause problems in other browsers. sometimes.
+labyrinth names loops indefinitely instead of giving the "oh hey guys long time no see"
+room not reappearing for carvedNumbers
 Add cookie triggers to trigger shuri encounter:
 document.cookie = "suspect=suspect";
 document.cookie = "2ShrubDoorUnlocked=2ShrubDoorUnlocked";
+use some other trigger besides upToSomething to trigger shuriEncounter, because the dialogue can overlap
+drop the data cube after talking to stymie (after giving it to stymie) with function drop1()? etc?
 
 
 */
@@ -739,6 +747,7 @@ display: none;
 #zw11,
 #zw12,
 #zw13,
+#shurisprite,
 #zx1,
 #zx2,
 #zx3,
@@ -914,6 +923,10 @@ display: none;
 
 
 #fishstrings{
+    z-index: -1;
+}
+
+#fishstrings2 {
     z-index: -1;
 }
 
@@ -1106,14 +1119,14 @@ display: none;
                     <p id="page1">strawberry emoji<br><br>—idk srry</p>
                     <p id="page3">I hope we see the ghost of David Bowie is here<br><br>—JoJo</p>
                     <p id="page5">:3<br><br>—spice</p>
-                    <p id="page7"></p>
+                    <p id="page7">i think we might be stuck at this section for a while 0_0<br><br>—//sent because puzzles are hard</p>
                     <p id="page9"></p>
                     <p id="page11"></p>
                 </div>
                 <div class="right">
-                    <p id="page2">I sure wonder if STMI is going to misrepresent any information! I sure hope not :)<br><br>—Iphis</p>
+                    <p id="page2">I sure wonder if STMI is going to misrepresent any information! I sure hope not :]<br><br>—Iphis</p>
                     <p id="page4"> This is cooler than my shit that was the shape of a unicorn!<br><br>—Bananamaniac</p>
-                    <p id="page6"></p>
+                    <p id="page6">hiii!!!! finally giving this the looksee it deserves!!!! let's make out sometime!<br><br>—;3</p>
                     <p id="page8"></p>
                     <p id="page10"></p>
                     <p id="page12"></p>
@@ -1311,16 +1324,16 @@ display: none;
 
             <!--Chapter 2's East Floret-->
             <div id="chandelierRoom" usemap="#chandleMap"> <!--floret center-->
+                <img src="explorersfallenchandelier.png" alt="explorersfallenchandelier" usemap="#chandleMap" class="room" id="explorersfallenchandelier"> 
                 <img src="chandelierexplorers.png" alt="door" usemap="#chandleMap" class="room" id="chandelierexplorers">  
                 <img src="eastdoor.png" alt="door" usemap="#chandleMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#chandleMap" class="room" id="westdoor"> 
                 <img src="southdoor.png" alt="door" usemap="#chandleMap" class="room" id="southdoor"> 
                 <img src="northdoor.png" alt="door" usemap="#chandleMap" class="room" id="northdoor">
                 <img src="powerlinedoorhole.png" alt="door" usemap="#chandleMap" class="room" id="powerline">  
-                <img src="chandelier.png" alt="door" usemap="#chandleMap" class="room" id="chandelier">  
+                <img src="chandelier.gif" alt="chandelier" usemap="#chandleMap" class="room" id="chandelier">  
                 <img src="chandelierground.png" alt="door" usemap="#chandleMap" class="room" id="chandelierground"> 
                 <img src="chandelierclue.png" alt="envelope" usemap="#chandleMap" class="room" id="chandelierClue"> 
-                <img src="explorersfallenchandelier.png" alt="explorersfallenchandelier" usemap="#chandleMap" class="room" id="explorersfallenchandelier"> 
                 
 
             </div>
@@ -1328,7 +1341,7 @@ display: none;
             <div id="portholeRoom" usemap="#roommap"> <!--North of center-->
                 <img src="southdoorspecial.png" alt="door" usemap="#roommap" class="room" id="southdoorspecial"> 
                 <img src="porthole.png" alt="porthole" usemap="#roommap" class="room" id="porthole"> 
-                <img src="fishstrings.gif" alt="fish pond" usemap="#pondmap" class="room" id="fishstrings">
+                <img src="fishstrings.gif" alt="fish pond" usemap="#roommap" class="room" id="fishstrings2">
                 <img src="verilysprite.png" alt="verily" usemap="#roommap" class="room" id="verilysprite">                   
             </div>
 
@@ -1356,6 +1369,7 @@ display: none;
 
             <!--Chapter 2's West Floret-->
             <div id="lockboxRoom" usemap="#roommap"> <!--floret center-->
+                <img src="carvedNumbers.png" alt="numerical code 7284" usemap="#bigX" class="room" id="carvedNumbers">  
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
@@ -1364,7 +1378,6 @@ display: none;
                 <img src="lockbox.png" alt="door" usemap="#roommap" class="room" id="lockbox">  
                 <img src="openlockbox.png" alt="door" usemap="#roommap" class="room" id="openlockbox">  
             </div>
-            <img src="carvedNumbers.png" alt="numerical code 7284" usemap="#bigX" class="room" id="carvedNumbers">  
 
 
             <div id="pillarRoom" usemap="#roommap"> <!--North of center-->
@@ -1518,6 +1531,7 @@ display: none;
     </map>
 
     <map name="chandleMap">
+        <!--chandlier room-->
         <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
         <area shape="rect" coords="650,9,780,155" alt="stymie" class="pointer" onclick="stymieDialogue()"> <!--In this case, this function includes chandlier cutting-->
 
@@ -1544,7 +1558,7 @@ display: none;
         <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
         <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
         <area shape="rect" coords="450,500,620,600" alt="key" class="pointer" onclick="pickCenterS()"> <!--If there are problems in the future try adding id="goldkey" back here, but i dont think its important-->
-        <area shape="rect" coords="1100,345,1160,440" alt="yellow candle" class="pointer" id="yellowcandle" onclick="pickNE()">
+        <area shape="rect" coords="1100,345,1160,440" alt="yellow candle" class="pointer" onclick="pickNE()">
     </map>
 
     <map name="liftmap"> <!--Lift room. Buttons: left:up, right:down-->
@@ -1663,7 +1677,7 @@ display: none;
             <area shape="circle" coords="390,530,200" alt="south door" class="pointer" onclick="goSouth()">
         <area shape="circle" coords="815,196,100" alt="shrub" class="pointer" onclick="shrub1()">
         <area shape="circle" coords="1250,260,100" alt="shrub" class="pointer" onclick="shrub2()">
-        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" id="satchel" class="pointer" onclick="showInv()">
         </map>
 
         <map name="switchmap"> <!--Chapter 2's switch room-->
@@ -1684,7 +1698,7 @@ display: none;
         </map>
 
         <map name="librarymap"> <!--for all those bookshelves-->
-            <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">
+            <area shape="rect" coords="12,630,220,780" alt="satchel" id="satchel" class="pointer" onclick="showInv()">
             <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
             <area shape="rect" coords="450,500,620,600" alt="key" class="pointer" onclick="pickCenterS()">
             <area shape="circle" coords="440,190,200" alt="bookshelf numba 1" class="pointer" onclick="randomBook()">
@@ -1740,16 +1754,19 @@ display: none;
 <audio id="string7"><source src="string7.mp3" type="audio/mpeg"></audio>
 <audio id="string8"><source src="string8.mp3" type="audio/mpeg"></audio>
 <audio id="fishSong"><source src="fishsong.mp3" type="audio/mpeg"></audio>
-<audio id="tinkering"><source src="wrench.wav" type="audio/mpeg"></audio>
+<audio id="tinkering"><source src="wrench.mp3" type="audio/mpeg"></audio>
 <audio id="keypick"><source src="key.mp3" type="audio/mpeg"></audio>
 <audio id="static"><source src="radio.mp3" type="audio/mpeg"></audio>
 <audio id="swordsound"><source src="sword.mp3" type="audio/mpeg"></audio>
 <audio id="decksound"><source src="deck.mp3" type="audio/mpeg"></audio>
 <audio id="stonesound"><source src="stone.mp3" type="audio/mpeg"></audio> <!--Possibly replace with better stone sliding sound-->
 <audio id="paper"><source src="paper.m4a" type="audio/mpeg"></audio>
-<audio id="lockClick"><source src="lock.mp3" type="audio/mpeg"></audio>
+<audio id="lockClick"><source src="lockclick.mp3" type="audio/mpeg"></audio>
+<audio id="lockClick2"><source src="lockclick2.mp3" type="audio/mpeg"></audio> <!--add this to a randomizer-->
+<audio id="lockClick3"><source src="lockclick3.mp3" type="audio/mpeg"></audio> <!--add this to a randomizer-->
+<audio id="lockClick4"><source src="lockclick4.mp3" type="audio/mpeg"></audio> <!--add this to a randomizer-->
 <audio id="pillarstonergind"><source src="pillarstonergind.mp3" type="audio/mpeg"></audio> <!--add sound here; long duration distant stone grinding-->
-<audio id="duan"><source src="Duan_Nollaig.mp3" type="audio/mpeg"></audio>
+<audio id="elmare"><source src="Elmare-epare.mp3" type="audio/mpeg"></audio>
 
 
 </div>
@@ -2033,7 +2050,7 @@ display: none;
 	<p id="zg14">Maybe if we get to the heart, we can ask this labyrinth its name.</p>
 	<p id="zg15">That <i>is</i> fucked up.</p>
 	<p id="zg16">We should ask Stymie about labyrinth names when we go back.</p>
-	<p id="zg17">Wait-- Did you hear that?</p>
+	<p id="zg17">What on earth was that?</p>
     <p id="zg18">...</p>
     
     <p id="zj1">Labyrinth names?</p>
@@ -2096,7 +2113,7 @@ display: none;
     <p id="zk37">You're welcome.</p>
     <p id="zk38">Say, Ms. Verily— Dr. Verily?</p>
     <p id="zk39">Have you been deeper in yet? Do you know what lies ahead?</p>
-    <p id="zk40">Eh--</p>
+    <p id="zk40">Eh—</p>
     <p id="zk41">No, not yet.</p>
     <p id="zk42">Do let me know if it's anything interesting.</p>
     <p id="zk43">I'll be working in this room for a while, so you probably won't miss me much if you're going back and forth. This is as deep as I need to go.</p>
@@ -2359,7 +2376,6 @@ display: none;
    <p id="zzk13">Haha!</p>
    <p id="zzk14">You two are quite the pair. If there's anyone who can find the truth of the labyrinth, I'm sure it's you.</p>
   
-      <!--//mark-->
    <p id="zzl1">Books!</p>    <!--K jumping-->
    <p id="zzl2">A labyrinthy library.</p>
    <p id="zzl3">A library in a labyrinth.</p>
@@ -2369,12 +2385,12 @@ display: none;
    <p id="zzl7">...</p>
    <p id="zzl8">Although, last year when I was in Derin, just south of the border, I met this Northern Alliance researcher who claimed to have been in Bara Portcullis.</p>
    <p id="zzl9">He said the books were made of paper, and filled with millions of strange, rectilinear glyphs.</p>
-   <p id="zzl10">He had copied a few pages of them down in his notebook, but before he could show me, the borderguard came in and he slipped away out the back of the cafe down a fire escape and out to sea.</p>
-   <p id="zzl11">And of course I never saw him again.</p>
+   <p id="zzl10">He had copied a few pages of them down in his notebook, but before he could show me, the borderguard came in. He slipped away out the back of the cafe down a fire escape and out to sea.</p>
+   <p id="zzl11">And I never saw him again.</p>
    <p id="zzl12">Do you think he was telling the truth? They were filled with glyphs?</p>
    <p id="zzl13">He seemed like a dedicated scientist.</p>
    <p id="zzl14">It's a shame the war makes it so hard to share information.</p>
-   <p id="zzl15">I can't imagine universities in the north know anything more about us than we do about them.</p>
+   <p id="zzl15">I can't imagine universities in the north know anything more about <i>us</i> than we do about <i>them</i>.</p>
    <p id="zzl16">These books don't seem to have titles, do they.</p>
    <p id="zzl17">Woah! Check this out.</p>
    <p id="zzl18">It's a novel.</p>
@@ -2390,12 +2406,12 @@ display: none;
    <p id="zzm3">That one makes less sense.</p>
 
    <p id="zzm4">Let's try another.</p>
-   <p id="zzm5">The same thing happened in the Lizard Shaker, whose mountains braved me from a fact. It was solvant: a heartbeat of reason. Only a heathgrove longshot to proffer the enticing canticleers, to the eaveless uncharted who kept reviling clustered narcisits."</p>
-   <p id="zzm6">I don't get it. Do you think the labyrinth has just generated some junk text to fill the books with because it understands that books are supposed to have text in them?</p>
+   <p id="zzm5">"The same thing happened in the Lizard Shaker, whose mountains braved me from a fact. It was solvant: a heartbeat of reason. Only a heathgrove longshot to proffer the enticing canticleers, to the eaveless uncharted who kept reviling clustered narcisits."</p>
+   <p id="zzm6">I don't get it... Do you think the labyrinth just generated junk text to fill the books because it understands that books should have text?</p>
    <p id="zzm7">Or do you think it really does understand our language and is just conserving resources by not generating sensical works?</p>
    <p id="zzm8">It clearly understands at least a little of our grammar, if not our vocabulary.</p>
    <p id="zzm9">Maybe that's why it uses Stymie to communicate.</p>
-   <p id="zzm10">But it does understand our grammar, at least to some degree. That's huge.</p>
+   <p id="zzm10">But it does understand our grammar! At least to some degree.</p>
    <p id="zzm11">It could have been random letters, or random words with no order.</p>
    <p id="zzm12">But instead it's words used with a vague understanding of where they should be placed in a sentence, but with no aparent understanding of their meaning.</p>
 
@@ -2439,7 +2455,7 @@ display: none;
    <p id="zzp3">Did you see anyone pass this way?</p>
    <p id="zzp4">Not that I know of! Why?</p>
    <p id="zzp5">I think we found your rogue soldier.</p>
-   <p id="zzp6">Oh! Good, I'm always misplacing those.</p>
+   <p id="zzp6">Oh! Good. I'm always misplacing those.</p>
 
 
  
@@ -3297,12 +3313,13 @@ function closeWhatever() {
         }
 }
 
-function closeChest() {
-        click1Audio.play();
-        explorers.style.display = "block";
-        baseroom.style.display = "block";
+function closeChest() { //mark
+      click1Audio.play();
+    combinationLock.style.display = "none";
+    explorers.style.display = "block";
+    baseroom.style.display = "block";
+    butt.style.display = "block";
         satchel.style.display = "block";
-        butt.style.display = "block"; //mark problem in other browsers?
         butthome.style.display = "block";
     if (current.room === "dias") {
         dias.style.display = "block";
@@ -3316,6 +3333,7 @@ function closeChest() {
         lockboxUnlocks();
     } 
 }
+
 const lock = {
     a: 1,
     b: 1,
@@ -3349,7 +3367,7 @@ function aDown() {
         lock.a = 6}
         else if (lock.a === 8) {document.getElementById('lock1').innerText = 7;
         lock.a = 7}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function bDown() {
    if (lock.b === 1) {document.getElementById('lock2').innerText = 8;
@@ -3368,7 +3386,7 @@ function bDown() {
        lock.b = 6}
        else if (lock.b === 8) {document.getElementById('lock2').innerText = 7;
        lock.b = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function cDown() {
    if (lock.c === 1) {document.getElementById('lock3').innerText = 8;
@@ -3387,7 +3405,7 @@ function cDown() {
        lock.c = 6}
        else if (lock.c === 8) {document.getElementById('lock3').innerText = 7;
        lock.c = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function dDown() {
    if (lock.d === 1) {document.getElementById('lock4').innerText = 8;
@@ -3406,7 +3424,7 @@ function dDown() {
        lock.d = 6}
        else if (lock.d === 8) {document.getElementById('lock4').innerText = 7;
        lock.d = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function aUp() {
     if (lock.a === 1) {document.getElementById('lock1').innerText = 2;
@@ -3425,7 +3443,7 @@ function aUp() {
         lock.a = 8}
         else if (lock.a === 8) {document.getElementById('lock1').innerText = 1;
         lock.a = 1}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function bUp() {
    if (lock.b === 1) {document.getElementById('lock2').innerText = 2;
@@ -3444,7 +3462,7 @@ function bUp() {
        lock.b = 8}
        else if (lock.b === 8) {document.getElementById('lock2').innerText = 1;
        lock.b = 1}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function cUp() {
    if (lock.c === 1) {document.getElementById('lock3').innerText = 2;
@@ -3463,7 +3481,7 @@ function cUp() {
        lock.c = 8}
        else if (lock.c === 8) {document.getElementById('lock3').innerText = 1;
        lock.c = 1}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function dUp() {
    if (lock.d === 1) {document.getElementById('lock4').innerText = 2;
@@ -3482,15 +3500,15 @@ function dUp() {
        lock.d = 8}
        else if (lock.d === 8) {document.getElementById('lock4').innerText = 1;
        lock.d = 1}
-       lockClick.play();
+       randomLockClickAudio();
    }
 
-//Chapter 1's dias room combination lock
+//Chapter 1's dias room combination lock for green candles
 function enterCode() {
-    if (lock.a === 1){
-        if (lock.b === 7){
-            if (lock.c === 5){
-                if (lock.d === 6){
+    if (lock.a === 1) {
+        if (lock.b === 7) {
+            if (lock.c === 5) {
+                if (lock.d === 6) {
                     closeChest();
                     lock.solved = true;
                     chest.style.display = "none";
@@ -3607,7 +3625,7 @@ pink1.style.display = "block";
 red1.style.display = "none";
 green1.style.display = "block";
         colorLock.a = 7}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function bColorDown() {
    if (colorLock.b === 1) {
@@ -3642,7 +3660,7 @@ pink2.style.display = "block";
 red2.style.display = "none";
 green2.style.display = "block";
        colorLock.b = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function cColorDown() {
    if (colorLock.c === 1) {
@@ -3677,7 +3695,7 @@ pink3.style.display = "block";
 red3.style.display = "none";
 green3.style.display = "block";
        colorLock.c = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function dColorDown() {
    if (colorLock.d === 1) {
@@ -3712,7 +3730,7 @@ pink4.style.display = "block";
 red4.style.display = "none";
 green4.style.display = "block";
        colorLock.d = 7}
-       lockClick.play();
+       randomLockClickAudio();
    }
 function aColorUp() {
     if (colorLock.a === 1) {
@@ -3747,7 +3765,7 @@ red1.style.display = "block";
 red1.style.display = "none";
 yellow1.style.display = "block";
         colorLock.a = 1}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function bColorUp() {
     if (colorLock.b === 1) {
@@ -3782,7 +3800,7 @@ red2.style.display = "block";
 red2.style.display = "none";
 yellow2.style.display = "block";
         colorLock.b = 1}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function cColorUp() {
     if (colorLock.c === 1) {
@@ -3817,7 +3835,7 @@ red3.style.display = "block";
 red3.style.display = "none";
 yellow3.style.display = "block";
         colorLock.c = 1}
-        lockClick.play();
+        randomLockClickAudio();
     }
 function dColorUp() {
     if (colorLock.d === 1) {
@@ -3852,7 +3870,7 @@ red4.style.display = "block";
 red4.style.display = "none";
 yellow4.style.display = "block";
         colorLock.d = 1}
-        lockClick.play();
+        randomLockClickAudio();
     }
 
 //Chapter two's colorLockDoor
@@ -3866,7 +3884,6 @@ function enterColors() {
                     colorDoor.style.display = "none";
                     colordooropen.style.display = "block";
                     butt.style.display = "block"; 
-                    satchel.style.display = "block";
                     satchel.style.display = "block";
                     butthome.style.display = "block";
                     colorLockRoom.style.display = "block";
@@ -5155,6 +5172,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      b.style.display = "none";
         dialogue.saunaDisabling = true;
         dialogue.datacubeFound = true;
+        dialogue.hrrg = false;
         decreaseNotification();
         water.zappy = false;
         return;
@@ -5389,7 +5407,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 
     //any luck finding the data cube?
-    else if (!dialogue.datacube && !dialogue.anyLuck && !key.gold) {
+    else if (!dialogue.datacube && !dialogue.anyLuck && !key.gold && !dialogue.hrrg) {
       m1.style.display = "block";
       st.style.display = "block";
       dialogue.anyLuck = 1;
@@ -6550,7 +6568,7 @@ function shuriEncounter() {
 if (!chapterTwoPartTwo.activated) {
     shurisprite.style.display = "block";
     lamano.pause();
-    duan.play();
+    elmare.play();
     chapterTwoPartTwo.activated = "true";
     dialogue.shuriEncounter = 1;
    zzn1.style.display = "block";
@@ -7267,6 +7285,13 @@ function randomDoorAudio() {
     anyDoor.play();
 }
 
+function randomLockClickAudio() {
+    const combinationLockSolving = [lockClick, lockClick2, lockClick3, lockClick4];
+    const randomIndex = Math.floor(Math.random() * combinationLockSolving.length);
+    const megaLockolis = combinationLockSolving[randomIndex];
+    megaLockolis.play();
+}
+
 //TRAVELING
 //Adding a new room, stage two
 
@@ -7622,7 +7647,6 @@ function goNorth() {
         else if (current.room === "dias") {
             if (!lock.solved){
                 //instead of "going north" this opens the combinationLock close-up
-                click1Audio.play();
                 dias.style.display = "none";
                 combinationLock.style.display = "block";
                 current.room = "dias";
@@ -8720,6 +8744,7 @@ function shrub1() {
         zg18.style.display = "none";
         b.style.display = "none";
         dialogue.shrub = true;
+        increaseNotification();
         document.cookie = "shrubbery=shrubbery";
           return;
       }
@@ -9712,24 +9737,192 @@ if (event.key === 'Enter' || event.key === ' ') {
         }
 
 function verilyIdleDialogue() {
-    zzc1.style.display = "block";
+     if (dialogue.verilythree) {
+ zzk1.style.display = "block";
       k.style.display = "block";
-      dialogue.wouldASwordHelp = 1;
+      dialogue.verilyIdles3 = 1;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
-    if (dialogue.wouldASwordHelp === 1) {
-        zzc1.style.display = "none";
-        zzc2.style.display = "block";
+    if (dialogue.verilyIdles3 === 1) {
+        zzk1.style.display = "none";
+        zzk2.style.display = "block";
+      v.style.display = "block";
+      k.style.display = "none";
+      dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 2) {
+        zzk2.style.display = "none";
+        zzk3.style.display = "block";
+      v.style.display = "block";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 3) {
+        zzk3.style.display = "none";
+        zzk4.style.display = "block";
+      v.style.display = "none";
+      k.style.display = "block";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 4) {
+        zzk4.style.display = "none";
+        zzk5.style.display = "block";
+      v.style.display = "block";
+      k.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 5) {
+        zzk5.style.display = "none";
+        zzk6.style.display = "block";
+      v.style.display = "block";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 6) {
+        zzk6.style.display = "none";
+        zzk7.style.display = "block";
+      k.style.display = "block";
+      v.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 7) {
+        zzk7.style.display = "none";
+        zzk8.style.display = "block";
+      v.style.display = "block"; //gonna map the whole thing?
+      k.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 8) {
+        zzk8.style.display = "none";
+        zzk9.style.display = "block";
+      k.style.display = "block";
+      v.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 9) {
+        zzk9.style.display = "none";
+        zzk10.style.display = "block";
       b.style.display = "block";
       k.style.display = "none";
-      dialogue.wouldASwordHelp++;
+            dialogue.verilyIdles3++;
         return;
-    } else if (dialogue.wouldASwordHelp === 2) {
-        zzc2.style.display = "none";
+    } else if (dialogue.verilyIdles3 === 10) {
+        zzk10.style.display = "none";
+        zzk11.style.display = "block";
+      b.style.display = "block";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 11) {
+        zzk11.style.display = "none";
+        zzk12.style.display = "block";
+      k.style.display = "block";
       b.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 12) {
+        zzk12.style.display = "none";
+        zzk13.style.display = "block";
+      vhap.style.display = "block"; //haha!
+      k.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 13) {
+        zzk13.style.display = "none";
+        zzk14.style.display = "block";
+      v.style.display = "block";
+      vhap.style.display = "none";
+            dialogue.verilyIdles3++;
+        return;
+    } else if (dialogue.verilyIdles3 === 14) {
+        zzk14.style.display = "none";
+      v.style.display = "none";
+      dialogue.verilytwo = false;
+      dialogue.verilythree = false;
+        return;
+    } 
+}});  
+    } else if (dialogue.verilytwo) {
+      zzj1.style.display = "block";
+      b.style.display = "block";
+      dialogue.verilyIdles2 = 1;
+      document.addEventListener("keydown", function() {
+if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.verilyIdles2 === 1) {
+        zzj1.style.display = "none";
+        zzj2.style.display = "block";
+      v.style.display = "block";
+      b.style.display = "none";
+      dialogue.verilyIdles2++;
+        return;
+    } else if (dialogue.verilyIdles2 === 2) {
+        zzj2.style.display = "none";
+        zzj3.style.display = "block";
+      v.style.display = "block";
+            dialogue.verilyIdles2++;
+        return;
+    } else if (dialogue.verilyIdles2 === 3) {
+        zzj3.style.display = "none";
+        zzj4.style.display = "block";
+      v.style.display = "block";
+            dialogue.verilyIdles2++;
+        return;
+    } else if (dialogue.verilyIdles2 === 4) {
+        zzj4.style.display = "none";
+      v.style.display = "none";
+            dialogue.verilythree = true;
+            dialogue.verilytwo = false;
+            dialogue.verilyone = true;
         return;
     }
-}});
+}});  
+    } else if (!dialogue.verilyone) {
+      zzi1.style.display = "block";
+      v.style.display = "block";
+      dialogue.verilyIdles = 1;
+      document.addEventListener("keydown", function() {
+if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.verilyIdles === 1) {
+        zzi1.style.display = "none";
+        zzi2.style.display = "block";
+      k.style.display = "block";
+      v.style.display = "none";
+      dialogue.verilyIdles++;
+        return;
+    } else if (dialogue.verilyIdles === 2) {
+        zzi2.style.display = "none";
+        zzi3.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none"; //8675309
+            dialogue.verilyIdles++;
+        return;
+    } else if (dialogue.verilyIdles === 3) {
+        zzi3.style.display = "none";
+        zzi4.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+            dialogue.verilyIdles++;
+        return;
+    } else if (dialogue.verilyIdles === 4) {
+        zzi4.style.display = "none";
+        zzi5.style.display = "block";
+      v.style.display = "block";
+            dialogue.verilyIdles++;
+        return;
+    } else if (dialogue.verilyIdles === 5) {
+        zzi5.style.display = "none";
+        zzi6.style.display = "block";
+      k.style.display = "block";
+      v.style.display = "none";
+            dialogue.verilyIdles++;
+        return;
+    } else if (dialogue.verilyIdles === 6) {
+        zzi6.style.display = "none";
+      k.style.display = "none";
+      dialogue.verilytwo = true;
+      dialogue.verilyone = true;
+
+        return;
+    }
+}});  
+}
 }
 
 function wouldASwordHelp() {
@@ -9910,7 +10103,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         b.style.display = "none";
         chandelierClue.style.display = "block";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      explorersfallenchandelier.style.display = "none";
         dialogue.halfAClue++;
         return;
     } else if (dialogue.halfAClue === 3) {
@@ -10000,8 +10193,11 @@ function pickNE() {
 
     //yellow candle
     else if (current.room === "sauna") {
+        console.log("hi");
         if (!alcove.solved){
+            console.log("hii");
         if (!inventory.slot1) {
+            console.log("hiii");
             if (inventory.slot1 !== "yellow candles"
             && inventory.slot2 !== "yellow candles"
             && inventory.slot3 !== "yellow candles"
@@ -10014,7 +10210,7 @@ function pickNE() {
             && inventory.slot3 !== "yellow candles"
             && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                inventory.slot2 = "yellow candles";}
+                inventory.slot2 = "yellow candles"; }
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "yellow candles"
             && inventory.slot2 !== "yellow candles"
@@ -10042,7 +10238,7 @@ function pickNE() {
         butt.style.display = "none";
         butthome.style.display = "none";
         satchel.style.display = "none";
-        carvedNumbers.style.display = "block";
+        carvedNumbers.style.display = "block"; //mark
         click1Audio.play();
         } else {
             itsSomeSortOfPanelInTheWall();
@@ -10178,6 +10374,7 @@ document.addEventListener("keydown", function() {
       } else if (dialogue.yowzer === 8) {
              f8.style.display = "none";
             f9.style.display = "block";
+            k.style.display = "block";
             dialogue.yowzer++;
           return;
       } else if (dialogue.yowzer === 9) {

@@ -7,8 +7,9 @@
 /*
 Check all //mark s
 
-Change from five to four pilars 
-add "chapter 3, coming soon!"
+poetential concerns:
+maybe ids should not be defined in the map area. it seems to cause problems in other browsers. sometimes.
+if anything with an id is not defined as none or block in css and then is changed it will cause problems in chrome
 
 ART:
 make verilytinkering a gif
@@ -17,18 +18,17 @@ make hall and chasm explorers gifs
 draw orchids
 simplify art for diagram
 verilyidle (also gif it)
-Chandelierclue
 portholeview gif
 Stymiedemonstration
 Stymiedemonstration2
 shuri sprite and portrait
 wings to forehead for K on "what the fuck..."
+screenpillar clue
 
 
 ONLY VISIBLE IN OTHER BROWSERS:
 make sure font family is not impact (try importing garamond, as seen in a-to-z)
 automatic sizing (or centering? or zoom?) for larger screens?
-try to find a way to restrict highlihgting the images
 
 
 NEW MUSIC:
@@ -39,25 +39,16 @@ replace Duan_Nollaig with ei pare ei mare plus a string of other music
 
 SOUND:
 candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them
-more sounds for the multi-various empty placeholder "click1audio" and a specific click sound for lockClick.play
+more sounds for the multi-various empty placeholder "click1audio"
 replace fish song with vocals or something. not harp noises 
-wrench audio to be further, ie from another room
 clicking for switches in powerline room
-distant stone grinding for pillarmachine interaction 
-trim and vary unlock.mp3 for easy quick little clicks
+distant long stone grinding for pillarmachine interaction 
 computer bloop for clicking on stymie
 
 CODE:
-portholeRoom has some z-index problems. 
-clicking on the porthole in portholeRoom doesn't hide the explorers or satchel
-clicking the big x in portholeRoom has the chance to take you to the home page or restart the game
 check that haveyouseen him still triggers after the verily confrontation
-instead of verilyidle dialogue, it's rope dialogue
 Set up cookies, especially for after longtimenosee to have verilyidle dialogue
-prevent highlighting
-maybe ids should not be defined in the map area. it seems to cause problems in other browsers. sometimes.
 labyrinth names loops indefinitely instead of giving the "oh hey guys long time no see"
-room not reappearing for carvedNumbers
 Add cookie triggers to trigger shuri encounter:
 document.cookie = "suspect=suspect";
 document.cookie = "2ShrubDoorUnlocked=2ShrubDoorUnlocked";
@@ -171,6 +162,14 @@ display: none;
 #lock4, #pLock4 {
     transform: translate(1100px, 255px);
     position: absolute;
+}
+
+img {  
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
 }
 
 
@@ -886,6 +885,9 @@ display: none;
     display: none;
 }
 
+#carvedNumbers{
+    z-index: 30;
+}
 
 
 #pedestala1,
@@ -1004,6 +1006,10 @@ display: none;
 #wcandle,
 #rcandle{
     display: none;
+}
+
+#satchel {
+        display: block;
 }
 
 #page1,
@@ -1369,7 +1375,6 @@ display: none;
 
             <!--Chapter 2's West Floret-->
             <div id="lockboxRoom" usemap="#roommap"> <!--floret center-->
-                <img src="carvedNumbers.png" alt="numerical code 7284" usemap="#bigX" class="room" id="carvedNumbers">  
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
@@ -1497,6 +1502,7 @@ display: none;
             <!--Chapter 3-->
 
             <div id="unnamedHallway" usemap="#roommap">  <!--Rename unnamed hallway-->
+                <img src="staytuned.png" alt="door" usemap="#roommap" class="room" id="staytuned"> 
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
                 <img src="colordoorsouth.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
             </div>
@@ -2347,10 +2353,8 @@ display: none;
    
    <p id="zzh1">It's some sort of panel in the wall. I don't see any way of opening it.</p>
    
-
-   <!--//mark: set these three up under verilyidle-->
    <p id="zzi1">Oh hey guys.</p>
-   <p id="zzi2">Hey Verily.</p>
+   <p id="zzi2">Hey, Verily.</p>
    <p id="zzi3">What are you up to?</p>
    <p id="zzi4">Oh, nothing. Just writing up my report.</p>
    <p id="zzi5">You know how it is with reports.</p>
@@ -3302,15 +3306,6 @@ function closeWhatever() {
         satchel.style.display = "block";
         butt.style.display = "block";
         butthome.style.display = "block";}
-    else if (current.room === "lockboxRoom"){
-        lockboxRoom.style.display = "block";
-        carvedNumbers.style.display = "none";
-        explorers.style.display = "block";
-        baseroom.style.display = "block";
-        satchel.style.display = "block";
-        butt.style.display = "block";
-        butthome.style.display = "block";
-        }
 }
 
 function closeChest() { //mark
@@ -3319,9 +3314,11 @@ function closeChest() { //mark
     explorers.style.display = "block";
     baseroom.style.display = "block";
     butt.style.display = "block";
-        satchel.style.display = "block";
+        //satchel.style.display = "block"; mark
         butthome.style.display = "block";
+                console.log("refff");
     if (current.room === "dias") {
+        console.log("triggered");
         dias.style.display = "block";
         combinationLock.style.display = "none";
     } else if (current.room === "colorLockRoom") {
@@ -4522,7 +4519,7 @@ function switchSwitchA(){
     }
 }
 
-function switchSwitchB(){
+function switchSwitchB() {
     if (!switchb.ison) {
         switchBon.style.display = "block";
         switchBoff.style.display = "none";
@@ -6350,6 +6347,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 }
 
+
 function haveYouSeenThisMan() { //mark Test this. involves cookies, make sure that wait where's verily only happens if they haven't had the did you figure out if verily is a spy convo
     if (dialogue.verilyIsKnownToBeNotAtTheSTMITerminal) {
         zzp1.style.display = "block";
@@ -7644,7 +7642,7 @@ function goNorth() {
                 hallexplorers.style.display = "none";
                 }
 
-        else if (current.room === "dias") {
+        else if (current.room === "dias") { //mark potential problem in chrome
             if (!lock.solved){
                 //instead of "going north" this opens the combinationLock close-up
                 dias.style.display = "none";
@@ -9890,7 +9888,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zzi2.style.display = "none";
         zzi3.style.display = "block";
       b.style.display = "block";
-      k.style.display = "none"; //8675309
+      k.style.display = "none";
             dialogue.verilyIdles++;
         return;
     } else if (dialogue.verilyIdles === 3) {
@@ -10232,14 +10230,7 @@ function pickNE() {
     
     else if (current.room === "lockboxRoom") {
         if (lockbox.solved){
-        lockboxRoom.style.display = "none";
-        explorers.style.display = "none";
-        baseroom.style.display = "none";
-        butt.style.display = "none";
-        butthome.style.display = "none";
-        satchel.style.display = "none";
-        carvedNumbers.style.display = "block"; //mark
-        click1Audio.play();
+            console.log("hello");
         } else {
             itsSomeSortOfPanelInTheWall();
         }

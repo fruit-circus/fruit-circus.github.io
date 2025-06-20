@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+<title>The Infinite Labyrinth</title>
+  <link rel="icon" type="image/x-icon" href="labyfavy.ico?">
 <style>
 
 
@@ -8,22 +11,20 @@
 Check all //mark s
 
 poetential concerns:
-maybe ids should not be defined in the map area. it seems to cause problems in other browsers. sometimes.
-if anything with an id is not defined as none or block in css and then is changed it will cause problems in chrome
+maybe ids should not be defined in the map area. it seems to cause problems in other browsers. --> if anything with an id is not defined as none or block in css and then is changed it will cause problems in chrome
 
 ART:
 make verilytinkering a gif
 redo Verilyredhanded and Verilyredhanded2
-make hall and chasm explorers gifs
-draw orchids
-simplify art for diagram
+make hall and chasm explorers gifs and chandelier fallen
 verilyidle (also gif it)
 portholeview gif
 Stymiedemonstration
 Stymiedemonstration2
 shuri sprite and portrait
-wings to forehead for K on "what the fuck..."
-screenpillar clue
+ferns
+table with food
+new map
 
 
 ONLY VISIBLE IN OTHER BROWSERS:
@@ -32,41 +33,36 @@ automatic sizing (or centering? or zoom?) for larger screens?
 
 
 NEW MUSIC:
+add a buncha songs to the end of el mare el pare
 music: starting around 16:10 in the Martin Best Ensemle ending at 19:25 
 44:40 (may be in spotify already)
 music: see spotify
-replace Duan_Nollaig with ei pare ei mare plus a string of other music
 
 SOUND:
-candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them
+candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them, subtle page turn sound for guest books
 more sounds for the multi-various empty placeholder "click1audio"
 replace fish song with vocals or something. not harp noises 
 clicking for switches in powerline room
 distant long stone grinding for pillarmachine interaction 
 computer bloop for clicking on stymie
+chandelier crashing to the ground
+something happened stone grinding for 2303
 
 CODE:
-check that haveyouseen him still triggers after the verily confrontation
-Set up cookies, especially for after longtimenosee to have verilyidle dialogue
-labyrinth names loops indefinitely instead of giving the "oh hey guys long time no see"
-Add cookie triggers to trigger shuri encounter:
-document.cookie = "suspect=suspect";
-document.cookie = "2ShrubDoorUnlocked=2ShrubDoorUnlocked";
-use some other trigger besides upToSomething to trigger shuriEncounter, because the dialogue can overlap
-drop the data cube after talking to stymie (after giving it to stymie) with function drop1()? etc?
-
-
+add a lot of cookies (enountered shuri, solved color lock door
+imagemap for west door and top of south door
+brian buro music for underground lake?
+dialogue for table with food on it
 */
 
 
 
 
-/*add dialogue to intro to part two:
+/*
    The more nutrient rich a certain area is, the more complex its puzzle will be
 
 
  <p id="zy3">Each room is part of the "decision-making" process. Each room is a small replica of the entire labyrinth.</p>
-   <p id="zy3">Each room deals equally in action and information. Whether it has a STMI is of no consequence. I'm just here to interface with guests.</p>
 
    <p id="zy3">It's very possible that there is another Stymie with an even larger awareness 20 or 30 rooms behind me that acts through me without my knowledge.</p>
    <p id="zy3">And another one behind that, all the way up in a chain of uncountably many but certainly finite Stymies.</p>
@@ -76,8 +72,34 @@ drop the data cube after talking to stymie (after giving it to stymie) with func
 chapter 3:
 3 different branches all provide a single "key"/element to unlock a door
 1: "too many keys"
-Verily: I heard someone call out-- is everyone okay? Excuse to be in chapter three
+Verily: I heard someone call out - is everyone okay? Excuse to be in chapter three
 room full of random object
+
+
+B: Onwards and inwards!
+K: Blow, bugles, blow!
+...
+Through the windows, through the doors!
+Burst like a ruthless force!
+Oh, I know this one.
+So fierce you whirr and pound you drums -- so shrill you bugles blow.
+You skipped a bit.
+Yeah, I don't remember it very well. 
+B: I can only imagine it will get more challenging from here on.
+How far do you want to go before we set up camp? It must be around dusk by now.
+Let's play it by ear. Maybe we'll get stuck on a puzzle and then we can sleep on it. I think the next section will be a lot bigger than the last.
+Good plan.
+How's the map looking?
+Let's take a look. I started a new page, since my notes were in the way.
+...(map)...
+Fascinating! 
+Except for a couple minor deviations, the first floret is a perfect miniature of the whole thing.
+This must be what Stymie was talking about--
+The area-maximizing form.
+K: The real shape.
+...
+B: Great!
+Let's press on.
 
 */
 
@@ -382,6 +404,7 @@ img {
 #zb3,
 #zb4,
 #j5,
+#j6,
 #g1,
 #e1,
 #e2,
@@ -429,6 +452,8 @@ img {
 #z8,
 #zc1,
 #zc2,
+#zc3,
+#zc4,
 #a10,
 #a11,
 #zf5,
@@ -694,7 +719,7 @@ img {
 #zv14,
 #zv15,
 #zv16,
-#explorersfallenchandelier,
+#chandelierexplorers2,
 #zv17,
 #zv18,
 #zv19,
@@ -848,6 +873,8 @@ img {
 #zzn16,
 #zzn17,
 #zzp1,
+#zzq1,
+#zzq2,
 #zzp2,
 #zzp3,
 #zzp4,
@@ -1299,9 +1326,10 @@ img {
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room">
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">   
-                <img src="verilyredhanded.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp">   
-                <img src="verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp1">
+                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+                <img src="verilyatterminal.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp3">
+                <img src="verilyredhanded.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp2">   
+                <img src="verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp1">  
                 <img src="terminal.png" alt="stymie" usemap="#roommap" class="room" id="terminal2">   
                 <img src="powerlinedoorhole.png" alt="door" usemap="#roommap" class="room" id="powerline">  
             </div>
@@ -1330,8 +1358,7 @@ img {
 
             <!--Chapter 2's East Floret-->
             <div id="chandelierRoom" usemap="#chandleMap"> <!--floret center-->
-                <img src="explorersfallenchandelier.png" alt="explorersfallenchandelier" usemap="#chandleMap" class="room" id="explorersfallenchandelier"> 
-                <img src="chandelierexplorers.png" alt="door" usemap="#chandleMap" class="room" id="chandelierexplorers">  
+                <img src="chandelierexplorers2.png" alt="chandelierexplorers2" usemap="#chandleMap" class="room" id="chandelierexplorers2"> 
                 <img src="eastdoor.png" alt="door" usemap="#chandleMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#chandleMap" class="room" id="westdoor"> 
                 <img src="southdoor.png" alt="door" usemap="#chandleMap" class="room" id="southdoor"> 
@@ -1339,8 +1366,9 @@ img {
                 <img src="powerlinedoorhole.png" alt="door" usemap="#chandleMap" class="room" id="powerline">  
                 <img src="chandelier.gif" alt="chandelier" usemap="#chandleMap" class="room" id="chandelier">  
                 <img src="chandelierground.png" alt="door" usemap="#chandleMap" class="room" id="chandelierground"> 
-                <img src="chandelierclue.png" alt="envelope" usemap="#chandleMap" class="room" id="chandelierClue"> 
-                
+                <img src="chandelierclue.png" alt="envelope" class="room" id="chandelierClue"> 
+                <img src="chandelierexplorers.png" alt="door" usemap="#chandleMap" class="room" id="chandelierexplorers">  
+
 
             </div>
 
@@ -1453,6 +1481,7 @@ img {
                 <img src="colordoor.png" alt="door" usemap="#roommap" class="room" id="colorDoor"> 
                 <img src="colordooropen.png" alt="door" usemap="#roommap" class="room" id="colordooropen"> 
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
+                <img src="sentryorchids.png" alt="orchids" usemap="#roommap" class="room" id="sentryorchids">                 
             </div>
 
             <div id="colorLockCloseUp" usemap="#colorlockmap"> <!--Chest Lock in Dias Room-->
@@ -1502,9 +1531,9 @@ img {
             <!--Chapter 3-->
 
             <div id="unnamedHallway" usemap="#roommap">  <!--Rename unnamed hallway-->
-                <img src="staytuned.png" alt="door" usemap="#roommap" class="room" id="staytuned"> 
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
                 <img src="colordoorsouth.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
+                                <img src="staytuned.png" alt="door" usemap="#roommap" class="room" id="staytuned"> 
             </div>
 
             <!--Adding a new room, stage one-->
@@ -1537,9 +1566,9 @@ img {
     </map>
 
     <map name="chandleMap">
-        <!--chandlier room-->
+        <!--chandelier room-->
         <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
-        <area shape="rect" coords="650,9,780,155" alt="stymie" class="pointer" onclick="stymieDialogue()"> <!--In this case, this function includes chandlier cutting-->
+        <area shape="rect" coords="650,9,780,155" alt="stymie" class="pointer" onclick="stymieDialogue()"> <!--In this case, this function includes chandelier cutting-->
 
         <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
         <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
@@ -1640,11 +1669,11 @@ img {
     </map>
 
     <map name="diagrammap"> <!--Diagram-->
-        <area shape="rect" coords="1090,20,1181,113" alt="close" class="pointer" onclick="hideDiagram()">
+        <area shape="rect" coords="1022,27,1188,120" alt="close" class="pointer" onclick="hideDiagram()">
         <area shape="rect" coords="600,20,800,260" alt="open" class="pointer" onclick="openKnight()">
-        <area shape="rect" coords="375,275,580,510" alt="open" class="pointer" onclick="openNymph()">
-        <area shape="rect" coords="830,275,1030,510" alt="open" class="pointer" onclick="openWitch()">
-        <area shape="rect" coords="600,530,800,760" alt="open" class="pointer" onclick="openRonin()">
+        <area shape="rect" coords="345,265,609,470" alt="open" class="pointer" onclick="openNymph()">
+        <area shape="rect" coords="806,265,980,470" alt="open" class="pointer" onclick="openWitch()">
+        <area shape="rect" coords="614,490,800,700" alt="open" class="pointer" onclick="openRonin()">
         <area shape="rect" coords="220,20,335,125" alt="back" class="pointer" onclick="backToDiagram()">
     </map>
 
@@ -1795,6 +1824,7 @@ img {
     <img src="kodalyelectric.png" alt="kodaly is being electrocuted" class="dialogue" id="kodalyelectric">
     <img src="kodalypained.png" alt="kodaly has been electrocuted" class="dialogue" id="kodalypained">
     <img src="kodalysilent.png" alt="kodaly is listening / pondering" class="dialogue" id="kodalysilent">
+    <img src="kodalywhatthefuck.png" alt="kodaly ?!?!" class="dialogue" id="kodalywhatthefuck">
     
     <img src="bridget.png" alt="bridget's default dialogue portrait" class="dialogue" id="bridget">
     <img src="bridgetscared.png" alt="bridget's scared dialogue portrait" class="dialogue" id="bridgetscared">
@@ -1937,12 +1967,14 @@ img {
     <p id="f10">I told you we should have packed the 10-foot poles.</p>
     <p id="g1">It's dangerous to touch the water, but I think we'll need that key to move deeper into the labyrinth.</p>
  
-    <!--Locked Door-->
+    <!--Locked Sauna Door-->
     <p id="j1">This one's locked.</p>
     <p id="j2">Man, com'on, door, that's no fair.</p>
     <p id="j3">...</p>
     <p id="j4">...</p>
     <p id="j5">Let's look for a key.</p>
+    <!--Suana Door Still Locked-->
+    <p id="j6">Ah. Still locked.</p>
 
     <!--Unlocking the door-->
     <p id="k1">It fits!</p>
@@ -2020,6 +2052,8 @@ img {
     <!--North locked-->
     <p id="zc1">Damn! It's locked!</p>
     <p id="zc2">And after all your hard work too.</p>
+    <p id="zc3">Aw, man. Still locked.</p>
+    <p id="zc4">What were you expecting?</p>
 
     <!--Candles Now-->
     <p id="zd1">At least we can get these candles.</p>
@@ -2059,6 +2093,7 @@ img {
 	<p id="zg17">What on earth was that?</p>
     <p id="zg18">...</p>
     
+    <!--Labyrinth Names-->
     <p id="zj1">Labyrinth names?</p>
     <p id="zj2">Tim.</p>
     <p id="zj3">Chris.</p>
@@ -2080,7 +2115,8 @@ img {
     <p id="zj19">That's a hypothetical list I've been working on.</p>
     <p id="zj20">...</p>
 
-    <p id="zk1">Woah— uh.</p>
+    <!--Verily Encounter-->
+    <p id="zk1">Woah—uh.</p>
     <p id="zk2">Hello.</p>
     <p id="zk3">Hey, guys!</p>
     <p id="zk4">...!</p>
@@ -2117,7 +2153,7 @@ img {
     <p id="zk35">Bridget, you'll like that one.</p>
     <p id="zk36">Thanks a million, Verily!</p>
     <p id="zk37">You're welcome.</p>
-    <p id="zk38">Say, Ms. Verily— Dr. Verily?</p>
+    <p id="zk38">Say, Ms. Verily—Dr. Verily?</p>
     <p id="zk39">Have you been deeper in yet? Do you know what lies ahead?</p>
     <p id="zk40">Eh—</p>
     <p id="zk41">No, not yet.</p>
@@ -2131,7 +2167,7 @@ img {
     <p id="zk49">I'm okay right now, but thank you.</p>
     <p id="zk50">Stay safe.</p>
 
-
+    <!--Is Summer Suspicious-->
     <p id="zm1">You get the feeling that Verily is up to something?</p> <!--Bridget-->
         <p id="zm2">Oh definitely.</p>
         <p id="zm3">I don't like how non-chalantly she was tampering with Stymie.</p>
@@ -2165,7 +2201,7 @@ img {
     <p id="zm31">It seems like we dont have the whole picture.</p>
         <p id="zm32">I think we'll end up with a lot more questions before any of these get answered.</p>
 
-
+    <!--Have you seen this man?-->
    <p id="zn1">Verily—</p> <!--Bridget-->
    <p id="zn2">Hello, Dr. Wong.</p>
    <p id="zn3">You haven't seen anyone else down here have you?</p>
@@ -2193,7 +2229,6 @@ img {
    <p id="zo10">...</p>
    <p id="zo11">...</p>
    <p id="zo12">It's nice of the labyrinth to provide a ladder.</p>
-
    <p id="zp1">Kodaly, can you clarify for the player what "diagetic" means?</p> <!--Bridget-->
    <p id="zp2">Why yes, Bridget. "Diagetic" means "existing in the world of the game."</p> <!--Kodaly-->
    <p id="zp3">Thanks.</p> <!--taking notes-->
@@ -2229,7 +2264,7 @@ img {
    <p id="zv18">Oh, you know?</p> <!--Light bulb-->
    <p id="zv19">I have no idea.</p>
    <p id="zv20">Any number of other people might have gone that way when the army was finishing their survey. That was before I was sentient.</p>
-   <p id="zv21">Someone who knew how to access my wiring panel might have been able to edit my log data, and I wouldn't have known.</p>
+   <p id="zv21">Someone could have accessed my wiring panel and edited my log data, and I would have had no idea.</p>
    <p id="zv22">But Verily definitely wasn't here when the soldiers were still kicking around.</p> <!--Kodaly-->
    <p id="zv23">The government would have had a fit.</p> <!--Kodaly-->
    <p id="zv24">So she must have come later.</p> <!--B-->
@@ -2242,17 +2277,17 @@ img {
    <p id="zv31">No problem, Bridget! Confidentiality is what STMI units are known for!</p>
    <p id="zv32">Thanks, Stymie. We'll talk to you again soon.</p>
 
-   <!--workingTogether-->
+   <!--are they: workingTogether ?-->
    <p id="zw1">So.</p>
-   <p id="zw2">To recap... Verily <i>had</i> to have come in <i>before</i> us--</p> <!--Kodaly-->
+   <p id="zw2">To recap... Verily <i>had</i> to have come in <i>before</i> us—</p> <!--Kodaly-->
    <p id="zw3">Unless there's a second entrance to the labyrinth.</p>
    <p id="zw4">And <i>after</i> the rogue soldier.</p>
    <p id="zw5">Unless the labyrinth somehow cut its own rope bridge.</p>
    <p id="zw6">Both are possible but seem unlikely.</p>
-   <p id="zw7">And she said she was in the lobby the whole time, so she would have seen the soldier -- or whoever he is -- if he passed her.</p>
+   <p id="zw7">And she said she was in the lobby the whole time, so she would have seen the soldier—or whoever he is—if he passed her.</p>
    <p id="zw8">But she said she hadn't seen anyone at all.</p>
    <p id="zw9">Which means...</p>
-   <p id="zw10">Which means that either she cut the rope bridge--</p>
+   <p id="zw10">Which means that either she cut the rope bridge—</p>
    <p id="zw11">or she <i>does</i> know the soldier, and lied.</p>
    <p id="zw12">...</p>
    <p id="zw13">Hmm.</p>
@@ -2272,14 +2307,14 @@ img {
    <p id="zy1">Hey guys!</p>
    <p id="zy2">Did you figure out if Verily is an undercover Southern Alliance operant or not?</p>
    <p id="zy3">What?</p> <!--K Startled-->
-   <p id="zy4">Did you figure out if Verily is an undercover Southern Alliance--</p>
-   <p id="zy5">Wait, wait, wait, wait--</p>
+   <p id="zy4">Did you figure out if Verily is an undercover Southern Alliance—</p>
+   <p id="zy5">Wait, wait, wait, wait—</p>
    <p id="zy6">What?</p>
-   <p id="zy7">I said did you figure out--</p>
+   <p id="zy7">I said did you figure out—</p>
    <p id="zy8">I thought you were disconnected from your other... from the other Stymie. How do you remember our conversation from the south lobby?</p>
    <p id="zy9">Ah...</p>
    <p id="zy10">Yes, I see the confusion.</p>
-   <p id="zy11">I have access to <i>that</i> Stymie's memory--she doesn't have access to mine.</p>
+   <p id="zy11">I have access to <i>that</i> Stymie's memory—she doesn't have access to mine.</p>
    <p id="zy12">:3</p>
    <p id="zy13">I'm lost.</p>
    <p id="zy14">Hmm.</p>
@@ -2313,7 +2348,7 @@ img {
    <p id="zy41">It wouldn't be accurate to describe the "actions" that the labrinth takes in terms of options, decisions, and outcomes. And there aren't reasons for the things it does, at least not on a cognitive level.</p>
    <p id="zy42">It grows knots around itself, repurposing materials to optimize nutrient flow.</p>
    <p id="zy43">But that's just how it is. That the shape of it.</p>
-   <p id="zy44">It's a shape made by what is necessary given the ideal form -- the area-maximizing form -- and the real conditions of the world: the mineral content of the rock, the forces of subduction and uplift, the solvant power of water.</p>
+   <p id="zy44">It's a shape made by what is necessary given the ideal form—the area-maximizing form—and the real conditions of the world: the mineral content of the rock, the forces of subduction and uplift, the solvant power of water.</p>
    <p id="zy45">The conversation between those things results in the actual shape, which is the only shape that it ever could have taken.</p>
    <p id="zy46">Hopefully that's clear.</p>
    <p id="zy47"></p>
@@ -2353,7 +2388,7 @@ img {
    
    <p id="zzh1">It's some sort of panel in the wall. I don't see any way of opening it.</p>
    
-   <p id="zzi1">Oh hey guys.</p>
+   <p id="zzi1">Oh, hey guys.</p>
    <p id="zzi2">Hey, Verily.</p>
    <p id="zzi3">What are you up to?</p>
    <p id="zzi4">Oh, nothing. Just writing up my report.</p>
@@ -2421,7 +2456,7 @@ img {
 
    <p id="zzm13">Do you want to give one a go?</p>
    <p id="zzm14">Sure, let's see.</p>
-   <p id="zzm15">"Once suspected affection, a memory walked through our Kindergarten -- faster marrying a sandstorm and licking the banister group. The pirates was pulling the network. In the dark back, the gluegun was only so hard as to have."</p>
+   <p id="zzm15">"Once suspected affection, a memory walked through our Kindergarten—faster marrying a sandstorm and licking the banister group. The pirates was pulling the network. In the dark back, the gluegun was only so hard as to have."</p>
    <p id="zzm16">I wonder if there's any meaning to their spine color.</p>
    <p id="zzm17">I think my brain's turned to mush.</p>
 
@@ -2435,7 +2470,7 @@ img {
    <p id="zzn7">He must have gone the other way!</p>
 
    <p id="zzn8">Where is he?</p> <!--B-->
-   <p id="zzn9">He must have slipped by us--</p> <!--K-->
+   <p id="zzn9">He must have slipped by us—</p> <!--K-->
    <p id="zzn10">Where would he have hidden?</p> <!--B-->
    <p id="zzn11">Maybe he went through the combination door.</p> <!--K-->
    <p id="zzn12">In a matter of seconds?</p> <!--B-->
@@ -2447,8 +2482,8 @@ img {
 
    <p id="zzo1">Stymie!</p>
    <p id="zzo2">Bridget!</p>
-   <p id="zzo3">Did you see anyone pass -- wait where's Verily?</p>
-   <p id="zzo4">Oh Ms. Verily finished her upgrades to me. She said you would be able to find her in the porthole room.</p>
+   <p id="zzo3">Did you see anyone pass—wait where's Verily?</p>
+   <p id="zzo4">Oh, Ms. Verily finished her upgrades to me. She said you would be able to find her in the porthole room.</p>
    <p id="zzo5">Stymie, I think we found your rogue soldier.</p>
    <p id="zzo6">Oh! Good, I'm always misplacing those.</p>
    <p id="zzo7">You didn't see him come this way did you?</p>
@@ -2460,6 +2495,9 @@ img {
    <p id="zzp4">Not that I know of! Why?</p>
    <p id="zzp5">I think we found your rogue soldier.</p>
    <p id="zzp6">Oh! Good. I'm always misplacing those.</p>
+
+    <p id="zzq1">It's a flower pot.</p>
+    <p id="zzq2">That's true.</p>
 
 
  
@@ -2500,6 +2538,7 @@ img {
     var ke = document.getElementById("kodalyelectric");
     var kow = document.getElementById("kodalypained");
     var ksl = document.getElementById("kodalysilent");
+    var kwtf = document.getElementById("kodalywhatthefuck");
 
     var b = document.getElementById("bridget");
     var bs = document.getElementById("bridgetscared");
@@ -2523,7 +2562,7 @@ img {
     var ra = document.getElementById("radioportrait");
     var dr = document.getElementById("doorportrait");
     
-    //the current room is updated every time you enter a new room
+    //current.room is updated every time you enter a new room
     const current = {
         room: "lobby",
     }
@@ -2595,18 +2634,141 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     if (cookiesHas('verily')) {
         dialogue.verilyIntro = true;
-        if (!dialogue.longTimeNoSeeComplete) {
+        if (dialogue.longTimeNoSeeComplete) {
             increaseNotification(); //mark
+            dialogue.longTimeNoSee = false;
+            dialogue.disparateFragment = true; //if they're already in chapter two, we don't need the first stymie dialogue (disperate fragment) to trigger when they go back to talk to stymie
         }
-        dialogue.longTimeNoSee = true;
-
     }
+
+    if (cookiesHas('wildSoldierChase')) {
+        dialogue.chaseChase = "false";
+        dialogue.shuriComplete = "true";
+        dialogue.lostRogueSoldiers = "true";
+        verilyIs.inThePortholeRoom = true;
+        verilysprite.style.display = "block";
+        terminal2.style.display = "block";
+        vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
+        dialogue.chaseSequence = "true";
+        chapterTwoPartTwo.activated = true;
+        if (dialogue.forCookiesStymieHasntSeenHim) {
+            dialogue.haventSeenHim = false;
+        }
+    }
+
+    if (cookiesHas('alwaysMisplacing')) {
+       dialogue.lostRogueSoldiers = false;
+       dialogue.stymieHasntSeenHim = true;
+       dialogue.forCookiesStymieHasntSeenHim = true;
+    }
+
+    if (cookiesHas('switchAIsOn')) {
+        switchAon.style.display = "block";
+        switchAoff.style.display = "none";
+        switcha.ison = true;
+    }
+    if (cookiesHas('switchAIsOff')) {
+        switchAon.style.display = "none";
+        switchAoff.style.display = "block";
+        switcha.ison = false;
+    }
+    if (cookiesHas('switchBIsOn')) {
+        switchBon.style.display = "block";
+        switchBoff.style.display = "none";
+        switchb.ison = true;
+    }
+    if (cookiesHas('switchBIsOff')) {
+        switchBon.style.display = "none";
+        switchBoff.style.display = "block";
+        switchb.ison = false;
+    }
+
+    if (cookiesHas('actionAndInfo')) {
+        dialogue.actionAndInformation = false;
+        dialogue.actionAndInformationComplete = true;
+        dialogue.verilyIsKnownToBeNotAtTheSTMITerminal = "true";
+    }
+
+    if (cookiesHas('onlyHalfAClue')) {
+        dialogue.halfAClue = true;
+    }
+
+    if (cookiesHas('chandelierCut')) {
+        chandelierexplorers.style.display = "block";
+    chandelierground.style.display = "block";
+    //explorers.style.display = "none";
+    chandelier.style.display = "none";
+    candleLeer.isOnTheGround = true;
+    dialogue.applySwordToRope = false;
+    }
+
+    if (cookiesHas('lockboxSolved')) {
+        openlockbox.style.display = "block";               
+        lockbox.style.display = "none";    
+        lockbox.solved = true;   
+        document.getElementById('pLock1').innerText = 2;
+        pillarLock.a = 2
+        document.getElementById('pLock2').innerText = 3;
+        pillarLock.b = 3
+        document.getElementById('pLock4').innerText = 3;
+        pillarLock.d = 3
+        pedestala2.style.display = "block";
+        pedestalb3.style.display = "block";
+        pedestale3.style.display = "block";
+        //the third pillar by default is set to zero, so it needn't be mentioned
+    }
+
+    if (cookiesHas('workingTogether')) {
+         dialogue.workingTogether = false;
+    if (!dialogue.actionAndInformationComplete) {
+            dialogue.actionAndInformation = true;
+       }        //now verily is working on her communicator
+       verilyIs.inThePortholeRoom = true;
+        verilysprite.style.display = "block";
+        terminal2.style.display = "block";
+        vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
+        dialogue.haventSeenHim = true;
+    }
+
+if (cookiesHas('longtime')) {
+       if (dialogue.longTimeNoSeeComplete) {
+             dialogue.longTimeNoSee = false;
+       }
+        dialogue.getASignalOut = true;
+}
+
+    if (cookiesHas('undergroundLake')) {
+        dialogue.undergroundLake = true;
+    }
+
+    if (cookiesHas('2ShrubDoorUnlocked')) {
+       dialogue.unlockingSecond = true;
+       key.silver = true;
+       silverkey.style.display = "none";
+    }
+
+    if (cookiesHas('shuriEncountered')) {
+        verilyIs.inThePortholeRoom = true;
+        verilysprite.style.display = "block";
+        terminal2.style.display = "block";
+        vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
+           dialogue.chaseSequence = "true";
+           dialogue.haventSeenHim = true;
+    }
+
     if (cookiesHas('shrubbery')) {
         dialogue.shrub = true;
     }
     if (cookiesHas('suspect')) {    
         dialogue.upToSomething = true;
         dialogue.haventSeenHim = false;
+        dialogue.wowThisSummerCharacterHuh = true
     }
     if (cookiesHas('haventSeenHim')) {    
         dialogue.haventSeenHim = true;
@@ -2918,7 +3080,9 @@ function goneGreenCandle() {
     }
 }
 
-//beautiful music
+
+
+//beautiful harp music
 function note1(){
     pluck1.style.display = "block";
     string1.play();
@@ -3314,6 +3478,7 @@ function closeChest() { //mark
     explorers.style.display = "block";
     baseroom.style.display = "block";
     butt.style.display = "block";
+            satchel.style.display = "block";
         //satchel.style.display = "block"; mark
         butthome.style.display = "block";
                 console.log("refff");
@@ -3526,7 +3691,8 @@ function lockboxUnlocks() {
                     //lock box unlocks 
                     openlockbox.style.display = "block";               
                     lockbox.style.display = "none";    
-                    lockbox.solved = true;           
+                    lockbox.solved = true;    
+                    document.cookie = "lockboxSolved=lockboxSolved";       
                 }
             }
         }
@@ -3545,6 +3711,7 @@ function pillaraDown() {
         else if (pillarLock.a === 3) {document.getElementById('pLock1').innerText = 0;
         pillarLock.a = 0}
         pillarstonergind.play();
+        randomLockClickAudio();
     } 
 function pillarbDown() {
     if (pillarLock.b === 0) {document.getElementById('pLock2').innerText = 1;
@@ -3556,6 +3723,7 @@ function pillarbDown() {
         else if (pillarLock.b === 3) {document.getElementById('pLock2').innerText = 0;
         pillarLock.b = 0}
         pillarstonergind.play();
+        randomLockClickAudio();
    }
 function pillarcDown() {
     if (pillarLock.c === 0) {document.getElementById('pLock3').innerText = 1;
@@ -3567,6 +3735,8 @@ function pillarcDown() {
         else if (pillarLock.c === 3) {document.getElementById('pLock3').innerText = 0;
         pillarLock.c = 0}
         pillarstonergind.play();
+        randomLockClickAudio();
+
    }
 function pillardDown() {
     if (pillarLock.d === 0) {document.getElementById('pLock4').innerText = 1;
@@ -3578,6 +3748,8 @@ function pillardDown() {
         else if (pillarLock.d === 3) {document.getElementById('pLock4').innerText = 0;
         pillarLock.d = 0}
         pillarstonergind.play();
+        randomLockClickAudio();
+
    }
 
 const colorLock = {
@@ -4468,6 +4640,21 @@ function cubePort() {
     }
 }
 
+function dropDataCube() {
+    if (inventory.slot1 === "datacube") {
+        inventory.slot1 = false;
+        item1.innerText = "";
+    } if (inventory.slot2 === "datacube") {
+        inventory.slot2 = false;
+        item1.innerText = "";
+    } if (inventory.slot3 === "datacube") {
+        inventory.slot3 = false;
+        item1.innerText = "";
+    } if (inventory.slot4 === "datacube") {
+        inventory.slot4 = false;
+        item1.innerText = "";
+    }
+}
 
 const switchb = {
     ison: false,
@@ -4508,6 +4695,8 @@ function switchSwitchA(){
         curtainsclosed.style.display = "none";
         curtainsopen.style.display = "block";
         switcha.ison = true;
+        document.cookie = "switchAIsOn=switchAIsOn";
+        document.cookie = "switchAIsOff" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
         //add click audio
     } else {
         switchAon.style.display = "none";
@@ -4515,6 +4704,9 @@ function switchSwitchA(){
         curtainsclosed.style.display = "block";
         curtainsopen.style.display = "none";
         switcha.ison = false;
+        document.cookie = "switchAIsOff=switchAIsOff";
+        document.cookie = "switchAIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
         //add click audio //mark
     }
 }
@@ -4524,11 +4716,15 @@ function switchSwitchB() {
         switchBon.style.display = "block";
         switchBoff.style.display = "none";
         switchb.ison = true;
+        document.cookie = "switchBIsOn=switchBIsOn";
+        document.cookie = "switchBIsOff" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
         //add click audio //mark
     } else {
         switchBon.style.display = "none";
         switchBoff.style.display = "block";
         switchb.ison = false;
+        document.cookie = "switchBIsOff=switchBIsOff";
+        document.cookie = "switchBIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
         //add click audio //mark
     }
 }
@@ -4539,6 +4735,7 @@ const dialogue = {
     //true means the topic is undiscovered. (for values that start as true.)
     //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
+    lockedconvo: false,
     ladder: false, //aha, it's ladder dialogue
     ladder2: true, //wow now it's really ladder dialogue
     hobbyists: false, //i sure hope stymie doesn't misrepresent any information
@@ -5171,6 +5368,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         dialogue.datacubeFound = true;
         dialogue.hrrg = false;
         decreaseNotification();
+        dropDataCube();
         water.zappy = false;
         return;
     }
@@ -5395,6 +5593,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zj20.style.display = "none";
         k.style.display = "none";
         dialogue.labyNames = true;
+        dialogue.labyrinthNames = true;
         decreaseNotification();
           return;
       }
@@ -5435,7 +5634,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 } else if (dialogue.longTimeNoSee) {
 
         zv1.style.display = "block";
-        st.style.display = "block";
+        st.style.display = "block"; //hey guys, long time no see!
        dialogue.longTimeNoSee = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -5648,7 +5847,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zk1.style.display = "block";
         b.style.display = "block";
         vtamp1.style.display = "none";
-        vtamp.style.display = "block";
+        vtamp2.style.display = "block";
        dialogue.verilyIntro = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -5677,6 +5876,8 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk5.style.display = "block";
        vsup.style.display = "none";
        vdm.style.display = "block";
+       vtamp2.style.display = "none";
+        vtamp3.style.display = "block";
        dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 5) {
@@ -6047,14 +6248,15 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.actionAndInformation === 8) {
        zy8.style.display = "none";
        zy9.style.display = "block";
-       st.style.display = "block"; //i see the confusion
+       stt.style.display = "block"; 
        k.style.display = "none";
          dialogue.actionAndInformation++;
          return;
      } else if (dialogue.actionAndInformation === 9) {
        zy9.style.display = "none";
        zy10.style.display = "block";
-       st.style.display = "block";
+       st.style.display = "block"; //i see the confusion
+       stt.style.display = "none";
          dialogue.actionAndInformation++;
          return;
      } else if (dialogue.actionAndInformation === 10) {
@@ -6328,6 +6530,8 @@ if (event.key === 'Enter' || event.key === ' ') {
        decreaseNotification(); //mark
         dialogue.actionAndInformation = false;
         dialogue.verilyIsKnownToBeNotAtTheSTMITerminal = "true";
+        document.cookie = "actionAndInfo=actionAndInfo";
+        document.actionAndInformationComplete = true;
          return;
      }
  }
@@ -6348,7 +6552,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 }
 
 
-function haveYouSeenThisMan() { //mark Test this. involves cookies, make sure that wait where's verily only happens if they haven't had the did you figure out if verily is a spy convo
+function haveYouSeenThisMan() { //stymie! have you misplaced any soldiers?
     if (dialogue.verilyIsKnownToBeNotAtTheSTMITerminal) {
         zzp1.style.display = "block";
        b.style.display = "block";
@@ -6391,7 +6595,7 @@ function haveYouSeenThisMan() { //mark Test this. involves cookies, make sure th
          dialogue.seenThisMan2++;
          return;
      } else if (dialogue.seenThisMan2 === 6) {
-       zzo7.style.display = "none";
+       zzp6.style.display = "none";
        st.style.display = "none";
        dialogue.lostRogueSoldiers = "false";
        dialogue.stymieHasntSeenHim = "true";
@@ -6456,14 +6660,16 @@ function haveYouSeenThisMan() { //mark Test this. involves cookies, make sure th
      }  else if (dialogue.seenThisMan === 8) {
        zzo8.style.display = "none";
        st.style.display = "none";
-       dialogue.lostRogueSoldiers = "false";
-       dialogue.stymieHasntSeenHim = "true";
+       dialogue.lostRogueSoldiers = false;
+       dialogue.stymieHasntSeenHim = true;
+       dialogue.forCookiesStymieHasntSeenHim = true;
+       document.cookie = "alwaysMisplacing=alwaysMisplacing";
          return;
      } 
 }});}
 }
 
-function haventSeenHim() {
+function haventSeenHim() { //verily doesn't know what you're talking about
     zn1.style.display = "block";
        b.style.display = "block";
        dialogue.haventSeenHim = 1;
@@ -6558,7 +6764,7 @@ function haventSeenHim() {
 });
 }
 
-const chapterTwoPartTwo = { //now the shuri encounter has activated (used in function shuriEncounter so that the music doesn't overlap when exiting lobby two)
+const chapterTwoPartTwo = { //now the shuri encounter has activated (used in function shuriEncounter so that the music doesn't overlap when exiting lobby two when using cookies)
     activated: false,
 } 
 
@@ -6610,11 +6816,13 @@ document.addEventListener("keydown", function() {
            verilyIs.inThePortholeRoom = true;
         verilysprite.style.display = "block";
         terminal2.style.display = "block";
-        vtamp.style.display = "none";
         vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
            dialogue.chaseSequence = "true";
            dialogue.haventSeenHim = true;
        document.cookie = "haventSeenHim=haventSeenHim";
+       document.cookie = "shruEncountered=shruEncountered";
            return;
        }
     }
@@ -6943,7 +7151,7 @@ document.addEventListener("keydown", function() {
        if (dialogue.chaseComplete === 1) {
         zzn8.style.display = "none";
         zzn9.style.display = "block";
-        k.style.display = "block";
+        kstu.style.display = "block";
         b.style.display = "none";
            dialogue.chaseComplete++;
            return;
@@ -6951,13 +7159,13 @@ document.addEventListener("keydown", function() {
         zzn9.style.display = "none";
         zzn10.style.display = "block";
         b.style.display = "block";
-        k.style.display = "none";
+        kstu.style.display = "none";
            dialogue.chaseComplete++;
            return;
        } else if (dialogue.chaseComplete === 3) {
         zzn10.style.display = "none";
         zzn11.style.display = "block";
-        k.style.display = "block";
+        kow.style.display = "block";
         b.style.display = "none";
            dialogue.chaseComplete++;
            return;
@@ -6965,13 +7173,13 @@ document.addEventListener("keydown", function() {
         zzn11.style.display = "none";
         zzn12.style.display = "block";
         b.style.display = "block";
-        k.style.display = "none";
+        kow.style.display = "none";
            dialogue.chaseComplete++;
            return;
        } else if (dialogue.chaseComplete === 5) {
         zzn12.style.display = "none";
         zzn13.style.display = "block";
-        k.style.display = "block";
+        kwtf.style.display = "block";
         b.style.display = "none";
            dialogue.chaseComplete++;
            return;
@@ -6979,7 +7187,7 @@ document.addEventListener("keydown", function() {
         zzn13.style.display = "none";
         zzn14.style.display = "block";
         b.style.display = "block";
-        k.style.display = "none";
+        kwtf.style.display = "none";
            dialogue.chaseComplete++;
            return;
        } else if (dialogue.chaseComplete === 7) {
@@ -7007,6 +7215,7 @@ document.addEventListener("keydown", function() {
         dialogue.chaseChase = "false";
         dialogue.shuriComplete = "true";
         dialogue.lostRogueSoldiers = "true";
+        document.cookie = "wildSoldierChase=wildSoldierChase"
            return;
        }
 }}); } else {
@@ -7296,6 +7505,7 @@ function randomLockClickAudio() {
 //check going south
 function goSouth() {
         if (current.room === "lobby"){
+            playPenserFromCookies();
             if (key.brass) {
   if (dialogue.unlocking) {
       unlocking();
@@ -7366,7 +7576,7 @@ function goSouth() {
                 current.room = "chandelierRoom"; 
                 if (candleLeer.isOnTheGround){
                     explorers.style.display = "none";                
-                    explorersfallenchandelier.style.display = "block";
+                    chandelierexplorers2.style.display = "block";
                     chandelierexplorers.style.display = "none";
                 }            
         }
@@ -7419,6 +7629,7 @@ function goEast() {
                 posterRoom.style.display = "block";
                 current.room = "posterRoom";
                 workingTogether();
+                playPenserFromCookies();
                 }
         else if (current.room === "pond"){
                 randomDoorAudio();
@@ -7470,7 +7681,7 @@ function goEast() {
                 current.room = "chandelierRoom";    
                 if (candleLeer.isOnTheGround){
                     explorers.style.display = "none";                
-                    explorersfallenchandelier.style.display = "block";
+                    chandelierexplorers2.style.display = "block";
                     chandelierexplorers.style.display = "none";
                 }           
         }
@@ -7497,6 +7708,7 @@ function goEast() {
 function goWest() {
         if (current.room === "lobby"){
             randomDoorAudio();
+            playPenserFromCookies();
                 lobby.style.display = "none";
                 lift.style.display = "block";
                 current.room = "lift";
@@ -7542,7 +7754,7 @@ function goWest() {
                 current.room = "chandelierRoom";
                 if (candleLeer.isOnTheGround){
                     explorers.style.display = "none";                
-                    explorersfallenchandelier.style.display = "block";
+                    chandelierexplorers2.style.display = "block";
                     chandelierexplorers.style.display = "none";
                 }               
         }
@@ -7589,13 +7801,14 @@ function goWest() {
 //check going north
 function goNorth() {
         if (current.room === "lobby"){
-            randomDoorAudio();
+                randomDoorAudio();
                 lobby.style.display = "none";
                 chasm.style.display = "block";
                 baseroom.style.display = "none";
                 explorers.style.display = "none";
                 current.room = "chasm";
-                workingTogether()
+                workingTogether();
+                playPenserFromCookies();
                 }
 
         else if (current.room === "sauna"){
@@ -7699,9 +7912,9 @@ function goNorth() {
                 current.room = "gardenNorth";
                 if (!chapterTwoPartTwo.activated) {
                     lamano.play();}
-                if (dialogue.upToSomething && dialogue.unlockingSecond) { //after talking to and then about verily AND unlocking the door in the 2shrub room, the shuri encounter is available.
+                if (dialogue.wowThisSummerCharacterHuh && dialogue.unlockingSecond) { //after talking to and then about verily AND unlocking the door in the 2shrub room, the shuri encounter is available.
                     shuriEncounter();
-                }
+                } //mark shuri (should be resolved now?)
             }
 
         else if (current.room === "library"){
@@ -7711,7 +7924,7 @@ function goNorth() {
                 current.room = "chandelierRoom";
                 if (candleLeer.isOnTheGround){
                     explorers.style.display = "none";                
-                    explorersfallenchandelier.style.display = "block";
+                    chandelierexplorers2.style.display = "block";
                     chandelierexplorers.style.display = "none";
                     }  
                 }
@@ -7729,6 +7942,9 @@ function goNorth() {
                 displayRoom.style.display = "none";
                 lockboxRoom.style.display = "block";
                 current.room = "lockboxRoom";
+                }
+        else if (current.room === "pillarRoom"){
+                itsAFlowerPot();
                 }
         else if (current.room === "lockboxRoom"){
                 randomDoorAudio();
@@ -7880,6 +8096,7 @@ document.addEventListener("keydown", function() {
         zz2.style.display = "none";
        b.style.display = "none";
          dialogue.undergroundLake = true;
+        document.cookie = "undergroundLake=undergroundLake";
          return;
      } 
    }});
@@ -7950,7 +8167,8 @@ document.addEventListener("keydown", function() {
 }            
 
 
-function itsLocked() {
+function itsLocked() { //sauna door dialogue
+       if (!dialogue.lockedconvo) {
        dialogue.locked = 1;
        j1.style.display = "block"; //this one's locked...
        b.style.display = "block";
@@ -7988,9 +8206,23 @@ document.addEventListener("keydown", function() {
        b.style.display = "none";
          dialogue.locked = true; 
          dialogue.unlocking = true;
+         dialogue.lockedconvo = true;
          return;
      } 
    }});
+}  else if (dialogue.lockedconvo) { //mark
+       dialogue.lconvo = 1;
+       j6.style.display = "block"; //ah. still locked
+       k.style.display = "block";
+document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.lconvo === 1) {
+       j6.style.display = "none";
+       k.style.display = "none";
+         return;
+     }
+   }});
+}
 }
 
 //a basic Kodaly: it's locked! and Bridget follow-up
@@ -8394,7 +8626,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     } }});
     }}
-function northLocked() {
+function northLocked() { //dialogue for door across the chasm in chapter 1
     if (!dialogue.northLobbyLocked){
     zc1.style.display = "block";
       b.style.display = "block";
@@ -8415,7 +8647,26 @@ if (event.key === 'Enter' || event.key === ' ') {
         door.tried = true;
         return;
     }
+}});} else {
+    zc3.style.display = "block";
+      k.style.display = "block";
+      dialogue.northLobbyLocked2 = 1;
+      document.addEventListener("keydown", function() {
+if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.northLobbyLocked2 === 1) {
+      zc3.style.display = "none";
+      k.style.display = "none";
+    zc4.style.display = "block";
+      b.style.display = "block";
+    dialogue.northLobbyLocked2++;
+        return;
+    } else if (dialogue.northLobbyLocked2 === 2) {
+      zc4.style.display = "none";
+      b.style.display = "none";
+        return;
+    } 
 }});}}
+
 function tooFar() {
     if (!dialogue.goliath){
     ze1.style.display = "block";
@@ -8983,6 +9234,28 @@ function shrub2() {
 
 }
 
+function itsAFlowerPot() {
+       zzq1.style.display = "block";
+       k.style.display = "block";
+       dialogue.flowerPot = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.flowerPot === 1) {
+       zzq1.style.display = "none";
+       zzq2.style.display = "block";
+       b.style.display = "block";
+       k.style.display = "none";
+       dialogue.flowerPot++;
+         return;
+     } else if (dialogue.flowerPot === 2) {
+       zzq2.style.display = "none";
+       b.style.display = "none";
+         return;
+     }
+ }
+});
+    }
+
 function workingTogether() {
     if (dialogue.workingTogether && !dialogue.longTimeNoSee) {
        zw1.style.display = "block";
@@ -9077,15 +9350,18 @@ function workingTogether() {
        zw13.style.display = "none";
        ksl.style.display = "none";
        dialogue.workingTogether = false;
-       dialogue.actionAndInformation = true;
+       if (!dialogue.actionAndInformationComplete) {
+            dialogue.actionAndInformation = true;
+       }
         //now verily is listening to music or working on her communicator
        verilyIs.inThePortholeRoom = true;
         verilysprite.style.display = "block";
         terminal2.style.display = "block";
-        vtamp.style.display = "none";
         vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
         dialogue.haventSeenHim = true;
-       document.cookie = "haventSeenHim=haventSeenHim";
+       document.cookie = "workingTogether=workingTogether";
          return;
      }
  }
@@ -9309,6 +9585,7 @@ function isSummerSuspicious() {
        dialogue.upToSomething = true;
        dialogue.haventSeenHim = false;
        document.cookie = "suspect=suspect";
+       dialogue.wowThisSummerCharacterHuh = true; //1/2 of the components to shuriEncounter
          return;
      }
  }
@@ -9859,12 +10136,13 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.verilyIdles2 === 3) {
         zzj3.style.display = "none";
         zzj4.style.display = "block";
-      v.style.display = "block";
+      vrel.style.display = "block";
+      v.style.display = "none";
             dialogue.verilyIdles2++;
         return;
     } else if (dialogue.verilyIdles2 === 4) {
         zzj4.style.display = "none";
-      v.style.display = "none";
+      vrel.style.display = "none";
             dialogue.verilythree = true;
             dialogue.verilytwo = false;
             dialogue.verilyone = true;
@@ -10067,12 +10345,20 @@ if (event.key === 'Enter' || event.key === ' ') {
     explorers.style.display = "none";
     chandelier.style.display = "none";
     candleLeer.isOnTheGround = true;
+    dialogue.applySwordToRope = false;
+    document.cookie = "chandelierCut=chandelierCut";
     click1Audio.play();
         return;
     }
 }});
     
     }
+}
+
+function playPenserFromCookies() {
+       if (!cookiesHas('lobby2')) {
+            penser.play();
+       }
 }
 
 //CENTER
@@ -10084,7 +10370,7 @@ function pickCenterCenter() {
       k.style.display = "block";
       dialogue.halfAClue = 1;
       chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.halfAClue === 1) {
@@ -10093,7 +10379,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         k.style.display = "none";
         b.style.display = "block";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
       dialogue.halfAClue++;
         return;
     } else if (dialogue.halfAClue === 2) {
@@ -10101,14 +10387,14 @@ if (event.key === 'Enter' || event.key === ' ') {
         b.style.display = "none";
         chandelierClue.style.display = "block";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "none";
+      chandelierexplorers2.style.display = "none";
         dialogue.halfAClue++;
         return;
     } else if (dialogue.halfAClue === 3) {
         zze3.style.display = "block";
         chandelierClue.style.display = "none";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         k.style.display = "block";
         dialogue.halfAClue++;
         return;
@@ -10118,15 +10404,16 @@ if (event.key === 'Enter' || event.key === ' ') {
         b.style.display = "block";
         k.style.display = "none";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         dialogue.halfAClue++;
         return;
     } else if (dialogue.halfAClue === 5) {
         zze4.style.display = "none";
         b.style.display = "none";
         dialogue.halfAClue = true;
+        document.cookie = "onlyHalfAClue=onlyHalfAClue";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         return;
     }
 }});
@@ -10134,7 +10421,7 @@ if (event.key === 'Enter' || event.key === ' ') {
       zzf1.style.display = "block";
       k.style.display = "block";
       chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
       dialogue.halfAClue2 = 1;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
@@ -10143,13 +10430,13 @@ if (event.key === 'Enter' || event.key === ' ') {
         k.style.display = "none";
         chandelierClue.style.display = "block";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         dialogue.halfAClue2++;
         return;
     } else if (dialogue.halfAClue2 === 2) {
         chandelierClue.style.display = "none";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         dialogue.halfAClue2 = true;
         return;
     }
@@ -10158,13 +10445,13 @@ if (event.key === 'Enter' || event.key === ' ') {
     chandelierClue.style.display = "block";
       dialogue.halfAClue3 = 1;
       chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.halfAClue3 === 1) {
         chandelierClue.style.display = "none";
         chandelierexplorers.style.display = "none";
-      explorersfallenchandelier.style.display = "block";
+      chandelierexplorers2.style.display = "block";
         return;
     }
 }});

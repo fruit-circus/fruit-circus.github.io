@@ -1374,9 +1374,9 @@ img {
           <div usemap="#notepadmap"> <!--Notepad-->
             <img src="floaters/notepadk.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadk">
             <img src="floaters/notepadb.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadb">
-            <img src="floaters/notepadv.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadv">
-            <img src="floaters/notepads.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepads">
-            <img src="floaters/notepadst.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadst">
+            <img src="floaters/notepadv.png" usemap="#notepadmap" class="room" id="notepadv">
+            <img src="floaters/notepads.png" usemap="#notepadmap" class="room" id="notepads">
+            <img src="floaters/notepadst.png" usemap="#notepadmap" class="room" id="notepadst">
             <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
             <img src="floaters/notepadm2.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadm2">
             <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
@@ -2233,7 +2233,7 @@ img {
         <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
         <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
         <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
-        <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="showDiagram()"> <!--//mark: change coors to be bigger-->
+        <area shape="rect" coords="767,87,912,242" alt="northern door" class="pointer" onclick="showDiagram()">
         <area shape="circle" coords="368,454,60" alt="SW object" class="pointer" onclick="pickSW()">
         <area shape="rect" coords="680,575,800,695" alt="SE object" class="pointer" onclick="pickSE()">
     </map>
@@ -2499,8 +2499,8 @@ img {
 <audio id="travel3"><source src="sound/travel3.mp3" type="audio/mpeg"></audio>
 <audio id="travel4"><source src="sound/travel4.mp3" type="audio/mpeg"></audio>
 <audio id="unlock"><source src="sound/unlock.mp3" type="audio/mpeg"></audio> <!--//mark add other sounds for variation-->
-<audio id="click1Audio"><source src="soundddd.mp3" type="audio/mpeg"></audio> <!--//mark Replace-->
-<audio id="fullInv"><source src="sound2.m4a" type="audio/mpeg"></audio> <!--//mark Replace-->
+<audio id="click1Audio"><source src="PLACEHOLDER.mp3" type="audio/mpeg"></audio> <!--//mark Replace-->
+<audio id="fullInv"><source src="PLACEHOLDER.m4a" type="audio/mpeg"></audio> <!--//mark Replace-->
     <audio id="lamano" src="sound/lamano.mp3" autoplay loop></audio>
     <audio id="penser" src="sound/penser.mp3" autoplay loop></audio>
     <audio id="loncTemsAi" src="sound/loncTemsAi.mp3" autoplay loop></audio>
@@ -2508,7 +2508,7 @@ img {
 <audio id="elmare"><source src="sound/Elmare-epare.mp3" type="audio/mpeg"></audio> <!--Elamre epare + nulsOmEnRen //mark add another song or two to the end-->
 <audio id="eightBitTune" src="sound/classic.wav" type="audio/mpeg"></audio>
 <audio id="loferm" src="sound/lofermvoler.mp3" type="audio/mpeg"></audio>
-<audio id="doihmot" src="sound/ChansonDoIhMot.mp3" type="audio/mpeg"></audio>    <!--//mark unincorporated. Lo ferm voler Arnaut Daniel. and + Chanson do-Ih mot, ibid-->
+<audio id="doihmot" src="sound/ChansonDoIhMot.mp3" type="audio/mpeg"></audio> <!--//mark unincorporated. Lo ferm voler Arnaut Daniel. and + Chanson do-Ih mot, ibid-->
 <audio id="gameover" src="sound/gameover.mp3" type="audio/mpeg"></audio>
 <audio id="notifnoise" src="sound/notifnoise.mp3" type="audio/mpeg"></audio>
 <audio id="denotifnoise" src="sound/denotifnoise.mp3" type="audio/mpeg"></audio>
@@ -2520,6 +2520,8 @@ img {
 <audio id="string6"><source src="sound/string6.mp3" type="audio/mpeg"></audio>
 <audio id="string7"><source src="sound/string7.mp3" type="audio/mpeg"></audio>
 <audio id="string8"><source src="sound/string8.mp3" type="audio/mpeg"></audio>
+<audio id="stmigo"><source src="sound/stmigo.mp3" type="audio/mpeg"></audio>
+<audio id="stmiglitchsound"><source src="sound/stmiglitch.mp3" type="audio/mpeg"></audio>
 <audio id="fishSong"><source src="sound/fishsong.mp3" type="audio/mpeg"></audio>
 <audio id="tinkering"><source src="sound/wrench.mp3" type="audio/mpeg"></audio>
 <audio id="keypick"><source src="sound/key.mp3" type="audio/mpeg"></audio>
@@ -3597,7 +3599,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         colorLock.solved = true;
         colorDoor.style.display = "none";
         colordooropen.style.display = "block";
-        //mark add ch3 music, pause any other music 
     }
 
     
@@ -3630,7 +3631,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (dialogue.longTimeNoSeeComplete) {
             increaseNotification(); //mark
             dialogue.longTimeNoSee = false;
-            dialogue.disparateFragment = true; //if they're already in chapter two, we don't need the first stymie dialogue (disperate fragment) to trigger when they go back to talk to stymie
+            dialogue.disparateFragment = true; //rationale: if they're already in chapter two, we don't need the first stymie dialogue to trigger when they go back to talk to stymie
         }
     }
 
@@ -4088,13 +4089,12 @@ function drop1() {
         } if (inventory.slot1 === "violent fuchsia key") {
             keys10ne.style.display = "block";
         } if (inventory.slot1 === "just south of platonic ideal pig colored key") {
-            keys11n.style.display = "block"; //mark. should have fixed this, but test
+            keys11nw.style.display = "block";
         } if (inventory.slot1 === "hot pink key") {
             keys11se.style.display = "block";
         } if (inventory.slot1 === "rosegold key") {
             keys13n.style.display = "block";
-        }
-        if (inventory.slot1 === "gunwhale grey key") {
+        } if (inventory.slot1 === "gunwhale grey key") {
             keys16se.style.display = "block";
         } if (inventory.slot1 === "dandruff key") {
             keys16sw.style.display = "block";
@@ -6567,8 +6567,6 @@ function switchSwitchA(){
         switchclick2.play();
         document.cookie = "switchAIsOff=switchAIsOff";
         document.cookie = "switchAIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-
-        //add click audio //mark
     }
 }
 
@@ -6580,7 +6578,6 @@ function switchSwitchB() {
         switchclick.play();
         document.cookie = "switchBIsOn=switchBIsOn";
         document.cookie = "switchBIsOff" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-        //add click audio //mark
     } else {
         switchBon.style.display = "none";
         switchBoff.style.display = "block";
@@ -6588,7 +6585,6 @@ function switchSwitchB() {
         switchclick2.play();
         document.cookie = "switchBIsOff=switchBIsOff";
         document.cookie = "switchBIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-        //add click audio //mark
     }
 }
 
@@ -6737,7 +6733,7 @@ document.addEventListener("keydown", function() {
                   notif4.style.display = "none";
                   notifnoise.play();
                   document.cookie = "open=open;";
-                  document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three //mark. delete when done testing
+                  //document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
            return;
        }
    }
@@ -6927,6 +6923,7 @@ function ladderDialogue() {
 function stymieDialogue() {
     if (current.room === "lobby") {
     if (!dialogue.hobbyists) {
+        stmigo.play();
         h1.style.display = "block";
         st.style.display = "block";
         dialogue.hobbyists = 1;
@@ -7049,6 +7046,7 @@ function stymieDialogue() {
     }
     //stymie's sauna convo
     else if (!dialogue.sauna && !lobby2.achieved) {
+        stmigo.play();
         b1.style.display = "block";
        k.style.display = "block";
        dialogue.sauna = 1;
@@ -7174,6 +7172,7 @@ function stymieDialogue() {
     //found stymie's missing cube
     else if (!dialogue.datacubeFound) {
         y1.style.display = "block";
+        stmigo.play();
       b.style.display = "block"; //Stymie! We found your missing data cube!
       dialogue.saunaDisabling = 1;
       document.addEventListener("keydown", function() {
@@ -7247,6 +7246,7 @@ if (event.key === 'Enter' || event.key === ' ') {
    }
    //no idea what's back there
     else if (!dialogue.disparateFragment) {
+        stmigo.play();
        a1.style.display = "block";
        b.style.display = "block";
        dialogue.disparateFragment = 1;
@@ -7334,6 +7334,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 });}
 //stymie actually misrepresents something breifly
     else if (!dialogue.labyrinthNames) {
+        stmigo.play();
         zj1.style.display = "block";
         st.style.display = "block";
         dialogue.labyNames = 1;
@@ -7474,6 +7475,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 
     //any luck finding the data cube?
     else if (!dialogue.datacube && !dialogue.anyLuck && !key.gold && !dialogue.hrrg) {
+        stmigo.play();
       m1.style.display = "block";
       st.style.display = "block";
       dialogue.anyLuck = 1;
@@ -7502,9 +7504,9 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 });
 } else if (dialogue.longTimeNoSee) {
-
+stmigo.play();
         zv1.style.display = "block";
-        st3.style.display = "block"; //hey guys, long time no see! //mark test that st3 shows and then nones.
+        st3.style.display = "block"; //hey guys, long time no see!
        dialogue.longTimeNoSee = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -7709,7 +7711,7 @@ if (event.key === 'Enter' || event.key === ' ') {
  }
 });
 
-} //add new lobby 1 stymie dialogue here
+} //you can add new lobby 1 stymie dialogue here
     }
     //verily confrontation
     else if (current.room === "lobbyTwo") {
@@ -7731,6 +7733,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk2.style.display = "none";
        zk3.style.display = "block";
        stg.style.display = "block";
+       
        b.style.display = "none";
          dialogue.verilyIntro++;
          return;
@@ -7738,6 +7741,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk3.style.display = "none";
        zk4.style.display = "block";
        stg.style.display = "none";
+       
        vsup.style.display = "block";
          dialogue.verilyIntro++;
          return;
@@ -7842,6 +7846,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk18.style.display = "none";
        zk19.style.display = "block";
        stg.style.display = "block";
+       
        v.style.display = "none";
        dialogue.verilyIntro++;
          return;
@@ -7849,6 +7854,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk19.style.display = "none";
        zk20.style.display = "block";
        stg.style.display = "none";
+       
        kstu.style.display = "block";
        dialogue.verilyIntro++;
          return;
@@ -7863,6 +7869,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zk21.style.display = "none";
         zk22.style.display = "block";
         kstu.style.display = "block";
+        
        stg.style.display = "none";
          dialogue.verilyIntro++;
          return;
@@ -7891,6 +7898,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk25.style.display = "none";
        zk26.style.display = "block";
        stg.style.display = "block";
+       
        v.style.display = "none";
          dialogue.verilyIntro++;
          return;
@@ -7898,12 +7906,14 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk26.style.display = "none";
        zk27.style.display = "block";
        stg.style.display = "block";
+       
          dialogue.verilyIntro++;
          return;
      } else if (dialogue.verilyIntro === 27) {
        zk27.style.display = "none";
        zk28.style.display = "block";
        stlag.style.display = "block";
+       
        stg.style.display = "none";
          dialogue.verilyIntro++;
          return;
@@ -7911,6 +7921,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        zk28.style.display = "none";
        zk29.style.display = "block";
        stlag.style.display = "none";
+       
        v.style.display = "block";
          dialogue.verilyIntro++;
          return;
@@ -8055,7 +8066,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        v.style.display = "none";
        dialogue.verilyIntro = true;
        document.cookie = "verily=verily";
-       increaseNotification(); //mark
+       increaseNotification(); //mark it's not working?
         dialogue.longTimeNoSee = true;
          return;
      }
@@ -8064,6 +8075,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 
         } else if (dialogue.actionAndInformation) {
         zy1.style.display = "block";
+        stmigo.play();
         st.style.display = "block";
        dialogue.actionAndInformation = 1;
        document.addEventListener("keydown", function() {
@@ -8408,11 +8420,12 @@ if (event.key === 'Enter' || event.key === ' ') {
 });
 
         } else if (!dialogue.haventSeenHim && !dialogue.workingTogether) {
-        //verily denies all accusations of witchcraft
-        //only happens here in lobby 2 if k and b havent gone back to talk to 1st stymie, otherwise must happen when verily has shifted to the other room //mark (this isn't included in verily's idle dialogue but doesn necessarily need to be.)
-    haventSeenHim();   
+            haventSeenHim();
+            stmigo.play(); //only happens here in lobby 2 if k and b havent gone back to talk to 1st stymie, otherwise must happen when verily has shifted to the other room //mark (this isn't included in verily's idle dialogue but doesn necessarily need to be.)
+       
     } else if (dialogue.shuriComplete && dialogue.lostRogueSoldiers && !dialogue.stymieHasntSeenHim) {
         haveYouSeenThisMan();
+        stmigo.play();
     }   
     
     //add new lobby 2 stymie dialogue here (with an else if () {})
@@ -8420,6 +8433,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         looksLikeTheresAnEnvelopeInTheChandelier();
     } else if (current.room === "lobbyThree") {
         if (!dialogue.enteringLobbyThree) {
+            stmigo.play();
             //mark welcome, intrepid explorers!
             dialogue.enteringLobbyThree = true;
         } 

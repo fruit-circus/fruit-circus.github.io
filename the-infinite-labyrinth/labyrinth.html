@@ -38,12 +38,10 @@ add a buncha songs to the end of el mare el pare
 music: starting around 16:10 in the Martin Best Ensemle ending at 19:25 
 44:40 (may be in spotify already)
 music: see spotify
-brian boru for arcade game?
 
 SOUND:
 candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them, subtle page turn sound for guest books
 more sounds for the multi-various empty placeholder "click1audio"
-replace fish song with vocals or something. not harp noises 
 clicking for switches in powerline room
 distant long stone grinding for pillarmachine interaction 
 computer bloop for clicking on stymie
@@ -54,9 +52,6 @@ CODE:
 add cookies enountered shuri,
 dialogue for table with food on it
 stymie notif after chase sequence
-add notepad popup to notepad icon 
-Notepad: controls for inventory q,1,2,3,4. Bios. Notes? Labeled with sticky tabs
-that was easy is not triggering 
 */
 
 
@@ -1129,10 +1124,14 @@ img {
 }
 
 
+
 #notepadk,
 #notepadb,
 #notepadv,
 #notepads,
+#notepadmu,
+#notepadm2,
+#notepadi,
 #notepadst {
         display: none;
         z-index: 1000;
@@ -1372,12 +1371,15 @@ img {
             <img src="floaters/inv.png" alt="inv" usemap="#invmap" class="room" id="inv">
         </div>
 
-          <div id="notepad" usemap="#notepadmap"> <!--Notepad-->
+          <div usemap="#notepadmap"> <!--Notepad-->
             <img src="floaters/notepadk.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadk">
             <img src="floaters/notepadb.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadb">
             <img src="floaters/notepadv.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadv">
             <img src="floaters/notepads.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepads">
             <img src="floaters/notepadst.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadst">
+            <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
+            <img src="floaters/notepadm2.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadm2">
+            <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
         </div>
 
 
@@ -1514,7 +1516,7 @@ img {
             <div id="liftbottom" usemap="#alcovemap"> <!--Bottom of the Lift ... kAlc, nAlc, kcandle1, ncandle2, etc-->
                 <img src="rooms/alcovesPit.png" alt="mini room" usemap="#alcovemap" class="room" id="alcovesPit">
                 <img src="rooms/alcovesUnlocked.png" alt="mini room" usemap="#alcovemap" class="room" id="alcovesUnlocked">
-                <img src="kodalyliftbottom.png" alt="kodaly" usemap="#alcovemap" class="room" id="kodalyliftbottom">
+                <img src="people/kodalyliftbottom.png" alt="kodaly" usemap="#alcovemap" class="room" id="kodalyliftbottom">
                 <img src="datacube.png" alt="data cube" usemap="#alcovemap" class="room" id="datacube">
                 <img src="floaters/upArrow.png" alt="up arrow" usemap="#alcovemap" class="room" id="upArrow">
                     <div class="kAlc">
@@ -1551,7 +1553,7 @@ img {
             </div>
 
             <div id="combinationLock" usemap="#lockmap"> <!--Chest Lock in Dias Room-->
-                <img src="combinationLock.png" alt="combination lock" usemap="#lockmap" class="room">
+                <img src="floaters/combinationLock.png" alt="combination lock" usemap="#lockmap" class="room">
                 <div class="lockNumber">
                 <p id="lock1">1</p>
                 <p id="lock2">1</p>
@@ -1811,13 +1813,13 @@ img {
             </div>
 
             <div id="lobbyThree" usemap="#roommap"> 
-                <img src="floorarrows.png" alt="stymie" usemap="#roommap" class="room" id="floorarrows">   
                 <img src="plinth.png" alt="plinth" usemap="#roommap" class="room" id="plinth3">
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="people/terminal.png" alt="stymie" usemap="#roommap" class="room" id="terminal3">   
+                <img src="floorarrows.png" alt="stymie" usemap="#roommap" class="room" id="floorarrows">   
             </div>
             
             <!--Too Many Keys-->
@@ -2283,7 +2285,7 @@ img {
         <area shape="rect" coords="1030, 70, 1150, 170" alt="subtract one D" class="pointer" onclick="dDown()">
         <area shape="rect" coords="1030, 566, 1150, 670" alt="add one D" class="pointer" onclick="dUp()">
        
-        <area shape="rect" coords="650, 640, 770, 730" alt="enter code" class="pointer" onclick="enterCode()">
+        <area shape="rect" coords="650, 640, 840, 735" alt="enter code" class="pointer" onclick="enterCode()">
     </map>
 
     <map name="colorlockmap"> <!--Combination arrows and X button for the color combination lock-->
@@ -2326,7 +2328,10 @@ img {
         <area shape="rect" coords="1010,247,1111,314" alt="drop item" class="pointer" onclick="notepadV()">
         <area shape="rect" coords="1010,488,1135,555" alt="drop item" class="pointer" onclick="notepadS()">
         <area shape="rect" coords="340,608,414,660" alt="drop item" class="pointer" onclick="notepadST()">
-        <area shape="rect" coords="1042,30,1145,130" alt="drop item" class="pointer" onclick="hideNotes()">
+        <area shape="rect" coords="332,391,426,526" alt="drop item" class="pointer" onclick="notepadInfo()">
+        <area shape="rect" coords="1012,575,1062,632" alt="drop item" class="pointer" onclick="notepadMusic()">
+        <area shape="rect" coords="830,625,970,750" alt="drop item" class="pointer" onclick="notepadMusic2()">
+        <area shape="rect" coords="1042,30,1145,130" alt="big x" class="pointer" onclick="hideNotes()">
 
     </map>
 
@@ -2502,6 +2507,8 @@ img {
     <audio id="oQueASantaMaria" src="sound/oQueASantaMaria.mp3" autoplay loop></audio>
 <audio id="elmare"><source src="sound/Elmare-epare.mp3" type="audio/mpeg"></audio> <!--Elamre epare + nulsOmEnRen //mark add another song or two to the end-->
 <audio id="eightBitTune" src="sound/classic.wav" type="audio/mpeg"></audio>
+<audio id="loferm" src="sound/lofermvoler.mp3" type="audio/mpeg"></audio>
+<audio id="doihmot" src="sound/ChansonDoIhMot.mp3" type="audio/mpeg"></audio>    <!--//mark unincorporated. Lo ferm voler Arnaut Daniel. and + Chanson do-Ih mot, ibid-->
 <audio id="gameover" src="sound/gameover.mp3" type="audio/mpeg"></audio>
 <audio id="notifnoise" src="sound/notifnoise.mp3" type="audio/mpeg"></audio>
 <audio id="denotifnoise" src="sound/denotifnoise.mp3" type="audio/mpeg"></audio>
@@ -3513,6 +3520,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         showInv();}
     else if (e.key == 'i' && inventory.isOpen) {
         hideInv();} 
+    else if (e.key == '1' && inventory.isOpen) {
+        drop1();}
+        else if (e.key == '2' && inventory.isOpen) {
+        drop2();}
+         else if (e.key == '3' && inventory.isOpen) {
+        drop3();}
+         else if (e.key == '4' && inventory.isOpen) {
+        drop4();}
     else if (e.key == 'n' && notepad.isOpen) {
         hideNotes();} 
     else if (e.key == 'n' && !notepad.isOpen) {
@@ -3828,8 +3843,12 @@ function hideNotes(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
     paper.play();
     notepad.isOpen = false;
+    notepadmusic.isopen = false;
 }
 
 function notepadK(){
@@ -3839,6 +3858,10 @@ function notepadK(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
 }
 function notepadB(){
     paper.play();
@@ -3847,6 +3870,10 @@ function notepadB(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
 }
 function notepadV(){
     paper.play();
@@ -3855,6 +3882,10 @@ function notepadV(){
     notepadv.style.display = "block";
     notepads.style.display = "none";
     notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
 }
 function notepadS(){
     paper.play();
@@ -3863,6 +3894,10 @@ function notepadS(){
     notepadv.style.display = "none";
     notepads.style.display = "block";
     notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
 }
 function notepadST(){
     paper.play();
@@ -3871,6 +3906,59 @@ function notepadST(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "block";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
+}
+function notepadInfo(){
+    paper.play();
+    notepadk.style.display = "none";
+    notepadb.style.display = "none";
+    notepadv.style.display = "none";
+    notepads.style.display = "none";
+    notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "block";
+    notepadmusic.isopen = false;
+}
+
+const notepadmusic = {
+    isopen: false,
+}
+
+const notepad = {
+    isOpen: false,
+}
+
+function notepadMusic() {
+    paper.play();
+    notepadmu.style.display = "block";
+    notepadk.style.display = "none";
+    notepadb.style.display = "none";
+    notepadv.style.display = "none";
+    notepads.style.display = "none";
+    notepadst.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = true;
+}
+function notepadMusic2(){
+    if (notepadmusic.isopen){
+    paper.play();
+    notepadk.style.display = "none";
+    notepadb.style.display = "none";
+    notepadv.style.display = "none";
+    notepads.style.display = "none";
+    notepadst.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "block";
+    notepadi.style.display = "none";
+    notepadmusic.isopen = false;
+    } else {
+        alert("hi");
+    }
 }
 //add more for instructions etc. 
 
@@ -3881,6 +3969,7 @@ window.addEventListener('keydown', function(e) {
 
 
 //are you telling me. that every time you add a new item we gotta put it in all of these fucks?
+//yes
 function drop1() {
         item1.innerText = "";
         if (inventory.slot1 === "rope") {
@@ -4465,18 +4554,22 @@ function dropGreenCandle() {
     if (inventory.slot1 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot1 = false;
+        key.greencandle = false;
         item1.innerText = "";
     } if (inventory.slot2 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot2 = false;
+        key.greencandle = false;
         item1.innerText = "";
     } if (inventory.slot3 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot3 = false;
+        key.greencandle = false;
         item1.innerText = "";
     } if (inventory.slot4 === "green candles") {
         greencandle.style.display = "block";
         inventory.slot4 = false;
+        key.greencandle = false;
         item1.innerText = "";
     }
 }
@@ -5229,18 +5322,15 @@ function closeWhatever() {
         }
 }
 
-function closeChest() { //mark
+function closeChest() { //mark (resolved?)
       click1Audio.play();
     combinationLock.style.display = "none";
     explorers.style.display = "block";
     baseroom.style.display = "block";
     butt.style.display = "block";
-            satchel.style.display = "block";
-        //satchel.style.display = "block"; mark
-        butthome.style.display = "block";
-                console.log("refff");
+    satchel.style.display = "block";
+    butthome.style.display = "block";
     if (current.room === "dias") {
-        console.log("triggered");
         dias.style.display = "block";
         combinationLock.style.display = "none";
     } else if (current.room === "colorLockRoom") {
@@ -5806,6 +5896,8 @@ function enterColors() {
             if (colorLock.c === 8){
                 if (colorLock.d === 4){
                     closeChest();
+                    elmare.pause();
+                    lamano.pause();
                     unlock.play();
                     colorLock.solved = true;
                     colorDoor.style.display = "none";
@@ -6494,6 +6586,7 @@ const dialogue = {
     //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
+    goodWork: false,
     ladder: false, //aha, it's ladder dialogue
     ladder2: true, //wow now it's really ladder dialogue
     hobbyists: false, //i sure hope stymie doesn't misrepresent any information
@@ -7403,10 +7496,10 @@ if (event.key === 'Enter' || event.key === ' ') {
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.longTimeNoSee === 1) {
-       zv13.style.display = "none";
+       zv1.style.display = "none";
        zv2.style.display = "block";
        kstu.style.display = "block";
-       st.style.display = "none";
+       st3.style.display = "none";
        dialogue.longTimeNoSee++;
          return;
      } else if (dialogue.longTimeNoSee === 2) {
@@ -10695,12 +10788,14 @@ function goNorth() {
             else if (lock.solved) {
                 if (!alcove.solved){
                 //adds the green candle to the inventory
+                if (!key.greencandle) {
                 if (!inventory.slot1) {
             if (inventory.slot1 !== "green candles"
             && inventory.slot2 !== "green candles"
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
+                key.greencandle = true;
                 inventory.slot1 = "green candles";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "green candles"
@@ -10708,6 +10803,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
+                key.greencandle = true;
                 inventory.slot2 = "green candles";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "green candles"
@@ -10715,6 +10811,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
+                key.greencandle = true;
                 inventory.slot3 = "green candles";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "green candles"
@@ -10722,11 +10819,12 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
+                key.greencandle = true;
                 inventory.slot4 = "green candles";}
         } else {
             tooHeavy();
         }
-    }}
+    }}}
 }
         else if (current.room === "lobbyTwo"){
                 randomDoorAudio();
@@ -10881,13 +10979,15 @@ function goNorth() {
                 butthome.style.display = "none";
             } else if (colorLock.solved) {
                     randomDoorAudio();
+                    goodWorkTeam();
                     colorLockRoom.style.display = "none";
                     unnamedHallway.style.display = "block";
                     current.room = "unnamedHallway";
-                    nulsOmEnRen.play();
                     elmare.pause();
                     lamano.pause();
-                    goodWorkTeam();
+                    loferm.play();
+                    penser.pause(); //it should already be paused but it couldn't hurt
+                    
                 } 
         } else if (current.room === "portholeRoom") {
                 portholeInterior.style.display = "block";
@@ -12973,6 +13073,7 @@ function workingTogether() {
         vtamp2.style.display = "none";
         vtamp3.style.display = "none";
         dialogue.haventSeenHim = true;
+        increaseNotification2();
        document.cookie = "workingTogether=workingTogether";
          return;
      }

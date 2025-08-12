@@ -1634,7 +1634,7 @@ img {
 
             <!--Chapter 2's East Floret-->
             <div id="chandelierRoom" usemap="#chandleMap"> <!--floret center-->
-                <img src="chandelierexplorers2.png" alt="chandelierexplorers2" usemap="#chandleMap" class="room" id="chandelierexplorers2"> 
+                <img src="people/chandelierexplorers2.png" alt="chandelierexplorers2" usemap="#chandleMap" class="room" id="chandelierexplorers2"> 
                 <img src="eastdoor.png" alt="door" usemap="#chandleMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#chandleMap" class="room" id="westdoor"> 
                 <img src="southdoor.png" alt="door" usemap="#chandleMap" class="room" id="southdoor"> 
@@ -3512,9 +3512,8 @@ img {
     const lobby2 = {
         achieved: false,
     }
-
+//keyboard shortcuts
 document.addEventListener("DOMContentLoaded", (event) => {   
-
    document.onkeydown = (e) => {
     if (e.key == 'i' && !inventory.isOpen) {
         showInv();}
@@ -3532,6 +3531,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         hideNotes();} 
     else if (e.key == 'n' && !notepad.isOpen) {
         showNotes();} 
+        //harp playing
     else if (e.key == '1' && current.room === "pond") {
         note1();}
         else if (e.key == '2' && current.room === "pond") {
@@ -3548,6 +3548,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         note7();}
         else if (e.key == '8' && current.room === "pond") {
         note8();}
+        //arrow keys for directional travel
+        else if (e.key == 'ArrowLeft') {
+        goWest();}
+        else if (e.key == 'ArrowUp') {
+        goNorth();}
+        else if (e.key == 'ArrowRight') {
+        goEast();}
+        else if (e.key == 'ArrowDown') {
+        goSouth();}
     }
 
     penser.play(); 
@@ -10432,7 +10441,7 @@ function goWest() {
                 lift.style.display = "block";
                 current.room = "lift";
                 explorers.style.display = "none";
-                penser.volume = 0.5; 
+                penser.volume = 0.7; 
                 workingTogether();
                 if (!dialogue.firstTimeInTheLiftRoom) {liftRoomDialogue();}
                 }

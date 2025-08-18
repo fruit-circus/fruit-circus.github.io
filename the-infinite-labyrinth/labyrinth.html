@@ -40,7 +40,7 @@ music: starting around 16:10 in the Martin Best Ensemle ending at 19:25
 music: see spotify
 
 SOUND:
-candle thunk, rope thwump, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them, subtle page turn sound for guest books
+candle thunk, unlocking noise for opening both locked panels (chest and alcoves) and for failing to open them, subtle page turn sound for guest books
 more sounds for the multi-various empty placeholder "click1audio"
 clicking for switches in powerline room
 distant long stone grinding for pillarmachine interaction 
@@ -50,6 +50,7 @@ something happened stone grinding for 2303
 
 CODE:
 add cookies enountered shuri,
+change lobby to new map to prevent difficulty with clicking on ladder and rope vs west and south doors. 
 dialogue for table with food on it
 stymie notif after chase sequence
 */
@@ -2498,6 +2499,14 @@ img {
 <audio id="travel2"><source src="sound/travel2.mp3" type="audio/mpeg"></audio>
 <audio id="travel3"><source src="sound/travel3.mp3" type="audio/mpeg"></audio>
 <audio id="travel4"><source src="sound/travel4.mp3" type="audio/mpeg"></audio>
+<audio id="paper"><source src="sound/paper.m4a" type="audio/mpeg"></audio>
+<audio id="pageturn1"><source src="sound/pageturn1.mp3" type="audio/mpeg"></audio>
+<audio id="pageturn2"><source src="sound/pageturn2.mp3" type="audio/mpeg"></audio>
+<audio id="pageturn3"><source src="sound/pageturn3.mp3" type="audio/mpeg"></audio>
+<audio id="pageturn4"><source src="sound/pageturn4.mp3" type="audio/mpeg"></audio>
+<audio id="pageturn5"><source src="sound/pageturn5.mp3" type="audio/mpeg"></audio>
+<audio id="ropesound"><source src="sound/ropesound.mp3" type="audio/mpeg"></audio>
+<audio id="booksound"><source src="sound/booksound.mp3" type="audio/mpeg"></audio>
 <audio id="unlock"><source src="sound/unlock.mp3" type="audio/mpeg"></audio> <!--//mark add other sounds for variation-->
 <audio id="click1Audio"><source src="PLACEHOLDER.mp3" type="audio/mpeg"></audio> <!--//mark Replace-->
 <audio id="fullInv"><source src="PLACEHOLDER.m4a" type="audio/mpeg"></audio> <!--//mark Replace-->
@@ -2529,7 +2538,6 @@ img {
 <audio id="swordsound"><source src="sound/sword.mp3" type="audio/mpeg"></audio>
 <audio id="decksound"><source src="sound/deck.mp3" type="audio/mpeg"></audio>
 <audio id="stonesound"><source src="sound/stone.mp3" type="audio/mpeg"></audio> <!--Possibly replace with better stone sliding sound-->
-<audio id="paper"><source src="sound/paper.m4a" type="audio/mpeg"></audio>
 <audio id="lockClick"><source src="sound/lockclick.mp3" type="audio/mpeg"></audio>
 <audio id="lockClick2"><source src="sound/lockclick2.mp3" type="audio/mpeg"></audio> 
 <audio id="lockClick3"><source src="sound/lockclick3.mp3" type="audio/mpeg"></audio> 
@@ -3828,7 +3836,7 @@ function showInv() {
         if (inventory.slot2) {item2.style.display = "block"; item2.innerText = inventory.slot2;}
         if (inventory.slot3) {item3.style.display = "block"; item3.innerText = inventory.slot3;}
         if (inventory.slot4) {item4.style.display = "block"; item4.innerText = inventory.slot4;}
-        paper.play();
+        paperflipsound();
         inventory.isOpen = true;
         }
 function hideInv() {
@@ -3837,13 +3845,49 @@ function hideInv() {
         item2.style.display = "none";
         item3.style.display = "none";
         item4.style.display = "none";
-        paper.play();
+        paperflipsound();
         inventory.isOpen = false;
         }
 
+        const papery = {
+            unpapered: true,
+            eins: true,
+            zwei: true,
+            drei: true,
+            vier: true,
+            fumph: true,
+        }
+function paperflipsound() {
+    if (papery.unpapered) {
+        paper.play();
+        papery.unpapered = false;
+        papery.eins = false;
+    } else if (!papery.eins) {
+        pageturn1.play();
+        papery.eins = true;
+        papery.zwei = false;
+    } else if (!papery.zwei) {
+        pageturn2.play();
+        papery.zwei = true;
+        papery.drei = false;
+    } else if (!papery.drei) {
+        pageturn3.play();
+        papery.drei = true;
+        papery.vier = false;
+    } else if (!papery.vier) {
+        pageturn4.play();
+        papery.vier = true;
+        papery.fumph = false;
+    } else if (!papery.fumph) {
+        pageturn5.play();
+        papery.fumph = true;
+        papery.unpapered = true;
+    }
+}
+
 function showNotes() {
     notepadk.style.display = "block";
-    paper.play();
+    paperflipsound();
     notepad.isOpen = true;
 }
 
@@ -3856,13 +3900,13 @@ function hideNotes(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
-    paper.play();
+    paperflipsound();
     notepad.isOpen = false;
     notepadmusic.isopen = false;
 }
 
 function notepadK(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "block";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -3874,7 +3918,7 @@ function notepadK(){
     notepadmusic.isopen = false;
 }
 function notepadB(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "block";
     notepadv.style.display = "none";
@@ -3886,7 +3930,7 @@ function notepadB(){
     notepadmusic.isopen = false;
 }
 function notepadV(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "block";
@@ -3898,7 +3942,7 @@ function notepadV(){
     notepadmusic.isopen = false;
 }
 function notepadS(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -3910,7 +3954,7 @@ function notepadS(){
     notepadmusic.isopen = false;
 }
 function notepadST(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -3922,7 +3966,7 @@ function notepadST(){
     notepadmusic.isopen = false;
 }
 function notepadInfo(){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -3943,7 +3987,7 @@ const notepad = {
 }
 
 function notepadMusic() {
-    paper.play();
+    paperflipsound();
     notepadmu.style.display = "block";
     notepadk.style.display = "none";
     notepadb.style.display = "none";
@@ -3956,7 +4000,7 @@ function notepadMusic() {
 }
 function notepadMusic2(){
     if (notepadmusic.isopen){
-    paper.play();
+    paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -6733,7 +6777,7 @@ document.addEventListener("keydown", function() {
                   notif4.style.display = "none";
                   notifnoise.play();
                   document.cookie = "open=open;";
-                  //document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
+                  document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
            return;
        }
    }
@@ -13564,6 +13608,7 @@ function pickSW() {
             && inventory.slot3 !== "rope"
             && inventory.slot4 !== "rope") {
                 rope.style.display = "none";
+                ropesound.play();
                 inventory.slot1 = "rope";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "rope"
@@ -13571,6 +13616,7 @@ function pickSW() {
             && inventory.slot3 !== "rope"
             && inventory.slot4 !== "rope") {
                 rope.style.display = "none";
+                ropesound.play();
                 inventory.slot2 = "rope";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "rope"
@@ -13578,6 +13624,7 @@ function pickSW() {
             && inventory.slot3 !== "rope"
             && inventory.slot4 !== "rope") {
                 rope.style.display = "none";
+                ropesound.play();
                 inventory.slot3 = "rope";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "rope"
@@ -13585,6 +13632,7 @@ function pickSW() {
             && inventory.slot3 !== "rope"
             && inventory.slot4 !== "rope") {
                 rope.style.display = "none";
+                ropesound.play();
                 inventory.slot4 = "rope";}
         } else {
             tooHeavy();
@@ -15564,17 +15612,20 @@ function pickNE() {
     if (current.room === "lobby") {
     frontMatter.style.display = "block";
     nextarrow.style.display = "block";
+    booksound.play();
     entryform.style.display = "block";
     click1Audio.play();}
 
     else if (current.room === "lobbyTwo") {
     frontMatter.style.display = "block";
     nextarrow.style.display = "block";
+    booksound.play();
     entryform2.style.display = "block";
     click1Audio.play();}
 
     else if (current.room === "lobbyThree") {
     frontMatter.style.display = "block";
+    booksound.play();
     nextarrow.style.display = "block";
     entryform.style.display = "block";
     click1Audio.play();}

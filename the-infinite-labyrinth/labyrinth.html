@@ -18,7 +18,7 @@ make arcade sprites less saturated or find a way to make them icons
 add ambient lighting and darkness to the basic room
 make verilytinkering a gif
 redo Verilyredhanded and Verilyredhanded2
-make hall and chasm explorers gifs and chandelier fallen
+make hall and chasm explorers gifs and chandelier fallen (people)
 verilyidle (also gif it)
 portholeview gif
 Stymiedemonstration
@@ -44,15 +44,18 @@ candle thunk, unlocking noise for opening both locked panels (chest and alcoves)
 more sounds for the multi-various empty placeholder "click1audio"
 clicking for switches in powerline room
 distant long stone grinding for pillarmachine interaction 
-computer bloop for clicking on stymie
+computer bloop for clicking on stymie (set?)
 chandelier crashing to the ground
 something happened stone grinding for 2303
 
 CODE:
 add cookies enountered shuri,
-change lobby to new map to prevent difficulty with clicking on ladder and rope vs west and south doors. 
 dialogue for table with food on it
 stymie notif after chase sequence
+hit "enter" to enter code for chest, etc
+add subtle glitch sound for stymie's first glitchy card
+disable arrow travel (and others i, n,)
+powerline and switches are not appearing on web 
 */
 
 
@@ -1469,22 +1472,22 @@ img {
             
                 
             <div id="lobby"> <!--Lobby Obbies-->
-                <img src="ladder.png" alt="ladder" class="room" id="ladder">
-                <img src="plinth.png" alt="plinth" usemap="#roommap" class="room">
-                <img src="rope.png" alt="rope" usemap="#roommap" class="room" id="rope">
-                <img src="people/terminal.png" alt="stymie" usemap="#roommap" class="room" id="terminal">
-                <img src="people/terminalwaking.png" alt="stymie" usemap="#roommap" class="room" id="terminalwaking">
-                <img src="people/terminalsleep.png" alt="stymie" usemap="#roommap" class="room" id="terminalsleep">
-                <img src="sword.png" alt="sword" usemap="#roommap" class="room" id="sword">
-                <img src="radio.png" alt="radio" usemap="#roommap" class="room" id="radio">
-                <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
-                <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
-                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">
-                <img src="people/stminotif1.png" alt="notif" usemap="#roommap" class="room" id="notif1">
-                <img src="people/stminotif2.png" alt="notif" usemap="#roommap" class="room" id="notif2">
-                <img src="people/stminotif3.png" alt="notif" usemap="#roommap" class="room" id="notif3">
-                <img src="people/stminotif4.png" alt="notif" usemap="#roommap" class="room" id="notif4">
+                <img src="ladder.png" alt="ladder" usemap="#firstlobbymap" class="room" id="ladder">
+                <img src="plinth.png" alt="plinth" usemap="#firstlobbymap" class="room">
+                <img src="rope.png" alt="rope" usemap="#firstlobbymap" class="room" id="rope">
+                <img src="people/terminal.png" alt="stymie" usemap="#firstlobbymap" class="room" id="terminal">
+                <img src="people/terminalwaking.png" alt="stymie" usemap="#firstlobbymap" class="room" id="terminalwaking">
+                <img src="people/terminalsleep.png" alt="stymie" usemap="#firstlobbymap" class="room" id="terminalsleep">
+                <img src="sword.png" alt="sword" usemap="#firstlobbymap" class="room" id="sword">
+                <img src="radio.png" alt="radio" usemap="#firstlobbymap" class="room" id="radio">
+                <img src="southdoor.png" alt="door" usemap="#firstlobbymap" class="room" id="southdoor">
+                <img src="northdoor.png" alt="door" usemap="#firstlobbymap" class="room" id="northdoor">
+                <img src="eastdoor.png" alt="door" usemap="#firstlobbymap" class="room" id="eastdoor">
+                <img src="westdoor.png" alt="door" usemap="#firstlobbymap" class="room" id="westdoor">
+                <img src="people/stminotif1.png" alt="notif" usemap="#firstlobbymap" class="room" id="notif1">
+                <img src="people/stminotif2.png" alt="notif" usemap="#firstlobbymap" class="room" id="notif2">
+                <img src="people/stminotif3.png" alt="notif" usemap="#firstlobbymap" class="room" id="notif3">
+                <img src="people/stminotif4.png" alt="notif" usemap="#firstlobbymap" class="room" id="notif4">
             </div>
 
             <div id="sauna" usemap="#sauna"> <!--Sauna-->
@@ -2190,6 +2193,27 @@ img {
             <area shape="rect" coords="770,409,965,500" alt="yes" class="pointer" id="yesrestart" onclick="deleteCookies()">
             <area shape="rect" coords="440,409,630,492" alt="no" class="pointer" id="nodontrestart" onclick="hideTrueRestart()">
         </map>
+
+    <map name="firstlobbymap"> <!--lobby one Positions-->
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+        <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+        <area shape="rect" coords="650,9,780,155" alt="stymieterminal" class="pointer" onclick="stymieDialogue()">
+
+        <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="880,21,991,121" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="poly" coords="382,592,406,508,423,478,445,454,488,440,477,396,540,380,600,424,617,470,640,630,634,684" alt="southern door" class="pointer" onclick="goSouth()">
+
+        <area shape="poly" coords="295,516,317,415,392,381,462,413,477,437,436,455,410,451,401,514" alt="SW object" class="pointer" onclick="pickSW()">
+        <area shape="rect" coords="680,575,800,695" alt="SE object" class="pointer" onclick="pickSE()">
+        <area shape="rect" coords="960,145,1151,240" alt="NE object" class="pointer" onclick="pickNE()">
+        <area shape="rect" coords="512,220,708,280" alt="NW object" class="pointer" onclick="pickNW()"> <!--Guest Book may have to have its own position because the plinth is somewhat tall-->
+       
+        <area shape="rect" coords="468,0,530,225" alt="ladder" class="pointer" onclick="ladderDialogue()">
+
+    </map>
 
     <map name="roommap"> <!--Basic Room Object Positions-->
         <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -5132,7 +5156,7 @@ const northPage = {spread: 0,}
     bookBody.style.display = "block";
     entryform.style.display = "none";
     entryform2.style.display = "none";
-    click1Audio.play();
+    paperflipsound();
 
 if (current.room === "lobby") {
 
@@ -6777,7 +6801,7 @@ document.addEventListener("keydown", function() {
                   notif4.style.display = "none";
                   notifnoise.play();
                   document.cookie = "open=open;";
-                  document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
+                  //document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
            return;
        }
    }

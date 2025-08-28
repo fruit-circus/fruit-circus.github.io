@@ -2,7 +2,7 @@
 <html>
 <head>
       <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
-<title>The Infinite Labyrinth</title>
+<title>Bridget and Kodaly Explore the Labyrinth</title>
   <link rel="icon" type="image/x-icon" href="labyfavy.ico?">
 <style>
 
@@ -44,11 +44,12 @@ candle thunk, unlocking noise for opening both locked panels (chest and alcoves)
 more sounds for the multi-various empty placeholder "click1audio"
 clicking for switches in powerline room
 distant long stone grinding for pillarmachine interaction 
-computer bloop for clicking on stymie (set?)
 chandelier crashing to the ground
 something happened stone grinding for 2303
+splat sound for restart button
 
 CODE:
+prevent arrow keys when advancing dialogue
 add cookies enountered shuri,
 dialogue for table with food on it
 stymie notif after chase sequence
@@ -140,12 +141,13 @@ body {
 display: none;
 }
 
-#khigher{
-    display: none;
+
+#klift{
     z-index: 2;
 }
 #platformup {
     display: none;
+        z-index: -2;
 }
 
 
@@ -272,6 +274,10 @@ img {
 #circleLiftRoom,
 #squareLiftRoom,
 #triangleLiftRoom,
+#platformsquareup,
+#platformsquaredown,
+#platformtriangleup,
+#platformtriangledown,
 #twistHandleRoom,
 #oarsRoom,
 #boatRoom,
@@ -737,6 +743,8 @@ img {
 #zs4a,
 #zs4b,
 #zs4c,
+#platformcircledown,
+#platformcircleup,
 #zs4d,
 #zs5,
 #zs6,
@@ -776,6 +784,15 @@ img {
 #zzs11,
 #zzs12,
 #zzs13,
+#zzz1,
+#zzz2,
+#zzz3,
+#zzz4,
+#zzz5,
+#zzz6,
+#zzz8,
+#zzza1,
+#zzz7,
 #zzr1,
 #zzr2,
 #zzr3,
@@ -895,6 +912,7 @@ img {
 #w2,
 #w3,
 #c4,
+#platformdown,
 #c5,
 #datacube,
 #knightCard,
@@ -1118,6 +1136,8 @@ img {
 #pipes1yellow,
 #pipes1green2,
 #pipes1green1,
+#khigher,
+#klower,
 #verilysprite
  {
     display: none;
@@ -1141,6 +1161,12 @@ img {
         z-index: 1000;
 
 }
+
+#ksquaretall {
+    display: none;
+        z-index: 100;
+}
+
 
 #pipes1,
 #pipes1fixed {
@@ -2088,20 +2114,40 @@ img {
                 <img src="chasmrope.png" alt="rope" usemap="#chasmmap" class="room" id="chasmrope"> <!--This doesn't need to be here does it?-->
               </div>
 
-            <div id="squareLiftRoom" usemap="#roommap"> 
-                <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
-                <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
-                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+            <div id="squareLiftRoom" usemap="#liftmap"> 
+                <img src="southdoor.png" alt="door" usemap="#liftmapsquare" class="room" id="southdoor">
+                <img src="northdoor.png" alt="door" usemap="#liftmapsquare" class="room" id="northdoor">
+                <img src="eastdoor.png" alt="door" usemap="#liftmapsquare" class="room" id="eastdoor">
+                <img src="westdoor.png" alt="door" usemap="#liftmapsquare" class="room" id="westdoor"> 
+                <img src="platformsquare.png" alt="platform" usemap="#liftmapsquare" class="room" id="platformsquare"> 
+                <img src="platformsquareup.png" alt="platform" usemap="#liftmapsquare" class="room" id="platformsquareup"> 
+                <img src="platformsquaredown.png" alt="platform" usemap="#liftmapsquare" class="room" id="platformsquaredown"> 
+                <img src="buttons.png" alt="buttons" usemap="#liftmapsquare" class="room" id="buttons">
+                <img src="people/bridgetbuttons.png" alt="bridget" usemap="#liftmapsquare" class="room" id="bbuttons">
+                <img src="people/kodalylift.png" alt="kodaly" usemap="#liftmapsquare" class="room" id="ksquarenute">
+                <img src="people/kodalyhigher.png" alt="kodaly" usemap="#liftmapsquare" class="room" id="ksquaretall">
+                <img src="people/kodalylower.png" alt="kodaly" usemap="#liftmapsquare" class="room" id="klower">
             </div>
 
-            <div id="circleLiftRoom" usemap="#roommap"> 
-                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
+            <div id="circleLiftRoom" usemap="#liftmap"> 
+                <img src="eastdoor.png" alt="door" usemap="#liftmap" class="room" id="eastdoor">
+                <img src="platform.png" alt="platform" usemap="#liftmap" class="room" id="platformcircle"> 
+                <img src="platformup.png" alt="platform" usemap="#liftmap" class="room" id="platformcircleup"> 
+                <img src="platformdown.png" alt="platform" usemap="#liftmap" class="room" id="platformcircledown"> 
+                <img src="buttons.png" alt="buttons" usemap="#liftmap" class="room" id="buttons">
+                <img src="people/bridgetbuttons.png" alt="bridget" usemap="#liftmap" class="room" id="bbuttons">
+                <img src="people/kodalyliftalt.png" alt="kodaly" usemap="#liftmap" class="room" id="kliftalt">
             </div>
 
-            <div id="triangleLiftRoom" usemap="#roommap"> 
-                <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-                <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+            <div id="triangleLiftRoom" usemap="#liftmap"> 
+                <img src="eastdoor.png" alt="door" usemap="#liftmap" class="room" id="eastdoor">
+                <img src="westdoor.png" alt="door" usemap="#liftmap" class="room" id="westdoor"> 
+                 <img src="platformtriangle.png" alt="platform" usemap="#liftmap" class="room" id="platformtriangle"> 
+                <img src="platformtriangleup.png" alt="platform" usemap="#liftmap" class="room" id="platformtriangleup"> 
+                <img src="platformtriangledown.png" alt="platform" usemap="#liftmap" class="room" id="platformtriangledown"> 
+                <img src="buttons.png" alt="buttons" usemap="#liftmap" class="room" id="buttons">
+                <img src="people/bridgetbuttons.png" alt="bridget" usemap="#liftmap" class="room" id="bbuttons">
+                <img src="people/kodalyliftalt.png" alt="kodaly" usemap="#liftmap" class="room" id="kliftalt">
             </div>
 
             <div id="twistHandleRoom" usemap="#roommap"> 
@@ -2284,6 +2330,19 @@ img {
         <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
         <area shape="circle" coords="368,454,60" alt="SW object" class="pointer" onclick="pickSW()">
         <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+    </map>
+
+     <map name="liftmapsquare"> <!--Lift room. Buttons: left:up, right:down-->
+        <area shape="rect" coords="1035,163,1093,213" alt="left button" class="pointer" onclick="leftButton()">
+        <area shape="rect" coords="1120,184,1176,238" alt="right button" class="pointer" onclick="rightButton()">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" onclick="showInv()">    
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="880,21,991,121" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+        <area shape="circle" coords="519,542,144" alt="southern door" class="pointer" onclick="goSouth()">
     </map>
 
     <map name="alcovemap"> <!--Five candle alcoves-->
@@ -2523,6 +2582,7 @@ img {
 <audio id="travel2"><source src="sound/travel2.mp3" type="audio/mpeg"></audio>
 <audio id="travel3"><source src="sound/travel3.mp3" type="audio/mpeg"></audio>
 <audio id="travel4"><source src="sound/travel4.mp3" type="audio/mpeg"></audio>
+<audio id="chandelierfall"><source src="sound/chandelierfall.wav" type="audio/mpeg"></audio>
 <audio id="paper"><source src="sound/paper.m4a" type="audio/mpeg"></audio>
 <audio id="pageturn1"><source src="sound/pageturn1.mp3" type="audio/mpeg"></audio>
 <audio id="pageturn2"><source src="sound/pageturn2.mp3" type="audio/mpeg"></audio>
@@ -2554,7 +2614,6 @@ img {
 <audio id="string7"><source src="sound/string7.mp3" type="audio/mpeg"></audio>
 <audio id="string8"><source src="sound/string8.mp3" type="audio/mpeg"></audio>
 <audio id="stmigo"><source src="sound/stmigo.mp3" type="audio/mpeg"></audio>
-<audio id="stmiglitchsound"><source src="sound/stmiglitch.mp3" type="audio/mpeg"></audio>
 <audio id="fishSong"><source src="sound/fishsong.mp3" type="audio/mpeg"></audio>
 <audio id="tinkering"><source src="sound/wrench.mp3" type="audio/mpeg"></audio>
 <audio id="keypick"><source src="sound/key.mp3" type="audio/mpeg"></audio>
@@ -2567,7 +2626,6 @@ img {
 <audio id="lockClick3"><source src="sound/lockclick3.mp3" type="audio/mpeg"></audio> 
 <audio id="lockClick4"><source src="sound/lockclick4.mp3" type="audio/mpeg"></audio>
 <audio id="switchclick"><source src="sound/switch.mp3" type="audio/mpeg"></audio>
-<audio id="switchclick2"><source src="sound/switch2.mp3" type="audio/mpeg"></audio>
 <audio id="stmion"><source src="sound/stmion.mp3" type="audio/mpeg"></audio>
 <audio id="pillarstonergind"><source src="sound/pillarstonergind.mp3" type="audio/mpeg"></audio> <!--add sound here; long duration distant stone grinding-->
 
@@ -3380,7 +3438,7 @@ img {
         <p id="zzu15">We would get all wet.</p>
         
         <p id="zzu16">Let's see if we can find some oars or something we can use as a paddle. If we can't find anything, we can always wade to the other side.</p>
-        
+
         <!--//Mark unincorporated dialogue-->
 
         <!--First pipe-->
@@ -3393,14 +3451,12 @@ img {
         <p id="zzw1">Kodaly.</p>
         <p id="zzw2">Yes, Bridget?</p>
         <p id="zzw3">I <i>shall</i> have that teddy bear.</p>
-        <p id="zzw4">Well, of course.</p>
+        <p id="zzw4">Obviously!</p>
 
-
-        <!--//Mark unincorporated dialogue-->
         <p id="zzy1">It's a Y-pipe!</p>
         <p id="zzy2">A what pipe?</p>
         <p id="zzy3">A Y-pipe.</p>
-        <p id="zzy4">What's a "why" pipe?</p>
+        <p id="zzy4">What's a why pipe?</p>
         <p id="zzy5">A pipe in the shape of a Y.</p>
         <p id="zzy6">Which shape?</p>
         <p id="zzy7">A Y-shape.</p>
@@ -3410,11 +3466,23 @@ img {
         <p id="zzy11">Why?</p>
         <p id="zzy12">...</p>
         <p id="zzy13">Wh...</p>
-        <p id="zzy14">I'm just fucking with you, I know what a Y-pipe is.</p>
-        <p id="zzy15">Oh thank god.</p>
+        <p id="zzy14">Whai. pa</p>
+        <p id="zzy15">Pi...!</p>
+        <p id="zzy16">Puh...</p>
+        <p id="zzy17">I'm just fucking with you, I know what a Y-pipe is.</p>
+        <p id="zzy18">Oh thank god.</p>
 
 
-
+        <p id="zzz1">You know, you don't have to stand on the platform.</p>
+        <p id="zzz2">You could come over by the buttons.</p>
+        <p id="zzz3">And...</p>
+        <p id="zzz4">Cautiously observe the mechanisms of the labyrinth with me.</p>
+        <p id="zzz5">We don't know if it's necessary to the</p>
+        <p id="zzz6">Bridget!!!</p>
+        <p id="zzz7">...?</p>
+        <p id="zzz8">Move me up and down!!!</p>
+        
+        <p id="zzza1">YES!!!</p>
 
 <!--
    <p id="zzr21">Did you really mean what you said back there—that you're not sure whether we have free will?</p>
@@ -3445,12 +3513,10 @@ img {
 
 <script>
     //audio
-    var kHigher = document.getElementById("khigher");
-    var kLift = document.getElementById("klift");
     var bButtons = document.getElementById("bbuttons");
     var diagram = document.getElementById("diagram");
     //lift bottom
-    var kLiftBottom = document.getElementById("kodalyliftbottom");
+    var kliftBottom = document.getElementById("kodalyliftbottom");
     //guest book
     var frontMatter = document.getElementById("book");
     var bookBody = document.getElementById("bookbody");
@@ -6632,7 +6698,7 @@ function switchSwitchA(){
         curtainsclosed.style.display = "block";
         curtainsopen.style.display = "none";
         switcha.ison = false;
-        switchclick2.play();
+        switchclick.play();
         document.cookie = "switchAIsOff=switchAIsOff";
         document.cookie = "switchAIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     }
@@ -6650,7 +6716,7 @@ function switchSwitchB() {
         switchBon.style.display = "none";
         switchBoff.style.display = "block";
         switchb.ison = false;
-        switchclick2.play();
+        switchclick.play();
         document.cookie = "switchBIsOff=switchBIsOff";
         document.cookie = "switchBIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     }
@@ -6801,7 +6867,7 @@ document.addEventListener("keydown", function() {
                   notif4.style.display = "none";
                   notifnoise.play();
                   document.cookie = "open=open;";
-                  //document.cookie = "lobbyThree=lobbyThree"; //jump to chapter three delete when done testing
+                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }
@@ -7572,7 +7638,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 });
 } else if (dialogue.longTimeNoSee) {
-stmigo.play();
+    stmigo.play();
         zv1.style.display = "block";
         st3.style.display = "block"; //hey guys, long time no see!
        dialogue.longTimeNoSee = 1;
@@ -9483,16 +9549,107 @@ const lifthas = {
     returned: false,
 }
 
+const circlelift = {
+    down: false,
+    none: true,
+    up: false,
+}
+
+const squarelift = {
+    down: false,
+    none: true,
+    up: false,
+}
+
+const trianglelift = {
+    down: false,
+    none: true,
+    up: false,
+}
+
+
 function leftButton() {
-    kHigher.style.display = "block";
-    kLift.style.display = "none";
-    platformup.style.display = "block";
-    platform.style.display = "none";
-    if (!lifthas.currentlyUp) {
+ if (current.room === "circleLiftRoom") {
+    if (circlelift.none) {
+        circlelift.up = true;
+        circlelift.none = false;
+        circlelift.down = false;
+        platformcircleup.style.display = "block";
+        platformcircle.style.display = "none";
         stonesound.play();
+        } if (circlelift.down) {
+        circlelift.none = true;
+        circlelift.down = false;
+        circlelift.up = false;
+        platformcircle.style.display = "block";
+        platformcircledown.style.display = "none";
+        stonesound.play();
+        }
+    } else if (current.room === "squareLiftRoom"){
+    if (squarelift.none) {
+        squarelift.up = true;
+        squarelift.none = false;
+        squarelift.down = false;
+        platformsquareup.style.display = "block";
+        platformsquare.style.display = "none";
+        platformsquaredown.style.display = "none";
+        ksquaretall.style.display = "block";
+        klower.style.display = "none";
+        ksquarenute.style.display = "none";
+        stonesound.play();
+        if (squarehas.gonedown && !squarehas.departed && dialogue.donthavetostandthere && !squarehas.yes) {
+            //YES!!!
+                zzza1.style.display = "block";
+                ksta.style.display = "block";
+                dialogue.donthaveto2 = 1;
+                document.addEventListener("keydown", function() {
+            if (event.key === 'Enter' || event.key === ' ') {
+                if (dialogue.donthaveto2 === 1) {
+                zzza1.style.display = "none";
+                ksta.style.display = "none";
+                squarehas.yes = true;
+                }}}) }
+        if (!dialogue.donthavetostandthere){
+            youdonthavetostandthere();
+        }
+        } else if (squarelift.down) {
+        squarelift.none = true;
+        squarelift.down = false;
+        squarelift.up = false;
+        platformsquare.style.display = "block";
+        platformsquareup.style.display = "none";
+        platformsquaredown.style.display = "none";
+        klower.style.display = "none";
+        ksquarenute.style.display = "block";
+        ksquaretall.style.display = "none";
+        stonesound.play();
+        }
+    } else if (current.room === "triangleLiftRoom"){
+    if (trianglelift.none) {
+        trianglelift.up = true;
+        trianglelift.none = false;
+        platformtriangleup.style.display = "block";
+        platformtriangle.style.display = "none";
+        stonesound.play();
+        } else if (trianglelift.down) {
+        trianglelift.none = true;
+        trianglelift.down = false;
+        platformtriangle.style.display = "block";
+        platformtriangledown.style.display = "none";
+        stonesound.play();
+        }
     }
-    lifthas.currentlyUp = true;
-    if (!lifthas.goneDown && !lifthas.goneUp){
+
+    if (current.room === "lift") {
+        platformup.style.display = "block";
+        platform.style.display = "none";
+        khigher.style.display = "block";
+        klift.style.display = "none";
+        lifthas.currentlyUp = true;
+        if (!lifthas.currentlyUp) {
+        stonesound.play();
+        } 
+        if (!lifthas.goneDown && !lifthas.goneUp){
         c1.style.display = "block";
        ksta.style.display = "block";
        dialogue.liftingUp = 1;
@@ -9563,23 +9720,82 @@ function leftButton() {
      }
   }
 }); 
-   
+}
     }
+
 }
 
 
+
 function rightButton() {
-    stonesound.play();
+if (current.room === "circleLiftRoom"){
+    if (circlelift.none) {
+        circlelift.down = true;
+        circlelift.none = false;
+        circlelift.up = false;
+        platformcircledown.style.display = "block";
+        platformcircle.style.display = "none";
+        stonesound.play();
+        } else if (circlelift.up) {
+        circlelift.none = true;
+        circlelift.down = false;
+        circlelift.up = false;
+        platformcircle.style.display = "block";
+        platformcircleup.style.display = "none";
+        stonesound.play();
+        }
+    } else if (current.room === "squareLiftRoom"){
+    if (squarelift.none) {
+        squarelift.down = true;
+        squarelift.none = false;
+        squarelift.up = false;
+        platformsquaredown.style.display = "block";
+        platformsquare.style.display = "none";
+        klower.style.display = "block";
+        ksquarenute.style.display = "none";
+        ksquaretall.style.display = "none";
+        stonesound.play();
+        squarehas.gonedown = true;
+         if (!dialogue.donthavetostandthere){
+            youdonthavetostandthere();
+        }
+        } else if (squarelift.up) {
+        squarelift.none = true;
+        squarelift.up = false;
+        squarelift.down = false;
+        platformsquare.style.display = "block";
+        platformsquareup.style.display = "none";
+        ksquaretall.style.display = "none";
+        klower.style.display = "none";
+        ksquarenute.style.display = "block";
+        stonesound.play();
+        }
+    } else if (current.room === "triangleLiftRoom"){
+    if (trianglelift.none) {
+        trianglelift.down = true;
+        trianglelift.none = false;
+        platformtriangledown.style.display = "block";
+        platformtriangle.style.display = "none";
+        stonesound.play();
+        } else if (trianglelift.up) {
+        trianglelift.none = true;
+        trianglelift.up = false;
+        platformtriangle.style.display = "block";
+        platformtriangleup.style.display = "none";
+        stonesound.play();
+        }
+    } else if (current.room === "lift") {
+        if (!lifthas.currentlyUp && !dialogue.whoopsTooFast) {
+        stonesound.play();
     if (lifthas.currentlyUp) {
-        kHigher.style.display = "none";
-        kLift.style.display = "block";
+        khigher.style.display = "none";
+        console.log("boo");
+        klift.style.display = "block";
         platformup.style.display = "none";
         platform.style.display = "block";
         lifthas.currentlyUp = false;
+        stonesound.play();
     }
-    else if (!lifthas.currentlyUp && !dialogue.whoopsTooFast) {
-        
-        click1Audio.play();
         lift.style.display = "none";
         liftBottom.style.display = "block";
         current.room = "liftbottom";
@@ -9642,13 +9858,7 @@ function rightButton() {
             return;
         }
         }});
-    } else {
-        upArrow.style.display = "block";
-        dialogue.whoopsTooFast = true;
-        lifthas.currentlyUp = false;
-    }
-        
-    } else if (!lifthas.currentlyUp) {
+    } } else if (!lifthas.currentlyUp) {
         lift.style.display = "none";
         liftBottom.style.display = "block";
         current.room = "liftbottom";
@@ -9656,9 +9866,21 @@ function rightButton() {
         lifthas.goneDown = true;
         upArrow.style.display = "block";
         lifthas.currentlyUp = false;
+    } else {
+        upArrow.style.display = "block";
+        dialogue.whoopsTooFast = true;
+        lifthas.currentlyUp = false;
     }
 }
-function raiseLift() { 
+}
+
+const squarehas = {
+    gonedown: false,
+    departed: false,
+    yes: false,
+}
+
+function raiseLift() { //the arrow button
     if (!lifthas.returned) {
         hoistingYou();
     } else {
@@ -9669,8 +9891,8 @@ function raiseLift() {
         baseroom.style.display = "block";
         upArrow.style.display = "none";
         lifthas.goneDown = true;
-        kHigher.style.display = "none";
-        kLift.style.display = "block";
+        khigher.style.display = "none";
+        klift.style.display = "block";
         platformup.style.display = "none";
         platform.style.display = "block";
         lifthas.currentlyUp = false;
@@ -9701,8 +9923,8 @@ function hoistingYou() {
         upArrow.style.display = "none";
         lifthas.goneDown = true;
         lifthas.returned = true;
-        kHigher.style.display = "none";
-        kLift.style.display = "block";
+        khigher.style.display = "none";
+        klift.style.display = "block";
         platformup.style.display = "none";
         platform.style.display = "block";
         lifthas.currentlyUp = false;
@@ -10016,7 +10238,11 @@ function goSouth() {
                 randomDoorAudio();
                 twistHandleRoom.style.display = "none";
                 squareLiftRoom.style.display = "block";
-                current.room = "squareLiftRoom";             
+                current.room = "squareLiftRoom";  
+                if (dialogue.donthavetostandthere) {
+                squarehas.departed = true;
+                }
+                explorers.style.display = "none";           
         } else if (current.room === "squareLiftRoom"){
                 randomDoorAudio();
                 squareLiftRoom.style.display = "none";
@@ -10347,12 +10573,17 @@ function goEast() {
                 randomDoorAudio();
                 circleLiftRoom.style.display = "none";
                 squareLiftRoom.style.display = "block";
-                current.room = "squareLiftRoom";             
+                current.room = "squareLiftRoom";  
+                if (dialogue.donthavetostandthere) {
+                squarehas.departed = true;
+                }
+                 explorers.style.display = "none";           
         } else if (current.room === "squareLiftRoom"){
                 randomDoorAudio();
                 squareLiftRoom.style.display = "none";
                 triangleLiftRoom.style.display = "block";
-                current.room = "triangleLiftRoom";             
+                current.room = "triangleLiftRoom";     
+                 explorers.style.display = "none";        
         }  else if (current.room === "lakeShoreEast"){
                  if (!inventory.slot1) {
             if (inventory.slot1 !== "squiggle pipe"
@@ -10393,7 +10624,8 @@ function goEast() {
                 randomDoorAudio();
                 triangleLiftRoom.style.display = "none";
                 oarsRoom.style.display = "block";
-                current.room = "oarsRoom";             
+                current.room = "oarsRoom";  
+                explorers.style.display = "block";           
         } else if (current.room === "lobbyThree"){
                 randomDoorAudio();
                 lobbyThree.style.display = "none";
@@ -10744,7 +10976,8 @@ function goWest() {
                 randomDoorAudio();
                 oarsRoom.style.display = "none";
                 triangleLiftRoom.style.display = "block";
-                current.room = "triangleLiftRoom";             
+                current.room = "triangleLiftRoom"; 
+                explorers.style.display = "none";            
         } else if (current.room === "triangleLiftRoom"){
                 randomDoorAudio();
                 triangleLiftRoom.style.display = "none";
@@ -10753,6 +10986,9 @@ function goWest() {
         } else if (current.room === "squareLiftRoom"){
                 randomDoorAudio();
                 squareLiftRoom.style.display = "none";
+                if (dialogue.donthavetostandthere) {
+                squarehas.departed = true;
+                }
                 circleLiftRoom.style.display = "block";
                 current.room = "circleLiftRoom";             
         } else if (current.room === "lakeShoreEast"){
@@ -11197,12 +11433,17 @@ function goNorth() {
         } else if (current.room === "squareLiftRoom"){
                 randomDoorAudio();
                 squareLiftRoom.style.display = "none";
+                if (dialogue.donthavetostandthere) {
+                squarehas.departed = true;
+                }
                 twistHandleRoom.style.display = "block";
+                explorers.style.display = "block";
                 current.room = "twistHandleRoom";             
         } else if (current.room === "chasm2"){
                 randomDoorAudio();
                 chasm2.style.display = "none";
                 squareLiftRoom.style.display = "block";
+                explorers.style.display = "none";
                 current.room = "squareLiftRoom";             
         } else if (current.room === "pipesLobby"){
                 randomDoorAudio();
@@ -11532,6 +11773,69 @@ document.addEventListener("keydown", function() {
      } 
    }});}
    }
+
+
+function youdonthavetostandthere() { //zzz1-7
+       zzz1.style.display = "block";
+       b.style.display = "block";
+       dialogue.donthaveto = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.donthaveto === 1) {
+       zzz1.style.display = "none";
+       zzz2.style.display = "block";
+       b.style.display = "block";
+       dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 2) {
+       zzz2.style.display = "none";
+       zzz3.style.display = "block";
+        b.style.display = "block";
+         dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 3) {
+       zzz3.style.display = "none";
+       zzz4.style.display = "block";
+       b.style.display = "block";
+         dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 4) {
+       zzz4.style.display = "none";
+       zzz5.style.display = "block";
+       b.style.display = "block";
+       dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 5) {
+       zzz5.style.display = "none";
+       zzz6.style.display = "block";
+        ksta.style.display = "block";
+        b.style.display = "none";
+       dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 6) {
+       zzz6.style.display = "none";
+       zzz7.style.display = "block";
+         ksta.style.display = "none";
+        b.style.display = "block";
+         dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 7) {
+        zzz7.style.display = "none";
+       zzz8.style.display = "block";
+       ksta.style.display = "block";
+        b.style.display = "none";
+        dialogue.donthaveto++;
+         return;
+     } else if (dialogue.donthaveto === 8) {
+       zzz8.style.display = "none";
+       ksta.style.display = "none";
+       dialogue.donthavetostandthere = true;
+         return;
+     }
+    }})};
+
+
+
 
 function goodWorkTeam() {
     if (!dialogue.goodWork) {
@@ -15515,7 +15819,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     candleLeer.isOnTheGround = true;
     dialogue.applySwordToRope = false;
     document.cookie = "chandelierCut=chandelierCut";
-    click1Audio.play();
+    chandelierfall.play();
         return;
     }
 }});

@@ -24,9 +24,9 @@ portholeview gif
 Stymiedemonstration
 Stymiedemonstration2
 shuri sprite and portrait
-ferns
 table with food
 new map
+notepad not transparent and add text in js not in png file
 
 ONLY VISIBLE IN OTHER BROWSERS:
 make sure font family is not impact (try importing garamond, as seen in a-to-z)
@@ -57,6 +57,7 @@ hit "enter" to enter code for chest, etc
 add subtle glitch sound for stymie's first glitchy card
 disable arrow travel (and others i, n,)
 powerline and switches are not appearing on web 
+add pagesounds for going back a page in the guestbook. only works going forwards
 */
 
 
@@ -2582,6 +2583,8 @@ img {
 <audio id="travel2"><source src="sound/travel2.mp3" type="audio/mpeg"></audio>
 <audio id="travel3"><source src="sound/travel3.mp3" type="audio/mpeg"></audio>
 <audio id="travel4"><source src="sound/travel4.mp3" type="audio/mpeg"></audio>
+<audio id="buttonclick3"><source src="sound/buttonclick3.mp3" type="audio/mpeg"></audio>
+<audio id="buttonclick4"><source src="sound/buttonclick4.mp3" type="audio/mpeg"></audio>
 <audio id="chandelierfall"><source src="sound/chandelierfall.wav" type="audio/mpeg"></audio>
 <audio id="paper"><source src="sound/paper.m4a" type="audio/mpeg"></audio>
 <audio id="pageturn1"><source src="sound/pageturn1.mp3" type="audio/mpeg"></audio>
@@ -3649,14 +3652,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         else if (e.key == '8' && current.room === "pond") {
         note8();}
         //arrow keys for directional travel
-        else if (e.key == 'ArrowLeft') {
-        goWest();}
-        else if (e.key == 'ArrowUp') {
-        goNorth();}
-        else if (e.key == 'ArrowRight') {
-        goEast();}
-        else if (e.key == 'ArrowDown') {
-        goSouth();}
+        if (!dialogue.blockArrowTravel) {
+            if (e.key == 'ArrowLeft') {
+            goWest();}
+            else if (e.key == 'ArrowUp') {
+            goNorth();}
+            else if (e.key == 'ArrowRight') {
+            goEast();}
+            else if (e.key == 'ArrowDown') {
+            goSouth();}
+        }
     }
 
     penser.play(); 
@@ -3896,23 +3901,29 @@ if (cookiesHas('longtime')) {
 function pullUpTrueRestartMenu() { 
     //are you sure you want to restart?
     truerestart.style.display = "block";
+    buttonclick3.play();
 }
 function hideTrueRestart() {
     truerestart.style.display = "none";
+    buttonclick4.play();
 }
 
 function deleteCookies() { //reload and refresh entirely
-    document.cookie.split(';').forEach(cookie => {
-    const eqPos = cookie.indexOf('=');
-    const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';});
-    location.reload()
+    buttonclick4.play();
+    setTimeout(function() {
+        document.cookie.split(';').forEach(cookie => {
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';});
+        location.reload();
+    }, 500);
+  
 }
-function cookiesHas(value) { //check for a sword, key, or played dialogue thread e.g.
+function cookiesHas(value) { //check for a sword, key, or played dialogue thread e.g. and destroy it
     let cookies = document.cookie.split(';');
-    return cookies.some(cookie => cookie.trim().split('=')[1] === value);}
+    return cookies.some(cookie => cookie.trim().split('=')[1] === value);
+}
 
-//inventory
 const inventory = {
         slot1: false,
         slot2: false,
@@ -3920,6 +3931,7 @@ const inventory = {
         slot4: false,
         isOpen: false,
     }
+
 function showInv() {
         inv.style.display = "block";
         if (inventory.slot1) {item1.style.display = "block"; item1.innerText = inventory.slot1;}
@@ -3947,6 +3959,7 @@ function hideInv() {
             vier: true,
             fumph: true,
         }
+
 function paperflipsound() {
     if (papery.unpapered) {
         paper.play();
@@ -4100,11 +4113,9 @@ function notepadMusic2(){
     notepadm2.style.display = "block";
     notepadi.style.display = "none";
     notepadmusic.isopen = false;
-    } else {
-        alert("hi");
     }
 }
-//add more for instructions etc. 
+//add more for instructions, verily etc. 
 
 //prevent spacebar scrolling
 window.addEventListener('keydown', function(e) {
@@ -4634,7 +4645,6 @@ function hideDiagram() {
 function showDiagram() {
     diagram.style.display = "block";
 }
-
 
 function dropVioletCandle() {
     if (inventory.slot1 === "violet candles") {
@@ -12813,6 +12823,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 }
 function deeperInWeGo() {
     if (!dialogue.deeperIn) {
+        dialogue.blockArrowTravel = true;
     zf1.style.display = "block";
       k.style.display = "block";
       dialogue.deeperIn = 1;
@@ -12864,6 +12875,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         chasmexplorers.style.display = "none";
         hallway.style.display = "block";
         dialogue.deeperIn = true;
+        dialogue.blockArrowTravel = false;
         return;
     }
 }});} else {

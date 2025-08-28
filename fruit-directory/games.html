@@ -41,43 +41,12 @@
       text-align: center;
       background-color: rgb(255, 255, 255);
       z-index: 2;
-      transform: translate(0%, -9%);}
+      transform: translate(0%, -12%);}
 
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Three columns with equal width */
-  grid-gap: 30px; /* Adjust this value to add spacing between images 
-  
-  
-  old style:
-
-
-
-
-            <p><a class="linky"  href="https://fruit-circus.github.io/fruit_wizard.html">Fruit Wizard</a><br><br>
-  A story about fruit and bones.<br><br><br><br>
-
-  <a class="linky"  href="https://fruit-circus.github.io/objects-in-a-room.html">Objects in a Room</a><br>
-  <p>Puzzle out your identity with the things in your room.<br>(Incredibly difficult)<br><br><br><br>
-
-  <a class="linky"  href="https://fruit-circus.github.io/connections.html">Connections</a><br>
-  <p>An episodic word puzzle.<br><br><br><br>
-
-  <a class="linky"  href="music-history.html">Early Western Music History: The Board Game</a><br>
-  <p>Materials for a physical board game.<br><br><br><br>
-
-    <p>Charting the Catchment<br>
-  <p>A pencil and paper delving game.<br><br>
-  <a class="linky"  href="Charting the Catchment.pdf">Read online</a> &nbsp; <a class="linky"  href="Charting the Catchment.pdf" download>Pdf Download</a><br><br><br><br><br>
-
-   <a class="linky"  href="https://fruit-circus.github.io/mazy.html">Mazy Li: Escape from the Technotorium</a><br>
-   <p>From Objects in a Room, a multiple choice story about a space cadet saving the world.<br><br><br><br>
-   
-   <a class="linky"  href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">The Infinite Labyrinth</a><br>
-   <p>Bridget and Kodaly arrive in the infinite labyrinth.<br><br>
-
-
-
+  grid-gap: 50px; /* Adjust this value to add spacing between images 
   
   
   
@@ -91,10 +60,11 @@
 }
 
 .colimg {
-    width: 67vh;
-    height: 43vh;
-  padding: 20px;
+    width: 62vh;
+    height: 37vh;
+  padding: 0px;
   border-radius: 10%;
+  border: 2px solid black;
 }
 
 #baby,
@@ -105,6 +75,19 @@
 #w,
 #v {
     display: none;
+    margin-left: 29px;
+}
+
+
+#goodord,
+#grimp,
+#zam,
+#glunk,
+#yam,
+#xang,
+#wee {
+  display: block;
+  margin-left: 29px;
 }
 
 
@@ -112,12 +95,15 @@
 <head>
   <title>Fruit Circus</title>
   <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
+   <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
   <body>
+
       <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
 
-      <h1 style=" font-family: 'Trebuchet MS', sans-serif;
+      <h1 style=" font-family: 'Monaco';
       display: flex;
       justify-content: center;
+      margin-left: -3px;
       align-items: center; font-size: 40px;">Games</h1><br><br>
      
 
@@ -139,21 +125,23 @@
                 <img class="colimg" src="con.gif" id="jumb" onmouseout="unexchang()" alt=""> </a>
                 <p>CONNECTIONS</p>
 
-             
+                  
+            <a href="https://fruit-circus.github.io/objects-in-a-room.html">
+            <img class="colimg" src="300p.png" id="zam" onmouseover="excha()" alt="">
+            <img class="colimg" src="objects.gif" id="y" onmouseout="unexcha()" alt=""> </a>
+            <p>OBJECTS IN A ROOM</p>
 
-                    <a href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">
-                        <img class="colimg" src="600.png" id="glunk" onmouseover="exchan()" alt=""> 
-                        <img class="colimg" src="laby.gif" id="z" onmouseout="unexchan()" alt=""> </a>
-                    <p>THE INFINITE LABYRINTH</p>
+                   
     
            </div>
 
           <div class="column">
-                
-            <a href="https://fruit-circus.github.io/objects-in-a-room.html">
-            <img class="colimg" src="201.png" id="zam" onmouseover="excha()" alt="">
-            <img class="colimg" src="objects.gif" id="y" onmouseout="unexcha()" alt=""> </a>
-            <p>OBJECTS IN A ROOM</p>
+           
+
+             <a href="https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html">
+                        <img class="colimg" src="201b.png" id="glunk" onmouseover="exchan()" alt=""> 
+                        <img class="colimg" src="laby.gif" id="z" onmouseout="unexchan()" alt=""> </a>
+                    <p>BRIDGET AND KODALY EXPLORE THE LABYRINTH</p>
            
             <a href="https://fruit-circus.github.io/mazy.html">
                 <img class="colimg" src="501.png" id="yam" onmouseover="exch()" alt="">
@@ -175,7 +163,8 @@
 
         <a href="kafwako">
             <img class="colimg" id="wee" onmouseover="ex()" src="200.png" alt=""> 
-            <img class="colimg" id="v" onmouseout="unex()" src="200b.png" alt=""></a>
+            <img class="colimg" id="v" onmouseout="unex()" src="200b.png" alt="">
+        </a>
             <p>CHARTING THE CATCHMENT</p>
 
             </div>

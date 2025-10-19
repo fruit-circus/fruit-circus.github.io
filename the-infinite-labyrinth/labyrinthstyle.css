@@ -1,0 +1,1801 @@
+
+body {
+    background-color: rgb(242,241,223);
+    margin: 0px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.room{
+    position: absolute;
+    /*transform: translate(25%, 25%); try to center all the images. don't forget dialogue also*/
+
+}
+
+#butt{
+    z-index: 5;
+    position: absolute;
+    transform: translate(50px, 0px);
+    margin: 10px;
+    border: 2.5px transparent;
+    background-color: transparent;
+    height: 49px;
+    width: 160px;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+#butthome {
+    z-index: 5;
+    margin: 10px;
+    position: absolute;
+    border: 1px transparent;
+    background-color: transparent;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+}
+
+/*for objects that overlap kodaly's hat*/
+#sword,
+#redkey,
+#limekey,
+#violetkey,
+#pipes3,
+#keys6nw,
+#keys11nw,
+#keys20nw,
+#keys22nw,
+#keys22ne,
+#keys21ne,
+#keys20ne,
+#pipes2
+{
+    z-index: -1;
+}
+
+#kmap1,
+#kmap2,
+#helpfulmap,
+#helpfulpipemap {
+    z-index: 10;
+display: none;
+}
+
+#sourcepipe2 {
+     z-index: -1;
+}
+
+#klift{
+    z-index: 2;
+}
+#platformup {
+    display: none;
+        z-index: -2;
+}
+
+
+#greencandle,
+#emptychest {
+    display: none;
+}
+
+.lockNumber {
+    font-size: 40px;
+}
+
+
+#lock1, #pLock1 {
+    transform: translate(345px, 255px);
+    position: absolute;
+    user-select: none;
+
+}
+#lock2, #pLock2 {
+    transform: translate(595px, 255px);
+    position: absolute;
+    user-select: none;
+}
+#lock3, #pLock3 {
+    transform: translate(850px, 255px);
+    position: absolute;
+    user-select: none;
+}
+#lock4, #pLock4 {
+    transform: translate(1100px, 255px);
+    position: absolute;
+    user-select: none;
+}
+
+img {  
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+
+.dialogue{
+    display: none;
+    position: absolute;
+}
+
+#kodaly {
+    display: block;
+    z-index: 11;
+}
+
+
+#bridget {
+    display: none;
+    z-index: 11;
+}
+
+
+.dialogueText {
+    position: absolute;
+    transform: translate(375px, 516px);
+    max-width: 900px;
+    height: 100px;
+    font-size: 25px;
+    z-index: 100;
+}
+
+#notebookTextKodaly,
+#notebookTextBridget,
+#notebookTextStymie,
+#notebookTextStymie2,
+#notebookTextStymie3,
+#notebookTextShuri,
+#notebookTextVerily,
+#notebookTextMusic2,
+#notebookTextMusic,
+#notebookTextInfo {
+    position: absolute;
+    transform: translate(570px, 136px);
+    max-width: 900px;
+    height: 100px;
+    font-size: 24px;
+    z-index: 1000;
+    display: none;
+}
+
+.notebookFlex {
+    display: flex;
+    flex-direction: column;
+    width: 530px;
+    transform: translate(-135px, -10px);
+
+}
+
+.notebookFlex2 {
+    display: flex;
+    flex-direction: column;
+    width: 530px;
+    transform: translate(-135px, -120px);
+
+}
+
+
+
+#pressEnter {
+    position: absolute;
+    transform: translate(740px, 70px);
+    max-width: 1000px;
+    height: 150px;
+    font-size: 20px;
+    z-index: 101;
+    display: block;
+    font-family: fantasy, garamond, serif, 'Times New Roman', Times;
+}
+
+#diagram {
+    display: none;
+    z-index: 20;
+}
+
+/*Arcade css*/
+ .sprite {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-image: "floorarrows.png";
+    transition: left 0.3s ease-in-out, top 0.3s ease-in-out;
+    display: none;
+    cursor: pointer;
+    }
+
+    #arcadeGameContainer {
+        position: absolute;
+        transform: translate(530px,100px);
+        width: 350px;
+        height: 350px;
+        border: 1px solid black;
+        cursor: none;
+        background-color: rgb(60,60,60);
+        display: none;
+        z-index: 100;
+    }
+    
+    #timer {
+        transform: translate(645px,230px);
+        display: none;
+        font-size: 30px;
+        color: white;
+        font-family: system-ui;
+        z-index: 900;
+        position: absolute;
+        display: none;
+    }
+
+/*Adding a new room, stage three*/
+#sauna,
+#lake1,
+#lake2,
+#lake3,
+#lakesLobby,
+#orientationControl,
+#littleLakesLobbyEast,
+#paintingReferenceRoom,
+#binaryEast,
+#roseRoom,
+#colorControl,
+#littleLakesLobbyWest,
+#pillarControlLakes,
+#binaryWest,
+#flowerIsland,
+#blueSwitchRoom,
+#artMirrorRoom,
+#pillarDeadEnd,
+#switchTerminus,
+#redCircuit,
+#blueCircuit,
+#posterRoom,
+#lobbyThree,
+#sink,
+#pipesRun1,
+#pipesRun2,
+#pipesRun3,
+#source1,
+#source2,
+#source3,
+#source3red,
+#lakered,
+#boatroomred,
+#longPipeRoom,
+#pipesLobby,
+#chasm2,
+#circleLiftRoom,
+#squareLiftRoom,
+#triangleLiftRoom,
+#platformsquareup,
+#platformsquaredown,
+#platformtriangleup,
+#platformtriangledown,
+#twistHandleRoom,
+#oarsRoom,
+#boatRoom,
+#lake,
+#lakeShoreEast,
+#lakeShoreSouth,
+#stairsRoom,
+#platformsHintRoom,
+#arcadeRoom,
+#yPipeRoom,
+#gallery,
+#keys1,
+#keys2,
+#keys3,
+#keys4,
+#keys5,
+#keys6,
+#keys7,
+#handle4,
+#handle3t,
+#handle4t,
+#keys8,
+#keysLobby,
+#keys10,
+#keys11,
+#keys12,
+#keys13,
+#keys14,
+#keys15,
+#keys16,
+#keys17,
+#keys18,
+#keys19,
+#keys20,
+#keys21,
+#keys22,
+#keys23,
+#keys24,
+#keys25,
+#keys26,
+#keys27,
+#yya1,
+#yya2,
+#yya3,
+#yya4,
+#yya5,
+#yya6,
+#yya61,
+#yya62,
+#yya63,
+#yya64,
+#yya65,
+#yya66,
+#yya67,
+#yya68,
+#yya21,
+#yya22,
+#yya23,
+#yya24,
+#yya25,
+#yya26,
+#yya27,
+#yya28,
+#yya29,
+#yya210,
+#yya211,
+#yya212,
+#yya213,
+#yya214,
+#yya7,
+#yya8,
+#yya9,
+#yya10,
+#yya11,
+#yya12,
+#yya13,
+#yya14,
+#yya15,
+#yya16,
+#yya17,
+#yya18,
+#yya19,
+#yya20,
+#yya21,
+#yya22,
+#yya23,
+#yya24,
+#yya25,
+#yya26,
+#yya27,
+#yya28,
+#yya29,
+#yya30,
+#lift,
+#switch1on,
+#switch2on,
+#switch4on,
+#switch8on,
+#switch16on,
+#switch1onEast,
+#switch2onEast,
+#switch4onEast,
+#switch8onEast,
+#switch16onEast,
+#dias,
+#pond,
+#chasm,
+#switchAon,
+#switchBon,
+#lobbyTwo,
+#keysLiftBottom,
+#liftbottom,
+#combinationLock,
+#keysUpArrow,
+#alcovesUnlocked,
+#upArrow,
+#gardenNorth,
+#gardenEast,
+#gardenWest,
+#chandelierRoom,
+#library,
+#switchRoom,
+#portholeRoom,
+#curtainsopen,
+#lockboxRoom,
+#yyd1,
+#openlockbox,
+#colorLockCloseUp,
+#colorLockRoom,
+#orchidRoom,
+#kitchen,
+#fernRoom,
+#portholeInterior,
+#unnamedHallway,
+#displayRoom,
+#controlRoom,
+#zzv1,
+/*
+#noswap1,
+#noswap2,
+#noswap3,
+*/
+#pswap1,
+#pswap3,
+#sswap1,
+#sswap2,
+#sswap3,
+#bswap2,
+#bswap3, 
+#bswap1,
+#pswap2,
+#yye1,
+#burningbush,
+#greenswitchon,
+#keysPlatformUp,
+#khigherKeys,
+#yyf1,
+#bplatformhigher,
+#bplatform,
+#kbuttons,
+#yyg1,
+#yyg2,
+#yyh1,
+#yyi5,
+#yyi6,
+#yyi4,
+#yyi3,
+#yyi2,
+#yyi1,
+#yyj1,
+#yyj2,
+#yyj3,
+#yyj4,
+#yyj5,
+#yyj6,
+#yyj7,
+#yyj8,
+#yyj9,
+#yyj10,
+#yyj11,
+#yyk1,
+#yyk2,
+#yyk3,
+#yyk4,
+#yyk5,
+#yyk6,
+#yyk7,
+#yyk8,
+#yyk9,
+#yyk10,
+#yyk11,
+#yyk12,
+#yyk13,
+#yyk14,
+#yyk15,
+#yyk16,
+#yyk17,
+#yyk18,
+#yyk19,
+#yyk20,
+#yyl1,
+#yym1,
+#yyn1,
+#yyo1,
+#yyo2,
+#yyp1,
+#yyp2,
+#yyp3,
+#yyp4,
+#yyp5,
+#yyp6,
+#yyp7,
+#yyp8,
+#yyp9,
+#yyp10,
+#yyp11,
+#yyp12,
+#yyp13,
+#yyp14,
+#yyp15,
+#yyp16,
+#yyp17,
+#yyp18,
+#yyp19,
+#yyp20,
+#yyp21,
+#yyp22,
+#yyp23,
+#yyp24,
+#yyp25,
+#yyp26,
+#yyp27,
+#yyp28,
+#yyp29,
+#yyp30,
+#yyp31,
+#yyp32,
+#yyp33,
+#yyp34,
+#yyp35,
+#yyp36,
+#yyp37,
+#yyq1,
+#yyq2,
+#yyo3,
+#yyo4,
+#yyo5,
+#yyj12,
+#yyj13,
+#yyj14,
+#yyj15,
+#yyj16,
+#yyj17,
+#yyj18,
+#yyj19,
+#yyj20,
+#yye2,
+#yye3,
+#zzv2,
+#zzv3,
+#zzv4,
+#zzy1,
+#zzy2,
+#zzy3,
+#zzy4,
+#zzy5,
+#zzy6,
+#zzy7,
+#zzy8,
+#zzt0,
+#zzt2,
+#zzt3,
+#zzfit1,
+#source3handlet,
+#source3handle,
+#pillarRoom,
+#library,
+#boatwithoars,
+#hallway {
+    display: none;
+}
+
+#arcadeshell {
+    display: none;
+    z-index: 99;
+}
+
+#harp,
+#chest,
+#emptychest {
+    z-index: -1;
+}
+
+
+#red1,
+#red2,
+#red3,
+#red4,
+#blue1,
+#blue2,
+#blue3,
+#blue4,
+#green1,
+#green2,
+#green3,
+#green4,
+#teal1,
+#teal2,
+#teal3,
+#teal4,
+#orange1,
+#orange2,
+#orange3,
+#orange4,
+#grey1,
+#grey2,
+#grey3,
+#grey4,
+#pink1,
+#pink2,
+#pink3,
+#pink4 {
+    z-index: 50;
+    display: none;
+}
+
+/*#youreonmobile {
+     z-index: 50;
+    display: none;
+}*/
+
+#yellow1,
+#yellow2,
+#yellow3,
+#yellow4 {
+    z-index: 50;
+}
+
+/*Adding new dialogue*/
+#kcandle1,
+#ncandle1,
+#wcandle1,
+#rcandle1,
+#kcandle2,
+#ncandle2,
+#wcandle2,
+#rcandle2,
+#kcandle3,
+#ncandle3,
+#wcandle3,
+#rcandle3,
+#kcandle4,
+#ncandle4,
+#wcandle4,
+#rcandle4,
+#kcandle5,
+#ncandle5,
+#wcandle5,
+#rcandle5,
+#colordooropen,
+#n1,
+#n2,
+#n3,
+#o1,
+#o2,
+#o3,
+#q1,
+#q2,
+#q3,
+#q4,
+#r1,
+#s1,
+#t1,
+#u1,
+#u2,
+#v1,
+#v2,
+#v3,
+#v4,
+#ze1,
+#ze2,
+#ze3,
+#ze4,
+#zh10,
+#zh11,
+#v5,
+#v6,
+#v7,
+#p2,
+#p3,
+#p4,
+#p5,
+#p6,
+#p7,
+#p8,
+#p9,
+#p10,
+#p11,
+#p12,
+#p13,
+#p14,
+#f1,
+#f2,
+#f3,
+#f4,
+#f5,
+#f6,
+#f7,
+#f8,
+#f9,
+#f10,
+#j1,
+#j2,
+#j3,
+#j4,
+#zb1,
+#zb1a,
+#zb2,
+#zb3,
+#zb4,
+#j5,
+#j6,
+#j7,
+#g1,
+#e1,
+#e2,
+#h1,
+#h2,
+#h3,
+#h4,
+#h5,
+#h6,
+#h7,
+#y1,
+#y2,
+#y3,
+#y4,
+#y5,
+#y6,
+#y7,
+#y8,
+#y9,
+#yb1,
+#yb2,
+#yb3,
+#yb4,
+#yb5,
+#yb6,
+#yb7,
+#yb8,
+#yb9,
+#h8,
+#h9,
+#h10,
+#h11,
+#h12,
+#h13,
+#h14,
+#h15,
+#h16,
+#a1,
+#a2,
+#a3,
+#x1,
+#x2,
+#x3,
+#a4,
+#a5,
+#a6,
+#a7,
+#a8,
+#a9,
+#z8,
+#zc1,
+#zc2,
+#zc3,
+#zc4,
+#a10,
+#a11,
+#zf5,
+#m1,
+#m2,
+#m3,
+#za1,
+#za2,
+#zg1,
+#zg2,
+#zg3,
+#zg4,
+#zg5,
+#zg6,
+#zg7,
+#zg8,
+#zg9,
+#zg10,
+#zg11,
+#zg12,
+#zg13,
+#zg14,
+#zg15,
+#zg16,
+#zg17,
+#zg18,
+#zm1,
+#zm2,
+#zm3,
+#zm4,
+#zm5,
+#zm6,
+#zm7,
+#zm8,
+#zm9,
+#zm10,
+#zm11,
+#zm12,
+#zm13,
+#yyc3,
+#yyc2,
+#yyc1,
+#yyb1,
+#yyb2,
+#yyb3,
+#yyb4,
+#yyb5,
+#yyb6,
+#yyb7,
+#yyb8,
+#yyb9,
+#yyb10,
+#zm14,
+#zm15,
+#zm16,
+#zm17,
+#zm18,
+#zm19,
+#zm20,
+#zm21,
+#zm22,
+#zm23,
+#zm24,
+#zm25,
+#zm26,
+#zm27,
+#zm28,
+#zm29,
+#zm30,
+#zm31,
+#zk1,
+#zk2,
+#zk3,
+#zk4,
+#zk5,
+#zk6,
+#zk7,
+#zk8,
+#zk9,
+#zk10,
+#zk11,
+#zk12,
+#zk13,
+#zk14,
+#zk15,
+#zk16,
+#zk17,
+#zk18,
+#zk19,
+#zk20,
+#zk21,
+#zk22,
+#zk23,
+#zk24,
+#zk25,
+#zk26,
+#zk27,
+#zk28,
+#zk28b,
+#zk29,
+#zk30,
+#zk31,
+#zk32,
+#zk33,
+#zk34,
+#zk35,
+#zk36,
+#zk37,
+#zk38,
+#zk39,
+#zk40,
+#zk41,
+#zk42,
+#zk43,
+#zk44,
+#zk45,
+#zk46,
+#zk47,
+#zk48,
+#zk49,
+#zk50,
+#zk51,
+#zj1,
+#zj2,
+#zj3,
+#zj4,
+#zj5,
+#zj6,
+#zj7,
+#zj8,
+#zzg1,
+#zj9,
+#zj10,
+#zj11,
+#zj12,
+#zj13,
+#zj14,
+#zj15,
+#zj16,
+#zj17,
+#zj18,
+#zj19,
+#zj20,
+#zzi1,
+#zzi2,
+#zzi3,
+#zzi4,
+#zzi5,
+#zzi6,
+#zzj1,
+#zzj2,
+#zzj3,
+#zzj4,
+#zzk1,
+#zzk2,
+#zzk3,
+#zzk4,
+#zzk5,
+#zzk6,
+#zzk7,
+#zzk8,
+#zzk9,
+#zzk10,
+#zzk11,
+#zzk12,
+#zzk13,
+#zzk14,
+#zn1,
+#zn2,
+#zn3,
+#zzh1,
+#zzh2,
+#zzh3,
+#zzh4,
+#zn4,
+#zn5,
+#zn6,
+#zn7,
+#zn8,
+#chandelierexplorers,
+#chandelierground,
+#zn9,
+#zn10,
+#zn11,
+#zn12,
+#zn13,
+#zm32,
+#zp1,
+#zp2,
+#zp3,
+#zq1,
+#zr1,
+#zs1,
+#zs2,
+#zs3,
+#zs4,
+#zs4a,
+#zs4b,
+#zs4c,
+#platformcircledown,
+#platformcircleup,
+#zs4d,
+#zs5,
+#zs6,
+#zs6a,
+#zs6b,
+#zt1,
+#zr2,
+#zr3,
+#zu1,
+#zzu1,
+#zzu2,
+#zzu3,
+#zzu4,
+#zzu5,
+#zzu6,
+#zzu7,
+#zzu8,
+#zzu9,
+#zzu10,
+#zzu11,
+#zzu12,
+#zzu13,
+#zzu14,
+#zzu15,
+#zzu16,
+#zzu17,
+#zu2,
+#zr4,
+#zzs1,
+#zzs2,
+#zzs3,
+#zzs4,
+#zzs5,
+#zzs6,
+#zzs7,
+#zzs10,
+#zzs11,
+#zzs12,
+#zzs13,
+#zzz1,
+#zzz2,
+#zzz3,
+#zzz4,
+#zzz5,
+#zzz6,
+#zzz8,
+#zzza1,
+#zzz7,
+#yyr35,
+#yyr36,
+#yyr37,
+#yyr38,
+#yyr39,
+#yyr40,
+#yyr1,
+#yyr2,
+#yyr3,
+#yyr4,
+#yyr5,
+#yyr6,
+#yyr7,
+#yyr8,
+#yyr9,
+#yyr10,
+#yyr11,
+#yys3,
+#yyt3,
+#yyt4,
+#yyu1,
+#yyt5,
+#yyt2,
+#yyt1,
+#yys2,
+#yys1,
+#yyr12,
+#yyr13,
+#yyr14,
+#yyr15,
+#yyr16,
+#yyr17,
+#yyr18,
+#yyr19,
+#yyr20,
+#yyr21,
+#yyr22,
+#yyr23,
+#yyr24,
+#yyr25,
+#yyr26,
+#yyr27,
+#yyr28,
+#yyr29,
+#yyr30,
+#yyr31,
+#yyr32,
+#yyr33,
+#yyr34,
+#zzr1,
+#zzr2,
+#zzr3,
+#zzr4,
+#zzr5,
+#zzr6,
+#zzr7,
+#zzr8,
+#zzy1,
+#zzy2,
+#zzy3,
+#zzw1,
+#zzwa1,
+#zzwb1,
+#zzw2,
+#zzw3,
+#zzw4,
+#zzy4,
+#zzy5,
+#zzy6,
+#zzy7,
+#zzy9,
+#zzy10,
+#zzy11,
+#zzy12,
+#zzy13,
+#zzy14,
+#zzy15,
+#zzy16,
+#zzy17,
+#zzy18,
+#zzy19,
+#zzy20,
+#zzy21,
+#zzy22,
+#zzy23,
+#secretbrickremoved,
+#verse1,
+#verse1float,
+#zzr9,
+#zzr10,
+#zzr11,
+#zzr12,
+#zzr13,
+#zzr14,
+#zzr15,
+#zzr16,
+#zzr17,
+#zzr18,
+#zzr19,
+#zzr20,
+#zzr21,
+#zzr22,
+#zzr23,
+#zysidebar,
+#zr5,
+#zr6,
+#zo1,
+#zo2,
+#zo3,
+#zo4,
+#zo5,
+#zo6,
+#zo7,
+#zo8,
+#zo9,
+#zo10,
+#zo11,
+#zo12,
+#i1,
+#i2,
+#i3,
+#i4,
+#i5,
+#i6,
+#i7,
+#i8,
+#i9,
+#i10,
+#i11,
+#i12,
+#k1,
+#k2,
+#d1,
+#d2,
+#d3,
+#d4,
+#d5,
+#d6,
+#d7,
+#d8,
+#z1,
+#z2,
+#z3,
+#z4,
+#z5,
+#z6,
+#z7,
+#b1,
+#b2,
+#b3,
+#b4,
+#b5,
+#b6,
+#b7,
+#b8,
+#b9,
+#b10,
+#b11,
+#b12,
+#b13,
+#b14,
+#b15,
+#b16,
+#b17,
+#zd1,
+#zf1,#zf2,#zf3,#zf4,
+#c1,
+#intactrope,
+#c2,
+#c3,
+#w1,
+#yellowsinkorrect,
+#bluesinkorrect,
+#greensink,
+#yellowsink,
+#redsink,
+#violetsink,
+#redswitch,
+#redswitchon,
+#w2,
+#w3,
+#c4,
+#platformdown,
+#c5,
+#datacube,
+#knightCard,
+#nymphCard,
+#witchCard,
+#roninCard,
+#pillarinterface,
+#zv1,
+#zv2,
+#zv3,
+#zv4,
+#zv5,
+#zv6,
+#zv7,
+#zv8,
+#zv9,
+#v8,
+#v9,
+#zv10,
+#zv11,
+#zv12,
+#zv13,
+#zv14,
+#zv15,
+#zv16,
+#chandelierexplorers2,
+#zv17,
+#zv18,
+#zv19,
+#zv20,
+#zv21,
+#zv22,
+#zv23,
+#zv24,
+#zv25,
+#zv26,
+#zv27,
+#zv28,
+#zv29,
+#zv30,
+#zv31,
+#zv32,
+#zw1,
+#zw2,
+#zw3,
+#zw4,
+#zw5,
+#zw6,
+#zw7,
+#zw8,
+#zw9,
+#zw10,
+#chasmexplorersotherside,
+#zzb1,
+#zzc2,
+#zzc1,
+#zzd1,
+#zzd2,
+#zze1,
+#zzf1,
+#chandelierClue,
+#zze2,
+#zze3,
+#zze4,
+#zzu7b,
+#zza1,
+#zza2,
+#zza3,
+#zza4,
+#zza5,
+#zza6,
+#zza7,
+#zza8,
+#zza9,
+#zza10,
+#zza11,
+#zw11,
+#zw12,
+#zw13,
+#shurisprite,
+#zx1,
+#zx2,
+#zx3,
+#zx4,
+#zx5,
+#zx6,
+#zx7,
+#zy1,
+#zy2,
+#zy3,
+#zz1,
+#zz2,
+#zy4,
+#zy5,
+#zy6,
+#zy7,
+#arcadecloseup,
+#zy8,
+#zy9,
+#zy10,
+#zy11,
+#zy12,
+#zy13,
+#zy14,
+#zy15,
+#zy16,
+#zy17,
+#zy18,
+#zy19,
+#zy20,
+#zy21,
+#zy22,
+#zy23,
+#zy24,
+#zy25,
+#zy26,
+#zy27,
+#zy28,
+#zy29,
+#hallexplorers,
+#zy30,
+#zy31,
+#zy32,
+#zzl1,
+#zzl2,
+#zzl3,
+#zzl4,
+#zzl5,
+#zzl6,
+#zzl7,
+#zzl8,
+#zzl9,
+#zzl10,
+#zzl11,
+#zzl12,
+#zzl13,
+#pipes5fixed,
+#pipes5fixedred,
+#zzl14,
+#zzl15,
+#zzl16,
+#zzl17,
+#zzl18,
+#zzl19,
+#zzl20,
+#zzl21,
+#zzl22,
+#zzl23,
+#zzl24,
+#zzm1,
+#zzm1,
+#zzm2,
+#zzm3,
+#zzm4,
+#zzm5,
+#zzm6,
+#zzm7,
+#zzm8,
+#zzm9,
+#zzm10,
+#zzm11,
+#zzm12,
+#zzm13,
+#missingHandleAshelf,
+#pipes2red,
+#pipes3red,
+#pipes4red,
+#zzm14,
+#zzm15,
+#zzm16,
+#zzm17,
+#zzn1,
+#zzn2,
+#zzn3,
+#zzn4,
+#zzn5,
+#source2violet,
+#pipes2violet,
+#pipes3violet,
+#pipes2yellowrun,
+#zzn6,
+#zzn7,
+#zzn8,
+#zzn9,
+#zzn10,
+#zzn11,
+#zzn12,
+#northpaintings2,
+#zzn13,
+#zzn14,
+#zzn15,
+#zzn16, 
+#zzn17,
+#zzp1,
+#zzq1,
+#source1yellow,
+#source1blue,
+#zzq2,
+#zzp2,
+#zzp3,
+#zp4,
+#zzp4,
+#zzp5,
+#zzp6,
+#orientation1on,
+#orientation2on,
+#orientation3on,
+#color1on,
+#color2on,
+#color3on,
+#zzp7,
+#zzp8,
+#zzp9,
+#zzo1,
+#zzo2,
+#zzo3,
+#zzo4,
+#zzo5,
+#zzo6,
+#zzo7,
+#zzo8,
+#zy33,
+#zy34,
+#zy35,
+#zy36,
+#zy37,
+#zy38,
+#zy39,
+#zy40,
+#zy41,
+#zy41,
+#zy42,
+#zy43,
+#zy44,
+#zy45,
+#zy46,
+#zy47,
+#zy48,
+#carvedNumbers,
+#terminal2,
+#chasmroom3,
+#pipes1violet,
+#pipes1fixed,
+#pipes1red,
+#pipes1yellow,
+#pipes1yellow2,
+#pipes1yellow1,
+#khigher,
+#klower,
+#pipes2fixedon,
+#pipes2fixedonlyyellow,
+#pipes2fixedonlyblue,
+#handle2t,
+#handle1t,
+#verilysprite,
+#chasmexplorers
+ {
+    display: none;
+}
+
+#source2yellow {
+    display: none;
+    z-index: -1;
+}
+
+#pipes2fixed {
+    display: none;
+    z-index: -1;
+}
+
+#pipes5spill {
+    display: none;
+}
+
+#notifOne,
+#notifTwo,
+#notifThree,
+#notifFour,
+#L2notifOne,
+#L2notifTwo,
+#L2notifThree,
+#L2notifFour,
+#L3notifTwo,
+#L3notifThree,
+#L3notifFour
+ {
+        display: none;
+}
+
+
+#pipes2green {
+        display: none;
+z-index: 2;
+}
+#pipes2blue {
+        display: none;
+z-index: 0;
+}
+
+
+#pipes2yellow {
+        display: none;
+z-index: 1;
+}
+
+#pipes3yellow {
+     display: none;
+z-index: -1;
+}
+
+
+#pipes1part {
+        z-index: 1000;
+}
+
+#pipes1partyellow {
+    z-index: 1000;
+    display:none;
+}
+
+
+
+#notepadk,
+#notepadb,
+#notepadv,
+#notepads,
+#notepadmu,
+#notepadm2,
+#notepadi,
+#notepadst,
+#notepadst2 {
+        display: none;
+        z-index: 1000;
+
+}
+
+#ksquaretall {
+    display: none;
+        z-index: 100;
+}
+
+
+#pipes1,
+#pipes1fixed,
+#arcademachine,
+#keysPlatform
+ {
+        z-index: -1;
+
+}
+
+
+#pipes1yellowincorrect,
+#pipes1blue,
+#pipes1green {
+            z-index: -1;
+display: none;
+}
+
+#carvedNumbers{
+    z-index: 30;
+}
+
+
+#pedestala1,
+#pedestala2,
+#pedestala3 {
+    display: none;
+    z-index: -3;}
+
+
+
+#pedestala3B {
+    z-index: -3;
+}
+
+#pedestalb1,
+#pedestalb2,
+#pedestalb3 {
+    display: none;
+    z-index: -2;}
+
+
+
+#pedestalc1 {
+    z-index: -1;}
+
+
+
+#pedestalc2,
+#pedestalc3 {
+    display: none;
+    z-index: -1;}
+
+#pedestald1,
+#pedestald2,
+#pedestald3  {
+    display: none;
+    z-index: -1;}
+
+
+#pedestale1,
+#pedestale2,
+#pedestale3  {
+    display: none;
+    z-index: -1;}
+
+    #pedestalnull {
+        display: none;
+    }
+
+#fishstrings {
+    z-index: -1;
+}
+
+#fishstrings2 {
+    z-index: -1;
+}
+
+#pluck1,
+#pluck2,
+#pluck3,
+#pluck4,
+#pluck5,
+#pluck6,
+#pluck7,
+#pluck8 {
+    display: none;
+    z-index: -1;
+}
+
+
+#pedestalbase,
+#pedestalbaseB {
+    z-index: -4;
+
+}
+
+#chasmrope,
+#chasmrope2
+ {
+    display: none;
+}
+
+#linehider {
+    display: none;
+    z-index: 1001;
+}
+
+
+#explorers{
+    z-index: 0;
+    display: block;
+}
+
+.entryform {
+    display: none;
+    z-index: 8;
+    position: absolute;
+    transform: translate(756px, 100px);
+}
+
+
+
+#inv{
+    display: none;
+    z-index: 3;
+}
+
+#bbuttons{
+    z-index: -1;
+}
+
+#construction {
+    z-index: 0;
+}
+
+#book,
+#bookbody{
+    display: none;
+    z-index: 6;
+}
+
+.pagetext{
+    position: absolute;
+}
+
+.left{
+    transform: translate(360px, 100px);
+    position: absolute;
+    width: 330px;
+    z-index: 9;
+}
+.right{
+    transform: translate(760px, 100px);
+    position: absolute;
+    width: 330px;
+    z-index: 9;
+}
+
+#kcandle,
+#ncandle,
+#wcandle,
+#rcandle{
+    display: none;
+}
+
+#page1,
+#page2,
+#page3,
+#page4,
+#page5,
+#page6,
+#page7,
+#page8,
+#page9,
+#page10,
+#page11,
+#page12,
+#page1b,
+#page2b,
+#page3b,
+#page4b,
+#page5b,
+#page6b,
+#page7b,
+#page8b,
+#page9b,
+#page10b,
+#page11b,
+#page1c,
+#page2c,
+#page3c,
+#page4c,
+#page5c,
+#page6c,
+#page7c,
+#page8c,
+#page9c,
+#page10c,
+#page11c,
+#page12c,
+#page12b
+ {
+    display: none;
+}
+
+#truerestart {
+    display: none;
+    z-index: 700;
+}
+
+.arrow {
+    display: none;
+    z-index: 7;
+    position: absolute;
+}
+
+#baseroom{
+    z-index: -30;
+}
+
+
+#lakesouth,
+#lakeeast,
+#lakewest {
+    z-index: -29;
+}
+
+.invFlex {
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    width: 100px;
+    margin-left: 500px;
+    position: relative;
+    transform: translateY(200px);
+}
+
+
+#item1 {
+    z-index: 5;
+    transform: translateY(-10px);
+    font-family: garamond; 
+    font-size: 20px;
+    display: none;
+    position: absolute;
+}
+
+#item2 {
+    z-index: 5;
+    transform: translateY(125px);
+    font-family: garamond; 
+    display: none;
+    font-size: 20px;
+    position: absolute;
+}
+
+#item3 {
+    z-index: 5;
+    transform: translateY(270px);
+    font-family: garamond; 
+    display: none;
+    font-size: 20px;
+    position: absolute;
+}
+
+#item4 {
+    z-index: 5;
+    transform: translateY(410px);
+    font-family: garamond; 
+    display: none;
+    font-size: 20px;
+    position: absolute;
+}

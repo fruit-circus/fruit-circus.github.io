@@ -18,56 +18,64 @@ maybe ids should not be defined in the map area. it seems to cause problems in o
 -> if anything with an id is not defined as none or block in css is then changed it will cause problems in chrome
 for all dialogue strings, mark the string increaser dialogue.eg = false at the end (no current known problems)
 
-ART:
+low priority ART:
 stymie gif as idle. thinking, dozing off, getting distracted, face bouncing around the screen
 add ambient lighting and darkness to the basic room
 make verilytinkering a gif
 make hall explorers gifs and chandelier fallen and kodly standing on the pedestal
 verilyidle (also gif it)
 portholeview gif
-shuri sprite
-unify new map and old map
 boat explorers gif
-new portraits for kodaly in yyp. verilyisburningashrub
+
 
 ONLY VISIBLE IN OTHER BROWSERS:
 make sure font family is not impact
 automatic sizing (or centering? or zoom?) for larger screens?
 
-NEW MUSIC:
-add a buncha songs to the end of el mare el pare (possibly. what tone? more songs from joan the mad?)
-
 SOUND:
-add candle thunk (4-5 variations) for the ID : candlePlacement
+add candle thunk (4-5 variations) for: candlePlacement
 sound for incorrectCandles (a little incorrect buzzer blip or locked panel clang)
 unlocking noise for opening the candle panel  
-and for failing to open the combination chest and the color lock
-pillarstonergrind : distant long stone grinding for pillarmachine interaction 
-something happened stone grinding for 2303 (successful clunk)
-boat travel sound 
-handle turn
-reconnecting handle sound
-picking up handle
-picking up oars
-picking up pipes, placing pipes
-replace lockeddoor
+and for failing to open the combination chest and the color lock (thlunk!)
+pillarstonergrind : distant long stone grinding for each pillarmachine interaction 
+something happened! stone grinding for 2303 (successful clunk)
+handle turn (squeeek!)
+reconnecting handle sound (clink!)
+picking up handle (clink!)
+picking up oars (plonk!)
+picking up pipes, placing pipes (thuonk)
+lockeddoor - (thump / donk)
 
 
 chrome: 
 reevaluate cookies for chrome
 
 
-CODE:
-watersound
+code:
+new portraits for kodaly in yyp. verilyisburningashrub
+code for watersound
+n and spacebar dont work in gb l3, wasd and arrows is not prevented 
+portraits for k poem convo
 add poem1 to notepad after dialogue.poemAddedToNotebook is true
+add image map to banners to allow clicking before they fade
 finish Tides::
     block off tides until other two complete
+    boat explorers z index inventory
+    boatmove plays at the northernmost floret should be dooraudio
+    replace 21 if switches are changed again. same with 14 panel unless rose taken -- actually they perma unlock?
+    pillar and  rose and  wires art 
+    prevent exploers basic from appearing for split second
+    rosedem art
     roses placement to activate door 
-
-    make switches triangles glow
-    switchclick for redswitch
+    take purple rose to deactivate pillar control 
+    leaving 3c conversation maybe verily shows up after soldier confrontation 
 
 low priority:
+stymie notifs l1 not quite right (with cookies?)
+add another secret
+howling wind for chasms
+guest book reset when opening new book so pages are visible as expected 
+imagemap for combination lock dias
 none first boat if boatwithoars is visible
 explorers appear for a split second in boat rooms
 make background black for poem
@@ -80,13 +88,13 @@ add new rooms to the south with a new boat after ch3 switches 1 and 2 are flippe
 add various cookies
 add a Stymie: you might want to see what verily is doing in the porthole room
 arcade game still seems to be creating more projectiles after quitting
+cheese and ham sandwhich change gif to reflect
 
 
 dialogue.greenSwitchFlipped
 dialogue.redSwitchFlipped
 
 DIALOGUE:
-black furred soldier. either change color or word choice
 next encounter with shuri: shuri just says one word and dips. we don't want to fight! good.
 portraits for art history convo
 i didn't think you'd be here for lobby three stymie
@@ -246,11 +254,11 @@ hiddd
             <img src="floaters/inv.png" alt="inv" usemap="#invmap" class="room" id="inv">
             <img src="floaters/linehider.png" alt="line hider" usemap="#notepadmap" class="room" id="linehider">
             <img src="floaters/poem1.png" alt="line hider" class="room" id="poem1">
-                <img src="floaters/chapter1banner.png" alt="line hider" class="room" id="chapter1banner">
-                <img src="floaters/chapter2banner.png" alt="line hider" class="room" id="chapter2banner">
-                <img src="floaters/chapter3abanner.png" alt="line hider" class="room" id="chapter3abanner">
-                <img src="floaters/chapter3bbanner.png" alt="line hider" class="room" id="chapter3bbanner">
-                <img src="floaters/chapter3cbanner.png" alt="line hider" class="room" id="chapter3cbanner">
+                <img src="floaters/chapter1banner.png" alt="line hider" class="room" id="chapter1banner" usemap="#firstlobbymap">
+                <img src="floaters/chapter2banner.png" alt="line hider" class="room" id="chapter2banner" usemap="#hallmap">
+                <img src="floaters/chapter3abanner.png" alt="line hider" class="room" id="chapter3abanner" usemap="#roommap">
+                <img src="floaters/chapter3bbanner.png" alt="line hider" class="room" id="chapter3bbanner" usemap="#roommap">
+                <img src="floaters/chapter3cbanner.png" alt="line hider" class="room" id="chapter3cbanner" usemap="#roommap">
         </div>
 
         <img src="people/explorersteddybear.png" class="room" id="explorersteddybear">
@@ -307,16 +315,16 @@ hiddd
                 </div>
 
                 <div class="left"> <!--lobby 2 book-->
-                    <p id="page1b"> Second guest book unlocked, hell yeah<br>—Badison</p>
-                    <p id="page3b">So much lurv. Very fun. 10/10. :3 !<br>—Banana</p>
+                    <p id="page1b">Second guest book unlocked, hell yeah<br>—Badison</p>
+                    <p id="page3b">i think we might be stuck at this section for a while 0_0<br><br>—//sent because puzzles are hard</p>
                     <p id="page5b"></p>
                     <p id="page7b"></p>
                     <p id="page9b"></p>
                     <p id="page11b"></p>
                 </div>
                 <div class="right"> <!--lobby 2 book-->
-                    <p id="page2b">i think we might be stuck at this section for a while 0_0<br><br>—//sent because puzzles are hard</p>
-                    <p id="page4b"></p>
+                    <p id="page2b">GOTH!MOUSE!GOTH!MOUSE!GOTH!MOUSE!<br><br>—Iphis</p>
+                    <p id="page4b">So much lurv. Very fun. 10/10. :3 !<br>—Banana</p>
                     <p id="page6b"></p>
                     <p id="page8b"></p>
                     <p id="page10b"></p>
@@ -324,7 +332,7 @@ hiddd
                 </div>
 
                 <div class="left"> <!--lobby 3-->
-                    <p id="page1c"></p>
+                    <p id="page1c">Yahaha!<br><br>—Iphis</p>
                     <p id="page3c"></p>
                     <p id="page5c"></p>
                     <p id="page7c"></p>
@@ -2251,7 +2259,7 @@ Secret key — the secret key will perform a secret action.
     <p id="b4">Normally I would, but the data cube for that room was removed from my circuit board a few days ago.        </p>
     <p id="b5">It's behind the puzzle wall at the bottom of the lift one room over to the west.        </p>
     <p id="b6">Removed? Did someone take it?        </p>
-    <p id="b7">I'm actually not sure. But my bet is, it was that black-furred soldier who stayed behind.        </p>
+    <p id="b7">I'm actually not sure. But my bet is, it was that dark-furred soldier who stayed behind.        </p>
     <p id="b8">He was tampering with some other systems at some point.</p>
     <p id="b9">A soldier stayed behind!? Is he... is he still here?        </p>
     <p id="b10">He went north, so I have no way of knowing.</p>
@@ -2548,7 +2556,7 @@ Secret key — the secret key will perform a secret action.
         <p id="zm10">I shouldn't assume that the labyrinth <i>wants</i> anything, but one thing is clear.</p>
         <p id="zm11">The labyrinth always ensures that there is a way forward.</p>
         <p id="zm12">The datacube, for instance.</p>
-        <p id="zm13">Why would the black-furred soldier engineer a devious puzzle for it when he could just huck it into the chasm?</p>
+        <p id="zm13">Why would the dark-furred soldier engineer a devious puzzle for it when he could just huck it into the chasm?</p>
         <p id="zm14">I think that's exactly what he did. Then he electrified the water and cut the bridge, and the labyrinth gave us rope and a candle puzzle.</p>
     <p id="zm15">It would be a similar method to how the objects we drop migrate back to their starting positions.</p>
     <p id="zm16">The same logic applies to Stymie. There's no reason why a Simple Task-Mounting Interface would be able to control electric output in another room.</p>
@@ -2577,7 +2585,7 @@ Secret key — the secret key will perform a secret action.
     <p id="zn5">No, certainly not.</p>
    <p id="zn6">Why do you ask?</p>
     <p id="zn7">Stymie mentioned someone was tampering with her systems.</p>
-   <p id="zn8">A black-furred, male soldier.</p>
+   <p id="zn8">A dark-furred, male soldier.</p>
    <p id="zn9">A mysterious green-eyed stranger—</p> <!--Stymie-->
    <p id="zn10">He wore a patch over his eye and a grim, determined expression that betrayed nothing about him but the dire importance of his mission, his heart of gold, and his tragic past.</p>
    <p id="zn11">I think he was a stoat.</p>
@@ -3246,7 +3254,7 @@ Secret key — the secret key will perform a secret action.
     <p id="yyu8">"Ilde" probably means "if".</p>
     <p id="yyu9">That's about as much as I've got.</p>
     <p id="yyu10">Okay, I'll put it in my notebook for now.</p>
-    <p id="yyu11">We can check it out later if we find any new Kardic words. I wonder why it's here. Doesn't seem like something the labyrinth would have written.</p>
+    <p id="yyu11">We can check it out later if we find any new Kardic words.</p> <!-- I wonder why it's here. Doesn't seem like something the labyrinth would have written.-->
 
     <p id="yyx1">I bet there's another hidden passage behind these paintings.</p>
     <p id="yyx2">I'll eat my hat!</p>
@@ -5593,7 +5601,7 @@ const northPage = {spread: 0,}
     dialogue.blockArrowTravel = false;
 }
 
- function nextPage() {
+ function nextPage() { 
     prevarrow.style.display = "block";
     frontMatter.style.display = "none";
     bookBody.style.display = "block";
@@ -5702,6 +5710,56 @@ else if (current.room === "lobbyTwo") {
         default:
         console.log("Dats da end'a da book baby");
     }
+} 
+else if (current.room === "lobbyThree") {
+    if (typeof northPage.spread === 'undefined') {
+        northPage.spread = 0;
+    }
+    switch (northPage.spread) {
+        case 0:
+            page1c.style.display = "block";
+            page2c.style.display = "block";
+            northPage.spread = 1;
+            break;
+        case 1:
+            page1c.style.display = "none";
+            page2c.style.display = "none";
+            page3c.style.display = "block";
+            page4c.style.display = "block";
+            northPage.spread = 2;
+            break;
+        case 2:
+            page3c.style.display = "none";
+            page4c.style.display = "none";
+            page5c.style.display = "block";
+            page6c.style.display = "block";
+            northPage.spread = 3;
+            break;
+        case 3:
+            page5c.style.display = "none";
+            page6c.style.display = "none";
+            page7c.style.display = "block";
+            page8c.style.display = "block";
+            northPage.spread = 4;
+            break;
+        case 4:
+            page7c.style.display = "none";
+            page8c.style.display = "none";
+            page9c.style.display = "block";
+            page10c.style.display = "block";
+            northPage.spread = 5;
+            break;
+        case 5:
+            page9c.style.display = "none";
+            page10c.style.display = "none";
+            page11c.style.display = "block";
+            page12c.style.display = "block";
+            nextarrow.style.display = "none"; //add more cases here if 12 pages prooves insufficient
+            northPage.spread = 6;
+            break;
+        default:
+        console.log("Dats da end'a da book baby");
+    }
 }
 }
  function prevPage() {
@@ -5763,10 +5821,8 @@ else if (current.room === "lobbyTwo") {
             break;
         default:
         console.log("Dats da front'a da book, baby");
-    }
-}
-
-    else if (current.room === "lobbyTwo") {
+    } 
+} else if (current.room === "lobbyTwo") {
     
         if (typeof northPage.spread === 'undefined') {
             northPage.spread = 0;
@@ -5818,6 +5874,63 @@ else if (current.room === "lobbyTwo") {
                 page10b.style.display = "block";
                 page11b.style.display = "none";
                 page12b.style.display = "none";
+                northPage.spread = 5;
+                break;
+            default:
+            console.log("Dats da front'a da book, baby");
+        }
+    } else if (current.room === "lobbyThree") {
+    
+        if (typeof northPage.spread === 'undefined') {
+            northPage.spread = 0;
+        }
+        switch (northPage.spread) {
+            case 0:
+            northPage.spread = 0;
+                break;
+            case 1:
+                page1c.style.display = "none";
+                page2c.style.display = "none";
+                frontMatter.style.display = "block";
+                nextarrow.style.display = "block";
+                entryform2.style.display = "block";
+                bookBody.style.display = "none";
+                prevarrow.style.display = "none";
+                northPage.spread = 0;
+                break;
+            case 2:
+                page3c.style.display = "none";
+                page4c.style.display = "none";
+                page1c.style.display = "block";
+                page2c.style.display = "block";
+                northPage.spread = 1;
+                break;
+            case 3:
+                page5c.style.display = "none";
+                page6c.style.display = "none";
+                page4c.style.display = "block";
+                page3c.style.display = "block";
+                northPage.spread = 2;
+                break;
+            case 4:
+                page7c.style.display = "none";
+                page8c.style.display = "none";
+                page6c.style.display = "block";
+                page5c.style.display = "block";
+                northPage.spread = 3;
+                break;
+            case 5:
+                page9c.style.display = "none";
+                page10c.style.display = "none";
+                page7c.style.display = "block";
+                page8c.style.display = "block";
+                northPage.spread = 4;
+                break;
+            case 6:
+                page9c.style.display = "block";
+                page10c.style.display = "block";
+                page11c.style.display = "none";
+                page12c.style.display = "none";
                 northPage.spread = 5;
                 break;
             default:
@@ -7573,8 +7686,6 @@ function handleHandle1() {
     source1yellow.style.display = "block";
     handleSqueak.play();
             waterFlowing.play();
-            doihmot.pause();
-            alert("flow");
         if (dialogue.handle2turned && !key.ypipePlaced) {
         pipes2green.style.display = "block";
         }
@@ -8976,8 +9087,7 @@ document.addEventListener("keydown", function() {
                 northdoor21.style.display = "none";
             }        
         } else if (current.room === "roseRoom") {
-                        alert("asdsad");
-
+                        alert("//mark");
             takeWildRose1();
         }
         checkWaterSound();
@@ -9461,7 +9571,7 @@ if (!inventory.slot1) {
         } else if (current.room === "boatRoom") {
             restoreBear();           
         } else if (current.room === "flowerIsland") {
-                        alert("assdddddddsad");
+                        alert("//mark");
             takeWildRose2();
         }
     }; //end of check going east
@@ -10440,7 +10550,7 @@ function goNorth() {
             lake3.style.display = "none";
             lakesLobby.style.display = "block";
             current.room = "lakesLobby";   
-            branle.volume = 0; //mark.9 
+            branle.volume = 0.9;
         } else if (current.room === "lakesLobby") {
             randomOarAudio();    
             lakesLobby.style.display = "none";

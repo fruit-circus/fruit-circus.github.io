@@ -5428,6 +5428,7 @@ document.addEventListener("keydown", function() {
        dialogue.ahaIsee2 = 1;
        zzs10.style.display = "block"; //ah.
        b.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.ahaIsee2 === 1) {
@@ -5457,6 +5458,7 @@ document.addEventListener("keydown", function() {
        dialogue.ahaIseeSecond = true;
        dialogue.betterTakeThese = true;
        dialogue.noAhISee = true;
+       dialogue.blockArrowTravel = false;
        document.cookie = "keysEntrance1=keysEntrance1";
        return;
      }
@@ -7570,6 +7572,7 @@ function itsASecretMessageInAStrangeLanguage() {
   dialogue.secretpoem = "pickles";
     dialogue.blockArrowTravel = true;
     poem1.style.display = "block";
+    document.body.style.background = "#000";
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.secretpoem === "pickles") {
@@ -7658,6 +7661,7 @@ document.addEventListener("keydown", function() {
            bnoba.style.display = "none";
           dialogue.secretpoem = true;
           poem1.style.display = "none";
+          document.body.style.background = "#f5f1e0"; //hex code back to beige
           dialogue.poemAddedToNotebook = true;
           dialogue.blockArrowTravel = false;
        } 

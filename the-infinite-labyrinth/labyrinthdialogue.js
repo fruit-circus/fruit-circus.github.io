@@ -5781,8 +5781,6 @@ document.addEventListener("keydown", function() {
         current.room = "lockboxRoom";
         document.cookie = "2ShrubDoorUnlocked=2ShrubDoorUnlocked";
         dialogue.blockArrowTravel = false;
-       return;
-       
      } 
    }});
 }}
@@ -5794,6 +5792,7 @@ function tooHeavyTooKeys() {
     i3.style.display = "block";
     b.style.display = "block";
     dialogue.tooHeavy2Keys = 1;
+    dialogue.blockArrowTravel = true;
     document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy2Keys === 1) {
@@ -5814,13 +5813,14 @@ function tooHeavyTooKeys() {
                 k.style.display = "none";
                 dialogue.keysAreHeavy = true;
                 dialogue.keysAreHeavy2 = true;
-                return;
+                dialogue.blockArrowTravel = false;
             } 
         }});
     } else if (dialogue.keysAreHeavy2) {
         i6.style.display = "block";
         b.style.display = "block";
         dialogue.tooHeavy3Keys = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy3Keys === 1) {
@@ -5849,6 +5849,7 @@ function tooHeavyTooKeys() {
                 k.style.display = "none";
                 dialogue.keysAreHeavy2 = false;
                 dialogue.keysAreHeavy3 = true;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5856,6 +5857,7 @@ function tooHeavyTooKeys() {
         i10.style.display = "block";
         b.style.display = "block";
         dialogue.tooHeavy4Keys = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy4Keys === 1) {
@@ -5863,6 +5865,7 @@ function tooHeavyTooKeys() {
                 b.style.display = "none";
                 dialogue.keysAreHeavy3 = false;
                 dialogue.keysAreHeavy4 = true;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5870,6 +5873,7 @@ function tooHeavyTooKeys() {
         i11.style.display = "block";
         k.style.display = "block";
         dialogue.tooHeavy4Keys = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy4Keys === 1) {
@@ -5877,6 +5881,7 @@ function tooHeavyTooKeys() {
                 k.style.display = "none";
                 dialogue.keysAreHeavy4 = false;
                 dialogue.keysAreHeavy5 = true;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5884,12 +5889,14 @@ function tooHeavyTooKeys() {
         i12.style.display = "block";
         b.style.display = "block";
         dialogue.tooHeavy4Keys = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy4Keys === 1) {
                 i12.style.display = "none";
                 b.style.display = "none";
                 dialogue.keysAreHeavy5 = true;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5902,6 +5909,7 @@ function tooHeavy() {
     i1.style.display = "block";
     k.style.display = "block";
     dialogue.tooHeavy1 = 1;
+    dialogue.blockArrowTravel = true;
     document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy1 === 1) {
@@ -5916,6 +5924,7 @@ function tooHeavy() {
                 b.style.display = "none";
                 dialogue.inv1 = true;
                 dialogue.inv0 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             }    
         }});
@@ -5923,6 +5932,7 @@ function tooHeavy() {
         n1.style.display = "block";
         k.style.display = "block";
         dialogue.tooHeavy2 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy2 === 1) {
@@ -5944,6 +5954,7 @@ function tooHeavy() {
                 k.style.display = "none";
                 dialogue.inv2 = true;
                 dialogue.inv1 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5951,6 +5962,7 @@ function tooHeavy() {
         o1.style.display = "block";
         k.style.display = "block";
         dialogue.tooHeavy3 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy3 === 1) {
@@ -5972,6 +5984,7 @@ function tooHeavy() {
                 k.style.display = "none";
                 dialogue.inv3 = true;
                 dialogue.inv2 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -5979,6 +5992,7 @@ function tooHeavy() {
         q1.style.display = "block";
         b.style.display = "block";
         dialogue.tooHeavy4 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy4 === 1) {
@@ -6007,6 +6021,7 @@ function tooHeavy() {
                 k.style.display = "none";
                 dialogue.inv4 = true;
                 dialogue.inv3 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             } 
         }});
@@ -6014,6 +6029,7 @@ function tooHeavy() {
         r1.style.display = "block";
         k.style.display = "block";
         dialogue.tooHeavy5 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy5 === 1) {
@@ -6021,6 +6037,7 @@ function tooHeavy() {
                 k.style.display = "none";
                 dialogue.inv5 = true;
                 dialogue.inv4 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             }
         }});
@@ -6028,6 +6045,7 @@ function tooHeavy() {
         s1.style.display = "block";
         b.style.display = "block"; //wee fellows?
         dialogue.tooHeavy6 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy6 === 1) {
@@ -6035,6 +6053,7 @@ function tooHeavy() {
                 b.style.display = "none"; 
                 dialogue.inv6 = true;
                 dialogue.inv5 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             }
         }});
@@ -6042,6 +6061,7 @@ function tooHeavy() {
         t1.style.display = "block";
         k.style.display = "block"; //fellows is good
         dialogue.tooHeavy7 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy7 === 1) {
@@ -6049,6 +6069,7 @@ function tooHeavy() {
                 k.style.display = "none"; 
                 dialogue.inv7 = true;
                 dialogue.inv6 = false;
+                dialogue.blockArrowTravel = false;
                 return;
             }
         }});
@@ -6056,6 +6077,7 @@ function tooHeavy() {
         u1.style.display = "block";
         k.style.display = "block";
         dialogue.tooHeavy8 = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy8 === 1) {
@@ -6068,6 +6090,7 @@ function tooHeavy() {
             } else if (dialogue.tooHeavy8 === 2) {
                 u2.style.display = "none";
                 b.style.display = "none"; 
+                dialogue.blockArrowTravel = false;
                 return;
             }
         }});
@@ -6078,6 +6101,7 @@ function testingTheWaters() {
     z1.style.display = "block";
        k.style.display = "block";
        dialogue.waterTest = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.waterTest === 1) {
@@ -6130,6 +6154,7 @@ function testingTheWaters() {
       z8.style.display = "none";
        b.style.display = "none";
          dialogue.waterTest = true;
+         dialogue.blockArrowTravel = false;
          return;
      }
 }});

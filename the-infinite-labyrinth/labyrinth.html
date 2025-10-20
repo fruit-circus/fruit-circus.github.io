@@ -52,8 +52,11 @@ reevaluate cookies for chrome
 
 
 code:
+some z-index issues with pipes and doors online 
 new portraits for kodaly in yyp. verilyisburningashrub
+yyu8 yyu2a modified no background thinking kodaly portrait
 code for watersound
+block arrow travel for too many keys inv dialogue
 n and spacebar dont work in gb l3, wasd and arrows is not prevented 
 portraits for k poem convo
 add poem1 to notepad after dialogue.poemAddedToNotebook is true
@@ -71,6 +74,7 @@ finish Tides::
     leaving 3c conversation maybe verily shows up after soldier confrontation 
 
 low priority:
+more time after elmare for silence and then the next song on loop
 stymie notifs l1 not quite right (with cookies?)
 add another secret
 howling wind for chasms
@@ -3461,7 +3465,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
      if (e.key == 'n') {
         if (notepad.open) {
              hideNotes();
-        } else if (!notepad.open && !inventory.isOpen) {
+        } else if (!notepad.open && !inventory.isOpen && !dialogue.preventN) {
             showNotes();
         }
     }
@@ -3620,7 +3624,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.letsGoBoating = true;
     }
 
-    if (cookiesHas('lobby2')) {
+    if (cookiesHas('lobby2') && !cookiesHas('lobbyThree')) {
         //mark potential problem. browser cookies funky? cookies appear to have lobby2 but it's not acting on it
         penser.pause();
         lamano.play();
@@ -5566,6 +5570,7 @@ function backToDiagram() {
 const page = {spread: 0,}
 const northPage = {spread: 0,}
  function hideGuestBook() {
+    dialogue.preventN = false;
     frontMatter.style.display = "none";
     bookBody.style.display = "none";
     nextarrow.style.display = "none";
@@ -7498,7 +7503,7 @@ document.addEventListener("keydown", function() {
                   notifnoise.play();
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
-                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                  //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -13009,6 +13014,7 @@ function pickNE() {
         entryform.style.display = "block";
         dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
+        dialogue.preventN = true;
         document.body.style.background = "#7a6f5c";
     } else if (current.room === "lobbyTwo") {
     frontMatter.style.display = "block";
@@ -13018,6 +13024,7 @@ function pickNE() {
     document.body.style.background = "#7a6f5c";
 dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
+        dialogue.preventN = true;
 }
     else if (current.room === "lobbyThree") {
     frontMatter.style.display = "block";
@@ -13026,6 +13033,7 @@ dialogue.blockArrowTravel = true;
     entryform.style.display = "block";
 dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
+        dialogue.preventN = true;
         document.body.style.background = "#7a6f5c";
 }
 

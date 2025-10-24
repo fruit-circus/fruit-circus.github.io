@@ -87,7 +87,7 @@
 //takeCareOfBrunhilde
 //iDontThinkICanFitThroughThat
 
-//
+//noPowerFlowing
 
 
 //event.key === 'Enter' should match travel = true
@@ -5034,6 +5034,7 @@ document.addEventListener("keydown", function() {
 dialogue.goBoating2 = 1;
        zzu7b.style.display = "block";
        b.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.goBoating2 === 1) {
@@ -5067,12 +5068,14 @@ document.addEventListener("keydown", function() {
       b.style.display = "none";
       dialogue.letsGoBoating3 = true;
       dialogue.letsGoBoating2 = false;
+      dialogue.blockArrowTravel = false;
          return;
      }  
    }});} else if (dialogue.letsGoBoating3 && !key.oars) {
 dialogue.goBoating3 = 1;
        zzu12.style.display = "block";
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.goBoating3 === 1) {
@@ -5106,16 +5109,19 @@ document.addEventListener("keydown", function() {
        kwtf.style.display = "none";
        dialogue.letsGoBoating3 = false;
        dialogue.letsGoBoating4 = true;
+       dialogue.blockArrowTravel = false;
      } 
    }});} else if (dialogue.letsGoBoating4 && !key.oars) {
 dialogue.goBoating4 = 1;
        zzu17.style.display = "block";
        b.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.goBoating4 === 1) {
        zzu17.style.display = "none";
        b.style.display = "none";
+       dialogue.blockArrowTravel = false;
          return;
      } 
    }});}
@@ -5123,6 +5129,7 @@ document.addEventListener("keydown", function() {
 
 
 function youdonthavetostandthere() {
+       dialogue.blockArrowTravel = true;
        zzz1.style.display = "block";
        b.style.display = "block";
        dialogue.donthaveto = 1;
@@ -5160,6 +5167,7 @@ function youdonthavetostandthere() {
        ksta.style.display = "none";
        dialogue.donthavetostandthere = true;
        document.cookie = "movemeupanddown=movemeupanddown";
+       dialogue.blockArrowTravel = false;
          return;
      }
     }})};
@@ -5506,6 +5514,7 @@ function itsLocked() {
        dialogue.lockedSecond = 1;
        zs1.style.display = "block"; //it's locked!
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecond === 1) {
@@ -5514,6 +5523,7 @@ document.addEventListener("keydown", function() {
        dialogue.lockedIts = true;
        dialogue.lockedSecond = true;
        dialogue.lockedADoor = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5522,6 +5532,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondA = 1;
        zs2.style.display = "block"; //locked.
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondA === 1) {
@@ -5529,6 +5540,7 @@ document.addEventListener("keydown", function() {
        k.style.display = "none";
        dialogue.lockedADoor = false;
        dialogue.lockedADoor2 = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5537,6 +5549,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondAA = 1;
        zs3.style.display = "block"; // also locked
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondAA === 1) {
@@ -5544,6 +5557,7 @@ document.addEventListener("keydown", function() {
        k.style.display = "none";
        dialogue.lockedADoor2 = false;
         dialogue.lockedADoor3 = true;
+        dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5552,6 +5566,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondAAA = 1;
        zs4.style.display = "block"; //bridget!
        ksta.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondAAA === 1) {
@@ -5586,6 +5601,7 @@ document.addEventListener("keydown", function() {
        b.style.display = "none";
         dialogue.lockedADoor3 = false;
         dialogue.lockedADoor4 = true;
+        dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5594,6 +5610,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondAB = 1;
        zs5.style.display = "block"; //locked.
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondAB === 1) {
@@ -5601,6 +5618,7 @@ document.addEventListener("keydown", function() {
        k.style.display = "none";
        dialogue.lockedADoor4 = false;
        dialogue.lockedADoor5 = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5609,6 +5627,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondABB = 1;
        zs5.style.display = "block"; //locked.
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondABB === 1) {
@@ -5616,6 +5635,7 @@ document.addEventListener("keydown", function() {
        k.style.display = "none";
        dialogue.lockedADoor5 = false;
        dialogue.lockedADoor6 = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5624,6 +5644,7 @@ document.addEventListener("keydown", function() {
      dialogue.lockedSecondABBA = 1;
        zs6.style.display = "block"; //locked.
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.lockedSecondABBA === 1) {
@@ -5644,6 +5665,7 @@ document.addEventListener("keydown", function() {
        b.style.display = "none";
         dialogue.lockedADoor6 = false;
        dialogue.lockedADoor7 = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
    }});
@@ -5731,6 +5753,7 @@ function unlocking() {
         dialogue.unlocking = 1;
        k1.style.display = "block"; //it fits!
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.unlocking === 1) {
@@ -5746,6 +5769,7 @@ document.addEventListener("keydown", function() {
        dialogue.unlocking = false;
        dialogue.unlocked = true;
        dialogue.unlockedKeySound = true;
+       dialogue.blockArrowTravel = false;
     lobby.style.display = "none";
     sauna.style.display = "block";
        unlock.play();
@@ -6164,6 +6188,7 @@ function wouldARopeBridgeHelp() {
       za1.style.display = "block"; //looks like the bridge has been cut
       k.style.display = "block";
       dialogue.bridge = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.bridge === 1) {
@@ -6177,6 +6202,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      za2.style.display = "none";
      b.style.display = "none";
         dialogue.bridge = true;
+        dialogue.blockArrowTravel = false;
         return;
     }
 }});
@@ -6187,6 +6213,7 @@ function ropeToss() {
     zb1.style.display = "block"; //here goes nothing
       b.style.display = "block";
       dialogue.bridgeToss = 1;
+      dialogue.blockArrowTravel = false;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.bridgeToss === 1) {
@@ -6222,6 +6249,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      zb3.style.display = "none";
       b.style.display = "none";
       dialogue.bridgeToss = true;
+      dialogue.blockArrowTravel = false;
         return;
     } }});
     }
@@ -6233,6 +6261,7 @@ function ropeToss2() {
     zb1a.style.display = "block"; //here goes nothing 2
       b.style.display = "block";
       dialogue.bridgeToss2 = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.bridgeToss2 === 1) {
@@ -6263,6 +6292,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      zb2.style.display = "none";
       b.style.display = "none";
       dialogue.bridgeToss2 = true;
+      dialogue.blockArrowTravel = false;
         return;
     } }});
     
@@ -6276,6 +6306,7 @@ function northLocked() { //dialogue for door across the chasm in chapter 1
     zc1.style.display = "block";
       b.style.display = "block";
       dialogue.northLobbyLocked = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.northLobbyLocked === 1) {
@@ -6290,12 +6321,14 @@ if (event.key === 'Enter' || event.key === ' ') {
      k.style.display = "none";
         dialogue.northLobbyLocked = true;
         door.tried = true;
+        dialogue.blockArrowTravel = false;
         return;
     }
 }});} else {
     zc3.style.display = "block";
       k.style.display = "block";
       dialogue.northLobbyLocked2 = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.northLobbyLocked2 === 1) {
@@ -6308,6 +6341,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.northLobbyLocked2 === 2) {
       zc4.style.display = "none";
       b.style.display = "none";
+      dialogue.blockArrowTravel = false;
         return;
     } 
 }});}}
@@ -6317,6 +6351,7 @@ function tooFar() {
     ze1.style.display = "block";
       b.style.display = "block";
       dialogue.tooFar = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.tooFar === 1) {
@@ -6344,6 +6379,7 @@ if (event.key === 'Enter' || event.key === ' ') {
       b.style.display = "none";
         dialogue.tooFar = true;
         dialogue.goliath = true;
+        dialogue.blockArrowTravel = false;
         return;
     }
 }});}
@@ -6424,6 +6460,7 @@ function shrub1() {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
   if (event.key === 'Enter' || event.key === ' ') {
       if (dialogue.shrub === 1) {
@@ -6521,6 +6558,7 @@ function shrub1() {
         b.style.display = "none";
         dialogue.shrub = true;
         document.cookie = "shrubbery=shrubbery";
+        dialogue.blockArrowTravel = false;
           return;
       }
   }
@@ -6529,6 +6567,7 @@ function shrub1() {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
   if (event.key === 'Enter' || event.key === ' ') {
       if (dialogue.shrub === 1) {
@@ -6648,6 +6687,7 @@ function shrub1() {
         document.cookie = "shrubbery=shrubbery";
         notifnoise.play();
         increaseNotification();
+        dialogue.blockArrowTravel = false;
           return;
       }
   }
@@ -6660,6 +6700,7 @@ function shrub2() {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
   if (event.key === 'Enter' || event.key === ' ') {
       if (dialogue.shrub === 1) {
@@ -6754,6 +6795,7 @@ function shrub2() {
         zg15.style.display = "none";
         b.style.display = "none";
         dialogue.shrub = true;
+        dialogue.blockArrowTravel = false;
           return;
       }
   }
@@ -6763,6 +6805,7 @@ function shrub2() {
         zg1.style.display = "block";
         b.style.display = "block";
         dialogue.shrub = 1;
+        dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
   if (event.key === 'Enter' || event.key === ' ') {
       if (dialogue.shrub === 1) {
@@ -6878,6 +6921,7 @@ function shrub2() {
         zg18.style.display = "none";
         b.style.display = "none";
         dialogue.shrub = true;
+        dialogue.blockArrowTravel = false;
        notifnoise.play();
         increaseNotification();
           return;
@@ -6894,6 +6938,7 @@ function itsAFlowerPot() {
        zzq1.style.display = "block";
        k.style.display = "block";
        dialogue.flowerPot = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.flowerPot === 1) {
@@ -6907,6 +6952,7 @@ function itsAFlowerPot() {
        zzq2.style.display = "none";
        b.style.display = "none";
        dialogue.flowerPotted = true;
+       dialogue.blockArrowTravel = false;
          return;
      }
  }
@@ -6919,6 +6965,7 @@ function workingTogether() {
        zw1.style.display = "block";
        ksl.style.display = "block";
        dialogue.workingTogether = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.workingTogether === 1) {
@@ -7020,6 +7067,7 @@ function workingTogether() {
         vtamp3.style.display = "none";
         dialogue.haventSeenHim = true;
        document.cookie = "workingTogether=workingTogether";
+       dialogue.blockArrowTravel = false;
        increaseNotificationLobbyTwo(); //we don't play the noise hear because that would imply stymie2 is listening to their chasm(or other room adjacent to the lobby) conversation "to recap"
          return;
      }
@@ -7034,6 +7082,7 @@ function isSummerSuspicious() {
         zm1.style.display = "block";
        b.style.display = "block";
        dialogue.upToSomething = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.upToSomething === 1) {
@@ -7245,6 +7294,7 @@ function isSummerSuspicious() {
        dialogue.haventSeenHim = false;
        document.cookie = "suspect=suspect";
        dialogue.wowThisSummerCharacterHuh = true; //1/2 of the components to shuriEncounter
+       dialogue.blockArrowTravel = false;
          return;
      }
  }
@@ -7257,12 +7307,14 @@ function thatWasNotThereASecondAgo() {
     yyn1.style.display = "block";
        k.style.display = "block";
        dialogue.thatWasNotThere = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.thatWasNotThere === 1) {
     yyn1.style.display = "none";
        k.style.display = "none";
        dialogue.totallyNotThere = true;
+       dialogue.blockArrowTravel = false;
      }}}); 
     }
 }
@@ -7281,7 +7333,7 @@ function itsSomeSortOfPanelInTheWall(){
 }
  
 //chapter 3 beginning 
-function onwardsAndInwards() {
+function onwardsAndInwards() { //mark may be uneeded duplicate 
     if (dialogue.verilyIntro && !dialogue.onwardAndInward){
         zzr1.style.display = "block";
        b.style.display = "block";
@@ -7419,12 +7471,13 @@ document.addEventListener("keydown", function() {
         dialogue.byJoveJovent = true;
         dialogue.byJoveJove = false;
         dialogue.blockArrowTravel = false;
+        dialogue.byJovesBeenJoved = false;
  }}});
     } else if (key.rope2) {
         throwRope2();
     } else if (!dialogue.byJovesBeenJoved) {
         dialogue.tooFarFarfar = 1;
-       yym2.style.display = "block"; //oh we're fucked
+       yym2.style.display = "block"; //it's too far to jump
        b.style.display = "block";
        dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
@@ -7463,14 +7516,14 @@ document.addEventListener("keydown", function() {
      } else if (dialogue.byJoveJove2 === 2) {
         yyk4.style.display = "none";
         yyk5.style.display = "block";
-        kwtf.style.display = "block";
-        kstu.style.display = "none";
+        kstu.style.display = "block";
          dialogue.byJoveJove2++;
          return;
      }  else if (dialogue.byJoveJove2 === 3) {
         yyk5.style.display = "none";
         yyk6.style.display = "block";
         kwtf.style.display = "block";
+        kstu.style.display = "none";
          dialogue.byJoveJove2++;
          return;
      }  else if (dialogue.byJoveJove2 === 4) {
@@ -7615,7 +7668,7 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.secretpoem === 2) {
             yyu2.style.display = "none";
            yyu2a.style.display = "block";
-           knoba.style.display = "block";
+           ksl2noba.style.display = "block";
            bnoba.style.display = "none";
           dialogue.secretpoem++;
            return;
@@ -7623,7 +7676,7 @@ document.addEventListener("keydown", function() {
             yyu2a.style.display = "none";
            yyu3.style.display = "block";
            knoba.style.display = "block";
-           bnoba.style.display = "none";
+           ksl2noba.style.display = "none";
           dialogue.secretpoem++;
            return;
        }  else if (dialogue.secretpoem === 4) {
@@ -7655,13 +7708,15 @@ document.addEventListener("keydown", function() {
        }  else if (dialogue.secretpoem === 8) {
             yyu7.style.display = "none";
            yyu8.style.display = "block";
-           knoba.style.display = "block";
+           ksl2noba.style.display = "block";
+            knoba.style.display = "none";
           dialogue.secretpoem++;
            return;
        }  else if (dialogue.secretpoem === 9) {
             yyu8.style.display = "none";
            yyu9.style.display = "block";
            knoba.style.display = "block";
+           ksl2noba.style.display = "none";
           dialogue.secretpoem++;
            return;
        }  else if (dialogue.secretpoem === 10) {
@@ -7686,6 +7741,7 @@ document.addEventListener("keydown", function() {
            bnoba.style.display = "none";
           dialogue.secretpoem = true;
           poem1.style.display = "none";
+          document.cookie = "poem1found=poem1found";
           document.body.style.background = "#f5f1e0"; //hex code back to beige
           dialogue.poemAddedToNotebook = true;
           dialogue.blockArrowTravel = false;
@@ -8152,4 +8208,19 @@ document.addEventListener("keydown", function() {
               dialogue.dsfsdfdfg = true;
                   dialogue.blockArrowTravel = false;
        }}});
-}
+} 
+
+function noPowerFlowing() {
+ zzg1.style.display = "block";
+       k.style.display = "block";
+       dialogue.noPillarPower = 1;
+       dialogue.blockArrowTravel = true;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.noPillarPower === 1) {
+    zzg1.style.display = "none";
+       k.style.display = "none";
+       dialogue.blockArrowTravel = false;
+       dialogue.noPillarPower = true;
+     }}}); 
+    }

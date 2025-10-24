@@ -154,19 +154,19 @@ img {
 #notebookTextMusic,
 #notebookTextInfo {
     position: absolute;
-    transform: translate(570px, 136px);
-    max-width: 900px;
-    height: 100px;
+    transform: translate(430px, 150px);
+    max-width:  850px;
+    height: 520px;
     font-size: 24px;
     z-index: 1000;
     display: none;
+    overflow-y: auto;
 }
 
 .notebookFlex {
     display: flex;
     flex-direction: column;
     width: 530px;
-    transform: translate(-135px, -10px);
 
 }
 
@@ -1513,6 +1513,8 @@ z-index: -1;
 #notepadmu,
 #notepadm2,
 #notepadi,
+#notepadp,
+#notepadpnone,
 #notepadst,
 #notepadst2 {
         display: none;
@@ -1633,8 +1635,17 @@ display: none;
     z-index: 1001;
 }
 
+#colorwires {
+    z-index: -1;
+}
 
-#explorers{
+#colorwires,
+#pedestalnull {
+    z-index: -2;
+    
+}
+
+#explorers {
     z-index: 0;
     display: block;
 }

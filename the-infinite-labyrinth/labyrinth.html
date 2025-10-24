@@ -52,28 +52,30 @@ reevaluate cookies for chrome
 
 
 code:
-some z-index issues with pipes and doors online 
+chapter3abanner map 
+fast music should pause when entering other wings 
+inv z index pipe1part and explorers in piperun2
+art on green triangle switch. add backplate
 new portraits for kodaly in yyp. verilyisburningashrub
-yyu8 yyu2a modified no background thinking kodaly portrait
-code for watersound
-block arrow travel for too many keys inv dialogue
-n and spacebar dont work in gb l3, wasd and arrows is not prevented 
-portraits for k poem convo
-add poem1 to notepad after dialogue.poemAddedToNotebook is true
-add image map to banners to allow clicking before they fade
 finish Tides::
-    block off tides until other two complete
     boat explorers z index inventory
     boatmove plays at the northernmost floret should be dooraudio
     replace 21 if switches are changed again. same with 14 panel unless rose taken -- actually they perma unlock?
-    pillar and  rose and  wires art 
+    pillar and rose and wires art 
     prevent exploers basic from appearing for split second
-    rosedem art
     roses placement to activate door 
-    take purple rose to deactivate pillar control 
     leaving 3c conversation maybe verily shows up after soldier confrontation 
 
 low priority:
+supply crowbar for arcade game
+add cookies for other three pipes (macaroni has)
+add more misc objects to ch3 lobby
+cookies for tooheavy convo
+add escape for inv and notepad
+test cookies for macaroni pipe
+make it so that new stickynotes are added to the notepad when opening by checking variables instead of having them all visible from the get go
+fully check code for watersound
+hide exploers when entering lake (pipes)
 more time after elmare for silence and then the next song on loop
 stymie notifs l1 not quite right (with cookies?)
 add another secret
@@ -129,6 +131,12 @@ hiddd
     z-index: 10;
 }
 
+#redcircuitwires,
+#colorwires2,
+#bluecircuitwires {
+     z-index: -1;
+}
+
 #pillarla3 {
     z-index: 11;
 }
@@ -161,6 +169,7 @@ hiddd
 #ybc2,
 #ybcd3,
 #paintingcheck,
+#interChapterHallway,
 #panel14open,
 #panel14rose,
 #paintingcheck2,
@@ -170,6 +179,9 @@ hiddd
 #yyu2a,
 #yyu3,
 #yyu4,
+#redlit,
+#bluelit,
+#greenlit,
 #yyu5,
 #yyu6,
 #yyu7,
@@ -213,6 +225,7 @@ hiddd
 #yyz11,
 #yyz10,
 #yyz9,
+#yym2,
 #yyz8,
 #yyz7,
 #yyz6,
@@ -235,7 +248,8 @@ hiddd
 }
 
 #knoba,
-#bnoba {
+#bnoba,
+#ksl2noba {
     z-index: 11;
 }
 
@@ -277,6 +291,8 @@ hiddd
             <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
             <img src="floaters/notepadm2.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadm2">
             <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
+            <img src="floaters/notepadp.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadp">
+            <img src="floaters/notepadpnone.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadpnone">
         </div>
 
 
@@ -306,7 +322,7 @@ hiddd
                     <p id="page3">I hope we see the ghost of David Bowie is here<br><br>—JoJo</p>
                     <p id="page5">:3<br><br>—spice</p>
                     <p id="page7">Badison reporting<br><br>—Badison</p>
-                    <p id="page9"></p>
+                    <p id="page9">ruh roh bruhbruh burh...<br><br>teddlieliilebebebebbeee***<br><br>riiiiiiip rauuip?<br><br>eeeerk.<br><br>—scooby and tweety</p>
                     <p id="page11"></p>
                 </div>
                 <div class="right"> <!--lobby 1 book-->
@@ -1379,7 +1395,7 @@ hiddd
     <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
     <img src="tides/pedestalblock.png" alt="door" usemap="#roommap" class="room" id="pedestalblock">
     <img src="tides/pedestalnull.png" alt="door" usemap="#roommap" class="room" id="pedestalnull">
-    <img src="tides/colorwires.png" alt="door" usemap="#roommap" class="room">
+    <img src="tides/colorwires.png" alt="door" usemap="#roommap" class="room" id="colorwires">
     <img src="tides/pedestalla3.png" alt="door" usemap="#roommap" class="room" id="pillarla3">
     <img src="tides/pedestallb3.png" alt="door" usemap="#roommap" class="room" id="pillarlb3">
     <img src="tides/pedestallc3.png" alt="door" usemap="#roommap" class="room" id="pillarlc3">
@@ -1391,7 +1407,7 @@ hiddd
     <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
     <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
-    <img src="tides/colorwires2.png" alt="door" usemap="#roommap" class="room">       
+    <img src="tides/colorwires2.png" alt="door" usemap="#roommap" class="room" id="colorwires2">       
     <img src="tides/greenrose.png" alt="door" usemap="#roommap" class="room" id="greenrose">       
     <img src="tides/colorswitchdoor.png" alt="door" usemap="#roommap" class="room" id="colorswitchdoor">       
     <img src="tides/redlit.png" alt="door" usemap="#roommap" class="room" id="redlit">       
@@ -1403,15 +1419,19 @@ hiddd
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
     <img src="tides/redrose1.png" alt="door" usemap="#roommap" class="room" id="redrose1">
     <img src="tides/redrose2.png" alt="door" usemap="#roommap" class="room" id="redrose2">
-    <img src="tides/redcircuitwires.png" alt="door" usemap="#roommap" class="room">
+    <img src="tides/redcircuitwires.png" alt="door" usemap="#roommap" class="room" id="redcircuitwires">
 </div>
 
 <div id="blueCircuit" usemap="#roommap"> 
     <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
-    <img src="tides/bluecircuitwires.png" alt="door" usemap="#roommap" class="room">    
+    <img src="tides/bluecircuitwires.png" alt="door" usemap="#roommap" class="room" id="bluecircuitwires">    
         <img src="tides/bluerose.png" alt="door" usemap="#roommap" class="room" id="bluerose">   
 </div>
 
+<div id="interChapterHallway" usemap="#roommap"> 
+    <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">  
+    <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">  
+</div>
 
 
 <!--Adding a new room, stage 1/3-->
@@ -1571,6 +1591,7 @@ hiddd
         
         <area shape="rect" coords="230,3,530,380" alt="western door" class="pointer" onclick="goWest()">
         <area shape="circle" coords="1065,560,200" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="circle" coords="510,592,144" alt="southern door" class="pointer" onclick="takePillarRose()">
     </map>
     
 
@@ -1746,12 +1767,13 @@ hiddd
         <area shape="rect" coords="980,400,1106,470" alt="drop item" class="pointer" onclick="notepadV()">
         <area shape="rect" coords="1010,488,1135,555" alt="drop item" class="pointer" onclick="notepadS()">
         <area shape="rect" coords="340,608,414,660" alt="drop item" class="pointer" onclick="notepadST()">
-            <area shape="rect" coords="870,700,970,750" alt="drop item" class="pointer" onclick="notepadStymie2()">
+            <!--<area shape="rect" coords="870,700,970,750" alt="drop item" class="pointer" onclick="notepadStymie2()">-->
         <area shape="rect" coords="332,391,426,526" alt="drop item" class="pointer" onclick="notepadInfo()">
         <area shape="rect" coords="1012,575,1062,632" alt="drop item" class="pointer" onclick="notepadMusic()">
-            <area shape="rect" coords="830,625,970,750" alt="drop item" class="pointer" onclick="notepadMusic2()">
+            <!--<area shape="rect" coords="830,625,970,750" alt="drop item" class="pointer" onclick="notepadMusic2()">-->
         <area shape="rect" coords="1042,30,1145,130" alt="big x" class="pointer" onclick="hideNotes()">
         <area shape="rect" coords="240,630,380,770" alt="notepad icon" class="pointer" onclick="hideNotes()">
+        <area shape="rect" coords="966,228,1090,305" alt="poem" class="pointer" onclick="notepadPoem()">
     </map>
 
     <map name="diagrammap"> <!--Diagram-->
@@ -1935,9 +1957,9 @@ hiddd
 <audio id="chandelierfall"><source src="sound/chandelierfall.wav" type="audio/mpeg"></audio>
 <audio id="paper"><source src="sound/paper.m4a" type="audio/mpeg"></audio>
 <audio id="glitchNoise"><source src="sound/glitchsound2.mp3" type="audio/mpeg"></audio>
-<audio id="handleSqueak"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
+<audio id="handlesqueak1"><source src="sound/handlesqueak1.mp3" type="audio/mpeg"></audio>
+<audio id="handlesqueak2"><source src="sound/handlesqueak2.mp3" type="audio/mpeg"></audio>
 <audio id="handlePlink"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
-<audio id="waterFlow"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="placeholder"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="pageturn1"><source src="sound/pageturn1.mp3" type="audio/mpeg"></audio>
 <audio id="pageturn2"><source src="sound/pageturn2.mp3" type="audio/mpeg"></audio>
@@ -1991,9 +2013,9 @@ Cantiga 35: O que a Santa Maria
 (Alfonso X El Sabio (Alfonso the Wise),
 Tristans's Harp, arr. Jose Ferrero)-->
     <audio id="laudaNovella" src="sound/LaudaNovellaDoubled.mp3"></audio> <!--World of Pipes after Bridge Cut-->
-    <audio id="eightBitTune" src="sound/classic.wav" type="audio/mpeg"></audio> <!--Arcade game-->
-    <audio id="doihmot" src="sound/ChansonDoIhMot.mp3" loop></audio> <!-- World of Pipes. Chanson do-Ih mot - Arnaut Daniel. -->
-    <audio id="branle" src="sound/BranleDesChevaux.mp3" loop></audio> <!-- House of Tides. Branle Des Chevaux, (+ o que a santa maria, lonc tems ai. -->
+    <audio id="eightBitTune" src="sound/grussesusse.mp3" type="audio/mpeg"></audio> <!--Arcade game-->
+    <audio id="doihmot" src="sound/ChansonDoIhMot.mp3" loop></audio> <!-- ... World of Pipes. Chanson do-Ih mot - Arnaut Daniel. -->
+    <audio id="branle"  loop></audio> <!-- src="sound/BranleDesChevaux.mp3" ... House of Tides. Branle Des Chevaux, (+ o que a santa maria, lonc tems ai. -->
 
 </div>
 <!--Adios-->
@@ -2018,6 +2040,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/kodalysilent.png" alt="kodaly is listening / pondering" class="dialogue" id="kodalysilent">
     <img src="portraits/kodalywhatthefuck.png" alt="kodaly ?!?!" class="dialogue" id="kodalywhatthefuck">
     <img src="portraits/kodalysilent2.png" alt="kodaly eye facing the opposite direction" class="dialogue" id="ksl2">
+    <img src="portraits/kodalysilent2noba.png" alt="kodaly eye facing the opposite direction" class="dialogue" id="ksl2noba">
     <img src="portraits/kodalythinking.png" alt="kodaly" class="dialogue" id="kth">
     <img src="portraits/kodalynobackground.png" alt="kodaly" class="dialogue" id="knoba">
     <img src="portraits/kodalydemolish.png" alt="kodaly" class="dialogue" id="kdem"> 
@@ -2074,15 +2097,15 @@ Tristans's Harp, arr. Jose Ferrero)-->
 
 <div id="notebookTextKodaly">
     Species: Magpie.<br>
-    Likes: bugs, music, hydrology.<br><br>
-    Kodaly and I have been working together<br> for almost 4 years now.<br><br>
+    Likes: bugs, music, hydrology.<br>
+    Pronouns: they / them<br><br>
+    Kodaly and I have been working<br>together for almost 4 years now.<br><br>
     <div class="notebookFlex">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Together, Kodaly and I constitute the entirety of Azzenand's
     Labyrinth Studies Department, although we do have
     a small, cult-like following among the student body.<br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kodaly is a passionate scholar and a good friend. 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    They have a large family, and are in constant communication
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They have a large family, and are in constant communication
     with their sisters via letter and telegram (for the sake of which they have
     devised a secret code, although Kodaly assures me their subject matter is quite mundane).<br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2093,17 +2116,19 @@ speaks whistfully of the topography. The plain, rolling hills of Azzenand's
 campus and surrounding areas are not suited to recreational gliding.<br><br>
 </div>
 </div>
-<div id="notebookTextBridget">    Goliath Frog.<br>
+<div id="notebookTextBridget">
+    Goliath Frog.<br>
     She / her.<br>
     Shy and curious.<br>
-    Likes: tea and honey,<br>shrubs.
+    Likes: tea and honey,<br>
+    shrubs.
 </div>
 <div id="notebookTextVerily"></div>
 <div id="notebookTextShuri"></div>
 
 <div id="notebookTextStymie">
      <div class="notebookFlex">
-        <p><br><br>STMI, which Kodaly tells me actually stands for "Simple Task-Mounting Interface",
+        <p>STMI, which Kodaly tells me actually stands for "Simple Task-Mounting Interface",
         was a piece of equipment left behind by the military which has since gained sentience.
         She has yet to live up to her new name: "System that Misinterprets (or Misrepresents) Information".
         <br><br>Stymie is a wonderful interface, but, as she has purview over only one small floret,
@@ -2113,14 +2138,7 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
         at lengths of millions of nodes. Supposedly, the heart of the labyrinth that bears his name, the
          Stal-Haberson labyrinth, is a massive library containing millions of books of indecypherable
          symbols, repeating at random, like genetic code. 
-</p>
-    </div>
-</div>
-
-
-<div id="notebookTextStymie2">
-     <div class="notebookFlex2">
-        <p><br><br>Of course, no labyrinth is identical. K.L. Brighton, my former mentor and the 
+         <br><br>Of course, no labyrinth is identical. K.L. Brighton, my former mentor and the 
         previous department head of labyrinth studies at Azzenand pointed out that Haberson's conjecture would liken labyrinths
         to single-celled creatures, which ignores the obviously multicellular nature of their morphology.
          "Every room in the labyrinth contains the entire sum of the labyrinth," they liked to say.
@@ -2131,6 +2149,21 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
         the labyrinth could be yet un-theorized. Older scholars have hypothesized
         labyrinths are anything from 
         shared hullucinations to ancient, self-propogating machines.
+        <br><br>Some zealots, especially of the far north, believe that the labyrinths
+        are the relic-temples of an ancient people, and that the heart of a labyrinth is a ladder to Heaven. 
+        So far, one zealot has succeeded in killing a labyrinth, leaving a fragmented, crumbling ruin, 
+        which Kodaly and I had the good fortune to study and map two years ago.
+        <br><br>Suffice it to say, there are more theories about where labyrinths come from than 
+        there are living labyrinths. Hopefully, understanding the extent of their function and 
+        origins will lead to better efforts at their preservation. 
+</p>
+    </div>
+</div>
+
+
+<div id="notebookTextStymie2">
+     <div class="notebookFlex2">
+        <p>
 </p>
     </div>
 </div>
@@ -2138,13 +2171,7 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
 
 <div id="notebookTextStymie3">
      <div class="notebookFlex2">
-        <p><br><br>Some zealots, especially of the far north, believe that the labyrinths
-        are the relic-temples of an ancient people, and that the heart of a labyrinth is a ladder to Heaven. 
-        So far, one zealot has succeeded in killing a labyrinth, leaving a fragmented, crumbling ruin, 
-        which Kodaly and I had the good fortune to study and map two years ago.
-        <br><br>Suffice it to say, there are more theories about where labyrinths come from than 
-        there are living labyrinths. Hopefully, understanding the extent of their function and 
-        origins will lead to better efforts at their preservation. 
+        <p>
 </p>
     </div>
 </div>
@@ -2173,12 +2200,7 @@ Sacrum Mysterium Part II:<br>
 Song of Mary, At Work on the Land<br>
 (Tatter Jack Walsh, Turlough O'Carolan)</p>
 <br><br>
-</div>
-</div>
-
-<div id="notebookTextMusic2">
-<div class="notebookFlex">
-<p>Tubes and Nozzles:
+Tubes and Nozzles:
 Chanson do-Ih mot (Arnaut Daniel)</p>
 
 Arcade Game:<br>
@@ -2187,6 +2209,12 @@ Simple 8-Bit Melody in Medieval Style<br>
 
 Tides and Roses:<br>
 Branle des Chevaux ()
+</div>
+</div>
+
+<div id="notebookTextMusic2">
+<div class="notebookFlex">
+<p>
 
 </div>
 </div>
@@ -3133,7 +3161,7 @@ Secret key — the secret key will perform a secret action.
     <p id="yyk20">He thinks we're a threat.</p>    
 
     <p id="yym1">Oh we're fucked.</p>
-    <p id="yym1">It's too far to jump.</p>
+    <p id="yym2">It's too far to jump.</p>
     
     <p id="yyn1">That was NOT here a second ago!</p>
    
@@ -3448,7 +3476,7 @@ Secret key — the secret key will perform a secret action.
 document.addEventListener("DOMContentLoaded", (event) => {   
    document.onkeydown = (e) => {
     if (e.key == 'i') {
-        if (!inventory.isOpen && !notepad.open) {
+        if (!inventory.isOpen && !notepad.open && !dialogue.preventI) {
             showInv();
         } else {
             hideInv();
@@ -3570,10 +3598,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     //mark. is this important? it caused an overlap after exiting the arcade game
-    penser.play(); 
-    lamano.pause();
-    loncTemsAi.pause();
-    doihmot.pause();
+    //penser.play(); 
+    //lamano.pause();
+    //loncTemsAi.pause();
+    //doihmot.pause();
 
     if (cookiesHas('open')) {
         k.style.display = "none";
@@ -3585,6 +3613,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.openingHasPlayed = true;
     }
 
+    if (cookiesHas('pillardeadendended')) {
+       pillarLock.b = 0;
+       pillarLock.c = 0;
+       pillarLock.a = 0;
+       pillarLock.d = 0;
+       pillarla3.style.display = "none";
+       pillarlc3.style.display = "none";
+       pillarlb3.style.display = "none";
+       pillarld3.style.display = "none";
+       document.getElementById('pLock1').innerText = 0;
+       document.getElementById('pLock2').innerText = 0;
+       document.getElementById('pLock3').innerText = 0;
+       document.getElementById('pLock4').innerText = 0;
+    }
+
+    if (cookiesHas('poem1found')) {
+        dialogue.poemAddedToNotebook = true;
+        dialogue.verse1done = true;
+        secretbrick.style.display = "none";
+        secretbrickremoved.style.display = "block";
+        verse1.style.display = "none";
+        dialogue.verse1 = true;
+    }
+
+    if (cookiesHas('macaroni')) {
+        key.macaroniPipePlaced = true;
+        pipes5fixed.style.display = "block";
+        pipes5spill.style.display = "none";
+        prizeglass2.style.display = "none";
+        prizes.macaroniPipe = true;
+        arcadeGame.score = 250;
+        macaronipipe.style.display = "none";
+    }
 
     if (cookiesHas('paintingPassageLakes')) {
         paintingcheck2.style.display = "block";
@@ -3593,7 +3654,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.spainting = true;
         dialogue.matchSet = true;
      }
-
 
     if (cookiesHas('pinkdoor')) {
         door.pink = true;
@@ -3609,7 +3669,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.donthavetostandthere = true;
     }
 
-    
     if (cookiesHas('secretPaintingPassage')) {
         dialogue.secretPaintingPassageDiscovered = true;
         northpaintings2.style.display = "block";
@@ -3648,6 +3707,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         colorLock.solved = true;
         colorDoor.style.display = "none";
         colordooropen.style.display = "block";
+        dialogue.goodWork = true;
     }
 
     
@@ -3753,7 +3813,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     dialogue.applySwordToRope = false;
     }
 
-    if (cookiesHas('lockboxSolved')) {
+    if (cookiesHas('lockboxSolved') && !cookiesHas('pillardeadendended')) {
         openlockbox.style.display = "block";               
         lockbox.style.display = "none";    
         lockbox.solved = true;   
@@ -4113,6 +4173,8 @@ notepadk.style.display = "none";
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
     notebookTextVerily.style.display = "none";
@@ -4140,6 +4202,8 @@ function notepadK(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
     notebookTextBridget.style.display = "none";
     notebookTextKodaly.style.display = "block";
     notebookTextVerily.style.display = "none";
@@ -4165,6 +4229,8 @@ function notepadB(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
         notebookTextBridget.style.display = "block";
      notebookTextKodaly.style.display = "none";
     notebookTextVerily.style.display = "none";
@@ -4190,6 +4256,8 @@ function notepadV(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
     notebookTextVerily.style.display = "block";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4215,6 +4283,8 @@ function notepadS(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
     notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4240,6 +4310,8 @@ function notepadST(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4265,6 +4337,8 @@ function notepadInfo(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "block";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4303,6 +4377,8 @@ function notepadMusic() {
     notepadst2.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4328,6 +4404,8 @@ function notepadMusic2(){
     notepadmu.style.display = "none";
     notepadm2.style.display = "block";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4356,6 +4434,8 @@ function notepadStymie2() {
     notepadmu.style.display = "none";
     notepadm2.style.display = "none";
     notepadi.style.display = "none";
+    notepadp.style.display = "none";
+    notepadpnone.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -4377,6 +4457,39 @@ function notepadStymie2() {
     linehider.style.display = "block";
     notepadmusic.isopen = false;
     notepadstymie.isopen2 = false;
+    }
+}
+
+
+function notepadPoem(){
+    paperflipsound();
+    notepadk.style.display = "none";
+    notepadb.style.display = "none";
+    notepadv.style.display = "none";
+    notepads.style.display = "none";
+    notepadst.style.display = "none";
+    notepadst2.style.display = "none";
+    notepadmu.style.display = "none";
+    notepadm2.style.display = "none";
+    notepadi.style.display = "none";
+     notebookTextVerily.style.display = "none";
+    notebookTextKodaly.style.display = "none";
+    notebookTextBridget.style.display = "none";
+    notebookTextShuri.style.display = "none";
+    notebookTextStymie.style.display = "none";
+    notebookTextStymie2.style.display = "none";
+    notebookTextStymie3.style.display = "none";
+    notebookTextMusic.style.display = "none";
+    notebookTextMusic2.style.display = "none";
+    notebookTextInfo.style.display = "none";
+    linehider.style.display = "none"
+    notepadmusic.isopen = false;
+    notepadstymie.isopen = false;
+    if (dialogue.poemAddedToNotebook) {
+        notepadp.style.display = "block";
+        notepadpnone.style.display = "none";
+    } else {
+        notepadpnone.style.display = "block";
     }
 }
 
@@ -4528,6 +4641,9 @@ function drop1() {
         }  if (inventory.slot1 === "inexplicable rope") {
             intactrope.style.display = "block";
                 key.rope2 = false;
+        }  if (inventory.slot1 === "violet rose") {
+            pillarrose.style.display = "block";
+                dialogue.violetRose = false;
         }
         inventory.slot1 = false; //inventory.slot1 = false; has to be on the bottom or the whole shit breaks 
     }
@@ -4668,6 +4784,9 @@ function drop2() {
         } if (inventory.slot2 === "inexplicable rope") {
             intactrope.style.display = "block";
                 key.rope2 = false;
+        }  if (inventory.slot2 === "violet rose") {
+            pillarrose.style.display = "block";
+                dialogue.violetRose = false;
         }
 inventory.slot2 = false;
     }
@@ -4808,6 +4927,9 @@ function drop3() {
         } if (inventory.slot3 === "inexplicable rope") {
             intactrope.style.display = "block";
                 key.rope2 = false;
+        }  if (inventory.slot3 === "violet rose") {
+            pillarrose.style.display = "block";
+                dialogue.violetRose = false;
         }
 
         inventory.slot3 = false;
@@ -4949,6 +5071,9 @@ function drop4() {
         } if (inventory.slot4 === "inexplicable rope") {
             intactrope.style.display = "block";
                 key.rope2 = false;
+        }  if (inventory.slot4 === "violet rose") {
+            pillarrose.style.display = "block";
+                dialogue.violetRose = false;
         }
  inventory.slot4 = false;
     }
@@ -5571,6 +5696,7 @@ const page = {spread: 0,}
 const northPage = {spread: 0,}
  function hideGuestBook() {
     dialogue.preventN = false;
+    dialogue.preventI = false;
     frontMatter.style.display = "none";
     bookBody.style.display = "none";
     nextarrow.style.display = "none";
@@ -6218,7 +6344,7 @@ function doPillarsBlockTheWayForward() {
 }
 
 function erectThePillars() { //mark. may cause problems if going back to the first room? or fiddling around too much in lakes
-if (!dialogue.enteredPillarControlLakes && dialogue.pillarsBlockTheWay) {
+if (!dialogue.enteredPillarControlLakes && dialogue.pillarsBlockTheWay && !cookiesHas('pillardeadendended')) {
     pillarLock.a = 3
     pillarLock.b = 3
     pillarLock.c = 3
@@ -7232,13 +7358,15 @@ const switcha = {
 
 //controlled by switchb, the rightmost switch
 function openpillarInterface() {
-    if (current.room === "pillarControlLakes") {
+    if (current.room === "pillarControlLakes" && !dialogue.violetRose) {
             pillarinterface.style.display = "block";
             baseroom.style.display = "none";
             explorers.style.display = "none";
             pillarControlLakes.style.display = "none";
             dialogue.blockArrowTravel = true;
             dialogue.allowEscape = true;
+    } else if (current.room === "pillarControlLakes" && dialogue.violetRose) {
+            noPowerFlowing();
     } else if (current.room === "controlRoom") {
     if (switchb.ison) {
             pillarinterface.style.display = "block";
@@ -7250,16 +7378,8 @@ function openpillarInterface() {
             dialogue.blockArrowTravel = true;
             dialogue.allowEscape = true;
     } else {
-//looks like there's no power flowing to it.
-       zzg1.style.display = "block";
-       k.style.display = "block";
-       dialogue.noPillarPower = 1;
-       document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.noPillarPower === 1) {
-    zzg1.style.display = "none";
-       k.style.display = "none";
-     }}}); 
+        //looks like there's no power flowing to it.
+        noPowerFlowing();
     }
 }
 }
@@ -7352,35 +7472,29 @@ const dialogue = {
     thatWasEasy: true,
     }
 
-    //freefloating ifs. is this a good idea?
-    function checkWaterSound() {
-if (key.greening || key.violeting || key.yellowing || key.blueing || key.redding && (current.room === "sink")) {
-        waterFlowing.play();
-        waterFlowing.volume = 1;
-}    
-if (key.greening || key.violeting || key.yellowing || key.blueing || key.redding || dialogue.handle3turned && (current.room === "pipesRun1")) {
-        waterFlowing.play();
-        waterFlowing.volume = 1;
-}    
-if (key.greening || key.violeting || key.yellowing || key.blueing || key.redding || dialogue.handle3turned || dialogue.handle1turned || dialogue.handle2turned && (current.room === "pipesRun2")) {
-        waterFlowing.play();
-        waterFlowing.volume = 1;
-}    
-if (key.violeting || key.yellowing || key.redding && (current.room === "pipesRun3")) {
-        waterFlowing.play();
-        waterFlowing.volume = 1;
-}    
-if (dialogue.handle1turned || dialogue.handle2turned && (current.room === "pipesRun3")) {
-        waterFlowing.volume = 0.5;
-}    
-if (key.greening || key.violeting || key.yellowing || key.blueing || key.redding && (current.room === "lobbyThree")) {
-        waterFlowing.volume = 0.5;
-}
-if (current.room === "lake1" || current.room === "keys1" || current.room === "unnamedHallway") {
+function checkWater() {
+if ((current.room === "stairsRoom" || current.room === "chasm2" || current.room === "lakeShoreEast" || current.room === "lakeShoreSouth")) {
         waterFlowing.pause();
+} else if ((current.room === "longPipeRoom" || current.room === "pipesLobby" || current.room === "boatRoom" || current.room === "lake" || current.room === "source3") && !dialogue.handle5turned) {
+        waterFlowing.pause();
+} else if ((current.room === "longPipeRoom" || current.room === "pipesLobby" || current.room === "boatRoom" || current.room === "lake" || current.room === "source3") && dialogue.handle5turned) {
+        waterFlowing.play();
+} else if ((current.room === "source1" || current.room === "source2" || current.room === "pipesRun1" || current.room === "pipesRun2" || current.room === "pipesRun3" || current.room === "sink") && (dialogue.handle1turned || dialogue.handle2turned || dialogue.handle3turned || dialogue.handle4turned || key.redding)) {
+        waterFlowing.play();
+} else if ((current.room === "source1") && (!dialogue.handle1turned && !dialogue.handle2turned && !(dialogue.handle3turned || dialogue.handle4turned || key.redding))) {
+        waterFlowing.pause();
+} else if ((current.room === "source1") && (!dialogue.handle1turned && !dialogue.handle2turned && (dialogue.handle3turned || dialogue.handle4turned || key.redding))) {
+        waterFlowing.play();
+        waterFlowing.volume = 0.5;
+} else if ((current.room === "source2") && (!dialogue.handle3turned && !dialogue.handle4turned && !(dialogue.handle1turned || dialogue.handle2turned || key.redding))) {
+        waterFlowing.pause();
+} else if ((current.room === "source2") && (!dialogue.handle3turned && !dialogue.handle4turned && (dialogue.handle1turned || dialogue.handle2turned || key.redding))) {
+        waterFlowing.play();
+        waterFlowing.volume = 0.5;
+} else if (!(current.room === "source1" || current.room === "source2" || current.room === "pipesRun1" || current.room === "pipesRun2" || current.room === "pipesRun3" || current.room === "sink")) {
+        waterFlowing.pause();
+} 
 }
-    }
-
 
 //the initial dialogue sequence
 if (!dialogue.opening) {
@@ -7503,7 +7617,7 @@ document.addEventListener("keydown", function() {
                   notifnoise.play();
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
-                  //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -7688,9 +7802,9 @@ function handleHandle1() {
     handle1.style.display = "none";
     handle1t.style.display = "block";
     dialogue.handle1turned = true;
+    checkWater();
     source1yellow.style.display = "block";
-    handleSqueak.play();
-            waterFlowing.play();
+    handlesqueak1.play();
         if (dialogue.handle2turned && !key.ypipePlaced) {
         pipes2green.style.display = "block";
         }
@@ -7724,6 +7838,7 @@ function handleHandle1() {
     handle1.style.display = "block";
     handle1t.style.display = "none";
     dialogue.handle1turned = false;
+    checkWater();
     source1yellow.style.display = "none";
     pipes2yellow.style.display = "none";
     pipes2green.style.display = "none";
@@ -7732,11 +7847,7 @@ function handleHandle1() {
     greensink.style.display = "none";
     sinksForRedSwitch.greens = false;
     console.log("aint greeng'd");
-if (dialogue.handle3turned || dialogue.handle4turned || key.redding) {
-    waterFlowing.volume = 0.5;
-} else {
-    waterFlowing.pause();
-}
+//if (dialogue.handle3turned || dialogue.handle4turned || key.redding) {waterFlowing.volume = 0.5;} else {waterFlowing.pause();}
     yellowsinkorrect.style.display = "none";
     pipes2fixedonlyyellow.style.display = "none";
     if (dialogue.handle2turned && key.ypipePlaced) {
@@ -7751,7 +7862,7 @@ if (dialogue.handle3turned || dialogue.handle4turned || key.redding) {
         key.blueing = true;
     }
     pipes2fixedon.style.display = "none";
-    handleSqueak.play();
+    handlesqueak2.play();
     }
 }
 
@@ -7761,8 +7872,8 @@ function handleHandle2() {
     handle2.style.display = "none";
     handle2t.style.display = "block";
     dialogue.handle2turned = true;
+    checkWater();
     source1blue.style.display = "block";
-    waterFlowing.play();
         if (dialogue.handle1turned && !key.ypipePlaced) {
             pipes2green.style.display = "block"; //spill mix
         }
@@ -7794,11 +7905,12 @@ function handleHandle2() {
         if (!key.ypipePlaced) {
             pipes2blue.style.display = "block";
         }
-    handleSqueak.play();
+    handlesqueak1.play();
     } else {
     handle2.style.display = "block";
     handle2t.style.display = "none";
     dialogue.handle2turned = false;
+    checkWater();
     source1blue.style.display = "none";
     pipes2blue.style.display = "none";
     pipes2green.style.display = "none";
@@ -7820,26 +7932,20 @@ function handleHandle2() {
         key.yellowing = true;
     }
     pipes2fixedon.style.display = "none";
-    handleSqueak.play();
-    if (dialogue.handle1turned) {
-        waterFlowing.play();
-    } else if (dialogue.handle3turned || dialogue.handle4turned || key.redding) {
-        waterFlowing.volume = 0.5;
-} else {
-    waterFlowing.pause();
+    handlesqueak2.play();
 }
-    }
 }
 
 function handleHandle3() {
     if (!dialogue.handle3turned) {
     dialogue.handle3turned = true;
+    checkWater();
     handle3.style.display = "none";
     handle3t.style.display = "block";
     source2yellow.style.display = "block";
     pipes2yellowrun.style.display = "block";
     pipes3yellow.style.display = "block";
-    handleSqueak.play();
+    handlesqueak1.play();
     if (dialogue.squigglePlaced) {
         pipes1yellow1.style.display = "none";
         pipes1yellow2.style.display = "block";
@@ -7852,12 +7958,13 @@ function handleHandle3() {
     }
     } else {
         dialogue.handle3turned = false;
+        checkWater();
         handle3.style.display = "block";
         handle3t.style.display = "none";
         source2yellow.style.display = "none";
         pipes2yellowrun.style.display = "none";
         pipes3yellow.style.display = "none";
-        handleSqueak.play();
+        handlesqueak2.play();
         pipes1yellow1.style.display = "none";
         pipes1yellow2.style.display = "none";
         pipes1partyellow.style.display = "none";
@@ -7877,8 +7984,9 @@ function handleHandle4() { //violet liquid
         if (!dialogue.handle4turned) {
         handle4.style.display = "none";
         handle4t.style.display = "block";
-        handleSqueak.play();
         dialogue.handle4turned = true;
+        checkWater();
+        handlesqueak1.play();
         source2violet.style.display = "block";
         pipes3violet.style.display = "block";
         pipes2violet.style.display = "block";
@@ -7890,8 +7998,9 @@ function handleHandle4() { //violet liquid
         } else {
         handle4.style.display = "block";
         handle4t.style.display = "none";
-        handleSqueak.play();
         dialogue.handle4turned = false;
+        checkWater();
+        handlesqueak2.play();
         source2violet.style.display = "none";
         pipes3violet.style.display = "none";
         pipes2violet.style.display = "none";
@@ -7956,7 +8065,9 @@ function handleHandle4() { //violet liquid
 function handleHandle5() {
     if (dialogue.handle5attached) {
     if (!dialogue.handle5turned) {
+        handlesqueak1.play();
         dialogue.handle5turned = true;
+        checkWater();
         source3handle.style.display = "none";
         source3handlet.style.display = "block";
         source3red.style.display = "block";
@@ -7976,6 +8087,8 @@ function handleHandle5() {
         }
     } else {
         dialogue.handle5turned = false;
+        handlesqueak2.play();
+        checkWater();
         source3handle.style.display = "block";
         source3handlet.style.display = "none";
         source3red.style.display = "none";
@@ -8064,9 +8177,9 @@ function handleHandle5() {
       y: 0,
       size: 350};
 
-
+    //"space",
     window.addEventListener("keydown", function(e) {
-    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
         e.preventDefault();}}, false);
 
     //keyup and keydown
@@ -8080,7 +8193,6 @@ function handleHandle5() {
     var arcadeGame = {
         score: false,
     }
-
 
     function checkScore() {
     if (arcadeGame.score === 250) {
@@ -8650,6 +8762,10 @@ lobby.style.display = "none";
                 lobbyThree.style.display = "none";
                 unnamedHallway.style.display = "block";
                 current.room = "unnamedHallway";
+                sacrumMysterium.pause(); //mark. maybe. might feel abrupt
+                laudaNovella.pause();
+                doihmot.pause();          
+                branle.pause();
                 if (dialogue.verilyisnowburningashrub) {
                     shrub3.style.display = "none";
                     burningbush.style.display = "block";
@@ -8772,13 +8888,15 @@ lobby.style.display = "none";
                 randomDoorAudio();
                 source2.style.display = "none";
                 pipesRun3.style.display = "block";
-                current.room = "pipesRun3";             
+                current.room = "pipesRun3"; 
+                checkWater();            
         } else if (current.room === "pipesRun2"){
                 randomDoorAudio();
                 pipesRun2.style.display = "none";
                 source1.style.display = "block";
                 current.room = "source1";  
                 explorers.style.zIndex = 0;
+                checkWater();
         } else if (current.room === "arcadeRoom"){
                 randomDoorAudio();
                 arcadeRoom.style.display = "none";
@@ -8830,6 +8948,7 @@ lobby.style.display = "none";
                 pipesLobby.style.display = "block";
                 current.room = "pipesLobby"; 
                 explorers.style.display = "block";
+                checkWater();
             } else {
                 //block travel
                 areWeFucked();
@@ -8849,7 +8968,8 @@ lobby.style.display = "none";
                 randomDoorAudio();
                 pipesLobby.style.display = "none";
                 boatRoom.style.display = "block";
-                current.room = "boatRoom";    
+                current.room = "boatRoom";   
+                checkWater(); 
         } else if (current.room === "boatRoom"){
                 if (key.oars && dialogue.letsGoBoating) {
                     if (!dialogue.explorersteddybearworn || dialogue.teddybeartempnotworn) {
@@ -8862,6 +8982,7 @@ lobby.style.display = "none";
                         lake.style.display = "block";
                         current.room = "lake";  
                         randomOarAudio();
+                        checkWater();
                     } else if (!dialogue.teddybeartempnotworn && !dialogue.bearboat) {
                         illLeaveYouHereKodalyInput();
                         teddybearwaiting3.style.display = "block";
@@ -9054,15 +9175,17 @@ document.addEventListener("keydown", function() {
                 lakesLobby.style.display = "block";
                 current.room = "lakesLobby";             
         } else if (current.room === "pillarDeadEnd"){
-            randomOarAudio();    
+            randomDoorAudio();    
             pillarDeadEnd.style.display = "none";
                 artMirrorRoom.style.display = "block";
-                current.room = "artMirrorRoom";             
+                current.room = "artMirrorRoom";     
+                explorers.style.zIndex = 0;        
         } else if (current.room === "switchTerminus"){
-            randomOarAudio();    
+            randomDoorAudio();    
             switchTerminus.style.display = "none";
             pillarDeadEnd.style.display = "block";
             current.room = "pillarDeadEnd";
+            explorers.style.zIndex = 16;
         } else if (current.room === "littleLakesLobbyWest"){
             randomOarAudio();    
             littleLakesLobbyWest.style.display = "none";
@@ -9092,15 +9215,12 @@ document.addEventListener("keydown", function() {
                 northdoor21.style.display = "none";
             }        
         } else if (current.room === "roseRoom") {
-                        alert("//mark");
             takeWildRose1();
         }
-        checkWaterSound();
     }; //end of check going south
 
 //check going east
 function goEast() {
-    checkWaterSound();
         if (current.room === "lobby"){
             randomDoorAudio();
                 lobby.style.display = "none";
@@ -9276,35 +9396,43 @@ function goEast() {
                 sink.style.display = "none";
                 pipesRun1.style.display = "block";
                 doihmot.volume = 0.8;
-                current.room = "pipesRun1";      
+                current.room = "pipesRun1";    
+                checkWater();  
         } else if (current.room === "pipesRun1"){
                 randomDoorAudio();
                 pipesRun1.style.display = "none";
                 pipesRun2.style.display = "block";
                 doihmot.volume = 1;
                 current.room = "pipesRun2"; 
-                explorers.style.zIndex = 5;            
+                explorers.style.zIndex = 5;   
+                checkWater();         
         } else if (current.room === "pipesRun2"){
                 randomDoorAudio();
                 pipesRun2.style.display = "none";
                 pipesRun3.style.display = "block";
                 current.room = "pipesRun3";     
-                explorers.style.zIndex = 0;        
+                explorers.style.zIndex = 0;  
+                checkWater();      
         } else if (current.room === "pipesRun3"){
                 randomDoorAudio();
                 pipesRun3.style.display = "none";
                 longPipeRoom.style.display = "block";
-                current.room = "longPipeRoom";             
+                current.room = "longPipeRoom"; 
+                if (dialogue.handle3turned || dialogue.handle4turned) {
+                    waterFlowing.volume = 0.5;
+                }           
         } else if (current.room === "longPipeRoom"){
                 randomDoorAudio();
                 longPipeRoom.style.display = "none";
                 pipesLobby.style.display = "block";
-                current.room = "pipesLobby";             
+                current.room = "pipesLobby";   
+                checkWater();          
         } else if (current.room === "pipesLobby"){
                 randomDoorAudio();
                 pipesLobby.style.display = "none";
                 stairsRoom.style.display = "block";
-                current.room = "stairsRoom";             
+                current.room = "stairsRoom"; 
+                checkWater();            
         } else if (current.room === "stairsRoom"){
                 randomDoorAudio();
                 stairsRoom.style.display = "none";
@@ -9319,7 +9447,8 @@ function goEast() {
                 randomOarAudio();
                 source3.style.display = "none";
                 lake.style.display = "block";
-                current.room = "lake";             
+                current.room = "lake";   
+                checkWater();          
         } else if (current.room === "lake"){
                 randomOarAudio();
                 lake.style.display = "none";
@@ -9413,6 +9542,10 @@ function goEast() {
                 loncTemsAi.pause();    
                 branle.pause();
                 doihmot.volume = 0.5;    
+                if (dialogue.handle3turned) {
+                    waterFlowing.play();
+                    waterFlowing.volume = 0.5;
+                }   
         }   else if (current.room === "keys24") {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "aquamarine key"
@@ -9564,26 +9697,22 @@ if (!inventory.slot1) {
             lakesLobby.style.display = "block";
             current.room = "lakesLobby";             
         } else if (current.room === "redCircuit") {
-            randomOarAudio();    
+            randomDoorAudio();    
             redCircuit.style.display = "none";
             switchTerminus.style.display = "block";
             current.room = "switchTerminus";             
         } else if (current.room === "switchTerminus") {
-            randomOarAudio();    
+            randomDoorAudio();    
             switchTerminus.style.display = "none";
             blueCircuit.style.display = "block";
             current.room = "blueCircuit";             
         } else if (current.room === "boatRoom") {
             restoreBear();           
-        } else if (current.room === "flowerIsland") {
-                        alert("//mark");
-            takeWildRose2();
         }
     }; //end of check going east
 
 //check going west
 function goWest() {
-    checkWaterSound();
         if (current.room === "lobby"){
             randomDoorAudio();
             playPenserFromCookies();
@@ -9688,6 +9817,7 @@ function goWest() {
                 keys1.style.display = "block";
                 current.room = "keys1";    
                 sacrumMysterium.play(); 
+                laudaNovella.pause();
                 doihmot.pause();          
                 branle.pause();         
                 sacrumMysterium.volume = 0.5;
@@ -9865,35 +9995,48 @@ function goWest() {
                                 redswitch.style.display = "block";
                                 dialogue.redSwitchCanBeSwitched = true;
                                 console.log("yippie");
-                            } } } }        
+                            } } } }  
+                checkWater();  
+                if (dialogue.handle3turned) {
+                    waterFlowing.volume = 0.5;
+                }    
         } else if (current.room === "pipesRun2"){
                 randomDoorAudio();
                 pipesRun2.style.display = "none";
                 pipesRun1.style.display = "block";
                 doihmot.volume = 0.8;
                 current.room = "pipesRun1";    
-                explorers.style.zIndex = 0;         
+                explorers.style.zIndex = 0;    
+                checkWater();     
         } else if (current.room === "pipesRun3"){
                 randomDoorAudio();
                 pipesRun3.style.display = "none";
                 pipesRun2.style.display = "block";
                 current.room = "pipesRun2";
                 explorers.style.zIndex = 5;
+                checkWater();
         } else if (current.room === "longPipeRoom"){
                 randomDoorAudio();
                 longPipeRoom.style.display = "none";
                 pipesRun3.style.display = "block";
-                current.room = "pipesRun3";             
+                current.room = "pipesRun3";   
+                checkWater();          
         } else if (current.room === "pipesLobby"){
                 randomDoorAudio();
                 pipesLobby.style.display = "none";
                 longPipeRoom.style.display = "block";
-                current.room = "longPipeRoom";             
+                current.room = "longPipeRoom";   
+                checkWater();          
+                if (dialogue.handle3turned || dialogue.handle4turned) {
+                    waterFlowing.play();
+                    waterFlowing.volume = 0.5;
+                }   
         } else if (current.room === "stairsRoom"){
                 randomDoorAudio();
                 stairsRoom.style.display = "none";
                 pipesLobby.style.display = "block";
-                current.room = "pipesLobby";             
+                current.room = "pipesLobby";     
+                checkWater();        
         } else if (current.room === "gallery"){
                 randomDoorAudio();
                 gallery.style.display = "none";
@@ -9913,6 +10056,7 @@ function goWest() {
                 lobbyThree.style.display = "block";
                 current.room = "lobbyThree";           
                 doihmot.volume = 0.3;  
+                checkWater();
         } else if (current.room === "orientationControl") { //HOUSE OF TIDES
             randomOarAudio();    
             orientationControl.style.display = "none";
@@ -9944,7 +10088,7 @@ function goWest() {
             colorControl.style.display = "block";
             current.room = "colorControl";             
         } else if (current.room === "switchTerminus") {
-            randomOarAudio();    
+            randomDoorAudio();    
             switchTerminus.style.display = "none";
             redCircuit.style.display = "block";
             current.room = "redCircuit";             
@@ -9954,18 +10098,19 @@ function goWest() {
             flowerIsland.style.display = "block";
             current.room = "flowerIsland";             
         }  else if (current.room === "blueCircuit") {
-            randomOarAudio();    
+            randomDoorAudio();    
             blueCircuit.style.display = "none";
             switchTerminus.style.display = "block";
             current.room = "switchTerminus";             
         } else if (current.room === "pillarControlLakes") {
             openpillarInterface();
+        } else if (current.room === "flowerIsland") {
+            takeWildRose2();
         }
     }; //end of check going west
 
 //check going north
 function goNorth() {
-    checkWaterSound();
         if (current.room === "lobby"){
                 randomDoorAudio();
                 lobby.style.display = "none";
@@ -10334,7 +10479,8 @@ function goNorth() {
                 randomDoorAudio();
                 pipesRun3.style.display = "none";
                 source2.style.display = "block";
-                current.room = "source2";             
+                current.room = "source2";    
+                checkWater();         
         } else if (current.room === "sink") {
                 if (dialogue.redSwitchCanBeSwitched && !dialogue.redSwitchFlipped) {
                     redswitch.style.display = "none";
@@ -10349,13 +10495,15 @@ function goNorth() {
                 } else if (!dialogue.redSwitchCanBeSwitched) {
                     redSwitchDialogue();
                 }
+                checkWater();
         } 
         else if (current.room === "source1"){
                 randomDoorAudio();
                 source1.style.display = "none";
                 pipesRun2.style.display = "block";
                 current.room = "pipesRun2";     
-                explorers.style.zIndex = 5;        
+                explorers.style.zIndex = 5;    
+                checkWater();    
         } else if (current.room === "gallery"){
                secretPaintingPassage();
         } else if (current.room === "stairsRoom"){
@@ -10412,6 +10560,7 @@ function goNorth() {
                 chasm2.style.display = "block";
                 current.room = "chasm2";  
                 sixteenFeralRacoons();
+                checkWater();
                 } else if (!dialogue.teddybeartempnotworn && !dialogue.bearbyss) {
                         illLeaveYouHere();
                         dialogue.teddybeartempnotworn = true;
@@ -10432,17 +10581,20 @@ function goNorth() {
                 randomDoorAudio();
                 boatRoom.style.display = "none";
                 pipesLobby.style.display = "block";
-                current.room = "pipesLobby";             
+                current.room = "pipesLobby";    
+                checkWater();         
         } else if (current.room === "lake"){
                 randomOarAudio();
                 lake.style.display = "none";
                 boatRoom.style.display = "block";
-                current.room = "boatRoom";             
+                current.room = "boatRoom";     
+                checkWater();        
         } else if (current.room === "lakeShoreSouth"){
                 randomOarAudio();
                 lakeShoreSouth.style.display = "none";
                 lake.style.display = "block";
-                current.room = "lake";             
+                current.room = "lake";   
+                checkWater();          
         } else if (current.room === "arcadeRoom") {
             bikaipoArcadeGame();
         }     else if (current.room === "keys13") {
@@ -10532,6 +10684,7 @@ function goNorth() {
         lake1.style.display = "block";
         current.room = "lake1";
         branle.play();
+        laudaNovella.pause();
         sacrumMysterium.pause();
         branle.volume = 0.4;
         doihmot.pause();
@@ -10665,6 +10818,8 @@ function goNorth() {
                 artMirrorRoom.style.display = "none";
                 pillarDeadEnd.style.display = "block";
                 current.room = "pillarDeadEnd";
+                randomDoorAudio();
+                explorers.style.zIndex = 16;
                 if (pillarLock.a === 3) {
                     pillarla3.style.display = "block";
                 } else if (pillarLock.a === 0) {
@@ -10698,7 +10853,12 @@ function goNorth() {
                 randomDoorAudio();   
                 pillarDeadEnd.style.display = "none";
                 switchTerminus.style.display = "block";
-                current.room = "switchTerminus";       
+                current.room = "switchTerminus";  
+                explorers.style.zIndex = 0;     
+                document.cookie = "pillardeadendended=pillardeadendended";
+                if (dialogue.greenSwitchFlipped) {
+                    greenlit.style.display = "block";
+                }
             } else if ((pillarLock.b === 0 && pillarLock.c === 3) || (pillarLock.b === 3 && pillarLock.c === 0)) {
                 iDontThinkICanFitThroughThat();
             }
@@ -10716,8 +10876,9 @@ function goNorth() {
                  if (binaryGateWest.equalz == 14) {
                     panel14.style.display = "none";
                     panel14open.style.display = "block";
-                    if (!key.rose) { //mark what color is it??
+                    if (!key.blueRose) { //mark what color is it??
                         panel14rose.style.display = "block";
+                        key.blueRose = true;
                     }
                  }
         } else if (current.room === "pillarControlLakes"){ 
@@ -10754,10 +10915,22 @@ function goNorth() {
             if (!dialogue.blueSwitchFlipped) {
                 dialogue.blueSwitchFlipped = true;
                 blueswitch.style.display = "none";
+                switchclick.play();
             } else if (dialogue.blueSwitchFlipped) {
                 dialogue.blueSwitchFlipped = false;
                 blueswitch.style.display = "block";
+                switchclick.play();
             }
+        } else if (current.room === "switchTerminus") {
+            if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
+                randomDoorAudio();    
+                switchTerminus.style.display = "none";
+                interChapterHallway.style.display = "block";
+                current.room = "interChapterHallway";
+            } else {
+                willUnlockForColor();
+            }
+                       
         } 
     }; //end of check going north
 
@@ -10791,6 +10964,43 @@ function restartDoIhMotAfterLaudaNovella() {
                 laudaNovella.pause();
 }
 
+function takePillarRose() {
+    if (!inventory.slot1) {
+            if (inventory.slot1 !== "violet rose"
+            && inventory.slot2 !== "violet rose"
+            && inventory.slot3 !== "violet rose"
+            && inventory.slot4 !== "violet rose") {
+                pillarrose.style.display = "none";
+                dialogue.violetRose = true;
+                inventory.slot1 = "violet rose";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "violet rose"
+            && inventory.slot2 !== "violet rose"
+            && inventory.slot3 !== "violet rose"
+            && inventory.slot4 !== "violet rose") {
+                pillarrose.style.display = "none";
+                dialogue.violetRose = true;
+                inventory.slot2 = "violet rose";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "violet rose"
+            && inventory.slot2 !== "violet rose"
+            && inventory.slot3 !== "violet rose"
+            && inventory.slot4 !== "violet rose") {
+                pillarrose.style.display = "none";
+                dialogue.violetRose = true;
+                inventory.slot3 = "violet rose";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "violet rose"
+            && inventory.slot2 !== "violet rose"
+            && inventory.slot3 !== "violet rose"
+            && inventory.slot4 !== "violet rose") {
+                pillarrose.style.display = "none";
+                dialogue.violetRose = true;
+                inventory.slot4 = "violet rose";}
+        } else {
+            tooHeavy();
+        }
+}
 
 function takeHandleA() {
     if (!inventory.slot1) {
@@ -10840,7 +11050,7 @@ function takeWildRose1() {
             && inventory.slot2 !== "wild rose"
             && inventory.slot3 !== "wild rose"
             && inventory.slot4 !== "wild rose") {
-                wildrose1.style.display = "none";
+                wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 inventory.slot1 = "wild rose";}
         } else if (!inventory.slot2) {
@@ -10848,7 +11058,7 @@ function takeWildRose1() {
             && inventory.slot2 !== "wild rose"
             && inventory.slot3 !== "wild rose"
             && inventory.slot4 !== "wild rose") {
-                wildrose1.style.display = "none";
+                wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 inventory.slot2 = "wild rose";}
         } else if (!inventory.slot3) {
@@ -10856,7 +11066,7 @@ function takeWildRose1() {
             && inventory.slot2 !== "wild rose"
             && inventory.slot3 !== "wild rose"
             && inventory.slot4 !== "wild rose") {
-                wildrose1.style.display = "none";
+                wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 inventory.slot3 = "wild rose";}
         }  else if (!inventory.slot4) {
@@ -10864,7 +11074,7 @@ function takeWildRose1() {
             && inventory.slot2 !== "wild rose"
             && inventory.slot3 !== "wild rose"
             && inventory.slot4 !== "wild rose") {
-                wildrose1.style.display = "none";
+                wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 inventory.slot4 = "wild rose";}
         } else {
@@ -10879,7 +11089,7 @@ function takeWildRose2() {
             && inventory.slot2 !== "red rose"
             && inventory.slot3 !== "red rose"
             && inventory.slot4 !== "red rose") {
-                wildrose2.style.display = "none";
+                wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 inventory.slot1 = "red rose";}
         } else if (!inventory.slot2) {
@@ -10887,7 +11097,7 @@ function takeWildRose2() {
             && inventory.slot2 !== "red rose"
             && inventory.slot3 !== "red rose"
             && inventory.slot4 !== "red rose") {
-                wildrose2.style.display = "none";
+                wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 inventory.slot2 = "red rose";}
         } else if (!inventory.slot3) {
@@ -10895,7 +11105,7 @@ function takeWildRose2() {
             && inventory.slot2 !== "red rose"
             && inventory.slot3 !== "red rose"
             && inventory.slot4 !== "red rose") {
-                wildrose2.style.display = "none";
+                wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 inventory.slot3 = "red rose";}
         }  else if (!inventory.slot4) {
@@ -10903,7 +11113,7 @@ function takeWildRose2() {
             && inventory.slot2 !== "red rose"
             && inventory.slot3 !== "red rose"
             && inventory.slot4 !== "red rose") {
-                wildrose2.style.display = "none";
+                wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 inventory.slot4 = "red rose";}
         } else {
@@ -11552,6 +11762,7 @@ function pickSW() {
             pipes5fixed.style.display = "block";
             pipes5spill.style.display = "none";
             key.macaroniPipePlaced = true;
+            document.cookie = "macaroni=macaroni"
             if (dialogue.handle5turned) {
                 pipes5fixedred.style.display = "block";
                 pipes5fixed.style.display = "none";
@@ -13015,6 +13226,7 @@ function pickNE() {
         dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
         dialogue.preventN = true;
+        dialogue.preventI = true;
         document.body.style.background = "#7a6f5c";
     } else if (current.room === "lobbyTwo") {
     frontMatter.style.display = "block";
@@ -13025,6 +13237,7 @@ function pickNE() {
 dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
         dialogue.preventN = true;
+        dialogue.preventI = true;
 }
     else if (current.room === "lobbyThree") {
     frontMatter.style.display = "block";
@@ -13034,6 +13247,7 @@ dialogue.blockArrowTravel = true;
 dialogue.blockArrowTravel = true;
         dialogue.allowEscape = true;
         dialogue.preventN = true;
+        dialogue.preventI = true;
         document.body.style.background = "#7a6f5c";
 }
 

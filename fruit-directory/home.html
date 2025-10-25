@@ -2,290 +2,53 @@
 <html>
 <head>
   <title>Fruit Directory</title>
-  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico">
+  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">
 </head>
 <style>
-  #grape,
-  #starfruit,
-  #peach,
-  #knock {
-    cursor: pointer;
-  }
-  #t1{
+  
+  #fruittree {
     margin-top: 0px;
-    margin-left: -12px;
-    width: 450px;
-  }
-  #t2{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 550px
-  } #t3{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 700px
-  } #t4{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 850px
-  } #t5{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 1000px
-  } #t6{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 1150px
-  } #t7{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 1300px
-  } #t8{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 1450px
-  } #t9{
-    margin-top: 0px;
-    margin-left: -12px;
-    width: 1550px
-  }
+    position: absolute;
+    max-width: 100vw;
+    }
 
-  @media (min-width: 350px) {
-  #t1 {
-    display: block;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 500px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: block;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 650px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: block;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 800px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: block;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 950px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: block;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 1100px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: block;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 1250px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: block;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 1400px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: block;
-  } #t9 {
-    display: none;
-  }
-} @media (min-width: 1550px) {
-  #t1 {
-    display: none;
-  } #t2 {
-    display: none;
-  } #t3 {
-    display: none;
-  } #t4 {
-    display: none;
-  } #t5 {
-    display: none;
-  } #t6 {
-    display: none;
-  } #t7 {
-    display: none;
-  } #t8 {
-    display: none;
-  } #t9 {
-    display: block;
-  }
-}
+    #peach {
+        position: absolute;
+        width: 9%;
+        transform: translate(330%,330%);
+    }
+    #grape {
+        position: absolute;
+        width: 8%;
+        transform: translate(730%,370%);
+    }
+    #starfruit {
+        position: absolute;
+        width: 9%;
+        transform: translate(500%,120%);
+    }
 
 </style>
 
-<img src="fruit_tree.png" id="t1" alt="fruit tree" usemap="#fruit-map">
-<img src="fruit_tree.png" id="t2" alt="fruit tree" usemap="#fruit-map2">
-<img src="fruit_tree.png" id="t3" alt="fruit tree" usemap="#fruit-map3">
-<img src="fruit_tree.png" id="t4" alt="fruit tree" usemap="#fruit-map4">
-<img src="fruit_tree.png" id="t5" alt="fruit tree" usemap="#fruit-map5">
-<img src="fruit_tree.png" id="t6" alt="fruit tree" usemap="#fruit-map6">
-<img src="fruit_tree.png" id="t7" alt="fruit tree" usemap="#fruit-map7">
-<img src="fruit_tree.png" id="t8" alt="fruit tree" usemap="#fruit-map8">
-<img src="fruit_tree.png" id="t9" alt="fruit tree" usemap="#fruit-map9">
 
-<map name="fruit-map">
-  <area shape="circle" id="peach" coords="140,140,30" alt="peach" onclick="peach()">
-  <area shape="circle" id="starfruit" coords="220,90,35," alt="starfruit" onclick="starfruit()">
-  <area shape="circle" id="grape" coords="290,150,30" alt="screen" onclick="grape()">
-  </map> <map name="fruit-map2">
-      <area shape="circle" id="peach" coords="190,160,30" alt="peach" onclick="peach()">
-  <area shape="circle" id="starfruit" coords="270,100,35," alt="starfruit" onclick="starfruit()">
-  <area shape="circle" id="grape" coords="350,190,30" alt="screen" onclick="grape()">
-      </map> <map name="fruit-map3">
-          <area shape="circle" id="peach" coords="240,210,30" alt="peach" onclick="peach()">
-  <area shape="circle" id="starfruit" coords="350,130,35," alt="starfruit" onclick="starfruit()">
-  <area shape="circle" id="grape" coords="450,230,30" alt="screen" onclick="grape()">
-          </map>  <map name="fruit-map4">
-              <area shape="circle" id="peach" coords="300,260,35" alt="peach" onclick="peach()">
-              <area shape="circle" id="starfruit" coords="430,160,35," alt="starfruit" onclick="starfruit()">
-              <area shape="circle" id="grape" coords="550,280,35" alt="screen" onclick="grape()">
-              </map>  <map name="fruit-map5">
-                  <area shape="circle" id="peach" coords="350,310,35" alt="peach" onclick="peach()">
-              <area shape="circle" id="starfruit" coords="510,180,35," alt="starfruit" onclick="starfruit()">
-              <area shape="circle" id="grape" coords="650,340,35" alt="screen" onclick="grape()">
-                  </map>  <map name="fruit-map6">
-                      <area shape="circle" id="peach" coords="400,350,35" alt="peach" onclick="peach()">
-                      <area shape="circle" id="starfruit" coords="570,210,40," alt="starfruit" onclick="starfruit()">
-                      <area shape="circle" id="grape" coords="750,380,35" alt="screen" onclick="grape()">
-                      </map>  <map name="fruit-map7">
-                          <area shape="circle" id="peach" coords="450,410,35" alt="peach" onclick="peach()">
-                          <area shape="circle" id="starfruit" coords="650,230,50," alt="starfruit" onclick="starfruit()">
-                          <area shape="circle" id="grape" coords="850,430,40" alt="screen" onclick="grape()">
-                          </map>  <map name="fruit-map8">
-                              <area shape="circle" id="peach" coords="490,460,42" alt="peach" onclick="peach()">
-                              <area shape="rect" id="starfruit" coords="670,190,770,320" alt="starfruit" onclick="starfruit()">
-                              <area shape="circle" id="grape" coords="940,484,45" alt="screen" onclick="grape()">
-                              </map>  <map name="fruit-map9">
-                                  <area shape="circle" id="peach" coords="550,500,42" alt="peach" onclick="peach()">
-                                  <area shape="rect" id="starfruit" coords="700,190,770,320" alt="starfruit" onclick="starfruit()">
-                                  <area shape="circle" id="grape" coords="940,484,45" alt="screen" onclick="grape()">
-                                  </map>  
+<img src="fruit_tree.png" id="fruittree" alt="fruit tree">
+
+<a href="fiction.html">
+<img src="peach.png" id="peach" alt="peach"/>
+</a>
+<a href="games.html">
+<img src="starfruit.png" id="starfruit" alt="starfruit"/>
+</a>
+<a href="poetry.html">
+<img src="grape.png" id="grape" alt="grape"/>
+</a>
+
+ 
 
 </div>
 </body>
 <script>
-
+//calc and root
 
   function starfruit() {
     window.location.href = 'games.html';

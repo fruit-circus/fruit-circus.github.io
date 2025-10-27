@@ -1718,43 +1718,45 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
         else if (current.room === "lobbyThree") {
         if (!dialogue.enteringLobbyThree) {
-            //intrepid explorers
             stmigo.play();
             dialogue.blockArrowTravel = true;
             yyb1.style.display = "block";
-            st.style.display = "block";
+            k.style.display = "block";
             dialogue.intrepidExplorers = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.intrepidExplorers === 1) {
        yyb1.style.display = "none";
        yyb2.style.display = "block";
-       st.style.display = "none";
-       k.style.display = "block";
+       st.style.display = "block";
+       k.style.display = "none";
        dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 2) {
        yyb2.style.display = "none";
        yyb3.style.display = "block";
-       st.style.display = "block";
-       k.style.display = "none";
+       k.style.display = "block";
+       st.style.display = "none";
          dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 3) {
        yyb3.style.display = "none";
        yyb4.style.display = "block";
+       k.style.display = "none";
        st.style.display = "block";
          dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 4) {
        yyb4.style.display = "none";
        yyb5.style.display = "block";
-       st.style.display = "block";
+       b.style.display = "block";
+       st.style.display = "none";
        dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 5) {
        yyb5.style.display = "none";
        yyb6.style.display = "block";
+       b.style.display = "none";
        st.style.display = "block";
        dialogue.intrepidExplorers++;
          return;
@@ -1767,26 +1769,105 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.intrepidExplorers === 7) {
        yyb7.style.display = "none";
        yyb8.style.display = "block";
-        st.style.display = "none";
-       stfl.style.display = "block";
+       st.style.display = "block";
          dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 8) {
        yyb8.style.display = "none";
        yyb9.style.display = "block";
-       stfl.style.display = "none";
-              k.style.display = "block"; 
+        st.style.display = "block"; 
          dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 9) {
        yyb9.style.display = "none";
        yyb10.style.display = "block";
        st.style.display = "block";
-       k.style.display = "none";
          dialogue.intrepidExplorers++;
          return;
      } else if (dialogue.intrepidExplorers === 10) {
        yyb10.style.display = "none";
+       yyb11.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 11) {
+       yyb11.style.display = "none";
+       yyb12.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 12) {
+       yyb12.style.display = "none";
+       yyb13.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 13) {
+       yyb13.style.display = "none";
+       yyb14.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 14) {
+       yyb14.style.display = "none";
+       yyb15.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 15) {
+       yyb15.style.display = "none";
+       yyb16.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 16) {
+       yyb16.style.display = "none";
+       yyb17.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 17) {
+       yyb17.style.display = "none";
+       yyb18.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 18) {
+       yyb18.style.display = "none";
+       yyb19.style.display = "block";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     } else if (dialogue.intrepidExplorers === 19) {
+       yyb19.style.display = "none";
+       yyb20.style.display = "block";
+       st.style.display = "none";
+       b.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 20) {
+       yyb20.style.display = "none";
+       yyb21.style.display = "block";
+       b.style.display = "none";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 21) {
+       yyb21.style.display = "none";
+       yyb22.style.display = "block";
+       st.style.display = "none";
+       b.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 22) {
+       yyb22.style.display = "none";
+       yyb23.style.display = "block";
+       b.style.display = "none";
+       st.style.display = "block";
+         dialogue.intrepidExplorers++;
+         return;
+     }  else if (dialogue.intrepidExplorers === 23) {
+       yyb23.style.display = "none";
        st.style.display = "none";
         dialogue.enteringLobbyThree = true;
         dialogue.feralRacoons = true;
@@ -2582,7 +2663,7 @@ document.addEventListener("keydown", function() {
 }
 
 function itsaDeadEnd() {
-if (dialogue.chaseChase) { //they've already checked one dead end, now a longer conversation
+if (dialogue.chaseChase && !dialogue.lobbythreeachieved) { //they've already checked one dead end, now a longer conversation
    dialogue.chaseComplete = 1;
    zzn8.style.display = "block";
    b.style.display = "block";
@@ -3225,7 +3306,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.verilyShruberies === 5) {
         yyp5.style.display = "none";
         yyp6.style.display = "block";
-        k.style.display = "block";
+        kin.style.display = "block";
         ksul.style.display = "none";
         dialogue.verilyShruberies++;
         return;
@@ -3233,7 +3314,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         yyp6.style.display = "none";
         yyp7.style.display = "block";
         v.style.display = "block"; //i wanted to confirm something
-        k.style.display = "none";
+        kin.style.display = "none";
         dialogue.verilyShruberies++;
         return;
     } else if (dialogue.verilyShruberies === 7) {
@@ -3252,83 +3333,94 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     } else if (dialogue.verilyShruberies === 9) {
         yyp9.style.display = "none";
-        yyp10.style.display = "block";
         v.style.display = "none";
-        bfur.style.display = "block";
-        dialogue.verilyShruberies++;
-        return;
-    } else if (dialogue.verilyShruberies === 10) {
+        dialogue.verilyShruberies = true;
+        dialogue.blockArrowTravel = false;
+        dialogue.verilyfour = true;
+        dialogue.verilyFive = true;
+    } }})} else if (dialogue.verilyFive) {
+        yyp10.style.display = "block";
+      bfur.style.display = "block";
+      dialogue.verilyShruberies2 = 10;
+      dialogue.blockArrowTravel = true;
+      document.addEventListener("keydown", function() {
+if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.verilyShruberies2 === 10) {
         yyp10.style.display = "none";
         yyp11.style.display = "block";
         bfur.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 11) {
+    } else if (dialogue.verilyShruberies2 === 11) {
         yyp11.style.display = "none";
         yyp12.style.display = "block";
         b.style.display = "block"; //we are guests
         bfur.style.display = "none";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 12) {
+    } else if (dialogue.verilyShruberies2 === 12) {
         yyp12.style.display = "none";
         yyp13.style.display = "block";
         b.style.display = "none";
         v.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 13) {
+    } else if (dialogue.verilyShruberies2 === 13) {
         yyp13.style.display = "none";
         yyp14.style.display = "block";
         v.style.display = "none";
         bfur.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 14) {
+    } else if (dialogue.verilyShruberies2 === 14) {
         yyp14.style.display = "none";
         yyp15.style.display = "block";
         bfur.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 15) {
+    } else if (dialogue.verilyShruberies2 === 15) {
         yyp15.style.display = "none";
         yyp16.style.display = "block";
         bfur.style.display = "none";
-        k.style.display = "block";
-        dialogue.verilyShruberies++;
+        kin.style.display = "block";
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 16) {
+    } else if (dialogue.verilyShruberies2 === 16) {
         yyp16.style.display = "none";
         yyp17.style.display = "block";
-        k.style.display = "block";
-        dialogue.verilyShruberies++;
+        kin.style.display = "none";
+        ksl2.style.display = "block";
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 17) {
+    } else if (dialogue.verilyShruberies2 === 17) {
         yyp17.style.display = "none";
         yyp18.style.display = "block";
-        k.style.display = "none";
+        ksl2.style.display = "none";
         v.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 18) {
+    } else if (dialogue.verilyShruberies2 === 18) {
         yyp18.style.display = "none";
         yyp19.style.display = "block";
         v.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 19) {
+    } else if (dialogue.verilyShruberies2 === 19) {
         yyp19.style.display = "none";
         yyp20.style.display = "block";
         v.style.display = "block";
-        dialogue.verilyShruberies++;
+        dialogue.verilyShruberies2++;
         return;
-    } else if (dialogue.verilyShruberies === 20) {
+    } else if (dialogue.verilyShruberies2 === 20) {
         yyp20.style.display = "none";
         v.style.display = "none";
-        dialogue.verilyShruberies = true;
+        dialogue.verilyShruberies2 = false;
         dialogue.blockArrowTravel = false;
+        dialogue.verilyFive = false;
+        dialogue.verilySix = true;
     }
-}})}
+  }})}
+
 }
 
 function verilyIdleDialogue() {
@@ -3947,6 +4039,7 @@ function takeMacaroniPipe() {
                 macaronipipe.style.display = "none";
                 document.cookie = "macaronipipe=macaronipipe";
                 key.macaroni = true;
+                tubepick.play();
                 inventory.slot1 = "macaroni pipe";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "macaroni pipe"
@@ -3956,6 +4049,7 @@ function takeMacaroniPipe() {
                 macaronipipe.style.display = "none";
                 document.cookie = "macaronipipe=macaronipipe";
                 key.macaroni = true;
+                tubepick.play();
                 inventory.slot2 = "macaroni pipe";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "macaroni pipe"
@@ -3965,6 +4059,7 @@ function takeMacaroniPipe() {
                 macaronipipe.style.display = "none";
                 document.cookie = "macaronipipe=macaronipipe";
                 key.macaroni = true;
+                tubepick.play();
                 inventory.slot3 = "macaroni pipe";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "macaroni pipe"
@@ -3974,6 +4069,7 @@ function takeMacaroniPipe() {
                 macaronipipe.style.display = "none";
                 document.cookie = "macaronipipe=macaronipipe";
                 key.macaroni = true;
+                tubepick.play();
                 inventory.slot4 = "macaroni pipe";}
         } else {
             tooHeavy();
@@ -4074,7 +4170,8 @@ if (event.key === 'Enter' || event.key === ' ') {
 
 
 function inspectSink() {
-    yyo5.style.display = "block";
+      glasstink.play();
+      yyo5.style.display = "block";
       b.style.display = "block";
       dialogue.clearglasspipe = 1;
       document.addEventListener("keydown", function() {
@@ -4919,12 +5016,6 @@ document.addEventListener("keydown", function() {
          return;
      } else if (dialogue.secretPassage1a === 12) {
        yya24.style.display = "none";
-       yya25.style.display = "block";
-       b.style.display = "block";
-       dialogue.secretPassage1a++;
-         return;
-     } else if (dialogue.secretPassage1a === 13) {
-       yya25.style.display = "none";
        b.style.display = "none";
        dialogue.secretPassage1a = false;
        dialogue.secretPassage2 = true;
@@ -6115,6 +6206,7 @@ function tooHeavy() {
                 u2.style.display = "none";
                 b.style.display = "none"; 
                 dialogue.blockArrowTravel = false;
+                document.cookie = "tooheavy=tooheavy"
                 return;
             }
         }});

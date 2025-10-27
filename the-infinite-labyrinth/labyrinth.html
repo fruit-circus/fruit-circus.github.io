@@ -35,18 +35,10 @@ make sure font family is not impact
 automatic sizing (or centering? or zoom?) for larger screens?
 
 SOUND:
-add candle thunk (4-5 variations) for: candlePlacement
-sound for incorrectCandles (a little incorrect buzzer blip or locked panel clang)
-unlocking noise for opening the candle panel  
-and for failing to open the combination chest and the color lock (thlunk!)
+better thunk1,2,3 for candles
+possibly better tubepick (more glass-sounding and less plastic sounding)
 pillarstonergrind : distant long stone grinding for each pillarmachine interaction 
 something happened! stone grinding for 2303 (successful clunk)
-handle turn (squeeek!)
-reconnecting handle sound (clink!)
-picking up handle (clink!)
-picking up oars (plonk!)
-picking up pipes, placing pipes (thuonk)
-lockeddoor - (thump / donk)
 
 
 chrome: 
@@ -55,23 +47,20 @@ reevaluate cookies for chrome
 
 code:
 chapter3abanner map 
-inv z index pipe1part and explorers in piperun2
-new portraits for kodaly in yyp. verilyisburningashrub
+guest book closes should reset ... northpage.spread
 finish Tides::
-    boat explorers z index inventory
-    boatmove plays at the northernmost floret should be dooraudio
     replace 21 if switches are changed again. same with 14 panel unless rose taken -- actually they perma unlock?
-    pillar and rose and wires art 
     prevent exploers basic from appearing for split second
     roses placement to activate door 
     leaving 3c conversation maybe verily shows up after soldier confrontation 
 
 low priority:
-put your name on it somewhere 
+finish putting up verily burning a shrub
+put your name on it somewhere + art for notepad tips page with keys
 supply crowbar for arcade game
 add cookies for other three pipes (macaroni has)
 add more misc objects to ch3 lobby and first room in tides
-cookies for tooheavy convo
+cookies for tooheavytookeys convo
 add escape for inv and notepad
 make it so that new stickynotes are added to the notepad when opening by checking variables instead of having them all visible from the get go
 fully check code for watersound
@@ -79,6 +68,7 @@ hide exploers when entering lake (pipes)
 more time after elmare for silence and then the next song on loop
 stymie notifs l1 not quite right (with cookies?)
 add another secret
+art: illuminate poem1
 howling wind for chasms
 guest book reset when opening new book so pages are visible as expected 
 imagemap for combination lock dias - add a little bit to the left
@@ -124,7 +114,7 @@ hiddd
 */
 
 #boatexplorers {
-    z-index: 10;
+    z-index: 1;
 }
 
 #redcircuitwires,
@@ -160,8 +150,47 @@ hiddd
 
 #zzt1,
 #yyv1,
+#kin,
 #ybc1,
 #ybd1,
+#redrose1,
+#yyb21,
+#yyb20,
+#yyb19,
+#yyb18,
+#ybf20,
+#ybg2,
+#ybg1,
+#ybf21,
+#ybf22,
+#ybf13,
+#ybf14,
+#ybf15,
+#ybf16,
+#ybf17,
+#ybf18,
+#ybf19,
+#ybf12,
+#ybf11,
+#ybf10,
+#ybf1,
+#ybf2,
+#ybf3,
+#ybf4,
+#ybf5,
+#ybf6,
+#ybf7,
+#ybf8,
+#ybf9,
+#yyb17,
+#yyb16,
+#yyb15,
+#yyb14,
+#yyb13,
+#yyb12,
+#yyb11,
+#redrose2,
+#bluerose,
 #ybc2,
 #ybcd3,
 #paintingcheck,
@@ -170,11 +199,14 @@ hiddd
 #panel14rose,
 #paintingcheck2,
 #yyp38,
+#yyp39,
 #yyu1,
 #yyu2,
 #yyu2a,
 #yyu3,
 #yyu4,
+#yyb22,
+#yyb23,
 #redlit,
 #bluelit,
 #greenlit,
@@ -188,6 +220,7 @@ hiddd
 #yyu11,
 #yyx1,
 #yyx2,
+#yyp25a,
 #yyx3,
 #yba1,
 #ybb1,
@@ -215,6 +248,13 @@ hiddd
 #yyz17,
 #yyz16,
 #yyz15,
+#yyp46,
+#yyp45,
+#yyp44,
+#yyp43,
+#yyp42,
+#yyp41,
+#yyp40,
 #yyz14,
 #yyz13,
 #yyz12,
@@ -266,7 +306,6 @@ hiddd
         <div> <!--Prime Floaters-->
             <img src="satchel.png" alt="satchel" usemap="#roommap" class="room" id="satchel">
             <img src="floaters/inv.png" alt="inv" usemap="#invmap" class="room" id="inv">
-            <img src="floaters/linehider.png" alt="line hider" usemap="#notepadmap" class="room" id="linehider">
             <img src="floaters/poem1.png" alt="line hider" class="room" id="poem1">
                 <img src="floaters/chapter1banner.png" alt="line hider" class="room" id="chapter1banner" usemap="#firstlobbymap">
                 <img src="floaters/chapter2banner.png" alt="line hider" class="room" id="chapter2banner" usemap="#hallmap">
@@ -283,9 +322,7 @@ hiddd
             <img src="floaters/notepadv.png" usemap="#notepadmap" class="room" id="notepadv">
             <img src="floaters/notepads.png" usemap="#notepadmap" class="room" id="notepads">
             <img src="floaters/notepadst.png" usemap="#notepadmap" class="room" id="notepadst">
-            <img src="floaters/notepadst2.png" usemap="#notepadmap" class="room" id="notepadst2">
             <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
-            <img src="floaters/notepadm2.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadm2">
             <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
             <img src="floaters/notepadp.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadp">
             <img src="floaters/notepadpnone.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadpnone">
@@ -1399,7 +1436,6 @@ hiddd
 </div>
 
 <div id="switchTerminus" usemap="#roommap"> 
-    <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
     <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
     <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
@@ -1426,7 +1462,7 @@ hiddd
 
 <div id="interChapterHallway" usemap="#roommap"> 
     <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">  
-    <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">  
+    <img src="colordoorsouth.png" alt="door" usemap="#roommap" class="room" id="colordoorsouth">  
 </div>
 
 
@@ -1946,8 +1982,9 @@ hiddd
 <audio id="paddle4"><source src="sound/paddle4.mp3" type="audio/mpeg"></audio>
 <audio id="paddle5"><source src="sound/paddle5.mp3" type="audio/mpeg"></audio>
 <audio id="paddle6"><source src="sound/paddle6.mp3" type="audio/mpeg"></audio>
-<audio id="lockeddoor"><source src="sound/lockeddoor.mp3" type="audio/mpeg"></audio> <!--Replace-->
-<audio id="incorrectCandles"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
+<audio id="lockeddoor"><source src="sound/lockeddoor.mp3" type="audio/mpeg"></audio>
+<audio id="incorrectCandles"><source src="sound/ptink.mp3" type="audio/mpeg"></audio>
+<audio id="handleclink"><source src="sound/handleclink.mp3" type="audio/mpeg"></audio>
 <audio id="buttonclick3"><source src="sound/buttonclick3.mp3" type="audio/mpeg"></audio>
 <audio id="buttonclick4"><source src="sound/buttonclick4.mp3" type="audio/mpeg"></audio>
 <audio id="chandelierfall"><source src="sound/chandelierfall.wav" type="audio/mpeg"></audio>
@@ -1955,7 +1992,7 @@ hiddd
 <audio id="glitchNoise"><source src="sound/glitchsound2.mp3" type="audio/mpeg"></audio>
 <audio id="handlesqueak1"><source src="sound/handlesqueak1.mp3" type="audio/mpeg"></audio>
 <audio id="handlesqueak2"><source src="sound/handlesqueak2.mp3" type="audio/mpeg"></audio>
-<audio id="handlePlink"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
+<audio id="handlePlink"><source src="sound/handleclink.mp3" type="audio/mpeg"></audio>
 <audio id="placeholder"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="pageturn1"><source src="sound/pageturn1.mp3" type="audio/mpeg"></audio>
 <audio id="pageturn2"><source src="sound/pageturn2.mp3" type="audio/mpeg"></audio>
@@ -1991,18 +2028,23 @@ hiddd
 <audio id="lockClick3"><source src="sound/lockclick3.mp3" type="audio/mpeg"></audio> 
 <audio id="lockClick4"><source src="sound/lockclick4.mp3" type="audio/mpeg"></audio>
 <audio id="switchclick"><source src="sound/switch.mp3" type="audio/mpeg"></audio>
-<audio id="stmion"><source src="sound/stmion.mp3" type="audio/mpeg"></audio>
+<audio id="panelunlock"><source src="sound/panelunlock.mp3" type="audio/mpeg"></audio>
+<audio id="glasstink"><source src="sound/glasstink.mp3" type="audio/mpeg"></audio>
+<audio id="tubepick"><source src="sound/tubepick.mp3" type="audio/mpeg"></audio>
 <audio id="pillarstonergrind"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> <!--long duration distant stone grinding-->
-    <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
+<audio id="stmion"><source src="sound/stmion.mp3" type="audio/mpeg"></audio>
+<audio id="thunk1"><source src="sound/thunk1.mp3" type="audio/mpeg"></audio>
+<audio id="thunk2"><source src="sound/thunk2.mp3" type="audio/mpeg"></audio>
+<audio id="thunk3"><source src="sound/thunk3.mp3" type="audio/mpeg"></audio>
+<audio id="plankplonk"><source src="sound/plankplonk.mp3" type="audio/mpeg"></audio>
 
 
-
+<audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
     <audio id="penser" src="sound/penser.mp3" loop></audio> <!--Chapter 1-->
     <audio id="lamano" src="sound/lamano.mp3" loop></audio> <!--Chapter 2-->
     <audio id="elmare"><source src="sound/Elmare-epare.mp3" type="audio/mpeg"></audio> <!-- Chapter 2 Chase Sequence  //mark add another song or two to the end-->
     <!--nulsOmEnRen: unused. bright and cheerful. short.-->
     <audio id="loferm" src="sound/lofermvoler.mp3" type="audio/mpeg"></audio> <!--Short little march, End of Chapter 2 after unlocking the color door. Lo ferm voler - Arnaut Daniel. -->
-    <audio id="loncTemsAi" src="sound/loncTemsAi.mp3" loop></audio> <!--Currently: Too Many Keys. Possibly move to House of Tides-->
     <audio id="sacrumMysterium" src="sound/Sacrum_Mysterium.mp3" loop></audio> <!--Too Many Keys. Sacrum Mysterium_ Part II _Song of Mary_, At Work on the Land _ Tatter Jack Walsh - Turlough O'Carolan-->
     <!--<audio id="oQueASantaMaria" src="sound/oQueASantaMaria.mp3" loop></audio> <--oQueASantaMaria and loncTemsAi Capilla Antigua de Chinchilla:
 Cantiga 35: O que a Santa Maria
@@ -2024,6 +2066,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
 <div> <!--Dialogue Boxes. Grouped by character-->
     <img src="portraits/kodaly.png" alt="kodaly's default dialogue portrait" class="dialogue" id="kodaly">
     <img src="portraits/kodalynonplussed.png" alt="kodaly's nonplussed dialogue portrait" class="dialogue" id="kodalynonplussed">
+    <img src="portraits/kodalyinquisitive.png" alt="kodaly's nonplussed dialogue portrait" class="dialogue" id="kin">
     <img src="portraits/kodalyspooky.png" alt="kodaly's spooky dialogue portrait" class="dialogue" id="kodalyspooky">
     <img src="portraits/kodalysad.png" alt="kodaly's sad dialogue portrait" class="dialogue" id="kodalysad">
     <img src="portraits/kodalycolonthree.png" alt="kodaly's :3 dialogue portrait" class="dialogue" id="kodalycolonthree">
@@ -2124,30 +2167,32 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
 
 <div id="notebookTextStymie">
      <div class="notebookFlex">
-        <p>STMI, which Kodaly tells me actually stands for "Simple Task-Mounting Interface",
+        <p>STMI (which Kodaly tells me actually stands for "Simple Task-Mounting Interface")
         was a piece of equipment left behind by the military which has since gained sentience.
         She has yet to live up to her new name: "System that Misinterprets (or Misrepresents) Information".
         <br><br>Stymie is a wonderful interface, but, as she has purview over only one small floret,
         is unable to answer any of the looming questions modern labyrinth studies has yet to answer. 
         <br><br>Perhaps there's truth in Haberson's conjecture that the center of the labyrinth is like
         the nucleus of a cell, and that information flows outward from it, to the most distal florets,
-        at lengths of millions of nodes. Supposedly, the heart of the labyrinth that bears his name, the
-         Stal-Haberson labyrinth, is a massive library containing millions of books of indecypherable
-         symbols, repeating at random, like genetic code. 
-         <br><br>Of course, no labyrinth is identical. K.L. Brighton, my former mentor and the 
-        previous department head of labyrinth studies at Azzenand pointed out that Haberson's conjecture would liken labyrinths
+        at lengths of millions of nodes. Supposedly, at the heart of the labyrinth that bears his name (the
+         Stal-Haberson labyrinth) there is a massive library comprised of millions of books of indecypherable
+         symbols, repeating at random, as though the books contained the labyrinth's genetic code. Haberson
+         found that if he removed one of the books, the structure of the labyrinth would alter in response.
+         <br><br>Of course, no labyrinth is identical. As K.L. Brighton, my former mentor and the 
+        previous department head of labyrinth studies at Azzenand, once pointed out: Haberson's conjecture would liken labyrinths
         to single-celled creatures, which ignores the obviously multicellular nature of their morphology.
          "Every room in the labyrinth contains the entire sum of the labyrinth," they liked to say.
-        <br><br>K.L.'s famous thought experiment, un-actualizable for obvious reasons, of taking a 
-        single room and "transplating" it somewhere else, like a succulent cutting, would
+        <br><br>K.L.'s famous thought experiment, un-actualizable for obvious logistical reasons, of taking a 
+        single room and "transplanting" it somewhere else, like a succulent cutting, would
          validate this hypothesis, if it were ever attempted.
         <br><br>Of course, all our major theories could be groundless, and the truth at the heart of 
         the labyrinth could be yet un-theorized. Older scholars have hypothesized
-        labyrinths are anything from 
-        shared hullucinations to ancient, self-propogating machines.
-        <br><br>Some zealots, especially of the far north, believe that the labyrinths
-        are the relic-temples of an ancient people, and that the heart of a labyrinth is a ladder to Heaven. 
-        So far, one zealot has succeeded in killing a labyrinth, leaving a fragmented, crumbling ruin, 
+        that labyrinths are anything from 
+        shared numinous hallucinations to ancient self-propagating machines.
+        <br><br>Some zealots of the far north believe that the labyrinths
+        are the relic-temples of an ancient people who built the labyrinth in order to reach God and enter heaven.
+        The heart of a labyrinth is a ladder to Heaven, and its complexity is the vehicle by which a conscious creature ascends. 
+        So far, because of this, one zealot has succeeded in killing a labyrinth, leaving a fragmented, crumbling ruin, 
         which Kodaly and I had the good fortune to study and map two years ago.
         <br><br>Suffice it to say, there are more theories about where labyrinths come from than 
         there are living labyrinths. Hopefully, understanding the extent of their function and 
@@ -2157,27 +2202,14 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
 </div>
 
 
-<div id="notebookTextStymie2">
-     <div class="notebookFlex2">
-        <p>
-</p>
-    </div>
-</div>
-
-
-<div id="notebookTextStymie3">
-     <div class="notebookFlex2">
-        <p>
-</p>
-    </div>
-</div>
-
 <div id="notebookTextMusic">
 <div class="notebookFlex">
-Music for the Inert Floret:<br>
-Penser ne doit vilenie (Sonus Chanterai)<br><br>
+<b>Music for the Southernmost Distal Floret:</b><br>
+Penser ne doit vilenie (Think not of Evil)<br>
+performed by Sonus Chanterai<br><br>
 <p>Music for Crossing the Chasm:<br>
-Music for Joan the Mad: Los Cantos del Exilo (La Nef)<br>
+Music for Joan the Mad: Los Cantos del Exilo<br>
+performed by La Nef<br>
 1. Por alli paso in Cavallero<br>
 2. Dame la mano<br>
 3. March, Dame la mano</p>
@@ -2187,31 +2219,26 @@ E.L Mare E.L Pare<br>
 (Martin Best Medieval Ensemble)
 
 <p>One Plum for the Madame:
-Nuls om en ren <!--Check on that, I think it's actually lo ferm voler Lonc tems Ai: Lo ferm vole
-(Raimon de Mraval, arr. Sylvain Bergeron)-->
-(Martin Best Medieval Ensemble)</p>
+Lonc tems Ai: Lo ferm vole
+by Raimon de Miraval
+arranged by Sylvain Bergeron</p>
 
 Too Many Keys:<br>
 Sacrum Mysterium Part II:<br>
 Song of Mary, At Work on the Land<br>
-(Tatter Jack Walsh, Turlough O'Carolan)</p>
+performed by Tatter Jack Walsh and Turlough O'Carolan</p>
 <br><br>
 Tubes and Nozzles:
-Chanson do-Ih mot (Arnaut Daniel)</p>
+Chanson do-Ih mot
+by Arnaut Daniel</p>
 
 Arcade Game:<br>
-Simple 8-Bit Melody in Medieval Style<br>
-(Harper Reese)</p>
+Vil Lieber Grusse Susse
+by Oswald von Wolkenstein
+arranged for 8-Bit by Harper Reese</p>
 
 Tides and Roses:<br>
 Branle des Chevaux ()
-</div>
-</div>
-
-<div id="notebookTextMusic2">
-<div class="notebookFlex">
-<p>
-
 </div>
 </div>
 
@@ -3042,24 +3069,29 @@ Secret key — the secret key will perform a secret action.
         <p id="yya29">PASSIDGE</p>
         <p id="yya30">I'm freaking out right now.</p>
 
-        <p id="yyb1">Good evening, intrepid explorers!</p>
-        <p id="yyb2">Good evening, Stymie.</p>
-        <p id="yyb3">Welcome to lobby three.</p>
-        <p id="yyb4">The third lobby.</p>
-        <p id="yyb5">The lobby of which there were two in front of it, and this is the next.</p>
-        <p id="yyb6">Before you are three independent florets, each of which contain part of the key to the northernmost door.</p>
-        <p id="yyb7">You will need all three keys to progress, but watch out!</p>
-        <p id="yyb8">I put sixteen feral raccoons in a random room.</p>
-        <p id="yyb9">Really?</p>
-        <p id="yyb10">Yes?</p>
-
-        <!--
-        <p id="yyb">Oh, hello, Stymie.</p>
-        <p id="yyb">Hello, Bridget and Kodaly!</p>
-        <p id="yyb">You're in this lobby too?</p>
-
-
-        -->
+        <p id="yyb1">Stymie!</p>
+        <p id="yyb2">Bridget and Kodaly!</p>
+        <p id="yyb3">So, you're in this lobby too?</p>
+        <p id="yyb4">Apparently!</p>
+        <p id="yyb5">But how can that be? The army never came this far in. And Verily was the one responsible for setting up your last interface.</p>
+        <p id="yyb6">Beats me!</p>
+        <p id="yyb7">All I know is that you need my help to get further in.</p>
+        <p id="yyb8">Someone has to manage all these switches and wires!</p>
+        <p id="yyb9">Someone has to convert electricity into solid rock!</p>
+        <p id="yyb10">And then into flowers!</p>
+        <p id="yyb11">And then back into rocks!</p>
+        <p id="yyb12">Anyway.</p>
+        <p id="yyb13">Welcome to Lobby Three.</p>
+        <p id="yyb14">The third lobby.</p>
+        <p id="yyb15">Before you are the doors to three florets, each independent from the other.</p>
+        <p id="yyb16">Three seperate puzzles.</p>
+        <p id="yyb17">Three hidden switches.</p>
+        <p id="yyb18">But watch out!</p>
+        <p id="yyb19">I put sixteen feral raccoons in a random room.</p>
+        <p id="yyb20">Sixteen feral racoons?</p>
+        <p id="yyb21">Sixteen feral racoons that I've placed in a random room.</p>
+        <p id="yyb22">Really?</p>
+        <p id="yyb23">Yes?</p>
 
         <p id="yyd1">It's ... a blank sign?</p>
 
@@ -3177,6 +3209,7 @@ Secret key — the secret key will perform a secret action.
    <p id="yyp7">I wanted to confirm something.</p>
    <p id="yyp8">And what was that exactly?</p>
    <p id="yyp9">That the shrub is flammable.</p>
+
    <p id="yyp10">Verily.</p>
     <p id="yyp11">I don't think we should be burning objects here.</p>
    <p id="yyp12">We are guests.</p>
@@ -3192,23 +3225,33 @@ Secret key — the secret key will perform a secret action.
          <!--//mark unincorp-->
     <p id="yyp21">Verily. I still think you should put the fire out.</p>
    <p id="yyp22">I think it's imprudent to tamper with the labyrinth so openly.</p>
-    <p id="yyp23">We still don't know <i>if</i> or <i>how</i> the labyrinth feels about our presence.</p>
-    <p id="yyp24">It could easily destroy us, if it wished.     (v dowses the fire)</p>
-   <p id="yyp25">I'd like to see it try.</p>
+    <p id="yyp23">We still don't know <i>if</i> or <i>how</i> it feels about our presence.</p>
+    <p id="yyp24">It could easily destroy us, if it wished.</p>
+   <p id="yyp25">Oh, yes.</p>
+   <!--(v dowses the fire)-->
+   <p id="yyp26">I'd very much like to see it try.</p>
 
-    <p id="yyp26">By the way,</p>
-    <p id="yyp27">That broken chandelier outside</p>
-    <p id="yyp28">That wouldn't happen to be your work?</p>
-    <p id="yyp29">And, if it was, what is the difference between destroying a chandelier and lighting a potted plant on fire?</p>
+    <p id="yyp26">Say, that broken chandelier outside...</p>
+    <p id="yyp28">That wouldn't happen to be your work, would it?</p>
+    <!--Bridget ... -->
+    <p id="yyp29">And if so, would you mind explaining the difference between destroying a chandelier and lighting a potted plant on fire?</p>
     <p id="yyp30">(She has a point!)</p>
     <p id="yyp31">(Don't agree with her!)</p>
     <p id="yyp32">I understand your perspective, Verily, but getting the chandelier down was part of the puzzle.</p>
-    <p id="yyp33">The labyrinth <i>itself</i> is the puzzle.</p>
-    <p id="yyp34">Can't you see that?</p>
-    <p id="yyp35">"Every room in the labyrinth contains the entire sum of the labyrinth."</p>
-    <p id="yyp36">There's no other way to account for it</p>
-    <p id="yyp37">...</p>
-    <p id="yyp38">You read K.L. Brighton?</p>
+    <p id="yyp33">The puzzle?</p>
+    <p id="yyp34">Dr. Wong, the labyrinth <i>itself</i> is the puzzle.</p>
+    <p id="yyp35">Do you not see that?</p>
+    <p id="yyp36">"Every room in the labyrinth contains the entire sum of the labyrinth."</p>
+    <p id="yyp37">There's no other way to account for it. Nor is there any other way to get to the heart of the puzzle than to push every individual piece to its limit.</p>
+    <p id="yyp38">...</p> <!--Kodaly shocked-->
+    <p id="yyp39">You read K.L. Brighton?</p>
+    <p id="yyp40">Oh yes.</p>
+    <p id="yyp41">Brighton is well-grounded theorist, although they never realized the practical applications of their work.</p>
+    <p id="yyp42">Oceans of ink are spilled in postulating the purpose and origin of the labyrinths.</p>
+    <p id="yyp43">And Brighton seems to have a deep understanding.</p>
+    <p id="yyp44">But they got stuck on "why".</p>
+    <p id="yyp45">And they never thought about the ramifications.</p>    
+    <p id="yyp46">You don't have to know the origin of a knife <i>to use it</i>.</p>
 
 
       <p id="yyq1">So is this actually supposed to be helpful?</p>
@@ -3337,7 +3380,33 @@ Secret key — the secret key will perform a secret action.
 
     <p id="ybe1">I can't fit through that gap.</p>
 
-  
+    <p id="ybf1">Uh!</p>
+    <p id="ybf2">Hello there!</p>
+    <!--levels weapon-->
+    <p id="ybf3">Woah! Woah! Hey!</p>
+    <p id="ybf4">Is that a crossbow?</p>
+    <p id="ybf5">It's an arbalest.</p>
+    <p id="ybf6">Turn back at once.</p> <!--raises higher-->
+    <p id="ybf7">We're not here to fight! We don’t want to fight you!</p>
+    <p id="ybf8">I'm Kodaly and this is Bridget.</p>
+    <p id="ybf9">We're explorers, from the university. What's your name?</p>
+    <p id="ybf10">My name does not matter.</p>
+    <p id="ybf11">You are bound for the center of the machine. Do you seek the ladder?</p>
+    <p id="ybf12">...</p> <!--bfur-->
+    <p id="ybf13">No.</p>
+    <p id="ybf14">Good.</p>
+    <p id="ybf15">Do not proceed beyond this room.</p>
+    <p id="ybf16">Leave at once, or I will strike you down.</p>
+    <p id="ybf17">Charming fellow.</p>
+    <p id="ybf18">Why'd you say "no"? What was he talking about?</p>
+    <p id="ybf19">His accent.</p>
+    <p id="ybf20">The way he speaks...</p>
+    <p id="ybf21">He's a Kardic Zealot.</p>
+    <p id="ybf22">He's here to <i>kill the labyrinth</i>.</p>
+
+    <p id="ybg1">Ah!!!</p> <!--B blocks a bolt-->
+    
+    <p id="ybg2">Are you two alright? I heard a commotion.</p> <!--Verily in the room to the south-->
 
  
 </div>
@@ -3596,7 +3665,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //mark. is this important? it caused an overlap after exiting the arcade game
     //penser.play(); 
     //lamano.pause();
-    //loncTemsAi.pause();
     //doihmot.pause();
 
     if (cookiesHas('open')) {
@@ -3608,6 +3676,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
         terminal.style.display = "block";
         dialogue.openingHasPlayed = true;
     }
+
+    if (cookiesHas('tooheavy')) {
+        dialogue.inv7 = true;
+        dialogue.inv0 = false;
+        dialogue.inv1 = false;
+        dialogue.inv2 = false;
+        dialogue.inv3 = false;
+        dialogue.inv4 = false;
+        dialogue.inv5 = false;
+        dialogue.inv6 = false;
+    }
+
+    
 
     if (cookiesHas('pillardeadendended')) {
        pillarLock.b = 0;
@@ -3947,6 +4028,9 @@ function showInv() {
         if (inventory.slot4) {item4.style.display = "block"; item4.innerText = inventory.slot4;}
         paperflipsound();
         inventory.isOpen = true;
+        //random troublemakers
+        pipes1part.style.display = "none";
+        explorers.style.display = "none";
         }
 function hideInv() {
         inv.style.display = "none";
@@ -3956,6 +4040,9 @@ function hideInv() {
         item4.style.display = "none";
         paperflipsound();
         inventory.isOpen = false;
+        //restore random troublemakers
+        pipes1part.style.display = "block";
+        explorers.style.display = "block";
         }
 
         const papery = {
@@ -4165,9 +4252,8 @@ notepadk.style.display = "none";
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4176,15 +4262,10 @@ notepadk.style.display = "none";
     notebookTextVerily.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
     paperflipsound();
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 
 function notepadK(){
@@ -4194,9 +4275,9 @@ function notepadK(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
+    
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4205,14 +4286,8 @@ function notepadK(){
     notebookTextVerily.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 function notepadB(){
     paperflipsound();
@@ -4221,9 +4296,7 @@ function notepadB(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4232,14 +4305,8 @@ function notepadB(){
     notebookTextVerily.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 function notepadV(){
     paperflipsound();
@@ -4248,9 +4315,8 @@ function notepadV(){
     notepadv.style.display = "block";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4259,14 +4325,9 @@ function notepadV(){
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 function notepadS(){
     paperflipsound();
@@ -4275,9 +4336,9 @@ function notepadS(){
     notepadv.style.display = "none";
     notepads.style.display = "block";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
+    
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4286,14 +4347,9 @@ function notepadS(){
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "block";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 function notepadST(){
     paperflipsound();
@@ -4302,9 +4358,9 @@ function notepadST(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "block";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
+    
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4313,14 +4369,8 @@ function notepadST(){
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "block";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = true;
 }
 function notepadInfo(){
     paperflipsound();
@@ -4329,9 +4379,9 @@ function notepadInfo(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
+    
     notepadi.style.display = "block";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4340,23 +4390,11 @@ function notepadInfo(){
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "block";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
 }
 
-const notepadmusic = {
-    isopen: false,
-}
-
-const notepadstymie = {
-    isopen: false,
-}
 
 var notepad = {
     open: false,
@@ -4370,8 +4408,6 @@ function notepadMusic() {
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
-    notepadm2.style.display = "none";
     notepadi.style.display = "none";
     notepadp.style.display = "none";
     notepadpnone.style.display = "none";
@@ -4380,81 +4416,12 @@ function notepadMusic() {
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "block";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = true;
-}
-function notepadMusic2(){
-    if (notepadmusic.isopen){
-    paperflipsound();
-    notepadk.style.display = "none";
-    notepadb.style.display = "none";
-    notepadv.style.display = "none";
-    notepads.style.display = "none";
-    notepadst.style.display = "none";
-    notepadst2.style.display = "none";
-    notepadmu.style.display = "none";
-    notepadm2.style.display = "block";
-    notepadi.style.display = "none";
-    notepadp.style.display = "none";
-    notepadpnone.style.display = "none";
-     notebookTextVerily.style.display = "none";
-    notebookTextKodaly.style.display = "none";
-    notebookTextBridget.style.display = "none";
-    notebookTextShuri.style.display = "none";
-    notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
-    notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "block";
-    notebookTextInfo.style.display = "none";
-    linehider.style.display = "none";
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
-    }
+    
 }
 
-function notepadStymie2() {
-    if (notepadstymie.isopen) {
-    paperflipsound();
-    notepadk.style.display = "none";
-    notepadb.style.display = "none";
-    notepadv.style.display = "none";
-    notepads.style.display = "none";
-    notepadst.style.display = "none";
-    notepadst2.style.display = "block";
-    notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
-    notepadi.style.display = "none";
-    notepadp.style.display = "none";
-    notepadpnone.style.display = "none";
-     notebookTextVerily.style.display = "none";
-    notebookTextKodaly.style.display = "none";
-    notebookTextBridget.style.display = "none";
-    notebookTextShuri.style.display = "none";
-    notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "block";
-    notebookTextStymie3.style.display = "none";
-    notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
-    notebookTextInfo.style.display = "none";
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
-    notepadstymie.isopen2 = true;
-    } else if (notepadstymie.isopen2) {
-    paperflipsound();
-   notepadst2.style.display = "block";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "block";
-    linehider.style.display = "block";
-    notepadmusic.isopen = false;
-    notepadstymie.isopen2 = false;
-    }
-}
 
 
 function notepadPoem(){
@@ -4464,23 +4431,19 @@ function notepadPoem(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    notepadst2.style.display = "none";
+    
     notepadmu.style.display = "none";
-    notepadm2.style.display = "none";
+    
     notepadi.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
     notebookTextShuri.style.display = "none";
     notebookTextStymie.style.display = "none";
-    notebookTextStymie2.style.display = "none";
-    notebookTextStymie3.style.display = "none";
     notebookTextMusic.style.display = "none";
-    notebookTextMusic2.style.display = "none";
+    
     notebookTextInfo.style.display = "none";
-    linehider.style.display = "none"
-    notepadmusic.isopen = false;
-    notepadstymie.isopen = false;
+    
     if (dialogue.poemAddedToNotebook) {
         notepadp.style.display = "block";
         notepadpnone.style.display = "none";
@@ -5493,15 +5456,19 @@ function goneBrassKey() {
                 if (inventory.slot1 === "squiggle pipe") {
                     item1.innerText = "";
                     inventory.slot1 = false;
+                    tubepick.play();
                 } if (inventory.slot2 === "squiggle pipe") {
                     item2.innerText = "";
                     inventory.slot2 = false;
+                    tubepick.play();
                 } if (inventory.slot3 === "squiggle pipe") {
                     item3.innerText = "";
                     inventory.slot3 = false;
+                    tubepick.play();
                 } if (inventory.slot4 === "squiggle pipe") {
                     item4.innerText = "";
                     inventory.slot4 = false;
+                    tubepick.play();
                 }
                 successfullyPlacedPipeDialogue();
                 pipes1yellow1.style.display = "none";
@@ -5527,15 +5494,19 @@ function pipePlacement() {
             if (inventory.slot1 === "y-pipe") {
                     item1.innerText = "";
                     inventory.slot1 = false;
+                    tubepick.play();
                 } if (inventory.slot2 === "y-pipe") {
                     item2.innerText = "";
                     inventory.slot2 = false;
+                    tubepick.play();
                 } if (inventory.slot3 === "y-pipe") {
                     item3.innerText = "";
                     inventory.slot3 = false;
+                    tubepick.play();
                 } if (inventory.slot4 === "y-pipe") {
                     item4.innerText = "";
                     inventory.slot4 = false;
+                    tubepick.play();
                 }
             if (dialogue.handle1turned && dialogue.handle2turned) {
                 pipes2fixedon.style.display = "block";
@@ -5693,6 +5664,8 @@ const northPage = {spread: 0,}
  function hideGuestBook() {
     dialogue.preventN = false;
     dialogue.preventI = false;
+    page.spread = 0;
+    //northPage.spread = 0;
     frontMatter.style.display = "none";
     bookBody.style.display = "none";
     nextarrow.style.display = "none";
@@ -5723,6 +5696,7 @@ const northPage = {spread: 0,}
     page10b.style.display = "none";
     page11b.style.display = "none";
     page12b.style.display = "none";
+
     document.body.style.background = "#f5f1e0";
     booksound.play();
     dialogue.blockArrowTravel = false;
@@ -5735,13 +5709,11 @@ const northPage = {spread: 0,}
     entryform.style.display = "none";
     entryform2.style.display = "none";
     paperflipsound();
-
-if (current.room === "lobby") {
-
-if (typeof page.spread === 'undefined') {
-    page.spread = 0;
-}
-switch (page.spread) {
+    if (current.room === "lobby") {
+        if (typeof page.spread === 'undefined') {
+            page.spread = 0;
+        }
+            switch (page.spread) {
     case 0:
         page1.style.display = "block";
         page2.style.display = "block";
@@ -6300,7 +6272,10 @@ function dUp() {
 
 //Chapter 1's dias room combination lock for green candles
 function enterCode() {
-    if (lock.a === 1) {
+    if (lock.a !== 1 || lock.b !== 7 || lock.c !== 5 || lock.d !== 6) {
+        incorrectCandles.play(); //not actually candles
+    }
+    else if (lock.a === 1) {
         if (lock.b === 7) {
             if (lock.c === 5) {
                 if (lock.d === 6) {
@@ -6309,6 +6284,7 @@ function enterCode() {
                     chest.style.display = "none";
                     greencandle.style.display = "block";
                     emptychest.style.display = "block";
+                    panelunlock.play();
                 }
             }
         }
@@ -6727,6 +6703,9 @@ yellow4.style.display = "block";
 
 //Chapter two's colorLockDoor
 function enterColors() {
+    if (colorLock.a !== 7 || colorLock.b !== 2 || colorLock.c !== 8 || colorLock.d !== 4) {
+        lockeddoor.play();
+    }
     if (colorLock.a === 7){
         if (colorLock.b === 2){
             if (colorLock.c === 8){
@@ -6814,24 +6793,24 @@ const ronin = {
 function kSlot() {
     if (knight.none) {
         if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-            candlePlacement.play();
+            randomThunk();
             kcandle1.style.display = "block";
             knight.none = false;
             knight.yellow = true;
             
         } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-            candlePlacement.play();
+            randomThunk();
             ncandle1.style.display = "block";
             knight.none = false;
             knight.green = true;
         } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-            candlePlacement.play();
+            randomThunk();
             wcandle1.style.display = "block";
             knight.none = false;
             knight.violet = true;
             
         } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-            candlePlacement.play();
+            randomThunk();
             rcandle1.style.display = "block";
             knight.none = false;
             knight.red = true;
@@ -6840,27 +6819,27 @@ function kSlot() {
 
     } else if (knight.yellow) {
        if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-           candlePlacement.play();
+           randomThunk();
            ncandle1.style.display = "block";
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.green = true;           
        } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-           candlePlacement.play();
+           randomThunk();
            wcandle1.style.display = "block";
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.violet = true;
            
        } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-           candlePlacement.play();
+           randomThunk();
            rcandle1.style.display = "block";
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.red = true;
            
        } else {
-           candlePlacement.play();
+           randomThunk();
            kcandle1.style.display = "none";
            knight.yellow = false;
            knight.none = true;
@@ -6868,28 +6847,28 @@ function kSlot() {
        
    } else if (knight.green) {
         if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-          candlePlacement.play();
+          randomThunk();
           wcandle1.style.display = "block";
           ncandle1.style.display = "none";
           knight.green = false;
           knight.violet = true;
           
       } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-          candlePlacement.play();
+          randomThunk();
           rcandle1.style.display = "block";
           ncandle1.style.display = "none";
           knight.green = false;
           knight.red = true;
           
       } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-          candlePlacement.play();
+          randomThunk();
           ycandle1.style.display = "block";
           ncandle1.style.display = "none";
           knight.green = false;
           knight.yellow = true;
           
       } else {
-          candlePlacement.play();
+          randomThunk();
           ncandle1.style.display = "none";
           knight.green = false;
           knight.none = true;
@@ -6897,34 +6876,34 @@ function kSlot() {
       
   } else if (knight.violet) {
     if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-        candlePlacement.play();
+        randomThunk();
         rcandle1.style.display = "block";
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.red = true;
         
     } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-        candlePlacement.play();
+        randomThunk();
         ycandle1.style.display = "block";
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.yellow = true;
         
     } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-        candlePlacement.play();
+        randomThunk();
         ncandle1.style.display = "block";
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.green = true;
         
     } else {
-        candlePlacement.play();
+        randomThunk();
         wcandle1.style.display = "none";
         knight.violet = false;
         knight.none = true;
     }
 } else if (knight.red) {
-        candlePlacement.play();
+        randomThunk();
         rcandle1.style.display = "none";
         knight.red = false;
         knight.none = true;
@@ -6934,25 +6913,25 @@ function kSlot() {
 function nSlot() {
   if (nymph.none) {
       if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-          candlePlacement.play();
+          randomThunk();
           kcandle2.style.display = "block";
           nymph.none = false;
           nymph.yellow = true;
           
       } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-          candlePlacement.play();
+          randomThunk();
           ncandle2.style.display = "block";
           nymph.none = false;
           nymph.green = true;
           
       } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-          candlePlacement.play();
+          randomThunk();
           wcandle2.style.display = "block";
           nymph.none = false;
           nymph.violet = true;
           
       } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-          candlePlacement.play();
+          randomThunk();
           rcandle2.style.display = "block";
           nymph.none = false;
           nymph.red = true;
@@ -6960,28 +6939,28 @@ function nSlot() {
       
   } else if (nymph.yellow) {
      if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-         candlePlacement.play();
+         randomThunk();
          ncandle2.style.display = "block";
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.green = true;
          
      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-         candlePlacement.play();
+         randomThunk();
          wcandle2.style.display = "block";
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.violet = true;
          
      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-         candlePlacement.play();
+         randomThunk();
          rcandle2.style.display = "block";
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.red = true;
          
      } else {
-         candlePlacement.play();
+         randomThunk();
          kcandle2.style.display = "none";
          nymph.yellow = false;
          nymph.none = true;
@@ -6989,28 +6968,28 @@ function nSlot() {
      
  } else if (nymph.green) {
     if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-        candlePlacement.play();
+        randomThunk();
         wcandle2.style.display = "block";
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.violet = true;
         
     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-        candlePlacement.play();
+        randomThunk();
         rcandle2.style.display = "block";
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.red = true;
         
     } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-        candlePlacement.play();
+        randomThunk();
         ycandle2.style.display = "block";
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.yellow = true;
         
     } else {
-        candlePlacement.play();
+        randomThunk();
         ncandle2.style.display = "none";
         nymph.green = false;
         nymph.none = true;
@@ -7018,35 +6997,35 @@ function nSlot() {
     
 } else if (nymph.violet) {
   if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-      candlePlacement.play();
+      randomThunk();
       rcandle2.style.display = "block";
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.red = true;
       
   } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-      candlePlacement.play();
+      randomThunk();
       ycandle2.style.display = "block";
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.yellow = true;
       
   } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-      candlePlacement.play();
+      randomThunk();
       ncandle2.style.display = "block";
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.green = true;
       
   } else {
-      candlePlacement.play();
+      randomThunk();
       wcandle2.style.display = "none";
       nymph.violet = false;
       nymph.none = true;
   }
   
 } else if (nymph.red) {
-      candlePlacement.play();
+      randomThunk();
       rcandle2.style.display = "none";
       nymph.red = false;
       nymph.none = true;
@@ -7055,22 +7034,22 @@ function nSlot() {
 function wSlot() {
   if (witch.none) {
       if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-          candlePlacement.play();
+          randomThunk();
           kcandle4.style.display = "block";
           witch.none = false;
           witch.yellow = true;
       } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-          candlePlacement.play();
+          randomThunk();
           ncandle4.style.display = "block";
           witch.none = false;
           witch.green = true;
       } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-          candlePlacement.play();
+          randomThunk();
           wcandle4.style.display = "block";
           witch.none = false;
           witch.violet = true;
       } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-          candlePlacement.play();
+          randomThunk();
           rcandle4.style.display = "block";
           witch.none = false;
           witch.red = true;
@@ -7078,26 +7057,26 @@ function wSlot() {
       
   } else if (witch.yellow) {
      if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-         candlePlacement.play();
+         randomThunk();
          ncandle4.style.display = "block";
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.green = true;
 
      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-         candlePlacement.play();
+         randomThunk();
          wcandle4.style.display = "block";
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.violet = true;
      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-         candlePlacement.play();
+         randomThunk();
          rcandle4.style.display = "block";
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.red = true;
      } else {
-         candlePlacement.play();
+         randomThunk();
          kcandle4.style.display = "none";
          witch.yellow = false;
          witch.none = true;
@@ -7106,25 +7085,25 @@ function wSlot() {
      
  } else if (witch.green) {
     if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-        candlePlacement.play();
+        randomThunk();
         wcandle4.style.display = "block";
         ncandle4.style.display = "none";
         witch.green = false;
         witch.violet = true;
     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-        candlePlacement.play();
+        randomThunk();
         rcandle4.style.display = "block";
         ncandle4.style.display = "none";
         witch.green = false;
         witch.red = true;
     } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-        candlePlacement.play();
+        randomThunk();
         ycandle4.style.display = "block";
         ncandle4.style.display = "none";
         witch.green = false;
         witch.yellow = true;
     } else {
-        candlePlacement.play();
+        randomThunk();
         ncandle4.style.display = "none";
         witch.green = false;
         witch.none = true;
@@ -7132,31 +7111,31 @@ function wSlot() {
     
 } else if (witch.violet) {
   if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-      candlePlacement.play();
+      randomThunk();
       rcandle4.style.display = "block";
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.red = true;
   } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-      candlePlacement.play();
+      randomThunk();
       ycandle4.style.display = "block";
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.yellow = true;
   } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-      candlePlacement.play();
+      randomThunk();
       ncandle4.style.display = "block";
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.green = true;
   } else {
-      candlePlacement.play();
+      randomThunk();
       wcandle4.style.display = "none";
       witch.violet = false;
       witch.none = true;
   }
 } else if (witch.red) {
-      candlePlacement.play();
+      randomThunk();
       rcandle4.style.display = "none";
       witch.red = false;
       witch.none = true;
@@ -7165,23 +7144,23 @@ function wSlot() {
 function rSlot() {
   if (ronin.none) {
       if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-          candlePlacement.play();
+          randomThunk();
           kcandle5.style.display = "block";
           ronin.none = false;
           ronin.yellow = true;
       } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-          candlePlacement.play();
+          randomThunk();
           ncandle5.style.display = "block";
           ronin.none = false;
           ronin.green = true;
 
       } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-          candlePlacement.play();
+          randomThunk();
           wcandle5.style.display = "block";
           ronin.none = false;
           ronin.violet = true;
       } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-          candlePlacement.play();
+          randomThunk();
           rcandle5.style.display = "block";
           ronin.none = false;
           ronin.red = true;
@@ -7189,25 +7168,25 @@ function rSlot() {
       
   } else if (ronin.yellow) {
      if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-         candlePlacement.play();
+         randomThunk();
          ncandle5.style.display = "block";
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.green = true;
      } else if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-         candlePlacement.play();
+         randomThunk();
          wcandle5.style.display = "block";
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.violet = true;
      } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-         candlePlacement.play();
+         randomThunk();
          rcandle5.style.display = "block";
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.red = true;
      } else {
-         candlePlacement.play();
+         randomThunk();
          kcandle5.style.display = "none";
          ronin.yellow = false;
          ronin.none = true;         
@@ -7215,25 +7194,25 @@ function rSlot() {
      
  } else if (ronin.green) {
     if (inventory.slot1 === "violet candles" || inventory.slot2 === "violet candles" || inventory.slot3 === "violet candles" || inventory.slot4 === "violet candles") {
-        candlePlacement.play();
+        randomThunk();
         wcandle5.style.display = "block";
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.violet = true;
     } else if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-        candlePlacement.play();
+        randomThunk();
         rcandle5.style.display = "block";
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.red = true;
     } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-        candlePlacement.play();
+        randomThunk();
         ycandle5.style.display = "block";
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.yellow = true;
     } else {
-        candlePlacement.play();
+        randomThunk();
         ncandle5.style.display = "none";
         ronin.green = false;
         ronin.none = true;         
@@ -7241,31 +7220,31 @@ function rSlot() {
     
 } else if (ronin.violet) {
   if (inventory.slot1 === "red candles" || inventory.slot2 === "red candles" || inventory.slot3 === "red candles" || inventory.slot4 === "red candles") {
-      candlePlacement.play();
+      randomThunk();
       rcandle5.style.display = "block";
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.red = true;
   } else if (inventory.slot1 === "yellow candles" || inventory.slot2 === "yellow candles" || inventory.slot3 === "yellow candles" || inventory.slot4 === "yellow candles") {
-      candlePlacement.play();
+      randomThunk();
       ycandle5.style.display = "block";
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.yellow = true;
   } else if (inventory.slot1 === "green candles" || inventory.slot2 === "green candles" || inventory.slot3 === "green candles" || inventory.slot4 === "green candles") {
-      candlePlacement.play();
+      randomThunk();
       ncandle5.style.display = "block";
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.green = true;
   } else {
-      candlePlacement.play();
+      randomThunk();
       wcandle5.style.display = "none";
       ronin.violet = false;
       ronin.none = true;         
   }
 } else if (ronin.red) {
-      candlePlacement.play();
+      randomThunk();
       rcandle5.style.display = "none";
       ronin.red = false;
       ronin.none = true;
@@ -7275,6 +7254,7 @@ function rSlot() {
 function cubePort() {
     if (!alcove.solved) {
         if (knight.yellow && nymph.green && witch.violet && ronin.red){
+            panelunlock.play();
             datacube.style.display = "block";
             alcovesUnlocked.style.display = "block";
             alcovesPit.style.display = "none";
@@ -7285,8 +7265,6 @@ function cubePort() {
             goneVioletCandle();
             dialogue.datacubeFound = false;
             dialogue.datacubehasbeenfound = true;
-            increaseNotification();
-            notifnoise.play();
         } else if (!dialogue.nothingHappened) {
             wrongCandles();
             incorrectCandles.play();
@@ -7301,28 +7279,36 @@ function cubePort() {
             && inventory.slot3 !== "datacube"
             && inventory.slot4 !== "datacube") {
                 datacube.style.display = "none";
-                inventory.slot1 = "datacube";}
+                inventory.slot1 = "datacube";
+            increaseNotification();
+            notifnoise.play();}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "datacube"
             && inventory.slot2 !== "datacube"
             && inventory.slot3 !== "datacube"
             && inventory.slot4 !== "datacube") {
                 datacube.style.display = "none";
-                inventory.slot2 = "datacube";}
+                inventory.slot2 = "datacube";
+            increaseNotification();
+            notifnoise.play();}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "datacube"
             && inventory.slot2 !== "datacube"
             && inventory.slot3 !== "datacube"
             && inventory.slot4 !== "datacube") {
                 datacube.style.display = "none";
-                inventory.slot3 = "datacube";}
+                inventory.slot3 = "datacube";
+            increaseNotification();
+            notifnoise.play();}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "datacube"
             && inventory.slot2 !== "datacube"
             && inventory.slot3 !== "datacube"
             && inventory.slot4 !== "datacube") {
                 datacube.style.display = "none";
-                inventory.slot4 = "datacube";}
+                inventory.slot4 = "datacube";
+            increaseNotification();
+            notifnoise.play();}
         } else {
             tooHeavy();
         }
@@ -7440,7 +7426,10 @@ const dialogue = {
     //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
-    pillarsBlockTheWay: true,
+    pillarsBlockTheWay: true, //mark
+    greenSwitchFlipped: true,//mark
+    blueSwitchFlipped: true,//mark
+    redSwitchFlipped: true,
     goodWork: false,
     trueMutualism: true, //set to false after actionandinformation
     mobile: false,
@@ -7613,7 +7602,7 @@ document.addEventListener("keydown", function() {
                   notifnoise.play();
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
-                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                  //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -8017,15 +8006,19 @@ function handleHandle4() { //violet liquid
             if (inventory.slot1 === "missing handle") {
             item1.innerText = "";
             inventory.slot1 = false;
+            handlePlink.play();
             } if (inventory.slot2 === "missing handle") {
             item2.innerText = "";
             inventory.slot2 = false;
+            handlePlink.play();
             } if (inventory.slot3 === "missing handle") {
             item3.innerText = "";
             inventory.slot3 = false;
+            handlePlink.play();
             } if (inventory.slot4 === "missing handle") {
             item4.innerText = "";
             inventory.slot4 = false;
+            handlePlink.play();
             }
         } else if (dialogue.handleBobtained) {
             //drop handle B
@@ -8112,15 +8105,19 @@ function handleHandle5() {
             if (inventory.slot1 === "missing handle") {
             item1.innerText = "";
             inventory.slot1 = false;
+            handlePlink.play();
             } if (inventory.slot2 === "missing handle") {
             item2.innerText = "";
             inventory.slot2 = false;
+            handlePlink.play();
             } if (inventory.slot3 === "missing handle") {
             item3.innerText = "";
             inventory.slot3 = false;
+            handlePlink.play();
             } if (inventory.slot4 === "missing handle") {
             item4.innerText = "";
             inventory.slot4 = false;
+            handlePlink.play();
             }
         } else if (dialogue.handleBobtained) {
             //drop handle B
@@ -8128,15 +8125,19 @@ function handleHandle5() {
             if (inventory.slot1 === "misplaced handle") {
             item1.innerText = "";
             inventory.slot1 = false;
+            handlePlink.play();
             } if (inventory.slot2 === "misplaced handle") {
             item2.innerText = "";
             inventory.slot2 = false;
+            handlePlink.play();
             } if (inventory.slot3 === "misplaced handle") {
             item3.innerText = "";
             inventory.slot3 = false;
+            handlePlink.play();
             } if (inventory.slot4 === "misplaced handle") {
             item4.innerText = "";
             inventory.slot4 = false;
+            handlePlink.play();
             }       
         }
  } else {
@@ -8604,6 +8605,14 @@ function randomOarAudio() {
     anyOar.play();
 }
 
+
+function randomThunk() {
+    const thunking = [thunk1, thunk2, thunk3];
+    const thunkdex = Math.floor(Math.random() * thunking.length);
+    const anyThunk = thunking[thunkdex];
+    anyThunk.play();
+}
+
 function randomLockClickAudio() {
     const combinationLockSolving = [lockClick, lockClick2, lockClick3, lockClick4];
     const randomIndex = Math.floor(Math.random() * combinationLockSolving.length);
@@ -8972,7 +8981,6 @@ lobby.style.display = "none";
                         boatRoom.style.display = "none";
                         noneOarsAndAddThemToTheBoat();
                         if (dialogue.boatHasOarsNow) {
-                            boat.style.display = "none";
                             boatwithoars.style.display = "block";
                         }
                         lake.style.display = "block";
@@ -9111,6 +9119,7 @@ document.addEventListener("keydown", function() {
                 document.cookie = "missingHandleB=missingHandleB";
                 dialogue.handleBobtained = true;
                 inventory.slot1 = "misplaced handle";
+                handleclink.play();
             }
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "misplaced handle"
@@ -9120,6 +9129,7 @@ document.addEventListener("keydown", function() {
                 missingHandleB.style.display = "none";
                 document.cookie = "missingHandleB=missingHandleB";
                 dialogue.handleBobtained = true;
+                handleclink.play();
                 inventory.slot2 = "misplaced handle";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "misplaced handle"
@@ -9127,6 +9137,7 @@ document.addEventListener("keydown", function() {
             && inventory.slot3 !== "misplaced handle"
             && inventory.slot4 !== "misplaced handle") {
                 missingHandleB.style.display = "none";
+                handleclink.play();
                 document.cookie = "missingHandleB=missingHandleB";
                 dialogue.handleBobtained = true;
                 inventory.slot3 = "misplaced handle";}
@@ -9136,6 +9147,7 @@ document.addEventListener("keydown", function() {
             && inventory.slot3 !== "misplaced handle"
             && inventory.slot4 !== "misplaced handle") {
                 missingHandleB.style.display = "none";
+                handleclink.play();
                 document.cookie = "missingHandleB=missingHandleB";
                 dialogue.handleBobtained = true;
                 inventory.slot4 = "misplaced handle";}
@@ -9475,6 +9487,7 @@ function goEast() {
             && inventory.slot4 !== "squiggle pipe") {
                 squigglepipe.style.display = "none"; 
                 key.squiggle = true;
+                tubepick.play();
                 itsAPipeSegment();
                 inventory.slot1 = "squiggle pipe";}
         } else if (!inventory.slot2) {
@@ -9484,6 +9497,7 @@ function goEast() {
             && inventory.slot4 !== "squiggle pipe") {
                 squigglepipe.style.display = "none";
                 key.squiggle = true;
+                tubepick.play();
                 itsAPipeSegment();
                 inventory.slot2 = "squiggle pipe";}
         } else if (!inventory.slot3) {
@@ -9493,6 +9507,7 @@ function goEast() {
             && inventory.slot4 !== "squiggle pipe") {
                 squigglepipe.style.display = "none";
                 key.squiggle = true;
+                tubepick.play();
                 itsAPipeSegment();
                 inventory.slot3 = "squiggle pipe";}
         }  else if (!inventory.slot4) {
@@ -9502,6 +9517,7 @@ function goEast() {
             && inventory.slot4 !== "squiggle pipe") {
                 squigglepipe.style.display = "none";
                 key.squiggle = true;
+                tubepick.play();
                 itsAPipeSegment();
                 inventory.slot4 = "squiggle pipe";}
         } else {
@@ -9535,7 +9551,6 @@ function goEast() {
                 doihmot.play();
                 doihmot.currentTime = 0;
                 sacrumMysterium.pause();
-                loncTemsAi.pause();    
                 branle.pause();
                 doihmot.volume = 0.5;    
                 if (dialogue.handle3turned) {
@@ -9589,6 +9604,7 @@ if (!inventory.slot1) {
                 oars.style.display = "none"; 
                 document.cookie = "oarz=oarz";
                 key.oars = true;
+                plankplonk.play();
                 inventory.slot1 = "oars";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "oars"
@@ -9598,6 +9614,7 @@ if (!inventory.slot1) {
                 oars.style.display = "none";
                 document.cookie = "oarz=oarz";
                 key.oars = true;
+                plankplonk.play();
                 inventory.slot2 = "oars";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "oars"
@@ -9607,6 +9624,7 @@ if (!inventory.slot1) {
                 oars.style.display = "none";
                 document.cookie = "oarz=oarz";
                 key.oars = true;
+                plankplonk.play();
                 inventory.slot3 = "oars";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "oars"
@@ -9616,6 +9634,7 @@ if (!inventory.slot1) {
                 oars.style.display = "none";
                 document.cookie = "oarz=oarz";
                 key.oars = true;
+                plankplonk.play();
                 inventory.slot4 = "oars";}
         } else {
             tooHeavyTooKeys();
@@ -10184,7 +10203,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 key.greencandle = true;
                 inventory.slot1 = "green candles";}
         } else if (!inventory.slot2) {
@@ -10193,7 +10212,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 key.greencandle = true;
                 inventory.slot2 = "green candles";}
         } else if (!inventory.slot3) {
@@ -10202,7 +10221,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 key.greencandle = true;
                 inventory.slot3 = "green candles";}
         }  else if (!inventory.slot4) {
@@ -10211,7 +10230,7 @@ function goNorth() {
             && inventory.slot3 !== "green candles"
             && inventory.slot4 !== "green candles") {
                 greencandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 key.greencandle = true;
                 inventory.slot4 = "green candles";}
         } else {
@@ -10394,7 +10413,8 @@ function goNorth() {
                 unnamedHallway.style.display = "none";
                 lobbyThree.style.display = "block";
                 current.room = "lobbyThree";    
-                document.cookie = "lobbyThree=lobbyThree";         
+                document.cookie = "lobbyThree=lobbyThree"; 
+                dialogue.lobbythreeachieved = true;        
         } else if (current.room === "keys26"){ //chapter three KEYS
                 randomDoorAudio();
                 keys26.style.display = "none";
@@ -10490,6 +10510,7 @@ function goNorth() {
                     switchclick.play();
                 } else if (!dialogue.redSwitchCanBeSwitched) {
                     redSwitchDialogue();
+                    glasstink.play();
                 }
                 checkWater();
         } 
@@ -10534,6 +10555,7 @@ function goNorth() {
                     missingHandleAglass.style.display = "none";
                     missingHandleAshelf.style.display = "block";
                     missingHandleA.style.display = "none";
+                    handleclink.play();
                 } 
         } else if (current.room === "twistHandleRoom"){
                 if (!dialogue.handleAobtained && platformPuzzle.solved && (!dialogue.handle4attached || !dialogue.handle5attached)) { //mark. It appears to work, but could use some double checking
@@ -11042,37 +11064,37 @@ function takeHandleA() {
 
 function takeWildRose1() {
     if (!inventory.slot1) {
-            if (inventory.slot1 !== "wild rose"
-            && inventory.slot2 !== "wild rose"
-            && inventory.slot3 !== "wild rose"
-            && inventory.slot4 !== "wild rose") {
+            if (inventory.slot1 !== "wild red rose"
+            && inventory.slot2 !== "wild red rose"
+            && inventory.slot3 !== "wild red rose"
+            && inventory.slot4 !== "wild red rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
-                inventory.slot1 = "wild rose";}
+                inventory.slot1 = "wild red rose";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "wild rose"
-            && inventory.slot2 !== "wild rose"
-            && inventory.slot3 !== "wild rose"
-            && inventory.slot4 !== "wild rose") {
+            if (inventory.slot1 !== "wild red rose"
+            && inventory.slot2 !== "wild red rose"
+            && inventory.slot3 !== "wild red rose"
+            && inventory.slot4 !== "wild red rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
-                inventory.slot2 = "wild rose";}
+                inventory.slot2 = "wild red rose";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "wild rose"
-            && inventory.slot2 !== "wild rose"
-            && inventory.slot3 !== "wild rose"
-            && inventory.slot4 !== "wild rose") {
+            if (inventory.slot1 !== "wild red rose"
+            && inventory.slot2 !== "wild red rose"
+            && inventory.slot3 !== "wild red rose"
+            && inventory.slot4 !== "wild red rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
-                inventory.slot3 = "wild rose";}
+                inventory.slot3 = "wild red rose";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "wild rose"
-            && inventory.slot2 !== "wild rose"
-            && inventory.slot3 !== "wild rose"
-            && inventory.slot4 !== "wild rose") {
+            if (inventory.slot1 !== "wild red rose"
+            && inventory.slot2 !== "wild red rose"
+            && inventory.slot3 !== "wild red rose"
+            && inventory.slot4 !== "wild red rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
-                inventory.slot4 = "wild rose";}
+                inventory.slot4 = "wild red rose";}
         } else {
             tooHeavy();
         }
@@ -11081,37 +11103,37 @@ function takeWildRose1() {
 
 function takeWildRose2() {
     if (!inventory.slot1) {
-            if (inventory.slot1 !== "red rose"
-            && inventory.slot2 !== "red rose"
-            && inventory.slot3 !== "red rose"
-            && inventory.slot4 !== "red rose") {
+            if (inventory.slot1 !== "red wild rose"
+            && inventory.slot2 !== "red wild rose"
+            && inventory.slot3 !== "red wild rose"
+            && inventory.slot4 !== "red wild rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
-                inventory.slot1 = "red rose";}
+                inventory.slot1 = "red wild rose";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "red rose"
-            && inventory.slot2 !== "red rose"
-            && inventory.slot3 !== "red rose"
-            && inventory.slot4 !== "red rose") {
+            if (inventory.slot1 !== "red wild rose"
+            && inventory.slot2 !== "red wild rose"
+            && inventory.slot3 !== "red wild rose"
+            && inventory.slot4 !== "red wild rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
-                inventory.slot2 = "red rose";}
+                inventory.slot2 = "red wild rose";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "red rose"
-            && inventory.slot2 !== "red rose"
-            && inventory.slot3 !== "red rose"
-            && inventory.slot4 !== "red rose") {
+            if (inventory.slot1 !== "red wild rose"
+            && inventory.slot2 !== "red wild rose"
+            && inventory.slot3 !== "red wild rose"
+            && inventory.slot4 !== "red wild rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
-                inventory.slot3 = "red rose";}
+                inventory.slot3 = "red wild rose";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "red rose"
-            && inventory.slot2 !== "red rose"
-            && inventory.slot3 !== "red rose"
-            && inventory.slot4 !== "red rose") {
+            if (inventory.slot1 !== "red wild rose"
+            && inventory.slot2 !== "red wild rose"
+            && inventory.slot3 !== "red wild rose"
+            && inventory.slot4 !== "red wild rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
-                inventory.slot4 = "red rose";}
+                inventory.slot4 = "red wild rose";}
         } else {
             tooHeavy();
         }
@@ -11170,7 +11192,7 @@ if (event.key === 'Enter' || event.key === ' ') {
             && inventory.slot3 !== "violet candles"
             && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot1 = "violet candles";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "violet candles"
@@ -11178,7 +11200,7 @@ if (event.key === 'Enter' || event.key === ' ') {
             && inventory.slot3 !== "violet candles"
             && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot2 = "violet candles";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "violet candles"
@@ -11186,7 +11208,7 @@ if (event.key === 'Enter' || event.key === ' ') {
             && inventory.slot3 !== "violet candles"
             && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot3 = "violet candles";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "violet candles"
@@ -11194,7 +11216,7 @@ if (event.key === 'Enter' || event.key === ' ') {
             && inventory.slot3 !== "violet candles"
             && inventory.slot4 !== "violet candles") {
                 violetcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot4 = "violet candles";}
         } else {
             tooHeavy();
@@ -11332,7 +11354,7 @@ function pickSW() {
             && inventory.slot3 !== "red candles"
             && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot1 = "red candles";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "red candles"
@@ -11340,7 +11362,7 @@ function pickSW() {
             && inventory.slot3 !== "red candles"
             && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot2 = "red candles";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "red candles"
@@ -11348,7 +11370,7 @@ function pickSW() {
             && inventory.slot3 !== "red candles"
             && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot3 = "red candles";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "red candles"
@@ -11356,7 +11378,7 @@ function pickSW() {
             && inventory.slot3 !== "red candles"
             && inventory.slot4 !== "red candles") {
                 redcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot4 = "red candles";}
         } else {
             tooHeavy();
@@ -11758,6 +11780,8 @@ function pickSW() {
             pipes5fixed.style.display = "block";
             pipes5spill.style.display = "none";
             key.macaroniPipePlaced = true;
+            tubepick.play();
+            //mark. check that this removes macaroni from inv
             document.cookie = "macaroni=macaroni"
             if (dialogue.handle5turned) {
                 pipes5fixedred.style.display = "block";
@@ -13281,7 +13305,7 @@ dialogue.blockArrowTravel = true;
             && inventory.slot3 !== "yellow candles"
             && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot1 = "yellow candles";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "yellow candles"
@@ -13289,7 +13313,7 @@ dialogue.blockArrowTravel = true;
             && inventory.slot3 !== "yellow candles"
             && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot2 = "yellow candles"; }
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "yellow candles"
@@ -13297,7 +13321,7 @@ dialogue.blockArrowTravel = true;
             && inventory.slot3 !== "yellow candles"
             && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot3 = "yellow candles";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "yellow candles"
@@ -13305,7 +13329,7 @@ dialogue.blockArrowTravel = true;
             && inventory.slot3 !== "yellow candles"
             && inventory.slot4 !== "yellow candles") {
                 yellowcandle.style.display = "none";
-                candlePlacement.play();
+                randomThunk();
                 inventory.slot4 = "yellow candles";}
         } else {
             tooHeavy();
@@ -13909,6 +13933,7 @@ document.addEventListener("keydown", function() {
                 yPipe.style.display = "none";
                 document.cookie = "yPipe=yPipe";
                 key.ypipe = true;
+                tubepick.play();
                 inventory.slot1 = "y-pipe";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "y-pipe"
@@ -13918,6 +13943,7 @@ document.addEventListener("keydown", function() {
                 yPipe.style.display = "none";
                 document.cookie = "yPipe=yPipe";
                 key.ypipe = true;
+                tubepick.play();
                 inventory.slot2 = "y-pipe";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "y-pipe"
@@ -13927,6 +13953,7 @@ document.addEventListener("keydown", function() {
                 yPipe.style.display = "none";
                 document.cookie = "yPipe=yPipe";
                 key.ypipe = true;
+                tubepick.play();
                 inventory.slot3 = "y-pipe";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "y-pipe"
@@ -13936,6 +13963,7 @@ document.addEventListener("keydown", function() {
                 yPipe.style.display = "none";
                 document.cookie = "yPipe=yPipe";
                 key.ypipe = true;
+                tubepick.play();
                 inventory.slot4 = "y-pipe";}
         } else {
             tooHeavy();

@@ -145,16 +145,24 @@ img {
 
 #notebookTextKodaly,
 #notebookTextBridget,
-#notebookTextStymie,
-#notebookTextStymie2,
-#notebookTextStymie3,
 #notebookTextShuri,
 #notebookTextVerily,
-#notebookTextMusic2,
 #notebookTextMusic,
+#notebookTextPoem,
 #notebookTextInfo {
     position: absolute;
     transform: translate(430px, 150px);
+    max-width:  850px;
+    height: 520px;
+    font-size: 24px;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+}
+
+#notebookTextStymie {
+    position: absolute;
+    transform: translate(430px, 200px);
     max-width:  850px;
     height: 520px;
     font-size: 24px;
@@ -167,7 +175,6 @@ img {
     display: flex;
     flex-direction: column;
     width: 530px;
-
 }
 
 .notebookFlex2 {

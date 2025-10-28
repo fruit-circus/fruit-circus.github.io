@@ -88,6 +88,7 @@
 //iDontThinkICanFitThroughThat
 
 //noPowerFlowing
+//willUnlockForColor
 
 
 //event.key === 'Enter' should match travel = true
@@ -4110,6 +4111,7 @@ if (event.key === 'Enter' || event.key === ' ') {
       zzw1.style.display = "block";
       b.style.display = "block";
       dialogue.haveTeddyBear = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.haveTeddyBear === 1) {
@@ -4138,12 +4140,14 @@ if (event.key === 'Enter' || event.key === ' ') {
         kwtf.style.display = "none";
         dialogue.haveThatBear = true;
         dialogue.haveThatBear2 = true;
+        dialogue.blockArrowTravel = false;
         return;
     }
 }});} else if (dialogue.haveThatBear2) {
     zzwa1.style.display = "block";
       b.style.display = "block";
       dialogue.haveTeddyBear2 = 1; //we will stop at nothing
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.haveTeddyBear2 === 1) {
@@ -4151,8 +4155,10 @@ if (event.key === 'Enter' || event.key === ' ') {
         b.style.display = "none";
         dialogue.haveThatBear2 = false;
         dialogue.haveThatBear3 = true;
+        dialogue.blockArrowTravel = false;
     } }});
 } else if (dialogue.haveThatBear3) {
+  dialogue.blockArrowTravel = true;
     zzwb1.style.display = "block";
       b.style.display = "block";
       dialogue.haveTeddyBear3 = 1; //there will be no survivors
@@ -4162,6 +4168,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zzwb1.style.display = "none";
         b.style.display = "none";
         dialogue.haveThatBear3 = false;
+        dialogue.blockArrowTravel = false;
     } }});
 }
     }
@@ -4174,11 +4181,13 @@ function inspectSink() {
       yyo5.style.display = "block";
       b.style.display = "block";
       dialogue.clearglasspipe = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.clearglasspipe === 1) {
         yyo5.style.display = "none";
         b.style.display = "none";
+        dialogue.blockArrowTravel = false;
     } }});
 }
 
@@ -8303,16 +8312,103 @@ document.addEventListener("keydown", function() {
 } 
 
 function noPowerFlowing() {
- zzg1.style.display = "block";
-       k.style.display = "block";
-       dialogue.noPillarPower = 1;
-       dialogue.blockArrowTravel = true;
-       document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.noPillarPower === 1) {
-    zzg1.style.display = "none";
-       k.style.display = "none";
-       dialogue.blockArrowTravel = false;
-       dialogue.noPillarPower = true;
+  zzg1.style.display = "block";
+  k.style.display = "block";
+  dialogue.noPillarPower = 1;
+  dialogue.blockArrowTravel = true;
+  document.addEventListener("keydown", function() {
+  if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.noPillarPower === 1) {
+      zzg1.style.display = "none";
+      k.style.display = "none";
+      dialogue.blockArrowTravel = false;
+      dialogue.noPillarPower = true;
      }}}); 
     }
+
+  function willUnlockForColor() {
+    if (!dialogue.asdfsadfd) {
+    ybee1.style.display = "block";
+    b.style.display = "block";
+    dialogue.cojdlnaslf = 1;
+    dialogue.blockArrowTravel = true;
+    document.addEventListener("keydown", function() {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.cojdlnaslf === 1) {
+        ybee1.style.display = "none";
+        ybee2.style.display = "block";
+        b.style.display = "block";
+        dialogue.cojdlnaslf++;
+      } else if (dialogue.cojdlnaslf === 2) {
+        ybee2.style.display = "none";
+        b.style.display = "none";
+        dialogue.blockArrowTravel = false;
+        dialogue.cojdlnaslf = true;
+        dialogue.asdfsadfd = true;
+      }
+    }});
+  } else if  (dialogue.asdfsadfd && conductiveFlowers.green) {
+    ybee2b.style.display = "block";
+    b.style.display = "block";
+    dialogue.cojdlnaasddsfsdfslf = 1;
+    dialogue.blockArrowTravel = true;
+    document.addEventListener("keydown", function() {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.cojdlnaasddsfsdfslf === 1) {
+        ybee2b.style.display = "none";
+        b.style.display = "none";
+        dialogue.cojdlnaasddsfsdfslf = true;
+        dialogue.blockArrowTravel = false;
+      }
+    }});
+  } else if  (dialogue.asdfsadfd && !conductiveFlowers.green) {
+    ybee2.style.display = "block";
+    b.style.display = "block";
+    dialogue.cojdlnasdfslf = 1;
+    dialogue.blockArrowTravel = true;
+    document.addEventListener("keydown", function() {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.cojdlnasdfslf === 1) {
+        ybee2.style.display = "none";
+        b.style.display = "none";
+        dialogue.cojdlnasdfslf = true;
+        dialogue.blockArrowTravel = false;
+      }
+    }});
+  }
+  }
+
+
+  function willUnlockForColorFlowers() {
+    if (!dialogue.havetoclosecircuits) {
+    ybee3.style.display = "block";
+    b.style.display = "block";
+    dialogue.cojdlnaslasdf = 1;
+    dialogue.blockArrowTravel = true;
+    document.addEventListener("keydown", function() {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.cojdlnaslasdf === 1) {
+        ybee3.style.display = "none";
+        b.style.display = "none";
+         dialogue.blockArrowTravel = false;
+        dialogue.cojdlnaslasdf = true;
+        dialogue.havetoclosecircuits = true;
+        dialogue.havetoclosecircuits2 = true;
+      }
+    }});
+  } else if (dialogue.havetoclosecircuits2) {
+    ybee4.style.display = "block";
+    b.style.display = "block";
+    dialogue.cojdlnasadfasdfslasdf = 1;
+    dialogue.blockArrowTravel = true;
+    document.addEventListener("keydown", function() {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (dialogue.cojdlnasadfasdfslasdf === 1) {
+        ybee4.style.display = "none";
+        b.style.display = "none";
+         dialogue.blockArrowTravel = false;
+        dialogue.cojdlnasadfasdfslasdf = true;
+      }
+    }});
+  }
+  }

@@ -46,12 +46,13 @@ reevaluate cookies for chrome
 
 
 code:
-chapter3abanner map 
+toss that stuff with noning pipes1part and explorers and just increase the damn z-index of the inventory 
+explorers disappear after going south from lake1
+opening inventory in lift room will make explorersgif appear 
+hint from stymie about secret room
 guest book closes should reset ... northpage.spread
 finish Tides::
-    replace 21 if switches are changed again. same with 14 panel unless rose taken -- actually they perma unlock?
     prevent exploers basic from appearing for split second
-    roses placement to activate door 
     leaving 3c conversation maybe verily shows up after soldier confrontation 
 
 low priority:
@@ -154,6 +155,7 @@ hiddd
 #ybc1,
 #ybd1,
 #redrose1,
+#ybg3,
 #yyb21,
 #yyb20,
 #yyb19,
@@ -168,6 +170,10 @@ hiddd
 #ybf15,
 #ybf16,
 #ybf17,
+#ybee1,
+#ybee2,
+#ybee3,
+#ybee4,
 #ybf18,
 #ybf19,
 #ybf12,
@@ -193,6 +199,7 @@ hiddd
 #bluerose,
 #ybc2,
 #ybcd3,
+#ybee2b,
 #paintingcheck,
 #interChapterHallway,
 #panel14open,
@@ -309,7 +316,7 @@ hiddd
             <img src="floaters/poem1.png" alt="line hider" class="room" id="poem1">
                 <img src="floaters/chapter1banner.png" alt="line hider" class="room" id="chapter1banner" usemap="#firstlobbymap">
                 <img src="floaters/chapter2banner.png" alt="line hider" class="room" id="chapter2banner" usemap="#hallmap">
-                <img src="floaters/chapter3abanner.png" alt="line hider" class="room" id="chapter3abanner" usemap="#roommap">
+                <img src="floaters/chapter3abanner.png" alt="line hider" class="room" id="chapter3abanner" usemap="#keys1map">
                 <img src="floaters/chapter3bbanner.png" alt="line hider" class="room" id="chapter3bbanner" usemap="#roommap">
                 <img src="floaters/chapter3cbanner.png" alt="line hider" class="room" id="chapter3cbanner" usemap="#roommap">
         </div>
@@ -790,7 +797,7 @@ hiddd
 
             <!--Too Many Keys-->
 
-            <div id="keys1" usemap="#roommap"> 
+            <div id="keys1" usemap="#keys1map"> 
                 <img src="eastdoor.png" alt="door" usemap="#keys1map" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#keys1map" class="room" id="westdoor"> 
                  <img src="keys/tealkey.png" alt="key" usemap="#keys1map" class="room" id="tealkey">
@@ -884,7 +891,7 @@ hiddd
             </div>
 
              <div id="keys13" usemap="#roommap"> 
-                <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
+                <img src="southdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="southdoor">
                 <img src="keys/keys13n.png" alt="key" usemap="#keysBasicMap" class="room" id="keys13n">
                 <img src="sentryorchids.png" alt="key" usemap="#keysBasicMap" class="room">
             </div>
@@ -1435,34 +1442,34 @@ hiddd
     <img src="tides/pedestalld3.png" alt="door" usemap="#roommap" class="room" id="pillarld3">
 </div>
 
-<div id="switchTerminus" usemap="#roommap"> 
-    <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
-    <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-    <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
-    <img src="tides/colorwires2.png" alt="door" usemap="#roommap" class="room" id="colorwires2">       
-    <img src="tides/greenrose.png" alt="door" usemap="#roommap" class="room" id="greenrose">       
-    <img src="tides/colorswitchdoor.png" alt="door" usemap="#roommap" class="room" id="colorswitchdoor">       
-    <img src="tides/redlit.png" alt="door" usemap="#roommap" class="room" id="redlit">       
-    <img src="tides/greenlit.png" alt="door" usemap="#roommap" class="room" id="greenlit">       
-    <img src="tides/bluelit.png" alt="door" usemap="#roommap" class="room" id="bluelit">       
+<div id="switchTerminus" usemap="#switchTerminusmap"> 
+    <img src="southdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="southdoor">
+    <img src="eastdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="eastdoor">
+    <img src="westdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="westdoor">  
+    <img src="tides/colorwires2.png" alt="door" usemap="#switchTerminusmap" class="room" id="colorwires2">       
+    <img src="tides/greenrose.png" alt="door" usemap="#switchTerminusmap" class="room" id="greenrose">       
+    <img src="tides/colorswitchdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="colorswitchdoor">       
+    <img src="tides/redlit.png" alt="door" usemap="#switchTerminusmap" class="room" id="redlit">       
+    <img src="tides/greenlit.png" alt="door" usemap="#switchTerminusmap" class="room" id="greenlit">       
+    <img src="tides/bluelit.png" alt="door" usemap="#switchTerminusmap" class="room" id="bluelit">       
 </div>
 
-<div id="redCircuit" usemap="#roommap"> 
-    <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
-    <img src="tides/redrose1.png" alt="door" usemap="#roommap" class="room" id="redrose1">
-    <img src="tides/redrose2.png" alt="door" usemap="#roommap" class="room" id="redrose2">
-    <img src="tides/redcircuitwires.png" alt="door" usemap="#roommap" class="room" id="redcircuitwires">
+<div id="redCircuit" usemap="#circuitMap"> 
+    <img src="eastdoor.png" alt="door" usemap="#circuitMap" class="room" id="eastdoor">
+    <img src="tides/redrose1.png" alt="door" usemap="#circuitMap" class="room" id="redrose1">
+    <img src="tides/redrose2.png" alt="door" usemap="#circuitMap" class="room" id="redrose2">
+    <img src="tides/redcircuitwires.png" alt="door" usemap="#circuitMap" class="room" id="redcircuitwires">
 </div>
 
-<div id="blueCircuit" usemap="#roommap"> 
-    <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
-    <img src="tides/bluecircuitwires.png" alt="door" usemap="#roommap" class="room" id="bluecircuitwires">    
-        <img src="tides/bluerose.png" alt="door" usemap="#roommap" class="room" id="bluerose">   
+<div id="blueCircuit" usemap="#circuitMap"> 
+    <img src="westdoor.png" alt="door" usemap="#circuitMap" class="room" id="westdoor">  
+    <img src="tides/bluecircuitwires.png" alt="door" usemap="#circuitMap" class="room" id="bluecircuitwires">    
+        <img src="tides/bluerose.png" alt="door" usemap="#circuitMap" class="room" id="bluerose">   
 </div>
 
-<div id="interChapterHallway" usemap="#roommap"> 
-    <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">  
-    <img src="colordoorsouth.png" alt="door" usemap="#roommap" class="room" id="colordoorsouth">  
+<div id="interChapterHallway" usemap="#hallmap"> 
+    <img src="rooms/hallway.png" alt="hallway" usemap="#hallmap" class="room" id="hall"> 
+    <img src="people/hallexplorers.png" alt="explorers" usemap="#hallmap" class="room" id="hallexplorers"> 
 </div>
 
 
@@ -1536,6 +1543,17 @@ hiddd
             <area shape="circle" coords="400,450,90" alt="SW object" class="pointer" onclick="pickSW()">
     </map>
 
+
+
+         <map name="circuitMap">
+            <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+            <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+            <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
+            <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+             <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+            <area shape="rect" coords="755,183,990,350" alt="roses" class="pointer" onclick="placeRedOrBlueRoses()">
+    </map>
+
          <map name="yroommap">
             <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
             <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
@@ -1557,7 +1575,18 @@ hiddd
                 <area shape="rect" coords="991,30,1130,280" alt="northern paintings door" class="pointer" onclick="goNorth()">
         </map>
 
-        
+        <map name="switchTerminusmap">
+            <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+            <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+            <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+            <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
+             <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+            <area shape="poly" coords="382,592,406,508,423,478,445,454,488,440,477,396,540,380,600,424,617,470,640,630,634,684" alt="southern door" class="pointer" onclick="goSouth()">
+                <area shape="rect" coords="700,0,840,180" alt="northern paintings door" class="pointer" onclick="goNorth()">
+                <area shape="rect" coords="841,0,990,227" alt="northern paintings door" class="pointer" onclick="goNorth()">
+                <area shape="rect" coords="991,30,1130,280" alt="northern paintings door" class="pointer" onclick="goNorth()">
+                <area shape="rect" coords="830,414,910,543" alt="green rose" class="pointer" onclick="pickGreenRose()">
+        </map>
 
         <map name="sinkmap">
             <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -1905,7 +1934,7 @@ hiddd
         <area shape="rect" coords="512,220,708,280" alt="NW object" class="pointer" onclick="pickNW()"> 
         <area shape="rect" coords="304,390,430,507" alt="SW object" class="pointer" onclick="pickSW()">
         <area shape="rect" coords="700,525,850,600" alt="SE object" class="pointer" onclick="pickSEKey()">
-        <area shape="rect" coords="905,340,1035,399" alt="NE object" class="pointer" onclick="pickNEKey()"> <!--potential problem marked: "problem-->
+        <area shape="rect" coords="905,340,1035,399" alt="NE object" class="pointer" onclick="pickNEKey()"> <!--potential problem-->
         <area shape="rect" coords="960,145,1151,240" alt="NE shelf key" class="pointer" onclick="pickNE()">
 
         <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
@@ -2204,41 +2233,44 @@ campus and surrounding areas are not suited to recreational gliding.<br><br>
 
 <div id="notebookTextMusic">
 <div class="notebookFlex">
-<b>Music for the Southernmost Distal Floret:</b><br>
-Penser ne doit vilenie (Think not of Evil)<br>
+<b>Music for the Southernmost Distal Floret</b><br>
+Penser ne doit vilenie<br>
 performed by Sonus Chanterai<br><br>
-<p>Music for Crossing the Chasm:<br>
+
+<p><b>Music for Crossing the Chasm</b><br>
 Music for Joan the Mad: Los Cantos del Exilo<br>
-performed by La Nef<br>
 1. Por alli paso in Cavallero<br>
 2. Dame la mano<br>
-3. March, Dame la mano</p>
+3. March, Dame la mano<br>
+performed by La Nef</p>
 
-Chase Sequence:<br>
+<b>Chase Sequence</b><br>
 E.L Mare E.L Pare<br>
-(Martin Best Medieval Ensemble)
+performed by the Martin Best Medieval Ensemble
 
-<p>One Plum for the Madame:
+<p><b>One Plum for the Madame</b><br>
 Lonc tems Ai: Lo ferm vole
-by Raimon de Miraval
+Raimon de Miraval
 arranged by Sylvain Bergeron</p>
 
-Too Many Keys:<br>
+<b>Too Many Keys</b><br>
 Sacrum Mysterium Part II:<br>
 Song of Mary, At Work on the Land<br>
 performed by Tatter Jack Walsh and Turlough O'Carolan</p>
 <br><br>
-Tubes and Nozzles:
+<b>Tubes and Nozzles</b>
 Chanson do-Ih mot
-by Arnaut Daniel</p>
+by Arnaut Daniel
+performed by the Martin Best Medieval Ensemble</p>
 
-Arcade Game:<br>
-Vil Lieber Grusse Susse
-by Oswald von Wolkenstein
+<b>Arcade Game</b><br>
+Vil Lieber Grusse Susse<br>
+by Oswald von Wolkenstein<br>
 arranged for 8-Bit by Harper Reese</p>
 
 Tides and Roses:<br>
-Branle des Chevaux ()
+Branle des Chevaux<br>
+performed by Musica calamus
 </div>
 </div>
 
@@ -3379,6 +3411,12 @@ Secret key — the secret key will perform a secret action.
     <p id="ybcd3">I'm sure she'll understand.</p>
 
     <p id="ybe1">I can't fit through that gap.</p>
+    
+    <p id="ybee1">Stymie said the door will unlock when all three switches are flipped.</p>
+    <p id="ybee2">There must be a switch in one of the florets that we haven't flipped.</p>
+    <p id="ybee2b">There must be a switch in one of the florets that we haven't flipped, or else this green panel would be lit up.</p>
+    <p id="ybee3">We've flipped all the switches, now it looks like we have to close these circuits.</p>
+    <p id="ybee4">There must be some circuits we haven't closed yet. Let's look for more flowers.</p>
 
     <p id="ybf1">Uh!</p>
     <p id="ybf2">Hello there!</p>
@@ -3386,27 +3424,28 @@ Secret key — the secret key will perform a secret action.
     <p id="ybf3">Woah! Woah! Hey!</p>
     <p id="ybf4">Is that a crossbow?</p>
     <p id="ybf5">It's an arbalest.</p>
-    <p id="ybf6">Turn back at once.</p> <!--raises higher-->
-    <p id="ybf7">We're not here to fight! We don’t want to fight you!</p>
-    <p id="ybf8">I'm Kodaly and this is Bridget.</p>
-    <p id="ybf9">We're explorers, from the university. What's your name?</p>
+    <p id="ybf6">Turn back.</p> <!--raises higher-->
+    <p id="ybf7">We're not here to fight!</p>
+    <p id="ybf8">We're explorers, we're from the university.</p>
+    <p id="ybf9">I'm Kodaly and this is Bridget. What's your name?</p>
     <p id="ybf10">My name does not matter.</p>
-    <p id="ybf11">You are bound for the center of the machine. Do you seek the ladder?</p>
-    <p id="ybf12">...</p> <!--bfur-->
+    <p id="ybf11">You are looking for the ladder?</p>
+    <p id="ybf12">...</p> 
     <p id="ybf13">No.</p>
     <p id="ybf14">Good.</p>
     <p id="ybf15">Do not proceed beyond this room.</p>
-    <p id="ybf16">Leave at once, or I will strike you down.</p>
+    <p id="ybf16">Or I will strike you down.</p>
     <p id="ybf17">Charming fellow.</p>
-    <p id="ybf18">Why'd you say "no"? What was he talking about?</p>
+    <p id="ybf18">What did he mean by "the ladder"? Why'd you say no?</p>
     <p id="ybf19">His accent.</p>
-    <p id="ybf20">The way he speaks...</p>
-    <p id="ybf21">He's a Kardic Zealot.</p>
-    <p id="ybf22">He's here to <i>kill the labyrinth</i>.</p>
+    <p id="ybf20">He's a Kardic Zealot.</p>
+    <p id="ybf21">He's here to <i>kill the labyrinth</i>.</p>
 
     <p id="ybg1">Ah!!!</p> <!--B blocks a bolt-->
     
-    <p id="ybg2">Are you two alright? I heard a commotion.</p> <!--Verily in the room to the south-->
+    <p id="ybg2">Maybe that's not such a good idea right now.</p> <!--Trying to go north after ybg1-->
+    
+    <p id="ybg3">Are you two alright? I heard a commotion.</p> <!--Verily in the room to the south-->
 
  
 </div>
@@ -3719,7 +3758,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         pipes5fixed.style.display = "block";
         pipes5spill.style.display = "none";
         prizeglass2.style.display = "none";
+        prizeglass1.style.display = "none";
         prizes.macaroniPipe = true;
+        prizes.cupcake = true;
         arcadeGame.score = 250;
         macaronipipe.style.display = "none";
     }
@@ -4029,10 +4070,13 @@ function showInv() {
         paperflipsound();
         inventory.isOpen = true;
         //random troublemakers
-        pipes1part.style.display = "none";
-        explorers.style.display = "none";
+        if (current.room === "pipesRun1" || current.room === "pipesRun2") {
+            pipes1part.style.display = "none";
+            explorers.style.display = "none";
+            dialogue.blockArrowTravel = true;
         }
-function hideInv() {
+        }
+function hideInv() { //close inv hide inv
         inv.style.display = "none";
         item1.style.display = "none";
         item2.style.display = "none";
@@ -4041,8 +4085,11 @@ function hideInv() {
         paperflipsound();
         inventory.isOpen = false;
         //restore random troublemakers
-        pipes1part.style.display = "block";
-        explorers.style.display = "block";
+        if (current.room === "pipesRun1" || current.room === "pipesRun2") {
+            pipes1part.style.display = "block";
+            explorers.style.display = "block";
+            dialogue.blockArrowTravel = false;
+        }
         }
 
         const papery = {
@@ -4597,12 +4644,30 @@ function drop1() {
         } if (inventory.slot1 === "misplaced handle") {
             missingHandleB.style.display = "block";
             dialogue.handleBobtained = false;
-        }  if (inventory.slot1 === "inexplicable rope") {
+        } if (inventory.slot1 === "inexplicable rope") {
             intactrope.style.display = "block";
                 key.rope2 = false;
-        }  if (inventory.slot1 === "violet rose") {
+        } if (inventory.slot1 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
+        } if (inventory.slot1 === "wild red rose") {
+            wildredrose1.style.display = "block";
+        }  if (inventory.slot1 === "red wild rose") {
+            wildredrose2.style.display = "block";
+        } if (inventory.slot1 === "green rose") {
+            greenrose.style.display = "block";
+            conductiveFlowers.green = true;
+            if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
+        } if (inventory.slot1 === "blue rose") {
+            if (!dialogue.blueRoseKnowsItsPlace) {
+                panel14rose.style.display = "block";
+            } else {
+                bluerose.style.display = "block";
+                conductiveFlowers.blue = true;
+                if (dialogue.blueSwitchFlipped) {
+                    bluelit.style.display = "block";
+                }
+            }
         }
         inventory.slot1 = false; //inventory.slot1 = false; has to be on the bottom or the whole shit breaks 
     }
@@ -4728,7 +4793,7 @@ function drop2() {
             keys24e.style.display = "block";
         } if (inventory.slot2 === "moldy old olive colored key") {
             keys17e.style.display = "block";
-        } if (inventory.slot1 === "maroon key") {
+        } if (inventory.slot2 === "maroon key") {
             keys18n.style.display = "block";
         } if (inventory.slot2 === "oars") {
             oars.style.display = "block";
@@ -4746,7 +4811,25 @@ function drop2() {
         }  if (inventory.slot2 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
-        }
+        } if (inventory.slot2 === "green rose") {
+            greenrose.style.display = "block";
+            conductiveFlowers.green = true;
+            if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
+        } if (inventory.slot2 === "blue rose") {
+            if (!dialogue.blueRoseKnowsItsPlace) {
+                panel14rose.style.display = "block";
+            } else {
+                bluerose.style.display = "block";
+                conductiveFlowers.blue = true;
+                if (dialogue.blueSwitchFlipped) {
+                    bluelit.style.display = "block";
+                }
+            }
+        } if (inventory.slot2 === "wild red rose") {
+            wildredrose1.style.display = "block";
+        }  if (inventory.slot2 === "red wild rose") {
+            wildredrose2.style.display = "block";
+        } 
 inventory.slot2 = false;
     }
 function drop3() {
@@ -4871,7 +4954,7 @@ function drop3() {
             keys24e.style.display = "block";
         } if (inventory.slot3 === "moldy old olive colored key") {
             keys17e.style.display = "block";
-        }  if (inventory.slot1 === "maroon key") {
+        }  if (inventory.slot3 === "maroon key") {
             keys18n.style.display = "block";
         }  if (inventory.slot3 === "oars") {
             oars.style.display = "block";
@@ -4889,8 +4972,25 @@ function drop3() {
         }  if (inventory.slot3 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
-        }
-
+        } if (inventory.slot3 === "green rose") {
+            greenrose.style.display = "block";
+            conductiveFlowers.green = true;
+            if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
+        } if (inventory.slot3 === "blue rose") {
+            if (!dialogue.blueRoseKnowsItsPlace) {
+                panel14rose.style.display = "block";
+            } else {
+                bluerose.style.display = "block";
+                conductiveFlowers.blue = true;
+                if (dialogue.blueSwitchFlipped) {
+                    bluelit.style.display = "block";
+                }
+            }
+        } if (inventory.slot3 === "wild red rose") {
+            wildredrose1.style.display = "block";
+        }  if (inventory.slot3 === "red wild rose") {
+            wildredrose2.style.display = "block";
+        } 
         inventory.slot3 = false;
     }
 function drop4() {
@@ -5015,7 +5115,7 @@ function drop4() {
             keys24e.style.display = "block";
         } if (inventory.slot4 === "moldy old olive colored key") {
             keys17e.style.display = "block";
-        } if (inventory.slot1 === "maroon key") {
+        } if (inventory.slot4 === "maroon key") {
             keys18n.style.display = "block";
         } if (inventory.slot4 === "oars") {
             oars.style.display = "block";
@@ -5033,7 +5133,25 @@ function drop4() {
         }  if (inventory.slot4 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
-        }
+        } if (inventory.slot4 === "green rose") {
+            greenrose.style.display = "block";
+            conductiveFlowers.green = true;
+            if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
+        } if (inventory.slot4 === "blue rose") {
+            if (!dialogue.blueRoseKnowsItsPlace) {
+                panel14rose.style.display = "block";
+            } else {
+                bluerose.style.display = "block";
+                conductiveFlowers.blue = true;
+                if (dialogue.blueSwitchFlipped) {
+                    bluelit.style.display = "block";
+                }
+            }
+        } if (inventory.slot4 === "wild red rose") {
+            wildredrose1.style.display = "block";
+        }  if (inventory.slot4 === "red wild rose") {
+            wildredrose2.style.display = "block";
+        } 
  inventory.slot4 = false;
     }
 
@@ -7426,10 +7544,10 @@ const dialogue = {
     //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
-    pillarsBlockTheWay: true, //mark
-    greenSwitchFlipped: true,//mark
-    blueSwitchFlipped: true,//mark
-    redSwitchFlipped: true,
+    pillarsBlockTheWay: true, 
+    greenSwitchFlipped: true, //mark
+    blueSwitchFlipped: true, //mark
+    redSwitchFlipped: true, //mark
     goodWork: false,
     trueMutualism: true, //set to false after actionandinformation
     mobile: false,
@@ -7602,7 +7720,7 @@ document.addEventListener("keydown", function() {
                   notifnoise.play();
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
-                  //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -9163,6 +9281,7 @@ document.addEventListener("keydown", function() {
             randomOarAudio();    
             lake2.style.display = "none";
                 lake1.style.display = "block";
+                explorers.style.display = "block";a
                 current.room = "lake1";   
                 branle.volume = 0.4;          
         } else if (current.room === "lake3") {
@@ -9224,6 +9343,10 @@ document.addEventListener("keydown", function() {
             }        
         } else if (current.room === "roseRoom") {
             takeWildRose1();
+        } else if (current.room === "interChapterHallway") {
+            interChapterHallway.style.display = "none";
+            current.room = "switchTerminus";
+            switchTerminus.style.display = "block";
         }
     }; //end of check going south
 
@@ -9715,7 +9838,22 @@ if (!inventory.slot1) {
             randomDoorAudio();    
             redCircuit.style.display = "none";
             switchTerminus.style.display = "block";
-            current.room = "switchTerminus";             
+            current.room = "switchTerminus";   
+            if (dialogue.greenSwitchFlipped && conductiveFlowers.green) {
+                    greenlit.style.display = "block";
+                } else {
+                    greenlit.style.display = "none";
+                }
+                if (dialogue.blueSwitchFlipped && conductiveFlowers.blue) {
+                    bluelit.style.display = "block";
+                } else {
+                    bluelit.style.display = "none";
+                }
+                if (dialogue.redSwitchFlipped && conductiveFlowers.red1 && conductiveFlowers.red2) {
+                    redlit.style.display = "block";
+                } else {
+                    redlit.style.display = "none";
+                }          
         } else if (current.room === "switchTerminus") {
             randomDoorAudio();    
             switchTerminus.style.display = "none";
@@ -10116,7 +10254,22 @@ function goWest() {
             randomDoorAudio();    
             blueCircuit.style.display = "none";
             switchTerminus.style.display = "block";
-            current.room = "switchTerminus";             
+            current.room = "switchTerminus";      
+            if (dialogue.greenSwitchFlipped && conductiveFlowers.green) {
+                    greenlit.style.display = "block";
+                } else {
+                    greenlit.style.display = "none";
+                }
+                if (dialogue.blueSwitchFlipped && conductiveFlowers.blue) {
+                    bluelit.style.display = "block";
+                } else {
+                    bluelit.style.display = "none";
+                }
+                if (dialogue.redSwitchFlipped && conductiveFlowers.red1 && conductiveFlowers.red2) {
+                    redlit.style.display = "block";
+                } else {
+                    redlit.style.display = "none";
+                }       
         } else if (current.room === "pillarControlLakes") {
             openpillarInterface();
         } else if (current.room === "flowerIsland") {
@@ -10874,8 +11027,20 @@ function goNorth() {
                 current.room = "switchTerminus";  
                 explorers.style.zIndex = 0;     
                 document.cookie = "pillardeadendended=pillardeadendended";
-                if (dialogue.greenSwitchFlipped) {
+                if (dialogue.greenSwitchFlipped && conductiveFlowers.green) {
                     greenlit.style.display = "block";
+                } else {
+                    greenlit.style.display = "none";
+                }
+                if (dialogue.blueSwitchFlipped && conductiveFlowers.blue) {
+                    bluelit.style.display = "block";
+                } else {
+                    bluelit.style.display = "none";
+                }
+                if (dialogue.redSwitchFlipped && conductiveFlowers.red1 && conductiveFlowers.red2) {
+                    redlit.style.display = "block";
+                } else {
+                    redlit.style.display = "none";
                 }
             } else if ((pillarLock.b === 0 && pillarLock.c === 3) || (pillarLock.b === 3 && pillarLock.c === 0)) {
                 iDontThinkICanFitThroughThat();
@@ -10894,13 +11059,13 @@ function goNorth() {
                  if (binaryGateWest.equalz == 14) {
                     panel14.style.display = "none";
                     panel14open.style.display = "block";
-                    if (!key.blueRose) { //mark what color is it??
+                    if (!key.blueRose) {
                         panel14rose.style.display = "block";
                         key.blueRose = true;
                     }
                  }
         } else if (current.room === "pillarControlLakes"){ 
-            if (binaryGateWest.equalz == 14) {
+            if (binaryGateWest.equalz == 14 || dialogue.bluerosetaken) {
                 takePanelRose();
             } else {
                 itWontBudge();  
@@ -10920,12 +11085,13 @@ function goNorth() {
                 northdoor21.style.display = "none";
             }           
         } else if (current.room === "paintingReferenceRoom") {
-            if (binaryGateEast.equalz == 21) {
+            if (binaryGateEast.equalz == 21 || dialogue.paintingRoomDiscovered) {
                 randomDoorAudio();
                 dialogue.hide21door = true;
                 paintingReferenceRoom.style.display = "none";
                 paintingReferenceRoomReal.style.display = "block";
                 current.room = "paintingReferenceRoomReal"; 
+                dialogue.paintingRoomDiscovered = true;
             } else {
                 itWontBudge();
             }
@@ -10940,11 +11106,14 @@ function goNorth() {
                 switchclick.play();
             }
         } else if (current.room === "switchTerminus") {
-            if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
+            if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped && conductiveFlowers.red1 && conductiveFlowers.red2 && conductiveFlowers.green && conductiveFlowers.blue) {
                 randomDoorAudio();    
                 switchTerminus.style.display = "none";
                 interChapterHallway.style.display = "block";
                 current.room = "interChapterHallway";
+                hallexplorers.style.display = "block";
+            } else if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
+                willUnlockForColorFlowers();
             } else {
                 willUnlockForColor();
             }
@@ -10956,6 +11125,13 @@ function goNorth() {
    
 var platformPuzzle = {
     solved: false,
+}
+
+const conductiveFlowers = {
+    green: true,
+    blue: false,
+    red1: false,
+    red2: false,
 }
 
 const paintingPuzzle = {
@@ -11063,6 +11239,7 @@ function takeHandleA() {
 }
 
 function takeWildRose1() {
+    if (!dialogue.redRose1KnowsItsPlace) {
     if (!inventory.slot1) {
             if (inventory.slot1 !== "wild red rose"
             && inventory.slot2 !== "wild red rose"
@@ -11098,10 +11275,12 @@ function takeWildRose1() {
         } else {
             tooHeavy();
         }
+    }
 }
 
 
 function takeWildRose2() {
+    if (!dialogue.redRose2KnowsItsPlace) {
     if (!inventory.slot1) {
             if (inventory.slot1 !== "red wild rose"
             && inventory.slot2 !== "red wild rose"
@@ -11137,6 +11316,7 @@ function takeWildRose2() {
         } else {
             tooHeavy();
         }
+    }
 }
 
 
@@ -11227,12 +11407,14 @@ if (event.key === 'Enter' || event.key === ' ') {
 }}
 
 function takePanelRose() {
+    if (!dialogue.blueRoseKnowsItsPlace) {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "blue rose"
             && inventory.slot2 !== "blue rose"
             && inventory.slot3 !== "blue rose"
             && inventory.slot4 !== "blue rose") {
                 panel14rose.style.display = "none";
+                dialogue.bluerosetaken = true;
                 inventory.slot1 = "blue rose";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "blue rose"
@@ -11240,6 +11422,7 @@ function takePanelRose() {
             && inventory.slot3 !== "blue rose"
             && inventory.slot4 !== "blue rose") {
                 panel14rose.style.display = "none";
+                dialogue.bluerosetaken = true;
                 inventory.slot2 = "blue rose";}
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "blue rose"
@@ -11247,6 +11430,7 @@ function takePanelRose() {
             && inventory.slot3 !== "blue rose"
             && inventory.slot4 !== "blue rose") {
                 panel14rose.style.display = "none";
+                dialogue.bluerosetaken = true;
                 inventory.slot3 = "blue rose";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "blue rose"
@@ -11254,11 +11438,13 @@ function takePanelRose() {
             && inventory.slot3 !== "blue rose"
             && inventory.slot4 !== "blue rose") {
                 panel14rose.style.display = "none";
+                dialogue.bluerosetaken = true;
                 inventory.slot4 = "blue rose";}
         } else {
             tooHeavy();
         }
     }
+}
 
 //SOUTH WEST
 //SOUTH WEST
@@ -11781,7 +11967,22 @@ function pickSW() {
             pipes5spill.style.display = "none";
             key.macaroniPipePlaced = true;
             tubepick.play();
-            //mark. check that this removes macaroni from inv
+            if (inventory.slot1 === "macaroni pipe") {
+                item1.innerText = "";
+                inventory.slot1 = false;
+            }
+            if (inventory.slot2 === "macaroni pipe") {
+                item2.innerText = "";
+                inventory.slot2 = false;
+            }
+            if (inventory.slot3 === "macaroni pipe") {
+                item3.innerText = "";
+                inventory.slot3 = false;
+            }
+            if (inventory.slot4 === "macaroni pipe") {
+                item4.innerText = "";
+                inventory.slot4 = false;
+            }
             document.cookie = "macaroni=macaroni"
             if (dialogue.handle5turned) {
                 pipes5fixedred.style.display = "block";
@@ -13028,7 +13229,7 @@ function binary8() {
         switch8onEast.style.display = "block";
         switch8offEast.style.display = "none";
     } else {
-        binaryGateWest.equalz-=8;
+        binaryGateEast.equalz-=8;
         binary8switch.onEast = false;
         switch8offEast.style.display = "block";
         switch8onEast.style.display = "none";
@@ -13970,6 +14171,202 @@ document.addEventListener("keydown", function() {
         } 
         } 
     }
+
+function pickGreenRose() {
+    if (current.room === "switchTerminus") {
+        if (inventory.slot1 === "green rose") {
+            drop1();
+        } else if (inventory.slot2 === "green rose") {
+            drop2();
+        } else if (inventory.slot3 === "green rose") {
+            drop3();
+        } else if (inventory.slot4 === "green rose") {
+            drop4();
+        } else if (!inventory.slot1) {
+            if (inventory.slot1 !== "green rose"
+            && inventory.slot2 !== "green rose"
+            && inventory.slot3 !== "green rose"
+            && inventory.slot4 !== "green rose") {
+                greenrose.style.display = "none";
+                conductiveFlowers.green = false;
+                greenlit.style.display = "none";
+                inventory.slot1 = "green rose";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "green rose"
+            && inventory.slot2 !== "green rose"
+            && inventory.slot3 !== "green rose"
+            && inventory.slot4 !== "green rose") {
+                greenrose.style.display = "none";
+                conductiveFlowers.green = false;
+                greenlit.style.display = "none";
+                inventory.slot2 = "green rose";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "green rose"
+            && inventory.slot2 !== "green rose"
+            && inventory.slot3 !== "green rose"
+            && inventory.slot4 !== "green rose") {
+                greenrose.style.display = "none";
+                conductiveFlowers.green = false;
+                greenlit.style.display = "none";
+                inventory.slot3 = "green rose";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "green rose"
+            && inventory.slot2 !== "green rose"
+            && inventory.slot3 !== "green rose"
+            && inventory.slot4 !== "green rose") {
+                greenrose.style.display = "none";
+                conductiveFlowers.green = false;
+                greenlit.style.display = "none";
+                inventory.slot4 = "green rose";}
+        } else {
+            tooHeavy();
+        } 
+    }
+}
+
+function placeRedOrBlueRoses() {
+    if (current.room === "blueCircuit") { //putting that thang down where it belongs 
+        if (inventory.slot1 === "blue rose") {
+            bluerose.style.display = "block";
+            conductiveFlowers.blue = true;
+            dialogue.blueRoseKnowsItsPlace = true;
+            if (dialogue.blueSwitchFlipped) {
+                bluelit.style.display = "block";
+            }
+            drop1();
+        } else if (inventory.slot2 === "blue rose") {
+            bluerose.style.display = "block";
+            conductiveFlowers.blue = true;
+            dialogue.blueRoseKnowsItsPlace = true;
+            if (dialogue.blueSwitchFlipped) {
+                bluelit.style.display = "block";
+            }
+            drop2();
+        } else if (inventory.slot3 === "blue rose") {
+            bluerose.style.display = "block";
+            conductiveFlowers.blue = true;
+            dialogue.blueRoseKnowsItsPlace = true;
+            if (dialogue.blueSwitchFlipped) {
+                bluelit.style.display = "block";
+            }
+            drop3();
+        } else if (inventory.slot4 === "blue rose") {
+            bluerose.style.display = "block";
+            conductiveFlowers.blue = true;
+            dialogue.blueRoseKnowsItsPlace = true;
+            if (dialogue.blueSwitchFlipped) {
+                bluelit.style.display = "block";
+            }
+            drop4();
+        } else if (dialogue.blueRoseKnowsItsPlace) {
+         if (!inventory.slot1) { //picking that thang back up again
+            if (inventory.slot1 !== "blue rose"
+            && inventory.slot2 !== "blue rose"
+            && inventory.slot3 !== "blue rose"
+            && inventory.slot4 !== "blue rose") {
+                bluerose.style.display = "none";
+                conductiveFlowers.blue = false;
+                bluelit.style.display = "none";
+                inventory.slot1 = "blue rose";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "blue rose"
+            && inventory.slot2 !== "blue rose"
+            && inventory.slot3 !== "blue rose"
+            && inventory.slot4 !== "blue rose") {
+                bluerose.style.display = "none";
+                conductiveFlowers.blue = false;
+                bluelit.style.display = "none";
+                inventory.slot2 = "blue rose";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "blue rose"
+            && inventory.slot2 !== "blue rose"
+            && inventory.slot3 !== "blue rose"
+            && inventory.slot4 !== "blue rose") {
+                bluerose.style.display = "none";
+                conductiveFlowers.blue = false;
+                bluelit.style.display = "none";
+                inventory.slot3 = "blue rose";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "blue rose"
+            && inventory.slot2 !== "blue rose"
+            && inventory.slot3 !== "blue rose"
+            && inventory.slot4 !== "blue rose") {
+                bluerose.style.display = "none";
+                conductiveFlowers.blue = false;
+                bluelit.style.display = "none";
+                inventory.slot4 = "blue rose";}
+        } else {
+            tooHeavy();
+        } 
+    }
+} if (current.room === "redCircuit") { //putting that thang down where it belongs x2
+        if (inventory.slot1 === "wild red rose") {
+            redrose1.style.display = "block";
+            conductiveFlowers.red1 = true;
+            dialogue.redRose1KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop1();
+        } else if (inventory.slot2 === "wild red rose") {
+            redrose1.style.display = "block";
+            conductiveFlowers.red1 = true;
+            dialogue.redRose1KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop2();
+        } else if (inventory.slot3 === "wild red rose") {
+            redrose1.style.display = "block";
+            conductiveFlowers.red1 = true;
+            dialogue.redRose1KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop3();
+        } else if (inventory.slot4 === "wild red rose") {
+            redrose1.style.display = "block";
+            conductiveFlowers.red1 = true;
+            dialogue.redRose1KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop4();
+        } if (inventory.slot1 === "red wild rose") {
+            redrose2.style.display = "block";
+            conductiveFlowers.red2 = true;
+            dialogue.redRose2KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop1();
+        } else if (inventory.slot2 === "red wild rose") {
+            redrose2.style.display = "block";
+            conductiveFlowers.red2 = true;
+            dialogue.redRose2KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop2();
+        } else if (inventory.slot3 === "red wild rose") {
+            redrose2.style.display = "block";
+            conductiveFlowers.red2 = true;
+            dialogue.redRose2KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop3();
+        } else if (inventory.slot4 === "red wild rose") {
+            redrose2.style.display = "block";
+            conductiveFlowers.red2 = true;
+            dialogue.redRose2KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+            drop4();
+        }
+}
+}
 
 
 function goToTheHomePageWhyDontYou()

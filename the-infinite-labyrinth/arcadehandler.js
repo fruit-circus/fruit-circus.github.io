@@ -1,3 +1,6 @@
+//changeAmount
+//changeSize
+//changeSpeed
 
 function bikaipoArcadeGame() {
     arcadeGameContainer.style.display = "block";
@@ -5,6 +8,14 @@ function bikaipoArcadeGame() {
     letsCreateProjectilesWithMama();
     restartGameWithoutKeypress();
     dialogue.arcadeGameActive = true;
+    if (dialogue.stymieArcadeAlterations1) {
+                  dialogue.arcadeFailuresOne = true;
+                  increaseNotificationLobbyThree();
+                }
+                if (dialogue.stymieArcadeAlterations2) {
+                  dialogue.arcadeFailuresTwo = true;
+                  increaseNotificationLobbyThree();
+                }
 }
 
 
@@ -21,16 +32,36 @@ function closeTheArcadeGame() {
                 arcadeGameContainer.style.display = "none";
                 sprite.style.display = "none";
                 score.style.display = "none";
+                if (dialogue.stymieArcadeAlterations1) {
+                  dialogue.arcadeFailuresOne = true;
+                }
+                if (dialogue.stymieArcadeAlterations2) {
+                  dialogue.arcadeFailuresTwo = true;
+                }
 }
 
 
     //Create projectiles at regular intervals
     function letsCreateProjectilesWithMama() {
-        if (!isGameOver && dialogue.arcadeGameActive){
+        if (!isGameOver && dialogue.arcadeGameActive) {
     setInterval(function() {
-      var projectileSize = 8;
-      var speed = 3;
-      for (var i = 0; i < 4; i++) {
+      if (dialogue.stymieArcadeAlterations2) {
+        var speed = 4;
+        var projectileSize = 64; 
+      } else if (dialogue.stymieArcadeAlterations3) {
+        var speed = 1;
+        var projectileSize = 6; 
+      } else if (dialogue.stymieArcadeAlterations1) {
+        var speed = 1;
+        var projectileSize = 8; 
+      } else {
+        var speed = 3;
+        var projectileSize = 8; 
+      }
+       //changeSpeed (default is 3)
+       //changeSize (default is 8)
+       if (dialogue.stymieArcadeAlterations1) {
+       for (var i = 0; i < 40; i++) { //changeAmount
         var x = Math.random() * gameSquare.size;
         var y = Math.random() * gameSquare.size;
         var direction = Math.floor(Math.random() * 8);
@@ -82,7 +113,171 @@ function closeTheArcadeGame() {
             projectile.speedX = 0;
             projectile.speedY = -speed;
             break;}
-        projectiles.push(projectile);}}, 700);}}
+        projectiles.push(projectile);}
+      } else if (!dialogue.stymieArcadeAlterations1 && dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
+        for (var i = 0; i < 1; i++) {
+        var x = Math.random() * gameSquare.size;
+        var y = Math.random() * gameSquare.size;
+        var direction = Math.floor(Math.random() * 8);
+        var projectile = {
+          x: x,
+          y: y,
+          size: projectileSize,
+          speedX: 0,
+          speedY: 0
+        };
+        switch (direction) {
+          case 0: // from west to east
+            projectile.x = -projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 1: // from east to west
+            projectile.x = gameSquare.size;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 2: // from north to south
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 3: // from south to north
+            projectile.y = gameSquare.size;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;
+          case 4: // from west to east
+            projectile.x = projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 5: // from east to west
+            projectile.x = -projectileSize;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 6: // from north to south
+            projectile.y = projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 7: // from south to north
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;}
+        projectiles.push(projectile);}
+      }else if (!dialogue.stymieArcadeAlterations1 && !dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
+        for (var i = 0; i < 4; i++) {
+        var x = Math.random() * gameSquare.size;
+        var y = Math.random() * gameSquare.size;
+        var direction = Math.floor(Math.random() * 8);
+        var projectile = {
+          x: x,
+          y: y,
+          size: projectileSize,
+          speedX: 0,
+          speedY: 0
+        };
+        switch (direction) {
+          case 0: // from west to east
+            projectile.x = -projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 1: // from east to west
+            projectile.x = gameSquare.size;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 2: // from north to south
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 3: // from south to north
+            projectile.y = gameSquare.size;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;
+          case 4: // from west to east
+            projectile.x = projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 5: // from east to west
+            projectile.x = -projectileSize;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 6: // from north to south
+            projectile.y = projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 7: // from south to north
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;}
+        projectiles.push(projectile);}
+      } else if (dialogue.stymieArcadeAlterations3) {
+        for (var i = 0; i < 1; i++) {
+        var x = Math.random() * gameSquare.size;
+        var y = Math.random() * gameSquare.size;
+        var direction = Math.floor(Math.random() * 8);
+        var projectile = {
+          x: x,
+          y: y,
+          size: projectileSize,
+          speedX: 0,
+          speedY: 0
+        };
+        switch (direction) {
+          case 0: // from west to east
+            projectile.x = -projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 1: // from east to west
+            projectile.x = gameSquare.size;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 2: // from north to south
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 3: // from south to north
+            projectile.y = gameSquare.size;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;
+          case 4: // from west to east
+            projectile.x = projectileSize;
+            projectile.speedX = speed;
+            projectile.speedY = 0;
+            break;
+          case 5: // from east to west
+            projectile.x = -projectileSize;
+            projectile.speedX = -speed;
+            projectile.speedY = 0;
+            break;
+          case 6: // from north to south
+            projectile.y = projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = speed;
+            break;
+          case 7: // from south to north
+            projectile.y = -projectileSize;
+            projectile.speedX = 0;
+            projectile.speedY = -speed;
+            break;}
+        projectiles.push(projectile);}
+      }
+      }, 700);}}
 
 
     function updateTimer() {
@@ -134,7 +329,7 @@ function closeTheArcadeGame() {
         if (projectile.x < playerX + playerSize &&
           projectile.x + projectile.size > playerX &&
           projectile.y < playerY + playerSize &&
-          projectile.y + projectile.size > playerY) {
+          projectile.y + projectile.size > playerY && !dialogue.stymieArcadeAlterations3) { //mark check this. after round 3, should not decrease health. shoubl be cyan
           decreaseHealth();
           // Remove the projectile
           projectiles.splice(i, 1);
@@ -145,8 +340,10 @@ function closeTheArcadeGame() {
       }
 
     function decreaseHealth() {
-        if (dialogue.arcadeGameActive && dialogue.intervalActive) {
+        if (dialogue.arcadeGameActive && dialogue.intervalActive && !dialogue.stymieArcadeAlterations2) {
             playerHealth -= 1;}
+        else if (dialogue.arcadeGameActive && dialogue.intervalActive && dialogue.stymieArcadeAlterations2) {
+            playerHealth -= 3;}
         }
 
     
@@ -158,7 +355,12 @@ function closeTheArcadeGame() {
       canvasContext.fillStyle = 'red';
       canvasContext.fillRect(playerX, playerY, playerSize, playerSize);
       //draw projectiles
-      canvasContext.fillStyle = 'yellow';
+      if (dialogue.stymieArcadeAlterations3) {
+        canvasContext.fillStyle = 'cyan';
+      } else {
+        canvasContext.fillStyle = 'yellow';
+      }
+      
       for (var i = 0; i < projectiles.length; i++) {
         var projectile = projectiles[i];
         canvasContext.beginPath();
@@ -183,6 +385,13 @@ function closeTheArcadeGame() {
         function gameOverBloop() {
             gameover.play();
             dialogue.gameBlooped = true;
+            dialogue.numberOfArcadeFailures++;
+            if (dialogue.numberOfArcadeFailures == 1) { //mark change back to 5
+              stonesound.play();
+              increaseNotificationLobbyThree();
+              notifnoise.play();
+              
+            }
         }
 
     function gameOver() {
@@ -205,6 +414,7 @@ function closeTheArcadeGame() {
         timer.style.display = "none";
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+        laudaNovella.pause();
         doihmot.pause();
         document.removeEventListener('keydown', restartGame);
       }
@@ -222,6 +432,7 @@ function restartGameWithoutKeypress() {
         timer.style.display = "none";
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+        laudaNovella.pause();
         doihmot.pause();
         document.removeEventListener('keydown', restartGame);
 }
@@ -272,6 +483,7 @@ function restartGameWithoutKeypress() {
       canvas.height = gameSquare.size;
       eightBitTune.play();
       eightBitTune.currentTime = 0;
+      laudaNovella.pause();
       doihmot.pause();
       arcadecloseup.style.display = "block";
       arcadeshell.style.display = "block";

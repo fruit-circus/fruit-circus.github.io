@@ -13,7 +13,7 @@ body {
 
 }
 
-#butt{
+#butt {
     z-index: 5;
     position: absolute;
     transform: translate(50px, 0px);
@@ -24,6 +24,24 @@ body {
     width: 160px;
     cursor: pointer;
     border-radius: 20%;
+}
+
+#northknock,
+#westknock {
+    z-index: 2;
+}
+
+#advanceButt { /*advance dialogue with button click*/
+    z-index: 50;
+    display: none;
+    position: absolute;
+    transform: translate(1000px, 0px);
+    margin: 10px;
+    border: 2.5px transparent;
+    background-color: black;
+    height: 780px;
+    width: 440px;
+    cursor: pointer;
 }
 
 #butthome {
@@ -117,7 +135,7 @@ img {
 }
 
 
-.dialogue{
+.dialogue {
     display: none;
     position: absolute;
 }
@@ -127,6 +145,12 @@ img {
     z-index: 11;
 }
 
+
+#advancearrow {
+    display: block;
+    z-index: 100;
+    cursor: pointer;
+}
 
 #bridget {
     display: none;
@@ -144,14 +168,25 @@ img {
 }
 
 #notebookTextKodaly,
-#notebookTextBridget,
 #notebookTextShuri,
 #notebookTextVerily,
 #notebookTextMusic,
 #notebookTextPoem,
 #notebookTextInfo {
     position: absolute;
-    transform: translate(430px, 150px);
+    transform: translate(435px, 150px);
+    max-width:  850px;
+    height: 520px;
+    font-size: 24px;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+}
+
+
+#notebookTextBridget {
+    position: absolute;
+    transform: translate(510px, 150px);
     max-width:  850px;
     height: 520px;
     font-size: 24px;
@@ -608,10 +643,10 @@ img {
     display: none;
 }
 
-/*#youreonmobile {
-     z-index: 50;
+#areyouonmobile {
+     z-index: 10001;
     display: none;
-}*/
+}
 
 #yellow1,
 #yellow2,
@@ -1503,17 +1538,20 @@ z-index: -1;
 
 
 #pipes1part {
-        z-index: 1000;
+        z-index: 29;
 }
 
 #pipes1partyellow {
-    z-index: 1000;
-    display:none;
+    z-index: 29;
+    display: none;
 }
 
 
 
 #notepadk,
+#verilyTab,
+#shuriTab,
+#poemTab,
 #notepadb,
 #notepadv,
 #notepads,
@@ -1531,7 +1569,7 @@ z-index: -1;
 
 #ksquaretall {
     display: none;
-        z-index: 100;
+        z-index: 29;
 }
 
 
@@ -1668,7 +1706,7 @@ display: none;
 
 #inv{
     display: none;
-    z-index: 3;
+    z-index: 30;
 }
 
 #bbuttons{
@@ -1774,7 +1812,7 @@ display: none;
 .invFlex {
     display: flex;
     flex-direction: column;
-    z-index: 4;
+    z-index: 31;
     width: 100px;
     margin-left: 500px;
     position: relative;
@@ -1783,7 +1821,7 @@ display: none;
 
 
 #item1 {
-    z-index: 5;
+    z-index: 31;
     transform: translateY(-10px);
     font-family: garamond; 
     font-size: 20px;
@@ -1792,7 +1830,7 @@ display: none;
 }
 
 #item2 {
-    z-index: 5;
+    z-index: 31;
     transform: translateY(125px);
     font-family: garamond; 
     display: none;
@@ -1801,7 +1839,7 @@ display: none;
 }
 
 #item3 {
-    z-index: 5;
+    z-index: 31;
     transform: translateY(270px);
     font-family: garamond; 
     display: none;
@@ -1810,7 +1848,7 @@ display: none;
 }
 
 #item4 {
-    z-index: 5;
+    z-index: 31;
     transform: translateY(410px);
     font-family: garamond; 
     display: none;

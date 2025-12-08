@@ -996,6 +996,12 @@ if (event.key === 'Enter' || event.key === ' ') {
         dialogue.gumpus = true;
         dialogue.actionAndInformation = true;
         dialogue.blockArrowTravel = false;
+        verilyIs.inThePortholeRoom = true;
+        verilysprite.style.display = "block";
+        terminal2.style.display = "block";
+        vtamp1.style.display = "none";
+        vtamp2.style.display = "none";
+        vtamp3.style.display = "none";
         decreaseNotification();
         denotifnoise.play();
         increaseNotificationLobbyTwo();
@@ -1715,7 +1721,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        decreaseNotificationLobbyTwo();
        denotifnoise.play();
         dialogue.actionAndInformation = false;
-        dialogue.trueMutualism = false;
+        dialogue.trueMutualism = true;
         dialogue.verilyIsKnownToBeNotAtTheSTMITerminal = "true";
         document.cookie = "actionAndInfo=actionAndInfo";
         dialogue.actionAndInformationComplete = true;
@@ -2701,6 +2707,7 @@ function haventSeenHim() { //verily doesn't know what you're talking about
 
 function shuriEncounter() {
 if (!chapterTwoPartTwo.activated && !dialogue.preventShuriCookies) {
+  dialogue.dontAllowTableDialogueBecauseShuriBeingPursued = true;
     shurisprite.style.display = "block";
     dialogue.blockArrowTravel = true;
     lamano.pause();
@@ -2752,14 +2759,13 @@ document.addEventListener("keydown", function() {
         vtamp1.style.display = "none";
         vtamp2.style.display = "none";
         vtamp3.style.display = "none";
-           dialogue.chaseSequence = "true";
+           dialogue.chaseSequence = true;
            dialogue.haventSeenHim = true;
        document.cookie = "haventSeenHim=haventSeenHim";
-       document.cookie = "shruEncountered=shruEncountered";
+       document.cookie = "shuriEncountered=shuriEncountered";
        dialogue.preventShuriCookies = true;
        dialogue.shuriHasBeenSeen = true;
        dialogue.blockArrowTravel = false;
-           return;
        }
     }
 });}
@@ -3212,12 +3218,13 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.chaseComplete === 10) {
         zzn17.style.display = "none";
         k.style.display = "none";
-        dialogue.chaseChase = "false";
+        dialogue.chaseChase = "false"; //mark. i mean this is wrong but it seems to work and im scared to change it
         dialogue.shuriComplete = "true";
         dialogue.lostRogueSoldiers = "true";
         increaseNotificationLobbyTwo();
         notifnoise.play();
         dialogue.chaseComplete = true;
+        dialogue.dontAllowTableDialogueBecauseShuriBeingPursued = false;
         document.cookie = "wildSoldierChase=wildSoldierChase"
            return;
        }
@@ -3694,22 +3701,23 @@ document.addEventListener("keydown", function() {
      } else if (dialogue.displayTerminal === 6) {
         zr6.style.display = "none";
         kstu.style.display = "none";
+        dialogue.displayTerminal = true;
         dialogue.displayFace2 = true;
         dialogue.displayFace = false;
          return;
      } 
    }});
    } else if (dialogue.displayFace2) { //there's some sort of display screen behind the curtains...
-    dialogue.displayFace = 1;
+    dialogue.displaysafsdfFace = 1;
        zq1.style.display = "block";
        b.style.display = "block";
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.displayFace === 1) {
+     if (dialogue.displaysafsdfFace === 1) {
         zq1.style.display = "none";
        b.style.display = "none";
+      dialogue.displaysafsdfFace = true;
        dialogue.displayFace2 = true;
-         return;
      } 
    }});}
 }       
@@ -5176,7 +5184,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 }
 
 function selectTable() {
-if (!dialogue.mutualism) {
+if (!dialogue.mutualism && !dialogue.dontAllowTableDialogueBecauseShuriBeingPursued) {
       yyj1.style.display = "block";
       b.style.display = "block";
       dialogue.mutualism = 1;
@@ -5321,13 +5329,13 @@ if (event.key === 'Enter' || event.key === ' ') {
                 dialogue.blockArrowTravel = false;
 
     } 
-}});} else if (!dialogue.trueMutualism) {
+}});} else if (dialogue.trueMutualism) {
     trueMutualismGo();
 }
 }
 
 function trueMutualismGo() {
-    if (!dialogue.trueMutualism) {
+    if (dialogue.trueMutualism) {
     yyr1.style.display = "block";
     dialogue.blockArrowTravel = true;
       b.style.display = "block";
@@ -5587,10 +5595,10 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     } else if (dialogue.mutualism3 === 40) {
         yyr40.style.display = "none";
-        b.style.display = "none";
-dialogue.mutualism3 = true;
-dialogue.blockArrowTravel = false;
-      dialogue.trueMutualism = true;
+            b.style.display = "none";
+    dialogue.mutualism3 = true;
+    dialogue.blockArrowTravel = false;
+          dialogue.trueMutualism = false;
 }}});
 }
 }
@@ -6020,7 +6028,7 @@ document.addEventListener("keydown", function() {
 
 
 function sixteenFeralRacoons() {
-    if (dialogue.feralRacoons) {
+    if (dialogue.feralRacoons && !dialogue.feralRacoonsComplete) {
         dialogue.racoons = 1;
        yye1.style.display = "block";
        dialogue.blockArrowTravel = true;
@@ -6045,7 +6053,9 @@ document.addEventListener("keydown", function() {
        yye3.style.display = "none";
        b.style.display = "none";
          dialogue.feralRacoons = false;
+         dialogue.feralRacoonsComplete = true;
          dialogue.blockArrowTravel = false;
+         document.cookie = "feralRacoons=feralRacoons";
      }}});
     }
 }
@@ -9427,6 +9437,7 @@ function noPowerFlowing() {
             ybf2.style.display = "none";
             ybf3.style.display = "block";
             kstu.style.display = "block";
+            crossbowRaise.play();
             shuriHall.style.display = "block";
             shuriHallBack.style.display = "none";
             k.style.display = "none";
@@ -9452,6 +9463,7 @@ function noPowerFlowing() {
           } else if (dialogue.cojdlndfgdfgaslasdf === 55) {
             ybf6.style.display = "none";
             ybf7.style.display = "block";
+            crossbowLower.play();
             sharb.style.display = "block"; //it is an arbalest
             sharbra.style.display = "none";
             dialogue.cojdlndfgdfgaslasdf++;
@@ -9574,6 +9586,7 @@ function noPowerFlowing() {
     ybg1.style.display = "block";
     b.style.display = "block";
     dialogue.cojdassdfsdflasdf = 1;
+    crossbowFire.play();
     dialogue.blockArrowTravel = true;
     document.addEventListener("keydown", function() {
     if (event.key === 'Enter' || event.key === ' ') {

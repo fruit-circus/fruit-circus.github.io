@@ -24,7 +24,6 @@ soldier with arbalest art
 bridget blocking an arbalest bolt gif
 yyp63 verily forced smile
 yyp48 you didn't just come here to cata ... k raised eyebrow
-put your name on it somewhere + art for notepad tips page with keys (when you drop an object it returns to its original room. you can reload the page on firefox without losing your progress)
 gif kodaly in the lift rooms
 
 LOW
@@ -58,15 +57,12 @@ sound for picking up and placing teddy bear (placeTeddyBear)
 new item! for bat-card (fanfare)
 woodenClonk for taking bat (woodenClonk)
 glass smash for breaking pipe glass with bat (glassSmash)
-arbalest being raised or lowered
-arbalest being fired and impacting b's bag
 vialPloink for (vialPloink)
 
 code:
-after karak: now other music won't trigger
-verily sprite appears for karak kyal
+fix dialogue ybg38
+TEST hey do you really mean what you said back there still triggers even without having said anything back there
 need decore in that northern east branch room keys. alcove perhaps
-esc for key items pouch
 some portraits for verily in karakkyal
 scoreboard names and scores, player's name and score (arcadeGame.score)
 more decoration and misc objects:
@@ -76,10 +72,11 @@ more decoration and misc objects:
     alcove W in 21 door room with some books or vials 
         keys: an end table in the NE of keys2
         an item for ch3 lobby
-campfire scene (removes yellow rose to lock the door)
+campfire scene
 items for newcell
 add various cookies:
-    pipes: handles (dialogue.handleGlassNone = true;), secret passage discovered? brunhilda availabled, sixteen feral racoons
+    keys: secondary pathway to guestbook
+    pipes: handles (dialogue.handleGlassNone = true;), brunhilda availabled,
     tides: ?
 
 
@@ -87,11 +84,16 @@ things that need internet:
 automatic zoom to fit
 factcheck all dialogue
 change arcade music on alterations3 to something dopey
-reset time on looping gif js html css
-Non looping gif reset: how to remove an html element from the document structure? (for door knock)
 
 problems for later: 
+double check arrow travel is prevented during first verily conversation
+double check that guest books do not allow arrow key or wasd movement in both chrome and firefox
 find a better way to determine mobile ness
+Posibly use the following code to clean up the knocking gifs instead of using a timeout
+        let doomed = document.querySelector('northknock');
+        doomed.parentElement.removeChild(doomed);
+put your name on it somewhere + art for notepad tips page with keys (when you drop an object it returns to its original room. you can reload the page on firefox without losing your progress)
+
 
 story: they find something really practically applicable about the labyrinth and decide to cover it up
 add an old north kardic dictionary (ch 4)
@@ -1030,6 +1032,7 @@ hiddd
                 <img src="porthole.png" alt="porthole" usemap="#roommap" class="room" id="porthole"> 
                 <img src="fishstrings.gif" alt="fish pond" usemap="#roommap" class="room" id="fishstrings2">
                 <img src="harp/fishpatch.png" alt="fish room" usemap="#roommap" class="room" id="fishpatch">
+                <img src="harp/pondpatch.png" alt="fish room" usemap="#roommap" class="room" id="pondpatch">
                 <img src="people/verilysprite.png" alt="verily" usemap="#roommap" class="room" id="verilysprite"> 
                 <img src="people/verilydowsing.png" alt="verily" usemap="#roommap" class="room" id="verilydowsing"> 
                 <img src="shrubs/burningbush.png" alt="shrub" usemap="#roommap" class="room" id="burningbush">                  
@@ -1314,6 +1317,8 @@ hiddd
 
             <div id="keys12" usemap="#roommap"> 
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
+                <img src="northshelf.png" alt="poster" usemap="#libmap" class="room" id="northshelf">
+                <img src="shelfitems2.png" alt="poster" usemap="#libmap" class="room" id="shelfitems2">
             </div>
 
 
@@ -2606,8 +2611,11 @@ hiddd
 <audio id="woodenClonk"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="lasso"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="rosePluck"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="glassSmash"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
+<audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
 <audio id="vialPloink"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
+<audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
+<audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
+<audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
 
 <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
     <audio id="penser" src="sound/penser.mp3" loop></audio> <!--Chapter 1-->
@@ -4220,11 +4228,13 @@ performed by the Unicorn Ensemble
     <p id="ybg35">And if you're a fundamentalist, you might very well be willing to die and kill to prevent that fate.</p>
     <p id="ybg36">Maybe I should have paid better attention in <i>Labyrinths in World Mythology</i>.</p>
     <p id="ybg37">Don't feel bad, it's my main area of study.</p>
+    <!--
     <p id="ybg38">That's absolutely fascinating. Seems like a valid explanation, although perhaps not in line with modern thinking.</p>
     <p id="ybg39">Nor must it be. The realm of myth and the realm of science can exist independently without either invalidating the other.</p>
     <p id="ybg40">But for someone to believe so strongly that they would come here on a suidice mission... Surely they must have fallen prey to some misconception.</p>
     <p id="ybg41">I happen to have read primary source documents which describe people reaching the hearts of various labyrinths and not being instantly transported to heaven, but that truth can exist simultaneously with fundamentalist Kardic beliefs.</p>
     <p id="ybg42">And while I don't believe anyone's worldview is closer to or further from "the Truth", there are some truths which are more harmful than others. And I do believe that, if we want this incredible, ancient being to survive, we must stop the zealot from reaching the heart.</p>
+    -->
     <p id="ybg44">It’s four hours to Zoza. Seven or seven and a half hours round trip if we push ourselves, plus the time it takes us to convince local authorities to help us.</p>
     <p id="ybg45">Then, ragged and weary, we play catch-up with a soldier who's eight hours closer to the heart than we are, and has had time to lay as many traps and diversions as he pleases.</p>
     <p id="ybg46">We can't call for help. If we want to stop him, we’ll have to do it on our own.</p>
@@ -4619,7 +4629,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         } 
     }
 
-    if (cookiesHas('open')) {
+
+    if (cookiesHas('open')) { 
         k.style.display = "none";
         p1.style.display = "none";
         pressEnter.style.display = "none";
@@ -4629,7 +4640,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.openingHasPlayed = true;
     }
 
+    if (cookiesHas('blueRoseInPlace')) { 
+            bluerose.style.display = "block";
+            conductiveFlowers.blue = true;
+            dialogue.blueRoseKnowsItsPlace = true;
+            if (dialogue.blueSwitchFlipped) {
+                bluelit.style.display = "block";
+            }
+        }
 
+    if (cookiesHas('redRoseOneInPlace')) { 
+           redrose1.style.display = "block";
+            conductiveFlowers.red1 = true;
+            dialogue.redRose1KnowsItsPlace = true;
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+        }
+
+    if (cookiesHas('redRoseTwoInPlace')) { 
+           redrose2.style.display = "block";
+            conductiveFlowers.red2 = true;
+            dialogue.redRose2KnowsItsPlace = true;
+            document.cookie = "redRoseTwoInPlace=redRoseTwoInPlace";
+            if (dialogue.redSwitchFlipped) {
+                redlit.style.display = "block";
+            }
+        }
+        
+        
+if (cookiesHas('feralRacoons')) { 
+        dialogue.feralRacoons = false;
+        dialogue.feralRacoonsComplete = true;
+    }
     if (cookiesHas('beigedoor')) {
         goneBeigeKey();
         goneBlueKey();
@@ -4649,7 +4692,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ropey.setChasm2 = true;
     }
     
-
     if (cookiesHas('ypipePlaced')) {
         pipes2fixed.style.display = "block";
         key.ypipePlaced = true;
@@ -4768,6 +4810,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.strangePaintings = true;
         dialogue.spainting = true;
         dialogue.matchSet = true;
+        //mark. 21 door solved
      }
 
     if (cookiesHas('pinkdoor')) {
@@ -4903,16 +4946,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     if (cookiesHas('wildSoldierChase')) {
-        dialogue.chaseChase = "false";
-        dialogue.shuriComplete = "true";
-        dialogue.lostRogueSoldiers = "true";
+        dialogue.chaseChase = false;
+        dialogue.shuriComplete = true;
+        dialogue.lostRogueSoldiers = true;
         verilyIs.inThePortholeRoom = true;
         verilysprite.style.display = "block";
         terminal2.style.display = "block";
         vtamp1.style.display = "none";
         vtamp2.style.display = "none";
         vtamp3.style.display = "none";
-        dialogue.chaseSequence = "true";
+        dialogue.chaseSequence = true;
         chapterTwoPartTwo.activated = true;
         if (dialogue.forCookiesStymieHasntSeenHim) {
             dialogue.haventSeenHim = false;
@@ -4949,7 +4992,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         switchb.ison = false;
     }
 
-    if (cookiesHas('actionAndInfo')) {
+    if (cookiesHas('actionAndInfo')) { 
         dialogue.actionAndInformation = false;
         dialogue.actionAndInformationComplete = true;
         dialogue.verilyIsKnownToBeNotAtTheSTMITerminal = "true";
@@ -5038,7 +5081,7 @@ if (cookiesHas('longtime')) {
         vtamp1.style.display = "none";
         vtamp2.style.display = "none";
         vtamp3.style.display = "none";
-           dialogue.chaseSequence = "true";
+           dialogue.chaseSequence = true;
            dialogue.haventSeenHim = true;
            dialogue.preventShuriCookies = true;
     }
@@ -5104,6 +5147,8 @@ function deleteCookies() { //reload and refresh entirely
     }, 500);
   
 }
+
+
 function cookiesHas(value) { //check for a sword, key, or played dialogue thread e.g. and destroy it
     let cookies = document.cookie.split(';');
     return cookies.some(cookie => cookie.trim().split('=')[1] === value);
@@ -5328,6 +5373,7 @@ function decreaseNotificationLobbyThree() {
 
 function showKeyItems() {
     dialogue.keyItemsPouchIsOpen = true;
+    dialogue.allowEscape = true;
     if (dialogue.keyItemsAdded) {
         keyItemsPouch.style.display = "block";
         if (dialogue.mysteriousVialTaken) {
@@ -5339,6 +5385,8 @@ function showKeyItems() {
 function hideKeyItems() {
         keyItemsPouch.style.display = "none";
         strangevial.style.display = "none";
+        dialogue.keyItemsPouchIsOpen = false;
+    dialogue.allowEscape = false;
 }
 
 function showNotes() {
@@ -5349,7 +5397,7 @@ function showNotes() {
     if (dialogue.verilyIntro || cookiesHas('verily')) {
         verilyTab.style.display = "block";
     }
-    if (dialogue.shuriHasBeenSeen || cookiesHas('shruEncountered')) {
+    if (dialogue.shuriHasBeenSeen || cookiesHas('shuriEncountered')) {
         shuriTab.style.display = "block";
     }
     if (dialogue.poemAddedToNotebook || cookiesHas('poem1found')) {
@@ -5443,7 +5491,7 @@ function notepadV() {
     }
 }
 function notepadS(){
-        if (dialogue.shuriHasBeenSeen || cookiesHas('shruEncountered')) {
+        if (dialogue.shuriHasBeenSeen || cookiesHas('shuriEncountered')) {
 
     paperflipsound();
     notepadk.style.display = "none";
@@ -8663,7 +8711,7 @@ const dialogue = {
     currentlyInputtingArcadeName: false,
     arcadeFailuresOne: false,
     arcadeFailuresTwo: false,
-    masterSwitchChapterThreeDoor: true, //for testing
+    masterSwitchChapterThreeDoor: false, //for testing turn to true. normally should be false
     verilyisnowburningashrub: false,
     numberOfArcadeFailures: 0,
     mobilityUncertain: false,
@@ -8672,7 +8720,7 @@ const dialogue = {
     blueSwitchFlipped: false,
     redSwitchFlipped: false,
     goodWork: false,
-    trueMutualism: false, //set to false after actionandinformation //mark set to true //really?
+    trueMutualism: false, //set to true after actionandinformation 
     mobile: false,
     ladder: false, //aha, it's ladder dialogue
     ladder2: true, //wow now it's really ladder dialogue
@@ -8836,7 +8884,7 @@ document.addEventListener("keydown", function() {
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
-                  document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                 //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -9476,15 +9524,15 @@ function handleHandle5() {
     if (arcadeGame.score === 250) {
         prizeglass2.style.display = "none";
         prizes.macaroniPipe = true;
-        ding.play();
+        //ding.play(); mark. removing these will probably fix the sound playing twice. other sound is probably in arcadeHandler.js 
     } if (arcadeGame.score === 350) {
         prizeglass3.style.display = "none";
        prizes.teddyBear = true;
-       ding.play();
+       //ding.play();
     } if (arcadeGame.score === 150) {
         prizeglass1.style.display = "none";
         prizes.cupcake = true;
-        ding.play();
+        //ding.play();
     } 
 }
 
@@ -14798,6 +14846,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zze2.style.display = "none";
         b.style.display = "none";
         chandelierClue.style.display = "block";
+                document.body.style.background = "#000"; //hex code black
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "none";
         dialogue.halfAClue++;
@@ -14805,6 +14854,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     } else if (dialogue.halfAClue === 3) {
         zze3.style.display = "block";
         chandelierClue.style.display = "none";
+        document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
         k.style.display = "block";
@@ -14841,12 +14891,14 @@ if (event.key === 'Enter' || event.key === ' ') {
         zzf1.style.display = "none";
         k.style.display = "none";
         chandelierClue.style.display = "block";
+                document.body.style.background = "#000";
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
         dialogue.halfAClue2++;
         return;
     } else if (dialogue.halfAClue2 === 2) {
         chandelierClue.style.display = "none";
+                document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
         dialogue.halfAClue2 = true;
@@ -14855,6 +14907,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 }});
    } else if (current.room === "chandelierRoom" && candleLeer.isOnTheGround && dialogue.halfAClue && dialogue.halfAClue2) {
     chandelierClue.style.display = "block";
+            document.body.style.background = "#000";
       dialogue.halfAClue3 = 1;
       chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
@@ -14862,6 +14915,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.halfAClue3 === 1) {
         chandelierClue.style.display = "none";
+                document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
         return;
@@ -15896,6 +15950,7 @@ function placeRedOrBlueRoses() {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
             dialogue.blueRoseKnowsItsPlace = true;
+            document.cookie = "blueRoseInPlace=blueRoseInPlace";
             if (dialogue.blueSwitchFlipped) {
                 bluelit.style.display = "block";
             }
@@ -15904,6 +15959,7 @@ function placeRedOrBlueRoses() {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
             dialogue.blueRoseKnowsItsPlace = true;
+            document.cookie = "blueRoseInPlace=blueRoseInPlace";
             if (dialogue.blueSwitchFlipped) {
                 bluelit.style.display = "block";
             }
@@ -15912,6 +15968,7 @@ function placeRedOrBlueRoses() {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
             dialogue.blueRoseKnowsItsPlace = true;
+            document.cookie = "blueRoseInPlace=blueRoseInPlace";
             if (dialogue.blueSwitchFlipped) {
                 bluelit.style.display = "block";
             }
@@ -15920,6 +15977,7 @@ function placeRedOrBlueRoses() {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
             dialogue.blueRoseKnowsItsPlace = true;
+            document.cookie = "blueRoseInPlace=blueRoseInPlace";
             if (dialogue.blueSwitchFlipped) {
                 bluelit.style.display = "block";
             }
@@ -15970,6 +16028,7 @@ function placeRedOrBlueRoses() {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
+            document.cookie = "redRoseOneInPlace=redRoseOneInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -15978,6 +16037,7 @@ function placeRedOrBlueRoses() {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
+            document.cookie = "redRoseOneInPlace=redRoseOneInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -15986,6 +16046,7 @@ function placeRedOrBlueRoses() {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
+            document.cookie = "redRoseOneInPlace=redRoseOneInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -15994,6 +16055,7 @@ function placeRedOrBlueRoses() {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
+            document.cookie = "redRoseOneInPlace=redRoseOneInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -16002,6 +16064,7 @@ function placeRedOrBlueRoses() {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
+            document.cookie = "redRoseTwoInPlace=redRoseTwoInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -16010,6 +16073,7 @@ function placeRedOrBlueRoses() {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
+            document.cookie = "redRoseTwoInPlace=redRoseTwoInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -16018,6 +16082,7 @@ function placeRedOrBlueRoses() {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
+            document.cookie = "redRoseTwoInPlace=redRoseTwoInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }
@@ -16026,6 +16091,7 @@ function placeRedOrBlueRoses() {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
+            document.cookie = "redRoseTwoInPlace=redRoseTwoInPlace";
             if (dialogue.redSwitchFlipped) {
                 redlit.style.display = "block";
             }

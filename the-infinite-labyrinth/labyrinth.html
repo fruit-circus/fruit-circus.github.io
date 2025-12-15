@@ -17,61 +17,59 @@ Check all //mark s
 
 ART:
 HIGH:
-portholeview gif
-verily putting out fire gif
-instead of v idle on her phone, v is boiling water.
-soldier with arbalest art
+
+fruit
+treescene and fruit
+key items pouch close up
+verily snide has too much eye-white
+soldier with arbalest firing animation 
 bridget blocking an arbalest bolt gif
 yyp63 verily forced smile
-yyp48 you didn't just come here to cata ... k raised eyebrow
-gif kodaly in the lift rooms
+create shelfitems2 for keys12 (and dialogue to go with it)
+some portraits for verily in karakkyal: 
+    are you two okay?!
+    oh my goodness--
+    that's terrifying. i guess that puts an end...
+revise stmi portrait on is the wrong word
 
 LOW
+vials look tacky
+k drinking the vial is a bit weird 
+k laughing is weird
+portholeview gif
+gif kodaly in the lift rooms
 stymie gif as idle. thinking, dozing off, getting distracted
 make verilytinkering a gif
-poem in notebook add illumination
 make hall explorers gifs and chandelier fallen
-verilyidle (also gif it)
+verilyidle (gif it)
 boat explorers gif
-add two ferns around the main fern 
 verily in notebook page
 possibly wires glow
 ybh1 portraits for stymie
 portrait for 16 feral racoons, looking into the dark off the side of the bridge
-zv18 stymie lightbulb "oh, you know!"
-remove notes from fishpond and add them seperately only to harp room
 
 
 ONLY VISIBLE IN OTHER BROWSERS:
 make sure font family is not impact
 
 SOUND:
+sound for exiting a close up?
+fruitTake() "pluck!"
 better thunk1,2,3 for candles
 something happened! stone grinding for 2303 - successful clunk 
-sound for rose pluck (rosePluck)
 howling wind for chasms
-sound for rope toss (lasso)
-sound for inv full (fullInv)
-sound for ding arcade prize unlock, progressively igher pitches (ding)
-sound for picking up and placing teddy bear (placeTeddyBear)
-new item! for bat-card (fanfare)
-woodenClonk for taking bat (woodenClonk)
-glass smash for breaking pipe glass with bat (glassSmash)
-vialPloink for (vialPloink)
+Others: see Placeholders:
+sound for removing the paintings and putting them back
+sound for dowsing the shrub
 
 code:
-fix dialogue ybg38
-TEST hey do you really mean what you said back there still triggers even without having said anything back there
-need decore in that northern east branch room keys. alcove perhaps
-some portraits for verily in karakkyal
-scoreboard names and scores, player's name and score (arcadeGame.score)
+cyan rose triggering too heavy dialogue even when its not there and when the panel is locked
+conversation for verily making tea
+another saltarello after no. 2 perhaps 
+dialogue for shelfitems2 (going north from keys12)
 more decoration and misc objects:
-    orange flower E lakes1 flower W inset into wall wire leads to lakes2
-    lakes 1
     end table at an angle NE in binaryswitcheseast
     alcove W in 21 door room with some books or vials 
-        keys: an end table in the NE of keys2
-        an item for ch3 lobby
 campfire scene
 items for newcell
 add various cookies:
@@ -124,14 +122,66 @@ hiddd
 
 
 #ybg13,
+#highscores2,
+#ybbj9,
+#ybbm3,
+#ybbm4,
+#ybbm5,
+#ybbm6,
+#ybg22b,
+#ybbm1,
+#ybbm2,
+#ybbk1,
+#verilyteapot,
+#ybbk2,
+#ybbl1,
+#ybbl2,
+#ybbl3,
+#ybbl4,
+#ybbl5,
+#ybbm1,
+#ybbk3,
+#ybbk4,
+#ybbk5,
+#ybbk6,
+#ybbk7,
+#ybbk8,
+#ybbk8alt,
+#ybbk9,
+#ybbk9alt,
+#ybbk10,
+#ybbk11,
+#ybbk12,
+#ybbk13,
+#ybbk14,
+#ybbk15,
+
+#ybbj1,
+#hiddendooropen,
+#secretTreeRoom,
+#secretCrackRoom,
+#ybbj2,
+#ybbj3,
+#ybbj4,
+#ybbj5,
+#ybbj6,
+#ybbj7,
+#ybbj8,
+#shuriHallLow,
+#hiddendoor,
+#redvialwestshelf,
+#emptybucket,
+#yyp48a,
+#fullbucket,
 #yyz16,
 #keyitems,
 #ccc1,
 #ccc6,
 #zj1a,
+#ybcc1,
 #ccc2,
+#orangelightbulboff,
 #yfdjxvk1,
-#trio,
 #yfdjxvk1a,
 #yfdjxvk2,
 #yfdjxvk3,
@@ -139,6 +189,9 @@ hiddd
 #yfdjxvk3a,
 #yfdjxvk4,
 #yfdjxvk7,
+#ybcc2,
+#ybcc3,
+#ybcc4,
 #yfdjxvk6,
 #yfdjxvk5,
 #ccc3,
@@ -199,6 +252,7 @@ hiddd
 }
 
 #redcircuitwires,
+#endtable2,
 #colorwires2,
 #bluecircuitwires {
      z-index: -1;
@@ -629,13 +683,14 @@ hiddd
 
         <div> <!--Prime Floaters-->
             <img src="satchel.png" alt="satchel" usemap="#roommap" class="room" id="satchel">
-            <img src="floaters/keyitems.png" alt="satchel" usemap="#roommap" class="room" id="keyitems">
-            <img src="floaters/keyitemspouch.png" alt="satchel" usemap="#pouchmap" class="room" id="keyItemsPouch">
+            <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#roommap" class="room" id="keyitems">
+            <img src="floaters/keyitemspouch.png" alt="pouch closeup" usemap="#pouchmap" class="room" id="keyItemsPouch">
             <img src="floaters/strangevial.png" alt="satchel" usemap="#pouchmap" class="room" id="strangevial">
             <img src="floaters/terminalcloseup.png" alt="satchel" usemap="#giveupmap" class="room" id="terminalcloseup">
             <img src="floaters/namingbuttons.png" alt="satchel" usemap="#giveupmap" class="room" id="namingbuttons">
             <img src="floaters/unlighting.png" alt="satchel" usemap="#giveupmap" class="room" id="unlighting">
             <img src="floaters/highscores.png" alt="satchel" class="room" id="highscores">
+            <img src="floaters/highscores2.png" alt="satchel" class="room" id="highscores2">
             <!--<img src="ambientdark.png" alt="satchel" usemap="#roommap" class="room" id="ambientdark">-->
             <img src="letters/letterA1.png" alt="satchel" usemap="#giveupmap" class="ledder" id="letterA1">
             <img src="letters/letterD1.png" alt="satchel" usemap="#giveupmap" class="ledder" id="letterD1">
@@ -778,7 +833,7 @@ hiddd
                         hevdx7crz4wsbaao2pvzsnhbzjm3qqe1lrjvqa35qc7poi
                         yuxd22pyrezttkadxrjha94udhcgpi7yzm0rbx0l45xacu<br><br>
                         —you know what to do</p>
-                    <p id="page4c">Perchance I may have glitched the game. <br><br>—ABEO<br><br><br><br>Developer's note: Oops! I know what happened. I didn't delete my testing variables before uploading and you got teleported to the third lobby. <br><br>—Harper</p>
+                    <p id="page4c">Perchance I may have glitched the game. <br><br>—ABEO<br><br><br><br>Developer's note: Oops!<br><br>—Harper</p>
                     <p id="page6c"></p>
                     <p id="page8c"></p>
                     <p id="page10c"></p>
@@ -878,9 +933,9 @@ hiddd
                 <img src="people/kodalylift.png" alt="kodaly" usemap="#liftmap" class="room" id="klift">
                 <img src="people/kodalyhigher.png" alt="kodaly" usemap="#liftmap" class="room" id="khigher">
                 <img src="platformup.png" alt="lift" usemap="#liftmap" class="room" id="platformup">
-                <img src="secretcorner.png" alt="lift" usemap="#liftmap" class="room" id="secretcorner">
-                <img src="secretcornerremoved.png" alt="lift" usemap="#liftmap" class="room" id="secretcornerremoved">
-                <img src="mysteriousvial.png" alt="lift" usemap="#liftmap" class="room" id="mysteriousVial">
+                <img src="secrets/secretcorner.png" alt="lift" usemap="#liftmap" class="room" id="secretcorner">
+                <img src="secrets/secretcornerremoved.png" alt="lift" usemap="#liftmap" class="room" id="secretcornerremoved">
+                <img src="secrets/mysteriousvial.png" alt="lift" usemap="#liftmap" class="room" id="mysteriousVial">
             </div>
 
             <div id="liftbottom" usemap="#alcovemap"> <!--Bottom of the Lift ... kAlc, nAlc, kcandle1, ncandle2, etc-->
@@ -1037,6 +1092,8 @@ hiddd
                 <img src="people/verilydowsing.png" alt="verily" usemap="#roommap" class="room" id="verilydowsing"> 
                 <img src="shrubs/burningbush.png" alt="shrub" usemap="#roommap" class="room" id="burningbush">                  
                 <img src="shrubs/dowsedbush.png" alt="shrub" usemap="#roommap" class="room" id="dowsedbush">                  
+                <img src="shrubs/fullbucket.png" alt="shrub" usemap="#roommap" class="room" id="fullbucket">                  
+                <img src="shrubs/emptybucket.png" alt="shrub" usemap="#roommap" class="room" id="emptybucket">                  
             </div>
 
            <!--Make this a gif--> <img src="floaters/portholeview.png" alt="look at all those fish" usemap="#bigX" class="room" id="portholeInterior"> 
@@ -1215,7 +1272,8 @@ hiddd
                 <img src="people/stminotif3.png" alt="notif" usemap="#lobbyThreeMap" class="room" id="L3notifThree">
                 <img src="people/stminotif4.png" alt="notif" usemap="#lobbyThreeMap" class="room" id="L3notifFour">
                 <img src="people/teddybearwaiting.png" class="room" usemap="#lobbyThreeMap" id="teddybearwaiting1">
-                <img src="people/verilyboiling.png" alt="verily" usemap="#lobbyThreeMap" class="room" id="verilyboiling"> 
+                <img src="people/verilyboiling.gif" alt="verily" usemap="#lobbyThreeMap" class="room" id="verilysprite2"> 
+                <img src="people/verilyteapot.png" alt="verily" usemap="#lobbyThreeMap" class="room" id="verilyteapot"> 
                 <img src="bat.png" alt="bat" usemap="#lobbyThreeMap" class="room" id="bat"> 
             </div>
 
@@ -1232,7 +1290,6 @@ hiddd
                 <img src="westdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="westdoor"> 
                 <img src="keys/orangekey.png" alt="key" usemap="#keysBasicMap" class="room" id="orangekey">
                  <img src="keys/redkey.png" alt="key" usemap="#keysBasicMap" class="room" id="redkey">
-
             </div>
 
             <div id="keys3" usemap="#keysBasicMap"> 
@@ -1280,7 +1337,7 @@ hiddd
             <div id="keys8" usemap="#keysBasicMap"> 
                 <img src="eastdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="westdoor">
-                                <img src="keys/shelf.png" alt="key" usemap="#keysBasicMap" class="room" id="shelf"> 
+                <img src="keys/shelf.png" alt="key" usemap="#keysBasicMap" class="room" id="shelf"> 
                 <img src="keys/keys8sw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys8sw"> 
                 <img src="keys/leafykey.png" alt="key" usemap="#keysBasicMap" class="room" id="leafykey"> 
             </div>
@@ -1319,6 +1376,7 @@ hiddd
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="northshelf.png" alt="poster" usemap="#libmap" class="room" id="northshelf">
                 <img src="shelfitems2.png" alt="poster" usemap="#libmap" class="room" id="shelfitems2">
+                <img src="ferns.png" alt="door" usemap="#roommap" class="room" id="ferns">
             </div>
 
 
@@ -1470,7 +1528,7 @@ hiddd
 
             <div id="pipesRun2" usemap="#roommap"> 
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
-                <img src="secretbrickremoved.png" alt="pipes" usemap="#roommap" class="room" id="secretbrickremoved">  
+                <img src="secrets/secretbrickremoved.png" alt="pipes" usemap="#roommap" class="room" id="secretbrickremoved">  
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">
                 <img src="pipes/pipes2.png" alt="pipes" usemap="#roommap" class="room" id="pipes2">  
@@ -1484,7 +1542,7 @@ hiddd
                 <img src="pipes/pipes2fixedon.png" alt="pipes" usemap="#roommap" class="room" id="pipes2fixedon">  
                 <img src="pipes/pipes2fixedonlyyellow.png" alt="pipes" usemap="#roommap" class="room" id="pipes2fixedonlyyellow">  
                 <img src="pipes/pipes2fixedonlyblue.png" alt="pipes" usemap="#roommap" class="room" id="pipes2fixedonlyblue">  
-                <img src="secretbrick.png" alt="pipes" usemap="#roommap" class="room" id="secretbrick">  
+                <img src="secrets/secretbrick.png" alt="pipes" usemap="#roommap" class="room" id="secretbrick">  
                 <img src="pipes/verse1.png" alt="pipes" usemap="#roommap" class="room" id="verse1"> 
                 <img src="floaters/verse1float.png" usemap="#roommap" class="room" id="verse1float"> <!--this is block and doesnt have an associated png, but for somereason is necessary-->                  
             </div>
@@ -1697,11 +1755,16 @@ hiddd
     <img src="boats/boatnorth.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="southdoor.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="people/explorers.gif" alt="door" usemap="#lakemap" class="room"> 
+    <img src="tides/orangeflower.png" alt="door" usemap="#lakemap" id="orangeflower" class="room"> 
+    <img src="tides/orangewire1.png" alt="door" usemap="#lakemap" class="room"> 
 </div>
 
 <div id="lake2" usemap="#lakemap"> 
     <img src="rooms/lakens.png" alt="lake" usemap="#lakemap" class="room"> 
     <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers"> 
+        <img src="tides/orangewire2.png" alt="door" usemap="#lakemap" class="room"> 
+        <img src="tides/orangelightbulb-on.png" alt="door" usemap="#lakemap" id="orangelightbulbon" class="room"> 
+        <img src="tides/orangelightbulb-off.png" alt="door" usemap="#lakemap" id="orangelightbulboff" class="room"> 
     <!--<img src="tides/rosedem1.png" alt="explorers" usemap="#lakemap" class="room" id="rosedem1"> -->
 </div>
             
@@ -1742,6 +1805,9 @@ hiddd
     <img src="boats/boatsouth.png" alt="door" usemap="#lakemap" class="room"> 
         <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
     <img src="tides/northdoor21.png" alt="door" usemap="#roommap" class="room" id="northdoor21"> 
+    <img src="westshelf.png" alt="door" usemap="#roommap" class="room" id="westshelf"> 
+    <img src="redvialwestshelf.png" alt="door" usemap="#roommap" class="room" id="redvialwestshelf"> 
+    <img src="westshelfobjects.png" alt="door" usemap="#roommap" class="room" id="westshelfobjects"> 
 </div>
 
 
@@ -1897,6 +1963,8 @@ hiddd
     <img src="tides/redrose1.png" alt="door" usemap="#circuitMap" class="room" id="redrose1">
     <img src="tides/redrose2.png" alt="door" usemap="#circuitMap" class="room" id="redrose2">
     <img src="tides/redcircuitwires.png" alt="door" usemap="#circuitMap" class="room" id="redcircuitwires">
+    <img src="secrets/hiddendoor.png" alt="door" usemap="#circuitMap" class="room" id="hiddendoor">
+    <img src="secrets/hiddendooropen.png" alt="door" usemap="#circuitMap" class="room" id="hiddendooropen">
 </div>
 
 <div id="blueCircuit" usemap="#circuitMap"> 
@@ -1909,6 +1977,7 @@ hiddd
     <img src="rooms/hallway.png" alt="hallway" usemap="#hallmap" class="room" id="hall"> 
     <img src="people/hallexplorers.png" alt="explorers" usemap="#hallmap" class="room" id="hallexplorers2"> 
     <img src="people/shuri-hallway.png" alt="explorers" usemap="#hallmap" class="room" id="shuriHall"> 
+    <img src="people/shuri-hallway-lowered.png" alt="explorers" usemap="#hallmap" class="room" id="shuriHallLow"> 
     <img src="people/shuri-hallway-facing-away.png" alt="explorers" usemap="#hallmap" class="room" id="shuriHallBack"> 
 </div>
 
@@ -1918,6 +1987,16 @@ hiddd
     <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
     <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
+</div>
+
+<div id="secretCrackRoom" usemap="#roommap"> 
+    <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
+    <img src="secrets/secretcrack.png" alt="door" usemap="#roommap" class="room" id="secretcrack">  
+</div>
+
+<div id="secretTreeRoom" usemap="#treeroommap"> 
+    <img src="rooms/treescene.png" alt="tree" usemap="#treeroommap" class="room">
+    <img src="secrets/fruit.png" alt="fruit" usemap="#treeroommap" class="room" id="fruit">
 </div>
 
 
@@ -1937,10 +2016,14 @@ hiddd
             <area shape="rect" coords="440,409,630,492" alt="no" class="pointer" id="nodontrestart" onclick="hideMobileMenu()">
         </map>
         
- <map name="dialogueBoxMap">
+        <map name="dialogueBoxMap">
             <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" id="advancedialogeee" onclick="advanceDialogueByClickingWholeScreen()">
         </map>
 
+ <map name="treeroommap"> <!--//mark-->
+            <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" onclick="goEast()">
+            <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" onclick="takeSecretFruit()">
+        </map>
 
     <map name="roommap"> <!--Basic Room Object Positions-->
         <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -2157,6 +2240,9 @@ hiddd
         <area shape="rect" coords="650,9,780,155" alt="stymieterminal" class="pointer" onclick="stymieDialogue()">
         
         <area shape="circle" coords="355,450,90" alt="SW object" class="pointer" onclick="pickSW()">
+        
+        <area shape="rect" coords="953,190,1060,387" alt="verily" class="pointer" onclick="verilyIsMakingTea()">
+        <area shape="rect" coords="880,389,997,475" alt="camping stove" class="pointer" onclick="campingStove()">
 
         <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
         <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
@@ -2602,8 +2688,13 @@ hiddd
 <audio id="keybloop"><source src="sound/keybloop.mp3" type="audio/mpeg"></audio>
 <audio id="keydel"><source src="sound/keydel.mp3" type="audio/mpeg"></audio>
 <audio id="booting"><source src="sound/booting.mp3" type="audio/mpeg"></audio>
+<!--Upload:-->
+<audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
+<audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
+<audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
+<audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
 
-<!--Placeholders-->
+<!--Placeholders:-->
 <audio id="placeTeddyBear"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="fullInv"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="ding"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
@@ -2611,11 +2702,8 @@ hiddd
 <audio id="woodenClonk"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="lasso"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="rosePluck"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
 <audio id="vialPloink"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
-<audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
-<audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
+<audio id="fruitTake"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 
 <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
     <audio id="penser" src="sound/penser.mp3" loop></audio> <!--Chapter 1-->
@@ -2694,6 +2782,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/stymieactually.png" alt="stymie's thoughtful dialogue portrait" class="dialogue" id="stact">
     <img src="portraits/stymieflower.png" alt="stymie's thoughtful dialogue portrait" class="dialogue" id="stfl">
     <img src="portraits/stymiealkinator.png" alt="stymie's super thoughtful dialogue portrait" class="dialogue" id="stymiealkinator">
+    <img src="portraits/stymielightbulb.png" alt="stymie's super thoughtful dialogue portrait" class="dialogue" id="stlight">
     <img src="portraits/stymieGRA.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieGRA">
     <img src="portraits/stymieRAAG.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieRAAG">
     <img src="portraits/stymiesuggesting.png" alt="stymie making a suggestion dialogue portrait" class="dialogue" id="stymiesuggesting">
@@ -2886,7 +2975,7 @@ arranged for 8-Bit by Harper Reese
 
 <p><b>Switches and Circuits</b><br>
 <i>Branle des Chevaux<br></i>
-Anonymous 16th century French dance
+Anonymous 16th century French dance<br>
 performed by Musica calamus</p>
 
 <b>Karak Kyal</b><br>
@@ -3273,9 +3362,9 @@ performed by the Unicorn Ensemble
     <p id="zm21">Why is having a path to the heart so intrinsic to the identity of a labyinth, no matter its shape or size?</p>
         <p id="zm22">It's like the heart needs to breathe.</p>
         <p id="zm23">It needs to have an outlet.</p>
-    <p id="zm24">An inlet. A chink in the armor.</p>
+    <p id="zm24">A chink in the armor.</p>
         <p id="zm25">What I'm stuck on is: What's the difference between an open door and a door that could <i>theoretically</i> be opened?</p>
-            <p id="zm26">How do nutrients flow to cells across a chasm if there no rope bridge?</p>
+            <p id="zm26">How do nutrients flow to cells across a chasm if there's no rope bridge?</p>
         <p id="zm27">And speaking of the rope bridge—</p>
     <p id="zm28">If we're assuming that the soldier cut the bridge, how did Verily get across?</p>
     <p id="zm29">Unless Verily cut the bridge, the soldier must have passed her at some point.</p>
@@ -3556,7 +3645,7 @@ performed by the Unicorn Ensemble
 
    <p id="zzm4">Let's try another.</p>
    <p id="zzm5">"The same thing hardened in the Lizard Shaker, whose mountains braved me, braved me berated. It was solvent: a heartbeat. Only a heathgrove longshot to proffer her abjurers, to the eaveless uncharted who kept reviling clustered noises."</p>
-   <p id="zzm6">Hm. Do you think the labyrinth just generated junk text to fill the books because it understands that books should have text?</p>
+   <p id="zzm6">Do you think the labyrinth just generated junk text to fill the books because it understands that books should have text?</p>
    <p id="zzm7">Or do you think it really does understand our language and is just conserving resources by not generating a sensical work?</p>
    <p id="zzm8">It clearly understands at least a little of our grammar, if not our vocabulary.</p>
    <p id="zzm9">Maybe that's why it uses Stymie to communicate.</p>
@@ -3925,7 +4014,7 @@ performed by the Unicorn Ensemble
     <p id="yyp39">You read K.L. Brighton?</p>
     <p id="yyp40">Oh yes.</p>
     <p id="yyp41">Brighton is well-grounded theorist, though it's a shame they never realized the practical applications of their work.</p>
-    <p id="yyp42">Oceans of ink are spilled in postulating the purpose and origin of the labyrinths.</p>
+    <p id="yyp42">Oceans of ink are spilled in postulating the origin of the labyrinths.</p>
     <p id="yyp43">But no one ever asks about their future.</p>
     <p id="yyp44">Brighton had a deep understanding.</p>
     <p id="yyp45">But they got stuck on "why".</p>    
@@ -3933,7 +4022,8 @@ performed by the Unicorn Ensemble
     <p id="yyp47">That's a concerning way of talking about a living thing!</p>    
 
 
-    <p id="yyp48">You didn't just come here to catalogue objects, did you.</p>
+    <p id="yyp48">So...</p>
+    <p id="yyp48a">...you didn't just come here to catalogue objects, did you.</p>
     <p id="yyp49">Ha! Yeah. You got me.</p>
     <p id="yyp50">My goals are slightly more sophisticated.</p>
     <p id="yyp51">I hope you'll forgive my earlier misrepresentation. I didn't want STMI to know exactly how I plan to proceed.</p>
@@ -3957,7 +4047,7 @@ performed by the Unicorn Ensemble
     <p id="yyp63a">Generally, I tell people I'm from "all over." We moved to the city when I was very small, I've been moving from place to place ever since.</p>
     <p id="yyp64">That's funny, I have cousins who live in Lal, and they moved <i>out of the city</i> to live at the slower pace of the island.</p>
     <p id="yyp65">Like that old story about the city mouse and the country mouse.</p>
-    <p id="yyp66">I've always been a city mouse. I don't miss Lal at all, but maybe that's just because I never really got to know it. My sole memory is emerging from a forest into a bright field of flowers, with the waves crashing far below.</p>
+    <p id="yyp66">I've always been a city mouse. I don't miss Lal at all, but maybe that's just because I never really got to know it. My sole memory is emerging from a forest into a bright field of flowers, the sound of the waves crashing far below.</p>
     <p id="yyp67">Maybe I'll go back, when this is all over.</p>
     <p id="yyp67a">That sounds nice.</p>
     <p id="yyp67b">Maybe you'll meet someone who remembers your family.</p>
@@ -4142,7 +4232,7 @@ performed by the Unicorn Ensemble
 
 <p id="yfdjxvk2">Rocks!</p> 
 
-<p id="yfdjxvk3">That one on the left is a classic hematite.</p> 
+<p id="yfdjxvk3">That's a classic hematite.</p> 
 <p id="yfdjxvk3a">And I think that one on the right is calcite.</p> 
 
 <p id="yfdjxvk4">What about that one in the middle?</p> 
@@ -4198,7 +4288,7 @@ performed by the Unicorn Ensemble
     <p id="ybg5">Are you two okay? I heard a commotion from down in the second node.</p> <!--Verily in the room to the south-->
     <p id="ybg6">Yeah, we're okay.</p>
     <p id="ybg7">Remember that soldier we mentioned?</p>
-    <p id="ybg8">Oh my godness—</p>
+    <p id="ybg8">Oh my goodness—</p>
     <p id="ybg9">What happened? Did he attack you?</p>
         <p id="ybg10a">You could say that.</p>
         <p id="ybg10b">No, but he had a big-ass arbalest.</p>
@@ -4212,19 +4302,20 @@ performed by the Unicorn Ensemble
     <p id="ybg18">He asked if we were looking for "the ladder."</p>
     <p id="ybg19">"The ladder"?</p>
     <p id="ybg20">How much do you know about Northern States spirituality?</p>
-    <p id="ybg21">Very... little. My study is mainly of practical things, and I'm not a spiritual person.</p>
-    <p id="ybg22">Okay. Well—</p>
-    <p id="ybg22a">In the Kardic tradition, when God created the universe, there were these little creatures called Karak Kval. They spied on God in the process of creation and learned the secret methods by which the universe was wrought.</p>
-    <p id="ybg23">God eventually found them out and scattered them all over the world, but not before they wove secret shortcuts into the laws of physics.</p>
+    <p id="ybg21">Very little. I'm not exactly a spiritual person.</p>
+    <p id="ybg22">Right... Um.</p>
+    <p id="ybg22a">In the Kardic tradition, when God created the universe, there were these little creatures called Karak Kval.</p>
+        <p id="ybg22b">The Karak Kval spied on God in the process of creation and learned the secret methods by which the universe was wrought.</p>
+    <p id="ybg23">God eventually discovered their treachery and scattered them across the world, but not before they wove secret shortcuts into the laws of physics.</p>
     <p id="ybg24">God unwove most of their shortcuts, but some Karak Kyal were clever, and hid their shortcuts so thouroughly that they still exist today.</p> <!--, including the most obvious and most ill-used one, which was writing “alive” or “dead” on a thing to kill it or bring it to life. -->
     <p id="ybg25">That’s how the Kardic tradition explains pattern-magic. Why a handful of insane runes, gestures, strings of nonsense text, or steps in a dance can have an emergent property.</p>
     <p id="ybg26">I see. That’s an interesting departure from the story I learned as a child.</p>
     <p id="ybg27">So you believe those creatures... created the labyrinths? What does that have to do with "the ladder"? Or why the soldier is here?</p>
     <p id="ybg28">Kardic doctrine never explicitly mentions labyrinths, but most practitioners credit the Karak Kyal either with creating them, or inspiring ancient people to do it.</p>
-    <p id="ybg30">Much of Kardic mysticism is about negating one’s consciousness in trace-states in order to visit a place called the Garden. Entering a trance is using "the ladder" to access the Garden via astral projection.</p>
+    <p id="ybg30">Many Kardic mystics intentionally enter trace-states in order to visit a place called the Garden. Entering a trance is using "the ladder" to access the Garden via astral projection.</p>
     <p id="ybg32">But to actually go there physically—bringing the weight of your embodied consciousness—would destroy the sacred innocence of the Garden, prevent the salvation of all future souls, and cause all infants to be sent to earth with the weight of agency and the burden of loss.</p>
-    <p id="ybg33">A handful of groups believe that labyrinths are ancient people's attempts to build these ladders.</p>
-    <p id="ybg34">The labyrinth guides us through a magic dance so convoluted that God never discovered it and unwove it from the cosmic tapestry. You follow the steps, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
+    <p id="ybg33">A handful of practitioners believe that the labyrinths are ancient people's attempts to build these ladders.</p>
+    <p id="ybg34">The labyrinth guides us through a magic dance so convoluted that God never discovered it. You follow the steps, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
     <p id="ybg35">And if you're a fundamentalist, you might very well be willing to die and kill to prevent that fate.</p>
     <p id="ybg36">Maybe I should have paid better attention in <i>Labyrinths in World Mythology</i>.</p>
     <p id="ybg37">Don't feel bad, it's my main area of study.</p>
@@ -4235,17 +4326,17 @@ performed by the Unicorn Ensemble
     <p id="ybg41">I happen to have read primary source documents which describe people reaching the hearts of various labyrinths and not being instantly transported to heaven, but that truth can exist simultaneously with fundamentalist Kardic beliefs.</p>
     <p id="ybg42">And while I don't believe anyone's worldview is closer to or further from "the Truth", there are some truths which are more harmful than others. And I do believe that, if we want this incredible, ancient being to survive, we must stop the zealot from reaching the heart.</p>
     -->
-    <p id="ybg44">It’s four hours to Zoza. Seven or seven and a half hours round trip if we push ourselves, plus the time it takes us to convince local authorities to help us.</p>
-    <p id="ybg45">Then, ragged and weary, we play catch-up with a soldier who's eight hours closer to the heart than we are, and has had time to lay as many traps and diversions as he pleases.</p>
-    <p id="ybg46">We can't call for help. If we want to stop him, we’ll have to do it on our own.</p>
+    <p id="ybg44">Anyway. It’s a four hour hike up to Zoza city.</p>
+    <p id="ybg45">That's an eight hour round trip we just can't afford to take.</p>
+    <p id="ybg46">If we want to stop the soldier, we’ll have to do it on our own.</p>
     <p id="ybg47">Do you really think we stand a chance against him?</p>
-    <p id="ybg48">Not in direct combat. But we haven't much choice. We must stop him somehow.</p>
+    <p id="ybg48">Not in direct combat. But we must stop him somehow.</p>
     <p id="ybg49">But we should make camp first.</p>
-    <p id="ybg50">There’s no sense in pursuing him now. I'm sure he's still carefully watching the door.</p>
+    <p id="ybg50">There’s no sense in pursuing him now. I'm sure he's still watching the door.</p>
     <p id="ybg51">I don’t know how we'll stop him, or if we <i>can</i>.</p>
     <p id="ybg52">But, we’ll think about it tomorrow.</p>
     <p id="ybg53">I'll stick with you, then. If that's alright.</p>
-    <p id="ybg54">I’m not sure I feel safe out here on my own anymore.</p>
+    <p id="ybg54">I’m not sure I feel safe out here on my own any more.</p>
     <p id="ybg55">Great!</p>
     <p id="ybg56">We could use all the help we can get.</p>
     <p id="ybg57">Let's make camp in the room to the east.</p>
@@ -4256,12 +4347,64 @@ performed by the Unicorn Ensemble
     <p id="ybbh2">If we take one of these flowers, that should seal the door. I don't like the idea of the dark-furred soldier coming back while we're sleeping.</p>
     
     <p id="ybbi4">We should make camp and rest before we pursue the soldier.</p>
+    
+    <p id="ybcc1">Didn't you want to start making camp?</p>
+    <p id="ybcc2">It might not hurt to do one last sweep of the rooms we've been in. See if we missed anything.</p>
+    <p id="ybcc3">Alright, I'll leave you to it.</p>
+    <p id="ybcc4">The boat might sink if we all three try to climb on.</p>
 
     <p id="ybbi1">Ready to make camp?</p>
     <p id="ybbi3">Let's keep exploring.</p>
     <p id="ybbi2">Yes.</p>
 
+    <p id="ybbj1">It's...</p>
+    <p id="ybbj2">Some vials!</p>
+ 
+    <p id="ybbj3">It looks like there's an empty slot here for another vial.</p>
+    <p id="ybbj4">Are you thinking what I'm thinking?</p>
+    <p id="ybbj5">"Drink all of them and see what happens"?</p>
+    <p id="ybbj6">Yeah!</p>
+    <p id="ybbj7">What if we put the vial we found earlier... here.</p>
 
+    <p id="ybbj8">It sounded like something heavy moved in a different room.</p>
+    
+    <p id="ybbj9">There a hidden door here! I can feel the seam in the wall!</p>
+
+    <p id="ybbk1">There's... a crack in the wall?</p>
+    <p id="ybbk2">That's weird.</p>
+    <p id="ybbk3">It's probably too narrow for either of us to fit through.</p>
+    <p id="ybbk4">Yeah, I mean have you seen my hat!</p>
+    <p id="ybbk5">You can take off your hat, you know.</p>
+    <p id="ybbk6">That's easy for you to say.</p>
+    
+    <p id="ybbk7">Strange. There's a crack in the wall here.</p>
+    <p id="ybbk8alt">That's weird.</p>
+    <p id="ybbk8">Yeah, we saw that earlier.</p>
+    <p id="ybbk9alt">It looks to narrow even for me to try to crawl through.</p>
+    <p id="ybbk9">We peeked through, but couldn't see anything.</p>
+    <p id="ybbk10">Maybe I could wiggle through. It looks about my size.</p>
+    <p id="ybbk11">Are you sure? It might lead outside the labyrinth. We wouldn't want you getting stuck underground somewhere. What if there's a cave-in?</p>
+    <p id="ybbk12">Hmm...</p>
+    <p id="ybbk13">I'm sure a quick peek couldn't hurt.</p>
+    <p id="ybbk14">Okay... please be careful though.</p>
+    <p id="ybbk15">Let us know what you see!</p>
+
+    <p id="ybbl1">You said it's root tea?</p>
+    <p id="ybbl2">Yes. Wollroot tea.</p>
+    
+    <p id="ybbl3">Cool.</p>
+    
+    <p id="ybbl4">When do you think it will be ready?</p>
+    <p id="ybbl5">Soon.</p>
+
+
+    <p id="ybbm1">Cool teapot.</p>
+    <p id="ybbm2">Thanks.</p>
+    
+    <p id="ybbm3">It's alluminum. Super light-weight.</p>
+    <p id="ybbm4">That's clever. I considered bringing mine, but it was too heavy.</p>
+    <p id="ybbm5">Figured it was a luxery we could go without for a few days.</p>
+    <p id="ybbm6">This is nice, though.</p>
 
 
 <!--End of dialogue list-->
@@ -4401,6 +4544,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (e.key == 'i' && !inventory.isOpen && !notepad.open && !dialogue.preventI) {
             showInv();
         } else if ( (e.key == 'i' || e.key === "Escape") && inventory.isOpen && !dialogue.preventI) {
+            e.preventDefault();
             hideInv();
         }
     if (e.key == '1' && inventory.isOpen) {
@@ -4412,6 +4556,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           if (e.key == '4' && inventory.isOpen) {
         drop4();}
      if (notepad.open && (e.key == 'n' || e.key === "Escape")) {
+        e.preventDefault();
              hideNotes();
         } else if (e.key == 'n' && !notepad.open && !inventory.isOpen && !dialogue.preventN) {
             showNotes();
@@ -4640,6 +4785,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.openingHasPlayed = true;
     }
 
+     if (cookiesHas('keys27guestbookdiscovered')) { 
+        //mark. gone blue gone beige 
+        //open blue door and beige door
+    }
+
     if (cookiesHas('blueRoseInPlace')) { 
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
@@ -4800,7 +4950,7 @@ if (cookiesHas('feralRacoons')) {
         prizeglass1.style.display = "none";
         prizes.macaroniPipe = true;
         prizes.cupcake = true;
-        arcadeGame.score = 250;
+        arcadeGame.score = 250; //mark. when adding brunhilda probably put an if here
         macaronipipe.style.display = "none";
     }
 
@@ -5758,9 +5908,9 @@ function drop1() {
         } if (inventory.slot1 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
-        } if (inventory.slot1 === "pink alcove rose") {
+        } if (inventory.slot1 === "pink island rose") { //temp. started replacement here
             wildredrose1.style.display = "block";
-        }  if (inventory.slot1 === "pink island rose") {
+        }  if (inventory.slot1 === "pink alcove rose") {
             wildredrose2.style.display = "block";
         } if (inventory.slot1 === "yellow rose") {
             greenrose.style.display = "block";
@@ -5790,7 +5940,11 @@ function drop1() {
         } if (inventory.slot1 === "bat") {
             bat.style.display = "block";
             dialogue.weHaveBat = false;
+        } if (inventory.slot1 === "orange rose") {
+            orangeflower.style.display = "block";
+                dialogue.orangeflowertaken = false;
         } 
+        
         inventory.slot1 = false; //inventory.slot1 = false; has to be on the bottom or the whole shit breaks 
     }
 function drop2() {
@@ -5955,9 +6109,9 @@ function drop2() {
                     bluelit.style.display = "block";
                 }
             }
-        } if (inventory.slot2 === "pink alcove rose") {
+        } if (inventory.slot2 === "pink island rose") {
             wildredrose1.style.display = "block";
-        }  if (inventory.slot2 === "pink island rose") {
+        }  if (inventory.slot2 === "pink alcove rose") {
             wildredrose2.style.display = "block";
         } if (inventory.slot2 === "blueish key") {
             blueishkey.style.display = "block";
@@ -5968,6 +6122,9 @@ function drop2() {
         } if (inventory.slot2 === "bat") {
             bat.style.display = "block";
             dialogue.weHaveBat = false;
+        }  if (inventory.slot2 === "orange rose") {
+            orangeflower.style.display = "block";
+                dialogue.orangeflowertaken = false;
         } 
 inventory.slot2 = false;
     }
@@ -6131,11 +6288,11 @@ function drop3() {
                     bluelit.style.display = "block";
                 }
             }
-        } if (inventory.slot3 === "pink alcove rose") {
+        } if (inventory.slot3 === "pink island rose") {
             wildredrose1.style.display = "block";
         }  if (inventory.slot1 === "datacube") {
             datacube.style.display = "block";
-        } if (inventory.slot3 === "pink island rose") {
+        } if (inventory.slot3 === "pink alcove rose") {
             wildredrose2.style.display = "block";
         } if (inventory.slot3 === "blueish key") {
             blueishkey.style.display = "block";
@@ -6146,6 +6303,9 @@ function drop3() {
         } if (inventory.slot3 === "bat") {
             bat.style.display = "block";
             dialogue.weHaveBat = false;
+        } if (inventory.slot3 === "orange rose") {
+            orangeflower.style.display = "block";
+                dialogue.orangeflowertaken = false;
         } 
         //new items go above this line
         inventory.slot3 = false;
@@ -6312,9 +6472,9 @@ function drop4() {
                     bluelit.style.display = "block";
                 }
             }
-        } if (inventory.slot4 === "pink alcove rose") {
+        } if (inventory.slot4 === "pink island rose") {
             wildredrose1.style.display = "block";
-        }  if (inventory.slot4 === "pink island rose") {
+        }  if (inventory.slot4 === "pink alcove rose") {
             wildredrose2.style.display = "block";
         } if (inventory.slot4 === "blueish key") {
             blueishkey.style.display = "block";
@@ -6325,6 +6485,9 @@ function drop4() {
         } if (inventory.slot4 === "bat") {
             bat.style.display = "block";
             dialogue.weHaveBat = false;
+        } if (inventory.slot4 === "orange rose") {
+            orangeflower.style.display = "block";
+                dialogue.orangeflowertaken = false;
         } 
  inventory.slot4 = false;
     }
@@ -6340,6 +6503,7 @@ function hideDiagram() {
     dialogue.allowEscape = false;
     dialogue.blockArrowTravel = false;
     tarotBackgroundHelper.style.display = "none";
+    document.body.style.background = "#f5f1e0"; //hex code back to beige
 }
 
 function showDiagram() {
@@ -6347,6 +6511,8 @@ function showDiagram() {
     diagram.style.display = "block";
     dialogue.allowEscape = true;
     dialogue.blockArrowTravel = true;
+    document.body.style.background = "#2b2a28"; //hex code to dark brown
+
 }
 
 function noneGoldKey() {
@@ -7980,11 +8146,7 @@ yellow4.style.display = "block";
 //Chapter two's colorLockDoor
 function enterColors() {
     if (colorLock.a !== 7 || colorLock.b !== 2 || colorLock.c !== 8 || colorLock.d !== 4) {
-        lockeddoor.play();
-        northknock.style.display = "block";
-                    setTimeout(function() {
-                    northknock.style.display = "none";
-                    }, 1000);
+        incorrectcandles.play();
     }
     if (colorLock.a === 7){
         if (colorLock.b === 2){
@@ -8707,6 +8869,7 @@ const dialogue = {
     //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
+    verilyIsInLobbyThree: false, //mark testing. normally false
     onMobile: false,
     currentlyInputtingArcadeName: false,
     arcadeFailuresOne: false,
@@ -8884,7 +9047,7 @@ document.addEventListener("keydown", function() {
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
-                 //document.cookie = "lobbyThree=lobbyThree"; //skip to chapter 3 jump to chapter three delete when done testing
+                 //document.cookie = "lobbyThree=lobbyThree"; //mark testing. skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -10110,9 +10273,10 @@ lobby.style.display = "none";
                 laudaNovella.pause();
                 doihmot.pause();          
                 branle.pause();
-                if (dialogue.verilyisnowburningashrub) {
+                if (dialogue.verilyisnowburningashrub && !dialogue.shrubExtinguished) {
                     shrub3.style.display = "none";
                     burningbush.style.display = "block";
+                    fullbucket.style.display = "block";
                     verilyIs.inThePortholeRoom = true;
                     verilysprite.style.display = "block";
                     terminal2.style.display = "block";
@@ -10551,18 +10715,24 @@ document.addEventListener("keydown", function() {
                 lake3.style.display = "block";
                 current.room = "lake3";  
                 branle.volume = 0.7;           
-        } else if (current.room === "artMirrorRoom"){
-            randomOarAudio();    
-            artMirrorRoom.style.display = "none";
+        } else if (current.room === "artMirrorRoom") {
+            if (!dialogue.karakKyal) {
+                randomOarAudio();    
+                artMirrorRoom.style.display = "none";
                 lakesLobby.style.display = "block";
                 current.room = "lakesLobby";        
-                explorers.style.opacity = 0;     
-        } else if (current.room === "pillarDeadEnd"){
+                explorers.style.opacity = 0;  
+            } else {
+                cantAllFitInThatBoat();
+            }
+               
+        } else if (current.room === "pillarDeadEnd") {
             randomDoorAudio();    
             pillarDeadEnd.style.display = "none";
                 artMirrorRoom.style.display = "block";
                 current.room = "artMirrorRoom";     
-                explorers.style.zIndex = 0;        
+                explorers.style.zIndex = 0;      
+                trio.style.zIndex = 0;  
         } else if (current.room === "switchTerminus"){
             randomDoorAudio();    
             switchTerminus.style.display = "none";
@@ -10979,6 +11149,7 @@ function goEast() {
                 }   
                 if (dialogue.verilyIsInLobbyThree) {
             verilysprite2.style.display = "block";
+            verilyteapot.style.display = "block";
             verilysprite.style.display = "none";
         }
         }   else if (current.room === "keys24") {
@@ -11138,6 +11309,10 @@ if (!inventory.slot1) {
             colorControl.style.display = "none";
             lakesLobby.style.display = "block";
             current.room = "lakesLobby";             
+        } else if (current.room === "secretCrackRoom") {
+            secretCrackRoom.style.display = "none";
+            redCircuit.style.display = "block";
+            current.room = "redCircuit";
         } else if (current.room === "redCircuit") {
             randomDoorAudio();    
             redCircuit.style.display = "none";
@@ -11181,6 +11356,11 @@ if (!inventory.slot1) {
             newCellLakeWest.style.display = "none";
             newCellLake.style.display = "block";
             current.room = "newCellLake";
+        } else if (current.room === "secretTreeRoom") {
+            secretTreeRoom.style.display = "none";
+            secretCrackRoom.style.display = "block";
+            current.room = "secretCrackRoom";
+            verilyWhatDidYouSee();
         }
     }; //end of check going east
 
@@ -11575,6 +11755,7 @@ function goWest() {
                 }    
                 if (dialogue.verilyIsInLobbyThree) {
             verilysprite2.style.display = "block";
+            verilyteapot.style.display = "block";
                         verilysprite.style.display = "none";
         }
         } else if (current.room === "orientationControl") { //HOUSE OF TIDES
@@ -11615,7 +11796,24 @@ function goWest() {
             switchTerminus.style.display = "none";
             redCircuit.style.display = "block";
             current.room = "redCircuit";             
-        } else if (current.room === "blueSwitchRoom") {
+            if (dialogue.mysteriousVialTaken) {
+                hiddendoor.style.display = "block";
+            }
+        } else if (current.room === "redCircuit") {
+            if (!dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
+                theresAHiddenDoorHere();
+            } else if (dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
+                redCircuit.style.display = "none";
+                secretCrackRoom.style.display = "block";
+                current.room = "secretCrackRoom";
+            }             
+        } else if (current.room === "secretCrackRoom") {
+            if (!dialogue.verilyHasJoinedTheParty) {
+                iDontThinkEitherOfUsAreSkinnyEnoughToFit();
+            } else {
+                verilyYouGoIntoTheMysteriousCrack();
+            }             
+        }  else if (current.room === "blueSwitchRoom") {
             randomOarAudio();    
             blueSwitchRoom.style.display = "none";
             flowerIsland.style.display = "block";
@@ -11649,6 +11847,18 @@ function goWest() {
             newCellLakeWest.style.display = "block";
             newCellLake.style.display = "none";
             current.room = "newCellLakeWest";
+        } else if (current.room === "lake1") {
+            if (!dialogue.orangeflowertaken) {
+            addOrangeFlowerToInventory();
+            } else {
+                droporangeflower();
+            }
+        } else if (current.room === "paintingReferenceRoom") {
+            if (!dialogue.mysteriousVialTaken) {
+                itsSomeVialsIGuess();
+            } else {
+                solveVialsPuzzle();
+            }
         }
     }; //end of check going west
 
@@ -12270,6 +12480,7 @@ function goNorth() {
         queneNote.pause();
         if (dialogue.verilyIsInLobbyThree) {
             verilysprite2.style.display = "block";
+            verilyteapot.style.display = "block";
                         verilysprite.style.display = "none";
 
         }
@@ -12281,7 +12492,14 @@ function goNorth() {
             lake2.style.display = "block";
         explorers.style.opacity = 0;
             current.room = "lake2";       
-            branle.volume = 0.3;      
+            branle.volume = 0.3;   
+            if (dialogue.orangeflowertaken) {
+                orangelightbulbon.style.display = "none";
+                orangelightbulboff.style.display = "block";
+            } else if (!dialogue.orangeflowertaken) {
+                orangelightbulbon.style.display = "block";
+                orangelightbulboff.style.display = "none";
+            }
         } else if (current.room === "lake2"){
             randomOarAudio();    
             lake2.style.display = "none";
@@ -12403,8 +12621,12 @@ function goNorth() {
                 artMirrorRoom.style.display = "none";
                 pillarDeadEnd.style.display = "block";
                 current.room = "pillarDeadEnd";
+                 dialogue.nowTheyMatch = true;
+                dialogue.matchSetComplete = true;
+                document.cookie = "paintingPassageLakes=paintingPassageLakes";
                 randomDoorAudio();
                 explorers.style.zIndex = 16;
+                trio.style.zIndex = 16;
                 if (pillarLock.a === 3) {
                     pillarla3.style.display = "block";
                 } else if (pillarLock.a === 0) {
@@ -12426,7 +12648,7 @@ function goNorth() {
                     pillarld3.style.display = "none";
                 }
             } else {
-                if (!dialogue.strangePaintings) {
+                if (!dialogue.strangePaintings) { //markle
                     strangePaintingsConvo();
                     dialogue.strangePaintings = true;
                 } else {
@@ -12440,6 +12662,7 @@ function goNorth() {
                 switchTerminus.style.display = "block";
                 current.room = "switchTerminus";  
                 explorers.style.zIndex = 0;     
+                trio.style.zIndex = 0;
                 document.cookie = "pillardeadendended=pillardeadendended";
                 if (dialogue.greenSwitchFlipped && conductiveFlowers.green) {
                     greenlit.style.display = "block";
@@ -12732,41 +12955,41 @@ function takeHandleA() {
 function takeWildRose1() {
     if (!dialogue.redRose1KnowsItsPlace) {
     if (!inventory.slot1) {
-            if (inventory.slot1 !== "pink alcove rose"
-            && inventory.slot2 !== "pink alcove rose"
-            && inventory.slot3 !== "pink alcove rose"
-            && inventory.slot4 !== "pink alcove rose") {
+            if (inventory.slot1 !== "pink island rose"
+            && inventory.slot2 !== "pink island rose"
+            && inventory.slot3 !== "pink island rose"
+            && inventory.slot4 !== "pink island rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 rosePluck.play();
-                inventory.slot1 = "pink alcove rose";}
+                inventory.slot1 = "pink island rose";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "pink alcove rose"
-            && inventory.slot2 !== "pink alcove rose"
-            && inventory.slot3 !== "pink alcove rose"
-            && inventory.slot4 !== "pink alcove rose") {
+            if (inventory.slot1 !== "pink island rose"
+            && inventory.slot2 !== "pink island rose"
+            && inventory.slot3 !== "pink island rose"
+            && inventory.slot4 !== "pink island rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 rosePluck.play();
-                inventory.slot2 = "pink alcove rose";}
+                inventory.slot2 = "pink island rose";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "pink alcove rose"
-            && inventory.slot2 !== "pink alcove rose"
-            && inventory.slot3 !== "pink alcove rose"
-            && inventory.slot4 !== "pink alcove rose") {
+            if (inventory.slot1 !== "pink island rose"
+            && inventory.slot2 !== "pink island rose"
+            && inventory.slot3 !== "pink island rose"
+            && inventory.slot4 !== "pink island rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 rosePluck.play();
-                inventory.slot3 = "pink alcove rose";}
+                inventory.slot3 = "pink island rose";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "pink alcove rose"
-            && inventory.slot2 !== "pink alcove rose"
-            && inventory.slot3 !== "pink alcove rose"
-            && inventory.slot4 !== "pink alcove rose") {
+            if (inventory.slot1 !== "pink island rose"
+            && inventory.slot2 !== "pink island rose"
+            && inventory.slot3 !== "pink island rose"
+            && inventory.slot4 !== "pink island rose") {
                 wildredrose1.style.display = "none";
                 key.redrose1 = true;
                 rosePluck.play();
-                inventory.slot4 = "pink alcove rose";}
+                inventory.slot4 = "pink island rose";}
         } else {
             tooHeavy();
         }
@@ -12777,41 +13000,41 @@ function takeWildRose1() {
 function takeWildRose2() {
     if (!dialogue.redRose2KnowsItsPlace) {
     if (!inventory.slot1) {
-            if (inventory.slot1 !== "pink island rose"
-            && inventory.slot2 !== "pink island rose"
-            && inventory.slot3 !== "pink island rose"
-            && inventory.slot4 !== "pink island rose") {
+            if (inventory.slot1 !== "pink alcove rose"
+            && inventory.slot2 !== "pink alcove rose"
+            && inventory.slot3 !== "pink alcove rose"
+            && inventory.slot4 !== "pink alcove rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 rosePluck.play();
-                inventory.slot1 = "pink island rose";}
+                inventory.slot1 = "pink alcove rose";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "pink island rose"
-            && inventory.slot2 !== "pink island rose"
-            && inventory.slot3 !== "pink island rose"
-            && inventory.slot4 !== "pink island rose") {
+            if (inventory.slot1 !== "pink alcove rose"
+            && inventory.slot2 !== "pink alcove rose"
+            && inventory.slot3 !== "pink alcove rose"
+            && inventory.slot4 !== "pink alcove rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 rosePluck.play();
-                inventory.slot2 = "pink island rose";}
+                inventory.slot2 = "pink alcove rose";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "pink island rose"
-            && inventory.slot2 !== "pink island rose"
-            && inventory.slot3 !== "pink island rose"
-            && inventory.slot4 !== "pink island rose") {
+            if (inventory.slot1 !== "pink alcove rose"
+            && inventory.slot2 !== "pink alcove rose"
+            && inventory.slot3 !== "pink alcove rose"
+            && inventory.slot4 !== "pink alcove rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 rosePluck.play();
-                inventory.slot3 = "pink island rose";}
+                inventory.slot3 = "pink alcove rose";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "pink island rose"
-            && inventory.slot2 !== "pink island rose"
-            && inventory.slot3 !== "pink island rose"
-            && inventory.slot4 !== "pink island rose") {
+            if (inventory.slot1 !== "pink alcove rose"
+            && inventory.slot2 !== "pink alcove rose"
+            && inventory.slot3 !== "pink alcove rose"
+            && inventory.slot4 !== "pink alcove rose") {
                 wildredrose2.style.display = "none";
                 key.redrose2 = true;
                 rosePluck.play();
-                inventory.slot4 = "pink island rose";}
+                inventory.slot4 = "pink alcove rose";}
         } else {
             tooHeavy();
         }
@@ -12904,6 +13127,60 @@ if (event.key === 'Enter' || event.key === ' ') {
         tooFar();
     }
 }}
+
+function droporangeflower() {
+    if (inventory.slot1 === "orange rose") {
+            drop1();
+        } else if (inventory.slot2 === "orange rose") {
+            drop2();
+        } else if (inventory.slot3 === "orange rose") {
+            drop3();
+        } else if (inventory.slot4 === "orange rose") {
+            drop4();
+        }
+}
+
+function addOrangeFlowerToInventory() {
+    if (!inventory.slot1) {
+            if (inventory.slot1 !== "orange rose"
+            && inventory.slot2 !== "orange rose"
+            && inventory.slot3 !== "orange rose"
+            && inventory.slot4 !== "orange rose") {
+                orangeflower.style.display = "none";
+                dialogue.orangeflowertaken = true;
+                rosePluck.play();
+                inventory.slot1 = "orange rose";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "orange rose"
+            && inventory.slot2 !== "orange rose"
+            && inventory.slot3 !== "orange rose"
+            && inventory.slot4 !== "orange rose") {
+                 orangeflower.style.display = "none";
+                dialogue.orangeflowertaken = true;
+                rosePluck.play();
+                inventory.slot2 = "orange rose";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "orange rose"
+            && inventory.slot2 !== "orange rose"
+            && inventory.slot3 !== "orange rose"
+            && inventory.slot4 !== "orange rose") {
+                orangeflower.style.display = "none";
+                dialogue.orangeflowertaken = true;
+                rosePluck.play();
+                inventory.slot3 = "orange rose";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "orange rose"
+            && inventory.slot2 !== "orange rose"
+            && inventory.slot3 !== "orange rose"
+            && inventory.slot4 !== "orange rose") {
+                orangeflower.style.display = "none";
+                dialogue.orangeflowertaken = true;
+                rosePluck.play();
+                inventory.slot4 = "orange rose";}
+        } else {
+            tooHeavy();
+        }
+}
 
 function takePanelRose() {
     if (!dialogue.blueRoseKnowsItsPlace) {
@@ -15024,6 +15301,7 @@ dialogue.blockArrowTravel = true;
  }
         else if (current.room === "keys27") {
             guestbook.pages = 1;
+            document.cookie = "keys27guestbookdiscovered=keys27guestbookdiscovered"
             frontMatter.style.display = "block";
             nextarrow.style.display = "block";
             booksound.play();
@@ -16024,7 +16302,7 @@ function placeRedOrBlueRoses() {
         } 
     }
 } if (current.room === "redCircuit") { //putting that thang down where it belongs x2
-        if (inventory.slot1 === "pink alcove rose") {
+        if (inventory.slot1 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
@@ -16033,7 +16311,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop1();
-        } else if (inventory.slot2 === "pink alcove rose") {
+        } else if (inventory.slot2 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
@@ -16042,7 +16320,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop2();
-        } else if (inventory.slot3 === "pink alcove rose") {
+        } else if (inventory.slot3 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
@@ -16051,7 +16329,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop3();
-        } else if (inventory.slot4 === "pink alcove rose") {
+        } else if (inventory.slot4 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
             dialogue.redRose1KnowsItsPlace = true;
@@ -16060,7 +16338,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop4();
-        } if (inventory.slot1 === "pink island rose") {
+        } if (inventory.slot1 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
@@ -16069,7 +16347,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop1();
-        } else if (inventory.slot2 === "pink island rose") {
+        } else if (inventory.slot2 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
@@ -16078,7 +16356,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop2();
-        } else if (inventory.slot3 === "pink island rose") {
+        } else if (inventory.slot3 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
@@ -16087,7 +16365,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop3();
-        } else if (inventory.slot4 === "pink island rose") {
+        } else if (inventory.slot4 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
             dialogue.redRose2KnowsItsPlace = true;
@@ -16176,6 +16454,15 @@ function giveUp() {
             letterK3.style.display = "none";
             letterE3.style.display = "none";
             illGiveYouOneOfMine();
+}
+
+function takeSecretFruit() {
+    if (!dialogue.fruitTaken) {
+        fruit.style.display = "none";
+        fruitTake.play();
+        dialogue.fruitTaken = true;
+        document.cookie = "verilyHasSecretFruit=verilyHasSecretFruit"
+    }
 }
 
 function goToTheHomePageWhyDontYou(){

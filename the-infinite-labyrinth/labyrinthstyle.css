@@ -1690,6 +1690,12 @@ display: none;
     
 }
 
+#trio {
+        z-index: 0;
+    display: none;
+
+}
+
 #explorers {
     z-index: 0;
     display: block;

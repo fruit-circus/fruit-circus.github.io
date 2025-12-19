@@ -17,20 +17,12 @@ Check all //mark s
 
 ART:
 HIGH:
-
-fruit
 treescene and fruit
 key items pouch close up
-verily snide has too much eye-white
+verilyheardsomething is her holding a teapot
 soldier with arbalest firing animation 
+trio sitting down for the night
 bridget blocking an arbalest bolt gif
-yyp63 verily forced smile
-create shelfitems2 for keys12 (and dialogue to go with it)
-some portraits for verily in karakkyal: 
-    are you two okay?!
-    oh my goodness--
-    that's terrifying. i guess that puts an end...
-revise stmi portrait on is the wrong word
 
 LOW
 vials look tacky
@@ -53,7 +45,6 @@ ONLY VISIBLE IN OTHER BROWSERS:
 make sure font family is not impact
 
 SOUND:
-sound for exiting a close up?
 fruitTake() "pluck!"
 better thunk1,2,3 for candles
 something happened! stone grinding for 2303 - successful clunk 
@@ -61,27 +52,24 @@ howling wind for chasms
 Others: see Placeholders:
 sound for removing the paintings and putting them back
 sound for dowsing the shrub
+change arcade music on alterations3 to something dopey
 
 code:
+brief convo for ybbnlk1. image map
+takign the halberd
 cyan rose triggering too heavy dialogue even when its not there and when the panel is locked
-conversation for verily making tea
 another saltarello after no. 2 perhaps 
-dialogue for shelfitems2 (going north from keys12)
-more decoration and misc objects:
-    end table at an angle NE in binaryswitcheseast
-    alcove W in 21 door room with some books or vials 
 campfire scene
-items for newcell
 add various cookies:
-    keys: secondary pathway to guestbook
+    keys: secondary pathway to guestbook AND rock shelf
     pipes: handles (dialogue.handleGlassNone = true;), brunhilda availabled,
     tides: ?
+    final stuff cookies. kyarakkyal
 
 
 things that need internet:
 automatic zoom to fit
 factcheck all dialogue
-change arcade music on alterations3 to something dopey
 
 problems for later: 
 double check arrow travel is prevented during first verily conversation
@@ -101,7 +89,7 @@ what did you like? what could be improved?
 did you find anything frustrating or confusing? (about the gameplay or in the story)
 did anything seem out of place or unintentional?
 is there any dialogue you would cut?
-what do you want to see more of? scenes you would add? More detail to the characters or elaboration on the setting or plot?
+what do you want to see more of? scenes you would add? More detail to the characters or elaboration on the world or plot?
 were any of the parameters of the puzzles confusing?
 were any of the puzzles too easy or too difficult in an unsatisfying way?
 
@@ -120,10 +108,75 @@ room full of random object
 hiddd
 */
 
+/*replaced with text in the image yesorno*/
+#ybbi3 {
+    display: none;
+    transform: translate(-115px,-115px);
+}
+#ybbi2 {
+    display: none;
+    transform: translate(-115px,30px);
+}
 
 #ybg13,
 #highscores2,
+#ybbnlk1,
+#ybbnlk2,
+#ybbkk1,
+#ybbkk2,
+#ybbkk3,
+#ybbkk0,
+#ybbkk4,
+#ybbkk5,
+#ybbkk6,
+#ybbkk7,
+#ybboo1,
+#ybboo2,
+#ybboo3,
+#ybboo4,
+#ybboo5,
+#ybboo6,
+#ybboo8,
+#ybboo7,
 #ybbj9,
+#ybbo1,
+#ybbo2,
+#ybbo3,
+#ybbo4,
+#ybbo5,
+#ybbo6,
+#ybbo7,
+#ybbo8,
+#ybbo9,
+#ybbo10,
+#ybbo11,
+#ybbo12,
+#ybbo13,
+#ybbo14,
+#ybbo15,
+#ybbo16,
+#ybbo17,
+#ybbo18,
+#ybbo19,
+#ybbo20,
+#ybbo21,
+#ybbo22,
+#ybbo23,
+#ybbo24,
+#ybbo25,
+#ybbo26,
+#ybbo27,
+#ybbo28,
+
+#ybbn1,
+#ybbn2,
+#ybbn3,
+#ybbn4,
+#ybbn5,
+#ybbn6,
+#ybbn7,
+#ybbn8,
+#ybbn9,
 #ybbm3,
 #ybbm4,
 #ybbm5,
@@ -352,8 +405,6 @@ hiddd
 #yyz8a,
 #yyz8b,
 #ybbi1,
-#ybbi3,
-#ybbi2,
 #ybg33,
 #scorename,
 #scoretext,
@@ -903,14 +954,17 @@ hiddd
             </div>
 
             <div id="newCellLake" usemap="#lakemap"> 
-                <img src="rooms/lakesmallwn.png" alt="door" usemap="#lakemap" class="room" id="lakesmallwn">
+                <img src="rooms/lakewesmallwn.png" alt="door" usemap="#lakemap" class="room" id="lakewesmallwn">
                 <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers">
             </div>
 
             <div id="newCellLakeWest" usemap="#lakemap"> 
                 <img src="rooms/lakewest.png" alt="door" usemap="#lakemap" class="room" id="lakewest">
                 <img src="boats/boateast.png" alt="explorers" usemap="#lakemap" class="room" id="boateast">
-            </div>
+                <img src="endtable3.png" alt="explorers" usemap="#lakemap" class="room" id="endtable3">
+                <img src="tides/halberd.png" alt="explorers" usemap="#lakemap" class="room" id="halberd">
+                <img src="tides/halberdpegs.png" alt="explorers" usemap="#lakemap" class="room" id="halberdpegs">
+              </div>
 
             <div id="posterRoom" usemap="#libmap"> <!--Poster Room-->
                 <img src="westdoor.png" alt="door" usemap="#libmap" class="room" id="westdoor">
@@ -1833,6 +1887,8 @@ hiddd
     <img src="tides/16on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch16onEast"> 
     <img src="tides/16off.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch16offEast"> 
     <img src="people/explorers.gif" alt="door" usemap="#binaryswitchesmap" class="room">
+    <img src="endtable.png" alt="door" usemap="#binaryswitchesmap" class="room">
+    <img src="bluevase.png" alt="door" usemap="#binaryswitchesmap" class="room">
 
 </div>
 
@@ -2522,6 +2578,12 @@ hiddd
             <area shape="rect" coords="870,255,998,670" alt="bookshelf numba 4/3" class="pointer" onclick="randomBook()">
         </map>
 
+        <map name="keepgoingormakecampmap">
+            <area shape="rect" coords="10,363,1395,573" alt="d" class="pointer" onclick="keepExploring()">
+            <area shape="rect" coords="10,575,1395,777" alt="a" class="pointer" onclick="makeCamp()">
+        </map>
+
+
         <map name="giveupmap">
             <area shape="rect" coords="1060,288,1275,400" alt="d" class="pointer" onclick="enterName()">
             <area shape="rect" coords="1060,417,1275,514" alt="a" class="pointer" onclick="giveUp()">
@@ -2693,6 +2755,7 @@ hiddd
 <audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
+<audio id="exitcloseup"><source src="sound/exitcloseup.mp3" type="audio/mpeg"></audio> 
 
 <!--Placeholders:-->
 <audio id="placeTeddyBear"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
@@ -2795,6 +2858,8 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/stymieinterogative.png" alt="stymie :3" class="dialogue" id="stint">
     <img src="portraits/stmigifhelper.png" alt="it's beige" class="dialogue" id="stmigifhelper">
     
+    <img src="portraits/yesorno.png" alt="keep exploring?" usemap="#keepgoingormakecampmap" class="dialogue" id="yesorno">
+
     <img src="portraits/verily.png" alt="verily's default dialogue portrait" class="dialogue" id="vdm">
     <img src="portraits/verilyhappy.png" alt="verily's default dialogue portrait" class="dialogue" id="vhap">
     <img src="portraits/verilyrelax.png" alt="verily's default dialogue portrait" class="dialogue" id="vrel">
@@ -2805,6 +2870,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/verilysurprised.png" alt="verily's default dialogue portrait" class="dialogue" id="vsup">
     <img src="portraits/verilysurprised2.png" alt="verily's default dialogue portrait" class="dialogue" id="vsup2">
     <img src="portraits/verilysnide.png" alt="verily's default dialogue portrait" class="dialogue" id="vsnide">
+    <img src="portraits/verilyconcerned.png" alt="verily's default dialogue portrait" class="dialogue" id="vcon">
     
     <img src="portraits/shuri.png" alt="shuri's default dialogue portrait" class="dialogue" id="shuri">
     <img src="portraits/shuri-arbalest-raised.png" alt="shuri's default dialogue portrait" class="dialogue" id="sharbra">
@@ -4351,7 +4417,7 @@ performed by the Unicorn Ensemble
     <p id="ybcc1">Didn't you want to start making camp?</p>
     <p id="ybcc2">It might not hurt to do one last sweep of the rooms we've been in. See if we missed anything.</p>
     <p id="ybcc3">Alright, I'll leave you to it.</p>
-    <p id="ybcc4">The boat might sink if we all three try to climb on.</p>
+    <p id="ybcc4">I think the boat might sink if we all three try to climb on.</p>
 
     <p id="ybbi1">Ready to make camp?</p>
     <p id="ybbi3">Let's keep exploring.</p>
@@ -4373,9 +4439,9 @@ performed by the Unicorn Ensemble
     <p id="ybbk1">There's... a crack in the wall?</p>
     <p id="ybbk2">That's weird.</p>
     <p id="ybbk3">It's probably too narrow for either of us to fit through.</p>
-    <p id="ybbk4">Yeah, I mean have you seen my hat!</p>
-    <p id="ybbk5">You can take off your hat, you know.</p>
-    <p id="ybbk6">That's easy for you to say.</p>
+    <p id="ybbk4">Yeah! I mean, have you <i>seen</i> my hat!</p>
+    <p id="ybbk5">You can take <i>off</i> your hat, you know.</p>
+    <p id="ybbk6">That's easy for you to say!</p>
     
     <p id="ybbk7">Strange. There's a crack in the wall here.</p>
     <p id="ybbk8alt">That's weird.</p>
@@ -4383,11 +4449,20 @@ performed by the Unicorn Ensemble
     <p id="ybbk9alt">It looks to narrow even for me to try to crawl through.</p>
     <p id="ybbk9">We peeked through, but couldn't see anything.</p>
     <p id="ybbk10">Maybe I could wiggle through. It looks about my size.</p>
-    <p id="ybbk11">Are you sure? It might lead outside the labyrinth. We wouldn't want you getting stuck underground somewhere. What if there's a cave-in?</p>
-    <p id="ybbk12">Hmm...</p>
+    <p id="ybbk11">Are you sure? It might lead outside the labyrinth. We wouldn't want you getting stuck outside. What if there's a cave-in?</p>
+    <p id="ybbk12">Hm.</p>
     <p id="ybbk13">I'm sure a quick peek couldn't hurt.</p>
-    <p id="ybbk14">Okay... please be careful though.</p>
+    <p id="ybbk14">Okay. Please be careful though.</p>
     <p id="ybbk15">Let us know what you see!</p>
+
+    <p id="ybbkk0">Anything interesting?</p>
+    <p id="ybbkk1">There was a big tree.</p>
+    <p id="ybbkk2">This far underground?</p>
+    <p id="ybbkk3">I'm not a botonist.</p>
+    <p id="ybbkk4">But it looked like it was sprouting from a root. Like there was a huge tree on the surface, reaching down.</p>
+    <p id="ybbkk5">Weird.</p>
+    <p id="ybbkk6">Was there anything else?</p>
+    <p id="ybbkk7">No.</p>
 
     <p id="ybbl1">You said it's root tea?</p>
     <p id="ybbl2">Yes. Wollroot tea.</p>
@@ -4405,6 +4480,67 @@ performed by the Unicorn Ensemble
     <p id="ybbm4">That's clever. I considered bringing mine, but it was too heavy.</p>
     <p id="ybbm5">Figured it was a luxery we could go without for a few days.</p>
     <p id="ybbm6">This is nice, though.</p>
+
+    <p id="ybbnlk1">It's an orchid.</p>
+    <p id="ybbnlk2">Yep.</p>
+
+
+    <p id="ybbn1">More rocks.</p>
+
+    <p id="ybbn2">That middle one, is that quartz?</p>
+    <p id="ybbn3">Good eye!</p>
+    <p id="ybbn4">Can you guess which one is basalt?</p>
+    <p id="ybbn5">Is it the black one?</p>
+    <p id="ybbn6">Bingo!</p>
+
+    <p id="ybbn7">What about the one on the right?</p>
+    <p id="ybbn8">Well that's just a piece of schist.</p>
+    <p id="ybbn9">That's not very nice.</p>
+
+    <p id="ybboo1">I could unroll my sleeping bag...</p>
+    <p id="ybboo2">Or.</p>
+    <p id="ybboo3">I could just...</p>
+    <p id="ybboo4">Zzz...</p>
+    <p id="ybboo5">That can't be good for your neck.</p>
+    <p id="ybboo6">Did they really just fall asleep?</p>
+    <p id="ybboo7">Kodaly can practically sleep standing up.</p>
+    <p id="ybboo8">Impressive.</p>
+
+    <!-- SELECT CONVERSATION TOPICS:
+        <p id="ybbo3">Did you realize this place was a fractal?</p>
+        <p id="ybbo3">I find it very hard to sleep in new places.</p>
+        <p id="ybbo3">Do you know any magic spells?</p>
+        <p id="ybbo3">We should get some sleep.</p>
+
+    -->
+
+    <p id="ybbo1">Did you realize this place was a fractal?</p>
+    <p id="ybbo2">What do you mean?</p>
+    <p id="ybbo3">Kodaly has been keeping the map updated. Here's every room we've seen so far.</p>
+    <p id="ybbo4">Ah— huh.</p>
+    <p id="ybbo5">Well, it makes sense.</p>
+    <p id="ybbo6">Square rooms, and that repeating motif of four squares in a flower pattern.</p>
+    <p id="ybbo7">It fits with the whole idea of self-similarity.</p>
+    <p id="ybbo9">I've been thinking:</p>
+    <p id="ybbo10">If you had the kind of power aboveground that the labyrinth has below, you'd be unstoppable.</p>
+    <p id="ybbo11">The labyrinth can repair itself, transform stone into cheese, send signals across hundreds of kilometers. Even grant sapience to rudimentary scanning devices.</p>
+    <p id="ybbo12">If you could transport little bits of the labyrinth to the surface, you could make a living relay network that could span the globe.</p>
+    <p id="ybbo13">Of course, each piece would still need to be alive in order to receive and send an electric pulse, but...</p>
+    <p id="ybbo14">...</p>
+    <p id="ybbo15">Purely hypothetical, of course.</p>
+
+    <p id="ybbo16">Do you know any pattern spells?</p>
+    <p id="ybbo17">Do I look like a lunatic?</p>
+    <p id="ybbo18">What about you?</p>
+    <p id="ybbo19">Not off the top of my head.</p>
+    <p id="ybbo21">But my great grandmother passed down an incantation through the family.</p>
+    <p id="ybbo22">It spans three volumes, of four hundred pages each.</p>
+    <p id="ybbo23">If you recite each word without mispeaking or stopping for more than nine seconds between each word, a magic orchard will grow in a two kilometer radius around the spot where you started reading.</p>
+    <p id="ybbo24">My great grandmother is the only person I know who ever did this, although she wasn't the one who discovered the spell. But I'm not sure where she got it from.</p>
+    <p id="ybbo25">What kind of orchard?</p>
+    <p id="ybbo26">An orchard of every known variety of fruit, and more. Fruit trees that don't exist anywhere else on the planet. Trees that might have existed in the ancient past, but no longer do; or trees that could have existed, but never did.</p>
+    <p id="ybbo27">It's not the most dramatic spell, but it's an interesting one.</p>
+    <p id="ybbo28">Sounds dramatic enough to me.</p>
 
 
 <!--End of dialogue list-->
@@ -6495,6 +6631,7 @@ function drop4() {
 
 
 function hideDiagram() {
+    exitcloseup.play();
     diagram.style.display = "none";
     knightCard.style.display = "none";
     witchCard.style.display = "none";
@@ -7482,6 +7619,7 @@ function prevPage() {
 
 function closeWhatever() {
     if (current.room === "portholeRoom") {
+    exitcloseup.play();
         portholeRoom.style.display = "block";
         portholeInterior.style.display = "none";
         explorers.style.display = "block";
@@ -7492,6 +7630,7 @@ function closeWhatever() {
         dialogue.blockArrowTravel = false;
         document.body.style.background = "#f5f1e0"; //hex code back to beige
     } else if (current.room === "keysLobby") {
+        exitcloseup.play();
         helpfulmap.style.display = "none";
         dialogue.allowEscape = false;
         dialogue.blockArrowTravel = false;
@@ -7499,8 +7638,10 @@ function closeWhatever() {
             dialogue.helpfulMapOpenedTwice = true;
         }
 } else if (current.room === "arcadeRoom") {
+    exitcloseup.play();
         closeTheArcadeGame();
 } else if (current.room === "pillarControlLakes") {
+    exitcloseup.play();
         pillarinterface.style.display = "none";
         pillarControlLakes.style.display = "block";
         dialogue.allowEscape = false;
@@ -7508,6 +7649,7 @@ function closeWhatever() {
         baseroom.style.display = "block";
         explorers.style.display = "block";
 }  else if (current.room === "controlRoom") {
+    exitcloseup.play();
         controlRoom.style.display = "block";
         baseroom.style.display = "block";
         explorers.style.display = "block";
@@ -7516,6 +7658,7 @@ function closeWhatever() {
         dialogue.allowEscape = false;
         lockboxUnlocks();
     } else if (current.room === "pipesLobby") {
+        exitcloseup.play();
     helpfulpipemap.style.display = "none";
     dialogue.allowEscape = false;
     dialogue.blockArrowTravel = false;
@@ -7523,6 +7666,7 @@ function closeWhatever() {
 }
 
 function closeChest() {
+    exitcloseup.play();
     combinationLock.style.display = "none";
     explorers.style.display = "block";
     baseroom.style.display = "block";
@@ -8879,9 +9023,9 @@ const dialogue = {
     numberOfArcadeFailures: 0,
     mobilityUncertain: false,
     pillarsBlockTheWay: true, 
-    greenSwitchFlipped: false,
+    greenSwitchFlipped: false, //mark testing. norally false
     blueSwitchFlipped: false,
-    redSwitchFlipped: false,
+    redSwitchFlipped: false, //mark testing. norally false
     goodWork: false,
     trueMutualism: false, //set to true after actionandinformation 
     mobile: false,
@@ -10786,6 +10930,8 @@ document.addEventListener("keydown", function() {
                 randomOarAudio();
                 sauna.style.display = "none";
                 current.room = "newCellLake";
+                explorers.style.display = "none";
+                newCellLake.style.display = "block";
             }
         }
     }; //end of check going south
@@ -11356,6 +11502,7 @@ if (!inventory.slot1) {
             newCellLakeWest.style.display = "none";
             newCellLake.style.display = "block";
             current.room = "newCellLake";
+            explorers.style.display = "none";
         } else if (current.room === "secretTreeRoom") {
             secretTreeRoom.style.display = "none";
             secretCrackRoom.style.display = "block";
@@ -11847,6 +11994,7 @@ function goWest() {
             newCellLakeWest.style.display = "block";
             newCellLake.style.display = "none";
             current.room = "newCellLakeWest";
+            explorers.style.display = "block";
         } else if (current.room === "lake1") {
             if (!dialogue.orangeflowertaken) {
             addOrangeFlowerToInventory();
@@ -12797,9 +12945,13 @@ function goNorth() {
             sauna.style.display = "block";
             newCellLake.style.display = "none";
             current.room = "sauna";
+            explorers.style.display = "block";
+        } else if (current.room === "keys12") {
+            moreRockDialogue();
+        } else if (current.room === "newCellLakeWest") {
+            pickHalberd();
         }
     }; //end of check going north
-
 
    
 var platformPuzzle = {
@@ -12841,6 +12993,11 @@ function restartDoIhMotAfterLaudaNovella() {
 function startQueneNoteAfterElMare() {
         queneNote.currentTime = 0;
         queneNote.play();        
+}
+
+function pickHalberd() {
+    //mark
+    alert("//mark");
 }
 
 function takePillarRose() { 
@@ -13311,7 +13468,10 @@ function pickSW() {
                 key.rope2 = true;
                 inventory.slot4 = "inexplicable rope";}
         }
-     }
+    }
+      else if (current.room === "newCellLakeWest") {
+            aNewOrchid();
+        }
 
     //red candle
     else if (current.room === "lift") {

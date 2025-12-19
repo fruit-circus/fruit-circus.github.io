@@ -115,6 +115,7 @@
 //iDontThinkEitherOfUsAreSkinnyEnoughToFit
 //verilyYouGoIntoTheMysteriousCrack
 //verilyWhatDidYouSee
+//moreRockDialogue
 
 //event.key === 'Enter' should match travel = true
 
@@ -1508,14 +1509,14 @@ if (event.key === 'Enter' || event.key === ' ') {
        zy17.style.display = "none";
        zy18.style.display = "block";
        st.style.display = "none";
-       stact.style.display = "block";
+       stt.style.display = "block";
        dialogue.actionAndInformationIncrimenter++;
          return;
      } else if (dialogue.actionAndInformationIncrimenter === 18) {
        zy18.style.display = "none";
        zy19.style.display = "block";
        stdem.style.display = "block";
-       stact.style.display = "none";
+       stt.style.display = "none";
        dialogue.actionAndInformationIncrimenter++;
          return;
      } else if (dialogue.actionAndInformationIncrimenter === 19) {
@@ -4266,8 +4267,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }   else if (dialogue.verilyfdsgdfgIdlskdbfkjda === "fish") {
         yyp63.style.display = "none";
         yyp63a.style.display = "block";
-      vrel.style.display = "none";
-      v.style.display = "block";
+      vrel.style.display = "block";
       dialogue.verilyfdsgdfgIdlskdbfkjda = 12;
         return;
     } else if (dialogue.verilyfdsgdfgIdlskdbfkjda === 12) {
@@ -6726,12 +6726,12 @@ document.addEventListener("keydown", function() {
        zs4d.style.display = "none";
        b.style.display = "none";
         dialogue.lockedADoor3 = false;
-        dialogue.lockedADoor4 = true;
+        dialogue.lockedADoor5 = true;
         dialogue.blockArrowTravel = false;
          return;
      }
    }});
-} else if (dialogue.lockedADoor4) {
+} else if (dialogue.lockedADoor4) { //skip this one
     lockeddoor.play();
      dialogue.lockedSecondAB = 1;
        zs5.style.display = "block"; //locked.
@@ -9247,7 +9247,7 @@ document.addEventListener("keydown", function() {
            yyz12.style.display = "none";
            st.style.display = "none";
            highscores.style.display = "block";
-            scorename.style.display = "block"; //mark adjust position and text color and font to put it on the score board
+            scorename.style.display = "block"; //unused, as the scoreboard is one of two static images
               dialogue.dfgdfgkjdfjkgnalal++;
        } else if (dialogue.dfgdfgkjdfjkgnalal === 3) {
            yyz13.style.display = "block";
@@ -9819,9 +9819,8 @@ function noPowerFlowing() {
     }
 
     function karakKyalMadeTheLabyrinthAndMagicIsReal() {
-      //mark add v sprite
        ybg5.style.display = "block";
-      v.style.display = "block";
+      vcon.style.display = "block";
        dialogue.karak = 1;
               dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
@@ -9830,7 +9829,7 @@ function noPowerFlowing() {
        ybg5.style.display = "none";
        ybg6.style.display = "block";
       k.style.display = "block";
-      v.style.display = "none";
+      vcon.style.display = "none";
        dialogue.karak++;
          return;
      } else if (dialogue.karak === 2) {
@@ -9844,14 +9843,14 @@ function noPowerFlowing() {
        ybg7.style.display = "none";
        ybg8.style.display = "block";
        b.style.display = "none";
-       v.style.display = "block";
+       vcon.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 4) {
        ybg8.style.display = "none";
        ybg9.style.display = "block";
        v.style.display = "block";
-       k.style.display = "none";
+       vcon.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 5 && dialogue.arbalestAttack) {
@@ -9885,7 +9884,7 @@ function noPowerFlowing() {
      } else if (dialogue.karak === 8) {
        ybg12.style.display = "none";
        ybg13.style.display = "block";
-       v.style.display = "block";
+       vcon.style.display = "block";
        k.style.display = "none";
        dialogue.karak++;
         return;
@@ -9893,6 +9892,7 @@ function noPowerFlowing() {
        ybg13.style.display = "none";
        ybg14.style.display = "block";
        v.style.display = "block";
+       vcon.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 10) {
@@ -10178,20 +10178,32 @@ function noPowerFlowing() {
 
     function shallWeCallItADay() {
              dialogue.blockArrowTravel = true;
-
       ybbi1.style.display = "block";
       b.style.display = "block";
        dialogue.sdfsdfjdkjdksfgggggkfdg = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.sdfsdfjdkjdksfgggggkfdg === 1) {
-       ybbi1.style.display = "none";
+       yesorno.style.display = "block";
+        ybbi1.style.display = "none";
       b.style.display = "none";
        dialogue.sdfsdfjdkjdksfgggggkfdg = true;
-              dialogue.blockArrowTravel = false;
-
      }
     }});
+    }
+
+    function keepExploring() {
+             yesorno.style.display = "none";
+              dialogue.blockArrowTravel = false;
+    }
+
+    function makeCamp() {
+            yesorno.style.display = "none";
+            trio.style.display = "none";
+            //mark add art for them sitting in a circle, either working within the basic room or using a new canvas
+            ybboo1.style.display = "block";
+            k.style.display = "block";
+            //mark. add dialogue chain
     }
 
     function weShouldSealTheDoor() {
@@ -10323,6 +10335,25 @@ function shelfStones() {
        dialogue.rocks3 = false;
               dialogue.blockArrowTravel = false;
 
+     }
+    }});
+  }
+}
+
+function aNewOrchid() { //mark
+  if (dialogue.newOrchid) {
+    dialogue.blockArrowTravel = true;
+    ybcc1.style.display = "block";
+      vint.style.display = "block";
+       dialogue.dfgkjdfngkjdfnkgnaa = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.dfgkjdfngkjdfnkgnaa === 1) {
+       ybcc1.style.display = "none";
+      vint.style.display = "none";
+       dialogue.sdfsdfaaannmcxnvaa = true;
+      dialogue.blockArrowTravel = false;
+      dialogue.newOrchid = true;
      }
     }});
   }
@@ -10807,5 +10838,145 @@ if (dialogue.fruitTaken) {
 }
 
 function verilyWhatDidYouSee() {
-alert("//mark. i didn't see shit");
+  if (!dialogue.verilywhadyaseee) {
+
+dialogue.blockArrowTravel = true;
+    ybbkk0.style.display = "block";
+      b.style.display = "block";
+       dialogue.rosdfcsdfsdfki = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.rosdfcsdfsdfki === 1) {
+       ybbkk0.style.display = "none";
+       ybbkk1.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     } else if (dialogue.rosdfcsdfsdfki === 2) {
+       ybbkk1.style.display = "none";
+       ybbkk2.style.display = "block";
+      k.style.display = "block";
+       dialogue.rosdfcsdfsdfki++;
+     } else if (dialogue.rosdfcsdfsdfki === 3) {
+       ybbkk2.style.display = "none";
+       ybbkk3.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     } else if (dialogue.rosdfcsdfsdfki === 4) {
+       ybbkk3.style.display = "none";
+       ybbkk4.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     }else if (dialogue.rosdfcsdfsdfki === 5) {
+       ybbkk4.style.display = "none";
+       ybbkk5.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     }else if (dialogue.rosdfcsdfsdfki === 6) {
+       ybbkk5.style.display = "none";
+       ybbkk6.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     }else if (dialogue.rosdfcsdfsdfki === 7) {
+       ybbkk6.style.display = "none";
+       ybbkk7.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     } else if (dialogue.rosdfcsdfsdfki === 8) {
+       ybbn7.style.display = "none";
+      k.style.display = "none";
+       dialogue.rosdfcsdfsdfki = true;
+       dialogue.verilywhadyaseee = true;
+     }
+    }});
+  }}
+
+function moreRockDialogue() {
+  if (!dialogue.rocktalkOne) {
+dialogue.blockArrowTravel = true;
+    ybbn1.style.display = "block";
+      b.style.display = "block";
+       dialogue.rockin = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.rockin === 1) {
+       ybbn1.style.display = "none";
+      b.style.display = "none";
+       dialogue.rockin = true;
+           dialogue.blockArrowTravel = false;
+           dialogue.rocktalkOne = true;
+           dialogue.rocktalkTwo = true;
+     }}});
+  } else if (dialogue.rocktalkTwo) {
+dialogue.blockArrowTravel = true;
+    ybbn2.style.display = "block";
+      b.style.display = "block";
+       dialogue.rockin2 = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.rockin2 === 1) {
+       ybbn2.style.display = "none";
+       ybbn3.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rockin2++;
+     } else if (dialogue.rockin2 === 2) {
+       ybbn3.style.display = "none";
+       ybbn4.style.display = "block";
+      k.style.display = "block";
+       dialogue.rockin2++;
+     } else if (dialogue.rockin2 === 3) {
+       ybbn4.style.display = "none";
+       ybbn5.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.rockin2++;
+     } else if (dialogue.rockin2 === 4) {
+       ybbn5.style.display = "none";
+       ybbn6.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.rockin2++;
+     } else if (dialogue.rockin2 === 5) {
+       ybbn6.style.display = "none";
+      k.style.display = "none";
+       dialogue.rockin2 = true;
+       dialogue.rocktalkTwo = false;
+       dialogue.rocktalkThree = true;
+     }
+    }});
+  } else if (dialogue.rocktalkThree) {
+dialogue.blockArrowTravel = true;
+    ybbn7.style.display = "block";
+      b.style.display = "block";
+       dialogue.rockin3 = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.rockin3 === 1) {
+       ybbn7.style.display = "none";
+       ybbn8.style.display = "block";
+      b.style.display = "none";
+      k.style.display = "block";
+       dialogue.rockin3++;
+     } else if (dialogue.rockin3 === 2) {
+       ybbn8.style.display = "none";
+       ybbn9.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.rockin3++;
+     } else if (dialogue.rockin3 === 3) {
+       ybbn9.style.display = "none";
+      b.style.display = "none";
+       dialogue.rockin3 = true;
+           dialogue.blockArrowTravel = false;
+           dialogue.rocktalkThree = false;
+     }
+    }});
+  }
+   
 }

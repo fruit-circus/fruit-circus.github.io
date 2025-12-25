@@ -1944,6 +1944,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.intrepidExplorers === 30) {
        yyb28.style.display = "none";
        st.style.display = "none";
+       document.cookie = "stymieLobbyThree=stymieLobbyThree";
         dialogue.enteringLobbyThree = true;
         dialogue.feralRacoons = true;
         decreaseNotificationLobbyThree();
@@ -3230,9 +3231,9 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.chaseComplete === 10) {
         zzn17.style.display = "none";
         k.style.display = "none";
-        dialogue.chaseChase = "false"; //mark. i mean this is wrong but it seems to work and im scared to change it
-        dialogue.shuriComplete = "true";
-        dialogue.lostRogueSoldiers = "true";
+        dialogue.chaseChase = false; //mark. test. was "false"
+        dialogue.shuriComplete = "true"; //these are similarly incorrect
+        dialogue.lostRogueSoldiers = "true"; //these are similarly incorrect
         increaseNotificationLobbyTwo();
         notifnoise.play();
         dialogue.chaseComplete = true;
@@ -4274,7 +4275,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         yyp63a.style.display = "none";
         yyp64.style.display = "block";
       b.style.display = "block";
-      v.style.display = "none";
+      vrel.style.display = "none";
       dialogue.verilyfdsgdfgIdlskdbfkjda++;
         return;
     }  else if (dialogue.verilyfdsgdfgIdlskdbfkjda === 13) {
@@ -6400,12 +6401,14 @@ function goodWorkTeam() {
            zzr15.style.display = "none";
        k.style.display = "none";
         kmap2.style.display = "block";
+          dialogue.allowMapEscape2 = true;
         dialogue.goodWork++;
         return;
          }    else if (dialogue.goodWork === 16) {
         kmap2.style.display = "none";
        zzr16.style.display = "block";
        b.style.display = "block"; //interesting!
+                   dialogue.allowMapEscape2 = false;
        dialogue.goodWork++;
          return;
      } else if (dialogue.goodWork === 17) {
@@ -7558,9 +7561,10 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     } else if (dialogue.deeperIn === 3) {
     zf3.style.display = "none";
-    kmap1.style.display = "block"; //kmap1
+    kmap1.style.display = "block";
     paper.play();
       k.style.display = "none";
+      dialogue.allowMapEscape1 = true;
         dialogue.deeperIn++;
         return;
     } else if (dialogue.deeperIn === 4) {
@@ -7568,6 +7572,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zf4.style.display = "block";
       b.style.display = "block";
       kmap1.style.display = "none";
+            dialogue.allowMapEscape1 = false;
         dialogue.deeperIn++;
         return;
     }  else if (dialogue.deeperIn === 5) {
@@ -9849,15 +9854,14 @@ function noPowerFlowing() {
      } else if (dialogue.karak === 4) {
        ybg8.style.display = "none";
        ybg9.style.display = "block";
-       v.style.display = "block";
-       vcon.style.display = "none";
+       vcon.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 5 && dialogue.arbalestAttack) {
        ybg9.style.display = "none";
        ybg10a.style.display = "block";
        k.style.display = "block";
-       v.style.display = "none";
+       vcon.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 5 && !dialogue.arbalestAttack) {
@@ -9940,7 +9944,7 @@ function noPowerFlowing() {
      } else if (dialogue.karak === 16) {
        ybg20.style.display = "none";
        ybg21.style.display = "block";
-       v.style.display = "block";
+       vint.style.display = "block";
        b.style.display = "none";
        dialogue.karak++;
         return;
@@ -9948,7 +9952,7 @@ function noPowerFlowing() {
        ybg21.style.display = "none";
        ybg22.style.display = "block";
        b.style.display = "block";
-       v.style.display = "none";
+       vint.style.display = "none";
        dialogue.karak = "pickles";
         return;
      } else if (dialogue.karak === "pickles") {
@@ -10166,8 +10170,8 @@ function noPowerFlowing() {
        dialogue.karak = true;
        dialogue.karakKyal = true;
        dialogue.verilyHasJoinedTheParty = true;
-       trio.style.display = "block";
-       explorers.style.display = "none";
+       document.cookie = "karakKyal=karakKyal";
+       
        verilyheardsomething.style.display = "none";
               dialogue.blockArrowTravel = false;
 
@@ -10200,10 +10204,63 @@ function noPowerFlowing() {
     function makeCamp() {
             yesorno.style.display = "none";
             trio.style.display = "none";
-            //mark add art for them sitting in a circle, either working within the basic room or using a new canvas
+            campers.style.display = "block";
             ybboo1.style.display = "block";
             k.style.display = "block";
-            //mark. add dialogue chain
+      ybboo1.style.display = "block";
+      k.style.display = "block";
+       dialogue.sdfsdfggkldfklfklfggpgpopop = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.sdfsdfggkldfklfklfggpgpopop === 1) {
+       ybboo1.style.display = "none";
+       ybboo2.style.display = "block";
+      k.style.display = "none";
+      k.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 2) {
+       ybboo2.style.display = "none";
+       ybboo3.style.display = "block";
+      k.style.display = "none";
+      k.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 3) {
+       ybboo3.style.display = "none";
+       ybboo4.style.display = "block";
+      k.style.display = "none";
+      k.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 4) {
+       ybboo4.style.display = "none";
+       ybboo5.style.display = "block";
+      k.style.display = "none";
+      b.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 5) {
+       ybboo5.style.display = "none";
+       ybboo6.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 6) {
+       ybboo6.style.display = "none";
+       ybboo7.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 7) {
+       ybboo7.style.display = "none";
+       ybboo8.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop++;
+     } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 8) {
+       ybboo8.style.display = "none";
+      v.style.display = "none";
+      soldierFractal.style.display = "block";
+      dialogue.sdfsdfggkldfklfklfggpgpopop = true;
+     }
+    }});
     }
 
     function weShouldSealTheDoor() {
@@ -10340,7 +10397,7 @@ function shelfStones() {
   }
 }
 
-function aNewOrchid() { //mark
+function aNewOrchid() {
   if (dialogue.newOrchid) {
     dialogue.blockArrowTravel = true;
     ybcc1.style.display = "block";
@@ -10386,23 +10443,23 @@ function cantAllFitInThatBoat() {
       vint.style.display = "none";
       ybcc2.style.display = "block";
       b.style.display = "block";
-       dialogue.sdfsdfaaannmcxnvaa++;
+       dialogue.dfgkjdfngkjdfnkgnaa++;
      } else if (dialogue.dfgkjdfngkjdfnkgnaa === 2) {
        ybcc2.style.display = "none";
       vint.style.display = "none";
       ybcc3.style.display = "block";
       b.style.display = "block";
-       dialogue.sdfsdfaaannmcxnvaa++;
+       dialogue.dfgkjdfngkjdfnkgnaa++;
      }  else if (dialogue.dfgkjdfngkjdfnkgnaa === 3) {
        ybcc3.style.display = "none";
       vint.style.display = "none";
       ybcc4.style.display = "block";
       b.style.display = "block";
-       dialogue.sdfsdfaaannmcxnvaa++;
+       dialogue.dfgkjdfngkjdfnkgnaa++;
      } else if (dialogue.dfgkjdfngkjdfnkgnaa === 4) {
        ybcc4.style.display = "none";
       v.style.display = "none";
-       dialogue.sdfsdfaaannmcxnvaa = true;
+       dialogue.dfgkjdfngkjdfnkgnaa = true;
        dialogue.blockArrowTravel = false;
        dialogue.shouldntWeMakeCampNow = true;
      }
@@ -10979,4 +11036,390 @@ dialogue.blockArrowTravel = true;
     }});
   }
    
+}
+
+//end of chapter dialogue tree
+
+function oneSoldier() {
+soldierFractal.style.display = "none";
+dialogue.sdmmmmmmmmmmmmmoop = true;
+soldier();
+}
+function oneFractal() {
+soldierFractal.style.display = "none";
+dialogue.fractalOne = true;
+fractal();
+}
+
+function twoFractal() {
+fractalMagic.style.display = "none";
+dialogue.magictoSleep = true;
+fractal();
+}
+function twoMagic() {
+fractalMagic.style.display = "none";
+dialogue.fractalSleep = true;
+magic();
+}
+
+
+function twoSoldier() {
+soldierMagic.style.display = "none";
+dialogue.theFunVariable = true;
+soldier();
+}
+function twoMagictoSoldierSleep() {
+soldierMagic.style.display = "none";
+dialogue.soldierSleep = true;
+magic();
+}
+
+function soldierToSleep() {
+soldierSleep.style.display = "none";
+dialogue.sleepSom = true;
+soldier();
+}
+function magicToSleep() {
+magicSleep.style.display = "none";
+dialogue.skjdMagincldSleeee = true;
+magic();
+}
+function fractalToSleep() {
+fractalSleep.style.display = "none";
+dialogue.francldsdlkDRosevelt = true;
+fractal();
+}
+
+function goToSleep() {
+soldierSleep.style.display = "none";
+fractalSleep.style.display = "none";
+magicSleep.style.display = "none";
+somesleep.style.display = "none";
+sleep();
+}
+
+function fractal() {
+      ybbo1.style.display = "block";
+      b.style.display = "block";
+      dialogue.kjsndfkjsdjjjjjsssjsjs = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.kjsndfkjsdjjjjjsssjsjs === 1) {
+       ybbo1.style.display = "none";
+       ybbo2.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 2) {
+       ybbo2.style.display = "none";
+       ybbo3.style.display = "block";
+      b.style.display = "block";
+      v.style.display = "none";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 3) {
+      ybbo3.style.display = "none";
+      kmap3.style.display = "block";
+                  dialogue.allowMapEscape3 = true;
+      b.style.display = "none";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 4) {
+      kmap3.style.display = "none";
+      ybbo4.style.display = "block";
+                  dialogue.allowMapEscape3 = false;
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 5) {
+      ybbo4.style.display = "none";
+      ybbo5.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 6) {
+      ybbo5.style.display = "none";
+      ybbo6.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 7) {
+      ybbo6.style.display = "none";
+      ybbo6a.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 8) {
+      ybbo6a.style.display = "none";
+      ybbo6b.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 9) {
+      ybbo6b.style.display = "none";
+      ybbo6c.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 10) {
+      ybbo6c.style.display = "none";
+      ybbo6d.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 11) {
+      ybbo6d.style.display = "none";
+      ybbo6e.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 12) {
+      ybbo6e.style.display = "none";
+      ybbo6f.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 13) {
+      ybbo6f.style.display = "none";
+      ybbo7.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 14) {
+      ybbo7.style.display = "none";
+      ybbo8.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 15) {
+      ybbo8.style.display = "none";
+      ybbo9.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 16) {
+      ybbo9.style.display = "none";
+      ybbo10.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 17) {
+      ybbo10.style.display = "none";
+      ybbo11.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 18) {
+      ybbo11.style.display = "none";
+      ybbo12.style.display = "block";
+      v.style.display = "none";
+      bpiss.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 19) {
+      ybbo12.style.display = "none";
+      ybbo13.style.display = "block";
+      bpiss.style.display = "none";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+     } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 20) {
+      ybbo13.style.display = "none";
+      v.style.display = "none";
+       dialogue.kjsndfkjsdjjjjjsssjsjs = true;
+            if (dialogue.fractalOne) {
+      soldierMagic.style.display = "block";
+       } else if (dialogue.magictoSleep) {
+        magicSleep.style.display = "block";
+       } else if (dialogue.francldsdlkDRosevelt) {
+        somesleep.style.display = "block";
+       }
+     }
+    }});
+}
+function magic() {
+  ybbo16.style.display = "block";
+      b.style.display = "block";
+      dialogue.bzmxkqpwoieur = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.bzmxkqpwoieur === 1) {
+       ybbo16.style.display = "none";
+       ybbo17.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 2) {
+       ybbo17.style.display = "none";
+       ybbo18.style.display = "block";
+      b.style.display = "block";
+      v.style.display = "none";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 3) {
+      ybbo18.style.display = "none";
+      ybbo19.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 4) {
+      ybbo19.style.display = "none";
+      ybbo20.style.display = "block";
+      v.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 5) {
+      ybbo20.style.display = "none";
+      ybbo21.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 6) {
+      ybbo21.style.display = "none";
+      ybbo22.style.display = "block";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 7) {
+      ybbo22.style.display = "none";
+      ybbo23.style.display = "block";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 8) {
+      ybbo23.style.display = "none";
+      ybbo24.style.display = "block";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 9) {
+      ybbo24.style.display = "none";
+      ybbo25.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 10) {
+      ybbo25.style.display = "none";
+      ybbo26.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 11) {
+      ybbo26.style.display = "none";
+      ybbo27.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 12) {
+      ybbo27.style.display = "none";
+      ybbo28.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkqpwoieur++;
+     } else if (dialogue.bzmxkqpwoieur === 13) {
+      ybbo28.style.display = "none";
+      v.style.display = "none";
+       dialogue.bzmxkqpwoieur = true;
+      if (dialogue.soldierSleep) {
+          soldierSleep.style.display = "block";
+       } else if (dialogue.fractalSleep) {
+        fractalSleep.style.display = "block";
+        } else if (dialogue.skjdMagincldSleeee) {
+        somesleep.style.display = "block";
+        }
+     }
+}});
+}
+function soldier() {
+  ybbo44.style.display = "block";
+      v.style.display = "block";
+      dialogue.ranchDressing = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.ranchDressing === 1) {
+       ybbo44.style.display = "none";
+       ybbo45.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.ranchDressing++;
+     } else if (dialogue.ranchDressing === 2) {
+       ybbo45.style.display = "none";
+       ybbo46.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing = "pickles";
+     } else if (dialogue.ranchDressing === "pickles") {
+       ybbo46.style.display = "none";
+       b.style.display = "none";
+       dialogue.ranchDressing = true;
+  if (dialogue.theFunVariable) {
+  magicSleep.style.display = "block";
+  } else if (dialogue.sleepSom) {
+somesleep.style.display = "block";
+  } else if (dialogue.sdmmmmmmmmmmmmmoop) {
+fractalMagic.style.display = "block";
+  }
+  }}});
+}
+function sleep() {
+  ybbo30.style.display = "block";
+      b.style.display = "block";
+      dialogue.bzmxkdddqpwoieubr = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.bzmxkdddqpwoieubr === 1) {
+       ybbo30.style.display = "none";
+       ybbo31.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 2) {
+       ybbo31.style.display = "none";
+       ybbo32.style.display = "block";
+       v.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr = "pickles";
+     } else if (dialogue.bzmxkdddqpwoieubr === "pickles") {
+       ybbo32.style.display = "none";
+       ybbo33.style.display = "block";
+       v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr = 3;
+     } else if (dialogue.bzmxkdddqpwoieubr === 3) {
+      ybbo33.style.display = "none";
+      ybbo34.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 4) {
+      ybbo34.style.display = "none";
+      ybbo35.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 5) {
+      ybbo35.style.display = "none";
+      ybbo36.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 6) {
+      ybbo36.style.display = "none";
+      ybbo37.style.display = "block";
+ b.style.display = "none";
+      v.style.display = "block";
+             dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 7) {
+      ybbo37.style.display = "none";
+      ybbo38.style.display = "block";
+      v.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 8) {
+      ybbo38.style.display = "none";
+      ybbo39.style.display = "block";
+      v.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 9) {
+      ybbo39.style.display = "none";
+      ybbo40.style.display = "block";
+      b.style.display = "none";
+      v.style.display = "block";
+       dialogue.bzmxkdddqpwoieubr++;
+     } else if (dialogue.bzmxkdddqpwoieubr === 10) {
+      ybbo40.style.display = "none";
+            v.style.display = "none";
+       dialogue.bzmxkdddqpwoieubr = true;
+       fadeOut();
+     }
+}});
 }

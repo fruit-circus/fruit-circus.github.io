@@ -17,15 +17,16 @@ Check all //mark s
 
 ART:
 HIGH:
-treescene and fruit
-key items pouch close up
+draw kmap3
+draw thanksforplaying and image map it
 verilyheardsomething is her holding a teapot
-soldier with arbalest firing animation 
-trio sitting down for the night
-bridget blocking an arbalest bolt gif
+trio
+campers
 
 LOW
+treescene. just have an arrow instead of the crack. possibly better verily
 vials look tacky
+keyitemspouch
 k drinking the vial is a bit weird 
 k laughing is weird
 portholeview gif
@@ -36,15 +37,15 @@ make hall explorers gifs and chandelier fallen
 verilyidle (gif it)
 boat explorers gif
 verily in notebook page
+shuri in notebook page
 possibly wires glow
 ybh1 portraits for stymie
 portrait for 16 feral racoons, looking into the dark off the side of the bridge
-
-
-ONLY VISIBLE IN OTHER BROWSERS:
-make sure font family is not impact
+thicken lines on the blue vase
 
 SOUND:
+revise: rosePluck
+revise: crossbowFire
 fruitTake() "pluck!"
 better thunk1,2,3 for candles
 something happened! stone grinding for 2303 - successful clunk 
@@ -55,21 +56,28 @@ sound for dowsing the shrub
 change arcade music on alterations3 to something dopey
 
 code:
-brief convo for ybbnlk1. image map
-takign the halberd
-cyan rose triggering too heavy dialogue even when its not there and when the panel is locked
-another saltarello after no. 2 perhaps 
-campfire scene
+test esc on chandelier clue and maps 2 and 3 
+possibly remove central pillar with flower pot and change clues to make the puzzle easier
+trio z index but just going south is the problem. trio image map in collumns dead end
+dead end! still triggers
+loading after kyal from cookies load into switchterminus
+campfire scene portraits
+make the dialogue tree buttons phsyical 
+new music for campfire scene
+the stymie notification does not reduce if you solve all the things except the thing and then get the hint? w cookies?
+cookies for keyitemspouch
+
+extra stuff:
+move typing page to the back of the guest book
+ONLY VISIBLE IN OTHER BROWSERS: make sure font family is not impact
+brief convo for ybbnlk1. image map for newcell orchid
+automatic zoom to fit
+factcheck all dialogue
 add various cookies:
     keys: secondary pathway to guestbook AND rock shelf
     pipes: handles (dialogue.handleGlassNone = true;), brunhilda availabled,
     tides: ?
     final stuff cookies. kyarakkyal
-
-
-things that need internet:
-automatic zoom to fit
-factcheck all dialogue
 
 problems for later: 
 double check arrow travel is prevented during first verily conversation
@@ -79,7 +87,7 @@ Posibly use the following code to clean up the knocking gifs instead of using a 
         let doomed = document.querySelector('northknock');
         doomed.parentElement.removeChild(doomed);
 put your name on it somewhere + art for notepad tips page with keys (when you drop an object it returns to its original room. you can reload the page on firefox without losing your progress)
-
+do the art and fix the sound effect for dialogue.arbalestAttack and set dialogue.arbalestAttack to false to allow it to trigger. 
 
 story: they find something really practically applicable about the labyrinth and decide to cover it up
 add an old north kardic dictionary (ch 4)
@@ -118,14 +126,50 @@ hiddd
     transform: translate(-115px,30px);
 }
 
+
+#soldierFractal,
+#soldierMagic,
+#fractalMagic,
+#magicSleep,
+#fractalSleep,
+#soldierSleep,
+#somesleep {
+    display: none;
+    z-index: 40;
+
+}
+
 #ybg13,
 #highscores2,
 #ybbnlk1,
+#campers,
 #ybbnlk2,
 #ybbkk1,
 #ybbkk2,
 #ybbkk3,
 #ybbkk0,
+#ybbo6a,
+#ybbo6b,
+#ybbo6c,
+#ybbo6d,
+#ybbo31,
+#ybbo32,
+#ybbo33,
+#ybbo34,
+#ybbo35,
+#ybbo36,
+#ybbo37,
+#ybbo38,
+#ybbo39,
+#ybbo40,
+#ybbo41,
+#ybbo42,
+#ybbo43,
+#ybbo44,
+#ybbo45,
+#ybbo46,
+#ybbo6e,
+#ybbo6f,
 #ybbkk4,
 #ybbkk5,
 #ybbkk6,
@@ -133,10 +177,13 @@ hiddd
 #ybboo1,
 #ybboo2,
 #ybboo3,
+#ybbo333,
 #ybboo4,
 #ybboo5,
 #ybboo6,
 #ybboo8,
+#ybbo30,
+#ybbo29,
 #ybboo7,
 #ybbj9,
 #ybbo1,
@@ -167,7 +214,7 @@ hiddd
 #ybbo26,
 #ybbo27,
 #ybbo28,
-
+#kmap3,
 #ybbn1,
 #ybbn2,
 #ybbn3,
@@ -302,6 +349,18 @@ hiddd
 #ambientdark {
     z-index: 1000000;
     opacity: 0.6;
+    display: none;
+}
+
+#allDark {
+    z-index: 1000001;
+    display: none;
+    opacity: 0.1;
+}
+
+#thanksforplaying {
+    z-index: 1000002;
+    display: none;
 }
 
 #redcircuitwires,
@@ -742,7 +801,20 @@ hiddd
             <img src="floaters/unlighting.png" alt="satchel" usemap="#giveupmap" class="room" id="unlighting">
             <img src="floaters/highscores.png" alt="satchel" class="room" id="highscores">
             <img src="floaters/highscores2.png" alt="satchel" class="room" id="highscores2">
-            <!--<img src="ambientdark.png" alt="satchel" usemap="#roommap" class="room" id="ambientdark">-->
+            
+            <img src="portraits/soldierFractal.png" alt="satchel" usemap="#soldierFractal" class="room" id="soldierFractal"> <!--lklk-->
+           
+            <img src="portraits/fractalMagic.png" alt="satchel" usemap="#fractalMagic" class="room" id="fractalMagic">
+            <img src="portraits/soldierMagic.png" alt="satchel" usemap="#soldierMagic" class="room" id="soldierMagic">
+            
+            <img src="portraits/fractalSleep.png" alt="satchel" usemap="#fractalSleep" class="room" id="fractalSleep">
+            <img src="portraits/magicSleep.png" alt="satchel" usemap="#magicSleep" class="room" id="magicSleep">
+            <img src="portraits/soldierSleep.png" alt="satchel" usemap="#soldierSleep" class="room" id="soldierSleep">
+            
+            <img src="portraits/somesleep.png" alt="satchel" usemap="#someSleepMap" class="room" id="somesleep">
+            <img src="floaters/ambientdark.png" alt="satchel" class="room" id="ambientdark">
+            <img src="floaters/allDark.png" alt="satchel" class="room" id="allDark">
+            <img src="floaters/thanksforplaying.png" alt="satchel" usemap="#endSelectMap" class="room" id="thanksforplaying">
             <img src="letters/letterA1.png" alt="satchel" usemap="#giveupmap" class="ledder" id="letterA1">
             <img src="letters/letterD1.png" alt="satchel" usemap="#giveupmap" class="ledder" id="letterD1">
             <img src="letters/letterB1.png" alt="satchel" usemap="#giveupmap" class="ledder" id="letterB1">
@@ -916,6 +988,7 @@ hiddd
             <img src="people/explorers.gif" alt="kodaly and bridget" usemap="#roommap" class="room" id="explorers">
             <img src="floaters/kmap1.png" alt="map" class="room" id="kmap1">
             <img src="floaters/kmap2.png" alt="map" class="room" id="kmap2">
+            <img src="floaters/kmap1.png" alt="map" class="room" id="kmap3"> <!--//mark-->
             <img src="floaters/tarotBackgroundHelper.png" alt="knight card" usemap="#diagrammap" class="room" id="tarotBackgroundHelper">
             <img src="floaters/diagram.png" alt="cards diagram" usemap="#diagrammap" class="room" id="diagram">
             <img src="floaters/knight.png" alt="knight card" usemap="#diagrammap" class="room" id="knightCard">
@@ -924,6 +997,7 @@ hiddd
             <img src="floaters/ronin.png" alt="ronin card" usemap="#diagrammap" class="room" id="roninCard">
             <img src="floaters/helpfulmap.png" alt="keys map" usemap="#bigX" class="room" id="helpfulmap">
             <img src="floaters/helpfulpipemap.png" alt="pipes" usemap="#bigX" class="room" id="helpfulpipemap"> 
+            <img src="people/campers.png" alt="pipes" usemap="#bigX" class="room" id="campers"> 
 
                 
             <div id="lobby"> <!--Lobby Obbies-->
@@ -958,7 +1032,7 @@ hiddd
                 <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers">
             </div>
 
-            <div id="newCellLakeWest" usemap="#lakemap"> 
+            <div id="newCellLakeWest" usemap="#lakemap"> <!--//mark. do we still need to adjust the image map for the new orchid?-->
                 <img src="rooms/lakewest.png" alt="door" usemap="#lakemap" class="room" id="lakewest">
                 <img src="boats/boateast.png" alt="explorers" usemap="#lakemap" class="room" id="boateast">
                 <img src="endtable3.png" alt="explorers" usemap="#lakemap" class="room" id="endtable3">
@@ -1809,8 +1883,8 @@ hiddd
     <img src="boats/boatnorth.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="southdoor.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="people/explorers.gif" alt="door" usemap="#lakemap" class="room"> 
-    <img src="tides/orangeflower.png" alt="door" usemap="#lakemap" id="orangeflower" class="room"> 
     <img src="tides/orangewire1.png" alt="door" usemap="#lakemap" class="room"> 
+    <img src="tides/orangeflower.png" alt="door" usemap="#lakemap" id="orangeflower" class="room"> 
 </div>
 
 <div id="lake2" usemap="#lakemap"> 
@@ -2076,9 +2150,9 @@ hiddd
             <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" id="advancedialogeee" onclick="advanceDialogueByClickingWholeScreen()">
         </map>
 
- <map name="treeroommap"> <!--//mark-->
-            <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" onclick="goEast()">
-            <area shape="rect" coords="1040,350,1425,486" alt="advance dialogue with whole screen click" class="pointer" onclick="takeSecretFruit()">
+ <map name="treeroommap">
+            <area shape="rect" coords="1190,500,1440,790" alt="advance dialogue with whole screen click" class="pointer" onclick="goEast()">
+            <area shape="rect" coords="735,406,825,492" alt="advance dialogue with whole screen click" class="pointer" onclick="takeSecretFruit()">
         </map>
 
     <map name="roommap"> <!--Basic Room Object Positions-->
@@ -2169,6 +2243,15 @@ hiddd
             <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
         </map>
 
+        <map name="endSelectMap"> <!--//mark-->
+            <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+            <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+            <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="showKeyItems()">
+
+            <area shape="rect" coords="450,500,620,600" alt="key" class="pointer" onclick="pickCenterS()">
+            <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+            <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
+        </map>
 
          <map name="gallerymap">
             <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -2553,7 +2636,7 @@ hiddd
         </map>
 
         <map name="pouchmap">
-            <area shape="rect" coords="5, 5, 175, 165" alt="close magnified fish view or. whatever else" class="pointer" onclick="hideKeyItems()">
+            <area shape="rect" coords="892, 62, 1011, 173" alt="close keyitemspouch" class="pointer" onclick="hideKeyItems()">
         </map>
 
         <map name="pillarmap"> <!--Chapter 2's switch room-->
@@ -2579,9 +2662,46 @@ hiddd
         </map>
 
         <map name="keepgoingormakecampmap">
-            <area shape="rect" coords="10,363,1395,573" alt="d" class="pointer" onclick="keepExploring()">
-            <area shape="rect" coords="10,575,1395,777" alt="a" class="pointer" onclick="makeCamp()">
+            <area shape="rect" coords="140,120,1310,400" alt="d" class="pointer" onclick="keepExploring()">
+            <area shape="rect" coords="140,401,1310,640" alt="a" class="pointer" onclick="makeCamp()">
         </map>
+
+
+        <map name="soldierFractal">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="oneSoldier()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="oneFractal()">
+        </map>
+
+        <map name="fractalMagic">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="twoFractal()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="twoMagic()">
+        </map>
+
+        <map name="soldierMagic">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="twoSoldier()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="twoMagictoSoldierSleep()">
+        </map>
+
+
+        <map name="fractalSleep">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="fractalToSleep()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="goToSleep()">
+        </map>
+
+        <map name="soldierSleep">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="soldierToSleep()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="goToSleep()">
+        </map>
+
+        <map name="magicSleep">
+            <area shape="rect" coords="140,120,1310,400" alt="above" class="pointer" onclick="magicToSleep()">
+            <area shape="rect" coords="140,401,1310,640" alt="below" class="pointer" onclick="goToSleep()">
+        </map>
+
+        <map name="someSleepMap">
+            <area shape="rect" coords="175,240,1300,500" alt="above" class="pointer" onclick="goToSleep()">
+        </map>
+
 
 
         <map name="giveupmap">
@@ -2756,16 +2876,19 @@ hiddd
 <audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
 <audio id="exitcloseup"><source src="sound/exitcloseup.mp3" type="audio/mpeg"></audio> 
+<audio id="halberdPick"><source src="sound/halberdPick.mp3" type="audio/mpeg"></audio> 
+<audio id="halberdPut"><source src="sound/halberdPut.mp3" type="audio/mpeg"></audio> 
+<audio id="vialPloink"><source src="sound/vialploink.mp3" type="audio/mpeg"></audio> 
+<audio id="ding"><source src="sound/ding.mp3" type="audio/mpeg"></audio> 
+<audio id="vialUncork"><source src="sound/vialUncork.mp3" type="audio/mpeg"></audio> 
+<audio id="rosePluck"><source src="sound/rosePluck.mp3" type="audio/mpeg"></audio> 
+<audio id="woodenClonk"><source src="sound/plankplonk.mp3" type="audio/mpeg"></audio> 
 
 <!--Placeholders:-->
 <audio id="placeTeddyBear"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
 <audio id="fullInv"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio>
-<audio id="ding"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="fanfare"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="woodenClonk"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="lasso"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="rosePluck"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
-<audio id="vialPloink"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 <audio id="fruitTake"><source src="sound/mummy_voice.mp3" type="audio/mpeg"></audio> 
 
 <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
@@ -2785,6 +2908,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <audio id="doihmot" src="sound/ChansonDoIhMot.mp3" loop></audio> <!--World of Pipes. Chanson do-Ih mot - Arnaut Daniel. -->
     <audio id="branle" src="sound/BranleDesChevaux.mp3" loop></audio> <!--House of Tides. Branle Des Chevaux, (+ o que a santa maria, lonc tems ai. -->
     <audio id="saltarello" src="sound/saltarello2.mp3" loop></audio> <!-- Saltarello No. 2 -->
+    <audio id="branleChampaigne" src="sound/Champaigne.mp3" type="audio/mpeg"></audio> <!-- Branle de Champaigne - Claude Gervaise -->
 
 </div>
 <!--Adios-->
@@ -4211,7 +4335,6 @@ performed by the Unicorn Ensemble
     <p id="yyy2">That looks like a match. Let's try it now.</p>
     <p id="yyy3">That looks like a match. Let's check for secret passages.</p>
     
-    <!--//mark. unfinnished dialogue cards and actual high scores-->
     <p id="scoretext">INNER TEXT HIGH SCORE</p>
     
 
@@ -4414,9 +4537,9 @@ performed by the Unicorn Ensemble
     
     <p id="ybbi4">We should make camp and rest before we pursue the soldier.</p>
     
-    <p id="ybcc1">Didn't you want to start making camp?</p>
+    <p id="ybcc1">Didn't you want to make camp?</p>
     <p id="ybcc2">It might not hurt to do one last sweep of the rooms we've been in. See if we missed anything.</p>
-    <p id="ybcc3">Alright, I'll leave you to it.</p>
+    <p id="ybcc3">I'll leave you to it.</p>
     <p id="ybcc4">I think the boat might sink if we all three try to climb on.</p>
 
     <p id="ybbi1">Ready to make camp?</p>
@@ -4462,7 +4585,7 @@ performed by the Unicorn Ensemble
     <p id="ybbkk4">But it looked like it was sprouting from a root. Like there was a huge tree on the surface, reaching down.</p>
     <p id="ybbkk5">Weird.</p>
     <p id="ybbkk6">Was there anything else?</p>
-    <p id="ybbkk7">No.</p>
+    <p id="ybbkk7">Nothing else, no.</p>
 
     <p id="ybbl1">You said it's root tea?</p>
     <p id="ybbl2">Yes. Wollroot tea.</p>
@@ -4472,7 +4595,6 @@ performed by the Unicorn Ensemble
     <p id="ybbl4">When do you think it will be ready?</p>
     <p id="ybbl5">Soon.</p>
 
-
     <p id="ybbm1">Cool teapot.</p>
     <p id="ybbm2">Thanks.</p>
     
@@ -4481,9 +4603,8 @@ performed by the Unicorn Ensemble
     <p id="ybbm5">Figured it was a luxery we could go without for a few days.</p>
     <p id="ybbm6">This is nice, though.</p>
 
-    <p id="ybbnlk1">It's an orchid.</p>
+    <p id="ybbnlk1">It's another orchid.</p>
     <p id="ybbnlk2">Yep.</p>
-
 
     <p id="ybbn1">More rocks.</p>
 
@@ -4508,39 +4629,62 @@ performed by the Unicorn Ensemble
 
     <!-- SELECT CONVERSATION TOPICS:
         <p id="ybbo3">Did you realize this place was a fractal?</p>
-        <p id="ybbo3">I find it very hard to sleep in new places.</p>
+        <p id="ybbo3">How the hell are we going to stop a Kardic soldier?</p>
+        clicked2nd1 is the same as clicked1st1
         <p id="ybbo3">Do you know any magic spells?</p>
         <p id="ybbo3">We should get some sleep.</p>
-
     -->
 
     <p id="ybbo1">Did you realize this place was a fractal?</p>
     <p id="ybbo2">What do you mean?</p>
     <p id="ybbo3">Kodaly has been keeping the map updated. Here's every room we've seen so far.</p>
-    <p id="ybbo4">Ah— huh.</p>
-    <p id="ybbo5">Well, it makes sense.</p>
-    <p id="ybbo6">Square rooms, and that repeating motif of four squares in a flower pattern.</p>
-    <p id="ybbo7">It fits with the whole idea of self-similarity.</p>
-    <p id="ybbo9">I've been thinking:</p>
-    <p id="ybbo10">If you had the kind of power aboveground that the labyrinth has below, you'd be unstoppable.</p>
-    <p id="ybbo11">The labyrinth can repair itself, transform stone into cheese, send signals across hundreds of kilometers. Even grant sapience to rudimentary scanning devices.</p>
-    <p id="ybbo12">If you could transport little bits of the labyrinth to the surface, you could make a living relay network that could span the globe.</p>
-    <p id="ybbo13">Of course, each piece would still need to be alive in order to receive and send an electric pulse, but...</p>
-    <p id="ybbo14">...</p>
-    <p id="ybbo15">Purely hypothetical, of course.</p>
+    <p id="ybbo4">I suppose that makes sense, in a way. The larger shape seems to be built off that recurrent motif of the five squares.</p>
+    <p id="ybbo5">Five squares?</p>
+    <p id="ybbo6">You haven't noticed it?</p>
+    <p id="ybbo6a">On the book covers, the bricks, behind the shelves, imprinted on STMI's central processing unit. Like one square that's stretching outward.</p>
+    <p id="ybbo6b">In the layout of the candles and the tarot cards. I think they relate to us, somehow.</p>
+    <p id="ybbo6c">Don't tell me you didn't notice the resemblance between you and that druid behind the tree.</p>
+    <p id="ybbo6d">And Kodaly as the knight on the cliffside.</p>
+    <p id="ybbo6e">...</p>
+    <p id="ybbo6f">I didn't notice. I'll have to take another look.</p>
+    <p id="ybbo7">I've been thinking:</p>
+    <p id="ybbo8">If you had the kind of power aboveground that the labyrinth has below, you'd be unstoppable.</p>
+    <p id="ybbo9">The labyrinth can repair itself, transform stone into cheese, send signals across hundreds of kilometers. Even grant sapience to rudimentary scanning devices.</p>
+    <p id="ybbo10">If you could transport little bits of the labyrinth to the surface, you could make a living relay network that could span the globe.</p>
+    <p id="ybbo11">Of course, each piece would still need to be alive in order to receive and send an electric pulse, but...</p>
+    <p id="ybbo12">...</p>
+    <p id="ybbo13">Purely hypothetical, of course.</p>
 
     <p id="ybbo16">Do you know any pattern spells?</p>
     <p id="ybbo17">Do I look like a lunatic?</p>
-    <p id="ybbo18">What about you?</p>
-    <p id="ybbo19">Not off the top of my head.</p>
-    <p id="ybbo21">But my great grandmother passed down an incantation through the family.</p>
-    <p id="ybbo22">It spans three volumes, of four hundred pages each.</p>
-    <p id="ybbo23">If you recite each word without mispeaking or stopping for more than nine seconds between each word, a magic orchard will grow in a two kilometer radius around the spot where you started reading.</p>
-    <p id="ybbo24">My great grandmother is the only person I know who ever did this, although she wasn't the one who discovered the spell. But I'm not sure where she got it from.</p>
+    <p id="ybbo18">I didn't mean <i>memorized</i>.</p>
+    <p id="ybbo19">No.</p>
+    <p id="ybbo20">What about you?</p>
+    <p id="ybbo21">Actually, yes.</p>
+    <p id="ybbo22">But my great grandmother passed down an incantation through the family.</p>
+    <p id="ybbo23">It spans three volumes, and if you recite each book without stopping for more than nine seconds between each word you can grow an orchard. It will seed in a two kilometer radius around the spot where you started reading.</p>
+    <p id="ybbo24">My great grandmother is the only person I know who ever did this, although she wasn't the one who discovered the spell. I'm not sure where she got it from.</p>
     <p id="ybbo25">What kind of orchard?</p>
     <p id="ybbo26">An orchard of every known variety of fruit, and more. Fruit trees that don't exist anywhere else on the planet. Trees that might have existed in the ancient past, but no longer do; or trees that could have existed, but never did.</p>
     <p id="ybbo27">It's not the most dramatic spell, but it's an interesting one.</p>
     <p id="ybbo28">Sounds dramatic enough to me.</p>
+
+    <p id="ybbo30">We should get some sleep.</p>
+    <p id="ybbo31">Agreed.</p>
+    <p id="ybbo32">Should I take first watch?</p>
+    <p id="ybbo33">Ah... Right. I hadn't thought about taking watches.</p>
+    <p id="ybbo34">I'm a light sleeper, and we sealed the door. I think we'll be fine?</p>
+    <p id="ybbo35">You trust the labyrinth enough to sleep here unguarded?</p>
+    <p id="ybbo36">I admit, we don't know how labyrinths think. But I don't think we have anything to fear from it as long as we behave ourselves.</p>
+    <p id="ybbo37">Sure. I'll...trust your instincts.</p>
+    <p id="ybbo38">I'm a light sleeper too.</p>
+    <p id="ybbo39">Good night, Verily.</p>
+    <p id="ybbo40">Good night, Dr. Ndazi.</p>
+
+    <p id="ybbo44">How the hell are we going to stop a Kardic soldier?</p>
+    <p id="ybbo45">Not with a direct confrontation, that's for sure.</p>
+    <p id="ybbo46">We'll think of something.</p>
+
 
 
 <!--End of dialogue list-->
@@ -4697,6 +4841,55 @@ document.addEventListener("DOMContentLoaded", (event) => {
         } else if (e.key == 'n' && !notepad.open && !inventory.isOpen && !dialogue.preventN) {
             showNotes();
         }
+        if (dialogue.keyItemsPouchIsOpen && (e.key == 'k' || e.key === "Escape")) {
+        e.preventDefault();
+             hideKeyItems();
+        } else if (e.key == 'k' && !dialogue.keyItemsPouchIsOpen && !inventory.isOpen && !notepad.open) {
+            showKeyItems();
+        }
+        if (e.key === "Escape" && dialogue.allowMapEscape1) {
+            e.preventDefault();
+            dialogue.allowMapEscape1 = false;
+            dialogue.deeperIn++;
+            kmap1.style.display = "none";
+             zf4.style.display = "block";
+            b.style.display = "block";
+        } else if (e.key === "Escape" && dialogue.allowMapEscape2) {
+            e.preventDefault();
+            dialogue.allowMapEscape2 = false;
+            kmap2.style.display = "none";
+       zzr16.style.display = "block";
+       b.style.display = "block";
+       dialogue.goodWork++;
+        } else if (e.key === "Escape" && dialogue.allowMapEscape3) {
+            e.preventDefault();
+            dialogue.allowMapEscape3 = false;
+            kmap3.style.display = "none";
+            ybbo4.style.display = "block";
+       v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+        }else if (e.key === "Escape" && dialogue.chandelierClueEscape1) {
+            e.preventDefault();
+             zze3.style.display = "block";
+                dialogue.chandelierClueEscape1 = false;
+        chandelierClue.style.display = "none";
+        document.body.style.background = "#f5f1e0"; //hex code back to beige
+        chandelierexplorers.style.display = "none";
+      chandelierexplorers2.style.display = "block";
+        k.style.display = "block";
+        dialogue.halfAClue++;
+        } else if (e.key === "Escape" && dialogue.chandleClueEscape2) {
+            e.preventDefault();
+         dialogue.chandleClueEscape2 = false;
+        chandelierClue.style.display = "none";
+                document.body.style.background = "#f5f1e0"; //hex code back to beige
+        chandelierexplorers.style.display = "none";
+      chandelierexplorers2.style.display = "block";
+        dialogue.halfAClue2 = true;
+        }
+
+
+        
         //harp playing
      if (e.key == '1' && current.room === "pond") {
         note1();}
@@ -4926,6 +5119,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //open blue door and beige door
     }
 
+     if (cookiesHas('karakKyal')) { //mark. add some more things
+        dialogue.karakKyal = true;
+        dialogue.verilyHasJoinedTheParty = true;
+        trio.style.display = "block";
+        explorers.style.display = "none";
+    }
+    
+
+    if (cookiesHas('stymieLobbyThree')) { 
+        dialogue.enteringLobbyThree = true;
+        dialogue.feralRacoons = true;
+        dialogue.intrepidExplorers = false;
+        decreaseNotificationLobbyThree();
+    }
+
     if (cookiesHas('blueRoseInPlace')) { 
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
@@ -4956,9 +5164,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         
         
 if (cookiesHas('feralRacoons')) { 
-        dialogue.feralRacoons = false;
         dialogue.feralRacoonsComplete = true;
     }
+
     if (cookiesHas('beigedoor')) {
         goneBeigeKey();
         goneBlueKey();
@@ -5660,6 +5868,8 @@ function decreaseNotificationLobbyThree() {
 function showKeyItems() {
     dialogue.keyItemsPouchIsOpen = true;
     dialogue.allowEscape = true;
+    dialogue.preventI = true;
+    dialogue.preventN = true;
     if (dialogue.keyItemsAdded) {
         keyItemsPouch.style.display = "block";
         if (dialogue.mysteriousVialTaken) {
@@ -5673,6 +5883,8 @@ function hideKeyItems() {
         strangevial.style.display = "none";
         dialogue.keyItemsPouchIsOpen = false;
     dialogue.allowEscape = false;
+    dialogue.preventI = false;
+    dialogue.preventN = false;
 }
 
 function showNotes() {
@@ -6079,6 +6291,9 @@ function drop1() {
         } if (inventory.slot1 === "orange rose") {
             orangeflower.style.display = "block";
                 dialogue.orangeflowertaken = false;
+        } if (inventory.slot1 === "halberd") {
+            halberd.style.display = "block";
+            halberdPut.play();
         } 
         
         inventory.slot1 = false; //inventory.slot1 = false; has to be on the bottom or the whole shit breaks 
@@ -6261,6 +6476,9 @@ function drop2() {
         }  if (inventory.slot2 === "orange rose") {
             orangeflower.style.display = "block";
                 dialogue.orangeflowertaken = false;
+        }  if (inventory.slot2 === "halberd") {
+            halberd.style.display = "block";
+            halberdPut.play();
         } 
 inventory.slot2 = false;
     }
@@ -6442,6 +6660,9 @@ function drop3() {
         } if (inventory.slot3 === "orange rose") {
             orangeflower.style.display = "block";
                 dialogue.orangeflowertaken = false;
+        }  if (inventory.slot3 === "halberd") {
+            halberd.style.display = "block";
+            halberdPut.play();
         } 
         //new items go above this line
         inventory.slot3 = false;
@@ -6624,6 +6845,9 @@ function drop4() {
         } if (inventory.slot4 === "orange rose") {
             orangeflower.style.display = "block";
                 dialogue.orangeflowertaken = false;
+        }  if (inventory.slot4 === "halberd") {
+            halberd.style.display = "block";
+            halberdPut.play();
         } 
  inventory.slot4 = false;
     }
@@ -9009,23 +9233,22 @@ function flipGreen() {
 
 
 const dialogue = {
-    //true means the topic is undiscovered. (for values that start as true.)
-    //in general, false means the conversation hasn't happened yet
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
-    verilyIsInLobbyThree: false, //mark testing. normally false
+    arbalestAttack: true, //set this to false when you have the art for shuri firing the bolt
+    verilyIsInLobbyThree: false, //testing. normally false
     onMobile: false,
     currentlyInputtingArcadeName: false,
     arcadeFailuresOne: false,
     arcadeFailuresTwo: false,
-    masterSwitchChapterThreeDoor: false, //for testing turn to true. normally should be false
+    masterSwitchChapterThreeDoor: true, //for testing turn to true. normally should be false
     verilyisnowburningashrub: false,
     numberOfArcadeFailures: 0,
     mobilityUncertain: false,
     pillarsBlockTheWay: true, 
-    greenSwitchFlipped: false, //mark testing. norally false
+    greenSwitchFlipped: false, //testing. norally false
     blueSwitchFlipped: false,
-    redSwitchFlipped: false, //mark testing. norally false
+    redSwitchFlipped: false, //testing. norally false
     goodWork: false,
     trueMutualism: false, //set to true after actionandinformation 
     mobile: false,
@@ -9191,7 +9414,8 @@ document.addEventListener("keydown", function() {
                   dialogue.blockArrowTravel = false;
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
-                 //document.cookie = "lobbyThree=lobbyThree"; //mark testing. skip to chapter 3 jump to chapter three delete when done testing
+                  //cheat  
+                  document.cookie = "lobbyThree=lobbyThree"; //mark testing. skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -9884,6 +10108,48 @@ const trianglelift = {
     down: false,
     none: true,
     up: false,
+}
+
+function fadeOut() {
+ambientdark.style.display = "block";
+switchclick.play();
+  branleChampaigne.play();
+  saltarello.pause();
+    setTimeout(function() {
+            allDark.style.display = "block";
+            allDark.style.opacity = 0.2;
+            ambientdark.style.opacity = 0.7;
+    }, 2300);
+    setTimeout(function() {
+            allDark.style.opacity = 0.3;
+            ambientdark.style.opacity = 0.8;
+    }, 2400);
+    setTimeout(function() {
+           allDark.style.opacity = 0.4;
+           ambientdark.style.opacity = 0.9;
+    }, 2500);
+    setTimeout(function() {
+            allDark.style.opacity = 0.5;
+            ambientdark.style.opacity = 1;
+    }, 2600);
+    setTimeout(function() {
+            allDark.style.opacity = 0.6;
+    }, 2700);
+    setTimeout(function() {
+           allDark.style.opacity = 0.7;
+    }, 2800);
+    setTimeout(function() {
+            allDark.style.opacity = 0.8;
+    }, 2900);
+    setTimeout(function() {
+          allDark.style.opacity = 0.9;
+    }, 3000);
+    setTimeout(function() {
+            allDark.style.opacity = 1;
+    }, 3100);
+    setTimeout(function() {
+            thanksforplaying.style.display = "block";
+    }, 5000);
 }
 
 
@@ -10883,6 +11149,7 @@ document.addEventListener("keydown", function() {
             pillarDeadEnd.style.display = "block";
             current.room = "pillarDeadEnd";
             explorers.style.zIndex = 16;
+            trio.style.zIndex = 16;
         } else if (current.room === "littleLakesLobbyWest"){
             randomOarAudio();    
             littleLakesLobbyWest.style.display = "none";
@@ -12796,7 +13063,7 @@ function goNorth() {
                     pillarld3.style.display = "none";
                 }
             } else {
-                if (!dialogue.strangePaintings) { //markle
+                if (!dialogue.strangePaintings) {
                     strangePaintingsConvo();
                     dialogue.strangePaintings = true;
                 } else {
@@ -12996,8 +13263,41 @@ function startQueneNoteAfterElMare() {
 }
 
 function pickHalberd() {
-    //mark
-    alert("//mark");
+    if (!inventory.slot1) {
+            if (inventory.slot1 !== "halberd"
+            && inventory.slot2 !== "halberd"
+            && inventory.slot3 !== "halberd"
+            && inventory.slot4 !== "halberd") {
+                halberd.style.display = "none"; 
+                halberdPick.play();
+                inventory.slot1 = "halberd";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "halberd"
+            && inventory.slot2 !== "halberd"
+            && inventory.slot3 !== "halberd"
+            && inventory.slot4 !== "halberd") {
+                halberd.style.display = "none"; 
+                halberdPick.play();
+                inventory.slot2 = "halberd";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "halberd"
+            && inventory.slot2 !== "halberd"
+            && inventory.slot3 !== "halberd"
+            && inventory.slot4 !== "halberd") {
+                halberd.style.display = "none"; 
+                halberdPick.play();
+                inventory.slot3 = "halberd";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "halberd"
+            && inventory.slot2 !== "halberd"
+            && inventory.slot3 !== "halberd"
+            && inventory.slot4 !== "halberd") {
+                halberd.style.display = "none"; 
+                halberdPick.play();
+                inventory.slot4 = "halberd";}
+        } else {
+            tooHeavyTooKeys();
+        }
 }
 
 function takePillarRose() { 
@@ -13341,6 +13641,7 @@ function addOrangeFlowerToInventory() {
 
 function takePanelRose() {
     if (!dialogue.blueRoseKnowsItsPlace) {
+        if (!dialogue.bluerosetaken) {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "cyan rose"
             && inventory.slot2 !== "cyan rose"
@@ -13380,6 +13681,7 @@ function takePanelRose() {
         } else {
             tooHeavy();
         }
+    }
     }
 }
 
@@ -15283,6 +15585,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zze2.style.display = "none";
         b.style.display = "none";
         chandelierClue.style.display = "block";
+        dialogue.chandelierClueEscape1 = true;
                 document.body.style.background = "#000"; //hex code black
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "none";
@@ -15290,6 +15593,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
     } else if (dialogue.halfAClue === 3) {
         zze3.style.display = "block";
+                dialogue.chandelierClueEscape1 = false;
         chandelierClue.style.display = "none";
         document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";
@@ -15331,9 +15635,11 @@ if (event.key === 'Enter' || event.key === ' ') {
                 document.body.style.background = "#000";
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
+       dialogue.chandleClueEscape2 = true;
         dialogue.halfAClue2++;
         return;
     } else if (dialogue.halfAClue2 === 2) {
+        dialogue.chandleClueEscape2 = false;
         chandelierClue.style.display = "none";
                 document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";

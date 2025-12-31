@@ -18,12 +18,15 @@ Check all //mark s
 ART:
 HIGH:
 draw kmap3
-draw thanksforplaying and image map it
 verilyheardsomething is her holding a teapot
 trio
-campers
+campers1 and 2
+finish notepad for soldier
+better minimap art 
 
-LOW
+LOW:
+embolden orange flower, perhaps with black border
+clean up the notepads. the right edge is visible if notepads are pulled up at the end
 treescene. just have an arrow instead of the crack. possibly better verily
 vials look tacky
 keyitemspouch
@@ -35,7 +38,7 @@ stymie gif as idle. thinking, dozing off, getting distracted
 make verilytinkering a gif
 make hall explorers gifs and chandelier fallen
 verilyidle (gif it)
-boat explorers gif
+boat explorers gif (bridget turns head, kodaly loses balance)
 verily in notebook page
 shuri in notebook page
 possibly wires glow
@@ -45,31 +48,36 @@ thicken lines on the blue vase
 
 SOUND:
 revise: rosePluck
-revise: crossbowFire
 fruitTake() "pluck!"
 better thunk1,2,3 for candles
 something happened! stone grinding for 2303 - successful clunk 
-howling wind for chasms
+howLing wind for chasms
 Others: see Placeholders:
 sound for removing the paintings and putting them back
 sound for dowsing the shrub
-change arcade music on alterations3 to something dopey
+change arcade music on alterations3 to  something dopey
+noise for prizes unlock (stonesound still plays)
 
 code:
-test esc on chandelier clue and maps 2 and 3 
-possibly remove central pillar with flower pot and change clues to make the puzzle easier
-trio z index but just going south is the problem. trio image map in collumns dead end
-dead end! still triggers
-loading after kyal from cookies load into switchterminus
+have something in the tunnel where the water comes out
+introductory note "Welcome to the infinite labyrinth!" notes on pronunciation kodaly
+gems above door to indicate locked door and corresponding key
+"1/3 switches flipped"
+end screen: contact
 campfire scene portraits
-make the dialogue tree buttons phsyical 
+make the dialogue tree buttons phsyical (mouseover sound and zoom)
 new music for campfire scene
-the stymie notification does not reduce if you solve all the things except the thing and then get the hint? w cookies?
+fade in champainge music
 cookies for keyitemspouch
 
 extra stuff:
+improve harp gifs
+bolder colors for the painting puzzle
+make all the doorways have regressive shading?
+map n and y to restart menu
+mouseover jiggle notepad and inventory or animate them turning a page or opening
+revise: crossbowFire sound
 move typing page to the back of the guest book
-ONLY VISIBLE IN OTHER BROWSERS: make sure font family is not impact
 brief convo for ybbnlk1. image map for newcell orchid
 automatic zoom to fit
 factcheck all dialogue
@@ -80,6 +88,9 @@ add various cookies:
     final stuff cookies. kyarakkyal
 
 problems for later: 
+we can try to replace the northknock etc gifs with images and timeouts
+some too heavy dialogue sections do not prevent arrow travel, but not all.
+test: the stymie notification does not reduce if you solve all the things except the thing and then get the hint? w cookies?
 double check arrow travel is prevented during first verily conversation
 double check that guest books do not allow arrow key or wasd movement in both chrome and firefox
 find a better way to determine mobile ness
@@ -126,6 +137,40 @@ hiddd
     transform: translate(-115px,30px);
 }
 
+#fishsings {
+    z-index: 100;
+}
+
+#mapmini {
+    left: 1290px;
+    cursor: pointer;
+    z-index: 1000000;
+}
+
+.hidden {
+    display: none;
+}
+
+#w2p2 {
+    z-index: -1;
+}
+
+#region1map,
+#region1mapNew,
+#region2map,
+#region3map,
+#region3amap,
+#region3bmap,
+#region3cmap {
+        z-index: 101;
+    display: none;
+}
+
+#token {
+     z-index: 102;
+    display: none;
+    transform: (0,0);
+}
 
 #soldierFractal,
 #soldierMagic,
@@ -136,17 +181,58 @@ hiddd
 #somesleep {
     display: none;
     z-index: 40;
-
 }
+
+
+#sketch2 {
+    display: none;
+    max-width: 700px;
+    max-height: 600px;
+    left: 477px;
+    top: 50px;
+    z-index: 1000003;
+    position: absolute;
+}
+#sketch3,
+#sketch5,
+#sketch6 {
+    display: none;
+    max-width: 700px;
+    max-height: 600px;
+    left: 384px;
+    top: 70px;
+    z-index: 1000003;
+    position: absolute;
+}
+#sketch4 {
+    display: none;
+    max-width: 700px;
+    max-height: 600px;
+    left: 384px;
+    top: 100px;
+    z-index: 1000003;
+    position: absolute;
+}
+
 
 #ybg13,
 #highscores2,
 #ybbnlk1,
-#campers,
+#yakaka4,
+#campers1,
+#yakak1,
+#ybbj2a,
+#ybbj2b,
+#yakak2,
+#yakak3,
+#campers2,
 #ybbnlk2,
+#notepadisecret,
 #ybbkk1,
 #ybbkk2,
 #ybbkk3,
+#orangewire1dull,
+#orangewire2dull,
 #ybbkk0,
 #ybbo6a,
 #ybbo6b,
@@ -156,18 +242,31 @@ hiddd
 #ybbo32,
 #ybbo33,
 #ybbo34,
+#yamaha1,
 #ybbo35,
 #ybbo36,
+#yagaga1,
+#yyx1a,
+#yagagada1,
+#yagagada2,
 #ybbo37,
 #ybbo38,
+#yamaha2,
+#ybbk6a,
 #ybbo39,
+#yakaka0,
+#yakaka1,
+#yakaka2,
+#yakaka3,
 #ybbo40,
 #ybbo41,
 #ybbo42,
 #ybbo43,
 #ybbo44,
+#ybbo42,
 #ybbo45,
 #ybbo46,
+#ybbj10,
 #ybbo6e,
 #ybbo6f,
 #ybbkk4,
@@ -214,7 +313,6 @@ hiddd
 #ybbo26,
 #ybbo27,
 #ybbo28,
-#kmap3,
 #ybbn1,
 #ybbn2,
 #ybbn3,
@@ -363,8 +461,20 @@ hiddd
     display: none;
 }
 
+#prestart,
+#phome,
+#pcontact,
+#prestart,
+#psketches,
+#pnotepad {
+    z-index: 1000001;
+    display: none;
+}
+
 #redcircuitwires,
 #endtable2,
+#pdull1,
+#bdull2,
 #colorwires2,
 #bluecircuitwires {
      z-index: -1;
@@ -392,15 +502,21 @@ hiddd
     display: block;
 }
 
+#mutualismbanner,
+#batCard {
+    display: none;
+    z-index: 13;
+}
+
 #chapter1banner,
 #chapter3abanner,
 #chapter3bbanner,
 #chapter3cbanner,
-#mutualismbanner,
-#batCard,
 #chapter2banner {
+    left: 400px;
+    top: 30px;
+    z-index: 20;
     display: none;
-    z-index: 13;
 }
 
 #tarotBackgroundHelper {
@@ -793,6 +909,19 @@ hiddd
 
         <div> <!--Prime Floaters-->
             <img src="satchel.png" alt="satchel" usemap="#roommap" class="room" id="satchel">
+            <img src="floaters/bigX.png" alt="satchel" usemap="#nextsketchmap" class="room" id="bigX">
+            <img src="floaters/nextarrow2.png" alt="arrow" usemap="#nextsketchmap" class="arrow" id="nextarrow2">
+            <img src="floaters/prevarrow2.png" alt="arrow" usemap="#nextsketchmap" class="arrow" id="prevarrow2">
+            <img src="floaters/prompts.png" alt="satchel" usemap="#roommap" class="room" id="prompts">
+            <img src="floaters/token.png" alt="satchel" usemap="#roommap" class="room" id="token">
+            <img src="floaters/mapmini.png" alt="pull up map" onclick="openMap()" class="room" id="mapmini">
+            <img src="floaters/region1map.png" alt="map" class="room" class="mapMap" id="region1map">
+            <img src="floaters/region1mapNew.png" alt="map" class="room" class="mapMap" id="region1mapNew">
+            <img src="floaters/region2map.png" alt="map" class="room" class="mapMap" id="region2map">
+            <img src="floaters/region3map.png" alt="map" class="room" class="mapMap" id="region3map">
+            <img src="floaters/region3amap.png" alt="map" class="room"class="mapMap" id="region3amap">
+            <img src="floaters/region3bmap.png" alt="map" class="room" class="mapMap" id="region3bmap">
+            <img src="floaters/region3cmap.png" alt="map" class="room" class="mapMap" id="region3cmap">
             <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#roommap" class="room" id="keyitems">
             <img src="floaters/keyitemspouch.png" alt="pouch closeup" usemap="#pouchmap" class="room" id="keyItemsPouch">
             <img src="floaters/strangevial.png" alt="satchel" usemap="#pouchmap" class="room" id="strangevial">
@@ -801,7 +930,18 @@ hiddd
             <img src="floaters/unlighting.png" alt="satchel" usemap="#giveupmap" class="room" id="unlighting">
             <img src="floaters/highscores.png" alt="satchel" class="room" id="highscores">
             <img src="floaters/highscores2.png" alt="satchel" class="room" id="highscores2">
+            <img src="floaters/phome.png" alt="satchel" usemap="endSelectMap" class="room" id="phome">
+            <img src="floaters/prestart.png" alt="satchel" usemap="endSelectMap" class="room" id="prestart">
+            <img src="floaters/pcontact.png" alt="satchel" usemap="endSelectMap" class="room" id="pcontact">
+            <img src="floaters/pnotepad.png" alt="satchel" usemap="endSelectMap" class="room" id="pnotepad">
+            <img src="floaters/psketches.png" alt="satchel" usemap="endSelectMap" class="room" id="psketches">
             
+            <img src="sketches/2.jpg" alt="z" usemap="endSelectMap" class="room" id="sketch2">
+            <img src="sketches/3.jpg" alt="satzchel" usemap="endSelectMap" class="room" id="sketch3">
+            <img src="sketches/4.jpg" alt="satdchel" usemap="endSelectMap" class="room" id="sketch4">
+            <img src="sketches/5.jpg" alt="satdschel" usemap="endSelectMap" class="room" id="sketch5">
+            <img src="sketches/6.jpg" alt="satdsffchel" usemap="endSelectMap" class="room" id="sketch6">
+
             <img src="portraits/soldierFractal.png" alt="satchel" usemap="#soldierFractal" class="room" id="soldierFractal"> <!--lklk-->
            
             <img src="portraits/fractalMagic.png" alt="satchel" usemap="#fractalMagic" class="room" id="fractalMagic">
@@ -859,6 +999,7 @@ hiddd
             <img src="floaters/notepadst.png" usemap="#notepadmap" class="room" id="notepadst">
             <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
             <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
+            <img src="floaters/notepadisecret.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadisecret">
             <img src="floaters/notepadp.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadp">
         </div>
 
@@ -997,11 +1138,13 @@ hiddd
             <img src="floaters/ronin.png" alt="ronin card" usemap="#diagrammap" class="room" id="roninCard">
             <img src="floaters/helpfulmap.png" alt="keys map" usemap="#bigX" class="room" id="helpfulmap">
             <img src="floaters/helpfulpipemap.png" alt="pipes" usemap="#bigX" class="room" id="helpfulpipemap"> 
-            <img src="people/campers.png" alt="pipes" usemap="#bigX" class="room" id="campers"> 
+            <img src="people/campers1.png" alt="pipes" usemap="#bigX" class="room" id="campers1"> 
+            <img src="people/campers2.png" alt="pipes" usemap="#bigX" class="room" id="campers2"> 
 
                 
             <div id="lobby"> <!--Lobby Obbies-->
                 <img src="ladder.png" alt="ladder" usemap="#firstlobbymap" class="room" id="ladder">
+                <img src="floaters/exclamation.png" alt="ladder" usemap="#firstlobbymap" class="room" id="exclamation">
                 <img src="plinth.png" alt="plinth" usemap="#firstlobbymap" class="room">
                 <img src="rope.png" alt="rope" usemap="#firstlobbymap" class="room" id="rope">
                 <img src="people/terminal.png" alt="stymie" usemap="#firstlobbymap" class="room" id="terminal">
@@ -1128,6 +1271,9 @@ hiddd
                 <img src="harp/fishstrings.png" alt="fish room" usemap="#pondmap" class="room" id="harp">
                 <img src="eastdoor.png" alt="door" usemap="#pondmap" class="room" id="eastdoor">
                 <img src="fishstrings.gif" alt="fish room" usemap="#pondmap" class="room" id="fishstrings">
+                <img src="harp/fishsings.png" alt="fish sing when clicked" usemap="#pondmap" class="room" id="fishsings">
+                <img src="harp/fishpatch2.png" alt="fish sing when clicked" usemap="#pondmap" class="room">
+                <img src="harp/fish.png" alt="fish sing when clicked" usemap="#pondmap" class="room">
                 <img src="harp/fishpatch.png" alt="fish room" usemap="#pondmap" class="room" id="fishpatch">
                 <img src="harp/pluck1.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck1">
                 <img src="harp/pluck2.gif" alt="string animation" usemap="#pondmap" class="room" id="pluck2">
@@ -1145,6 +1291,7 @@ hiddd
                 <img src="people/chasmexplorers.png" alt="explorers" usemap="#chasmmap" class="room" id="chasmexplorers"> 
                 <img src="chasmrope.png" alt="rope" usemap="#chasmmap" class="room" id="chasmrope"> 
                 <img src="candles/violetcandle.png" alt="violet candle" usemap="#chasmmap" class="room" id="violetcandle"> 
+                <img src="floaters/exclamationChasm.png" alt="violet candle" usemap="#chasmmap" class="room" id="exclamationChasm"> 
             </div>
 
             <div id="hallway" usemap="#hallmap"> <!--North-South Hallway betwixt chapters 1 and 2-->
@@ -1166,11 +1313,14 @@ hiddd
                 <img src="people/verilytampering.png" alt="summer verily" usemap="#roommap" class="room" id="vtamp1">  
                 <img src="people/terminal.png" alt="stymie" usemap="#roommap" class="room" id="terminal2">   
                 <img src="wires/powerlinedoorhole.png" alt="door" usemap="#roommap" class="room" id="powerline">  
+                <img src="wires/doorbluedull.png" alt="door" usemap="#roommap" class="room" id="doorbluedull2">  
+                <img src="wires/dooryellowdull.png" alt="door" usemap="#roommap" class="room" id="dooryellowdull2">  
                 <img src="people/stminotif1.png" alt="notif" usemap="#roommap" class="room" id="L2notifOne">
                 <img src="people/stminotif2.png" alt="notif" usemap="#roommap" class="room" id="L2notifTwo">
                 <img src="people/stminotif3.png" alt="notif" usemap="#roommap" class="room" id="L2notifThree">
                 <img src="people/stminotif4.png" alt="notif" usemap="#roommap" class="room" id="L2notifFour">
             </div>
+
 
             <div id="gardenNorth" usemap="#roommap">
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
@@ -1183,6 +1333,8 @@ hiddd
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="wires/powerlinestraight.png" alt="door" usemap="#roommap" class="room" id="powerline"> 
+                <img src="wires/straightbluedull.png" alt="door" usemap="#roommap" class="room" id="straightbluedull2"> 
+                <img src="wires/straightyellowdull.png" alt="door" usemap="#roommap" class="room" id="straightyellowdull2"> 
                 <img src="shrubs/2shrub.png" alt="8shrub" usemap="#roommap" class="room" id="2shrub">   
  
             </div>
@@ -1191,6 +1343,8 @@ hiddd
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="wires/powerlinestraight.png" alt="door" usemap="#roommap" class="room" id="powerline">  
+                <img src="wires/straightbluedull.png" alt="door" usemap="#roommap" class="room" id="straightbluedull"> 
+                <img src="wires/straightyellowdull.png" alt="door" usemap="#roommap" class="room" id="straightyellowdull"> 
                 <img src="shrubs/4shrub.png" alt="8shrub" usemap="#roommap" class="room" id="4shrub">   
             </div>
 
@@ -1202,6 +1356,8 @@ hiddd
                 <img src="southdoor.png" alt="door" usemap="#chandleMap" class="room" id="southdoor"> 
                 <img src="northdoor.png" alt="door" usemap="#chandleMap" class="room" id="northdoor">
                 <img src="wires/powerlinedoorhole.png" alt="door" usemap="#chandleMap" class="room" id="powerline">  
+                <img src="wires/doorbluedull.png" alt="door" usemap="#chandleMap" class="room" id="doorbluedull">  
+                <img src="wires/dooryellowdull.png" alt="door" usemap="#chandleMap" class="room" id="dooryellowdull">  
                 <img src="chandelier.gif" alt="chandelier" usemap="#chandleMap" class="room" id="chandelier">  
                 <img src="chandelierground.png" alt="door" usemap="#chandleMap" class="room" id="chandelierground"> 
                 <img src="floaters/chandelierclue.png" alt="envelope" class="room" id="chandelierClue"> 
@@ -1231,6 +1387,8 @@ hiddd
             <div id="switchRoom" usemap="#switchmap"> <!--East of center-->
                 <img src="westdoor.png" alt="door" usemap="#switchmap" class="room" id="westdoor"> 
                 <img src="wires/powerlinecurve.png" alt="door" usemap="#switchmap" class="room" id="powerline">  
+                <img src="wires/switchbluedull.png" alt="door" usemap="#switchmap" class="room" id="switchbluedull">  
+                <img src="wires/switchyellowdull.png" alt="door" usemap="#switchmap" class="room" id="switchyellowdull">  
                 <img src="wires/switchplate.png" alt="door" usemap="#switchmap" class="room" id="switchplate">  
                 <img src="wires/switchAoff.png" alt="door" usemap="#switchmap" class="room" id="switchAoff">  
                 <img src="wires/switchAon.png" alt="door" usemap="#switchmap" class="room" id="switchAon">  
@@ -1253,6 +1411,8 @@ hiddd
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor"> 
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
                 <img src="wires/powerlinediverge.png" alt="powerlines" usemap="#roommap" class="room" id="powerline">  
+                <img src="wires/vergebluedull.png" alt="powerlines" usemap="#roommap" class="room" id="vergebluedull">  
+                <img src="wires/vergeyellowdull.png" alt="powerlines" usemap="#roommap" class="room" id="vergeyellowdull">  
                 <img src="lockbox.png" alt="door" usemap="#roommap" class="room" id="lockbox">  
                 <img src="openlockbox.png" alt="door" usemap="#roommap" class="room" id="openlockbox">  
             </div>
@@ -1283,6 +1443,7 @@ hiddd
             <div id="controlRoom" usemap="#pillarmap"> <!--West of center-->
                 <img src="eastdoor.png" alt="door" usemap="#pillarmap" class="room" id="eastdoor"> 
                 <img src="wires/pillarmachine.png" alt="door" usemap="#pillarmap" class="room" id="pillarmachine"> 
+                <img src="wires/machinedull.png" alt="door" usemap="#pillarmap" class="room" id="machinedull"> 
                 <img src="shrubs/6shrub.png" alt="6shrub" usemap="#pillarmap" class="room" id="6shrub">   
             </div>
 
@@ -1301,6 +1462,7 @@ hiddd
                 <img src="curtainsclosed.png" alt="door" usemap="#roommap" class="room" id="curtainsclosed"> 
                 <img src="curtainsopen.png" alt="door" usemap="#roommap" class="room" id="curtainsopen">  <!--Display on-->
                 <img src="wires/bluelinecurve.png" alt="door" usemap="#roommap" class="room">  
+                <img src="wires/curvedull.png" alt="door" usemap="#roommap" class="room" id="curvedull">  
             </div>
 
             <!--North of Lobby 2 (directly north of GardenNorth)-->
@@ -1842,6 +2004,7 @@ hiddd
                 <img src="westdoor.png" alt="door" usemap="#gallerymap" class="room" id="westdoor"> 
                 <img src="pipes/stairs.png" alt="door" usemap="#gallerymap" class="room" id="stairs"> 
                 <img src="pipes/northpaintingsduplicate.png" alt="door" usemap="#gallerymap" class="room" id="paintins"> 
+                <img src="floaters/freeSEArrow.png" alt="door" usemap="#gallerymap" class="room" id="freeSEArrow"> 
             </div>
             
             <div id="gallery" usemap="#gallerymap"> 
@@ -1884,6 +2047,7 @@ hiddd
     <img src="southdoor.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="people/explorers.gif" alt="door" usemap="#lakemap" class="room"> 
     <img src="tides/orangewire1.png" alt="door" usemap="#lakemap" class="room"> 
+    <img src="tides/orangewire1dull.png" alt="door" usemap="#lakemap" class="room" id="orangewire1dull"> 
     <img src="tides/orangeflower.png" alt="door" usemap="#lakemap" id="orangeflower" class="room"> 
 </div>
 
@@ -1891,6 +2055,7 @@ hiddd
     <img src="rooms/lakens.png" alt="lake" usemap="#lakemap" class="room"> 
     <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers"> 
         <img src="tides/orangewire2.png" alt="door" usemap="#lakemap" class="room"> 
+        <img src="tides/orangewire2dull.png" alt="door" usemap="#lakemap" class="room" id="orangewire2dull"> 
         <img src="tides/orangelightbulb-on.png" alt="door" usemap="#lakemap" id="orangelightbulbon" class="room"> 
         <img src="tides/orangelightbulb-off.png" alt="door" usemap="#lakemap" id="orangelightbulboff" class="room"> 
     <!--<img src="tides/rosedem1.png" alt="explorers" usemap="#lakemap" class="room" id="rosedem1"> -->
@@ -1992,6 +2157,7 @@ hiddd
 <div id="littleLakesLobbyWest" usemap="#lakemap"> 
     <img src="rooms/lakesmall.png" alt="lake" usemap="#lakemap" class="room"> 
     <img src="tides/pillarwire.png" alt="lake" usemap="#lakemap" class="room"> 
+    <img src="tides/pillarwireon.png" alt="lake" usemap="#lakemap" class="room" id="pillarwireon"> 
     <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers">
 </div>
 
@@ -1999,6 +2165,7 @@ hiddd
     <img src="pool.png" alt="lake" usemap="#pillarmap" class="room"> 
     <img src="boats/boatsouth.png" alt="door" usemap="#pillarmap" class="room">
     <img src="tides/pillarmachinetides.png" alt="lake" usemap="#pillarmap" class="room" id="pillarmachinetides"> 
+    <img src="tides/pillaron.png" alt="lake" usemap="#pillarmap" class="room" id="pillaron"> 
     <img src="tides/panel14.png" alt="lake" usemap="#pillarmap" class="room" id="panel14"> 
     <img src="tides/panel14open.png" alt="lake" usemap="#pillarmap" class="room" id="panel14open"> 
         <img src="tides/panel14rose.png" alt="lake" usemap="#pillarmap" class="room" id="panel14rose"> 
@@ -2021,6 +2188,7 @@ hiddd
     <img src="tides/16on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch16on"> 
     <img src="tides/16off.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch16off"> 
     <img src="tides/pillarwiressource.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
+    <img src="tides/pillarwiressourceon.png" alt="lake" usemap="#binaryswitchesmap" class="room" id="pillarwiressourceon"> 
     <img src="tides/pillarrose.png" alt="lake" usemap="#binaryswitchesmap" class="room" id="pillarrose"> 
         <img src="people/explorers.gif" alt="door" usemap="#binaryswitchesmap" class="room">
     </div>
@@ -2069,6 +2237,9 @@ hiddd
     <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
     <img src="tides/pedestalnull.png" alt="door" usemap="#roommap" class="room" id="pedestalnull">
     <img src="tides/colorwires.png" alt="door" usemap="#roommap" class="room" id="colorwires">
+    <img src="tides/colorwiresyellowdull.png" alt="door" usemap="#roommap" class="room" id="colorwiresyellowdull">
+    <img src="tides/colorwiresbluedull.png" alt="door" usemap="#roommap" class="room" id="colorwiresbluedull">
+    <img src="tides/colorwirespinkdull.png" alt="door" usemap="#roommap" class="room" id="colorwirespinkdull">
     <img src="tides/pedestalla3.png" alt="door" usemap="#roommap" class="room" id="pillarla3">
     <img src="tides/pedestallb3.png" alt="door" usemap="#roommap" class="room" id="pillarlb3">
     <img src="tides/pedestallc3.png" alt="door" usemap="#roommap" class="room" id="pillarlc3">
@@ -2080,6 +2251,12 @@ hiddd
     <img src="eastdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="eastdoor">
     <img src="westdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="westdoor">  
     <img src="tides/colorwires2.png" alt="door" usemap="#switchTerminusmap" class="room" id="colorwires2">       
+    <img src="tides/w2b2.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2b2">       
+    <img src="tides/w2b1.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2b1">       
+    <img src="tides/w2p1.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2p1">       
+    <img src="tides/w2p2.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2p2">       
+    <img src="tides/w2y1.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2y1">       
+    <img src="tides/w2y2.png" alt="door" usemap="#switchTerminusmap" class="room" id="w2y2">       
     <img src="tides/greenrose.png" alt="door" usemap="#switchTerminusmap" class="room" id="greenrose">       
     <img src="tides/colorswitchdoor.png" alt="door" usemap="#switchTerminusmap" class="room" id="colorswitchdoor">       
     <img src="tides/redlit.png" alt="door" usemap="#switchTerminusmap" class="room" id="redlit">       
@@ -2093,6 +2270,8 @@ hiddd
     <img src="tides/redrose1.png" alt="door" usemap="#circuitMap" class="room" id="redrose1">
     <img src="tides/redrose2.png" alt="door" usemap="#circuitMap" class="room" id="redrose2">
     <img src="tides/redcircuitwires.png" alt="door" usemap="#circuitMap" class="room" id="redcircuitwires">
+    <img src="tides/pdull1.png" alt="door" usemap="#circuitMap" class="room" id="pdull1">
+    <img src="tides/pdull2.png" alt="door" usemap="#circuitMap" class="room" id="pdull2">
     <img src="secrets/hiddendoor.png" alt="door" usemap="#circuitMap" class="room" id="hiddendoor">
     <img src="secrets/hiddendooropen.png" alt="door" usemap="#circuitMap" class="room" id="hiddendooropen">
 </div>
@@ -2100,6 +2279,8 @@ hiddd
 <div id="blueCircuit" usemap="#circuitMap"> 
     <img src="westdoor.png" alt="door" usemap="#circuitMap" class="room" id="westdoor">  
     <img src="tides/bluecircuitwires.png" alt="door" usemap="#circuitMap" class="room" id="bluecircuitwires">    
+    <img src="tides/bdull1.png" alt="door" usemap="#circuitMap" class="room" id="bdull1">    
+    <img src="tides/bdull2.png" alt="door" usemap="#circuitMap" class="room" id="bdull2">    
         <img src="tides/bluerose.png" alt="door" usemap="#circuitMap" class="room" id="bluerose">   
 </div>
 
@@ -2207,6 +2388,13 @@ hiddd
         <area shape="circle" coords="522,348,50" alt="pipe missing area" class="pointer" onclick="pipePlacement()">
     </map>
 
+    
+
+         <map name="nextsketchmap">
+            <area shape="rect" coords="1100,300,1310,500" alt="satchel" class="pointer" id="satchel" onclick="nextSketch()">
+            <area shape="rect" coords="160,285,380,500" alt="satchel" class="pointer" id="satchel" onclick="prevSketch()">
+            <area shape="rect" coords="0,0,120,115" alt="notepad" class="pointer" onclick="closeSketches()">
+    </map>
 
          <map name="oarsroommap">
             <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -2243,15 +2431,13 @@ hiddd
             <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
         </map>
 
-        <map name="endSelectMap"> <!--//mark-->
-            <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
-            <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
-            <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="showKeyItems()">
-
-            <area shape="rect" coords="450,500,620,600" alt="key" class="pointer" onclick="pickCenterS()">
-            <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
-            <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
-        </map>
+        <map name="endSelectMap">
+            <area shape="rect" coords="120,454,315,635" class="pointer" onmouseover="showPhome()" onmouseout="noPhome()" onclick="goToTheHomePageWhyDontYou()">
+            <area shape="rect" coords="320,454,545,635" class="pointer" onmouseover="showPrestart()" onmouseout="noPrestart()" onclick="deleteCookies()">
+            <area shape="rect" coords="550,454,793,635" class="pointer" onmouseover="showPnotepad()" onmouseout="noPnotepad()" onclick="showNotesEnd()">
+            <area shape="rect" coords="799,454,1046,635" class="pointer" onmouseover="showPsketches()" onmouseout="noPsketches()" onclick="goSketches()">
+            <area shape="rect" coords="1052,454,1287,635" class="pointer" onmouseover="showPcontact()" onmouseout="noPcontact()" onclick="goContact()">
+            </map>
 
          <map name="gallerymap">
             <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
@@ -2261,6 +2447,7 @@ hiddd
             <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
             <area shape="poly" coords="465,252,445,156,379,96,328,115,327,371" alt="western door" class="pointer" onclick="goWest()">
              <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+             <area shape="rect" coords="1145,522,1343,700" alt="eastern door" class="pointer" onclick="goEast()">
             <area shape="poly" coords="382,592,406,508,423,478,445,454,488,440,477,396,540,380,600,424,617,470,640,630,634,684" alt="southern door" class="pointer" onclick="goSouth()">
                 <area shape="rect" coords="700,0,840,180" alt="northern paintings door" class="pointer" onclick="goNorth()">
                 <area shape="rect" coords="841,0,990,227" alt="northern paintings door" class="pointer" onclick="goNorth()">
@@ -2608,6 +2795,7 @@ hiddd
     <map name="chasmmap"> <!--Chasm-->
             <area shape="circle" coords="1090,280,60" alt="northern door" class="pointer" onclick="goNorth()">
             <area shape="rect" coords="111,367,260,550" alt="south door" class="pointer" onclick="goSouth()">
+            <area shape="rect" coords="400,550,485,790" alt="south door" class="pointer" onclick="goDownChasm()">
         <area shape="rect" coords="900,260,1030,390" alt="post" class="pointer" onclick="throwRope()">
         <area shape="rect" coords="910,400,1050,780" alt="post" class="pointer" onclick="throwRope()">
         <area shape="rect" coords="30,300,490,629" alt="post" class="pointer" onclick="ohNoBridgeCutOtherSide()">
@@ -2637,6 +2825,7 @@ hiddd
 
         <map name="pouchmap">
             <area shape="rect" coords="892, 62, 1011, 173" alt="close keyitemspouch" class="pointer" onclick="hideKeyItems()">
+            <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="hideKeyItems()">
         </map>
 
         <map name="pillarmap"> <!--Chapter 2's switch room-->
@@ -2758,6 +2947,16 @@ hiddd
         pickCenterS cannot be used because it overlaps with something else. Perhaps with goSouth-->
     </map>
 
+
+
+    <div class="exitform" id="contactForm" style="z-index: 100000000000;">
+        <form action="https://formspree.io/f/mnjqgwqo" method="POST" target="_blank">      
+        <textarea for="first lobby" id="commentsBox" value="Questions" name="comments"></textarea><br><br>
+        <span style="font-family: fantasy;">Alias:</span> <input type="text" id="aliasBox" name="Email">
+        <input id="sendButton" type="submit" value="Send">
+        </form>
+    </div>
+
         <!--Main lobby guest book-->
     <div class="entryform" id="entryform">
         <form action="https://formspree.io/f/mdknkobd" method="POST" target="_blank">      
@@ -2870,7 +3069,6 @@ hiddd
 <audio id="keybloop"><source src="sound/keybloop.mp3" type="audio/mpeg"></audio>
 <audio id="keydel"><source src="sound/keydel.mp3" type="audio/mpeg"></audio>
 <audio id="booting"><source src="sound/booting.mp3" type="audio/mpeg"></audio>
-<!--Upload:-->
 <audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
 <audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
@@ -2909,6 +3107,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <audio id="branle" src="sound/BranleDesChevaux.mp3" loop></audio> <!--House of Tides. Branle Des Chevaux, (+ o que a santa maria, lonc tems ai. -->
     <audio id="saltarello" src="sound/saltarello2.mp3" loop></audio> <!-- Saltarello No. 2 -->
     <audio id="branleChampaigne" src="sound/Champaigne.mp3" type="audio/mpeg"></audio> <!-- Branle de Champaigne - Claude Gervaise -->
+    <audio id="theCarmansWhistle" src="sound/theCarmansWhistle.mp3" type="audio/mpeg"></audio> <!-- Anon -->
 
 </div>
 <!--Adios-->
@@ -3828,9 +4027,9 @@ performed by the Unicorn Ensemble
     <p id="zzm3c">Should we test them? And what if the rectilinear ones in Bara Portcullis were pattern-<i>runes</i>!</p>
     <p id="zzm3a">Do you think the other two labyrinths have repositories of pattern-dances and pattern-songs?</p>
     <p id="zzm3d">I think it's unlikely.</p>
-    <p id="zzm3e">But... if these were all spellbooks, that would <i>tripple</i> the amount of magic patterns the world.</p>
+    <p id="zzm3e">But... if these were all spellbooks, that would <i>triple</i> the amount of magic patterns the world.</p>
     <p id="zzm3f">When we return, we should take a few and find someone to test them.</p>
-    <p id="zzm3g">I think the'yre too heavy for now, and trying to cast them ourselves would take forever.</p>
+    <p id="zzm3g">I think they're too heavy for now, and trying to cast them ourselves would take forever.</p>
     <p id="zzm3h">Not to mention we could blow our legs off or dye ourselves purple.</p>
 
    <p id="zzm4">Let's try another.</p>
@@ -3978,7 +4177,7 @@ performed by the Unicorn Ensemble
 
         <p id="zzwb1">There will be blood.</p>
         
-        <p id="zzwb2">I know what I said about blood and stopping at nothing, but I feel that we should not abuse the power of bat.</p>
+        <p id="zzwb2">I know what I said about "blood" and "stopping at nothing", but I feel that we should not abuse the power of bat.</p>
         <p id="zzwb3">We will stop at <i>something</i>.</p>
         <p id="zzwb4">There will <i>not</i> be blood.</p>
 
@@ -4322,6 +4521,7 @@ performed by the Unicorn Ensemble
     <p id="yyu11">We can check it out later if we find any new Kardic words.</p> <!-- I wonder why it's here. Doesn't seem like something the labyrinth would have written.-->
 
     <p id="yyx1">I bet there's another hidden passage behind these paintings.</p>
+    <p id="yyx1a">I bet there's a hidden passage behind these paintings.</p>
     <p id="yyx2">I'll eat my hat!</p>
     <p id="yyx3">If it's not a secret passage?</p>
     <p id="yyx4">I'll just eat my hat!</p>
@@ -4548,23 +4748,29 @@ performed by the Unicorn Ensemble
 
     <p id="ybbj1">It's...</p>
     <p id="ybbj2">Some vials!</p>
+    
+    <p id="ybbj2a">It looks like there's one missing.</p>
+    <p id="ybbj2b">Maybe there's an extra vial somewhere we missed.</p>
  
     <p id="ybbj3">It looks like there's an empty slot here for another vial.</p>
     <p id="ybbj4">Are you thinking what I'm thinking?</p>
     <p id="ybbj5">"Drink all of them and see what happens"?</p>
     <p id="ybbj6">Yeah!</p>
-    <p id="ybbj7">What if we put the vial we found earlier... here.</p>
+    <p id="ybbj7">How about we add our vial from earlier.</p>
 
     <p id="ybbj8">It sounded like something heavy moved in a different room.</p>
     
     <p id="ybbj9">There a hidden door here! I can feel the seam in the wall!</p>
+    <p id="ybbj10">It won't budge! There must be a mechanism around here that can open it.</p>
 
-    <p id="ybbk1">There's... a crack in the wall?</p>
+    <p id="ybbk1">There's a crack in the wall.</p>
     <p id="ybbk2">That's weird.</p>
-    <p id="ybbk3">It's probably too narrow for either of us to fit through.</p>
-    <p id="ybbk4">Yeah! I mean, have you <i>seen</i> my hat!</p>
-    <p id="ybbk5">You can take <i>off</i> your hat, you know.</p>
+    <p id="ybbk3">It looks too narrow for either of us to fit through.</p>
+    <p id="ybbk4">Yeah! Have you <i>seen</i> my hat?</p>
+    <p id="ybbk5">You know you can take <i>off</i> your hat.</p>
     <p id="ybbk6">That's easy for you to say!</p>
+    
+    <p id="ybbk6a">Although, I bet someone a bit skinnier than me could fit through there.</p>
     
     <p id="ybbk7">Strange. There's a crack in the wall here.</p>
     <p id="ybbk8alt">That's weird.</p>
@@ -4646,10 +4852,10 @@ performed by the Unicorn Ensemble
     <p id="ybbo6c">Don't tell me you didn't notice the resemblance between you and that druid behind the tree.</p>
     <p id="ybbo6d">And Kodaly as the knight on the cliffside.</p>
     <p id="ybbo6e">...</p>
-    <p id="ybbo6f">I didn't notice. I'll have to take another look.</p>
+    <p id="ybbo6f">I'll have to take another look.</p>
     <p id="ybbo7">I've been thinking:</p>
     <p id="ybbo8">If you had the kind of power aboveground that the labyrinth has below, you'd be unstoppable.</p>
-    <p id="ybbo9">The labyrinth can repair itself, transform stone into cheese, send signals across hundreds of kilometers. Even grant sapience to rudimentary scanning devices.</p>
+    <p id="ybbo9">The labyrinth can repair itself, transmute stone into metal, send signals across hundreds of kilometers. Grant sapience to rudimentary scanning devices.</p>
     <p id="ybbo10">If you could transport little bits of the labyrinth to the surface, you could make a living relay network that could span the globe.</p>
     <p id="ybbo11">Of course, each piece would still need to be alive in order to receive and send an electric pulse, but...</p>
     <p id="ybbo12">...</p>
@@ -4662,17 +4868,17 @@ performed by the Unicorn Ensemble
     <p id="ybbo20">What about you?</p>
     <p id="ybbo21">Actually, yes.</p>
     <p id="ybbo22">But my great grandmother passed down an incantation through the family.</p>
-    <p id="ybbo23">It spans three volumes, and if you recite each book without stopping for more than nine seconds between each word you can grow an orchard. It will seed in a two kilometer radius around the spot where you started reading.</p>
-    <p id="ybbo24">My great grandmother is the only person I know who ever did this, although she wasn't the one who discovered the spell. I'm not sure where she got it from.</p>
+    <p id="ybbo23">It spans three volumes, and if you recite each book without stopping for more than nine seconds between each word you can grow a magic orchard.</p>
+    <p id="ybbo24">My great grandmother is the only person I know who ever did this. I'm not sure where she got it from.</p>
     <p id="ybbo25">What kind of orchard?</p>
-    <p id="ybbo26">An orchard of every known variety of fruit, and more. Fruit trees that don't exist anywhere else on the planet. Trees that might have existed in the ancient past, but no longer do; or trees that could have existed, but never did.</p>
+    <p id="ybbo26">An orchard of every known variety of fruit, as well as many that don't seem to exist anywhere else.</p>
     <p id="ybbo27">It's not the most dramatic spell, but it's an interesting one.</p>
     <p id="ybbo28">Sounds dramatic enough to me.</p>
 
-    <p id="ybbo30">We should get some sleep.</p>
+    <p id="ybbo30">We should try to follow Kodaly's example here.</p>
     <p id="ybbo31">Agreed.</p>
     <p id="ybbo32">Should I take first watch?</p>
-    <p id="ybbo33">Ah... Right. I hadn't thought about taking watches.</p>
+    <p id="ybbo33">Oh... I hadn't thought about taking watches.</p>
     <p id="ybbo34">I'm a light sleeper, and we sealed the door. I think we'll be fine?</p>
     <p id="ybbo35">You trust the labyrinth enough to sleep here unguarded?</p>
     <p id="ybbo36">I admit, we don't know how labyrinths think. But I don't think we have anything to fear from it as long as we behave ourselves.</p>
@@ -4680,12 +4886,32 @@ performed by the Unicorn Ensemble
     <p id="ybbo38">I'm a light sleeper too.</p>
     <p id="ybbo39">Good night, Verily.</p>
     <p id="ybbo40">Good night, Dr. Ndazi.</p>
+    <p id="ybbo41">I hope you're right about all this.</p>
+    <p id="ybbo42">We are a very long way from help.</p>
 
     <p id="ybbo44">How the hell are we going to stop a Kardic soldier?</p>
     <p id="ybbo45">Not with a direct confrontation, that's for sure.</p>
     <p id="ybbo46">We'll think of something.</p>
 
+    <p id="yagaga1">It's a long way down.</p>
+   
+    <p id="yagagada1">This is actually really hard.</p>
+    <p id="yagagada2">Let's see if Stymie can help.</p>
+    
+    <p id="yakak1">These pillars are blocking the way.</p>
+    <p id="yakak2">Let's see if that machine we passed can move them.</p>
+    <p id="yakak3">Maybe that machine we examined can move them.</p>
+    
+    <p id="yakaka0">Another set of paintings.</p>
 
+    <p id="yakaka1">We must be meant to use these as a reference for those other paintings.</p>
+    <p id="yakaka2">Like, use the switches back there to make those paintings look like these paintings?</p>
+    <p id="yakaka3">That's what I'm thinking.</p>
+    
+    <p id="yakaka4">So, these are the originals, and we're trying to get the ones around the corner to match.</p>
+    
+    <p id="yamaha1">It look like that orange flower powers the bulb somehow.</p>
+    <p id="yamaha2">I wonder if that orange flower is related to this orange bulb.</p>
 
 <!--End of dialogue list-->
 </div>
@@ -4827,8 +5053,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             e.preventDefault();
             hideInv();
         }
+        
     if (e.key == '1' && inventory.isOpen) {
         drop1();}
+    if (e.key == 'm' && !dialogue.preventM) {
+        openMap();
+        }
     if (e.key == '2' && inventory.isOpen) {
         drop2();}
           if (e.key == '3' && inventory.isOpen) {
@@ -4840,6 +5070,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
              hideNotes();
         } else if (e.key == 'n' && !notepad.open && !inventory.isOpen && !dialogue.preventN) {
             showNotes();
+        } if (dialogue.contactEndOpen && e.key === "Escape") {
+            e.preventDefault();
+            prompts.style.display = "none";
+            contactForm.style.display = "none";
         }
         if (dialogue.keyItemsPouchIsOpen && (e.key == 'k' || e.key === "Escape")) {
         e.preventDefault();
@@ -4886,6 +5120,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
         dialogue.halfAClue2 = true;
+        } else if (e.key === "Escape" && dialogue.chandleClue3Escape) {
+            e.preventDefault();
+            chandelierClue.style.display = "none";
+                document.body.style.background = "#f5f1e0"; //hex code back to beige
+        chandelierexplorers.style.display = "none";
+      chandelierexplorers2.style.display = "block";
+              dialogue.chandleClue3Escape = false;
         }
 
 
@@ -4917,6 +5158,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             e.preventDefault();
             if (dialogue.keyItemsPouchIsOpen) {
                 hideKeyItems();
+            } else if (map.isOpen) {
+                openMap();
             } else if (current.room === "portholeRoom") {
                 closeWhatever();
             } else if (current.room === "pipesLobby") {
@@ -4941,7 +5184,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 closeTheArcadeGame();
             } else if (current.room === "pillarControlLakes") {
                 closeWhatever();
-            }
+            } 
         }
         if (dialogue.listenForEnter) {
             if (e.key === 'Enter') {
@@ -5076,14 +5319,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
         
         //arrow keys for directional travel
+if (dialogue.arrowsBackAndForth && (e.key == 'ArrowLeft' || e.key == 'a' || e.key == 'A')) {
+    e.preventDefault();
+    prevSketch();
+} if (dialogue.arrowsBackAndForth && (e.key == 'ArrowRight' || e.key == 'd' || e.key == 'D')) {
+    e.preventDefault();
+    nextSketch();
+} if (dialogue.arrowsBackAndForth && e.key === "Escape") {
+    closeSketches();
+}
+
         if (!dialogue.blockArrowTravel) {
-            if (e.key == 'ArrowLeft' || e.key == 'a') {
+            if (e.key == 'ArrowLeft' || e.key == 'a' || e.key == 'A') {
             goWest();}
-            else if (e.key == 'ArrowUp' || e.key == 'w') {
+            else if (e.key == 'ArrowUp' || e.key == 'w' || e.key == 'W') {
             goNorth();}
-            else if (e.key == 'ArrowRight' || e.key == 'd') {
+            else if (e.key == 'ArrowRight' || e.key == 'd' || e.key == 'D') {
             goEast();}
-            else if (e.key == 'ArrowDown' || e.key == 's') {
+            else if (e.key == 'ArrowDown' || e.key == 's' || e.key == 'S') {
             goSouth();}
         }
         if (dialogue.arrowUpWillRaiseLift) {
@@ -5114,6 +5367,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.openingHasPlayed = true;
     }
 
+    if (cookiesHas('shouldntWeMakeCampNowAndNotBoat')) { 
+        dialogue.shouldntWeMakeCampNow = true;
+    }
+
+    if (cookiesHas('notepadopened')) { 
+        exclamation.style.display = "none";
+    }
      if (cookiesHas('keys27guestbookdiscovered')) { 
         //mark. gone blue gone beige 
         //open blue door and beige door
@@ -5124,6 +5384,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dialogue.verilyHasJoinedTheParty = true;
         trio.style.display = "block";
         explorers.style.display = "none";
+        current.room = "switchTerminus";
+        switchTerminus.style.display = "block";
+        lobby.style.display = "none";
     }
     
 
@@ -5382,9 +5645,11 @@ if (cookiesHas('feralRacoons')) {
         lobbyTwo.style.display = "block";
         dialogue.deeperIn = true;
         lobby2.achieved = true;
+        map.region2 = true;
+        map.region1 = false;
     }
 
-    if (cookiesHas('lobbyThree')) {
+    if (cookiesHas('lobbyThree') && !cookiesHas('karakKyal')) {
         current.room = "lobbyThree"; 
         lobby.style.display = "none";
         lobbyTwo.style.display = "none";
@@ -5394,6 +5659,15 @@ if (cookiesHas('feralRacoons')) {
         colordooropen.style.display = "block";
         dialogue.goodWork = true;
         dialogue.queneNoteShouldPlayInChapterTwoArea = true;
+        map.region3 = true;
+        map.region1 = false;
+        if (dialogue.blueSwitchFlipped) {
+            bluemarkeron.style.display = "block";
+        } if (dialogue.redSwitchFlipped) {
+            redmarkeron.style.display = "block";
+        } if (dialogue.greenSwitchFlipped) {
+            greenmarkeron.style.display = "block";
+        }
     }
 
 
@@ -5462,28 +5736,29 @@ if (cookiesHas('feralRacoons')) {
        dialogue.forCookiesStymieHasntSeenHim = true;
     }
 
-    //swiches from cookies failed to trigger eat your hat convo and curtains were still closed, so i'm deactivating them. 
-    //they dont really matter
     if (cookiesHas('switchAIsOn')) {
         switchAon.style.display = "block";
         switchAoff.style.display = "none";
         switcha.ison = true;
-    }
-    
-    if (cookiesHas('switchAIsOff')) {
-        switchAon.style.display = "none";
-        switchAoff.style.display = "block";
-        switcha.ison = false;
+        dooryellowdull.style.display = "none";
+        straightyellowdull.style.display = "none";
+        dooryellowdull2.style.display = "none";
+        straightyellowdull2.style.display = "none";
+        curvedull.style.display = "none";
+        vergeyellowdull.style.display = "none";
+        switchyellowdull.style.display = "none";
     }
     if (cookiesHas('switchBIsOn')) {
         switchBon.style.display = "block";
         switchBoff.style.display = "none";
         switchb.ison = true;
-    }
-    if (cookiesHas('switchBIsOff')) {
-        switchBon.style.display = "none";
-        switchBoff.style.display = "block";
-        switchb.ison = false;
+        doorbluedull.style.display = "none";
+        straightbluedull.style.display = "none";
+        doorbluedull2.style.display = "none";
+        straightbluedull2.style.display = "none";
+        vergebluedull.style.display = "none";
+        machinedull.style.display = "none";
+        switchbluedull.style.display = "none";
     }
 
     if (cookiesHas('actionAndInfo')) { 
@@ -5664,6 +5939,7 @@ function showInv() {
         if (inventory.slot4) {item4.style.display = "block"; item4.innerText = inventory.slot4;}
         paperflipsound();
         inventory.isOpen = true;
+        dialogue.preventM = true;
         }
 function hideInv() { //close inv hide inv
         inv.style.display = "none";
@@ -5673,6 +5949,7 @@ function hideInv() { //close inv hide inv
         item4.style.display = "none";
         paperflipsound();
         inventory.isOpen = false;
+        dialogue.preventM = false;
         }
 
         const papery = {
@@ -5866,6 +6143,7 @@ function decreaseNotificationLobbyThree() {
 }
 
 function showKeyItems() {
+    dialogue.preventM = true;
     dialogue.keyItemsPouchIsOpen = true;
     dialogue.allowEscape = true;
     dialogue.preventI = true;
@@ -5879,6 +6157,7 @@ function showKeyItems() {
 }
 
 function hideKeyItems() {
+    dialogue.preventM = false;
         keyItemsPouch.style.display = "none";
         strangevial.style.display = "none";
         dialogue.keyItemsPouchIsOpen = false;
@@ -5887,7 +6166,24 @@ function hideKeyItems() {
     dialogue.preventN = false;
 }
 
-function showNotes() {
+function showNotesEnd() {
+    notepadk.style.zIndex = 1000000000;
+    notebookTextKodaly.style.zIndex = 1000000000;
+    notepadk.style.zIndex = 1000000000;
+    notepadb.style.zIndex = 1000000000;
+            notepadv.style.zIndex = 1000000000;
+            notepads.style.zIndex = 1000000000;
+            notepadst.style.zIndex = 1000000000;
+            notepadmu.style.zIndex = 1000000000;
+            notepadi.style.zIndex = 1000000000;
+            notepadp.style.zIndex = 1000000000;
+              notebookTextVerily.style.zIndex = 1000000000;
+    notebookTextKodaly.style.zIndex = 1000000000;
+    notebookTextBridget.style.zIndex = 1000000000;
+    notebookTextShuri.style.zIndex = 1000000000;
+    notebookTextStymie.style.zIndex = 1000000000;
+    notebookTextMusic.style.zIndex = 1000000000;
+    notebookTextInfo.style.zIndex = 1000000000;
     notepad.open = true;
      notepadk.style.display = "block";
     notebookTextKodaly.style.display = "block";
@@ -5903,7 +6199,30 @@ function showNotes() {
     }
 }
 
+function showNotes() {
+    exclamation.style.display = "none";
+    document.cookie = "notepadopened=notepadopened";
+    notepad.open = true;
+    dialogue.preventM = true;
+    if (!dialogue.mysteriousVialTaken) {
+     notepadi.style.display = "block";
+    } else {
+        notepadisecret.style.display = "block";
+    }
+    paperflipsound();
+    if (dialogue.verilyIntro || cookiesHas('verily')) {
+        verilyTab.style.display = "block";
+    }
+    if (dialogue.shuriHasBeenSeen || cookiesHas('shuriEncountered')) {
+        shuriTab.style.display = "block";
+    }
+    if (dialogue.poemAddedToNotebook || cookiesHas('poem1found')) {
+        poemTab.style.display = "block";
+    }
+}
+
 function hideNotes() {
+    dialogue.preventM = false;
     notepad.open = false;
 notepadk.style.display = "none";
     notepadb.style.display = "none";
@@ -5912,8 +6231,8 @@ notepadk.style.display = "none";
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
-    
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
     notebookTextVerily.style.display = "none";
@@ -5938,6 +6257,7 @@ function notepadK(){
     notepadmu.style.display = "none";
     
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     
     notebookTextBridget.style.display = "none";
@@ -5957,6 +6277,7 @@ function notepadB(){
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     
         notebookTextBridget.style.display = "block";
@@ -5977,6 +6298,7 @@ function notepadV() {
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     
     notebookTextVerily.style.display = "block";
@@ -5999,6 +6321,7 @@ function notepadS(){
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     
     notebookTextVerily.style.display = "none";
@@ -6019,6 +6342,7 @@ function notepadST(){
     notepadst.style.display = "block";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     
      notebookTextVerily.style.display = "none";
@@ -6039,7 +6363,11 @@ function notepadInfo(){
     
     notepadmu.style.display = "none";
     
-    notepadi.style.display = "block";
+    if (!dialogue.mysteriousVialTaken) {
+     notepadi.style.display = "block";
+    } else {
+        notepadisecret.style.display = "block";
+    }
     notepadp.style.display = "none";
     
      notebookTextVerily.style.display = "none";
@@ -6066,6 +6394,8 @@ function notepadMusic() {
     notepads.style.display = "none";
     notepadst.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
+
     notepadp.style.display = "none";
     
      notebookTextVerily.style.display = "none";
@@ -6091,6 +6421,7 @@ function notepadPoem() {
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
      notebookTextVerily.style.display = "none";
     notebookTextKodaly.style.display = "none";
     notebookTextBridget.style.display = "none";
@@ -6255,6 +6586,9 @@ function drop1() {
                 key.rope2 = false;
         } if (inventory.slot1 === "violet rose") {
             pillarrose.style.display = "block";
+            pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
                 dialogue.violetRose = false;
         } if (inventory.slot1 === "pink island rose") { //temp. started replacement here
             wildredrose1.style.display = "block";
@@ -6263,6 +6597,7 @@ function drop1() {
         } if (inventory.slot1 === "yellow rose") {
             greenrose.style.display = "block";
             conductiveFlowers.green = true;
+            checkWires();
             if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
         } if (inventory.slot1 === "cyan rose") {
             if (!dialogue.blueRoseKnowsItsPlace) {
@@ -6279,6 +6614,7 @@ function drop1() {
                     bluelit.style.display = "block";
                 }
             }
+            checkWires();
         } if (inventory.slot1 === "blueish key") {
             blueishkey.style.display = "block";
         } if (inventory.slot1 === "pink-orange key") {
@@ -6290,6 +6626,10 @@ function drop1() {
             dialogue.weHaveBat = false;
         } if (inventory.slot1 === "orange rose") {
             orangeflower.style.display = "block";
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
+            orangelightbulbon.style.display = "block";
+            orangelightbulboff.style.display = "none";
                 dialogue.orangeflowertaken = false;
         } if (inventory.slot1 === "halberd") {
             halberd.style.display = "block";
@@ -6440,10 +6780,14 @@ function drop2() {
                 key.rope2 = false;
         }  if (inventory.slot2 === "violet rose") {
             pillarrose.style.display = "block";
+            pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
                 dialogue.violetRose = false;
         } if (inventory.slot2 === "yellow rose") {
             greenrose.style.display = "block";
             conductiveFlowers.green = true;
+            checkWires();
             if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
         } if (inventory.slot2 === "cyan rose") {
             if (!dialogue.blueRoseKnowsItsPlace) {
@@ -6460,6 +6804,7 @@ function drop2() {
                     bluelit.style.display = "block";
                 }
             }
+            checkWires();
         } if (inventory.slot2 === "pink island rose") {
             wildredrose1.style.display = "block";
         }  if (inventory.slot2 === "pink alcove rose") {
@@ -6475,6 +6820,10 @@ function drop2() {
             dialogue.weHaveBat = false;
         }  if (inventory.slot2 === "orange rose") {
             orangeflower.style.display = "block";
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
+            orangelightbulbon.style.display = "block";
+            orangelightbulboff.style.display = "none";
                 dialogue.orangeflowertaken = false;
         }  if (inventory.slot2 === "halberd") {
             halberd.style.display = "block";
@@ -6622,10 +6971,14 @@ function drop3() {
                 key.rope2 = false;
         }  if (inventory.slot3 === "violet rose") {
             pillarrose.style.display = "block";
+            pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
                 dialogue.violetRose = false;
         } if (inventory.slot3 === "yellow rose") {
             greenrose.style.display = "block";
             conductiveFlowers.green = true;
+            checkWires();
             if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
         } if (inventory.slot3 === "cyan rose") {
             if (!dialogue.blueRoseKnowsItsPlace) {
@@ -6642,6 +6995,7 @@ function drop3() {
                     bluelit.style.display = "block";
                 }
             }
+            checkWires();
         } if (inventory.slot3 === "pink island rose") {
             wildredrose1.style.display = "block";
         }  if (inventory.slot1 === "datacube") {
@@ -6659,6 +7013,10 @@ function drop3() {
             dialogue.weHaveBat = false;
         } if (inventory.slot3 === "orange rose") {
             orangeflower.style.display = "block";
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
+            orangelightbulbon.style.display = "block";
+            orangelightbulboff.style.display = "none";
                 dialogue.orangeflowertaken = false;
         }  if (inventory.slot3 === "halberd") {
             halberd.style.display = "block";
@@ -6810,9 +7168,13 @@ function drop4() {
         }  if (inventory.slot4 === "violet rose") {
             pillarrose.style.display = "block";
                 dialogue.violetRose = false;
+                pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
         } if (inventory.slot4 === "yellow rose") {
             greenrose.style.display = "block";
             conductiveFlowers.green = true;
+            checkWires();
             if (dialogue.greenSwitchFlipped) {greenlit.style.display = "block";}
         } if (inventory.slot4 === "cyan rose") {
             if (!dialogue.blueRoseKnowsItsPlace) {
@@ -6829,6 +7191,7 @@ function drop4() {
                     bluelit.style.display = "block";
                 }
             }
+            checkWires();
         } if (inventory.slot4 === "pink island rose") {
             wildredrose1.style.display = "block";
         }  if (inventory.slot4 === "pink alcove rose") {
@@ -6844,6 +7207,10 @@ function drop4() {
             dialogue.weHaveBat = false;
         } if (inventory.slot4 === "orange rose") {
             orangeflower.style.display = "block";
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
+            orangelightbulbon.style.display = "block";
+            orangelightbulboff.style.display = "none";
                 dialogue.orangeflowertaken = false;
         }  if (inventory.slot4 === "halberd") {
             halberd.style.display = "block";
@@ -7449,7 +7816,7 @@ function note8(){
         harp.style.display = "block";
         }, 1000);
 }
-function fishSing(){
+function fishSing() {
     fishSong.play();
 }
 
@@ -7868,6 +8235,7 @@ function closeWhatever() {
     exitcloseup.play();
         pillarinterface.style.display = "none";
         pillarControlLakes.style.display = "block";
+        dialogue.pillarControlLakeInteractedWith = true;
         dialogue.allowEscape = false;
         dialogue.blockArrowTravel = false;
         baseroom.style.display = "block";
@@ -9184,7 +9552,14 @@ function switchSwitchA(){
         curtainsopen.style.display = "block";
         switcha.ison = true;
         switchclick.play();
-        //document.cookie = "switchAIsOn=switchAIsOn";
+        dooryellowdull.style.display = "none";
+        straightyellowdull.style.display = "none";
+        dooryellowdull2.style.display = "none";
+        straightyellowdull2.style.display = "none";
+        curvedull.style.display = "none";
+        vergeyellowdull.style.display = "none";
+        switchyellowdull.style.display = "none";
+        document.cookie = "switchAIsOn=switchAIsOn";
         //document.cookie = "switchAIsOff" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } else {
         switchAon.style.display = "none";
@@ -9193,7 +9568,13 @@ function switchSwitchA(){
         curtainsopen.style.display = "none";
         switcha.ison = false;
         switchclick.play();
-        //document.cookie = "switchAIsOff=switchAIsOff";
+dooryellowdull.style.display = "block";
+straightyellowdull.style.display = "block";
+dooryellowdull2.style.display = "block";
+straightyellowdull2.style.display = "block";
+curvedull.style.display = "block";
+vergeyellowdull.style.display = "block";
+switchyellowdull.style.display = "block";
         //document.cookie = "switchAIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     }
 }
@@ -9204,13 +9585,27 @@ function switchSwitchB() {
         switchBoff.style.display = "none";
         switchb.ison = true;
         switchclick.play();
-        //document.cookie = "switchBIsOn=switchBIsOn";
+        doorbluedull.style.display = "none";
+        straightbluedull.style.display = "none";
+        doorbluedull2.style.display = "none";
+        straightbluedull2.style.display = "none";
+        vergebluedull.style.display = "none";
+        machinedull.style.display = "none";
+        switchbluedull.style.display = "none";
+        document.cookie = "switchBIsOn=switchBIsOn";
         //document.cookie = "switchBIsOff" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } else {
         switchBon.style.display = "none";
         switchBoff.style.display = "block";
         switchb.ison = false;
         switchclick.play();
+        doorbluedull.style.display = "block";
+        straightbluedull.style.display = "block";
+        doorbluedull2.style.display = "block";
+        straightbluedull2.style.display = "block";
+        vergebluedull.style.display = "block";
+        machinedull.style.display = "block";
+        switchbluedull.style.display = "block";
         //document.cookie = "switchBIsOff=switchBIsOff";
         //document.cookie = "switchBIsOn" + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
     }
@@ -9222,6 +9617,7 @@ function flipGreen() {
         greenswitchon.style.display = "block";
         document.cookie = "greenSwitchFlipped=greenSwitchFlipped";
         dialogue.greenSwitchFlipped = true;
+        yellowWiresLight();
         switchclick.play();
     } else {
         greenswitchoff.style.display = "block";
@@ -9231,6 +9627,9 @@ function flipGreen() {
     } 
 }
 
+const map = {
+    region1: true,
+}
 
 const dialogue = {
     opening: false, //the initial dialogue sequence
@@ -9241,7 +9640,7 @@ const dialogue = {
     currentlyInputtingArcadeName: false,
     arcadeFailuresOne: false,
     arcadeFailuresTwo: false,
-    masterSwitchChapterThreeDoor: true, //for testing turn to true. normally should be false
+    masterSwitchChapterThreeDoor: false, //for testing turn to true. normally should be false
     verilyisnowburningashrub: false,
     numberOfArcadeFailures: 0,
     mobilityUncertain: false,
@@ -9415,7 +9814,7 @@ document.addEventListener("keydown", function() {
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
                   //cheat  
-                  document.cookie = "lobbyThree=lobbyThree"; //mark testing. skip to chapter 3 jump to chapter three delete when done testing
+                  //document.cookie = "lobbyThree=lobbyThree"; //mark testing. skip to chapter 3 jump to chapter three delete when done testing
            return;
        }
    }});
@@ -10113,24 +10512,19 @@ const trianglelift = {
 function fadeOut() {
 ambientdark.style.display = "block";
 switchclick.play();
-  branleChampaigne.play();
-  saltarello.pause();
     setTimeout(function() {
             allDark.style.display = "block";
             allDark.style.opacity = 0.2;
-            ambientdark.style.opacity = 0.7;
+            ambientdark.style.opacity = 1;
     }, 2300);
     setTimeout(function() {
             allDark.style.opacity = 0.3;
-            ambientdark.style.opacity = 0.8;
     }, 2400);
     setTimeout(function() {
            allDark.style.opacity = 0.4;
-           ambientdark.style.opacity = 0.9;
     }, 2500);
     setTimeout(function() {
             allDark.style.opacity = 0.5;
-            ambientdark.style.opacity = 1;
     }, 2600);
     setTimeout(function() {
             allDark.style.opacity = 0.6;
@@ -10150,6 +10544,9 @@ switchclick.play();
     setTimeout(function() {
             thanksforplaying.style.display = "block";
     }, 5000);
+    setTimeout(function() {
+            allDark.style.opacity = 0.1;
+    }, 5300);
 }
 
 
@@ -10584,6 +10981,8 @@ lobby.style.display = "none";
                 chasm.style.display = "block";
                 chasmexplorers.style.display = "block";
                 current.room = "chasm";
+                map.region1 = true;
+                map.region2 = false;
         }
 
         else if (current.room === "dias"){
@@ -10664,6 +11063,8 @@ lobby.style.display = "none";
                 unnamedHallway.style.display = "none";
                 colorLockRoom.style.display = "block";
                 current.room = "colorLockRoom";   
+                map.region2 = true;
+                map.region3 = false;
                 if (dialogue.queneNoteShouldPlayInChapterTwoArea) {
                     if (!dialogue.karakKyal) {
                     queneNote.play();
@@ -11101,6 +11502,8 @@ document.addEventListener("keydown", function() {
                 lobbyThree.style.display = "block";
                 current.room = "lobbyThree";   
                 branle.volume = 0.2;        
+                map.region3 = true;
+                map.region3c = false;
                 if (dialogue.blueSwitchFlipped) {
                     bluemarkeron.style.display = "block";
                     bluemarkeroff.style.display = "none";
@@ -11156,12 +11559,13 @@ document.addEventListener("keydown", function() {
             flowerIsland.style.display = "block";
             current.room = "flowerIsland";         
             explorers.style.opacity = 0;      
-        } else if (current.room === "pillarControlLakes"){
+        } else if (current.room === "pillarControlLakes") {
+            dialogue.neeblings = true;
             randomOarAudio();    
             pillarControlLakes.style.display = "none";
             littleLakesLobbyWest.style.display = "block";
             current.room = "littleLakesLobbyWest";    
-            explorers.style.opacity = 0;         
+            explorers.style.opacity = 0;
         } else if (current.room === "littleLakesLobbyEast"){
             randomOarAudio();    
             littleLakesLobbyEast.style.display = "none";
@@ -11201,6 +11605,7 @@ document.addEventListener("keydown", function() {
                 newCellLake.style.display = "block";
             }
         }
+        determineTokenPosition();
     }; //end of check going south
 
 //check going east
@@ -11398,6 +11803,8 @@ function goEast() {
                 lobbyThree.style.display = "block";
                 current.room = "lobbyThree";
                 sacrumMysterium.volume = 0.3;
+                map.region3 = true;
+                map.region3a = false;
                 if (dialogue.greenSwitchFlipped) {
                     greenmarkeron.style.display = "block";
                     greenmarkeroff.style.display = "none";
@@ -11550,6 +11957,8 @@ function goEast() {
                 lobbyThree.style.display = "none";
                 sink.style.display = "block";
                 current.room = "sink";     
+                map.region3b = true;
+                map.region3 = false;
                 if (!dialogue.karakKyal) {
                 doihmot.play();
                 }
@@ -11776,6 +12185,7 @@ if (!inventory.slot1) {
             current.room = "secretCrackRoom";
             verilyWhatDidYouSee();
         }
+        determineTokenPosition();
     }; //end of check going east
 
 //check going west
@@ -11895,6 +12305,8 @@ function goWest() {
                 lobbyThree.style.display = "none";
                 keys1.style.display = "block";
                 current.room = "keys1";    
+                map.region3a = true;
+                map.region3 = false;
                 if (!dialogue.karakKyal) {
                 sacrumMysterium.play(); 
                 }
@@ -12101,6 +12513,10 @@ function goWest() {
                     dialogue.giveUsASecretPassageHint = true;
                     notifnoise.play();
                 }
+                if (dialogue.secretPaintingPassageDiscovered && dialogue.stmihintbloop) {
+                    dialogue.giveUsASecretPassageHint = false;
+                    decreaseNotificationLobbyThree();
+                }
                if (sinksForRedSwitch.yellows) {
                     if (sinksForRedSwitch.greens) {
                       if (sinksForRedSwitch.reds) {
@@ -12160,7 +12576,9 @@ function goWest() {
                 }
                 sink.style.display = "none";
                 lobbyThree.style.display = "block";
-                current.room = "lobbyThree";         
+                current.room = "lobbyThree";      
+                map.region3 = true;
+                map.region3b = false;   
                     waterFlowing.pause();
                 doihmot.volume = 0.3;  
                 if (dialogue.redSwitchFlipped) {
@@ -12274,7 +12692,10 @@ function goWest() {
             } else {
                 solveVialsPuzzle();
             }
+        }  else if (current.room === "lake2") {
+             orangeLightBulbTalk();
         }
+        determineTokenPosition();
     }; //end of check going west
 
 //check going north
@@ -12557,6 +12978,8 @@ function goNorth() {
                     unnamedHallway.style.display = "block";
                     current.room = "unnamedHallway";
                     queneNote.volume = 0.6;
+                    map.region3 = true;
+                    map.region2 = false;
                 } 
         } else if (current.room === "portholeRoom") {
                 portholeInterior.style.display = "block";
@@ -12664,7 +13087,6 @@ function goNorth() {
                 pipesRun3.style.display = "none";
                 source2.style.display = "block";
                 current.room = "source2";    
-                //checkWater();         
         } else if (current.room === "sink") {
                 if (dialogue.redSwitchCanBeSwitched && !dialogue.redSwitchFlipped) {
                     redswitch.style.display = "none";
@@ -12681,7 +13103,6 @@ function goNorth() {
                     redSwitchDialogue();
                     glasstink.play();
                 }
-                //checkWater();
         } 
         else if (current.room === "source1"){
                 randomDoorAudio();
@@ -12885,6 +13306,8 @@ function goNorth() {
         lobbyThree.style.display = "none";
         lake1.style.display = "block";
         current.room = "lake1";
+        map.region3c = true;
+        map.region3 = false;
         if (!dialogue.karakKyal) {
         branle.play();
         }
@@ -13033,6 +13456,7 @@ function goNorth() {
                       paintingcheck2.style.display = "block";
                       dialogue.setAside = true;
             } else if (dialogue.matchSet && dialogue.setAside)  {
+                checkWires();
                 artMirrorRoom.style.display = "none";
                 pillarDeadEnd.style.display = "block";
                 current.room = "pillarDeadEnd";
@@ -13096,6 +13520,8 @@ function goNorth() {
                 }
             } else if ((pillarLock.b === 0 && pillarLock.c === 3) || (pillarLock.b === 3 && pillarLock.c === 0)) {
                 iDontThinkICanFitThroughThat();
+            } else if ((pillarLock.b === 3 && pillarLock.c === 3) && (pillarLock.b === 3 && pillarLock.c === 3)) {
+                thesePillarsAreBlockingTheWay();
             }
         } else if (current.room === "flowerIsland"){
             randomOarAudio();    
@@ -13161,7 +13587,9 @@ function goNorth() {
             } else {
                 itWontBudge();
             }
-        }  else if (current.room === "blueSwitchRoom") {
+        }  else if (current.room === "paintingReferenceRoomReal") {
+            thisMustBePaint();
+        } else if (current.room === "blueSwitchRoom") {
             if (!dialogue.blueSwitchFlipped) {
                 dialogue.blueSwitchFlipped = true;
                 blueswitch.style.display = "none";
@@ -13187,6 +13615,8 @@ function goNorth() {
                 hallexplorers2.style.display = "block";
                 branle.pause();
                 saltarello.play();
+                map.region3c = false;
+                map.region4 = true;
             } else if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
                 willUnlockForColorFlowers();
             } else {
@@ -13218,6 +13648,7 @@ function goNorth() {
         } else if (current.room === "newCellLakeWest") {
             pickHalberd();
         }
+        determineTokenPosition();
     }; //end of check going north
 
    
@@ -13306,21 +13737,33 @@ function takePillarRose() {
                 pillarrose.style.display = "block";
                 dialogue.violetRose = false;
                 inventory.slot1 = "";
+                pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
             } else if (inventory.slot2 === "violet rose") {
                 item1.innerText = "";
                 pillarrose.style.display = "block";
                 dialogue.violetRose = false;
                 inventory.slot2 = "";
+                pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
             } else if (inventory.slot3 === "violet rose") {
                 item1.innerText = "";
                 pillarrose.style.display = "block";
                 dialogue.violetRose = false;
                 inventory.slot3 = "";
+                pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
             } else if (inventory.slot4 === "violet rose") {
                 item1.innerText = "";
                 pillarrose.style.display = "block";
                 dialogue.violetRose = false;
                 inventory.slot4 = false;
+                pillaron.style.display = "block";
+                pillarwireon.style.display = "block";
+                pillarwiressourceon.style.display = "block";
             }
         else if (!inventory.slot1) {
             if (inventory.slot1 !== "violet rose"
@@ -13329,6 +13772,9 @@ function takePillarRose() {
             && inventory.slot4 !== "violet rose") {
                 pillarrose.style.display = "none";
                 dialogue.violetRose = true;
+                pillaron.style.display = "none";
+                pillarwireon.style.display = "none";
+                pillarwiressourceon.style.display = "none";
                 inventory.slot1 = "violet rose";}
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "violet rose"
@@ -13336,6 +13782,9 @@ function takePillarRose() {
             && inventory.slot3 !== "violet rose"
             && inventory.slot4 !== "violet rose") {
                 pillarrose.style.display = "none";
+                pillaron.style.display = "none";
+                pillarwireon.style.display = "none";
+                pillarwiressourceon.style.display = "none";
                 dialogue.violetRose = true;
                 inventory.slot2 = "violet rose";}
         } else if (!inventory.slot3) {
@@ -13345,6 +13794,9 @@ function takePillarRose() {
             && inventory.slot4 !== "violet rose") {
                 pillarrose.style.display = "none";
                 dialogue.violetRose = true;
+                pillaron.style.display = "none";
+                pillarwireon.style.display = "none";
+                pillarwiressourceon.style.display = "none";
                 inventory.slot3 = "violet rose";}
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "violet rose"
@@ -13353,6 +13805,9 @@ function takePillarRose() {
             && inventory.slot4 !== "violet rose") {
                 pillarrose.style.display = "none";
                 dialogue.violetRose = true;
+                pillaron.style.display = "none";
+                pillarwireon.style.display = "none";
+                pillarwiressourceon.style.display = "none";
                 inventory.slot4 = "violet rose";}
         } else {
             tooHeavy();
@@ -13509,6 +13964,7 @@ const verilyIs = {
 }
 
 function throwRope() {
+    exclamationChasm.style.display = "none";
         if (inventory.slot1 === "rope" || inventory.slot2 === "rope" || inventory.slot3 === "rope" || inventory.slot4 === "rope") {
             ropeToss();
         } else if (!ropey.set) {
@@ -13532,7 +13988,54 @@ function throwRope2() { //chasm 2 (pipes)
 function takeViolet() {
     if (!alcove.solved){
     if (ropey.set) {
-        if (door.tried){
+        if (!inventory.slot1) {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
+                violetcandle.style.display = "none";
+                randomThunk();
+                atLeastWeCanGetTheseCandles();
+                inventory.slot1 = "violet candles";}
+        } else if (!inventory.slot2) {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
+                violetcandle.style.display = "none";
+                randomThunk();
+                atLeastWeCanGetTheseCandles();
+                inventory.slot2 = "violet candles";}
+        } else if (!inventory.slot3) {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
+                violetcandle.style.display = "none";
+                randomThunk();
+                atLeastWeCanGetTheseCandles();
+                inventory.slot3 = "violet candles";}
+        }  else if (!inventory.slot4) {
+            if (inventory.slot1 !== "violet candles"
+            && inventory.slot2 !== "violet candles"
+            && inventory.slot3 !== "violet candles"
+            && inventory.slot4 !== "violet candles") {
+                violetcandle.style.display = "none";
+                randomThunk();
+                atLeastWeCanGetTheseCandles();
+                inventory.slot4 = "violet candles";}
+        } 
+        else {
+            tooHeavy();
+            dialogue.tooheavytoovioletcandles = true;
+        }
+    } else {
+        tooFar();
+    }
+}}
+
+function atLeastWeCanGetTheseCandles() {
+    if (door.tried && !dialogue.tooheavytoovioletcandles) {
     zd1.style.display = "block";
     k.style.display = "block";
     dialogue.candlesNow = 1;
@@ -13543,57 +14046,27 @@ if (event.key === 'Enter' || event.key === ' ') {
      k.style.display = "none";
       dialogue.candlesNow = true;
       door.tried = true;
-        return;
     }}});}
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "violet candles"
-            && inventory.slot2 !== "violet candles"
-            && inventory.slot3 !== "violet candles"
-            && inventory.slot4 !== "violet candles") {
-                violetcandle.style.display = "none";
-                randomThunk();
-                inventory.slot1 = "violet candles";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "violet candles"
-            && inventory.slot2 !== "violet candles"
-            && inventory.slot3 !== "violet candles"
-            && inventory.slot4 !== "violet candles") {
-                violetcandle.style.display = "none";
-                randomThunk();
-                inventory.slot2 = "violet candles";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "violet candles"
-            && inventory.slot2 !== "violet candles"
-            && inventory.slot3 !== "violet candles"
-            && inventory.slot4 !== "violet candles") {
-                violetcandle.style.display = "none";
-                randomThunk();
-                inventory.slot3 = "violet candles";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "violet candles"
-            && inventory.slot2 !== "violet candles"
-            && inventory.slot3 !== "violet candles"
-            && inventory.slot4 !== "violet candles") {
-                violetcandle.style.display = "none";
-                randomThunk();
-                inventory.slot4 = "violet candles";}
-        } else {
-            tooHeavy();
-        }
-    } else {
-        tooFar();
-    }
-}}
+
+}
 
 function droporangeflower() {
     if (inventory.slot1 === "orange rose") {
             drop1();
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
         } else if (inventory.slot2 === "orange rose") {
             drop2();
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
         } else if (inventory.slot3 === "orange rose") {
             drop3();
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
         } else if (inventory.slot4 === "orange rose") {
             drop4();
+            orangewire1dull.style.display = "none";
+            orangewire2dull.style.display = "none";
         }
 }
 
@@ -13605,6 +14078,9 @@ function addOrangeFlowerToInventory() {
             && inventory.slot4 !== "orange rose") {
                 orangeflower.style.display = "none";
                 dialogue.orangeflowertaken = true;
+                dialogue.orangeflowerhasbeentaken = true;
+                orangewire1dull.style.display = "block";
+                orangewire2dull.style.display = "block";
                 rosePluck.play();
                 inventory.slot1 = "orange rose";}
         } else if (!inventory.slot2) {
@@ -13613,7 +14089,10 @@ function addOrangeFlowerToInventory() {
             && inventory.slot3 !== "orange rose"
             && inventory.slot4 !== "orange rose") {
                  orangeflower.style.display = "none";
+                 orangewire1dull.style.display = "block";
+                orangewire2dull.style.display = "block";
                 dialogue.orangeflowertaken = true;
+                dialogue.orangeflowerhasbeentaken = true;
                 rosePluck.play();
                 inventory.slot2 = "orange rose";}
         } else if (!inventory.slot3) {
@@ -13622,7 +14101,10 @@ function addOrangeFlowerToInventory() {
             && inventory.slot3 !== "orange rose"
             && inventory.slot4 !== "orange rose") {
                 orangeflower.style.display = "none";
+                orangewire1dull.style.display = "block";
+                orangewire2dull.style.display = "block";
                 dialogue.orangeflowertaken = true;
+                dialogue.orangeflowerhasbeentaken = true;
                 rosePluck.play();
                 inventory.slot3 = "orange rose";}
         }  else if (!inventory.slot4) {
@@ -13632,6 +14114,9 @@ function addOrangeFlowerToInventory() {
             && inventory.slot4 !== "orange rose") {
                 orangeflower.style.display = "none";
                 dialogue.orangeflowertaken = true;
+                orangewire1dull.style.display = "block";
+                orangewire2dull.style.display = "block";
+                dialogue.orangeflowerhasbeentaken = true;
                 rosePluck.play();
                 inventory.slot4 = "orange rose";}
         } else {
@@ -14301,7 +14786,7 @@ function pickSE() {
     }
     
     //radio
-    else if (current.room === "lobby"){
+    else if (current.room === "lobby") {
         if (!dialogue.radio){
       d1.style.display = "block";
       ra.style.display = "block";
@@ -14371,6 +14856,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zx1.style.display = "block";
       k.style.display = "block";
       dialogue.getASignalOut = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.getASignalOut === 1) {
@@ -14419,7 +14905,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zx7.style.display = "none";
       k.style.display = "none";
       dialogue.getASignalOut = false;
-        return;
+      dialogue.blockArrowTravel = false;
     }
 }});
        } else {
@@ -14427,6 +14913,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         d1.style.display = "block";
       ra.style.display = "block"; //bzzt
       dialogue.radio2 = 1;
+      dialogue.blockArrowTravel = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.radio2 === 1) {
@@ -14447,8 +14934,8 @@ if (event.key === 'Enter' || event.key === ' ') {
      e2.style.display = "none";
       b.style.display = "none";
       dialogue.radioCheck = false;
-      dialogue.radio2 = 0;
-        return;
+      dialogue.blockArrowTravel = false;
+      dialogue.radio2 = true;
     }
 }});}
        }
@@ -15654,6 +16141,7 @@ if (event.key === 'Enter' || event.key === ' ') {
       dialogue.halfAClue3 = 1;
       chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
+              dialogue.chandleClue3Escape = true;
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.halfAClue3 === 1) {
@@ -15661,7 +16149,8 @@ if (event.key === 'Enter' || event.key === ' ') {
                 document.body.style.background = "#f5f1e0"; //hex code back to beige
         chandelierexplorers.style.display = "none";
       chandelierexplorers2.style.display = "block";
-        return;
+              dialogue.chandleClue3Escape = false;
+
     }
 }});
    }  
@@ -16619,12 +17108,16 @@ function pickGreenRose() {
     if (current.room === "switchTerminus") {
         if (inventory.slot1 === "yellow rose") {
             drop1();
+            checkWires();
         } else if (inventory.slot2 === "yellow rose") {
             drop2();
+            checkWires();
         } else if (inventory.slot3 === "yellow rose") {
             drop3();
+            checkWires();
         } else if (inventory.slot4 === "yellow rose") {
             drop4();
+            checkWires();
         } else if (!inventory.slot1) {
             if (inventory.slot1 !== "yellow rose"
             && inventory.slot2 !== "yellow rose"
@@ -16635,6 +17128,7 @@ function pickGreenRose() {
                 rosePluck.play();
                 greenlit.style.display = "none";
                 inventory.slot1 = "yellow rose";}
+                checkWires();
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "yellow rose"
             && inventory.slot2 !== "yellow rose"
@@ -16645,6 +17139,7 @@ function pickGreenRose() {
                 rosePluck.play();
                 greenlit.style.display = "none";
                 inventory.slot2 = "yellow rose";}
+                checkWires();
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "yellow rose"
             && inventory.slot2 !== "yellow rose"
@@ -16655,6 +17150,7 @@ function pickGreenRose() {
                 rosePluck.play();
                 greenlit.style.display = "none";
                 inventory.slot3 = "yellow rose";}
+                checkWires();
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "yellow rose"
             && inventory.slot2 !== "yellow rose"
@@ -16665,6 +17161,7 @@ function pickGreenRose() {
                 rosePluck.play();
                 greenlit.style.display = "none";
                 inventory.slot4 = "yellow rose";}
+                checkWires();
         } else {
             tooHeavy();
         } 
@@ -16699,6 +17196,7 @@ function placeRedOrBlueRoses() {
                 bluelit.style.display = "block";
             }
             drop1();
+            checkWires();
         } else if (inventory.slot2 === "cyan rose") {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
@@ -16708,6 +17206,7 @@ function placeRedOrBlueRoses() {
                 bluelit.style.display = "block";
             }
             drop2();
+            checkWires();
         } else if (inventory.slot3 === "cyan rose") {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
@@ -16717,6 +17216,7 @@ function placeRedOrBlueRoses() {
                 bluelit.style.display = "block";
             }
             drop3();
+            checkWires();
         } else if (inventory.slot4 === "cyan rose") {
             bluerose.style.display = "block";
             conductiveFlowers.blue = true;
@@ -16726,6 +17226,7 @@ function placeRedOrBlueRoses() {
                 bluelit.style.display = "block";
             }
             drop4();
+            checkWires();
         } else if (dialogue.blueRoseKnowsItsPlace) {
          if (!inventory.slot1) { //picking that thang back up again
             if (inventory.slot1 !== "cyan rose"
@@ -16736,6 +17237,7 @@ function placeRedOrBlueRoses() {
                 conductiveFlowers.blue = false;
                 bluelit.style.display = "none";
                 inventory.slot1 = "cyan rose";}
+                checkWires();
         } else if (!inventory.slot2) {
             if (inventory.slot1 !== "cyan rose"
             && inventory.slot2 !== "cyan rose"
@@ -16745,6 +17247,7 @@ function placeRedOrBlueRoses() {
                 conductiveFlowers.blue = false;
                 bluelit.style.display = "none";
                 inventory.slot2 = "cyan rose";}
+                checkWires();
         } else if (!inventory.slot3) {
             if (inventory.slot1 !== "cyan rose"
             && inventory.slot2 !== "cyan rose"
@@ -16754,6 +17257,7 @@ function placeRedOrBlueRoses() {
                 conductiveFlowers.blue = false;
                 bluelit.style.display = "none";
                 inventory.slot3 = "cyan rose";}
+                checkWires();
         }  else if (!inventory.slot4) {
             if (inventory.slot1 !== "cyan rose"
             && inventory.slot2 !== "cyan rose"
@@ -16763,6 +17267,7 @@ function placeRedOrBlueRoses() {
                 conductiveFlowers.blue = false;
                 bluelit.style.display = "none";
                 inventory.slot4 = "cyan rose";}
+                checkWires();
         } else {
             tooHeavy();
         } 
@@ -16777,6 +17282,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop1();
+            checkWires();
         } else if (inventory.slot2 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
@@ -16786,6 +17292,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop2();
+            checkWires();
         } else if (inventory.slot3 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
@@ -16795,6 +17302,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop3();
+            checkWires();
         } else if (inventory.slot4 === "pink island rose") {
             redrose1.style.display = "block";
             conductiveFlowers.red1 = true;
@@ -16804,6 +17312,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop4();
+            checkWires();
         } if (inventory.slot1 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
@@ -16813,6 +17322,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop1();
+            checkWires();
         } else if (inventory.slot2 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
@@ -16822,6 +17332,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop2();
+            checkWires();
         } else if (inventory.slot3 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
@@ -16831,6 +17342,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop3();
+            checkWires();
         } else if (inventory.slot4 === "pink alcove rose") {
             redrose2.style.display = "block";
             conductiveFlowers.red2 = true;
@@ -16840,6 +17352,7 @@ function placeRedOrBlueRoses() {
                 redlit.style.display = "block";
             }
             drop4();
+            checkWires();
         }
 }
 }
@@ -16865,7 +17378,6 @@ function enterName() {
         yyz11.style.display = "block";
             document.getElementById("scorename").innerHTML = dialogue.arcadeName;
             scorename.style.display = "block";
-
            st.style.display = "block";
            terminalcloseup.style.display = "none";
            namingbuttons.style.display = "none";
@@ -16930,6 +17442,492 @@ function takeSecretFruit() {
         document.cookie = "verilyHasSecretFruit=verilyHasSecretFruit"
     }
 }
+
+
+            function showPhome() {
+phome.style.display = "block";
+            }
+            function showPrestart() {
+prestart.style.display = "block";
+            }
+            function showPnotepad() {
+pnotepad.style.display = "block";
+            }
+            function showPsketches() {
+psketches.style.display = "block";
+            }
+            function showPcontact() {
+pcontact.style.display = "block";
+            }
+               function noPsketches() {
+psketches.style.display = "none";
+            }
+            function noPcontact() {
+pcontact.style.display = "none";
+            }
+function noPnotepad() {
+pnotepad.style.display = "none";
+            }
+             function noPhome() {
+phome.style.display = "none";
+            } function noPrestart() {
+prestart.style.display = "none";
+            }
+
+ function goSketches() { //markle
+    dialogue.arrowsBackAndForth = true;
+sketch2.style.display = "block";
+bigX.style.display = "block";
+bigX.style.zIndex = 100000003;
+nextarrow2.style.display = "block";
+prevarrow2.style.display = "block";
+nextarrow2.style.zIndex = 100000003;
+prevarrow2.style.zIndex = 100000003;
+dialogue.sketches2 = true;
+}
+
+function nextSketch() {
+    if (dialogue.sketches2) {
+sketch2.style.display = "none";
+sketch3.style.display = "block";
+dialogue.sketches2 = false;
+dialogue.sketches3 = true;
+    } else if (dialogue.sketches3) {
+sketch3.style.display = "none";
+sketch4.style.display = "block";
+dialogue.sketches3 = false;
+dialogue.sketches4 = true;
+    } else if (dialogue.sketches4) {
+sketch4.style.display = "none";
+sketch5.style.display = "block";
+dialogue.sketches4 = false;
+dialogue.sketches5 = true;
+    } else if (dialogue.sketches5) {
+sketch5.style.display = "none";
+sketch6.style.display = "block";
+dialogue.sketches5 = false;
+dialogue.sketches6 = true;
+    }
+
+}
+
+function prevSketch() {
+    if (dialogue.sketches3) {
+sketch2.style.display = "block";
+sketch3.style.display = "none";
+dialogue.sketches2 = true;
+dialogue.sketches3 = false;
+    } else if (dialogue.sketches4) {
+sketch3.style.display = "block";
+sketch4.style.display = "none";
+dialogue.sketches3 = true;
+dialogue.sketches4 = false;
+    } else if (dialogue.sketches5) {
+sketch5.style.display = "none";
+sketch4.style.display = "block";
+dialogue.sketches5 = false;
+dialogue.sketches4 = true;
+    } else if (dialogue.sketches6) {
+sketch6.style.display = "none";
+sketch5.style.display = "block";
+dialogue.sketches6 = false;
+dialogue.sketches5 = true;
+    }
+}
+
+function closeSketches() {
+    sketch2.style.display = "none";
+    sketch3.style.display = "none";
+    sketch4.style.display = "none";
+    sketch5.style.display = "none";
+    sketch6.style.display = "none";
+    dialogue.arrowsBackAndForth = false;
+}
+
+function goContact() {
+    contactForm.style.display = "block";
+    prompts.style.display = "block";
+    dialogue.contactEndOpen = true;
+            }
+
+function openMap() {
+    if (!map.isOpen && !notepad.open && !dialogue.keyItemsPouchIsOpen && !inventory.isOpen) {
+        dialogue.preventN = true;
+        dialogue.preventI = true;
+        map.isOpen = true;
+        dialogue.allowEscape = true;
+        if (map.region1) {
+            region1map.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+        } else if (map.region2) {
+            region2map.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+        } else if (map.region3) {
+            region3map.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+            alert("//mark draw the map");
+        } else if (map.region3a) {
+            region3amap.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+        } else if (map.region3b) {
+            region3bmap.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+        } else if (map.region3c) {
+            region3cmap.style.display = "block";
+            token.style.display = "block";
+            determineTokenPosition();
+        }
+    } else {
+        map.isOpen = false; 
+        dialogue.preventN = false;
+        dialogue.preventI = false;
+        region3amap.style.display = "none";
+        region3bmap.style.display = "none";
+        region3cmap.style.display = "none";
+        region3map.style.display = "none";
+        region2map.style.display = "none";
+        region1map.style.display = "none";
+        region1mapNew.style.display = "none";
+        token.style.display = "none";
+
+    }
+    
+}
+
+function determineTokenPosition() {
+    if (map.region1) {
+        if (map.isOpen) {
+            region3amap.style.display = "none";
+            region3bmap.style.display = "none";
+            region3cmap.style.display = "none";
+            region3map.style.display = "none";
+            region2map.style.display = "none";
+            if (dialogue.labyrinthHasGrown) {
+                region1mapNew.style.display = "block";
+            } else {
+                region1map.style.display = "block";
+            }
+        }
+        if (current.room === "lift") {
+            token.style.transform = "translate(-75px, 0px)"
+        } else if (current.room === "lobby") {
+            token.style.transform = "translate(0px, 0px)"
+        } else if (current.room === "sauna") {
+            token.style.transform = "translate(0px, 75px)"
+        } else if (current.room === "posterRoom") {
+            token.style.transform = "translate(75px, 0px)"
+        } else if (current.room === "dias") {
+            token.style.transform = "translate(-75px, -75px)"
+        } else if (current.room === "pond") {
+            token.style.transform = "translate(-150px, 0px)"
+        } else if (current.room === "chasm") {
+            token.style.transform = "translate(0px, -75px)"
+        } else if (current.room === "newCellLake") {
+            token.style.transform = "translate(0px, 150px)"
+        } else if (current.room === "newCellLakeWest") {
+            token.style.transform = "translate(-75px, 150px)"
+        }
+    } else if (map.region2) {
+        if (map.isOpen) {
+            region3amap.style.display = "none";
+            region3bmap.style.display = "none";
+            region3cmap.style.display = "none";
+            region3map.style.display = "none";
+            region2map.style.display = "block";
+            region1map.style.display = "none";
+        }
+        if (current.room === "lobbyTwo") {
+            token.style.transform = "translate(-22px, 100px)" //zero,zero
+        } else if (current.room === "hallway") {
+            token.style.transform = "translate(-22px, 175px)"
+        } else if (current.room === "gardenNorth") {
+            token.style.transform = "translate(-22px, 25px)"
+        } else if (current.room === "gardenEast") {
+            token.style.transform = "translate(50px, 100px)"
+        } else if (current.room === "gardenWest") {
+            token.style.transform = "translate(-100px, 100px)"
+        } else if (current.room === "lockboxRoom") {
+            token.style.transform = "translate(-175px, 100px)"
+        } else if (current.room === "controlRoom") {
+            token.style.transform = "translate(-250px, 100px)"
+        } else if (current.room === "pillarRoom") {
+            token.style.transform = "translate(-175px, 25px)"
+        } else if (current.room === "displayRoom") {
+            token.style.transform = "translate(-175px, 175px)"
+        } else if (current.room === "portholeRoom") {
+            token.style.transform = "translate(125px, 25px)"
+        } else if (current.room === "chandelierRoom") {
+            token.style.transform = "translate(125px, 100px)"
+        } else if (current.room === "switchRoom") {
+            token.style.transform = "translate(200px, 100px)"
+        } else if (current.room === "library") {
+            token.style.transform = "translate(125px, 175px)"
+        } else if (current.room === "orchidRoom") {
+            token.style.transform = "translate(-22px, -50px)"
+        } else if (current.room === "fernRoom") {
+            token.style.transform = "translate(-22px, -125px)"
+        } else if (current.room === "colorLockRoom") {
+            token.style.transform = "translate(-22px, -200px)"
+        } else if (current.room === "kitchen") {
+            token.style.transform = "translate(60px, -50px)"
+        }
+    } else if (map.region3) {
+        if (map.isOpen) {
+            region3amap.style.display = "none";
+            region3bmap.style.display = "none";
+            region3cmap.style.display = "none";
+            region3map.style.display = "block";
+            region2map.style.display = "none";
+            region1map.style.display = "none";
+        }
+        if (current.room === "lobbyThree") {
+            token.style.transform = "translate(0px, 0px)"
+        }
+    } else if (map.region3a) {
+        if (map.isOpen) {
+            region3amap.style.display = "block";
+            region3bmap.style.display = "none";
+            region3cmap.style.display = "none";
+            region3map.style.display = "none";
+            region2map.style.display = "none";
+            region1map.style.display = "none";
+        }
+        if (current.room === "keys2") {
+            token.style.transform = "translate(260px, -30px)"
+        } else if (current.room === "keys1") {
+            token.style.transform = "translate(340px, -30px)"
+        } else if (current.room === "keys3") {
+            token.style.transform = "translate(175px, -30px)"
+        } else if (current.room === "keys4") {
+            token.style.transform = "translate(175px, 50px)"
+        } else if (current.room === "keys5") {
+            token.style.transform = "translate(175px, 130px)"
+        } else if (current.room === "keys6") {
+            token.style.transform = "translate(100px, -30px)"
+        } else if (current.room === "keys7") {
+            token.style.transform = "translate(100px, -110px)"
+        } else if (current.room === "keys8") {
+            token.style.transform = "translate(15px, -30px)"
+        } else if (current.room === "keysLobby") {
+            token.style.transform = "translate(-65px, -30px)"
+        } else if (current.room === "keys15") {
+            token.style.transform = "translate(-140px, -30px)"
+        } else if (current.room === "keys16") {
+            token.style.transform = "translate(-225px, -30px)"
+        } else if (current.room === "keys18") {
+            token.style.transform = "translate(-305px, -30px)"
+        } else if (current.room === "keys17") {
+            token.style.transform = "translate(-225px, -110px)"
+        } else if (current.room === "keys19") {
+            token.style.transform = "translate(-225px, 50px)"
+        } else if (current.room === "keys10") {
+            token.style.transform = "translate(-65px, -110px)"
+        } else if (current.room === "keys11") {
+            token.style.transform = "translate(-65px, -190px)"
+        } else if (current.room === "keys13") {
+            token.style.transform = "translate(-65px, -270px)"
+        } else if (current.room === "keys12") {
+            token.style.transform = "translate(15px, -190px)"
+        } else if (current.room === "keys14") {
+            token.style.transform = "translate(-145px, -190px)"
+        } else if (current.room === "keys20") {
+            token.style.transform = "translate(-65px, 50px)"
+        } else if (current.room === "keys21") {
+            token.style.transform = "translate(-65px, 130px)"
+        } else if (current.room === "keys22") {
+            token.style.transform = "translate(-65px, 210px)"
+        } else if (current.room === "keys23") {
+            token.style.transform = "translate(-145px, 210px)"
+        } else if (current.room === "keys24") {
+            token.style.transform = "translate(-65px, 290px)"
+        } else if (current.room === "keys26") {
+            token.style.transform = "translate(15px, 290px)"
+        } else if (current.room === "keys25") {
+            token.style.transform = "translate(15px, 210px)"
+        } else if (current.room === "keys27") {
+            token.style.transform = "translate(95px, 210px)"
+        }
+    } else if (map.region3c) {
+        if (map.isOpen) {
+            region3amap.style.display = "none";
+            region3bmap.style.display = "none";
+            region3cmap.style.display = "block";
+            region3map.style.display = "none";
+            region2map.style.display = "none";
+            region1map.style.display = "none";
+        }
+        if (current.room === "lakesLobby") {
+            token.style.transform = "translate(-30px, 15px)"
+        } else if (current.room === "lake3") {
+            token.style.transform = "translate(-30px, 90px)"
+        } else if (current.room === "lake2") {
+            token.style.transform = "translate(-31px, 161px)"
+        } else if (current.room === "lake1") {
+            token.style.transform = "translate(-33px, 235px)"
+        } else if (current.room === "artMirrorRoom") {
+            token.style.transform = "translate(-31px, -60px)"
+        } else if (current.room === "pillarDeadEnd") {
+            token.style.transform = "translate(-29px, -138px)"
+        } else if (current.room === "switchTerminus") {
+            token.style.transform = "translate(-29px, -213px)"
+        } else if (current.room === "blueCircuit") {
+            token.style.transform = "translate(49px, -212px)"
+        } else if (current.room === "redCircuit") {
+            token.style.transform = "translate(-105px, -212px)"
+        } else if (current.room === "orientationControl") {
+            token.style.transform = "translate(45px, 15px)"
+        } else if (current.room === "littleLakesLobbyEast") {
+            token.style.transform = "translate(120px, 15px)"
+        } else if (current.room === "paintingReferenceRoom") {
+            token.style.transform = "translate(120px, -60px)"
+        } else if (current.room === "paintingReferenceRoomReal") {
+            token.style.transform = "translate(120px, -135px)"
+        } else if (current.room === "roseRoom") {
+            token.style.transform = "translate(120px, 90px)"
+        } else if (current.room === "binaryEast") {
+            token.style.transform = "translate(195px, 15px)"
+        } else if (current.room === "colorControl") {
+            token.style.transform = "translate(-105px, 15px)"
+        } else if (current.room === "littleLakesLobbyWest") {
+            token.style.transform = "translate(-180px, 15px)"
+        } else if (current.room === "binaryWest") {
+            token.style.transform = "translate(-255px, 15px)"
+        } else if (current.room === "pillarControlLakes") {
+            token.style.transform = "translate(-180px, -60px)"
+        } else if (current.room === "flowerIsland") {
+            token.style.transform = "translate(-183px, 86px)"
+        } else if (current.room === "blueSwitchRoom") {
+            token.style.transform = "translate(-105px, 90px)"
+        } else if (current.room === "secretCrackRoom") {
+            token.style.transform = "translate(-180px, -212px)"
+        } 
+} else if (map.region3b) {
+        if (map.isOpen) {
+            region3amap.style.display = "none";
+            region3bmap.style.display = "block";
+            region3cmap.style.display = "none";
+            region3map.style.display = "none";
+            region2map.style.display = "none";
+            region1map.style.display = "none";
+        }
+        if (current.room === "pipesLobby") {
+            token.style.transform = "translate(50px, 0px)"
+        } else if (current.room === "chasm2") {
+            token.style.transform = "translate(50px, -75px)"
+        } else if (current.room === "squareLiftRoom") {
+            token.style.transform = "translate(50px, -150px)"
+        } else if (current.room === "circleLiftRoom") {
+            token.style.transform = "translate(-25px, -150px)"
+        } else if (current.room === "triangleLiftRoom") {
+            token.style.transform = "translate(125px, -150px)"
+        } else if (current.room === "oarsRoom") {
+            token.style.transform = "translate(200px, -150px)"
+        } else if (current.room === "twistHandleRoom") {
+            token.style.transform = "translate(50px, -225px)"
+        } else if (current.room === "boatRoom") {
+            token.style.transform = "translate(50px, 75px)"
+        } else if (current.room === "lake") {
+            token.style.transform = "translate(50px, 150px)"
+        } else if (current.room === "lakeShoreSouth") {
+            token.style.transform = "translate(50px, 225px)"
+        } else if (current.room === "stairsRoom") {
+            token.style.transform = "translate(125px, 0px)"
+        } else if (current.room === "gallery") {
+            token.style.transform = "translate(200px, 0px)"
+        } else if (current.room === "yPipeRoom") {
+            token.style.transform = "translate(275px, 0px)"
+        } else if (current.room === "longPipeRoom") {
+            token.style.transform = "translate(-25px, 0px)"
+        } else if (current.room === "pipesRun3") {
+            token.style.transform = "translate(-100px, 0px)"
+        } else if (current.room === "pipesRun2") {
+            token.style.transform = "translate(-175px, 0px)"
+        } else if (current.room === "pipesRun1") {
+            token.style.transform = "translate(-250px, 0px)"
+        } else if (current.room === "sink") {
+            token.style.transform = "translate(-325px, 0px)"
+        } else if (current.room === "source1") {
+            token.style.transform = "translate(-175px, 75px)"
+        } else if (current.room === "source2") {
+            token.style.transform = "translate(-100px, -75px)"
+        } else if (current.room === "source3") {
+            token.style.transform = "translate(-25px, 150px)"
+        } else if (current.room === "lakeShoreEast") {
+            token.style.transform = "translate(125px, 150px)"
+        } else if (current.room === "platformsHintRoom") {
+            token.style.transform = "translate(200px, 75px)"
+        } else if (current.room === "arcadeRoom") {
+            token.style.transform = "translate(200px, -75px)"
+        }
+}
+}
+function startCarmanAfterChampaigne() {
+    theCarmansWhistle.play();
+}
+
+function checkWires() {
+    blueWiresLight();
+    pinkWiresLight();
+    yellowWiresLight();
+}
+
+function blueWiresLight() {
+    if (dialogue.blueSwitchFlipped) {
+        colorwiresbluedull.style.display = "none";
+        w2b1.style.display = "none";
+        bdull1.style.display = "none";
+        if (conductiveFlowers.blue) {
+            w2b2.style.display = "none";
+            bdull2.style.display = "none";
+        } else if (!conductiveFlowers.blue) {
+            w2b2.style.display = "block";
+            bdull2.style.display = "block";
+        }
+    } else if (!dialogue.blueSwitchFlipped) {
+        colorwiresbluedull.style.display = "block";
+        w2b1.style.display = "block";
+        bdull1.style.display = "block";
+    }
+}
+
+function pinkWiresLight() {
+    if (dialogue.redSwitchFlipped) {
+        colorwirespinkdull.style.display = "none";
+        w2p1.style.display = "none";
+        pdull1.style.display = "none";
+        if (conductiveFlowers.red1 && conductiveFlowers.red2) {
+            w2p2.style.display = "none";
+            pdull2.style.display = "none";
+        } else if (!conductiveFlowers.red1 || !conductiveFlowers.red2) {
+            w2p2.style.display = "block";
+            pdull2.style.display = "block";
+        }
+    } else if (!dialogue.redSwitchFlipped) {
+        colorwirespinkdull.style.display = "block";
+        w2p1.style.display = "block";
+        pdull1.style.display = "block";
+    }
+}
+
+function yellowWiresLight() {
+        if (dialogue.greenSwitchFlipped) {
+            colorwiresyellowdull.style.display = "none";
+            w2y1.style.display = "none";
+            if (conductiveFlowers.green) {
+            w2y2.style.display = "none";
+            } else if (!conductiveFlowers.green) {
+            w2y2.style.display = "block";
+            }
+        } else if (!dialogue.greenSwitchFlipped) {
+            colorwiresyellowdull.style.display = "block";
+            w2y1.style.display = "block";
+        }
+} //bargle
 
 function goToTheHomePageWhyDontYou(){
     if (!dialogue.allowEscape) {

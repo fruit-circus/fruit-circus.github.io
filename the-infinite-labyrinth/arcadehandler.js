@@ -19,7 +19,7 @@ function bikaipoArcadeGame() {
 }
 
 
-function closeTheArcadeGame() {
+function closeTheArcadeGame() { // close arcade game
                 eightBitTune.pause();
                 doihmot.play();
                 arcadeshell.style.display = "none";
@@ -38,6 +38,11 @@ function closeTheArcadeGame() {
                 if (dialogue.stymieArcadeAlterations2) {
                   dialogue.arcadeFailuresTwo = true;
                 }
+                if (dialogue.numberOfArcadeFailures == 4) {
+              //if you change the above number "change this number too" in labyrinthdialogue.js
+              thisIsReallyHard();
+              increaseNotificationLobbyThree();
+            }
 }
 
 
@@ -55,7 +60,7 @@ function closeTheArcadeGame() {
         var speed = 1;
         var projectileSize = 8; 
       } else {
-        var speed = 3;
+        var speed = 2;
         var projectileSize = 8; 
       }
        //changeSpeed (default is 3)
@@ -168,8 +173,8 @@ function closeTheArcadeGame() {
             projectile.speedY = -speed;
             break;}
         projectiles.push(projectile);}
-      }else if (!dialogue.stymieArcadeAlterations1 && !dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
-        for (var i = 0; i < 4; i++) {
+      } else if (!dialogue.stymieArcadeAlterations1 && !dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
+        for (var i = 0; i < 3; i++) { //mark. normally 4
         var x = Math.random() * gameSquare.size;
         var y = Math.random() * gameSquare.size;
         var direction = Math.floor(Math.random() * 8);
@@ -277,7 +282,7 @@ function closeTheArcadeGame() {
             break;}
         projectiles.push(projectile);}
       }
-      }, 700);}}
+      }, 800);}} //mark. normally 700
 
 
     function updateTimer() {
@@ -386,12 +391,6 @@ function closeTheArcadeGame() {
             gameover.play();
             dialogue.gameBlooped = true;
             dialogue.numberOfArcadeFailures++;
-            if (dialogue.numberOfArcadeFailures == 1) { //mark change back to 5
-              stonesound.play();
-              increaseNotificationLobbyThree();
-              notifnoise.play();
-              
-            }
         }
 
     function gameOver() {

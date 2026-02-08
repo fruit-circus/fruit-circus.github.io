@@ -620,7 +620,11 @@ if (event.key === 'Enter' || event.key === ' ') {
        denotifnoise.play();
         }
   }
-});}
+});} else if (!dialogue.candlesHintConvoFinished && dialogue.nothingCandlesHappened == 2 && !alcove.solved && dialogue.yellowCandlesPickedUp && dialogue.greenCandlesPickedUp && dialogue.violetCandlesPickedUp && dialogue.redCandlesPickedUp) { 
+  //if: attempted to unlock the panel + has not unlocked the panel + has taken all the candles
+      stymieGivesCandleHint();
+      //mark potential problem: gets stuck on this one because the first condition has not changed
+    }
 //stymie actually misrepresents something breifly
     else if (!dialogue.labyrinthNames) {
         stmigo.play();
@@ -1758,7 +1762,11 @@ if (event.key === 'Enter' || event.key === ' ') {
         handleHandle1();
     }
         else if (current.room === "lobbyThree") {
-        if (!dialogue.enteringLobbyThree) {
+          if (dialogue.youflippedOneSwitch && !dialogue.flippedOneStoneDialogueDone) {
+            oneofthestones();
+            dialogue.flippedOneStoneDialogueDone = true;
+          }
+        else if (!dialogue.enteringLobbyThree) {
             stmigo.play();
             dialogue.blockArrowTravel = true;
             yyb1.style.display = "block";
@@ -1898,10 +1906,16 @@ if (event.key === 'Enter' || event.key === ' ') {
        yyb19.style.display = "none";
        yyb20.style.display = "block";
        st.style.display = "block";
+         dialogue.intrepidExplorers = 22;
+         return;
+     } else if (dialogue.intrepidExplorers === 22) {
+       yyb20.style.display = "none";
+       yyb21.style.display = "block";
+       st.style.display = "block";
          dialogue.intrepidExplorers = 24;
          return;
-     }  else if (dialogue.intrepidExplorers === 24) {
-       yyb20.style.display = "none";
+     } else if (dialogue.intrepidExplorers === 24) {
+       yyb21.style.display = "none";
        yyb23.style.display = "block";
        st.style.display = "block";
          dialogue.intrepidExplorers++;
@@ -2192,19 +2206,20 @@ if (event.key === 'Enter' || event.key === ' ') {
         ybi4.style.display = "none";
         ybi5.style.display = "block";
         b.style.display = "none";
-        stsu.style.display = "block";
+        sthug.style.display = "block";
         dialogue.mighasdfsdftwanttosdfsdfcheck++;
         return;
      } else if (dialogue.mighasdfsdftwanttosdfsdfcheck === 5) {
         ybi5.style.display = "none";
         ybi6.style.display = "block";
-        stsu.style.display = "block";
+        sthug.style.display = "none";
+        sthug2.style.display = "block";
         dialogue.mighasdfsdftwanttosdfsdfcheck++;
         return;
      } else if (dialogue.mighasdfsdftwanttosdfsdfcheck === 6) {
         ybi6.style.display = "none";
         ybi7.style.display = "block";
-        stsu.style.display = "none";
+        sthug2.style.display = "none";
         strag.style.display = "block";
         dialogue.mighasdfsdftwanttosdfsdfcheck++;
         return;
@@ -2218,12 +2233,12 @@ if (event.key === 'Enter' || event.key === ' ') {
      } else if (dialogue.mighasdfsdftwanttosdfsdfcheck === 8) {
         ybi8.style.display = "none";
         ybi9.style.display = "block";
-        st.style.display = "block";
+        sthug3.style.display = "block";
         dialogue.mighasdfsdftwanttosdfsdfcheck++;
         return;
      } else if (dialogue.mighasdfsdftwanttosdfsdfcheck === 9) {
         ybi9.style.display = "none";
-        st.style.display = "none";
+        sthug3.style.display = "none";
         dialogue.mighasdfsdftwanttosdfsdfcheck = true;
         dialogue.stymieArcadeAlterations1 = true;
         dialogue.needSomething = true;
@@ -2317,6 +2332,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         ybk4.style.display = "none";
         stfl.style.display = "none";
         batCard.style.display = "block";
+        fanfare.play();
         dialogue.cheesecake++;
         return;
      } else if (dialogue.cheesecake === 5) {
@@ -2333,6 +2349,9 @@ if (event.key === 'Enter' || event.key === ' ') {
      }
     }});
     }
+     else if (dialogue.brunhildaIsInLobbyThree) { //mark test
+            howsBunhilda();
+          }
         //add new lobby 3 stymie dialogue here
     } else if (current.room === "gardenWest") {
         trueMutualismGo();
@@ -2732,6 +2751,7 @@ if (!chapterTwoPartTwo.activated && !dialogue.preventShuriCookies) {
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.shuriEncounter === 1) {
+            dialogue.blockArrowTravel = true;
         zzn1.style.display = "none";
         zzn2.style.display = "block";
         b.style.display = "none";
@@ -2739,13 +2759,14 @@ document.addEventListener("keydown", function() {
            dialogue.shuriEncounter++;
            return;
        } else if (dialogue.shuriEncounter === 2) {
+            dialogue.blockArrowTravel = true;
         zzn2.style.display = "none";
         zzn3.style.display = "block";
            kstu.style.display = "block";
            shuri.style.display = "none";
            dialogue.shuriEncounter++;
-           return;
        } else if (dialogue.shuriEncounter === 3) {
+            dialogue.blockArrowTravel = true;
         zzn3.style.display = "none";
         zzn4.style.display = "block";
            shuri.style.display = "block";
@@ -2753,14 +2774,13 @@ document.addEventListener("keydown", function() {
            shurisprite.style.display = "none";
            randomDoorAudio();
            dialogue.shuriEncounter++;
-           return;
        } else if (dialogue.shuriEncounter === 4) {
+            dialogue.blockArrowTravel = true;
         zzn4.style.display = "none";
         zzn5.style.display = "block";
            kflip2.style.display = "block"; //hey wait!
            shuri.style.display = "none";
            dialogue.shuriEncounter++;
-           return;
        }  else if (dialogue.shuriEncounter === 5) {
         zzn5.style.display = "none";
            kflip2.style.display = "none";
@@ -3392,6 +3412,7 @@ function hoistingYou() {
       dialogue.hoistMe = true;
       document.body.style.background = "#f5f1e0"; //hex code back to beige
     current.room = "lift"
+    mapmini.style.display = "block";
     lift.style.display = "block";
     liftBottom.style.display = "none";
     baseroom.style.display = "block";
@@ -3592,12 +3613,17 @@ function redSwitchDialogue() {
     //this looks important
     dialogue.thickLayerOfGlass = 1;
     dialogue.blockArrowTravel = true;
+    if (dialogue.enteringLobbyThree) {
        yyo1.style.display = "block";
+    } else {
+      yyo1a.style.display = "block";
+    }
        k.style.display = "block";
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.thickLayerOfGlass === 1) {
         yyo1.style.display = "none";
+        yyo1a.style.display = "none";
         k.style.display = "none";
         yyo2.style.display = "block";
         b.style.display = "block";
@@ -3745,6 +3771,7 @@ document.addEventListener("keydown", function() {
 
 function verilyIsBurningAShrub() {
  if (!dialogue.verilyfour) {
+  verilyGo.play();
       yyp1.style.display = "block";
       v.style.display = "block";
       dialogue.verilyShruberies = 1;
@@ -3888,6 +3915,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         dialogue.verilyFive = true;
     } }});
   } else if (dialogue.verilyFive) {
+    verilyGo.play();
         yyp21.style.display = "block";
       bfur.style.display = "block";
       dialogue.verilyShruberies2 = 10;
@@ -3953,6 +3981,8 @@ if (event.key === 'Enter' || event.key === ' ') {
         //verilydowsing.style.display = "block";
         //verilysprite.style.display = "none";
         //setTimeout( function() {
+        bushDowsing.play();
+        fire.pause();
           dowsedbush.style.display = "block";
           burningbush.style.display = "none";
           fullbucket.style.display = "none";
@@ -3960,6 +3990,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         //}, 4000);
     }
   }});} else if (dialogue.verilySix) {
+    verilyGo.play();
       yyp26a.style.display = "block";
         vsnide.style.display = "block";
       dialogue.verilyShrubesdfriessd = 1;
@@ -3970,14 +4001,13 @@ if (event.key === 'Enter' || event.key === ' ') {
         yyp26a.style.display = "none";
         yyp27a.style.display = "block";
         vsnide.style.display = "none";
-        v.style.display = "block";
+        vrel.style.display = "block";
         dialogue.verilyShrubesdfriessd++;
         return;
     } else if (dialogue.verilyShrubesdfriessd === 2) {
         yyp27a.style.display = "none";
         yyp28a.style.display = "block";
         vrel.style.display = "block";
-        v.style.display = "none";
         dialogue.verilyShrubesdfriessd++;
         return;
     } else if (dialogue.verilyShrubesdfriessd === 3) {
@@ -4120,6 +4150,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
   }});
   } else if (dialogue.verilySeven) {
+    verilyGo.play();
       yyp48.style.display = "block";
       ksl.style.display = "block";
       dialogue.verilyIdlskdbfkjda = 1;
@@ -4178,6 +4209,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
   }});
   } else if (dialogue.verilyEight) {
+    verilyGo.play();
       yyp54.style.display = "block";
       b.style.display = "block";
             dialogue.blockArrowTravel = true;
@@ -4376,6 +4408,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 function verilyIdleDialogue() {
   if (!dialogue.verilyisnowburningashrub) {
      if (dialogue.verilythree) {
+      verilyGo.play();
  zzk1.style.display = "block";
       k.style.display = "block";
       dialogue.verilyIdles3 = 1;
@@ -4481,6 +4514,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     } 
 }});  
     } else if (dialogue.verilytwo) {
+      verilyGo.play();
       zzj1.style.display = "block";
       b.style.display = "block";
       dialogue.verilyIdles2 = 1;
@@ -4519,11 +4553,11 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
 }});  
     } else if (!dialogue.verilyone) {
+      verilyGo.play();
       zzi1.style.display = "block";
       v.style.display = "block";
       dialogue.verilyIdles = 1;
               dialogue.blockArrowTravel = true;
-
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.verilyIdles === 1) {
@@ -5386,6 +5420,7 @@ function trueMutualismGo() {
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
     if (dialogue.mutualism3 === 1) {
+          dialogue.blockArrowTravel = true;
         yyr1.style.display = "none";
         yyr2.style.display = "block";
         b.style.display = "block";
@@ -5447,6 +5482,8 @@ if (event.key === 'Enter' || event.key === ' ') {
       dialogue.mutualism3++;
         return;
     } else if (dialogue.mutualism3 === 10) {
+          dialogue.blockArrowTravel = true;
+
         yyr10.style.display = "none";
         yyr11.style.display = "block";
         k.style.display = "none";
@@ -5457,14 +5494,14 @@ if (event.key === 'Enter' || event.key === ' ') {
         yyr11.style.display = "none";
         yyr12.style.display = "block";
         b.style.display = "none";
-        kha.style.display = "block";
+        k3.style.display = "block";
       dialogue.mutualism3++;
         return;
     } else if (dialogue.mutualism3 === 12) {
         yyr12.style.display = "none";
         yyr13.style.display = "block";
          k.style.display = "block";
-        kha.style.display = "none";
+        k3.style.display = "none";
       dialogue.mutualism3++;
         return;
     } else if (dialogue.mutualism3 === 13) {
@@ -5480,6 +5517,8 @@ if (event.key === 'Enter' || event.key === ' ') {
       dialogue.mutualism3++;
         return;
     } else if (dialogue.mutualism3 === 15) {
+          dialogue.blockArrowTravel = true;
+
         yyr15.style.display = "none";
         yyr16.style.display = "block";
         k.style.display = "none";
@@ -5527,19 +5566,11 @@ if (event.key === 'Enter' || event.key === ' ') {
         yyr22.style.display = "none";
         yyr23.style.display = "block";
         k.style.display = "block";
-      dialogue.mutualism3++;
-        return;
-    } else if (dialogue.mutualism3 === 23) {
-        yyr23.style.display = "none";
-        yyr24.style.display = "block";
-        k.style.display = "none";
-        b.style.display = "block";
-      dialogue.mutualism3++;
+      dialogue.mutualism3 = 24;
         return;
     } else if (dialogue.mutualism3 === 24) {
-        yyr24.style.display = "none";
+        yyr23.style.display = "none";
         yyr25.style.display = "block";
-       b.style.display = "none";
         k.style.display = "block";
       dialogue.mutualism3++;
         return;
@@ -5650,6 +5681,7 @@ if (event.key === 'Enter' || event.key === ' ') {
 
 function modernArt() {
     if (!dialogue.itsmodernart) {
+      dialogue.blockArrowTravel = true;
            k.style.display = "block";
     dialogue.veryhelpfulmap = 1;
        yyq1.style.display = "block";
@@ -5665,7 +5697,7 @@ document.addEventListener("keydown", function() {
      } else if (dialogue.veryhelpfulmap === 2) {
        yyq2.style.display = "none";
        b.style.display = "none";
-         dialogue.veryhelpfulmap = false;
+         dialogue.veryhelpfulmap = true;
          dialogue.itsmodernart = true;
      }}});
     }
@@ -5854,6 +5886,7 @@ document.addEventListener("keydown", function() {
         b.style.display = "none";
         northpaintings.style.display = "none";
         northpaintings2.style.display = "block";
+        paintingRemoveClonk.play();
         yya27.style.display = "block";
        kstu.style.display = "block"; //!
          dialogue.secretPassage2++;
@@ -5879,7 +5912,7 @@ document.addEventListener("keydown", function() {
        b.style.display = "block";
          dialogue.secretPassage2++;
          return;
-     }else if (dialogue.secretPassage2 === 5) {
+     } else if (dialogue.secretPassage2 === 5) {
        yya30.style.display = "none";
        b.style.display = "none";
        dialogue.secretPassage2 = false;
@@ -6501,13 +6534,18 @@ function goodWorkTeam() {
 
 
 function itsLockedSauna() { //sauna door dialogue
-       dialogue.locked = 1;
-       j1.style.display = "block"; //this one's locked...
+       dialogue.locked = 1; //markle
+       if (dialogue.chasmDoorTried) {
+       j1a.style.display = "block"; //this one's locked...
+       } else {
+        j1.style.display = "block"; //this one's locked too
+       }
        b.style.display = "block";
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.locked === 1) {
        j1.style.display = "none";
+       j1a.style.display = "none";
        j2.style.display = "block";
        k.style.display = "block";
        b.style.display = "none";
@@ -6666,8 +6704,8 @@ document.addEventListener("keydown", function() {
 
 
 function itsLocked() { 
-    if (!dialogue.lockedIts){
-        lockeddoor.play();
+  lockeddoor.play();
+    if (!dialogue.lockedIts) {
        dialogue.lockedSecond = 1;
        zs1.style.display = "block"; //it's locked!
        k.style.display = "block";
@@ -6680,46 +6718,11 @@ document.addEventListener("keydown", function() {
        dialogue.lockedIts = true;
        dialogue.lockedSecond = true;
        dialogue.lockedADoor = true;
+       dialogue.lockedADoor3 = true;
        dialogue.blockArrowTravel = false;
-         return;
-     }
-   }});
-} else if (dialogue.lockedADoor) {
-    lockeddoor.play();
-     dialogue.lockedSecondA = 1;
-       zs2.style.display = "block"; //locked.
-       k.style.display = "block";
-       dialogue.blockArrowTravel = true;
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.lockedSecondA === 1) {
-       zs2.style.display = "none";
-       k.style.display = "none";
-       dialogue.lockedADoor = false;
-       dialogue.lockedADoor2 = true;
-       dialogue.blockArrowTravel = false;
-         return;
-     }
-   }});
-} else if (dialogue.lockedADoor2) {
-    lockeddoor.play();
-     dialogue.lockedSecondAA = 1;
-       zs3.style.display = "block"; // also locked
-       k.style.display = "block";
-       dialogue.blockArrowTravel = true;
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.lockedSecondAA === 1) {
-       zs3.style.display = "none";
-       k.style.display = "none";
-       dialogue.lockedADoor2 = false;
-        dialogue.lockedADoor3 = true;
-        dialogue.blockArrowTravel = false;
-         return;
      }
    }});
 } else if (dialogue.lockedADoor3) {
-    lockeddoor.play();
      dialogue.lockedSecondAAA = 1;
        zs4.style.display = "block"; //bridget!
        ksta.style.display = "block";
@@ -6745,63 +6748,19 @@ document.addEventListener("keydown", function() {
      } else if (dialogue.lockedSecondAAA === 3) {
       dialogue.blockArrowTravel = true;
        zs4b.style.display = "none";
-       zs4c.style.display = "block";
+       zs4d.style.display = "block";
        k.style.display = "none";
        b.style.display = "block";
         dialogue.lockedSecondAAA++;
          return;
      } else if (dialogue.lockedSecondAAA === 4) {
-      dialogue.blockArrowTravel = true;
-       zs4c.style.display = "none";
-       zs4d.style.display = "block";
-       b.style.display = "block";
-        dialogue.lockedSecondAAA++;
-         return;
-     } else if (dialogue.lockedSecondAAA === 5) {
        zs4d.style.display = "none";
        b.style.display = "none";
         dialogue.lockedADoor3 = false;
-        dialogue.lockedADoor5 = true;
         dialogue.blockArrowTravel = false;
-         return;
-     }
-   }});
-} else if (dialogue.lockedADoor4) { //skip this one
-    lockeddoor.play();
-     dialogue.lockedSecondAB = 1;
-       zs5.style.display = "block"; //locked.
-       k.style.display = "block";
-       dialogue.blockArrowTravel = true;
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.lockedSecondAB === 1) {
-       zs5.style.display = "none";
-       k.style.display = "none";
-       dialogue.lockedADoor4 = false;
-       dialogue.lockedADoor5 = true;
-       dialogue.blockArrowTravel = false;
-         return;
-     }
-   }});
-} else if (dialogue.lockedADoor5) {
-    lockeddoor.play();
-     dialogue.lockedSecondABB = 1;
-       zs5.style.display = "block"; //locked.
-       k.style.display = "block";
-       dialogue.blockArrowTravel = true;
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.lockedSecondABB === 1) {
-       zs5.style.display = "none";
-       k.style.display = "none";
-       dialogue.lockedADoor5 = false;
-       dialogue.lockedADoor6 = true;
-       dialogue.blockArrowTravel = false;
-         return;
      }
    }});
 } else if (dialogue.lockedADoor6) {
-    lockeddoor.play();
      dialogue.lockedSecondABBA = 1;
        zs6.style.display = "block"; //locked.
        k.style.display = "block";
@@ -6833,7 +6792,6 @@ document.addEventListener("keydown", function() {
      }
    }});
 } else if (dialogue.lockedADoor7) {
-    lockeddoor.play();
     document.cookie = "lockeddoorskeysrunthrough=lockeddoorskeysrunthrough"
     }
 }
@@ -6974,6 +6932,7 @@ document.addEventListener("keydown", function() {
         current.room = "lockboxRoom";
         document.cookie = "2ShrubDoorUnlocked=2ShrubDoorUnlocked";
         dialogue.blockArrowTravel = false;
+        westlock.style.display = "none";
      } 
    }});
 }}
@@ -7088,10 +7047,10 @@ function tooHeavyTooKeys() {
             if (dialogue.tooHeavy4Keys === 1) {
                 i12.style.display = "none";
                 b.style.display = "none";
-                dialogue.keysAreHeavy5 = true;
+                dialogue.keysAreHeavy5 = false;
                 dialogue.blockArrowTravel = false;
+                dialogue.tooHeavy4Keys = true;
                 document.cookie = "tooheavytookeysrunthrough=tooheavytookeysrunthrough";
-                return;
             } 
         }});
     } 
@@ -7099,6 +7058,8 @@ function tooHeavyTooKeys() {
 
 function tooHeavy() {
     fullInv.play();
+        invfullanimation.style.display = "block";
+    setTimeout(function() {    invfullanimation.style.display = "none";}, 1000);
     if (dialogue.inv0) {
     i1.style.display = "block";
     k.style.display = "block";
@@ -7119,7 +7080,6 @@ function tooHeavy() {
                 dialogue.inv1 = true;
                 dialogue.inv0 = false;
                 dialogue.blockArrowTravel = false;
-                return;
             }    
         }});
     } else if (dialogue.inv1) {
@@ -7149,7 +7109,6 @@ function tooHeavy() {
                 dialogue.inv2 = true;
                 dialogue.inv1 = false;
                 dialogue.blockArrowTravel = false;
-                return;
             } 
         }});
     } else if (dialogue.inv2) {
@@ -7179,10 +7138,9 @@ function tooHeavy() {
                 dialogue.inv3 = true;
                 dialogue.inv2 = false;
                 dialogue.blockArrowTravel = false;
-                return;
             } 
         }});
-    } else if (dialogue.inv3){
+    } else if (dialogue.inv3) {
         q1.style.display = "block";
         b.style.display = "block";
         dialogue.tooHeavy4 = 1;
@@ -7217,7 +7175,6 @@ function tooHeavy() {
                 dialogue.inv3 = false;
                 dialogue.tooHeavy4 = true;
                 dialogue.blockArrowTravel = false;
-                return;
             } 
         }});
     } else if (dialogue.inv4) {
@@ -7230,64 +7187,35 @@ function tooHeavy() {
             if (dialogue.tooHeavy5 === 1) {
                 r1.style.display = "none";
                 k.style.display = "none";
+                dialogue.tooHeavy5 = true;
                 dialogue.inv5 = true;
                 dialogue.inv4 = false;
+                dialogue.inv3 = false;
                 dialogue.blockArrowTravel = false;
-                return;
             }
         }});
     } else if (dialogue.inv5) {
-        s1.style.display = "block";
-        b.style.display = "block"; //wee fellows?
+        r1.style.display = "block";
+        k.style.display = "block";
         dialogue.tooHeavy6 = 1;
         dialogue.blockArrowTravel = true;
         document.addEventListener("keydown", function() {
         if (event.key === 'Enter' || event.key === ' ') {
             if (dialogue.tooHeavy6 === 1) {
-                s1.style.display = "none";
-                b.style.display = "none"; 
-                dialogue.inv6 = true;
-                dialogue.inv5 = false;
-                dialogue.blockArrowTravel = false;
-                return;
-            }
-        }});
-    } else if (dialogue.inv6) {
-        t1.style.display = "block";
-        k.style.display = "block"; //fellows is good
-        dialogue.tooHeavy7 = 1;
-        dialogue.blockArrowTravel = true;
-        document.addEventListener("keydown", function() {
-        if (event.key === 'Enter' || event.key === ' ') {
-            if (dialogue.tooHeavy7 === 1) {
-                t1.style.display = "none";
-                k.style.display = "none"; 
-                dialogue.inv7 = true;
-                dialogue.inv6 = false;
-                dialogue.blockArrowTravel = false;
-                return;
-            }
-        }});
-    } else if (dialogue.inv7) {
-        u1.style.display = "block";
-        k.style.display = "block";
-        dialogue.tooHeavy8 = 1;
-        dialogue.blockArrowTravel = true;
-        document.addEventListener("keydown", function() {
-        if (event.key === 'Enter' || event.key === ' ') {
-            if (dialogue.tooHeavy8 === 1) {
-                u1.style.display = "none";
+                r1.style.display = "none";
                 u2.style.display = "block";
-                b.style.display = "block"; //with two arms each
-                k.style.display = "none"; 
-                dialogue.tooHeavy8 = 2;
-                return;
-            } else if (dialogue.tooHeavy8 === 2) {
+                b.style.display = "block";
+                k.style.display = "none";
+                dialogue.tooHeavy6++;
+            } else if (dialogue.tooHeavy6 === 2) {
                 u2.style.display = "none";
-                b.style.display = "none"; 
+                b.style.display = "none";
+                dialogue.tooHeavy6 = true;
+                dialogue.inv5 = false;
+                dialogue.inv4 = false;
+                dialogue.inv3 = false;
                 dialogue.blockArrowTravel = false;
-                document.cookie = "tooheavy=tooheavy"
-                return;
+                 document.cookie = "tooheavy=tooheavy";
             }
         }});
     }
@@ -7412,7 +7340,6 @@ if (event.key === 'Enter' || event.key === ' ') {
      zb2.style.display = "block"; 
      b.style.display = "block"; 
      ropey.set = true;
-     lasso.play();
      document.cookie = "ropey=ropey";
      chasmrope.style.display = "block";
      dialogue.bridgeToss++;
@@ -7469,7 +7396,6 @@ if (event.key === 'Enter' || event.key === ' ') {
      k.style.display = "none";
      b.style.display = "block";
      chasmrope2.style.display = "block";
-     lasso.play();
      dialogue.bridgeToss2++;
      return;
     } else if (dialogue.bridgeToss2 === 3) {
@@ -7521,6 +7447,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      zc2.style.display = "none";
      k.style.display = "none";
         dialogue.northLobbyLocked = true;
+        dialogue.chasmDoorTried = true;
         door.tried = true;
         dialogue.blockArrowTravel = false;
         return;
@@ -7636,6 +7563,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         zf5.style.display = "none";
       b.style.display = "none";
       chasm.style.display = "none";
+      northlockchasm.style.display = "none";
       lamano.play();
       penser.pause();
       randomDoorAudio();
@@ -8295,6 +8223,7 @@ function isSummerSuspicious() {
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.upToSomething === 1) {
+             dialogue.blockArrowTravel = true;
        zm1.style.display = "none";
        zm2.style.display = "block";
        ksl.style.display = "block"; //oh definitely
@@ -8317,6 +8246,7 @@ function isSummerSuspicious() {
      } else if (dialogue.upToSomething === 4) {
        zm4.style.display = "none";
        zm5.style.display = "block";
+              dialogue.blockArrowTravel = true;
        b.style.display = "block";
        kstu.style.display = "none";
        dialogue.upToSomething++;
@@ -8330,6 +8260,8 @@ function isSummerSuspicious() {
          return;
      } else if (dialogue.upToSomething === 6) {
        zm6.style.display = "none";
+              dialogue.blockArrowTravel = true;
+
        zm7.style.display = "block";
        b.style.display = "block";
        k.style.display = "none";
@@ -8350,6 +8282,8 @@ function isSummerSuspicious() {
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 9) {
+             dialogue.blockArrowTravel = true;
+
        zm9.style.display = "none";
        zm10.style.display = "block";
        k.style.display = "block";
@@ -8369,6 +8303,8 @@ function isSummerSuspicious() {
        dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 12) {
+             dialogue.blockArrowTravel = true;
+
        zm12.style.display = "none";
        zm13.style.display = "block";
        k.style.display = "block";
@@ -8458,6 +8394,8 @@ function isSummerSuspicious() {
          dialogue.upToSomething++;
          return;
      } else if (dialogue.upToSomething === 27) {
+             dialogue.blockArrowTravel = true;
+
        zm27.style.display = "none";
        zm28.style.display = "block";
        b.style.display = "block";
@@ -8846,6 +8784,7 @@ document.addEventListener("keydown", function() {
     }}
  
 function itsASecretMessageInAStrangeLanguage() {
+  mapmini.style.display = "none";
   dialogue.secretpoem = "pickles";
     dialogue.blockArrowTravel = true;
     poem1.style.display = "block";
@@ -8940,6 +8879,7 @@ document.addEventListener("keydown", function() {
            bnoba.style.display = "none";
           dialogue.secretpoem = true;
           poem1.style.display = "none";
+          mapmini.style.display = "block";
           document.cookie = "poem1found=poem1found";
           document.body.style.background = "#f5f1e0"; //hex code back to beige
           dialogue.poemAddedToNotebook = true;
@@ -8985,7 +8925,12 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.spainting === 4) {
            yyx4.style.display = "none";
            yyx5.style.display = "block";
-           paintingcheck.style.display = "block";
+           if (dialogue.secondPaintingIsRed) {
+           paintingcheckred.style.display = "block";
+           } else {
+              paintingcheckblue.style.display = "block";
+           }
+           paintingRemoveClonk.play();
            k.style.display = "none";
            b.style.display = "block";
               dialogue.spainting++;
@@ -9026,7 +8971,9 @@ document.addEventListener("keydown", function() {
            return;
        } else if (dialogue.spainting === 10) {
            kdemcheese.style.display = "none";
-           paintingcheck.style.display = "none";
+           paintingcheckred.style.display = "none";
+           paintingcheckblue.style.display = "none";
+           paintingRemoveClonk.play();
               dialogue.spainting = true;
               dialogue.cheeseAndHamSandwich = true;
               dialogue.blockArrowTravel = false;
@@ -9040,15 +8987,22 @@ function thatsNotRight() {
    dialogue.spaisdfnting = 1;
     b.style.display = "block";
     yyy1.style.display = "block";
-      paintingcheck.style.display = "block";
-    dialogue.blockArrowTravel = true;
+  paintingRemoveClonk.play();
+if (dialogue.secondPaintingIsRed) {
+           paintingcheckred.style.display = "block";
+           } else {
+              paintingcheckblue.style.display = "block";
+           }
+               dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.spaisdfnting === 1) {
            yyy1.style.display = "none";
            b.style.display = "none";
               dialogue.spaisdfnting = true;
-              paintingcheck.style.display = "none";
+              paintingRemoveClonk.play();
+              paintingcheckred.style.display = "none";
+              paintingcheckblue.style.display = "none";
                   dialogue.blockArrowTravel = false;
        }
       }})
@@ -9290,11 +9244,14 @@ document.addEventListener("keydown", function() {
             dialogue.explorersteddybearworn = false;
               dialogue.brunhildaIsInLobbyThree = true;
               document.cookie = "brunhilda=brunhilda";
+              dialogue.preventM = true;
+              mapmini.style.display = "none";
        } 
       }})
 }
 
 function goodChoiceOfName() {
+  mapmini.style.display = "block";
   yyz11.style.display = "block";
            st.style.display = "block";
       dialogue.dfgdfgkjdfjkgnalal = 1;
@@ -9336,11 +9293,13 @@ document.addEventListener("keydown", function() {
               dialogue.dfgdfgkjdfjkgnalal = true;
                   dialogue.blockArrowTravel = false;
                   decreaseNotificationLobbyThree();
+                  dialogue.preventM = false;
        }
       }});
 }
 
 function illGiveYouOneOfMine() {
+  mapmini.style.display = "block";
 yyz16.style.display = "block";
 st.style.display = "block";
       dialogue.dfgdfgkjdfjkgnalal = 1;
@@ -9387,6 +9346,7 @@ document.addEventListener("keydown", function() {
               dialogue.dfgdfgkjdfjkgnalal = true;
                   dialogue.blockArrowTravel = false;
                   decreaseNotificationLobbyThree();
+                  dialogue.preventM = false;
        }
       }});
 }
@@ -9527,11 +9487,11 @@ function noPowerFlowing() {
             ybf2.style.display = "none";
             ybf3.style.display = "block";
             kstu.style.display = "block";
+            k.style.display = "none"; 
+            shuriHallBack.style.display = "none";
+            dialogue.cojdlndfgdfgaslasdf = "crime";
             crossbowRaise.play();
             shuriHall.style.display = "block";
-            shuriHallBack.style.display = "none";
-            k.style.display = "none";
-            dialogue.cojdlndfgdfgaslasdf = "crime";
           }  else if (dialogue.cojdlndfgdfgaslasdf === "crime") {
             ybf3.style.display = "none";
             ybf4.style.display = "block";
@@ -9734,6 +9694,7 @@ function noPowerFlowing() {
      if (dialogue.liftilskdmfklngUp === 1) {
        ybbi4.style.display = "none";
         b.style.display = "none";
+              ybbi4.style.display = "none"; //mark not noning
        dialogue.liftilskdmfklngUp = true;
      } }});
   }
@@ -9953,26 +9914,18 @@ function noPowerFlowing() {
      } else if (dialogue.karak === 9) {
        ybg13.style.display = "none";
        ybg14.style.display = "block";
-       v.style.display = "block";
-       vcon.style.display = "none";
+       vcon.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 10) {
        ybg14.style.display = "none";
        ybg15.style.display = "block";
        b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak++;
-        return;
-     } else if (dialogue.karak === 11) {
-       ybg15.style.display = "none";
-       ybg16.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak++;
+       vcon.style.display = "none";
+       dialogue.karak = 12;
         return;
      } else if (dialogue.karak === 12) {
-       ybg16.style.display = "none";
+       ybg15.style.display = "none";
        ybg17.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
@@ -10015,31 +9968,17 @@ function noPowerFlowing() {
         return;
      } else if (dialogue.karak === "pickles") {
        ybg22.style.display = "none";
-       ybg22a.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
+       ybg23.style.display = "block";
+       vint.style.display = "block";
+       b.style.display = "none";
        dialogue.karak = 18;
         return;
      } else if (dialogue.karak === 18) {
-       ybg22a.style.display = "none";
-       ybg22b.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak = "melons";
-        return;
-     } else if (dialogue.karak === "melons") {
-       ybg22b.style.display = "none";
-       ybg23.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak = 19;
-        return;
-     } else if (dialogue.karak === 19) {
        ybg23.style.display = "none";
        ybg24.style.display = "block";
        b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak++;
+       vint.style.display = "none";
+       dialogue.karak = 20;
         return;
      } else if (dialogue.karak === 20) {
        ybg24.style.display = "none";
@@ -10051,14 +9990,13 @@ function noPowerFlowing() {
      } else if (dialogue.karak === 21) {
        ybg25.style.display = "none";
        ybg26.style.display = "block";
-       v.style.display = "block";
-       b.style.display = "none";
+       b.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 22) {
        ybg26.style.display = "none";
        ybg27.style.display = "block";
-       vint.style.display = "block";
+       b.style.display = "block";
        v.style.display = "none";
        dialogue.karak++;
         return;
@@ -10071,65 +10009,83 @@ function noPowerFlowing() {
         return;
      } else if (dialogue.karak === 24) {
        ybg28.style.display = "none";
-       ybg30.style.display = "block";
+       ybg29.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
        dialogue.karak = 26;
         return;
      } else if (dialogue.karak === 26) {
-       ybg30.style.display = "none";
-       ybg32.style.display = "block";
+       ybg29.style.display = "none";
+       ybg30.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 27) {
-       ybg32.style.display = "none";
-       ybg33.style.display = "block";
+       ybg30.style.display = "none";
+       ybg31.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 28) {
-       ybg33.style.display = "none";
-       ybg34.style.display = "block";
+       ybg31.style.display = "none";
+       ybg32.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 29) {
-       ybg34.style.display = "none";
-       ybg35.style.display = "block";
-       bfur.style.display = "block";
-       b.style.display = "none";
+       ybg32.style.display = "none";
+       ybg33.style.display = "block";
+       b.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 30) {
-       ybg35.style.display = "none";
-       ybg36.style.display = "block";
-       vrel.style.display = "block";
-       bfur.style.display = "none";
+       ybg33.style.display = "none";
+       ybg34.style.display = "block";
+       b.style.display = "block";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 31) {
-       ybg36.style.display = "none";
-       ybg37.style.display = "block";
+       ybg34.style.display = "none";
+       ybg35.style.display = "block";
        b.style.display = "block";
-       vrel.style.display = "none";
-       dialogue.karak++; //skip forward
+       dialogue.karak++;
      } else if (dialogue.karak === 32) {
-       ybg37.style.display = "none";
-       ybg44.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
+       ybg35.style.display = "none";
+       ybg36.style.display = "block";
+       v.style.display = "block";
+       b.style.display = "none";
        dialogue.karak = 39;
         return;
      } else if (dialogue.karak === 39) {
+       ybg36.style.display = "none";
+       ybg37.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.karak = "memes";
+        return;
+     } else if (dialogue.karak === "memes") {
+       ybg37.style.display = "none";
+       ybg38.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.karak = "memess";
+        return;
+     } else if (dialogue.karak === "memess") {
+       ybg38.style.display = "none";
+       ybg44.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.karak = "memeses";
+        return;
+     } else if (dialogue.karak === "memeses") {
        ybg44.style.display = "none";
        ybg45.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
-       dialogue.karak++;
+       dialogue.karak = 40;
         return;
      } else if (dialogue.karak === 40) {
        ybg45.style.display = "none";
@@ -10164,43 +10120,28 @@ function noPowerFlowing() {
        ybg50.style.display = "block";
        bfur.style.display = "block";
        v.style.display = "none";
-       dialogue.karak = 47;
+       dialogue.karak++;
         return;
      } else if (dialogue.karak === 45) {
        ybg50.style.display = "none";
-       ybg51.style.display = "block";
-       b.style.display = "block";
+       ybg53.style.display = "block";
+       v.style.display = "block";
+       b.style.display = "none";
        bfur.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 46) {
-       ybg51.style.display = "none";
-       ybg52.style.display = "block";
-       b.style.display = "block";
-       v.style.display = "none";
-       dialogue.karak++;
-        return;
-     } else if (dialogue.karak === 47) {
-       ybg52.style.display = "none";
-       ybg50.style.display = "none";
-       ybg53.style.display = "block";
-       v.style.display = "block";
-       bfur.style.display = "none";
-       b.style.display = "none";
-       dialogue.karak++;
-        return;
-     } else if (dialogue.karak === 48) {
        ybg53.style.display = "none";
        ybg54.style.display = "block";
-       vrel.style.display = "block";
-        v.style.display = "none";
-       dialogue.karak++;
+       v.style.display = "block";
+       dialogue.karak = 49;
         return;
      } else if (dialogue.karak === 49) {
        ybg54.style.display = "none";
        ybg55.style.display = "block";
        k.style.display = "block";
        vrel.style.display = "none";
+       v.style.display = "none";
        dialogue.karak++;
         return;
      } else if (dialogue.karak === 50) {
@@ -10229,8 +10170,8 @@ function noPowerFlowing() {
        dialogue.karakKyal = true;
        dialogue.verilyHasJoinedTheParty = true;
        document.cookie = "karakKyal=karakKyal";
-          explorers.style.display = "none";
        trio.style.display = "block";
+      verilyhelper.style.display = "block";
        verilyheardsomething.style.display = "none";
               dialogue.blockArrowTravel = false;
 
@@ -10256,17 +10197,22 @@ function noPowerFlowing() {
     }
 
     function keepExploring() {
+        exitcloseup.play();
              yesorno.style.display = "none";
               dialogue.blockArrowTravel = false;
     }
 
     function makeCamp() {
+      exitcloseup.play();
+      dialogue.highportk = true;
             yesorno.style.display = "none";
             trio.style.display = "none";
+            verilyhelper.style.display = "none";
             explorers.style.display = "none";
             campers1.style.display = "block";
             ybboo1.style.display = "block";
             k.style.display = "block";
+            saltarello.volume = 0.8;
       ybboo1.style.display = "block";
       k.style.display = "block";
        dialogue.sdfsdfggkldfklfklfggpgpopop = 1;
@@ -10276,49 +10222,61 @@ function noPowerFlowing() {
        ybboo1.style.display = "none";
        ybboo2.style.display = "block";
       k.style.display = "none";
-      k.style.display = "block";
+      kdrow.style.display = "block";
+      saltarello.volume = 0.6;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 2) {
        ybboo2.style.display = "none";
        ybboo3.style.display = "block";
-      k.style.display = "none";
-      k.style.display = "block";
+      kdrow.style.display = "none";
+      kdrow2.style.display = "block";
+      saltarello.volume = 0.4;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 3) {
        ybboo3.style.display = "none";
        ybboo4.style.display = "block";
        campers1.style.display = "none";
        campers2.style.display = "block";
-      k.style.display = "none";
-      k.style.display = "block";
+      kdrow2.style.display = "none";
+      kzonk.style.display = "block";
+      saltarello.volume = 0.2;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 4) {
        ybboo4.style.display = "none";
        ybboo5.style.display = "block";
-      k.style.display = "none";
+      kzonk.style.display = "none";
       b.style.display = "block";
+      saltarello.volume = 0.1;
+      branleChampaigne.play();
+      branleChampaigne.volume = 0.1;
+       setTimeout(function() {startCarmanAfterChampaigne();}, 131000);  
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 5) {
        ybboo5.style.display = "none";
        ybboo6.style.display = "block";
       b.style.display = "none";
       v.style.display = "block";
+      saltarello.pause();
+            branleChampaigne.volume = 0.3;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 6) {
        ybboo6.style.display = "none";
        ybboo7.style.display = "block";
       v.style.display = "none";
       b.style.display = "block";
+      branleChampaigne.volume = 0.5;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 7) {
        ybboo7.style.display = "none";
        ybboo8.style.display = "block";
       b.style.display = "none";
       v.style.display = "block";
+      branleChampaigne.volume = 0.7;
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 8) {
        ybboo8.style.display = "none";
       v.style.display = "none";
+      branleChampaigne.volume = 1;
       soldierFractal.style.display = "block";
       dialogue.sdfsdfggkldfklfklfggpgpopop = true;
      }
@@ -10452,6 +10410,59 @@ function shelfStones() {
       k.style.display = "none";
        dialogue.sdfsdfaaannmcxnvaa = true;
        dialogue.rocks3 = false;
+       dialogue.rocks4 = true;
+              dialogue.blockArrowTravel = false;
+
+     }
+    }});
+  } else if (dialogue.rocks4) {
+dialogue.blockArrowTravel = true;
+    yfdjxvk8.style.display = "block";
+      b.style.display = "block";
+       dialogue.sdfsdfaasdaannmcxnvaa = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.sdfsdfaasdaannmcxnvaa === 1) {
+       yfdjxvk8.style.display = "none";
+       yfdjxvk9.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     } else if (dialogue.sdfsdfaasdaannmcxnvaa === 2) {
+       yfdjxvk9.style.display = "none";
+       yfdjxvk10.style.display = "block";
+      bfur.style.display = "block";
+      k.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     } else if (dialogue.sdfsdfaasdaannmcxnvaa === 3) {
+       yfdjxvk10.style.display = "none";
+       yfdjxvk11.style.display = "block";
+      bfur.style.display = "none";
+      b.style.display = "block";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     }  else if (dialogue.sdfsdfaasdaannmcxnvaa === 4) {
+       yfdjxvk11.style.display = "none";
+       yfdjxvk12.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     }  else if (dialogue.sdfsdfaasdaannmcxnvaa === 5) {
+       yfdjxvk12.style.display = "none";
+       yfdjxvk13.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     }  else if (dialogue.sdfsdfaasdaannmcxnvaa === 6) {
+       yfdjxvk13.style.display = "none";
+       yfdjxvk14.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa++;
+     } else if (dialogue.sdfsdfaasdaannmcxnvaa === 7) {
+       yfdjxvk14.style.display = "none";
+      k.style.display = "none";
+       dialogue.sdfsdfaasdaannmcxnvaa = true;
+       dialogue.rocks4 = false;
               dialogue.blockArrowTravel = false;
 
      }
@@ -10464,21 +10475,7 @@ function aNewOrchid() {
 }
 
 function cantAllFitInThatBoat() {
-  if (dialogue.mysteriousVialTaken) {
-    dialogue.blockArrowTravel = true;
-    ybcc1.style.display = "block";
-      vint.style.display = "block";
-       dialogue.dfgkjdfngkjdfnkgnaa = 1;
-       document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.dfgkjdfngkjdfnkgnaa === 1) {
-       ybcc1.style.display = "none";
-      vint.style.display = "none";
-       dialogue.sdfsdfaaannmcxnvaa = true;
-      dialogue.blockArrowTravel = false;
-     }
-    }});
-  } else if (!dialogue.shouldntWeMakeCampNow) {
+   if (!dialogue.shouldntWeMakeCampNow) {
      dialogue.blockArrowTravel = true;
     ybcc1.style.display = "block";
       vint.style.display = "block";
@@ -10505,13 +10502,17 @@ function cantAllFitInThatBoat() {
      } else if (dialogue.dfgkjdfngkjdfnkgnaa === 4) {
        ybcc4.style.display = "none";
       v.style.display = "none";
+      trio.style.display = "none";
+      explorers.style.display = "block";
+      verilywaiting.style.display = "block";
+      ripples.style.display = "block";
        dialogue.dfgkjdfngkjdfnkgnaa = true;
        dialogue.blockArrowTravel = false;
        dialogue.shouldntWeMakeCampNow = true;
        document.cookie = "shouldntWeMakeCampNowAndNotBoat=shouldntWeMakeCampNowAndNotBoat";
      }
     }});
-  } else if (dialogue.shouldntWeMakeCampNow && !dialogue.mysteriousVialTaken) {
+  } else if (dialogue.shouldntWeMakeCampNow) {
     randomOarAudio();    
                 artMirrorRoom.style.display = "none";
                 lakesLobby.style.display = "block";
@@ -10519,6 +10520,8 @@ function cantAllFitInThatBoat() {
                 current.room = "lakesLobby";        
                 explorers.style.opacity = 0;  
                 trio.style.display = "none";  
+                verilywaiting.style.display = "block";  
+                ripples.style.display = "block";  
   }
         
 }
@@ -10727,6 +10730,8 @@ dialogue.blockArrowTravel = true;
        randomPillarGrind();
        dialogue.vialPuzzleSolved = true; 
        dialogue.hiddenDoorOpened = true; //now the door is open
+       keyitems.style.display = "none";
+       dialogue.vialPlaced = true;
        hiddendoor.style.display = "none";
        hiddendooropen.style.display = "block";
      }
@@ -10784,43 +10789,43 @@ function iDontThinkEitherOfUsAreSkinnyEnoughToFit() {
     dialogue.blockArrowTravel = true;
     ybbk1.style.display = "block";
       b.style.display = "block";
-       dialogue.dfgkjdfsdfammsdfnkjmmm = 1;
+       dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.dfgkjdfsdfammsdfnkjmmm === 1) {
+     if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 1) {
        ybbk1.style.display = "none";
        ybbk2.style.display = "block";
       b.style.display = "none";
       k.style.display = "block";
-      dialogue.dfgkjdfsdfammsdfnkjmmm++;
-     } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 2) {
+      dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm++;
+     } else if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 2) {
        ybbk2.style.display = "none";
        ybbk3.style.display = "block";
       k.style.display = "none";
       b.style.display = "block";
-      dialogue.dfgkjdfsdfammsdfnkjmmm++;
-     } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 3) {
+      dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm++;
+     } else if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 3) {
        ybbk3.style.display = "none";
        ybbk4.style.display = "block";
       b.style.display = "none";
       k.style.display = "block";
-      dialogue.dfgkjdfsdfammsdfnkjmmm++;
-     } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 4) {
+      dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm++;
+     } else if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 4) {
        ybbk4.style.display = "none";
        ybbk5.style.display = "block";
       k.style.display = "none";
       b.style.display = "block";
-      dialogue.dfgkjdfsdfammsdfnkjmmm++;
-     }  else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 5) {
+      dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm++;
+     }  else if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 5) {
        ybbk5.style.display = "none";
        ybbk6.style.display = "block";
       b.style.display = "none";
       k.style.display = "block";
-      dialogue.dfgkjdfsdfammsdfnkjmmm++;
-     } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 6) {
+      dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm++;
+     } else if (dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm === 6) {
        ybbk6.style.display = "none";
       k.style.display = "none";
-       dialogue.dfgkjdfsdfammsdfnkjmmm = true;
+       dialogue.dfgkjdfsmznmansmsabdmnsdfnkjmmm = true;
            dialogue.blockArrowTravel = false;
            dialogue.sawTheCrack = true;
            dialogue.skinnyOnce = true;
@@ -10900,21 +10905,19 @@ dialogue.blockArrowTravel = true;
       k.style.display = "block";
       dialogue.dfgkjdfsdfammsdfnkjmmm++;
      } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 9) {
-       ybbj15.style.display = "none";
+       ybbk15.style.display = "none";
       k.style.display = "none";
        dialogue.dfgkjdfsdfammsdfnkjmmm = true;
            dialogue.blockArrowTravel = false;
            dialogue.verilyYouTryTheCrack = true;
-  current.room = "secretTreeRoom";
-secretTreeRoom.style.display = "block";
+  current.room = "cavernsOne";
+cavernsOne.style.display = "block";
 secretCrackRoom.style.display = "none";
 baseroom.style.display = "none";
 stachel.style.display = "none";
 keyitems.style.display = "none";
 trio.style.display = "none";
-if (dialogue.fruitTaken) {
-  fruit.style.display = "none";
-}
+mapmini.style.display = "none";
      }
     }});
   } else if (!dialogue.verilyYouTryTheCrack && !dialogue.sawTheCrack) {
@@ -10939,7 +10942,7 @@ dialogue.blockArrowTravel = true;
      } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 3) {
        ybbk9alt.style.display = "none";
        ybbk10.style.display = "block";
-      b.style.display = "none";
+      k.style.display = "none";
       v.style.display = "block";
       dialogue.dfgkjdfsdfammsdfnkjmmm++;
      } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 4) {
@@ -10973,82 +10976,84 @@ dialogue.blockArrowTravel = true;
       k.style.display = "block";
       dialogue.dfgkjdfsdfammsdfnkjmmm++;
      } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 9) {
-       ybbj15.style.display = "none";
+       ybbk15.style.display = "none";
       k.style.display = "none";
        dialogue.dfgkjdfsdfammsdfnkjmmm = true;
            dialogue.blockArrowTravel = false;
            dialogue.verilyYouTryTheCrack = true;
-  current.room = "secretTreeRoom";
-secretTreeRoom.style.display = "block";
+  current.room = "cavernsOne";
+cavernsOne.style.display = "block";
 secretCrackRoom.style.display = "none";
 baseroom.style.display = "none";
 stachel.style.display = "none";
 keyitems.style.display = "none";
 trio.style.display = "none";
-if (dialogue.fruitTaken) {
-  fruit.style.display = "none";
-}
+mapmini.style.display = "none";
+
      }
     }});
-
   }
+}
+
+function noreasontogobackthereagain() {
+dialogue.blockArrowTravel = true;
+    pococo8.style.display = "block";
+      b.style.display = "block";
+       dialogue.rosdfcaaasddfgdfgfsdfki = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.rosdfcaaasddfgdfgfsdfki === 1) {
+       pococo8.style.display = "none";
+      b.style.display = "none";
+       dialogue.rosdfcaaasddfgdfgfsdfki = true;
+       dialogue.blockArrowTravel = false;
+     }}});
 }
 
 function verilyWhatDidYouSee() {
   if (!dialogue.verilywhadyaseee) {
-
 dialogue.blockArrowTravel = true;
     ybbkk0.style.display = "block";
-      b.style.display = "block";
+      k.style.display = "block";
        dialogue.rosdfcsdfsdfki = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.rosdfcsdfsdfki === 1) {
        ybbkk0.style.display = "none";
        ybbkk1.style.display = "block";
-      k.style.display = "block";
-      b.style.display = "none";
+      v.style.display = "block";
+      k.style.display = "none";
        dialogue.rosdfcsdfsdfki++;
      } else if (dialogue.rosdfcsdfsdfki === 2) {
        ybbkk1.style.display = "none";
        ybbkk2.style.display = "block";
-      k.style.display = "block";
+      ksl.style.display = "block";
+      v.style.display = "none";
        dialogue.rosdfcsdfsdfki++;
      } else if (dialogue.rosdfcsdfsdfki === 3) {
        ybbkk2.style.display = "none";
        ybbkk3.style.display = "block";
-      b.style.display = "block";
-      k.style.display = "none";
+      v.style.display = "block";
+      ksl.style.display = "none";
        dialogue.rosdfcsdfsdfki++;
      } else if (dialogue.rosdfcsdfsdfki === 4) {
        ybbkk3.style.display = "none";
        ybbkk4.style.display = "block";
       k.style.display = "block";
-      b.style.display = "none";
+      v.style.display = "none";
        dialogue.rosdfcsdfsdfki++;
-     }else if (dialogue.rosdfcsdfsdfki === 5) {
+     } else if (dialogue.rosdfcsdfsdfki === 5) {
        ybbkk4.style.display = "none";
        ybbkk5.style.display = "block";
-      k.style.display = "block";
-      b.style.display = "none";
-       dialogue.rosdfcsdfsdfki++;
-     }else if (dialogue.rosdfcsdfsdfki === 6) {
-       ybbkk5.style.display = "none";
-       ybbkk6.style.display = "block";
-      k.style.display = "block";
-      b.style.display = "none";
-       dialogue.rosdfcsdfsdfki++;
-     }else if (dialogue.rosdfcsdfsdfki === 7) {
-       ybbkk6.style.display = "none";
-       ybbkk7.style.display = "block";
-      k.style.display = "block";
-      b.style.display = "none";
-       dialogue.rosdfcsdfsdfki++;
-     } else if (dialogue.rosdfcsdfsdfki === 8) {
-       ybbn7.style.display = "none";
+      b.style.display = "block";
       k.style.display = "none";
+       dialogue.rosdfcsdfsdfki++;
+     } else if (dialogue.rosdfcsdfsdfki === 6) {
+       ybbkk5.style.display = "none";
+      b.style.display = "none";
        dialogue.rosdfcsdfsdfki = true;
        dialogue.verilywhadyaseee = true;
+       dialogue.blockArrowTravel = false;
      }
     }});
   }}
@@ -11312,10 +11317,15 @@ function fractal() {
        dialogue.kjsndfkjsdjjjjjsssjsjs++;
      } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 17) {
       ybbo10.style.display = "none";
+      ybbo10a.style.display = "block";
+      v.style.display = "block";
+       dialogue.kjsndfkjsdjjjjjsssjsjs = "gay"
+     }  else if (dialogue.kjsndfkjsdjjjjjsssjsjs === "gay") {
+      ybbo10a.style.display = "none";
       ybbo11.style.display = "block";
       v.style.display = "none";
       vrel.style.display = "block";
-       dialogue.kjsndfkjsdjjjjjsssjsjs++;
+       dialogue.kjsndfkjsdjjjjjsssjsjs = 18
      } else if (dialogue.kjsndfkjsdjjjjjsssjsjs === 18) {
       ybbo11.style.display = "none";
       ybbo12.style.display = "block";
@@ -11447,11 +11457,110 @@ function soldier() {
        ybbo46.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
+       if (dialogue.poemAddedToNotebook) {
+dialogue.ranchDressing++;
+       } else if (!dialogue.poemAddedToNotebook) {
+dialogue.ranchDressing = "pickles";
+       }
+     }  else if (dialogue.ranchDressing === 3) {
+       ybbo46.style.display = "none";
+       ybbo47.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 4) {
+       ybbo47.style.display = "none";
+       ybbo48.style.display = "block";
+       b.style.display = "none";
+       v.style.display = "block";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 5) {
+             ybbo48.style.display = "none";
+      if (!dialogue.dictionaryAdded) {
+       ybbo49.style.display = "block";
+      } else {
+       ybbo49a.style.display = "block";
+      }
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 6) {
+       if (!dialogue.dictionaryAdded) {
+       ybbo49.style.display = "none";
+       ybbo50.style.display = "block";
+      } else {
+       ybbo49a.style.display = "none";
+       ybbo49b.style.display = "block";
+      }
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 7) {
+      b.style.display = "none";
+       v.style.display = "block";
+      if (!dialogue.dictionaryAdded) {
+       ybbo50.style.display = "none";
+       ybbo51.style.display = "block";
+       dialogue.ranchDressing++;
+      } else {
+       ybbo49b.style.display = "none";
+       ybbo49c.style.display = "block";
+        dialogue.ranchDressing = "pickles";
+      }
+     }  else if (dialogue.ranchDressing === 8) {
+       ybbo51.style.display = "none";
+       ybbo52.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 9) {
+       ybbo52.style.display = "none";
+       ybbo53.style.display = "block";
+       b.style.display = "none";
+       v.style.display = "block";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 10) {
+       ybbo53.style.display = "none";
+       pocketDictionary.style.display = "block";
+       dialogue.dictionaryAdded = true;
+       b.style.display = "none";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }
+      else if (dialogue.ranchDressing === 11) {
+       pocketDictionary.style.display = "none";
+       ybbo54.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 12) {
+       ybbo54.style.display = "none";
+       ybbo55.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
+       dialogue.ranchDressing++;
+     }  else if (dialogue.ranchDressing === 13) {
+       ybbo55.style.display = "none";
+       ybbo56.style.display = "block";
+       b.style.display = "none";
+       v.style.display = "block";
+       dialogue.ranchDressing++;
+     }
+     else if (dialogue.ranchDressing === 14) {
+       ybbo56.style.display = "none";
+       ybbo57.style.display = "block";
+       b.style.display = "block";
+       v.style.display = "none";
        dialogue.ranchDressing = "pickles";
      } else if (dialogue.ranchDressing === "pickles") {
+       ybbo57.style.display = "none";
+       ybbo49c.style.display = "none";
        ybbo46.style.display = "none";
+      ybbo51.style.display = "none";
        b.style.display = "none";
+       v.style.display = "none";
        dialogue.ranchDressing = true;
+       dialogue.highporthelpervgoesawaynow = true;
   if (dialogue.theFunVariable) {
   magicSleep.style.display = "block";
   } else if (dialogue.sleepSom) {
@@ -11462,9 +11571,6 @@ fractalMagic.style.display = "block";
   }}});
 }
 function sleep() {
-  branleChampaigne.play();
-  setTimeout(function() {startCarmanAfterChampaigne();}, 130000);  
-  saltarello.pause();
   ybbo30.style.display = "block";
       b.style.display = "block";
       dialogue.bzmxkdddqpwoieubr = 1;
@@ -11652,7 +11758,7 @@ function thisMustBePaint() {
        dialogue.blockArrowTravel = false;
      }
     }});
-} else if (!dialogue.needleteetles) {
+} else if (!dialogue.needleteetles && dialogue.beenInArtMirrorRoom) {
   dialogue.blockArrowTravel = true;
   yakaka0.style.display = "block";
       k.style.display = "block";
@@ -11696,7 +11802,22 @@ function thisMustBePaint() {
      }
     }
   });
-} 
+} else if (!dialogue.needleteetles && !dialogue.beenInArtMirrorRoom && dialogue.beenInStairsRoom) {
+  dialogue.blockArrowTravel = true;
+  yakaka0.style.display = "block";
+      k.style.display = "block";
+      dialogue.bzdfdfmzmmdddddddzeubrdddda = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.bzdfdfmzmmdddddddzeubrdddda === 1) {
+       yakaka0.style.display = "none";
+      k.style.display = "none";
+       dialogue.bzdfdfmzmmdddddddzeubrdddda = true;
+       dialogue.blockArrowTravel = false;
+       dialogue.beenInStairsRoom = false;
+     }
+    }});
+}
 }
 
 function orangeLightBulbTalk() {
@@ -11730,3 +11851,566 @@ function orangeLightBulbTalk() {
     }});
   }
 }
+
+function iBetThatsWhatTheVialDid() {
+  if (!dialogue.notaslkdfn) {
+    yamaddha1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      k.style.display = "block";
+      dialogue.bzdfdfmmdddmmzmzmzffqwebrdddda = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.bzdfdfmmdddmmzmzmzffqwebrdddda === 1) {
+       yamaddha1.style.display = "none";
+       yamaddha2.style.display = "block";
+      k.style.display = "none";
+      b.style.display = "block";
+       dialogue.bzdfdfmmdddmmzmzmzffqwebrdddda++;
+     } else if (dialogue.bzdfdfmmdddmmzmzmzffqwebrdddda === 2) {
+       yamaddha2.style.display = "none";
+      b.style.display = "none";
+       dialogue.bzdfdfmmdddmmzmzmzffqwebrdddda = true;
+       dialogue.blockArrowTravel = false;
+       dialogue.notaslkdfn = true;
+       redCircuit.style.display = "none";
+                secretCrackRoom.style.display = "block";
+                current.room = "secretCrackRoom";
+     }
+    }});
+  } else {
+                redCircuit.style.display = "none";
+                secretCrackRoom.style.display = "block";
+                current.room = "secretCrackRoom";
+  }
+                
+}
+
+
+function triggerStmiNotifWhenOnlyOneSwitchHasBeenFlipped() { //when entering l3
+  if (dialogue.youveFlippedOneOfTheSwitches) {
+    if ((dialogue.redSwitchFlipped || dialogue.blueSwitchFlipped || dialogue.greenSwitchFlipped) && (!(dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) || !(dialogue.redSwitchFlipped && dialogue.blueSwitchFlipped) || !(dialogue.greenSwitchFlipped && dialogue.blueSwitchFlipped))) {
+    if (!dialogue.notifincreased) {
+      increaseNotificationLobbyThree();
+        dialogue.notifincreased = true;
+    }
+    dialogue.youflippedOneSwitch = true; 
+    }
+  } 
+  if (dialogue.youflippedOneSwitch && !dialogue.youflippedOneSwitchComplete) {
+      if ((dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) || (dialogue.redSwitchFlipped && dialogue.blueSwitchFlipped) || (dialogue.greenSwitchFlipped && dialogue.blueSwitchFlipped) || (!dialogue.redSwitchFlipped && !dialogue.blueSwitchFlipped && !dialogue.greenSwitchFlipped) ) {
+        decreaseNotificationLobbyThree();
+        dialogue.youflippedOneSwitch = false; 
+      }
+  }
+}
+
+function oneofthestones() {
+  stmigo.play();
+  if (!dialogue.dsfsdfdsfsdfxxx) {
+ yamaddha3.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      st.style.display = "block";
+      dialogue.bzdsdddmzmxmaddda = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.bzdsdddmzmxmaddda === 1) {
+       yamaddha3.style.display = "none";
+       yamaddha4.style.display = "block";
+      st.style.display = "block";
+      dialogue.bzdsdddmzmxmaddda++;
+     } else if (dialogue.bzdsdddmzmxmaddda === 2) {
+       yamaddha4.style.display = "none";
+           yamaddha5.style.display = "block";
+      st.style.display = "none";
+        b.style.display = "block";
+              dialogue.bzdsdddmzmxmaddda++;
+     } else if (dialogue.bzdsdddmzmxmaddda === 3) {
+       yamaddha5.style.display = "none";
+      b.style.display = "none";
+       dialogue.bzdsdddmzmxmaddda = true;
+       dialogue.blockArrowTravel = false;
+       dialogue.dsfsdfdsfsdfxxx = true;
+       decreaseNotificationLobbyThree();
+     }
+    }}); 
+  }
+}
+
+
+function stymieGivesCandleHint() { //mark dont decrease the notifacation level after this because it imediately spawns another convo
+  if (!dialogue.bleepmsodle) {
+      stmigo.play();
+ yamaddhahaha1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      st.style.display = "block";
+      dialogue.ippityopitty = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityopitty === 1) {
+       yamaddhahaha1.style.display = "none";
+       yamaddhahaha2.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 2) {
+       yamaddhahaha2.style.display = "none";
+      yamaddhahaha3.style.display = "block";
+      st.style.display = "block";
+        b.style.display = "none";
+              dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 3 && !dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha3.style.display = "none";
+      yamaddhahaha4.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";     
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 4 && !dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha4.style.display = "none";
+      yamaddhahaha4a.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";     
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 5 && !dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha4a.style.display = "none";
+      yamaddhahaha6.style.display = "block";
+      dialogue.haventLookedAtTheCards = true;
+      decreaseNotification();
+      b.style.display = "none";
+      k.style.display = "block";     
+      dialogue.ippityopitty = 7;
+     } else if (dialogue.ippityopitty === 3 && dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha3.style.display = "none";
+      yamaddhahaha5.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";     
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 4 && dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha5.style.display = "none";
+      yamaddhahaha5a.style.display = "block";
+      st.style.display = "block";
+      b.style.display = "none";     
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 5 && dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha5a.style.display = "none";
+      yamaddhahaha5b.style.display = "block";
+      st.style.display = "block";
+      b.style.display = "none";     
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 6 && dialogue.gotTheTarotCloseUp) {
+      yamaddhahaha5b.style.display = "none";
+      yamaddhahaha6.style.display = "block";
+      st.style.display = "none";
+      k.style.display = "block";     
+      dialogue.bleepmsodle2 = true;
+      dialogue.ippityopitty++;
+     } else if (dialogue.ippityopitty === 7) {
+      yamaddhahaha6.style.display = "none";
+      k.style.display = "none";     
+      dialogue.ippityopitty = true;
+      dialogue.bleepmsodle = true;
+      dialogue.blockArrowTravel = false;
+     }
+    }}); 
+  } else if (dialogue.testedTheCadnlesAgain && !alcove.solved) {
+if (!dialogue.bleepmsodleeeeee) {
+      stmigo.play();
+ yamaddhahahababba1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      k.style.display = "block";
+      dialogue.ippityopittyyy = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityopittyyy === 1) {
+       yamaddhahahababba1.style.display = "none";
+       yamaddhahahababba2.style.display = "block";
+      k.style.display = "none";
+      st.style.display = "block";
+      dialogue.ippityopittyyy++;
+     } else if (dialogue.ippityopittyyy === 2) {
+       yamaddhahahababba2.style.display = "none";
+      yamaddhahaha5b.style.display = "block";
+      st.style.display = "block";
+              dialogue.ippityopittyyy++;
+     } else if (dialogue.ippityopittyyy === 3) {
+       yamaddhahaha5b.style.display = "none";
+      yamaddhahaha6.style.display = "block";
+      st.style.display = "none";
+      k.style.display = "block";
+              dialogue.ippityopittyyy++;
+     } else if (dialogue.ippityopittyyy === 4) {
+      yamaddhahaha6.style.display = "none";
+        k.style.display = "none";
+        dialogue.ippityopittyyy = true;
+        dialogue.bleepmsodle2 = true;
+        dialogue.bleepmsodleeeeee = true;
+          dialogue.blockArrowTravel = false;
+          dialogue.testedTheCadnlesAgain = false;
+     }
+    }});}
+  } else if (dialogue.bleepmsodle2) {
+if (!dialogue.bleepmsodleeeeeegggnnne) {
+      stmigo.play();
+ yamaddhahaha7.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.ippityohoooooo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityohoooooo === 1) {
+       yamaddhahaha7.style.display = "none";
+       yamaddhahaha8.style.display = "block";
+      b.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 2) {
+       yamaddhahaha8.style.display = "none";
+       yamaddhahaha9.style.display = "block";
+      b.style.display = "none";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 3) {
+       yamaddhahaha9.style.display = "none";
+       yamaddhahaha10.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 4) {
+       yamaddhahaha10.style.display = "none";
+       yamaddhahaha11.style.display = "block";
+      b.style.display = "none";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 5) {
+       yamaddhahaha11.style.display = "none";
+       yamaddhahaha12.style.display = "block";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 6) {
+       yamaddhahaha12.style.display = "none";
+       yamaddhahaha13.style.display = "block";
+      st.style.display = "none";
+      b.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 7) {
+       yamaddhahaha13.style.display = "none";
+       yamaddhahaha14.style.display = "block";
+      b.style.display = "none";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 8) {
+       yamaddhahaha14.style.display = "none";
+       yamaddhahaha15.style.display = "block";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 9) {
+       yamaddhahaha15.style.display = "none";
+       yamaddhahaha16.style.display = "block";
+      st.style.display = "none";
+      stkni.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 10) {
+       yamaddhahaha16.style.display = "none";
+       yamaddhahaha17.style.display = "block";
+      stkni.style.display = "none";
+      stdru.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 11) {
+       yamaddhahaha17.style.display = "none";
+       yamaddhahaha18.style.display = "block";
+      stdru.style.display = "none";
+      stwit.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 12) {
+       yamaddhahaha18.style.display = "none";
+       yamaddhahaha19.style.display = "block";
+      stwit.style.display = "none";
+      stron.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 13) {
+       yamaddhahaha19.style.display = "none";
+       yamaddhahaha20.style.display = "block";
+      stron.style.display = "none";
+      st.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 14) {
+       yamaddhahaha20.style.display = "none";
+       yamaddhahaha21.style.display = "block";
+      st.style.display = "none";
+      stkni.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 15) {
+       yamaddhahaha21.style.display = "none";
+       yamaddhahaha22.style.display = "block";
+      stkni.style.display = "none";
+      stdru.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 16) {
+       yamaddhahaha22.style.display = "none";
+       yamaddhahaha23.style.display = "block";
+      stdru.style.display = "none";
+      stwit.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 17) {
+       yamaddhahaha23.style.display = "none";
+       yamaddhahaha24.style.display = "block";
+      stwit.style.display = "none";
+      stron.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 18) {
+       yamaddhahaha24.style.display = "none";
+             yamaddhahaha26.style.display = "block";
+
+      stron.style.display = "none";
+      b.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 19) {
+      b.style.display = "none";
+      k.style.display = "block";
+      yamaddhahaha26.style.display = "none";
+      yamaddhahaha25.style.display = "block";
+      dialogue.ippityohoooooo++;
+     } else if (dialogue.ippityohoooooo === 20) {
+       yamaddhahaha25.style.display = "none";
+      stron.style.display = "none";
+      dialogue.ippityohoooooo = true;
+        dialogue.blockArrowTravel = false;
+        dialogue.bleepmsodleeeeeegggnnne = true;
+        dialogue.bleepmsodle2 = false;
+        decreaseNotification();
+        dialogue.candlesHintConvoFinished = true;
+     }
+    }});
+    }
+      }
+}
+
+function bigCrystal() {
+  coolRock1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      k.style.display = "block";
+      dialogue.ippityohfdgoofgoooo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityohfdgoofgoooo === 1) {
+       coolRock1.style.display = "none";
+       coolRock2.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+      dialogue.ippityohfdgoofgoooo++;
+     } else if (dialogue.ippityohfdgoofgoooo === 2) {
+       coolRock2.style.display = "none";
+      b.style.display = "none";
+      dialogue.ippityohfdgoofgoooo = true;
+        dialogue.blockArrowTravel = false;
+     }}});
+}
+
+function howsBunhilda() {
+  yayzazzzz1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.ippityoddddmnmnoo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityoddddmnmnoo === 1) {
+       yayzazzzz1.style.display = "none";
+       yayzazzzz2.style.display = "block";
+      st.style.display = "block";
+      b.style.display = "none";
+      dialogue.ippityoddddmnmnoo++;
+     } else if (dialogue.ippityoddddmnmnoo === 2) {
+       yayzazzzz2.style.display = "none";
+       yayzazzzz3.style.display = "block";
+      b.style.display = "block";
+      st.style.display = "none";
+      dialogue.ippityoddddmnmnoo++;
+     } else if (dialogue.ippityoddddmnmnoo === 3) {
+       yayzazzzz3.style.display = "none";
+      b.style.display = "none";
+      dialogue.ippityoddddmnmnoo = true;
+        dialogue.blockArrowTravel = false;
+     }
+    }});
+}
+
+function heyTheresASecretDoor() {
+  if (!dialogue.secretrooomspdo) {
+  hiddenDoorConv1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo === 1) {
+       hiddenDoorConv1.style.display = "none";
+       if (dialogue.secretPaintingPassageDiscovered) {
+       hiddenDoorConv2.style.display = "block";
+       } else {
+            hiddenDoorConv2a.style.display = "block";
+       }
+      k.style.display = "block";
+      b.style.display = "none";
+      dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo === 2) {
+       hiddenDoorConv2.style.display = "none";
+       hiddenDoorConv2a.style.display = "none";
+       hiddenDoorConv3.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+      dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo === 3) {
+       hiddenDoorConv3.style.display = "none";
+      b.style.display = "none";
+      dialogue.ippimmmzmzmzmajjajakqkkqdmnmnoo = true;
+      dialogue.secretrooomspdo = true;
+        dialogue.blockArrowTravel = false;
+
+     }
+    }});
+  }
+}
+
+function itsAPocketDictionary() {
+  if (!dialogue.pocketDictionaryObtainedFromPlinth) {
+  poccit1.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 1) {
+       poccit1.style.display = "none";
+       poccit2.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 2) {
+       poccit2.style.display = "none";
+       poccit3.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 3) {
+       poccit3.style.display = "none";
+       poccit4.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 4) {
+       poccit4.style.display = "none";
+       poccit5.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 5) {
+       poccit5.style.display = "none";
+       poccit6.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo++;
+     } else if (dialogue.ippimmmzmzmzkqkkqdmnmnoo === 6) {
+       poccit6.style.display = "none";
+      b.style.display = "none";
+      dialogue.ippimmmzmzmzkqkkqdmnmnoo = true;
+      dialogue.pocketDictionaryObtainedFromPlinth = true;
+      dialogue.dictionaryAdded = true;
+        dialogue.blockArrowTravel = false;
+      pocketDictionary.style.display = "none";
+      nowAvailable.style.display = "block";
+          setTimeout(() => {
+              nowAvailable.style.display = "none";
+          }, 2000);}
+    }});
+  }
+}
+
+function letsHaveALookAtTheDictionary() {
+  if (!dialogue.letshavelook) {
+  dialogue.blockArrowTravel = true;
+      knoba.style.display = "block";
+      knoba.style.zIndex = 1001;
+  poccit8.style.display = "block";
+      dialogue.ippimmmzmzmzkmmmmnnnbvczmnmnoo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippimmmzmzmzkmmmmnnnbvczmnmnoo === 1) {
+       poccit8.style.display = "none";
+      knoba.style.display = "none";
+knoba.style.zIndex = 11;
+      dialogue.letshavelook = true;
+        dialogue.blockArrowTravel = false;
+        textWork.style.display = "block";
+        workspace1.style.display = "block";
+        textWork.style.zIndex = 200000000; //mark
+        document.body.style.background = "#000";  
+        dialogue.ippimmmzmzmzkmmmmnnnbvczmnmnoo = false;
+     }}});}
+}
+
+
+    function mustBeBig() {
+      if (!dialogue.bigbigbigbigbigbig) {
+      pococo1.style.display = "block";
+             dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.karsdsdfsdfzzfak = 1;
+      document.addEventListener("keydown", function() {
+      if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.karsdsdfsdfzzfak === 1) {
+       pococo1.style.display = "none";
+       pococo2.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.karsdsdfsdfzzfak++;
+     } else if (dialogue.karsdsdfsdfzzfak === 2) {
+       pococo2.style.display = "none";
+       pococo3.style.display = "block";
+      b.style.display = "block";
+      k.style.display = "none";
+       dialogue.karsdsdfsdfzzfak++;
+     } else if (dialogue.karsdsdfsdfzzfak === 3) {
+       pococo3.style.display = "none";
+       pococo4.style.display = "block";
+      k.style.display = "block";
+      b.style.display = "none";
+       dialogue.karsdsdfsdfzzfak++;
+     } else if (dialogue.karsdsdfsdfzzfak === 4) {
+       pococo4.style.display = "none";
+      k.style.display = "none";
+       dialogue.karsdsdfsdfzzfak = true;
+       dialogue.blockArrowTravel = false;
+        dialogue.bigbigbigbigbigbig = true;
+     }}});
+    }
+    }
+
+
+
+    function mustBeHalberd() {
+      if (!dialogue.bigbdnnzmmnxmxncig) {
+      pococo5.style.display = "block";
+             dialogue.blockArrowTravel = true;
+      b.style.display = "block";
+      dialogue.karsddddmzmzmmzzfak = 1;
+      document.addEventListener("keydown", function() {
+      if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.karsddddmzmzmmzzfak === 1) {
+       pococo5.style.display = "none";
+       pococo6.style.display = "block";
+      b.style.display = "none";
+      kshift.style.display = "block";
+       dialogue.karsddddmzmzmmzzfak++;
+     } else if (dialogue.karsddddmzmzmmzzfak === 2) {
+       pococo6.style.display = "none";
+       pococo7.style.display = "block";
+      khalb.style.display = "block";
+      kshift.style.display = "none";
+       dialogue.karsddddmzmzmmzzfak++;
+     } else if (dialogue.karsddddmzmzmmzzfak === 3) {
+       pococo7.style.display = "none";
+      khalb.style.display = "none";
+       dialogue.karsddddmzmzmmzzfak = true;
+       dialogue.blockArrowTravel = false;
+        dialogue.bigbdnnzmmnxmxncig = true;
+     }}});
+    }
+    }

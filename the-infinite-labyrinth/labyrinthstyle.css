@@ -15,30 +15,47 @@ body {
 
 
 #prompts {
-    z-index: 100000000000;
+    z-index: 100000;
     left: 50px;
     top: 100px;
     display: none;
 }
 
-#sendButton {
-    left: 500px;
+#sendButton { /*gocontact*/
+    left: 820px;
     top: 100px;
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 10%;
+    height: 50px;
+    transform: translate(215px,30px);
+    color: white;
+    text-shadow: black;
+    cursor: pointer;
+    background-color: #B92A52;
 }
 
-#commentsBox {
-    width:480px;
-    height:500px;
+#aliasBox { /*gocontact*/
+    background: white;
+    height: 40px;
+        font-size: 18px;
+    border: 3px solid #B92A52;
+    width: 180px;
+    transform: translate(200px,30px);
+}
+
+#commentsBox { /*gocontact*/
+        transform: translate(8px,43px);
+    width:470px;
+    font-size: 18px;
+    height:470px;
     background: white;
     border: 3px solid #B92A52;
     resize: none;
-    z-index: 10000000000;
+    z-index: 100000;
+    background-color: transparent;
 }
 
-#aliasBox {
-    background: white;
-    border: 3px solid #B92A52;
-}
 
 #butt {
     z-index: 5;
@@ -1588,6 +1605,7 @@ z-index: -1;
 #notepadmu,
 #notepadm2,
 #notepadi,
+#notepadisecret,
 #notepadp,
 #notepadpnone,
 #notepadst,

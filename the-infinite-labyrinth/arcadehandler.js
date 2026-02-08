@@ -3,6 +3,7 @@
 //changeSpeed
 
 function bikaipoArcadeGame() {
+  mapmini.style.display = "none";
     arcadeGameContainer.style.display = "block";
     startArcadeGame();
     letsCreateProjectilesWithMama();
@@ -10,19 +11,28 @@ function bikaipoArcadeGame() {
     dialogue.arcadeGameActive = true;
     if (dialogue.stymieArcadeAlterations1) {
                   dialogue.arcadeFailuresOne = true;
-                  increaseNotificationLobbyThree();
+                  if (!dialogue.increasethedecrease) {
+                    increaseNotificationLobbyThree();
+                    dialogue.increasethedecrease = true;
+                  }
+                  
                 }
                 if (dialogue.stymieArcadeAlterations2) {
                   dialogue.arcadeFailuresTwo = true;
-                  increaseNotificationLobbyThree();
+                  if (!dialogue.increasethedecreas2e) {
+                    increaseNotificationLobbyThree();
+                  dialogue.increasethedecreas2e = true;
+                  }
+                  
                 }
 }
 
-
-function closeTheArcadeGame() { // close arcade game
+function closeTheArcadeGame() { // close arcade game, hide arcade
                 eightBitTune.pause();
                 doihmot.play();
+                arcadeShamble.pause();
                 arcadeshell.style.display = "none";
+                mapmini.style.display = "block";
                 arcadeshell.style.zIndex = "-100";
                 arcadecloseup.style.display = "block";
                 dialogue.blockArrowTravel = false;
@@ -39,9 +49,13 @@ function closeTheArcadeGame() { // close arcade game
                   dialogue.arcadeFailuresTwo = true;
                 }
                 if (dialogue.numberOfArcadeFailures == 4) {
-              //if you change the above number "change this number too" in labyrinthdialogue.js
-              thisIsReallyHard();
-              increaseNotificationLobbyThree();
+              //if you change the above number: "change this number too" in labyrinthdialogue.js
+              if (!dialogue.thisishard) {
+                thisIsReallyHard();
+                increaseNotificationLobbyThree();
+                dialogue.thisishard = true;
+              }
+              
             }
 }
 
@@ -66,7 +80,7 @@ function closeTheArcadeGame() { // close arcade game
        //changeSpeed (default is 3)
        //changeSize (default is 8)
        if (dialogue.stymieArcadeAlterations1) {
-       for (var i = 0; i < 40; i++) { //changeAmount
+       for (var i = 0; i < 40; i++) { 
         var x = Math.random() * gameSquare.size;
         var y = Math.random() * gameSquare.size;
         var direction = Math.floor(Math.random() * 8);
@@ -174,7 +188,7 @@ function closeTheArcadeGame() { // close arcade game
             break;}
         projectiles.push(projectile);}
       } else if (!dialogue.stymieArcadeAlterations1 && !dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
-        for (var i = 0; i < 3; i++) { //mark. normally 4
+        for (var i = 0; i < 4; i++) { //no alterations //changeAmount
         var x = Math.random() * gameSquare.size;
         var y = Math.random() * gameSquare.size;
         var direction = Math.floor(Math.random() * 8);
@@ -381,6 +395,7 @@ function closeTheArcadeGame() { // close arcade game
         canvasContext.fillStyle = 'white';
         timer.style.display = "block";
         eightBitTune.pause();
+        arcadeShamble.pause();
         if (!dialogue.gameBlooped) {gameOverBloop();}
         canvasContext.font = '16px Arial';
         canvasContext.fillText('Game Over', 140, 100);
@@ -413,6 +428,10 @@ function closeTheArcadeGame() { // close arcade game
         timer.style.display = "none";
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+if (dialogue.stymieArcadeAlterations3) {
+  arcadeShamble.play();
+  eightBitTune.pause();
+}
         laudaNovella.pause();
         doihmot.pause();
         document.removeEventListener('keydown', restartGame);
@@ -431,6 +450,11 @@ function restartGameWithoutKeypress() {
         timer.style.display = "none";
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+
+if (dialogue.stymieArcadeAlterations3) {
+  arcadeShamble.play();
+  eightBitTune.pause();
+}
         laudaNovella.pause();
         doihmot.pause();
         document.removeEventListener('keydown', restartGame);
@@ -481,6 +505,11 @@ function restartGameWithoutKeypress() {
       canvas.width = gameSquare.size;
       canvas.height = gameSquare.size;
       eightBitTune.play();
+
+if (dialogue.stymieArcadeAlterations3) {
+  arcadeShamble.play();
+  eightBitTune.pause();
+}
       eightBitTune.currentTime = 0;
       laudaNovella.pause();
       doihmot.pause();

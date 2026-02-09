@@ -13,15 +13,15 @@
 
 <style>
 /*
+REUPLOAD:
+main file
+
 Check all //mark s
-remove cheat cookie
 
 ART
 HIGH:
 verilyidle (gif it)
-bcov
 put v in cavern 2
-bigCrystal looks weird.
 
 LOW:
 revise kmap3
@@ -35,16 +35,14 @@ little mouse noise for start of verily conversations verilyGo
 sound for clunk (secret door opening)
 
 code:
+cookies for map region for kval
 z index for "kodaly said they know a rel"
 textWork not clickable
 imagemap for plinth? dict
-mapmini none for caverns
-go east from treescene 
 cookies for pocket dictionary
-close contact
-at end: notepad is above workspace, closing workspace restores beige
 
 extra stuff:
+art for bcov: bridget under covers
 make hall explorers gifs and chandelier fallen
 stymie gif as idle. thinking, dozing off, getting distracted
 put some rugs down?
@@ -2996,7 +2994,7 @@ Vich – conj. Because.<br><br>
 
  <map name="treeroommap">
             <area shape="rect" coords="560,460,606,517" alt="advance dialogue with whole screen click" class="pointer" onclick="takeSecretFruit()">
-            <area shape="rect" coords="735,406,825,492" alt="advance dialogue with whole screen click" class="pointer" onclick="goEast()">
+            <area shape="rect" coords="1277,525,1416,662" alt="advance dialogue with whole screen click" class="pointer" onclick="goEast()">
         </map>
 
 
@@ -3952,7 +3950,10 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/bridgetfurrowed.png" alt="bridget is taking notes" class="dialogue" id="bridgetfurrowed">
     <img src="portraits/bridgetpissed.png" alt="bridget is taking notes" class="dialogue" id="bridgetpissed">
     <img src="portraits/bridgetnobackground.png" alt="bridget no background" class="dialogue" id="bnoba">
-    <img src="portraits/bridgetundercovers.png" alt="bridget no background" class="dialogue" id="bcov">
+    <!--
+        <img src="portraits/bridgetundercovers.png" alt="bridget no background" class="dialogue" id="bcov">
+
+    -->
     
     <img src="portraits/stymie.png" alt="stymie's default dialogue portrait" class="dialogue" id="stymie">
     <img src="portraits/stymiethug.png" alt="stymie's default dialogue portrait" class="dialogue" id="sthug">
@@ -5785,7 +5786,7 @@ performed by the Baltimore Consort with sop. Danielle Svonavec<br>
     <p id="yamaddhahaha26">...</p>
 
 
-    <p id="coolRock1">It's some sort of large rock.</p>
+    <p id="coolRock1">It's some sort of coat hanger.</p>
     <p id="coolRock2">I see.</p>
 
     <p id="hiddenDoorConv1">Do you see that?</p>
@@ -6270,6 +6271,7 @@ if (dialogue.arrowsBackAndForth && (e.key == 'ArrowLeft' || e.key == 'a' || e.ke
     e.preventDefault();
     nextSketch();
 } if (dialogue.arrowsBackAndForth && e.key === "Escape") {
+    e.preventDefault();
     closeSketches();
 }
 
@@ -7547,15 +7549,18 @@ function notepadPoem() {
 
 
 function bridgetLooks() {
+    hideNotes();
         dict1.style.display = "block";
-        dict1.style.zIndex = 100099;
-        bcov.style.display = "block";
+        dict1.style.zIndex = 110101;
+        bnoba.style.display = "block";
+        bnoba.style.zIndex = 110100;
+        //bcov
         dialogue.ranchDsdfsdfressing = 1;
          document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.ranchDsdfsdfressing === 1) {
        dict1.style.display = "none";
-       bcov.style.display = "none";
+       bnoba.style.display = "none";
        workspace1.style.display = "block";
        textWork.style.display = "block";
        setTimeout(function() {
@@ -11261,7 +11266,7 @@ document.addEventListener("keydown", function() {
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
                   //cheat  
-                  //document.cookie = "cheat=cheat";
+                  document.cookie = "cheat=cheat";
                   return;
        }
    }});
@@ -14182,15 +14187,9 @@ function goWest() {
             } else if (dialogue.verilyHasJoinedTheParty && !dialogue.verilyYouTryTheCrack) {
                 verilyYouGoIntoTheMysteriousCrack();
             } else if (dialogue.verilyHasJoinedTheParty && dialogue.verilyYouTryTheCrack && !dialogue.fruitTaken) {
-                current.room = "cavernsOne";
-                cavernsOne.style.display = "block";
-                secretCrackRoom.style.display = "none";
-                baseroom.style.display = "none";
-                stachel.style.display = "none";
-                keyitems.style.display = "none";
-                trio.style.display = "none";
-                mapmini.style.display = "none";
-                document.body.style.background = "#251d1d";
+                
+goWestIntoCrack();
+                
             } else if (dialogue.verilyHasJoinedTheParty && dialogue.verilyYouTryTheCrack && dialogue.fruitTaken) {
                 noreasontogobackthereagain();
             }             
@@ -14248,6 +14247,7 @@ function goWest() {
             cavernsOne.style.display = "none";
             cavernsTwo.style.display = "block";
             current.room = "cavernsTwo";
+            mapmini.style.display = "none";
         } else if (current.room === "cavernsTwo") {
             cavernsTwo.style.display = "none";
             secretTreeRoom.style.display = "block";
@@ -19200,6 +19200,7 @@ function closeSketches() {
     bigX.style.display = "none";
     nextarrow2.style.display = "none";
     prevarrow2.style.display = "none";
+    closeContactForm();
 }
 
 function goContact() {
@@ -19744,6 +19745,18 @@ function toggleHiddenDoorNorth() {
         hiddenswitchoff.style.display = "block"
         hiddenswitchon.style.display = "none"
     }
+}
+
+function goWestIntoCrack() {
+    current.room = "cavernsOne";
+                cavernsOne.style.display = "block";
+                secretCrackRoom.style.display = "none";
+                mapmini.style.display = "none";
+                document.body.style.background = "#251d1d";
+                baseroom.style.display = "none";
+                stachel.style.display = "none";
+                keyitems.style.display = "none";
+                trio.style.display = "none";
 }
 
 function goToTheHomePageWhyDontYou(){

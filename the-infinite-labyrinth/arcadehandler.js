@@ -37,6 +37,10 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
                 arcadecloseup.style.display = "block";
                 dialogue.blockArrowTravel = false;
                 dialogue.allowEscape = false;
+                dialogue.preventM = false;
+    dialogue.preventK = false;
+    dialogue.preventI = false;
+    dialogue.preventN = false;
                 dialogue.arcadeGameActive = false;
                 timer.style.display = "none";
                 arcadeGameContainer.style.display = "none";
@@ -426,8 +430,10 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
         projectiles = [];
         survivalTime = 0;
         timer.style.display = "none";
+        if (!dialogue.jukebox) {
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+        }
 if (dialogue.stymieArcadeAlterations3) {
   arcadeShamble.play();
   eightBitTune.pause();
@@ -448,8 +454,10 @@ function restartGameWithoutKeypress() {
         projectiles = [];
         survivalTime = 0;
         timer.style.display = "none";
+        if (!dialogue.jukebox) {
         eightBitTune.currentTime = 0;
         eightBitTune.play();
+        }
 
 if (dialogue.stymieArcadeAlterations3) {
   arcadeShamble.play();
@@ -504,15 +512,21 @@ if (dialogue.stymieArcadeAlterations3) {
       canvasContext = canvas.getContext('2d');
       canvas.width = gameSquare.size;
       canvas.height = gameSquare.size;
-      eightBitTune.play();
+      if (!dialogue.jukebox) {
+        eightBitTune.currentTime = 0;
+        eightBitTune.play();
+        }
 
 if (dialogue.stymieArcadeAlterations3) {
+  if (!dialogue.jukebox) {
   arcadeShamble.play();
   eightBitTune.pause();
-}
-      eightBitTune.currentTime = 0;
+  eightBitTune.currentTime = 0;
       laudaNovella.pause();
       doihmot.pause();
+        }
+}
+      
       arcadecloseup.style.display = "block";
       arcadeshell.style.display = "block";
             arcadeshell.style.zIndex = "99";

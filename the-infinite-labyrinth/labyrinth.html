@@ -423,11 +423,21 @@ z-index: 3;
 }
 
 
-#sketch2 {
+#sketch1 {
     display: none;
     max-width: 700px;
     max-height: 600px;
     left: 477px;
+    top: 50px;
+    z-index: 100003;
+    position: absolute;
+    border: 10px solid white;
+}
+#sketch2 {
+    display: none;
+    max-width: 700px;
+    max-height: 600px;
+    left: 450px;
     top: 50px;
     z-index: 100003;
     position: absolute;
@@ -1332,6 +1342,7 @@ z-index: 3;
             <img src="floaters/psketches.png" alt="satchel" usemap="endSelectMap" class="room" id="psketches">
             
             <img src="sketches/2.jpg" alt="z" usemap="endSelectMap" class="room" id="sketch2">
+            <img src="sketches/1.jpg" alt="z" usemap="endSelectMap" class="room" id="sketch1">
             <img src="sketches/3.jpg" alt="satzchel" usemap="endSelectMap" class="room" id="sketch3">
             <img src="sketches/4.jpg" alt="satdchel" usemap="endSelectMap" class="room" id="sketch4">
             <img src="sketches/5.jpg" alt="satdschel" usemap="endSelectMap" class="room" id="sketch5">
@@ -1666,14 +1677,14 @@ Vich – conj. Because.<br><br>
                     <p id="page4">What a charming labyrinth<br><br>—Row</p> <!--Row ? -->
                     <p id="page6">hiii!!!! finally giving this the looksee it deserves!!!! let's make out sometime!<br><br>—;3</p> <!--Atlas Dent-->
                     <p id="page8">This is cooler than my shit that was the shape of a unicorn!<br><br>—Bananamaniac</p> <!--Hannah Fabrigar-->
-                    <p id="page10"></p>
+                    <p id="page10">HI! My name is Alia and I am so excited to be here and explore the labyrinth.<br><br>—Your Mansa Friend</p>
                     <p id="page12"></p>
                 </div>
 
                 <div class="left"> <!--lobby 2 book-->
                     <p id="page1b">Second guest book unlocked, hell yeah<br>—Badison</p> <!--Madison Earnest-->
                     <p id="page3b">i think we might be stuck at this section for a while 0_0<br><br>—//sent because puzzles are hard</p> <!--Atlas Dent-->
-                    <p id="page5b"></p>
+                    <p id="page5b">Help.....<br><br>—lost soul</p>
                     <p id="page7b"></p>
                     <p id="page9b"></p>
                     <p id="page11b"></p>
@@ -1690,7 +1701,7 @@ Vich – conj. Because.<br><br>
                 <div class="left"> <!--lobby 3-->
                     <p id="page1c">Yahaha!<br><br>—Iphis</p> <!--Adnie Iphis Fox-->
                     <p id="page3c">look for your mom deeper into the labrynth maybe<br><br>—mom-seeker</p> <!--Atlas Dent-->
-                    <p id="page5c"></p>
+                    <p id="page5c">Hello whos there. I am hearing things and I might be going crazy.<br><br>—.....</p>
                     <p id="page7c"></p>
                     <p id="page9c"></p>
                     <p id="page11c"></p>
@@ -6039,7 +6050,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         }
 
-        if (e.key == 'ArrowRight' && dialogue.guestbookOpen) {
+        if (e.key == 'ArrowRight' && dialogue.guestbookOpen && guestbook.pages !== 1) {
             nextPage();
         } else if (e.key == 'ArrowLeft' && dialogue.guestbookOpen) {
             prevPage();
@@ -19604,17 +19615,23 @@ prestart.style.display = "none";
 
  function goSketches() {
     dialogue.arrowsBackAndForth = true;
-sketch2.style.display = "block";
+sketch1.style.display = "block";
 bigX.style.display = "block";
 bigX.style.zIndex = 100100;
 nextarrow2.style.display = "block";
 nextarrow2.style.zIndex = 100100;
 prevarrow2.style.zIndex = 100100;
-dialogue.sketches2 = true;
+dialogue.sketches1 = true;
 }
 
 function nextSketch() {
-    if (dialogue.sketches2) {
+    if (dialogue.sketches1) {
+prevarrow2.style.display = "block";
+sketch1.style.display = "none";
+sketch2.style.display = "block";
+dialogue.sketches1 = false;
+dialogue.sketches2 = true;
+    } else if (dialogue.sketches2) {
 prevarrow2.style.display = "block";
 sketch2.style.display = "none";
 sketch3.style.display = "block";
@@ -19641,8 +19658,13 @@ nextarrow2.style.display = "none";
 }
 
 function prevSketch() {
-    if (dialogue.sketches3) {
+    if (dialogue.sketches2) {
 prevarrow2.style.display = "none";
+sketch1.style.display = "block";
+sketch2.style.display = "none";
+dialogue.sketches1 = true;
+dialogue.sketches2 = false;
+    } else if (dialogue.sketches3) {
 sketch2.style.display = "block";
 sketch3.style.display = "none";
 dialogue.sketches2 = true;
@@ -19668,6 +19690,7 @@ nextarrow2.style.display = "block";
 
 function closeSketches() {
     sketch2.style.display = "none";
+    sketch1.style.display = "none";
     sketch3.style.display = "none";
     sketch4.style.display = "none";
     sketch5.style.display = "none";

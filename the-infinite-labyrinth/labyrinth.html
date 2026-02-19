@@ -21,10 +21,14 @@ boat explorers gif (bridget turns head, kodaly loses balance)
 
 
 code:
+"press enter or space" for kmap1
+have fish in second pond jump
+cut down paintings convo
 if take and then drop missing handle stops movement across chasm but not triggers images 
-not playing the invfull animation?
+not playing the invfull animation at some point?
 
 extra stuff:
+candles get stuck on purple if you don't have red candles
 art for bcov: bridget under covers
 make hall explorers gifs and chandelier fallen
 stymie gif as idle. thinking, dozing off, getting distracted
@@ -4642,7 +4646,7 @@ performed by the Baltimore Consort<br>
         <p id="zm23">It needs to have an outlet.</p>
     <p id="zm24">A chink in the armor.</p>
         <p id="zm25">What I'm stuck on is: What's the difference between an open door and a door that could <i>theoretically</i> be opened?</p>
-            <p id="zm26">How do nutrients flow to cells across a chasm if there's no rope bridge?</p>
+            <p id="zm26">How do nutrients flow to cells across a chasm?</p>
         <p id="zm27">And speaking of the rope bridge—</p>
     <p id="zm28">If we're assuming that the soldier cut the bridge, how did Verily get across?</p>
     <p id="zm29">Unless Verily cut the bridge, the soldier must have passed her at some point.</p>
@@ -5191,7 +5195,7 @@ performed by the Baltimore Consort<br>
         <!--next pipe-->
         <p id="zzv3">This must be one of the missing pipe segments we need.</p>
 
-        <p id="yyj0">Hm.</p>
+        <p id="yyj0">Hmm.</p>
         <p id="yyj00">Produce.</p>
    <p id="yyj1">Did you ever hear those stories about people who lived for months at a time in the labyrinth at Bara Portcullis?</p>
    <p id="yyj2">I recall the headline in one of those sensationalist magazines you see for five marks at the grocer's stall. I just skimmed the story, but I wasn't sure if it was fact or fiction. The details seemed spurious.</p>
@@ -6884,6 +6888,7 @@ if (cookiesHas('feralRacoons')) {
         }
         key.gold = true;
         ropey.set = true;
+        northlockchasm.style.display = "none";
         chasmrope.style.display = "block";
         goldkey.style.display = "none";
         rope.style.display = "none";
@@ -7072,6 +7077,7 @@ if (cookiesHas('longtime')) {
        dialogue.unlockingSecond = true;
        key.silver = true;
        silverkey.style.display = "none";
+       key.silverBeenUsed = true;
        key.silverhidden = true;
        westlock.style.display = "none";
     }
@@ -7403,7 +7409,7 @@ function decreaseNotificationLobbyThree() {
 }
 
 function showKeyItems() {
-    if (dialogue.keyItemsAdded && !dialogue.vialPlaced) {
+    if (dialogue.keyItemsAdded && !dialogue.vialPlaced && !dialogue.preventK) {
         keyItemsPouch.style.display = "block";
         dialogue.preventM = true;
     dialogue.keyItemsPouchIsOpen = true;
@@ -8881,12 +8887,16 @@ function noneOarsAndAddThemToTheBoat() {
 function noneSilverKey() {
     if (inventory.slot1 === "silver key") {
         inventory.slot1 = false;
+        key.silverBeenUsed = true;
     }if (inventory.slot2 === "silver key") {
         inventory.slot2 = false;
+        key.silverBeenUsed = true;
     } if (inventory.slot3 === "silver key") {
         inventory.slot3 = false;
+        key.silverBeenUsed = true;
     } if (inventory.slot4 === "silver key") {
         inventory.slot4 = false;
+        key.silverBeenUsed = true;
     }
 }
 
@@ -19121,7 +19131,7 @@ document.addEventListener("keydown", function() {
         }}
                 }
             } 
-       else if (current.room === "library" && !key.silverhidden) {
+       else if (current.room === "library" && !key.silverhidden && !key.silverBeenUsed) {
             if (!inventory.slot1) {
             if (inventory.slot1 !== "silver key"
             && inventory.slot2 !== "silver key"

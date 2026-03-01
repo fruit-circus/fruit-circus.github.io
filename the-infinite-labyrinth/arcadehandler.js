@@ -52,7 +52,7 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
                 if (dialogue.stymieArcadeAlterations2) {
                   dialogue.arcadeFailuresTwo = true;
                 }
-                if (dialogue.numberOfArcadeFailures == 4) {
+                if (dialogue.numberOfArcadeFailures == 3) {
               //if you change the above number: "change this number too" in labyrinthdialogue.js
               if (!dialogue.thisishard) {
                 thisIsReallyHard();

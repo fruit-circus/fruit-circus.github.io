@@ -14,7 +14,7 @@ function playPenser() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
@@ -29,7 +29,7 @@ function playPenser() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playDoihmot() {
@@ -47,7 +47,7 @@ function playDoihmot() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -61,7 +61,7 @@ function playDoihmot() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playLamano() {
@@ -80,7 +80,7 @@ function playLamano() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -94,7 +94,7 @@ function playLamano() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playQuenenote() {
@@ -113,7 +113,7 @@ function playQuenenote() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -127,7 +127,7 @@ function playQuenenote() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playElmare() {
@@ -146,7 +146,7 @@ function playElmare() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -160,7 +160,7 @@ function playElmare() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playLoferm() {
@@ -179,7 +179,7 @@ function playLoferm() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -193,7 +193,7 @@ function playLoferm() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playSacrum() {
@@ -212,7 +212,7 @@ function playSacrum() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause();
+        buffons.pause();
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -226,7 +226,7 @@ function playSacrum() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0; 
+        buffons.currentTime = 0; 
     }
 }
 function playLauda() {
@@ -245,7 +245,7 @@ function playLauda() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -259,7 +259,7 @@ function playLauda() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 
@@ -279,7 +279,7 @@ function playEight() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -293,7 +293,7 @@ function playEight() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playBranle() {
@@ -311,7 +311,7 @@ function playBranle() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -325,7 +325,7 @@ function playBranle() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }function playSalta() {
     if (dialogue.jukebox) {
@@ -342,7 +342,7 @@ function playBranle() {
         saltarello.play(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -356,7 +356,7 @@ function playBranle() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }function playAnti() {
     if (dialogue.jukebox) {
@@ -373,7 +373,7 @@ function playBranle() {
         saltarello.pause(); 
         antiphona.play(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -387,7 +387,7 @@ function playBranle() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playCham() {
@@ -405,7 +405,7 @@ function playCham() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.play(); 
-        theCarmansWhistle.pause(); 
+        buffons.pause(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -419,7 +419,7 @@ function playCham() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }
 function playCarman() {
@@ -437,7 +437,7 @@ function playCarman() {
         saltarello.pause(); 
         antiphona.pause(); 
         branleChampaigne.pause(); 
-        theCarmansWhistle.play(); 
+        buffons.play(); 
         penser.currentTime = 0;
         doihmot.currentTime = 0;
         lamano.currentTime = 0;
@@ -451,6 +451,6 @@ function playCarman() {
         saltarello.currentTime = 0;
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
-        theCarmansWhistle.currentTime = 0;
+        buffons.currentTime = 0;
     }
 }

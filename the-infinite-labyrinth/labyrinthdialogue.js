@@ -2172,7 +2172,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         return;
      }
     }});
-        } else if (dialogue.numberOfArcadeFailures >= 4 && !dialogue.arcadeFailuresOne && !dialogue.needSomething) { //for testing set lower //change this number too
+        } else if (dialogue.numberOfArcadeFailures >= 3 && !dialogue.arcadeFailuresOne && !dialogue.needSomething) { //for testing set lower //change this number too
           stmigo.play();
           dialogue.blockArrowTravel = true;
           ybi1.style.display = "block";
@@ -5098,9 +5098,9 @@ function takeMacaroniPipe() {
             tooHeavy();
         }
     } else if (dialogue.weHaveBat && !prizes.macaroniPipe) {
+      glassSmash.play();
       brokenglass.style.display = "block";
       prizeglass2.style.display = "none";
-      glassSmash.play();
       prizes.macaroniPipe = true;
     } else {
       glasstink.play();
@@ -5756,7 +5756,7 @@ document.addEventListener("keydown", function() {
        yya4.style.display = "none";
        yya5.style.display = "block"; 
        k.style.display = "block";
-         dialogue.secretPassage++;
+         dialogue.secretPassage = 8;
          return;
      } else if (dialogue.secretPassage === 5) {
        yya5.style.display = "none";
@@ -5799,95 +5799,86 @@ document.addEventListener("keydown", function() {
        b.style.display = "block";
        dialogue.secretPassage++;
          return;
-     }else if (dialogue.secretPassage === 11) {
+     } else if (dialogue.secretPassage === 11) {
        yya11.style.display = "none";
        yya12.style.display = "block";
        ksl.style.display = "block";
         b.style.display = "none";
        dialogue.secretPassage++;
-         return;
      }else if (dialogue.secretPassage === 12) {
-       yya12.style.display = "none";
-       ksl.style.display = "none";
-       dialogue.secretPassage = true;
-       dialogue.secretPassage1a = true; //secretPassage -> secretPassage1a -> secretPassage2
-     }
-   }});} else if (dialogue.secretPassage1a) {
-    dialogue.blockArrowTravel = true;
-        dialogue.secretPassage1a = 1;
        yya13.style.display = "block";
+       yya12.style.display = "none";
        k.style.display = "block";
-document.addEventListener("keydown", function() {
- if (event.key === 'Enter' || event.key === ' ') {
-     if (dialogue.secretPassage1a === 1) {
+       ksl.style.display = "none";
+     } else if (dialogue.secretPassage === 13) {
        yya13.style.display = "none";
        yya14.style.display = "block";
        k.style.display = "block";
        k.style.display = "block";
        dialogue.secretPassage1a++;
-         return;
-     } else if (dialogue.secretPassage1a === 2) {
+     } else if (dialogue.secretPassage === 14) {
        yya14.style.display = "none";
        yya15.style.display = "block";
        k.style.display = "block";
        k.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 3) {
+     } else if (dialogue.secretPassage === 15) {
        yya15.style.display = "none";
        yya16.style.display = "block";
        ksl.style.display = "block";
        k.style.display = "none";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 4) {
+     } else if (dialogue.secretPassage === 16) {
        yya16.style.display = "none";
        yya17.style.display = "block";
               k.style.display = "block";
               ksl.style.display = "none";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 5) {
+     } else if (dialogue.secretPassage === 17) {
        yya17.style.display = "none";
        yya18.style.display = "block";
        b.style.display = "block";
        k.style.display = "none";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 6) {
+     } else if (dialogue.secretPassage === 18) {
        yya18.style.display = "none";
        yya19.style.display = "block";
        b.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 7) {
+     } else if (dialogue.secretPassage === 19) {
        yya19.style.display = "none";
        yya20.style.display = "block";
        b.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 8) {
+     } else if (dialogue.secretPassage === 20) {
        yya20.style.display = "none";
        yya21.style.display = "block";
        b.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 9) {
+     } else if (dialogue.secretPassage === 21) {
        yya21.style.display = "none";
        yya22.style.display = "block";
        b.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 10) {
+     } else if (dialogue.secretPassage === 22) {
        yya22.style.display = "none";
        yya23.style.display = "block";
        b.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
          return;
-     } else if (dialogue.secretPassage1a === 11) {
+     } else if (dialogue.secretPassage === 23) {
        yya23.style.display = "none";
        b.style.display = "none";
        dialogue.secretPassage1a = false;
+       dialogue.secretPassage = true;
        dialogue.secretPassage2 = true;
        dialogue.verilyisnowburningashrub = true;
        chandelierground.style.display = "none";
@@ -12211,7 +12202,8 @@ if (!dialogue.bleepmsodleeeeeegggnnne) {
 }
 
 function bigCrystal() {
-  coolRock1.style.display = "block";
+  if (!dialogue.bigRockk) {
+coolRock1.style.display = "block";
   dialogue.blockArrowTravel = true;
       k.style.display = "block";
       dialogue.ippityohfdgoofgoooo = 1;
@@ -12228,7 +12220,10 @@ function bigCrystal() {
       b.style.display = "none";
       dialogue.ippityohfdgoofgoooo = true;
         dialogue.blockArrowTravel = false;
+        dialogue.bigRockk = true;
      }}});
+  }
+  
 }
 
 function howsBunhilda() {
@@ -12468,7 +12463,30 @@ dialogue.blockArrowTravel = true;
        dialogue.karajsjksmmmqqowpznxkwutk++;
      } else if (dialogue.karajsjksmmmqqowpznxkwutk === 2) {
        pimpim2.style.display = "none";
+       pimpim3.style.display = "block";
+      b.style.display = "block";
+       dialogue.karajsjksmmmqqowpznxkwutk++;
+     } else if (dialogue.karajsjksmmmqqowpznxkwutk === 3) {
+       pimpim3.style.display = "none";
+       pimpim4.style.display = "block";
+      k.style.display = "block";
       b.style.display = "none";
+       dialogue.karajsjksmmmqqowpznxkwutk++;
+     }else if (dialogue.karajsjksmmmqqowpznxkwutk === 4) {
+       pimpim4.style.display = "none";
+       pimpim5.style.display = "block";
+      k.style.display = "none";
+      br3.style.display = "block";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }
+    else if (dialogue.karajsjksmmmqqowpznxkwutk === 5) {
+       pimpim5.style.display = "none";
+      k3.style.display = "block";
+      br3.style.display = "none";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }
+      else if (dialogue.karajsjksmmmqqowpznxkwutk === 6) {
+      k3.style.display = "none";
        dialogue.karajsjksmmmqqowpznxkwutk = true;
        dialogue.blockArrowTravel = false;
         dialogue.bigdrURLxncig = true;

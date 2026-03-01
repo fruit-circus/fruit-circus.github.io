@@ -17,11 +17,23 @@
 
 
 CURRENT ISSUES
-keyitemspouch not appearing on firefox
 pressing enter in the guestbook? activates other keys 
+ADD: kapwing! aah!
+check timeouts for buffons (to trigger now available)
+verily in cavern2 looks like ass
+
+TEST
 reloading from the second lobby: shoould remove locked door symbol for sauna and flashing thing for chasm, curtains for screen are closed. verily is still tampering (possibly only briefly?)
-
-
+no glass smash nosie
+re-entering room after shrub has been dowsed plays fire
+keyitemspouch not appearing on firefox
+trio did not re-apear
+dropitem doesn't seem to be playing 
+test getting the dictionary from verily at the end
+can't hear fruit pluck
+opening final door convo
+paintings convo
+newcells 
 
 another set of fish along with portfish
 make verilytinkering a gif
@@ -31,8 +43,7 @@ boat explorers gif (bridget turns head, kodaly loses balance)
 code:
 "press enter or space" for kmap1
 have fish in second pond jump
-cut down paintings convo
-if take and then drop missing handle stops movement across chasm but not triggers images 
+blocks travel ("oh fuck") if you have taken the missing handle, but doesnt cut music or display cut bridge
 not playing the invfull animation at some point?
 
 extra stuff:
@@ -582,6 +593,9 @@ z-index: 3;
 #verilyhelper,
 #yakaka3,
 #ybbo40,
+#pimpim3,
+#pimpim4,
+#pimpim5,
 #ybbo41,
 #ybbo42,
 #ybbo43,
@@ -1451,7 +1465,7 @@ Published by the Emerald Cove Commission,<br>
 1293 Finch St.<br>
 Arbin City, Enlan.</p>
                     <p id="pdpage3">began on this book, Old East Kardic was considered a dead language, and the only evidence for its ever having existed at all was the Olmed Book, a thousand-year-old volume of religious poetry from the Astid Kingdom of modern-day Derin, which still remains largely untranslated.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the course of my research among the villages north of Kalhen, </p>
-                    <p id="pdpage5">in the Olmed text.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because of the rigorous requirements of initiation into the rites of the Kardic mystics, the suspicious nature of their doctrine, and the slow and awkward nature of monolingual fieldwork, I was able to determine the veracity of only a handful of textual fragments, before prudence required that I flee the upperlands for my life. I leave this text to enter- prising lexicographers of</p>
+                    <p id="pdpage5">in the Olmed text.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because of the rigorous requirements of initiation into the rites of the Kardic mystics, the suspicious nature of their doctrine, and the slow and awkward nature of monolingual fieldwork, I was able to determine the veracity of only a handful of textual fragments, before prudence required that I flee the upperlands. I leave this text to enter- prising lexicographers of</p>
                     <p id="pdpage7">
 I am greatly indebted to the following for their kind assistance:<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Beach Psaulo of Arbia Paper Company, Arbin city, Enlan, and his staff. <br>
@@ -1556,10 +1570,10 @@ Woll – n. 1. Wall. 2. Border.</p>
 <p id="pdpage29"></p> 
                 </div>
                 <div id="dictionaryRight">
-                    <p id="pdpage2">Preface<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Little is known of the grammar and lexis of Old East Kardic. Indeed, the sum the world’s knowledge, outside of a singular enigmatic con- clave in the northeast reaches of the state of Kalhen, exists in this volume and its com- panion: D.L. Brighton’s A Brief Grammar of Old East Kardic.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before endeavors</p>
+                    <p id="pdpage2">Preface<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Little is known of the grammar and lexis of Old East Kardic. Indeed, the sum the world’s knowledge, outside of a singular enigmatic con- clave in the northeast reaches of the state of Kalhen, exists in this volume and its com- panion: D.L. Bastion’s A Brief Grammar of Old East Kardic.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before endeavors</p>
                     <p id="pdpage4">I stumbled upon the entrance to the lost catacombs of St. Nells, where, two kilometers beneath the surface, there exists a small but vibrant population of nearly one thousand Kardic priests, acolytes, scholars, and warriors, who exist in total isolation, speaking, monolingually, a variety of Old East Kardic nearly identical to the variety represented</p>
-                    <p id="pdpage6">future generations in the hope that one day the mutual suspicion and hostility between the north and southlands will be a closed chapter in the book of history.</p>
-                    <p id="pdpage8">combat. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Emily Finch Kovax of the Phoenix Archipelago University Division for Languages – consultation on morphology and syntax, and;<br>
+                    <p id="pdpage6">future generations in the hope that one day the mutual suspicion and hostility between our nations will be a closed chapter in the book of history.</p>
+                    <p id="pdpage8">hand-to-hand combat. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Emily Finch Kovax of the Phoenix Archipelago University Division for Languages – consultation on morphology and syntax, and;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F.L. Darling, of the Society of the Red Locust – a great deal of most useful advice.<br></p>
                     <p id="pdpage10">the scarf.
 <br>Gedegen – past continuous – “Au gerdgedegen shvele” – He was carrying the scarf.
@@ -3958,7 +3972,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <audio id="saltarello" src="sound/saltarello2.mp3" type="audio/mpeg"></audio> <!-- Saltarello No. 2 + Antiphona caritas abundat  -->
     <audio id="antiphona" src="sound/antiphona.mp3" loop></audio> <!-- Antiphona caritas abundat  -->
     <audio id="branleChampaigne" src="sound/Champaigne.mp3" type="audio/mpeg"></audio> <!-- Branle de Champaigne - Claude Gervaise -->
-    <audio id="theCarmansWhistle" src="sound/theCarmansWhistle.mp3" type="audio/mpeg"></audio> <!-- Anon. + Les Buffons Jean d' Estrée -->
+    <audio id="buffons" src="sound/buffons.mp3" type="audio/mpeg"></audio> <!-- Anon. + Les Buffons Jean d' Estrée -->
     
 
 </div>
@@ -4258,10 +4272,7 @@ performed by Les Musiciens de Provence and Maurice Guis in L'art du Psalterion<b
 </a>
 <a id="playText12" onclick="playCarman()">
 <b>End</b><br>
-1. <i>The Carman's Whistle, or: The Courteous Carman and the Amorous Maid<br></i>
-Folk tune, early 16th century<br>
-performed by the Baltimore Consort with sop. Danielle Svonavec<br>
-2. <i>Les Buffons<br></i>
+<i>Les Buffons<br></i>
 from Tiers Livre de Danseries (1559)<br>
 composed by Jean d'Estrée<br>
 performed by the Baltimore Consort<br>
@@ -5087,24 +5098,20 @@ performed by the Baltimore Consort<br>
         <p id="yya2">I don't recognize them</p>
         <p id="yya3">Definitely Geometrica Antiqua period, though.</p>
         <p id="yya4">Or just, I suppose, random shapes.</p>
-        <p id="yya5">But if the labyrinth is really hundreds of millions of years old,</p>
-        <p id="yya6">Then it's very possible that it learned the Geometric style at some point, somehow. </p>
-        <p id="yya7">Each of the items we've encountered is an example of how the labyrinth learned the function of objects from the surface. Unless it's reading our minds and just showing us things that make sense to us.</p>
-        <p id="yya8">Ropes span chasms. Keys unlock doors. Paintings go together in a row.</p>
-        <p id="yya9">I'm curious to read Verily's findings on the objects here.</p>
+        <p id="yya9">You know, I'm curious to read Verily's findings on the objects here.</p>
         <p id="yya10">It's about time someone analyzed the molecular structures of objects found in labyrinths. Is it all just stone? How did it make cheese, bread, and lettuce?</p>
         <p id="yya11">If she's not lying about being on contract with Kestevens.</p>
         <p id="yya12">Right.</p>
         
-        <p id="yya13">Speaking of Verily, what do you know about Kestevens?</p>
-        <p id="yya14">If we know something Verily ought to know as a contractor, we might be able to catch her in a lie.</p>
+        <p id="yya13">What do you know about Kestevens?</p>
+        <p id="yya14">If Verily is really a contractor she should know certain things.</p>
         <p id="yya15">I still have those subpoenaed files from when Kestevens stole our research two years ago. They have payroll information, and lists of past contractors.</p>
         <p id="yya16">It's... back in my office, of course.</p> 
         <p id="yya17">Do you know anything about Kestevens that only a contractor would know?</p>
         <p id="yya18">...</p>
         <p id="yya19">While it's clear that Verily is up to something... I don't think we need to catch her at it.</p>
         <p id="yya20">I don't feel that we're under threat.</p>        
-        <p id="yya21">We can always retreat to the surface and radio the permit office if something goes awry.</p>
+        <p id="yya21">If something goes awry, we can always retreat radio the permit office.</p>
         <p id="yya22">But if Verily's here in secret for personal, non-invasive research, I would hate to see her arrested.</p>
         <p id="yya23">I'd like to keep her on good terms if we can.</p>
 
@@ -5554,7 +5561,7 @@ performed by the Baltimore Consort<br>
     
     <p id="ybee1">Stymie said the door will unlock when all three switches are flipped.</p>
     <p id="ybee2">There must be a switch in one of the florets that we haven't flipped.</p>
-    <p id="ybee2b">There must be a switch in one of the florets that we haven't flipped, or else this green panel would be lit up.</p>
+    <p id="ybee2b">There must be a switch in one of the florets that we haven't flipped, or else this yellow panel would be lit up.</p>
     <p id="ybee3">We've flipped all the switches, now it looks like we have to close these circuits.</p>
     <p id="ybee4">There must be some circuits we haven't closed yet. Let's look for more flowers.</p>
 
@@ -5593,14 +5600,14 @@ performed by the Baltimore Consort<br>
 
     <p id="ybg5">Are you two okay? I heard a commotion from down in the second node.</p> <!--Verily in the room to the south-->
     <p id="ybg6">Yeah, we're okay.</p>
-    <p id="ybg7">Remember that soldier we mentioned?</p>
+    <p id="ybg7">Remember that rogue soldier?</p>
     <p id="ybg8">Oh my goodness—</p>
     <p id="ybg9">What happened? Did he attack you?</p>
         <p id="ybg10b">You could say that.</p>
         <p id="ybg10a">Not exactly.</p>
     <p id="ybg11">He told us not to venture any deeper into the labyrinth. Or else.</p>
     <p id="ybg12">Seemed pretty serious about it.</p>
-    <p id="ybg13">That's terrifying. I guess that puts an end to your mapping expedition, doesn't it?</p>
+    <p id="ybg13">That's terrifying. I guess that puts an end to your mapping expedition...</p>
     <p id="ybg14">We should climb back to Zoza and radio the authorities. I’m sure they can work things out—</p>
     <p id="ybg15">Not an option.</p>
     <p id="ybg17">The soldier mentioned another thing.</p>
@@ -5612,27 +5619,26 @@ performed by the Baltimore Consort<br>
     <p id="ybg23">No... Enlighten me.</p>
     <p id="ybg24">So, in the Kardic tradition, when God created the universe, it was being spied on by these little creatures called Karak Kval.</p>
     <p id="ybg25">In observing the creation process, the Karak Kval learned the secret rules underpinning the universe, and used their knowledge for mischief: weaving secret shortcuts into the laws of physics.</p>
-    <p id="ybg26">The cosmos became chaotic. Shortcuts were being triggered all the time. Writing the word "alive" would bring something to life. An idle gesture could turn day into night. A single sung note could cleave a mountain.</p>
-    <p id="ybg27">When God discovered their treachery, it scattered the Karak Kval to the ends of the earth. It unwove most of the shortcuts, but some Karak Kval were so clever, and hid their shortcuts so well, that they still exist today.</p> 
+    <p id="ybg26">The cosmos was made chaotic. Shortcuts were being triggered all the time. Writing the word "alive" would bring something to life. An idle gesture could turn day into night. A single sung note could cleave a mountain.</p>
+    <p id="ybg27">When God discovered this, it scattered the Karak Kval to the ends of the earth. It unwove the shortcuts—the vast majority of them—but some Karak Kval were so clever, and hid their shortcuts so well that they still exist today.</p> 
     <p id="ybg28">That’s how the Kardic tradition explains pattern-magic. Why a handful of insane runes, gestures, strings of nonsense text, or steps in a dance can have an emergent property.</p>
     <p id="ybg29">It's believed to be the same with labyrinths.</p>
     <p id="ybg30">Kardic doctrine never explicitly mentions them in the text, but most practitioners believe that the Karak Kval inspired ancient people to build labyrinths as a final assault on the authority of God.</p>
     <p id="ybg31">In the same way that a pattern dance can be a secret way of making five hundred liters of strawberry lemonade appear over Swallowden, the labyrinths are pattern dances that lead the explorer through an intricate set of steps which will transport her directly to heaven.</p> <!--The labyrinth guides us through a magic dance so convoluted that God never discovered it. -->
-    <p id="ybg32">Normally, heaven can only be visited via astral projection by trained mystics.</p>
+    <p id="ybg32">A place which can normally only be visited by trained mystics.</p>
     <p id="ybg33">If you or I were to go there, with the full weight of our consciousness, it would corrupt heaven's sacred innocence, the garden of heaven would crumble around you, all the souls residing there would fall to earth, and all new babies would be born with full knowledge of their past lives.</p> <!--, prevent the salvation of all future souls, and cause all infants to be sent to earth with the weight of agency and the burden of loss-->
     <p id="ybg34">You follow the path of the labyrinth, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
     <p id="ybg35">If you're a fundamentalist, you might very well be willing to die and kill to prevent that from happening. To prevent people like us from completing the puzzles and reaching the heart. From climbing the golden ladder.</p>
     <p id="ybg36">Maybe I should have paid better attention in <i>Labyrinths in World Mythology</i>.</p>
-    <p id="ybg37">Don't feel bad, I happen to teach <i>Labyrinths in World Mythology</i>.</p>
+    <p id="ybg37">Don't feel bad, I happen to teach a class on it</p>
     <p id="ybg38">I'm mainly a folklorist.</p>
-
     <p id="ybg44">Anyway. It’s a four hour hike up to Zoza city.</p>
     <p id="ybg45">That's an eight hour round trip we just can't afford to take. Plus however long it would take to convince the authorities to come to our aid.</p>
     <p id="ybg46">If we want to stop the soldier, we’ll have to do it on our own.</p>
     <p id="ybg47">Do you really think we stand a chance against him?</p>
     <p id="ybg48">I don't know. But we must stop him somehow.</p>
     <p id="ybg49">We should make camp first, though.</p>
-    <p id="ybg50">There’s no sense in pursuing him right now. I'm sure he's still watching the door.</p>
+    <p id="ybg50">There’s no sense in pursuing him right now. I'm sure he's still watching the door with his...arbalest.</p>
    
     <p id="ybg53">I'll stick with you, then. If that's alright.</p>
     <p id="ybg54">I don't think I feel safe out here on my own any more.</p>
@@ -5753,7 +5759,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo2">What do you mean?</p>
     <p id="ybbo3">Kodaly has been keeping the map updated. Here's every room we've seen so far.</p>
     <p id="ybbo4">I suppose that makes sense, in a way. The larger shape seems to be built off that recurrent motif of the five squares.</p>
-    <p id="ybbo5">Motif?</p>
+    <p id="ybbo5">What motif?</p>
     <p id="ybbo6">You haven't noticed it?</p>
     <p id="ybbo6a">On the book covers, the bricks, behind the shelves, imprinted on STMI's central processing unit. It looks like one square that's stretching outward, growing in four directions.</p>
     <p id="ybbo6b">In the layout of the candles and the tarot cards. Those tarot cards, I think they relate to us, somehow.</p>
@@ -5880,7 +5886,7 @@ performed by the Baltimore Consort<br>
 
 
     <p id="coolRock1">It's some sort of coat rack.</p>
-    <p id="coolRock2">I see.</p>
+    <p id="coolRock2">If only we had some sort of coat.</p>
 
     <p id="hiddenDoorConv1">Do you see that?</p>
     <p id="hiddenDoorConv2">It looks like another hidden passage!</p>
@@ -5906,7 +5912,10 @@ performed by the Baltimore Consort<br>
         <p id="pococo8">No reason to go back in there, I suppose.</p>
         
         <p id="pimpim1">That's the last one!</p>
-        <p id="pimpim2">Good. Let's see what's on the other side, then we can scope out a place to make camp for the night.</p>
+        <p id="pimpim2">Good. Let's see what's on the other side, then we can scope out a place to make camp for the night and be done for today.</p>
+        <p id="pimpim3">Hey, Kodaly?</p>
+        <p id="pimpim4">Uh huh?</p>
+        <p id="pimpim5">I'm glad you have my back.</p>
 
 
 <!--End of dialogue list-->
@@ -6908,6 +6917,10 @@ if (cookiesHas('feralRacoons')) {
         lobby2.achieved = true;
         map.region2 = true;
         map.region1 = false;
+        exclamationChasm.style.display = "none";
+        southlock.style.display = "none";
+        curtainsopen.style.display = "block";
+        curtainsclosed.style.display = "none";
     }
 
     if (cookiesHas('lobbyThree') && !cookiesHas('karakKyal')) {
@@ -12267,7 +12280,7 @@ const trianglelift = {
 function startCarmanAfterCham() {
     if (!dialogue.jukebox) {
                 
-    theCarmansWhistle.play();}
+    buffons.play();}
     setTimeout(function() {
             youCanPlayMusicNow.style.display = "block";
             setTimeout(() => {
@@ -12288,7 +12301,7 @@ function startCarmanAfterCham() {
             playText12.style.cursor = "pointer";
             dialogue.jukebox = true;
             document.cookie = "jukebox=jukebox";
-    }, 515000);
+    }, 515000); //mark. probably change to 177; the ledngth of buffons 
 }
 
 function fadeOut() {
@@ -14076,6 +14089,7 @@ if (!inventory.slot1) {
             secretCrackRoom.style.display = "block";
             current.room = "secretCrackRoom";
             mapmini.style.display = "block";
+            trio.style.display = "block";
             baseroom.style.display = "block";
             document.body.style.background = "#f5f1e0";
             if (dialogue.verilywasintreeroom) {
@@ -14817,7 +14831,10 @@ function goNorth() {
                 current.room = "portholeRoom";
                 explorers.style.display = "block"; 
                 if (dialogue.verilyisnowburningashrub) {
-                    fire.play();
+                    if (!dialogue.shrubExtinguished) {
+                        fire.play();
+                    }
+                    
                 }               
                 }
         

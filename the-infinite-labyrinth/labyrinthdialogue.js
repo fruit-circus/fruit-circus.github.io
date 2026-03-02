@@ -5754,39 +5754,11 @@ document.addEventListener("keydown", function() {
          return;
      } else if (dialogue.secretPassage === 4) {
        yya4.style.display = "none";
-       yya5.style.display = "block"; 
+       yya9.style.display = "block"; 
        k.style.display = "block";
-         dialogue.secretPassage = 8;
+         dialogue.secretPassage = 9;
          return;
-     } else if (dialogue.secretPassage === 5) {
-       yya5.style.display = "none";
-       yya6.style.display = "block";
-       ksl2.style.display = "block";
-       k.style.display = "none";
-       dialogue.secretPassage++;
-         return;
-     } else if (dialogue.secretPassage === 6) {
-       yya6.style.display = "none";
-       yya7.style.display = "block";
-       ksl.style.display = "block";
-       ksl2.style.display = "none";
-       dialogue.secretPassage++;
-         return;
-     } else if (dialogue.secretPassage === 7) {
-       yya7.style.display = "none";
-       yya8.style.display = "block";
-             k.style.display = "block";
-             ksl.style.display = "none";
-       dialogue.secretPassage++;
-         return;
-     }else if (dialogue.secretPassage === 8) {
-       yya8.style.display = "none";
-       yya9.style.display = "block";
-       k.style.display = "block";
-       ksl2.style.display = "none";
-       dialogue.secretPassage++;
-         return;
-     }else if (dialogue.secretPassage === 9) {
+     } else if (dialogue.secretPassage === 9) {
        yya9.style.display = "none";
        yya10.style.display = "block";
        k.style.display = "block";
@@ -5810,12 +5782,13 @@ document.addEventListener("keydown", function() {
        yya12.style.display = "none";
        k.style.display = "block";
        ksl.style.display = "none";
+              dialogue.secretPassage++;
      } else if (dialogue.secretPassage === 13) {
        yya13.style.display = "none";
        yya14.style.display = "block";
        k.style.display = "block";
        k.style.display = "block";
-       dialogue.secretPassage1a++;
+       dialogue.secretPassage++;
      } else if (dialogue.secretPassage === 14) {
        yya14.style.display = "none";
        yya15.style.display = "block";
@@ -5870,12 +5843,6 @@ document.addEventListener("keydown", function() {
          return;
      } else if (dialogue.secretPassage === 22) {
        yya22.style.display = "none";
-       yya23.style.display = "block";
-       b.style.display = "block";
-       dialogue.secretPassage++;
-         return;
-     } else if (dialogue.secretPassage === 23) {
-       yya23.style.display = "none";
        b.style.display = "none";
        dialogue.secretPassage1a = false;
        dialogue.secretPassage = true;
@@ -5885,7 +5852,7 @@ document.addEventListener("keydown", function() {
        chandelier.style.display = "none";
        dialogue.blockArrowTravel = false;
         increaseNotificationLobbyThree();
-     } }});} else if (dialogue.secretPassage2) {
+     } }});} else if (dialogue.secretPassage2 && current.room === "gallery") {
       dialogue.blockArrowTravel = true;
         dialogue.secretPassage2 = 1;
        yya26.style.display = "block";
@@ -5941,10 +5908,12 @@ document.addEventListener("keydown", function() {
    }});
    } 
  } else if (dialogue.secretPaintingPassageDiscovered) {
+  if (current.room === "gallery") {
         randomDoorAudio();
         gallery.style.display = "none";
         arcadeRoom.style.display = "block";
         current.room = "arcadeRoom";  
+  }
    }
 }
 

@@ -378,7 +378,7 @@ function stymieDialogue() {
  } });
     }
     //found stymie's missing cube
-    else if (!dialogue.datacubeFound && dialogue.dataCubeIsAThingWeKnowAbout) {
+    else if (dialogue.dataCubeFound && !dialogue.dataCubeConvo && dialogue.dataCubeIsAThingWeKnowAbout) {
         y1.style.display = "block";
         dialogue.blockArrowTravel = true;
         stmigo.play();
@@ -443,7 +443,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      y9.style.display = "none";
      b.style.display = "none";
         dialogue.saunaDisabling = true;
-        dialogue.datacubeFound = true;
+        dialogue.dataCubeConvo = true;
         dialogue.blockArrowTravel = false;
         dialogue.hrrg = false;
         decreaseNotification();
@@ -453,7 +453,7 @@ if (event.key === 'Enter' || event.key === ' ') {
     }
  }
 });
-   } else if (!dialogue.datacubeFound && !dialogue.dataCubeIsAThingWeKnowAbout) {
+   } else if (dialogue.dataCubeFound && !dialogue.dataCubeConvo && !dialogue.dataCubeIsAThingWeKnowAbout) {
         //stymie we found this weird cube
          yb1.style.display = "block";
         stmigo.play();
@@ -520,7 +520,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      b.style.display = "none";
         dialogue.saunaDisabling2 = true;
         dialogue.saunaDisabling = true;
-        dialogue.datacubeFound = true;
+        dialogue.dataCubeConvo = true;
         dialogue.blockArrowTravel = false;
         dialogue.hrrg = false;
         decreaseNotification();
@@ -12196,6 +12196,7 @@ coolRock1.style.display = "block";
 }
 
 function howsBunhilda() {
+  if (!dialogue.naryAPeep) {
   yayzazzzz1.style.display = "block";
   dialogue.blockArrowTravel = true;
       b.style.display = "block";
@@ -12210,18 +12211,13 @@ function howsBunhilda() {
       dialogue.ippityoddddmnmnoo++;
      } else if (dialogue.ippityoddddmnmnoo === 2) {
        yayzazzzz2.style.display = "none";
-       yayzazzzz3.style.display = "block";
-      b.style.display = "block";
       st.style.display = "none";
-      dialogue.ippityoddddmnmnoo++;
-     } else if (dialogue.ippityoddddmnmnoo === 3) {
-       yayzazzzz3.style.display = "none";
-      b.style.display = "none";
       dialogue.ippityoddddmnmnoo = true;
         dialogue.blockArrowTravel = false;
      }
     }});
 }
+  }
 
 function heyTheresASecretDoor() {
   if (!dialogue.secretrooomspdo) {
@@ -12396,13 +12392,13 @@ dialogue.blockArrowTravel = true;
        pococo5.style.display = "none";
        pococo6.style.display = "block";
       b.style.display = "none";
-      kshift.style.display = "block";
+      ksl.style.display = "block";
        dialogue.karsddddmzmzmmzzfak++;
      } else if (dialogue.karsddddmzmzmmzzfak === 2) {
        pococo6.style.display = "none";
        pococo7.style.display = "block";
       khalb.style.display = "block";
-      kshift.style.display = "none";
+      ksl.style.display = "none";
        dialogue.karsddddmzmzmmzzfak++;
      } else if (dialogue.karsddddmzmzmmzzfak === 3) {
        pococo7.style.display = "none";
@@ -12447,15 +12443,39 @@ dialogue.blockArrowTravel = true;
       k.style.display = "none";
       br3.style.display = "block";
       dialogue.karajsjksmmmqqowpznxkwutk++;
-    }
-    else if (dialogue.karajsjksmmmqqowpznxkwutk === 5) {
+    } else if (dialogue.karajsjksmmmqqowpznxkwutk === 5) {
        pimpim5.style.display = "none";
+       pimpim6.style.display = "block";
       k3.style.display = "block";
       br3.style.display = "none";
       dialogue.karajsjksmmmqqowpznxkwutk++;
-    }
-      else if (dialogue.karajsjksmmmqqowpznxkwutk === 6) {
+    } else if (dialogue.karajsjksmmmqqowpznxkwutk === 6) {
+       pimpim6.style.display = "none";
+       pimpim7.style.display = "block";
       k3.style.display = "none";
+      k.style.display = "block";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }else if (dialogue.karajsjksmmmqqowpznxkwutk === 7) {
+       pimpim7.style.display = "none";
+       pimpim8.style.display = "block";
+      k.style.display = "block";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }else if (dialogue.karajsjksmmmqqowpznxkwutk === 8) {
+       pimpim8.style.display = "none";
+       pimpim9.style.display = "block";
+      k.style.display = "none";
+      b.style.display = "block";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }else if (dialogue.karajsjksmmmqqowpznxkwutk === 9) {
+       pimpim9.style.display = "none";
+       pimpim10.style.display = "block";
+      k3.style.display = "block";
+      b.style.display = "none";
+      dialogue.karajsjksmmmqqowpznxkwutk++;
+    }
+      else if (dialogue.karajsjksmmmqqowpznxkwutk === 10) {
+      k3.style.display = "none";
+             pimpim10.style.display = "none";
        dialogue.karajsjksmmmqqowpznxkwutk = true;
        dialogue.blockArrowTravel = false;
         dialogue.bigdrURLxncig = true;

@@ -1029,6 +1029,12 @@ z-index: 3;
 #page10d,
 #page11d,
 #page12d,
+#page13,
+#page14,
+#page15,
+#page16,
+#page17,
+#page18,
 #yyp12a,
 #dowsedbush,
 #yyp12b,
@@ -1701,6 +1707,9 @@ Vich – conj. Because.<br><br>
                     <p id="page7">Badison reporting<br><br>—Badison</p> <!--madison earnest-->
                     <p id="page9">ruh roh bruhbruh burh...<br><br>teddlieliilebebebebbeee***<br><br>riiiiiiip rauuip?<br><br>eeeerk.<br><br>—scooby and tweety</p> <!--Cailyn Lu and Njeri ?-->
                     <p id="page11">Hear ye, hear ye!<br><br>This quest begins from the great hollows of Chapel Hill, I am overjoyed to be making the voyage through the great Harper's words, coding, and drawings!<br><br>—Lady Krysten</p>
+                    <p id="page13">Guess who's back for more labyrinthine queries!<br><br>—Iphis</p>
+                    <p id="page15">b</p>
+                    <p id="page17">d</p>
                 </div>
                 <div class="right"> <!--lobby 1 book-->
                     <p id="page2">strawberry emoji<br><br>—idk srry</p> <!--Oren Evans-->
@@ -1708,7 +1717,10 @@ Vich – conj. Because.<br><br>
                     <p id="page6">hiii!!!! finally giving this the looksee it deserves!!!! let's make out sometime!<br><br>—;3</p> <!--Atlas Dent-->
                     <p id="page8">This is cooler than my shit that was the shape of a unicorn!<br><br>—Bananamaniac</p> <!--Hannah Fabrigar-->
                     <p id="page10">HI! My name is Alia and I am so excited to be here and explore the labyrinth.<br><br>—Your Mansa Friend</p>
-                    <p id="page12"> This is so cute! I love this. Did you draw all of this? Everything is so cute, I love this frog, I love the bird, this is so cute!!! I love it!!!<br><br>—Wilson</p>
+                    <p id="page12">This is so cute! I love this. Did you draw all of this? Everything is so cute, I love this frog, I love the bird, this is so cute!!! I love it!!!<br><br>—Wilson</p>
+                    <p id="page14">a</p>
+                    <p id="page16">c</p>
+                    <p id="page18">e</p>
                 </div>
 
                 <div class="left"> <!--lobby 2 book-->
@@ -9521,6 +9533,12 @@ function hideGuestBook() {
     page10.style.display = "none";
     page11.style.display = "none";
     page12.style.display = "none";
+    page13.style.display = "none";
+    page14.style.display = "none";
+    page15.style.display = "none";
+    page16.style.display = "none";
+    page17.style.display = "none";
+    page18.style.display = "none";
     page1b.style.display = "none";
     page2b.style.display = "none";
     page3b.style.display = "none";
@@ -9687,7 +9705,6 @@ function hideGuestBook() {
         } 
     } else if (guestbook.pages == 6) {
         guestbook.pages = 7;
-        nextarrow.style.display = "none";
         if (current.room === "lobby") {
             page9.style.display = "none";
             page10.style.display = "none";
@@ -9708,6 +9725,31 @@ function hideGuestBook() {
             page10d.style.display = "none";
             page11d.style.display = "block";
             page12d.style.display = "block";
+        } 
+    } else if (guestbook.pages == 7) {
+        guestbook.pages = 8;
+        if (current.room === "lobby") {
+            page11.style.display = "none";
+            page12.style.display = "none";
+            page13.style.display = "block";
+            page14.style.display = "block";
+        } 
+    } else if (guestbook.pages == 8) {
+        guestbook.pages = 9;
+        if (current.room === "lobby") {
+            page13.style.display = "none";
+            page14.style.display = "none";
+            page15.style.display = "block";
+            page16.style.display = "block";
+        } 
+    } else if (guestbook.pages == 9) {
+        guestbook.pages = 10;
+        nextarrow.style.display = "none";
+        if (current.room === "lobby") {
+            page15.style.display = "none";
+            page16.style.display = "none";
+            page17.style.display = "block";
+            page18.style.display = "block";
         } 
     }
 }
@@ -9855,6 +9897,34 @@ function prevPage() {
             page11d.style.display = "none";
             page12d.style.display = "none";
         } 
+    } else if (guestbook.pages == 8) {
+        guestbook.pages = 7;
+        nextarrow.style.display = "block";
+        if (current.room === "lobby") {
+            page14.style.display = "none";
+            page13.style.display = "none";
+            page11.style.display = "block";
+            page12.style.display = "block";
+        }
+    } else if (guestbook.pages == 9) {
+        guestbook.pages = 8;
+        nextarrow.style.display = "block";
+        if (current.room === "lobby") {
+            page16.style.display = "none";
+            page15.style.display = "none";
+            page14.style.display = "block";
+            page13.style.display = "block";
+        }
+    } else if (guestbook.pages == 10) {
+        guestbook.pages = 9;
+        nextarrow.style.display = "block";
+        nextarrow.style.display = "block";
+        if (current.room === "lobby") {
+            page18.style.display = "none";
+            page17.style.display = "none";
+            page16.style.display = "block";
+            page15.style.display = "block";
+        }
     }
 }
 

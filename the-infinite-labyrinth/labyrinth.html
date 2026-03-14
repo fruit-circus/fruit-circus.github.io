@@ -15,12 +15,7 @@
 <style>
 /*
 
-re-upload
-lockeddoor
-helpfulmap
-
 CURRENT ISSUES
-pressing enter in the guestbook? activates other keys 
 ADD: kapwing! aah!
 check timeouts for buffons (to trigger now available)
 verily in cavern2 looks like ass
@@ -38,6 +33,8 @@ boat explorers gif (bridget turns head, kodaly loses balance)
 
 
 code:
+imagemap for lake in pipes.
+once you get the pink door unlocked, the map changes to show you the keys for the other rooms
 "press enter or space" for kmap1
 have fish in second pond jump
 blocks travel ("oh fuck") if you have taken the missing handle, but doesnt cut music or display cut bridge
@@ -620,6 +617,7 @@ z-index: 3;
 #yamaddhahaha12e,
 #yamaddhahaha12f,
 #pimpim1,
+#helpfulmap2,
 #pimpim2,
 #yamaddhahaha12g,
 #ybbo46,
@@ -1818,6 +1816,7 @@ Vich – conj. Because.<br><br>
             <img src="floaters/witch.png" alt="witch card" usemap="#diagrammap" class="room" id="witchCard">
             <img src="floaters/ronin.png" alt="ronin card" usemap="#diagrammap" class="room" id="roninCard">
             <img src="floaters/helpfulmap.png" alt="keys map" usemap="#bigX" class="room" id="helpfulmap">
+            <img src="floaters/helpfulmap2.png" alt="keys map" usemap="#bigX" class="room" id="helpfulmap2">
             <img src="floaters/helpfulpipemap.png" alt="pipes" usemap="#bigX" class="room" id="helpfulpipemap"> 
             <img src="people/campers1.png" alt="pipes" usemap="#bigX" class="room" id="campers1"> 
             <img src="people/campers2.png" alt="pipes" usemap="#bigX" class="room" id="campers2"> 
@@ -9957,6 +9956,7 @@ function closeWhatever() {
     } else if (current.room === "keysLobby") {
         exitcloseup.play();
         helpfulmap.style.display = "none";
+        helpfulmap2.style.display = "none";
         mapmini.style.display = "block";
         dialogue.allowEscape = false;
         dialogue.preventM = false;
@@ -11630,7 +11630,7 @@ document.addEventListener("keydown", function() {
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
                   //cheat  
-                  //document.cookie = "cheat=cheat";
+                  document.cookie = "cheat=cheat";
                   return;
        }
    }});
@@ -18467,7 +18467,11 @@ dialogue.blockArrowTravel = true;
 
     else if (current.room === "keysLobby") {
         guestbook.pages = 1;
-    helpfulmap.style.display = "block";
+        if (door.pink) {
+            helpfulmap2.style.display = "block";
+        } else {
+            helpfulmap.style.display = "block";
+        }
     dialogue.preventM = true;
     dialogue.preventK = true;
     dialogue.preventI = true;

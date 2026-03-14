@@ -121,6 +121,7 @@ body {
 #kmap2,
 #kmap3,
 #helpfulmap,
+#helpfulmap2,
 #helpfulpipemap {
     z-index: 10;
 display: none;

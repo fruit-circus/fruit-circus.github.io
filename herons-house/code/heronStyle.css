@@ -1,0 +1,459 @@
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+button {
+    background-color: grey;
+    height: 35px;
+}
+
+
+
+#nightcard,
+#blackscreen,
+#loadscreen {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    top: 0;
+}
+
+#justAdded {
+    color: white;
+    position: absolute;
+    left: 200px;
+}
+
+#starters {
+    display: block;
+}
+
+#opening1,
+#anh1,
+#anh2,
+#anh4,
+#anh5,
+#anh7 {
+    display: none;
+}
+
+
+#clock {
+    color: white;
+    position: absolute;
+    transform: translate(260px,-190px);
+}
+#carry-capacity {
+    color: white;
+    position: absolute;
+    transform: translate(260px,500px);
+}
+#health-readout {
+    color: white;
+    position: absolute;
+    transform: translate(70px,-139px);
+}
+#boy-health-readout {
+    color: white;
+    position: absolute;
+    transform: translate(260px,-190px);
+}
+#armor-score {
+    color: white;
+    position: absolute;
+    transform: translate(260px,-190px);
+}
+#mana-readout {
+    color: white;
+    position: absolute;
+    transform: translate(380px,-139px);
+}
+
+#clock {
+    position: absolute;
+    transform: translate(260px,-190px);
+}
+
+#inv-button {
+    position: absolute;
+    transform: translate(-400px,20px);
+}
+
+#equipmentButton {
+    position: absolute;
+    transform: translate(-400px,-40px);
+}
+
+
+#spell-button {
+    position: absolute;
+    transform: translate(-400px,-100px);
+}
+
+#boy-health-bar {
+    position: absolute;
+    border: 1px solid white;
+    background-color: crimson;
+    height: 12px;
+    width: 18px;
+    border-radius: 10px;
+}
+
+#boy-health-bar-container {
+    position: absolute;
+    border: 1px solid white;
+    background-color: transparent;
+    height: 12px;
+    width: 18px;
+    border-radius: 10px;
+        position: absolute;
+}
+
+
+#health-bar,
+#health-bar-container {
+    transform: translate(70px,-114px);
+}
+
+#health-bar {
+    position: absolute;
+    border: 1px solid white;
+    background-color: crimson;
+    height: 12px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+#health-bar-container {
+    position: absolute;
+    background-color: transparent;
+    height: 12px;
+    width: 120px;
+    border-radius: 10px;
+    position: absolute;
+    border: 1px solid white;
+}
+
+#mana-bar,
+#mana-bar-container {
+transform: translate(320px,-114px);
+}
+
+#choice1,
+#choice2,
+#choice3,
+#choice4 {
+    display: none;
+}
+
+#goBack {
+    position: absolute;
+    display: none;
+    z-index: 4;
+    transform: translate(-180px,464px);
+    cursor: pointer;
+
+
+}
+
+
+#mana-bar {
+    position: absolute;
+    border: 1px solid white;
+    background-color: teal;
+    height: 12px;
+    width: 160px;
+    border-radius: 10px;
+}
+
+#mana-bar-container {
+    position: absolute;
+    border: 1px solid white;
+    background-color: transparent;
+    height: 12px;
+    width: 160px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+/*dialogue boxes*/
+
+.dialogue-block > p {
+    position: absolute;
+    transform: translate(375px, 516px);
+    max-width: 900px;
+    height: 100px;
+    font-size: 25px;
+    z-index: 3;
+    font-family: garamond, serif, 'Times New Roman', Times;
+}
+
+
+.dialogue-chunk > p {
+    position: absolute;
+    transform: translate(350px, -1030px);
+    max-width: 870px;
+    color: white;
+    height: 100px;
+    font-size: 25px;
+    z-index: 3;
+    font-family: garamond, serif, 'Times New Roman', Times;
+}
+
+.dialogue-chunk {
+    display: none;
+}
+
+#rubble {
+    display: none;
+}
+
+#inventorysidebar {
+    position: absolute;
+    display: none;
+    background-color: rgb(102, 125, 65);
+    top: -125px;
+    width: 27vw;
+    height: 100vh;
+    left: 20px;
+    border: 3px solid white;
+    opacity: 100%;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 3;
+}
+
+
+
+#spellsidebar {
+    position: absolute;
+    display: none;
+    background-color: rgb(92, 45, 95);
+    top: -125px;
+    width: 27vw;
+    height: 100vh;
+    right: 20px;
+    border: 3px solid white;
+    opacity: 100%;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 3;
+}
+
+.listItem {
+    height: 4vh;
+    width: 27vw;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+#soundOff {
+    position: absolute;
+    cursor: pointer;
+    max-width: 50px;
+    transform: translate(450px, 300px);
+    z-index: 4;
+    display: none;
+}
+
+#soundOn {
+    position: absolute;
+    max-width: 50px;
+    cursor: pointer;
+    transform: translate(450px, 300px);
+    z-index: 4;
+    display: none;
+}
+
+.portrait {
+    position: absolute;
+    z-index: 3;
+    transform: translate(0px, -1500px);
+
+}
+
+/*people*/
+
+#token,
+#tokenLevitate {
+    width: 75px;
+    position: absolute;
+    transform: translate(320px,160px);
+    z-index: 0;
+}
+
+#tokenLevitate {
+    display: none;
+}
+
+#npc {
+    width: 75px;
+    position: absolute;
+}
+
+#npc2 {
+    width: 75px;
+    position: absolute;
+    transform: translate(0px,220px);
+}
+
+.absolute {
+    position: absolute;
+}
+
+
+/*the basic room*/
+
+.theWholeGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 0fr);
+  grid-gap: 0px;
+  padding: 70px;
+  justify-content: center;
+  position: relative;
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.tile {
+  border: 2px solid black;
+  opacity: 0.1;
+  max-width: 75px;
+  width: 75px;
+  max-height: 75px;
+  height: 75px;
+}
+
+.light-tile {
+  border: 2px solid black;
+  opacity: 0.15;
+  max-width: 75px;
+  width: 75px;
+  max-height: 75px;
+  height: 75px;
+}
+
+/*battle tiles*/
+
+.theWholeGrid2 {
+  z-index: -1;
+  display: grid; /*grid*/
+  grid-template-columns: repeat(7, 0fr);
+  grid-gap: 0px;
+  padding: 70px;
+  justify-content: center;
+  position: relative;
+  transform: translate(0px,-690px);
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile2off {
+  border: 2px solid black;
+  opacity: 0;
+  max-width: 75px;
+  width: 75px;
+  max-height: 75px;
+  height: 75px;
+}
+.tile2on {
+  border: 2px solid black;
+  opacity: 1;
+  max-width: 75px;
+  width: 75px;
+  max-height: 75px;
+  height: 75px;
+}
+
+/*individual rooms add-ons*/
+
+.sevenAcross {
+    width: 720px;
+    position: absolute;
+    transform: translate(-86px,-86px);
+}
+
+.threeAcross {
+    width: 720px;
+    position: absolute;
+    transform: translate(71px,-85px);
+}
+
+.fiveAcross {
+    width: 720px;
+    position: absolute;
+    transform: translate(-5px,-85px);
+}
+.oneAcross {
+    width: 720px;
+    position: absolute;
+    transform: translate(152px,-85px);
+}
+
+.hidden {
+    display: none;
+}
+
+
+#binaryChoicePortrait {
+    position: absolute;
+    display: none;
+    z-index: 3;
+    transform: translate(-452px,-205px);
+}
+
+#topChoice {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 400px;
+    color: white;
+    z-index: 4;
+    font-size: 25px;
+    transform: translate(100px,-10px);
+}
+#bottomChoice {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 400px;
+    font-size: 25px;
+    color: white;
+    z-index: 4;
+    transform: translate(100px,160px);
+}
+
+#grid {
+    position: absolute;
+    z-index: 4;
+}
+
+#blinkButton,
+#glamButton {
+    display: none;
+}
+
+#beetleTile {
+    display: none;
+}

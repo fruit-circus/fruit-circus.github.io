@@ -2,13 +2,13 @@
 //for contents in rooms that are the same area as a function with a "block", put the condition above the block
 
 const room = { 
-    //size: "threeByThree",
-    size: "sevenBySeven",
+    size: "threeByThree",
+    //size: "sevenBySeven",
 }
 
 const current = {
-    //room: "coatRoom",
-    room: "study",
+    room: "coatRoom",
+    //room: "study",
 }
 
 

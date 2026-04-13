@@ -245,9 +245,20 @@ img {
 
 #notebookTextStymie {
     position: absolute;
-    transform: translate(430px, 200px);
+    transform: translate(430px, 180px);
     max-width:  850px;
-    height: 520px;
+    height: 556px;
+    font-size: 24px;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+}
+
+#notebookTextSummary {
+    position: absolute;
+    transform: translate(430px, 100px);
+    max-width:  850px;
+    height: 635px;
     font-size: 24px;
     z-index: 1000;
     display: none;
@@ -1600,7 +1611,9 @@ z-index: -1;
 #verilyTab,
 #shuriTab,
 #poemTab,
+#conversationTab,
 #notepadb,
+#notepadsum,
 #notepadv,
 #notepads,
 #notepadmu,

@@ -367,6 +367,8 @@ function stymieDialogue() {
        b17.style.display = "none";
        k.style.display = "none";
        dialogue.saunaKeyTried = false;
+       dialogue.summarySauna = true;
+       //noteScribble.play();
        dialogue.dataCubeIsAThingWeKnowAbout = true;
        dialogue.saunaSeen = false;
        dialogue.blockArrowTravel = false;
@@ -712,13 +714,15 @@ if (event.key === 'Enter' || event.key === ' ') {
       } else if (dialogue.labyNames === 12) {
         zj12.style.display = "none";
         zj13.style.display = "block";
-        st.style.display = "block";
+        st.style.display = "none";
+        stsq.style.display = "block";
           dialogue.labyNames++;
           return;
       } else if (dialogue.labyNames === 13) {
         zj13.style.display = "none";
         zj14.style.display = "block";
         st.style.display = "block";
+        stsq.style.display = "none";
           dialogue.labyNames++;
           return;
       } else if (dialogue.labyNames === 14) {
@@ -2095,6 +2099,7 @@ if (event.key === 'Enter' || event.key === ' ') {
        dialogue.mightwanttocheck = false;
        dialogue.blockArrowTravel = false;
        dialogue.youshouldcheckin = true;
+       dialogue.youshouldcheckin2 = true;
      }
     }});
         } else if (dialogue.giveUsASecretPassageHint) { //completed the first conversation art history with only one click on the paintings, laying all the other pipes and other handles
@@ -2639,10 +2644,37 @@ function haveYouSeenThisMan() { //stymie! have you misplaced any soldiers?
 }});}
 }
 
+
+function reallyLikeThisRoom() {
+  if (!dialogue.reallyLike && !dialogue.dontAllowTableDialogueBecauseShuriBeingPursued) {
+    zkk1.style.display = "block";
+       b.style.display = "block";
+       dialogue.ksdnfkjnsdjkfn = 1;
+       dialogue.blockArrowTravel = true;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+     if (dialogue.ksdnfkjnsdjkfn === 1) {
+       zkk1.style.display = "none";
+       zkk2.style.display = "block";
+       b.style.display = "none";
+       br3.style.display = "block";
+       dialogue.ksdnfkjnsdjkfn++;
+         return;
+     } else if (dialogue.ksdnfkjnsdjkfn === 2) {
+       zkk2.style.display = "none";
+       br3.style.display = "none";
+       dialogue.ksdnfkjnsdjkfn = true;
+       dialogue.reallyLike = true;
+       dialogue.blockArrowTravel = false;
+         return;
+     }
+    }})}}
+
 function haventSeenHim() { //verily doesn't know what you're talking about
     zn1.style.display = "block";
        b.style.display = "block";
        dialogue.haventSeenHim = 1;
+       dialogue.blockArrowTravel = true;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.haventSeenHim === 1) {
@@ -2727,6 +2759,7 @@ function haventSeenHim() { //verily doesn't know what you're talking about
        zn13.style.display = "none";
        v.style.display = "none";
        dialogue.haventSeenHim = true;
+       dialogue.blockArrowTravel = false;
        document.cookie = "haventSeenHim=haventSeenHim";
          return;
      } 
@@ -2814,6 +2847,7 @@ function randomBook() {
    dialogue.randombook = 1;
    zzl1.style.display = "block";
    ksta.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.randombook === 1) {
@@ -2973,6 +3007,7 @@ document.addEventListener("keydown", function() {
         k.style.display = "none";
         bookTalk.initialdone = true;
         bookTalk.second = true;
+        dialogue.blockArrowTravel = false;
            return;
        }
    }
@@ -2982,6 +3017,7 @@ document.addEventListener("keydown", function() {
     dialogue.readnonsense = 1;
    zzm1.style.display = "block";
    b.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.readnonsense === 1) {
@@ -3009,12 +3045,14 @@ document.addEventListener("keydown", function() {
            k.style.display = "none";
            bookTalk.second = false;
            bookTalk.patternSpells = true;
+           dialogue.blockArrowTravel = false;
            return;
        }
     }});} else if (bookTalk.patternSpells) {
         dialogue.readnonsense22 = 1;
    zzm3a.style.display = "block";
    kstu.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.readnonsense22 === 1) {
@@ -3067,11 +3105,13 @@ document.addEventListener("keydown", function() {
         kside.style.display = "none";
         bookTalk.patternSpells = false;
         bookTalk.third = true;
+        dialogue.blockArrowTravel = false;
        }
     }});
 } else if (bookTalk.third) {
         dialogue.readnonsense2 = 1;
    zzm4.style.display = "block";
+   dialogue.blockArrowTravel = true;
    b.style.display = "block";
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
@@ -3136,6 +3176,7 @@ document.addEventListener("keydown", function() {
         k.style.display = "none";
         bookTalk.third = false;
         bookTalk.fourth = true;
+        dialogue.blockArrowTravel = false;
         return;
        }
     }});
@@ -3143,6 +3184,7 @@ document.addEventListener("keydown", function() {
     dialogue.readnonsense3 = 1;
    zzm13.style.display = "block";
    k.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.readnonsense3 === 1) {
@@ -3176,6 +3218,7 @@ document.addEventListener("keydown", function() {
         zzm17.style.display = "none";
         b.style.display = "none";
         bookTalk.fourth = false;
+        dialogue.blockArrowTravel = false;
            return;
        } 
     }});
@@ -3187,6 +3230,7 @@ if (dialogue.chaseChase && !dialogue.lobbythreeachieved) { //they've already che
    dialogue.chaseComplete = 1;
    zzn8.style.display = "block";
    b.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.chaseComplete === 1) {
@@ -3259,6 +3303,7 @@ document.addEventListener("keydown", function() {
         increaseNotificationLobbyTwo();
         notifnoise.play();
         dialogue.chaseComplete = true;
+        dialogue.blockArrowTravel = false;
         dialogue.dontAllowTableDialogueBecauseShuriBeingPursued = false;
         document.cookie = "wildSoldierChase=wildSoldierChase"
            return;
@@ -3268,6 +3313,7 @@ document.addEventListener("keydown", function() {
 dialogue.chase = 1;
    zzn6.style.display = "block";
    b.style.display = "block";
+   dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.chase === 1) {
@@ -3282,6 +3328,7 @@ document.addEventListener("keydown", function() {
         k.style.display = "none";
         dialogue.chaseChase = true;
         dialogue.deadendenddeadendedended = true;
+        dialogue.blockArrowTravel = false;
        }
 }});
   }
@@ -3292,6 +3339,7 @@ document.addEventListener("keydown", function() {
 
 function whoopsThatWasTooFast() {
  if (!dialogue.whoopsTooFasties) {
+  dialogue.blockArrowTravel = true;
             v1.style.display = "block";
             bd.style.display = "block";  //Whoops! That was fast. Are you okay down there?
             dialogue.whoopsTooFast = 1;
@@ -3338,6 +3386,7 @@ function whoopsThatWasTooFast() {
             upArrow.style.display = "block";
             dialogue.whoopsTooFast = true;
             dialogue.whoopsTooFasties = true;
+            dialogue.blockArrowTravel = false;
             document.cookie = "whoops=whoops;";
             return;
         }
@@ -3715,6 +3764,7 @@ function looksLikeTheDisplayIsOff() { //there's some sort of display screen behi
     dialogue.displayTerminal = 1;
        zr1.style.display = "block";
        k.style.display = "block";
+       dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
      if (dialogue.displayTerminal === 1) {
@@ -3757,12 +3807,14 @@ document.addEventListener("keydown", function() {
         dialogue.displayTerminal = true;
         dialogue.displayFace2 = true;
         dialogue.displayFace = false;
+        dialogue.blockArrowTravel = false;
          return;
      } 
    }});
    } else if (dialogue.displayFace2) { //there's some sort of display screen behind the curtains...
     dialogue.displaysafsdfFace = 1;
        zq1.style.display = "block";
+       dialogue.blockArrowTravel = true;
        b.style.display = "block";
 document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -3771,6 +3823,7 @@ document.addEventListener("keydown", function() {
        b.style.display = "none";
       dialogue.displaysafsdfFace = true;
        dialogue.displayFace2 = true;
+       dialogue.blockArrowTravel = false;
      } 
    }});}
 }       
@@ -3778,6 +3831,7 @@ document.addEventListener("keydown", function() {
 
 
 function verilyIsBurningAShrub() {
+  dialogue.haveNowCheckedInOnVerily = true;
  if (!dialogue.verilyfour) {
   //verilyGo.play();
       yyp1.style.display = "block";
@@ -5126,6 +5180,7 @@ function takeTeddyBear() {
       teddybear.style.display = "none";
       explorersteddybear.style.display = "block";
       dialogue.explorersteddybearworn = true;
+      dialogue.teddyBearAttained = true;
       placeTeddyBear.play();
       document.addEventListener("keydown", function() {
 if (event.key === 'Enter' || event.key === ' ') {
@@ -6343,6 +6398,7 @@ function goodWorkTeam() {
         loferm.play();
         penser.pause();
         queneNote.pause();
+        dialogue.queneNoteShouldPlayInChapterTwoArea = true;
         }
         zzr1.style.display = "block";
        b.style.display = "block";
@@ -6517,6 +6573,7 @@ function goodWorkTeam() {
 
 function itsLockedSauna() { //sauna door dialogue
        dialogue.locked = 1;
+       dialogue.blockArrowTravel = true;
        if (dialogue.chasmDoorTried) {
        j1a.style.display = "block"; //this one's locked...
        } else {
@@ -6559,6 +6616,7 @@ document.addEventListener("keydown", function() {
          dialogue.locked = true; 
          dialogue.unlocking = true;
          dialogue.lockedconvo = true;
+         dialogue.blockArrowTravel = false;
          return;
      } 
    }});
@@ -6567,6 +6625,7 @@ document.addEventListener("keydown", function() {
 function ahStillLocked() {
  if (dialogue.lockedconvo) {
   lockeddoor.play();
+  dialogue.blockArrowTravel = true;
        dialogue.lconvo = 1;
        j6.style.display = "block"; //ah. still locked
        k.style.display = "block";
@@ -6583,6 +6642,7 @@ document.addEventListener("keydown", function() {
         j7.style.display = "none";
        b.style.display = "none";
        dialogue.lockedconvo = false;
+       dialogue.blockArrowTravel = false;
        dialogue.lconvo = true;
     }
    }});
@@ -6639,6 +6699,7 @@ document.addEventListener("keydown", function() {
        zzs13.style.display = "none";
        k.style.display = "none";
        dialogue.ahaIseeSecond = true;
+       dialogue.documentedPhenom = true;
        dialogue.betterTakeThese = true;
        dialogue.noAhISee = true;
        dialogue.blockArrowTravel = false;
@@ -6851,6 +6912,7 @@ document.addEventListener("keydown", function() {
        zzs7.style.display = "none";
        b.style.display = "none";
        dialogue.betterTakeThese = true;
+       dialogue.documentedPhenom = true;
        dialogue.blockArrowTravel = false;
         return;
      } 
@@ -6904,8 +6966,8 @@ document.addEventListener("keydown", function() {
        zu2.style.display = "block";
        b.style.display = "block";
        k.style.display = "none";
+       dialogue.blockArrowTravel = true;
          dialogue.unlockingSecond++;
-         return;
      } else if (dialogue.unlockingSecond === 2) {
        zu2.style.display = "none";
        b.style.display = "none";
@@ -9242,17 +9304,15 @@ document.addEventListener("keydown", function() {
            yyz12.style.display = "none";
            st.style.display = "none";
            highscores.style.display = "block";
-            scorename.style.display = "block"; //unused, as the scoreboard is one of two static images
               dialogue.dfgdfgkjdfjkgnalal++;
        } else if (dialogue.dfgdfgkjdfjkgnalal === 3) {
            yyz13.style.display = "block";
             highscores.style.display = "none";
-                       scorename.style.display = "none";
            b.style.display = "block";
               dialogue.dfgdfgkjdfjkgnalal++;
        } else if (dialogue.dfgdfgkjdfjkgnalal === 4) {
+          yyz13.style.display = "none";
            yyz14.style.display = "block";
-           yyz13.style.display = "none";
            b.style.display = "none";
            st.style.display = "block";
               dialogue.dfgdfgkjdfjkgnalal++;
@@ -9295,7 +9355,6 @@ document.addEventListener("keydown", function() {
            yyz18.style.display = "none";
            b.style.display = "none";
            highscores2.style.display = "block";
-           //scorename.style.display = "block";
               dialogue.dfgdfgkjdfjkgnalal = 3;
        } else if (dialogue.dfgdfgkjdfjkgnalal === 3) {
            yyz13.style.display = "block";
@@ -9669,7 +9728,6 @@ function noPowerFlowing() {
      if (dialogue.liftilskdmfklngUp === 1) {
        ybbi4.style.display = "none";
         b.style.display = "none";
-              ybbi4.style.display = "none";
        dialogue.liftilskdmfklngUp = true;
      } }});
   }
@@ -10186,6 +10244,9 @@ function noPowerFlowing() {
     }
 
     function makeCamp() {
+      if (dialogue.teddyBearAttained) {
+        campersBear.style.display = "block";
+      }
       dialogue.blockArrowTravel = true;
       exitcloseup.play();
       dialogue.highportk = true;
@@ -10250,12 +10311,16 @@ function noPowerFlowing() {
        ybboo7.style.display = "block";
       v.style.display = "none";
       b.style.display = "block";
+      saltarello.pause();
+      antiphona.pause();
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 7) {
        ybboo7.style.display = "none";
        ybboo8.style.display = "block";
       b.style.display = "none";
       v.style.display = "block";
+      saltarello.pause();
+      antiphona.pause();
       dialogue.sdfsdfggkldfklfklfggpgpopop++;
      } else if (dialogue.sdfsdfggkldfklfklfggpgpopop === 8) {
        ybboo8.style.display = "none";
@@ -10512,6 +10577,7 @@ function cantAllFitInThatBoat() {
 }
 
 function verilyIsMakingTea() {
+  dialogue.seenVerilyIn3 = true;
 if (dialogue.verilyIsInLobbyThree) {
   if (!dialogue.makingTeaOne) {
     dialogue.blockArrowTravel = true;
@@ -10574,6 +10640,7 @@ if (dialogue.verilyIsInLobbyThree) {
 }
 
 function campingStove() {
+  dialogue.seenVerilyIn3 = true;
 if (dialogue.verilyIsInLobbyThree) {
   if (!dialogue.teapotOne) {
     dialogue.blockArrowTravel = true;
@@ -10837,7 +10904,7 @@ function verilyYouGoIntoTheMysteriousCrack() {
   if (!dialogue.verilyYouTryTheCrack && dialogue.sawTheCrack) {
 dialogue.blockArrowTravel = true;
     ybbk7.style.display = "block";
-      v.style.display = "block";
+      vint.style.display = "block";
        dialogue.dfgkjdfsdfamksjdnfjksdmsdfnkjmmmsdjjjjj = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -10845,7 +10912,7 @@ dialogue.blockArrowTravel = true;
        ybbk7.style.display = "none";
        ybbk8.style.display = "block";
       k.style.display = "block";
-      v.style.display = "none";
+      vint.style.display = "none";
       dialogue.dfgkjdfsdfamksjdnfjksdmsdfnkjmmmsdjjjjj++;
      } else if (dialogue.dfgkjdfsdfamksjdnfjksdmsdfnkjmmmsdjjjjj === 2) {
        ybbk8.style.display = "none";
@@ -10901,7 +10968,7 @@ dialogue.blockArrowTravel = true;
   } else if (!dialogue.verilyYouTryTheCrack && !dialogue.sawTheCrack) {
 dialogue.blockArrowTravel = true;
     ybbk7.style.display = "block";
-      v.style.display = "block";
+      vint.style.display = "block";
        dialogue.dfgkjdfsdfammsdfnkjmmm = 1;
        document.addEventListener("keydown", function() {
  if (event.key === 'Enter' || event.key === ' ') {
@@ -10909,7 +10976,7 @@ dialogue.blockArrowTravel = true;
        ybbk7.style.display = "none";
        ybbk8alt.style.display = "block";
       b.style.display = "block";
-      v.style.display = "none";
+      vint.style.display = "none";
       dialogue.dfgkjdfsdfammsdfnkjmmm++;
      } else if (dialogue.dfgkjdfsdfammsdfnkjmmm === 2) {
        ybbk8alt.style.display = "none";
@@ -11099,12 +11166,12 @@ dialogue.blockArrowTravel = true;
      } else if (dialogue.rockin3 === 2) {
        ybbn8.style.display = "none";
        ybbn9.style.display = "block";
-      b.style.display = "block";
+      bfur.style.display = "block";
       k.style.display = "none";
        dialogue.rockin3++;
      } else if (dialogue.rockin3 === 3) {
        ybbn9.style.display = "none";
-      b.style.display = "none";
+      bfur.style.display = "none";
        dialogue.rockin3 = true;
            dialogue.blockArrowTravel = false;
            dialogue.rocktalkThree = false;
@@ -11125,6 +11192,8 @@ if (!dialogue.jukebox) {
 branleChampaigne.play();
 branleChampaigne.volume = 0.1; 
 raiseChampaigneVolume();
+saltarello.pause();
+antiphona.pause();
 }
 soldier();
 }
@@ -11504,14 +11573,14 @@ dialogue.ranchDressing = "pickles";
        dialogue.ranchDressing++;
      }  else if (dialogue.ranchDressing === 10) {
        ybbo53.style.display = "none";
-       pocketDictionary.style.display = "block";
+       pocketDictionary2.style.display = "block";
        dialogue.dictionaryAdded = true;
        b.style.display = "none";
        v.style.display = "none";
        dialogue.ranchDressing++;
      }
       else if (dialogue.ranchDressing === 11) {
-       pocketDictionary.style.display = "none";
+       pocketDictionary2.style.display = "none";
        ybbo54.style.display = "block";
        b.style.display = "block";
        v.style.display = "none";
@@ -12214,6 +12283,22 @@ function howsBunhilda() {
       st.style.display = "none";
       dialogue.ippityoddddmnmnoo = true;
         dialogue.blockArrowTravel = false;
+        dialogue.naryAPeep = true;
+     }
+    }});
+} else if (!dialogue.naryAPeep2) {
+  yayzazzzz3.style.display = "block";
+  dialogue.blockArrowTravel = true;
+      st.style.display = "block";
+      dialogue.ippityoddddmsdfsdfnmnoo = 1;
+       document.addEventListener("keydown", function() {
+ if (event.key === 'Enter' || event.key === ' ') {
+    if (dialogue.ippityoddddmsdfsdfnmnoo === 1) {
+       yayzazzzz3.style.display = "none";
+      st.style.display = "none";
+      dialogue.ippityoddddmsdfsdfnmnoo = true;
+        dialogue.blockArrowTravel = false;
+        dialogue.naryAPeep2 = true;
      }
     }});
 }

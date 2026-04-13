@@ -10,35 +10,44 @@
     <script src="mobiledialogue.js"></script>
     <script src="arcadehandler.js"></script>
     <script src="musicModule.js"></script>
-    <meta name="description" content="A point and click adventure game about a bird and a frog exploring a labyrinth. Tags: whimsical, indie game, action, puzzle, narrative-driven, videogame, point-and-click, funny." />
+    <meta name="description" content="A point and click adventure game about a bird and a frog exploring a labyrinth." />
 
 <style>
 /*
 
-CURRENT ISSUES
-ADD: kapwing! aah!
-check timeouts for buffons (to trigger now available)
-verily in cavern2 looks like ass
+REUPLOAD
+nowAvailable
+notepadsum
+jukeboxMode
+jukeOn
+jukeOff
+youcanplaymusicnow
+treescene 
+caverns2
+
+music module
+locked.mp3
+stymiesquint
+this html file, labydialogue, arcade handler
+pipes2blue (pipes)
+w2yellowdull
+verilyGo (maybe already in there)
+no glass smash nosie online ??
 
 TEST
-reloading from the second lobby: shoould remove locked door symbol for sauna and flashing thing for chasm, curtains for screen are closed. verily is still tampering (possibly only briefly?)
-no glass smash nosie online
-trio did not re-apear
-test getting the dictionary from verily at the end
-opening final door convo 
-
-another set of fish along with portfish
-make verilytinkering a gif
-boat explorers gif (bridget turns head, kodaly loses balance)
-
+reloading from the second lobby cookies: shoould remove locked door symbol for sauna and flashing thing for chasm, curtains for screen are closed. verily is still tampering (possibly only briefly?)
 
 code:
+make verilytinkering a gif
+boat explorers gif (bridget turns head, kodaly loses balance)
+new sound for: noteScribble
+make campers 2? a gif. with kodaly making Zs
+ADD: kapwing! aah!
+ybb2 and yba2 around the corner visited
+wires leading to 21 and 14 that light up
 imagemap for lake in pipes.
-once you get the pink door unlocked, the map changes to show you the keys for the other rooms
-"press enter or space" for kmap1
-have fish in second pond jump
 blocks travel ("oh fuck") if you have taken the missing handle, but doesnt cut music or display cut bridge
-not playing the invfull animation at some point?
+in chrome, a few places where dialogue.blockTravel doesn't work
 
 extra stuff:
 candles get stuck on purple if you don't have red candles
@@ -54,7 +63,6 @@ improve harp gifs
 make all the doorways have regressive shading? (westregress)
 mouseover jiggle notepad and inventory or animate them turning a page or opening and over map explorers making a dotted line
 revise: crossbowFire sound
-move typing page to the back of the guest book
 automatic zoom to fit
 add various cookies:
     pipes: brunhilda availabled,
@@ -63,7 +71,8 @@ add various cookies:
 
 
 problems for later: 
-taking the datacube increases stymie's notification level. the notification level doesnt drop if the datacube is dropped.
+change nymph to druid
+have fish in second pond jump
 can't replicate: it's locked! is stuck.in KEYS possibly because of cookies?
 cannot replicate: just in chrome: stymie notif in lobby one increases presumably for labynames and cannot be clicked after wrench dropped after having entered lobby2 but not spoken to verily
 in chrome, if the map is open the smallness of the token allows the user to click on the stuff behind the map
@@ -72,15 +81,12 @@ click on burning shrub to start convo also (portholeRoom would have to use a dif
 we can try to replace the northknock etc gifs with images and timeouts
 some too heavy dialogue sections do not prevent arrow travel, but not all.
 test: the stymie notification does not reduce if you solve all the things except the thing and then get the hint? w cookies? PIPES
-double check arrow travel is prevented during first verily conversation
-find a better way to determine mobile ness
 Posibly use the following code to clean up the knocking gifs instead of using a timeout
         let doomed = document.querySelector('northknock');
         doomed.parentElement.removeChild(doomed);
 do the art and fix the sound effect for dialogue.arbalestAttack and set dialogue.arbalestAttack to false to allow it to trigger. 
 
 story: they find something really practically applicable about the labyrinth and decide to cover it up
-add an old north kardic dictionary (ch 4)
 
 questions for playtesters:
 what did you like? what could be improved?
@@ -108,9 +114,25 @@ show game to Eric. made bridget a folklorist inspired by you
 hiddd
 */
 
+.hiddenSummary {
+        display: block;
+}
 
-#plinthempty {
+
+#plinthempty,
+#notepadsum,
+#yba2 {
     display: none;
+}
+#jukeboxMode {
+    display: none;
+    z-index: 1000;
+}
+#jukeOn,
+#jukeOff {
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
 }
 #youCanPlayMusicNow {
     display: none;
@@ -204,6 +226,33 @@ z-index: 2;
     font-size: 20px;
     position: absolute;
 
+}
+
+#sumSauna,
+#sumColor,
+#sumCh2,
+#sum2a,
+#sum2b,
+#sum2c,
+#sum2d,
+#sum2e,
+#sum2f,
+#sum2g,
+#sumCh3,
+#sumKeys,
+#sumTubes,
+#justPipeThings,
+#seenSouthLakePipes,
+#secrketpntinpasssgge,
+#gameishard,
+#sumSwitches,
+#sumSwitches1,
+#sumSwitches2b,
+#sumSwitches2,
+#sumSwitches3,
+#sumVerily,
+#sumVerily2 {
+    display: none;
 }
 
 #dictionaryPages {
@@ -492,7 +541,6 @@ z-index: 3;
 
 #ybg13,
 #j1a,
-#highscores2,
 #ybbnlk1,
 #yakaka4,
 #campers1,
@@ -539,6 +587,7 @@ z-index: 3;
 #ybbo32,
 #ybbo33,
 #ybbo34,
+#notebookTextSummary,
 #yamaha1,
 #ybbo35,
 #ybbo36,
@@ -581,12 +630,15 @@ z-index: 3;
 #yakaka0,
 #ybbo10a,
 #yyj0,
+#campersBear,
 #yyj00,
 #yakaka1,
 #yakaka2,
 #verilyhelper,
 #yakaka3,
 #ybbo40,
+#zkk1,
+#zkk2,
 #pimpim3,
 #pimpim4,
 #pimpim5,
@@ -809,6 +861,7 @@ z-index: 3;
 #unlighting,
 #namingbuttons,
 #highscores,
+#highscores2,
 #keyItemsPouch,
 #strangevial,
 #terminalcloseup {
@@ -1143,7 +1196,7 @@ z-index: 3;
 #ybee3,
 #ybee4,
 #ybf18,
-#keyitems,
+#keyitemsP,
 #ybf19,
 #ybf12,
 #ybf11,
@@ -1240,6 +1293,7 @@ z-index: 3;
 #yyx4,
 #yyx5,
 #yyx6,
+#ybb2,
 #yyx7,
 #yyx8,
 #yyx9,
@@ -1360,9 +1414,8 @@ z-index: 3;
             <img src="floaters/region3cmap.png" alt="map" class="room" class="mapMap" usemap="#minimapMap" id="region3cmap">
             <img src="floaters/token.png" alt="satchel" usemap="#roommap" class="room" id="token">
             <img src="floaters/mapXhelper.png" alt="satchel" onclick="openMap()" class="room" id="mapXhelper">
-            <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#roommap" class="room" id="keyitems">
+            <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#roommap" class="room" id="keyitemsP">
             <img src="floaters/keyitemspouch.png" alt="pouch closeup" usemap="#pouchmap" class="room" id="keyItemsPouch">
-            <img src="keyitemspouch.png" alt="pouch closeup" usemap="#pouchmap" class="room" id="keyItemsPouch">
             <img src="floaters/strangevial.png" alt="satchel" usemap="#pouchmap" class="room" id="strangevial">
             <img src="floaters/terminalcloseup.png" alt="satchel" usemap="#giveupmap" class="room" id="terminalcloseup">
             <img src="floaters/namingbuttons.png" alt="satchel" usemap="#giveupmap" class="room" id="namingbuttons">
@@ -1422,6 +1475,8 @@ z-index: 3;
             <img src="floaters/poem1.png" alt="line hider" class="room" id="poem1">
             <img src="floaters/verilyTab.png" alt="secret notepad tabs" class="room" id="verilyTab">
             <img src="floaters/poemTab.png" alt="secret notepad tabs" class="room" id="poemTab">
+            <img src="floaters/conversationTab.png" alt="secret notepad tabs" class="room" id="conversationTab">
+            
             <img src="floaters/shuriTab.png" alt="secret notepad tabs" class="room" id="shuriTab">
             <img src="floaters/areyouonmobile.png" usemap="#mobilemenu" alt="line hider" class="room" id="areyouonmobile">
                 <img src="floaters/chapter1banner.png" alt="line hider" class="room" id="chapter1banner">
@@ -1443,6 +1498,10 @@ z-index: 3;
             <img src="floaters/notepads.png" usemap="#notepadmap" class="room" id="notepads">
             <img src="floaters/notepadst.png" usemap="#notepadmap" class="room" id="notepadst">
             <img src="floaters/notepadm.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadmu">
+            <img src="floaters/notepadsum.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadsum">
+            <img src="floaters/jukeboxMode.png" alt="b's notes" usemap="#notepadmap" class="room" id="jukeboxMode">
+            <img src="floaters/jukeOn.png" alt="b's notes" usemap="#notepadmap" class="room" id="jukeOn">
+            <img src="floaters/jukeOff.png" alt="b's notes" usemap="#notepadmap" class="room" id="jukeOff">
             <img src="floaters/notepadi.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadi">
             <img src="floaters/notepadisecret.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadisecret">
             <img src="floaters/notepadp.png" alt="b's notes" usemap="#notepadmap" class="room" id="notepadp">
@@ -1661,7 +1720,7 @@ Nefe – v. Speak.<br>
 <p id="pdpage24">head.<br><br>
 
 R<br>
-Rok – n. 1. Cliff. 2. Rock. 3. A rock face (as in “cliff”).<br>
+Rok – n. 1. Cliff. 2. Rock. 3. A rock face (as in “cliff”).<br><br>
 
 S<br>
 Sedt – adv. Very, too much, extremely in an unwieldy sense. Also seen as “serdt“.<br>
@@ -1820,6 +1879,7 @@ Vich – conj. Because.<br><br>
             <img src="floaters/helpfulpipemap.png" alt="pipes" usemap="#bigX" class="room" id="helpfulpipemap"> 
             <img src="people/campers1.png" alt="pipes" usemap="#bigX" class="room" id="campers1"> 
             <img src="people/campers2.png" alt="pipes" usemap="#bigX" class="room" id="campers2"> 
+            <img src="people/campersBear.png" alt="pipes" class="room" id="campersBear"> 
 
                 
             <div id="lobby"> <!--Lobby Obbies-->
@@ -2313,9 +2373,7 @@ Vich – conj. Because.<br><br>
                 <img src="northdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="westdoor"> 
-                <img src="keys/keys6s.png" alt="key" usemap="#keysBasicMap" class="room" id="keys6s">
-                <img src="keys/keys6nw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys6nw">
-                                                 <img src="northlock.png" alt="key" usemap="#keysBasicMap" class="room" id="northlock6"><!--marklock-->
+                <img src="northlock.png" alt="key" usemap="#keysBasicMap" class="room" id="northlock6"><!--marklock-->
 
  
             </div>
@@ -2353,7 +2411,6 @@ Vich – conj. Because.<br><br>
                 <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
                 <img src="keys/keys10ne.png" alt="key" usemap="#keysBasicMap" class="room" id="keys10ne"> 
-                <!--<img src="keys/keys10sw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys10sw"> does not exist-->
              </div>
 
             <div id="keys11" usemap="#keysBasicMap"> 
@@ -2362,9 +2419,7 @@ Vich – conj. Because.<br><br>
                 <img src="eastdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#keysBasicMap" class="room" id="westdoor"> 
                 <img src="keys/bluekey.png" alt="door" usemap="#keysBasicMap" class="room" id="bluekey">
-                <img src="keys/keys11se.png" alt="key" usemap="#keysBasicMap" class="room" id="keys11se">
-                <img src="keys/keys11nw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys11nw"> 
-                                                                 <img src="westlock.png" alt="key" usemap="#keysBasicMap" class="room" id="westlock11"><!--marklock-->
+                <img src="westlock.png" alt="key" usemap="#keysBasicMap" class="room" id="westlock11"><!--marklock-->
                                                  <img src="eastlock.png" alt="key" usemap="#keysBasicMap" class="room" id="eastlock11"><!--marklock-->
 
             </div>
@@ -2403,7 +2458,7 @@ Vich – conj. Because.<br><br>
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">
-                <img src="keys/keys16se.png" alt="key" usemap="#keysBasicMap" class="room" id="keys16se">
+                <!--<img src="keys/keys16se.png" alt="key" usemap="#keysBasicMap" class="room" id="keys16se">-->
                 <img src="keys/keys16sw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys16sw"> 
                 <img src="southlock.png" alt="key" usemap="#roommap" class="room" id="southlock16"><!--marklock-->
                 <img src="westlock.png" alt="key" usemap="#roommap" class="room" id="westlock16"><!--marklock-->
@@ -2436,7 +2491,6 @@ Vich – conj. Because.<br><br>
                 <img src="keys/keys20ne.png" alt="key" usemap="#keysBasicMap" class="room" id="keys20ne">
                 <img src="keys/keys20nw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys20nw">
                 <img src="keys/keys20sw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys20sw">
-                <img src="keys/keys20se.png" alt="key" usemap="#keysBasicMap" class="room" id="keys20se">
                 <img src="southlock.png" alt="key" usemap="#keysBasicMap" class="room" id="southlock20"><!--marklock-->
 
               </div>
@@ -2453,7 +2507,6 @@ Vich – conj. Because.<br><br>
                 <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
                 <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor"> 
                 <img src="keys/keys22nw.png" alt="key" usemap="#keysBasicMap" class="room" id="keys22nw">
-                <img src="keys/keys22ne.png" alt="key" usemap="#keysBasicMap" class="room" id="keys22ne">
                 <img src="keys/keys22se.png" alt="key" usemap="#keysBasicMap" class="room" id="keys22se">
                 <img src="westlock.png" alt="key" usemap="#keysBasicMap" class="room" id="westlock22"><!--marklock-->
             </div>
@@ -2465,7 +2518,6 @@ Vich – conj. Because.<br><br>
 
             <div id="keys24" usemap="#roommap"> 
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
-                <img src="keys/keys24s.png" alt="door" usemap="#keysBasicMap" class="room" id="keys24s">
                 <img src="keys/keys24e.png" alt="door" usemap="#keysBasicMap" class="room" id="keys24e">
                 <img src="ferns.png" alt="door" usemap="#roommap" class="room" id="ferns">
                </div>
@@ -2772,8 +2824,6 @@ Vich – conj. Because.<br><br>
     <img src="tides/orangewire1.png" alt="door" usemap="#lake1map" class="room"> 
     <img src="tides/orangewire1dull.png" alt="door" usemap="#lake1map" class="room" id="orangewire1dull"> 
     <img src="tides/orangeflower.png" alt="door" usemap="#lake1map" id="orangeflower" class="room"> 
-    <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#lake1map" class="room" id="keyitems">
-
 </div>
 
 <div id="lake2" usemap="#lakemap"> 
@@ -2810,8 +2860,6 @@ Vich – conj. Because.<br><br>
     <img src="tides/16on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="orientation3on"> 
     <img src="tides/16off.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="orientation3off"> 
     <img src="tides/plateshapes.png" alt="switch" usemap="#binaryswitchesmap" class="room"> 
-    <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#binaryswitchesmap" class="room" id="keyitems">
-
 </div>
 
 <div id="littleLakesLobbyEast" usemap="#lakemap"> 
@@ -2854,8 +2902,6 @@ Vich – conj. Because.<br><br>
     <img src="people/explorers.gif" alt="door" usemap="#binaryswitchesmap" class="room">
     <img src="endtable.png" alt="door" usemap="#binaryswitchesmap" class="room">
     <img src="bluevase.png" alt="door" usemap="#binaryswitchesmap" class="room">
-    <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#binaryswitchesmap" class="room" id="keyitems">
-
 </div>
 
 <div id="roseRoom" usemap="#roseroommap"> 
@@ -2863,7 +2909,6 @@ Vich – conj. Because.<br><br>
     <img src="boats/boatnorth.png" alt="door" usemap="#roseroommap" class="room"> 
     <img src="tides/wildredrose1.png" alt="door" usemap="#roseroommap" class="room" id="wildredrose1"> 
     <img src="people/explorers.gif" alt="door" usemap="#roseroommap" class="room">
-    <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#roseroommap" class="room" id="keyitems">
 </div>
 
 <!--West of Lakes Lobby-->
@@ -2927,8 +2972,6 @@ Vich – conj. Because.<br><br>
     <img src="people/boatexplorers.png" alt="explorers" usemap="#lakemap" class="room" id="boatexplorers">
             <img src="tides/roseisland.png" alt="door" usemap="#lakemap" class="room"> 
     <img src="tides/wildredrose2.png" alt="door" usemap="#lakemap" class="room" id="wildredrose2"> 
-            <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#lakemap" class="room" id="keyitems">
-
 </div>
 
 <div id="blueSwitchRoom" usemap="#lakemap"> 
@@ -2937,7 +2980,6 @@ Vich – conj. Because.<br><br>
         <img src="tides/blueswitchon.png" alt="door" usemap="#lakemap" class="room" id="blueswitchon">
             <img src="tides/blueswitch.png" alt="door" usemap="#lakemap" class="room" id="blueswitch">
         <img src="people/explorers.gif" alt="door" usemap="#lakemap" class="room">
-        <img src="floaters/keyitems.png" alt="the small pouch icon" usemap="#lakemap" class="room" id="keyitems">
 
 </div>
 
@@ -3025,7 +3067,7 @@ Vich – conj. Because.<br><br>
     <img src="people/shurihallway.png" alt="explorers" usemap="#hallmap" class="room" id="shuriHall"> 
     <img src="people/shuri-hallway-facing-away.png" alt="explorers" usemap="#hallmap" class="room" id="shuriHallBack"> 
 </div>
-
+<!--
 <div id="dangerZone" usemap="#roommap"> 
     <img src="people/shuri-hallway.png" alt="explorers" usemap="#roommap" class="room" id="shuriHall2"> 
     <img src="southdoor.png" alt="door" usemap="#roommap" class="room" id="southdoor">
@@ -3033,6 +3075,7 @@ Vich – conj. Because.<br><br>
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
     <img src="westdoor.png" alt="door" usemap="#roommap" class="room" id="westdoor">  
 </div>
+-->
 
 <div id="secretCrackRoom" usemap="#roommap"> 
     <img src="eastdoor.png" alt="door" usemap="#roommap" class="room" id="eastdoor">
@@ -3558,10 +3601,12 @@ Vich – conj. Because.<br><br>
             <!--<area shape="rect" coords="870,700,970,750" alt="drop item" class="pointer" onclick="notepadStymie2()">-->
         <area shape="rect" coords="332,391,426,526" alt="drop item" class="pointer" onclick="notepadInfo()">
         <area shape="rect" coords="940,575,1092,632" alt="drop item" class="pointer" onclick="notepadMusic()">
+        <area shape="rect" coords="990,311,1098,377" alt="drop item" class="pointer" onclick="notepadSummary()">
             <!--<area shape="rect" coords="830,625,970,750" alt="drop item" class="pointer" onclick="notepadMusic2()">-->
         <area shape="rect" coords="1042,30,1145,130" alt="big x" class="pointer" onclick="hideNotes()">
         <area shape="rect" coords="240,630,380,770" alt="notepad icon" class="pointer" onclick="hideNotes()">
         <area shape="rect" coords="966,228,1090,305" alt="poem" class="pointer" onclick="notepadPoem()">
+        <area shape="rect" coords="888,81,950,115" alt="poem" class="pointer" onclick="switchJukeboxMode()">
     </map>
 <!--
     <map name="diagrammap"> Diagram-
@@ -3932,7 +3977,9 @@ Vich – conj. Because.<br><br>
 <audio id="keybloop"><source src="sound/keybloop.mp3" type="audio/mpeg"></audio>
 <audio id="keydel"><source src="sound/keydel.mp3" type="audio/mpeg"></audio>
 <audio id="booting"><source src="sound/booting.mp3" type="audio/mpeg"></audio>
+<!--
 <audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
+-->
 <audio id="glassSmash"><source src="sound/glassBreaking.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowRaise"><source src="sound/crossbowRaise.mp3" type="audio/mpeg"></audio> 
 <audio id="crossbowLower"><source src="sound/crossbowLower.mp3" type="audio/mpeg"></audio> 
@@ -3965,6 +4012,7 @@ Vich – conj. Because.<br><br>
 <audio id="worm1"><source src="sound/worm1.mp3" type="audio/mpeg"></audio>
 <audio id="worm2"><source src="sound/worm2.mp3" type="audio/mpeg"></audio>
 <audio id="worm3"><source src="sound/worm3.mp3" type="audio/mpeg"></audio>
+<audio id="noteScribble"><source src="sound/noteScribble.mp3" type="audio/mpeg"></audio>
 <audio id="fire" src="sound/fire.mp3" loop></audio> 
 
 <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
@@ -4061,6 +4109,7 @@ Tristans's Harp, arr. Jose Ferrero)-->
     <img src="portraits/stymieGRA.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieGRA">
     <img src="portraits/stymieRAAG.png" alt="stymie's intense effort dialogue portrait" class="dialogue" id="stymieRAAG">
     <img src="portraits/stymiesuggesting.png" alt="stymie making a suggestion dialogue portrait" class="dialogue" id="stymiesuggesting">
+    <img src="portraits/stymiesquint.png" alt="stymie making a suggestion dialogue portrait" class="dialogue" id="stsq">
     <img src="portraits/stymiewonder.png" alt="stymie in wonder" class="dialogue" id="stymiewonder">
     <img src="portraits/stymieglitch.gif" alt="stymie glitch" class="dialogue" id="stymieglitch">
     <img src="portraits/stymielaughglitch.gif" alt="stymie glitch" class="dialogue" id="stymielaughglitch">
@@ -4151,8 +4200,7 @@ campus are not suited to recreational gliding.<br><br>
             labyrinth is an endangered species with a strange, understudied intelligence, but if the Southern Alliance discovered something of tactical value,
              I doubt any bulwark would be enough be enough to keep them 
              from cutting this place apart.
-             <br><br>I'd like to learn more from Verily. Where is her family from?
-             How did she become a field researcher? Research like this is not something people typically do alone. Is she just that confident in her abilities? Or is there something else compelling her to undertake the risks of being here alone?
+             <br><br>Research like this is not something people typically do alone. Is Verily just that confident in her abilities? Or is there something else compelling her to undertake the risks of being here alone?
              
         </p>
 
@@ -4177,7 +4225,7 @@ campus are not suited to recreational gliding.<br><br>
         <br><br>Stymie is a wonderful interface, but, as she only controls one small floret,
         is unable to answer any of the looming questions of modern labyrinth studies. 
         <br><br>To that end, perhaps there's truth in Haberson's conjecture that the center of the labyrinth is like
-        the nucleus of a cell, and that information flows outward from it, to the most distal florets,
+        the nucleus of a cell, and that information flows outward from it, from the heart to the most distal florets,
         at lengths of millions of cells. Supposedly, at the heart of the labyrinth that bears his name (the
          Stal-Haberson labyrinth) there is a massive library comprised of millions of books of indecipherable
          symbols, repeating at random, as though containing the labyrinth's genetic code. Haberson
@@ -4196,12 +4244,145 @@ campus are not suited to recreational gliding.<br><br>
         <br><br>Some zealots of the far north believe that the labyrinths
         are the relic-temples of an ancient people who built the labyrinth in order to surmount the walls of the garden of Heaven.
         They believe that the heart of a labyrinth is a ladder to Heaven, and its complexity is the vehicle by which a conscious creature ascends the ladder. 
-        So far, one zealot has succeeded in killing a labyrinth because of this belief, leaving a fragmented, crumbling ruin 
+        So far, one zealot has succeeded in killing a labyrinth because of this belief, leaving a fragmented, crumbling ruin in Port Armora
         (which Kodaly and I had the good fortune to study and map two years ago).
         <br><br>Suffice it to say, there are more theories about where labyrinths come from than 
         there are living labyrinths. Hopefully, understanding the extent of their function and 
         origins will lead to better efforts towards their preservation. 
 </p>
+    </div>
+</div>
+
+<div id="notebookTextSummary">
+     <div class="notebookFlex">
+        <div id="sumSauna" class="hiddenSummary">
+            <b>Distal Floret:</b><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Stymie’s data cube is at the bottom of the circular lift. In order to get it, we need to put the right candles in the four alcoves around the panel.
+       
+        </div>
+
+        <div id="sumColor" class="hiddenSummary"> <!--I don't think this has a trigger to display it anymore-->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I wonder if the color and orientation of the tarot cards in the room to the east has anything to do with the placement of the candles.
+        </div>
+        <div id="sumCh2" class="hiddenSummary">
+            <br><br>
+            <b>Shrubs:</b>
+            <div id=sum2a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                At the far north end of the floret there’s a large door with a four-digit color-lock. I bet the eight shrubs scattered here and there probably correspond to the eight colors. If that’s true, all we need is a four digit numerical code. 
+            </div>
+            <div id=sum2b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I bet there are more clues behind the locked door to the west.
+            </div>
+            <div id=sum2c>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I bet the four digit code is behind the locked panel in the west wing.
+            </div>
+            <div id=sum2d>
+
+            </div>
+            <!--
+            <div id=sum2d>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I bet those pillars will unlock the panel if we move them into the right position using the machine.
+            </div>
+            -->
+            <div id=sum2e>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            We received one hint about the position of the pillars. The screen suggests that pillar A should be at height 2, and pillar B should be at height 3. 
+            </div>
+            <div id=sum2f>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            When we cut down the chandelier, we saw the second clue, which suggested pillar C should be at height 0 and pillar D should be at height 3.
+            </div>
+            <div id=sum2g>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            The locked panel gave us the code: 7284.
+            </div>
+        </div>
+
+
+<p id="sumCh3" class="hiddenSummary">
+    <br>
+    <b>The Third Node:</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Stymie said that the way north will be open when the stones above the three doors in the third node are lit. In each node is a switch. It looks like we can solve these three florets in any order.
+</p>
+
+<p id="sumKeys" class="hiddenSummary">
+	<b>Too Many Keys:</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		We just need to find the room with the yellow switch and flip it. We can use the map in the node there to see which rooms contain useful keys. 
+</p>
+
+<div id="sumTubes" class="hiddenSummary">
+    <br>
+	<b>Tubes and Nozzles:</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		We need to fill all four basins with the right color liquid.
+		<div id="justPipeThings">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        We need these things to make that happen:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			A squiggle-shaped pipe<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			A y-shaped pipe<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			A macaroni elbow-shapped pipe <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			A butterfly handle<br>
+            </div>
+            <div id="seenSouthLakePipes">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Another butterfly handle<br>
+        </div>
+
+<div id="secrketpntinpasssgge">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+We haven’t checked for a secret passage behind the paintings in the galleries.
+</div>
+<div id="gameishard"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	This arcade game is really hard. Let’s see if Stymie can help. 
+
+</div>
+</div>
+
+<div class="hiddenSummary">
+    <br><br>
+	<b><div id="sumSwitches">Switches and Circuits:</b><br></div>
+	<div id="sumSwitches1">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Flowers seem to conduct electricity in this floret. Same-colored flowers can close a circuit, if the wire has power running through it. 
+    </div>	
+    <div id="sumSwitches2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		There’s a secret passage behind some paintings along the north path.
+    </div>
+        <div id="sumSwitches2b">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        The room beyond the "21" door has another set of paintings. Looks like an old game of "make these paintings identical to those paintings using those switches".
+    </div>	
+     <div id="sumSwitches3">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Once all three main switches are flipped, we just need to close the circuits with the right color flower. 
+    </div>	
+</div>
+
+
+<div id="sumVerily" class="hiddenSummary">
+    <br><br>
+    <b>Verily:</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Stymie said that Verily is doing something in the porthole room that was eating up a lot of energy. We should go check on her.  
+</div>
+
+<div id="sumVerily2" class="hiddenSummary">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Verily said she would meet us in the north-most room with Stymie. She's making wollroot tea.
+</div>
     </div>
 </div>
 
@@ -4530,7 +4711,7 @@ performed by the Baltimore Consort<br>
    <p id="zb3">That should help us cross.</p>
 
     <p id="zb4">My hands are shaking.</p>
-   <p id="zb5">Deep breaths. You got this.</p>
+   <p id="zb5">Deep breaths. You got this. You're the rope throwing queen.</p>
    <p id="zb6">There it is.</p>
     
     <!--North locked-->
@@ -4635,7 +4816,7 @@ performed by the Baltimore Consort<br>
     <p id="zk31">Haha!</p>
     <p id="zk32">Now we're talking.</p>
     <p id="zk33">It looks like the main path continues at least 10 cells north. Oooh.</p>
-    <p id="zk34">Room 5N9W2S.</p>
+    <p id="zk34">Room 2N.</p>
     <p id="zk35">Bridget, you'll like that one.</p>
     <p id="zk36">Thanks a million, Verily!</p>
     <p id="zk37">You're welcome.</p>
@@ -4652,6 +4833,9 @@ performed by the Baltimore Consort<br>
     <p id="zk48">Let us know if you need any food or supplies too.</p>
     <p id="zk49">I'm okay right now, but thank you.</p>
     <p id="zk50">Stay safe.</p>
+    
+    <p id="zkk1">Hm.</p>
+    <p id="zkk2">I really like this room.</p>
 
     <!--Is Summer Suspicious-->
     <p id="zm1">You get the feeling that Verily is up to something?</p> <!--Bridget-->
@@ -4757,8 +4941,8 @@ performed by the Baltimore Consort<br>
    <p id="zv8">Huh.</p> <!--Kodaly-->
    <p id="zv9">I guess we should fill you in then.</p>
    <p id="zv10">We met someone called Summer Verily in the northern lobby. She claims to be a researcher from the Kestevens Institute.</p>
-   <p id="zv11">But some things don't quite line up.</p>
-   <p id="zv16">Did anyone else pass to the north? Other than the rogue soldier.</p>
+   <p id="zv11">But some things don't quite line up. Somehow, she's already deeper in the labyrinth than us.</p>
+   <p id="zv16">Did you see anyone else pass north? Other than the rogue soldier.</p>
    <p id="zv17">...</p> <!--Thinking hard-->
    <p id="zv18">Oh, you know?</p> <!--Light bulb-->
    <p id="zv19">I have no idea.</p>
@@ -4844,11 +5028,11 @@ performed by the Baltimore Consort<br>
    <p id="zy38">Oh, I see.</p>
    <p id="zy39">So you have <i>reasons</i> for the things you do.</p>
    <p id="zy40">Typically.</p>
-   <p id="zy41">It wouldn't be accurate to describe the "actions" that the labyrinth takes in terms of options, decisions, and outcomes. And there aren't reasons for the things it does, at least not on a cognitive level.</p>
+   <p id="zy41">It wouldn't be accurate to describe the "actions" that the labyrinth takes in terms of options, decisions, and outcomes. And there aren't reasons for the things it does, at least not on a cognitive level, like you.</p>
    <p id="zy42">It grows knots around itself, repurposing materials to optimize nutrient flow.</p>
    <p id="zy43">But that's just how it is. That's the shape of it.</p>
-   <p id="zy44">It's a shape made of the negotiation between the ideal and the real. The ideal form must yield to the forces of subduction and uplift, the solvent power of water, must transport minerals from rich areas to poor areas.</p>
-   <p id="zy45">That conversation results in the actual shape, which is the only shape that it ever could have taken.</p>
+   <p id="zy44">It's the shape made by negotiation between ideal and real. The Ideal Form must yield to the forces of subduction and uplift, the solvent power of water, must change its shape to transport minerals from resource-rich areas to resource-poor areas.</p>
+   <p id="zy45">That conversation results in the Actual Shape, which is the only shape that it ever could have taken.</p>
    <p id="zy46">Hopefully that's clear.</p>
    <p id="zy47"></p>
    <p id="zy48"></p>
@@ -4878,7 +5062,7 @@ performed by the Baltimore Consort<br>
 
    <p id="zze1">What's it say?</p>
    <p id="zze2">Here, take a look.</p>
-   <p id="zze3">It looks as though it's only half of a clue.</p>
+   <p id="zze3">Looks like it just <i>half</i> a clue.</p>
    <p id="zze4">I'll leave it here. We can come back if we need a second look.</p>
 
    <p id="zzf1">Let's see if we can figure this out.</p>
@@ -5124,7 +5308,7 @@ performed by the Baltimore Consort<br>
         <p id="yya18">...</p>
         <p id="yya19">While it's clear that Verily is up to something... I don't think we need to catch her at it.</p>
         <p id="yya20">I don't feel that we're under threat.</p>        
-        <p id="yya21">If something goes awry, we can always retreat radio the permit office.</p>
+        <p id="yya21">If something goes awry, we can always retreat and radio the permit office.</p>
         <p id="yya22">But if Verily's here in secret for personal, non-invasive research, I would hate to see her arrested.</p>
         <p id="yya23">I'd like to keep her on good terms if we can.</p>
 
@@ -5162,12 +5346,12 @@ performed by the Baltimore Consort<br>
              a sub-sub-lobby? And what if there are other similar patterns to the north—does
              that mean that this is a sub-lobby? Or a sub-sub-lobby? Or a sub-sub-sub-lobby?
              Or a sub-sub-sub-sub-lobby? Or a sub-sub-sub-sub-sub-lobby? Or a sub-sub-sub-sub-sub-sub-lobby? (ad infinitum until she is interrupted)</p>
-        <p id="yyb16">We've been calling them "nodes".</p>
+        <p id="yyb16">"Lobby" is imprecise, so we've been calling them "nodes".</p>
         <p id="yyb17">Ooh! That's clever.</p>
         <p id="yyb18">...</p>
         <p id="yyb19">AAAAANYway</p>
-        <p id="yyb20">Before you are the doors to three independent florets, each with a hidden switch that must be flipped to open passage to the north.</p>
-        <p id="yyb21">The stone above each door will light up when its switch is flipped.</p>
+        <p id="yyb20">Before you are the doors to three (3) independent florets, each with a hidden switch! Flip all three switches and light the wires to open the door in the northmost cell.</p>
+        <p id="yyb21">The stone above each door here will light up when its switch is flipped.</p>
         <p id="yyb23">But watch out!</p>
         <p id="yyb24">I put sixteen feral raccoons in a random room.</p>
         <p id="yyb25">Sixteen feral racoons?</p>
@@ -5229,16 +5413,16 @@ performed by the Baltimore Consort<br>
    <p id="yyj1">Did you ever hear those stories about people who lived for months at a time in the labyrinth at Bara Portcullis?</p>
    <p id="yyj2">I recall the headline in one of those sensationalist magazines you see for five marks at the grocer's stall. I just skimmed the story, but I wasn't sure if it was fact or fiction. The details seemed spurious.</p>
    <p id="yyj3">Those writers have a knack for spinning stories.</p>
-   <p id="yyj4">I'm jealous. A little flair for yellow journalism could make me enjoy grant-writing more than pulling teeth.</p>
-    <p id="yyj5">But anyway, the point was that nothing actually sensational happened in Bara Portcullis, although that was probably what was so sensational about it.</p>
+   <p id="yyj4">I'm jealous. A little flair for yellow journalism could make me enjoy grant-writing more than having a root canal.</p>
+    <p id="yyj5">But anyway, the point was that <i>nothing actually sensational</i> happened in Bara Portcullis, although that was probably what was so sensational about it.</p>
    <p id="yyj6">A small group of art students lived in it secretly for two months.</p>
    <p id="yyj7">They ate the labyrinth food. Drank the labyrinth water.</p>
    <p id="yyj8">Solved the labyrinth puzzles.</p>
    <p id="yyj9">Apparently no effect on their psyche.</p>
    <p id="yyj10">Not only were they <i>not</i> devoured by the labyrinth, as people feared they would be...</p>   
-   <p id="yyj11">It provided them nourishment.</p>
+   <p id="yyj11">It nourished them.</p>
    <p id="yyj12">Anabelle always said I was going to get devoured by a labyrinth.</p>
-   <p id="yyj13">Kodaly, is it weird that I feel safer in the labyrinth than in a cave or a tunnel?</p>
+   <p id="yyj13">Kodaly, is it weird that I feel <i>safer</i> in the labyrinth than in a cave or a tunnel?</p>
    <p id="yyj14">I feel like it's protecting us.</p>
    <p id="yyj15">I can sense the rock outside, being held back by the walls. It's saturated with groundwater out there, like a sponge.</p>
    <p id="yyj16">Yeah that is weird.</p>
@@ -5359,20 +5543,20 @@ performed by the Baltimore Consort<br>
     <p id="yyp61">Oh!</p> <!--v surprised-->
     <p id="yyp61a">You do!</p> <!--v surprised-->
     <p id="yyp62">What neighborhood did you live in?</p>
-    <p id="yyp63">It's embarrassing, I actually don't remember the name.</p>
+    <p id="yyp63">You know, it's embarrassing, I actually don't remember the name.</p>
     <p id="yyp63a">Generally, I tell people I'm from "all over." We moved to the city when I was very small, I've been moving from place to place ever since.</p>
     <p id="yyp64">That's funny, I have cousins who live in Lal, and they moved <i>out of the city</i> to live at the slower pace of the island.</p>
     <p id="yyp65">Like that old story about the city mouse and the country mouse.</p>
-    <p id="yyp66">I've always been a city mouse. I don't miss Lal at all, but maybe that's just because I never really got to know it. My sole memory is emerging from a forest into a bright field of flowers, the sound of the waves crashing far below.</p>
-    <p id="yyp67">Maybe I'll go back, when this is all over.</p>
+    <p id="yyp66">I've always been a city mouse. I don't miss Lal at all, but maybe that's just because I never really got to know it. My sole memory is emerging from a forest into a bright field of flowers, the sound of the waves crashing far below. A pretty scene, but tinged with a feeling of unease, of being pursued.</p>
+    <p id="yyp67">Maybe I'll go back, when this is all over. If I can shake that feeling.</p>
     <p id="yyp67a">That sounds nice.</p>
     <p id="yyp67b">Maybe you'll meet someone who remembers your family.</p>
     <p id="yyp68">Hey, we're going to be working on the puzzles up north for a while, if you want to join us.</p>
-    <p id="yyp69">There's boats!</p>
+    <p id="yyp69">There's boat in it!</p>
     <p id="yyp70">Thank you for the offer. I'll leave the row-boating to you, but maybe you'd like some tea?</p>
     <p id="yyp71">Boy, would I!</p>
     <p id="yyp72">It's wollroot tea from the forest of Bara Mordin. It takes a long time to steep. It'll probably be ready by the time you've solved the puzzle.</p>
-    <p id="yyp73">I'll wait for you in the main node.</p>
+    <p id="yyp73">I'll wait for you in the main node to the north.</p>
 
       <p id="yyq1">So is this actually supposed to be helpful?</p>
       <p id="yyq2">I think it's modern art.</p>
@@ -5399,7 +5583,7 @@ performed by the Baltimore Consort<br>
       <p id="yyr20">But because we're rational creatures, we can re-examine our habits and systems and imagine possibilities beyond the present conditions of the world, constructing hypothetical worlds that are more efficient to our ends, but which require more initial energy input than the natural course of life would have allowed.</p>
          <p id="yyr21">But we're still subject to our evolutionarily selected needs and desires, and even our conceptions of what is possible were programmed by natural selection. We're still obliged to act within what is possible under the laws of physics, then within the limitations of our bodies, what is acceptable within our cultures, and then our own personal preferences. All of which were created without "our" input.</p>
    <p id="yyr22">Our thoughtless, organic systems are efficient, but by way of messiness. We are beings made by systems bumping into themselves, jumbling in a maze in the dark, solving problems in roundabout ways with only what tools they already had.</p>
-   <p id="yyr23">Take your central nervous system—</p>
+   <p id="yyr23">Take your central nervous system:</p>
    <p id="yyr25">The nerves in your face are an overlapping, redundant fractal mess.</p>
    <p id="yyr26">An electrician would have a heart attack. It's labyrinthine.</p>
    <p id="yyr27">Then you feel it too.</p>
@@ -5413,7 +5597,7 @@ performed by the Baltimore Consort<br>
     <p id="yyr35">And the system, because of its own necessary complexity, is getting more complex as it responds to us.</p>
     <p id="yyr36">I don't know, that sounds...</p>
     <p id="yyr37">Like an interpretation that needs peer-review.</p>
-    <p id="yyr38">Well, hopefully when we publish our findings, we can get those peers.</p>
+    <p id="yyr38">Well, hopefully when we publish our findings, we can get those peers and get those reviews, yeah?</p>
     <p id="yyr39">I'm sure there are other scholars out there who feel the same way.</p>
     <p id="yyr40">I hope you're right.</p>
 
@@ -5485,11 +5669,14 @@ performed by the Baltimore Consort<br>
         <p id="yyz18">That's four letters??</p>
 
     <p id="yayzazzzz1">Has Brunhilda behaved herself?</p>
-    <p id="yayzazzzz2">Oh yes, nary a peep.</p>
+    <p id="yayzazzzz2">Oh yes, and she's quite the conversationalist.</p>
+    <p id="yayzazzzz3">And quite the mind for geopolitics.</p>
 
     <p id="yba1">The door won't budge, but there's no keyhole.</p>
+    <p id="yba2">I wonder if it might unlock when those switches around the corner add up to 21.</p>
     
     <p id="ybb1">It's a locked panel with the number "14" written on it.</p>
+    <p id="ybb2">It's a locked panel with the number "14" written on it. I wonder if those switches around the corner have anything to do with this.</p>
     
     <p id="ybc1">Brunhilda, I'm going to leave you here so that you don't fall into the abyss, okay?</p>
     <p id="ybc2">Okay.</p>
@@ -5562,7 +5749,7 @@ performed by the Baltimore Consort<br>
 <p id="yfdjxvk10">I...</p> 
 <p id="yfdjxvk11">I thought you said you liked it.</p> 
 <p id="yfdjxvk12">I mean I just don't think it's gneiss.</p> 
-<p id="yfdjxvk13">Well that's not nice at all.</p> 
+<p id="yfdjxvk13">Well that's just rude.</p> 
 <p id="yfdjxvk14">Exactly.</p> 
 
 <p id="yfdjk1">Woah!</p> 
@@ -5621,7 +5808,7 @@ performed by the Baltimore Consort<br>
     <p id="ybg12">Seemed pretty serious about it.</p>
     <p id="ybg13">That's terrifying. I guess that puts an end to your mapping expedition...</p>
     <p id="ybg14">We should climb back to Zoza and radio the authorities. I’m sure they can work things out—</p>
-    <p id="ybg15">Not an option.</p>
+    <p id="ybg15">That's not an option any more.</p>
     <p id="ybg17">The soldier mentioned another thing.</p>
     <p id="ybg18">He asked if we were looking for "the ladder."</p>
     <p id="ybg19">The ladder?</p>
@@ -5630,13 +5817,13 @@ performed by the Baltimore Consort<br>
     <p id="ybg22">So you've not heard of the golden ladder and the Karak Kval?</p>
     <p id="ybg23">No... Enlighten me.</p>
     <p id="ybg24">So, in the Kardic tradition, when God created the universe, it was being spied on by these little creatures called Karak Kval.</p>
-    <p id="ybg25">In observing the creation process, the Karak Kval learned the secret rules underpinning the universe, and used their knowledge for mischief: weaving secret shortcuts into the laws of physics.</p>
+    <p id="ybg25">In observing the creation process, the Karak Kval learned the secret laws underpinning the universe, and used their knowledge for mischief: weaving secret shortcuts into the laws of physics.</p>
     <p id="ybg26">The cosmos was made chaotic. Shortcuts were being triggered all the time. Writing the word "alive" would bring something to life. An idle gesture could turn day into night. A single sung note could cleave a mountain.</p>
     <p id="ybg27">When God discovered this, it scattered the Karak Kval to the ends of the earth. It unwove the shortcuts—the vast majority of them—but some Karak Kval were so clever, and hid their shortcuts so well that they still exist today.</p> 
     <p id="ybg28">That’s how the Kardic tradition explains pattern-magic. Why a handful of insane runes, gestures, strings of nonsense text, or steps in a dance can have an emergent property.</p>
     <p id="ybg29">It's believed to be the same with labyrinths.</p>
     <p id="ybg30">Kardic doctrine never explicitly mentions them in the text, but most practitioners believe that the Karak Kval inspired ancient people to build labyrinths as a final assault on the authority of God.</p>
-    <p id="ybg31">In the same way that a pattern dance can be a secret way of making five hundred liters of strawberry lemonade appear over Swallowden, the labyrinths are pattern dances that lead the explorer through an intricate set of steps which will transport her directly to heaven.</p> <!--The labyrinth guides us through a magic dance so convoluted that God never discovered it. -->
+    <p id="ybg31">In the same way that a pattern dance can be a secret way of making five hundred liters of strawberry lemonade appear over Swallowden, the labyrinths are believed to be pattern dances that lead the explorer through an intricate set of steps which will transport her directly to heaven.</p> <!--The labyrinth guides us through a magic dance so convoluted that God never discovered it. -->
     <p id="ybg32">A place which can normally only be visited by trained mystics.</p>
     <p id="ybg33">If you or I were to go there, with the full weight of our consciousness, it would corrupt heaven's sacred innocence, the garden of heaven would crumble around you, all the souls residing there would fall to earth, and all new babies would be born with full knowledge of their past lives.</p> <!--, prevent the salvation of all future souls, and cause all infants to be sent to earth with the weight of agency and the burden of loss-->
     <p id="ybg34">You follow the path of the labyrinth, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
@@ -5696,7 +5883,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbk3">It looks too narrow for either of us to fit through.</p>
     <p id="ybbk4">I know, right! Have you <i>seen</i> my hat?</p>
     <p id="ybbk5">You can take <i>off</i> your hat, you know.</p>
-    <p id="ybbk6">Easy for you to say!</p>
+    <p id="ybbk6">That's easy for you to say!</p>
     
     <p id="ybbk6a">I bet someone a bit skinnier than me could fit through there.</p>
     
@@ -5715,7 +5902,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbkk0">Anything interesting?</p>
     <p id="ybbkk1">No. Just an empty cavern.</p>
     <p id="ybbkk2">How odd. I wonder what caused the crack in the first place.</p>
-    <p id="ybbkk3">I once read that a labyrinth's puzzles will be more complex in areas of the ground that are nutrient rich, and simpler in areas that are nutrient poor. Perhaps the crack was caused by geological forces and left unhealed because of a lack of nutrients?</p>
+    <p id="ybbkk3">You know, I once read that a labyrinth's puzzles will be more complex in areas of the ground that are nutrient rich, and simpler in areas that are nutrient poor. Perhaps the crack was caused by geological forces and left unhealed because of a lack of nutrients?</p>
     <p id="ybbkk4">That's as good a guess as any.</p>
     <p id="ybbkk5">Well, let's press on, I suppose.</p>
 
@@ -5733,12 +5920,12 @@ performed by the Baltimore Consort<br>
     <p id="ybbm3">It's alluminum. Super light-weight.</p>
     <p id="ybbm4">That's clever. I considered bringing mine, but it was too heavy.</p>
     <p id="ybbm5">Figured tea was a luxury we could go without for a few days.</p>
-    <p id="ybbm6">This is nice, though.</p>
+    <p id="ybbm6">It's nice to have tea together, though.</p>
 
     <p id="ybbnlk1">It's another orchid.</p>
     <p id="ybbnlk2">Yep.</p>
     
-    <p id="ybbn1">More rocks.</p>
+    <p id="ybbn1">More rocks...</p>
 
     <p id="ybbn2">That middle one, is that quartz?</p>
     <p id="ybbn3">Good eye!</p>
@@ -5748,7 +5935,7 @@ performed by the Baltimore Consort<br>
 
     <p id="ybbn7">What about the one on the right?</p>
     <p id="ybbn8">Well that's just a piece of schist.</p>
-    <p id="ybbn9">That's not very nice.</p>
+    <p id="ybbn9">That's so rude?!?!</p>
 
     <p id="ybboo1">I could unroll my sleeping bag...</p>
     <p id="ybboo2">Or.</p>
@@ -5770,7 +5957,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo1">Did you realize this place was a fractal?</p>
     <p id="ybbo2">What do you mean?</p>
     <p id="ybbo3">Kodaly has been keeping the map updated. Here's every room we've seen so far.</p>
-    <p id="ybbo4">I suppose that makes sense, in a way. The larger shape seems to be built off that recurrent motif of the five squares.</p>
+    <p id="ybbo4">I suppose that makes sense, in a way. The larger shape seems to be built off that recurrent motif of the four ancillary squares.</p>
     <p id="ybbo5">What motif?</p>
     <p id="ybbo6">You haven't noticed it?</p>
     <p id="ybbo6a">On the book covers, the bricks, behind the shelves, imprinted on STMI's central processing unit. It looks like one square that's stretching outward, growing in four directions.</p>
@@ -5795,7 +5982,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo20">What about you?</p>
     <p id="ybbo21">Actually, yes.</p>
     <p id="ybbo22">My great grandmother passed down an incantation through the family.</p>
-    <p id="ybbo23">It's a string of nonsense text that spans three volumes, but if you recite each book without stopping for more than nine seconds between each word, a five-square kilometer fruit orchard will grow there overnight.</p>
+    <p id="ybbo23">It's a string of nonsense text that spans three volumes, but if you recite each book without stopping for more than nine and a half seconds, a five-square kilometer fruit orchard will grow there overnight.</p>
     <p id="ybbo24">My great grandmother is the only person I know who ever did this. I'm not sure where she got the spell from. It's a hell of a thing to stumble on accidentally, but someone must have done it.</p>
     <p id="ybbo25">What kind of orchard is it?</p>
     <p id="ybbo26">An orchard of every known variety of fruit, as well as many that don't seem to exist anywhere else.</p>
@@ -5820,7 +6007,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo45">Not with a direct confrontation, that's for sure.</p>
     <p id="ybbo46">We'll think of something.</p>
     <p id="ybbo47">You don't happen to know any Kardic languages, do you?</p>
-    <p id="ybbo48">No. Should I?</p>
+    <p id="ybbo48">No... Should I?</p>
     <p id="ybbo49">Kodaly and I found a poem hidden in the wall back there.</p>
     <p id="ybbo49a">Kodaly and I found a poem in Old East Kardic hidden in the wall back there.</p>
     <p id="ybbo49b">I wonder if it's related.</p>
@@ -5834,7 +6021,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo56">Be my guest.</p>
     <p id="ybbo57">Now Kodaly can translate the poem.</p>
 
-    <p id="yagaga1">I can't see the bottom, so I don't think climbing halfway down a broken rope bridge is a good idea.</p>
+    <p id="yagaga1">It's a broken rope bridge. I don't know if climbing down into a bottomless chasm is a good idea.</p>
    
     <p id="yagagada1">Is it getting <i>harder</i>?</p>
     <p id="yagagada2">Let's see if Stymie can help.</p>
@@ -5921,7 +6108,7 @@ performed by the Baltimore Consort<br>
         <p id="pococo6">...</p>
         <p id="pococo7">Halberd.</p>
         
-        <p id="pococo8">No reason to go back in there, I suppose.</p>
+        <p id="pococo8">No reason to go back in there.</p>
         
         <p id="pimpim1">That's the last one!</p>
         <p id="pimpim2">Good. Let's see what's on the other side, then we can scope out a place to make camp for the night and be done for today.</p>
@@ -5935,12 +6122,11 @@ performed by the Baltimore Consort<br>
         <p id="pimpim10">After you.</p>
 
 
-
 <!--End of dialogue list-->
 </div>
 
     <p id="poccit8">I bet we can translate the poem now that we have the pocket dictionary. If it's anything like Ak'tan, the grammar is pretty similar to our own.</p>
-        <p id="dict1">Kodaly said they know a related language with a similar grammar, but it doesn't look too difficult. Couldn't hurt to take a quick look at the poem before bed, could it?</p>
+        <p id="dict1">Right. The poem. Kodaly said they know a related language with a similar grammar, but it doesn't look too difficult. Couldn't hurt to take a quick look at the poem before bed, could it?</p>
 
                 <!--Inventory items will fill with text when an item is picked up-->
                 <div class="invFlex">
@@ -6461,9 +6647,10 @@ if (cookiesHas('welcomed')) {
     dialogue.welcomeShown = true;
     }
 
-if (cookiesHas('jukebox')) { 
-    dialogue.jukebox = true;
+if (cookiesHas('jukebox')) {
     youCanPlayMusicNow.style.display = "block";
+    dialogue.jukeboxSwitchShown = true;
+    dialogue.welcomeShown = true;
     setTimeout(() => {
         youCanPlayMusicNow.style.display = "none";
     }, 6000);
@@ -6538,7 +6725,7 @@ if (cookiesHas('tealdoorunlocked')) {
     if (cookiesHas('mysteriousVialTaken')) { 
         dialogue.mysteriousVialTaken = true;
         dialogue.keyItemsAdded = true;
-        keyitems.style.display = "block";
+        keyitemsP.style.display = "block";
 
     }
     
@@ -6546,7 +6733,23 @@ if (cookiesHas('tealdoorunlocked')) {
         exclamation.style.display = "none";
     }
 
-     if (cookiesHas('karakKyal')) {
+     if (cookiesHas('karakKyalCheat')) {
+        dialogue.masterSwitchChapterThreeDoor = true;
+        dialogue.karakKyal = true;
+        dialogue.verilyHasJoinedTheParty = true;
+        trio.style.display = "block";
+        //verilyhelper.style.display = "block";
+        current.room = "switchTerminus";
+        switchTerminus.style.display = "block";
+        lobby.style.display = "none";
+        checkWires();
+        map.region3c = true;
+        map.region1 = false;
+        determineTokenPosition();
+        dialogue.playAntiphonaFromCookies = true;
+    }
+
+    if (cookiesHas('karakKyal')) {
         dialogue.karakKyal = true;
         dialogue.verilyHasJoinedTheParty = true;
         trio.style.display = "block";
@@ -7533,13 +7736,19 @@ document.cookie = "notepadopened=notepadopened";
     if (dialogue.poemAddedToNotebook || cookiesHas('poem1found')) {
         poemTab.style.display = "block";
     }
+    conversationTab.style.display = "block";
     }
     
 }
 
 function hideNotes() {
+    jukeOff.style.display = "none";
+    jukeOn.style.display = "none";
+    jukeboxMode.style.display = "none";
     dialogue.preventM = false;
     notepad.open = false;
+    conversationTab.style.display = "none";
+    notebookTextSummary.style.display = "none";
 notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
@@ -7547,6 +7756,7 @@ notepadk.style.display = "none";
     notepadst.style.display = "none";
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
+    notepadsum.style.display = "none";
     notepadisecret.style.display = "none";
     notepadp.style.display = "none";
     notebookTextKodaly.style.display = "none";
@@ -7569,7 +7779,9 @@ function notepadK(){
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadmu.style.display = "none";
     
     notepadi.style.display = "none";
@@ -7587,6 +7799,9 @@ function notepadK(){
 function notepadB(){
     paperflipsound();
     notepadk.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadb.style.display = "block";
     notepadv.style.display = "none";
     notepads.style.display = "none";
@@ -7609,6 +7824,9 @@ function notepadV() {
     paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadv.style.display = "block";
     notepads.style.display = "none";
     notepadst.style.display = "none";
@@ -7635,6 +7853,9 @@ function notepadS(){
     notepadv.style.display = "none";
     notepads.style.display = "block";
     notepadst.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
     notepadisecret.style.display = "none";
@@ -7653,6 +7874,9 @@ function notepadST(){
     paperflipsound();
     notepadk.style.display = "none";
     notepadb.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "block";
@@ -7674,9 +7898,11 @@ function notepadInfo(){
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepads.style.display = "none";
     notepadst.style.display = "none";
-    
     notepadmu.style.display = "none";
     
     if (!dialogue.mysteriousVialTaken) {
@@ -7704,10 +7930,24 @@ var notepad = {
 function notepadMusic() {
     paperflipsound();
     notepadmu.style.display = "block";
+    if (dialogue.jukeboxSwitchShown) {
+        if (dialogue.jukebox) {
+            jukeboxMode.style.display = "block";
+            jukeOn.style.display = "block";
+            jukeOff.style.display = "none";
+        } else {
+            jukeboxMode.style.display = "block";
+            jukeOff.style.display = "block";
+            jukeOn.style.display = "none";
+        }
+    }
     notepadk.style.display = "none";
     notepadb.style.display = "none";
     notepadv.style.display = "none";
     notepads.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadst.style.display = "none";
     notepadi.style.display = "none";
     notepadisecret.style.display = "none";
@@ -7722,7 +7962,191 @@ function notepadMusic() {
     notebookTextMusic.style.display = "block";
     
     notebookTextInfo.style.display = "none";
+}
+
+
+function notepadSummary() {
+    paperflipsound();
+    notepadmu.style.display = "none";
+    notepadsum.style.display = "block";
+    notepadk.style.display = "none";
+    notepadb.style.display = "none";
+    notepadv.style.display = "none";
+    notepads.style.display = "none";
+    notepadst.style.display = "none";
+    notepadi.style.display = "none";
+    notepadisecret.style.display = "none";
+    notepadp.style.display = "none";
+     notebookTextVerily.style.display = "none";
+    notebookTextKodaly.style.display = "none";
+    notebookTextBridget.style.display = "none";
+    notebookTextShuri.style.display = "none";
+    notebookTextStymie.style.display = "none";
+    notebookTextMusic.style.display = "none";
+    notebookTextSummary.style.display = "block";
+    notebookTextInfo.style.display = "none";    
+    if (dialogue.dataCubeFound) {
+            sumSauna.style.color = "lightgrey";
+            sumColor.style.color = "lightgrey";
+        }
+    if (dialogue.summarySauna) {
+        sumSauna.style.display = "block";  
+        //lightgrey'd
+    }
+    if (dialogue.summaryColor) {
+        sumColor.style.display = "block";
+        //lightgrey'd
+    }
+
+    if (colorLock.solved) {
+        //all ch2
+            sumCh2.style.color = "lightgrey";
+            sum2a.style.color = "lightgrey";
+            sum2b.style.color = "lightgrey";
+            sum2c.style.color = "lightgrey";
+            sum2d.style.color = "lightgrey";
+            sum2e.style.color = "lightgrey";
+            sum2f.style.color = "lightgrey";
+            sum2g.style.color = "lightgrey";
+        }
+    if (key.silver) {
+        sum2b.style.color = "lightgrey";
+    }
+    if (dialogue.pillarSolved) {
+        sum2c.style.color = "lightgrey";
+        sum2d.style.color = "lightgrey";
+        sum2e.style.color = "lightgrey";
+        sum2f.style.color = "lightgrey";
+    }
+    if (dialogue.summaryCh2) {
+        sumCh2.style.display = "block";
+        //lightgrey'd
+    } if (dialogue.seenColorLockDoor) {
+        sumCh2.style.display = "block";
+        sum2a.style.display = "block";
+        //lightgrey'd
+    } if (dialogue.seenLockedDoorToWest && !key.silver) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2b.style.display = "block";
+    } if (key.silver) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2c.style.display = "block";
+    } if (dialogue.seenPillarRoom) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2d.style.display = "block";
+    } if (dialogue.seenClue1) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2e.style.display = "block";
+    } if (dialogue.halfAClue) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2f.style.display = "block";
+    } 
+    if (dialogue.pillarSolved) {
+        //lightgrey'd
+        sumCh2.style.display = "block";
+        sum2g.style.display = "block";
+    }
+    if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
+        sumCh3.style.color = "lightgrey";
+    }
     
+    if (dialogue.enteringLobbyThree) {
+        //lightgrey'd
+        sumCh3.style.display = "block";
+    }
+     if (dialogue.greenSwitchFlipped) {
+        sumKeys.style.color = "lightgrey";
+    }
+    
+    if (dialogue.documentedPhenom) {
+        //lightgrey'd
+        sumKeys.style.display = "block";
+    }
+
+    if (dialogue.redSwitchFlipped) {
+        justPipeThings.style.color = "lightgrey";
+        sumTubes.style.color = "lightgrey";
+        seenSouthLakePipes.style.color = "lightgrey";
+        secrketpntinpasssgge.style.color = "lightgrey";
+        gameishard.style.color = "lightgrey";
+    }
+    if (key.macaroni) {
+        gameishard.style.color = "lightgrey";
+    }
+
+    if (dialogue.secretPaintingPassageDiscovered) {
+        secrketpntinpasssgge.style.color = "lightgrey";
+    }
+    
+    if (dialogue.seenlobbypipesp) {
+        //mark
+        justPipeThings.style.display = "block";
+        sumTubes.style.display = "block";
+    } if (dialogue.seenSinkRoom) {
+        //lightgrey'd
+        sumTubes.style.display = "block";
+
+    } if (dialogue.seenTheSouthLakePipes) {
+        //mark
+        seenSouthLakePipes.style.display = "block";
+        sumTubes.style.display = "block";
+    } if (dialogue.squigglePlaced && key.ypipePlaced && !key.macaroniPipePlaced) {
+        //lightgrey'd
+        secrketpntinpasssgge.style.display = "block";
+    } if (dialogue.numberOfArcadeFailures > 0) {
+        //lightgrey'd
+        gameishard.style.display = "block";
+    } if (dialogue.seenTides) {
+        //lightgrey'd
+        sumSwitches.style.display = "block";
+    }
+    if (dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped && conductiveFlowers.red1 && conductiveFlowers.red2 && conductiveFlowers.green && conductiveFlowers.blue) {
+        sumSwitches.style.color = "lightgrey";
+        sumSwitches1.style.color = "lightgrey";
+        sumSwitches2.style.color = "lightgrey";
+        sumSwitches2b.style.color = "lightgrey";
+        sumSwitches3.style.color = "lightgrey";
+
+    }
+    if (dialogue.orangeFlowerHasBeenTaken) {
+        //lightgrey'd
+        sumSwitches1.style.display = "block";
+    } if (dialogue.cheeseAndHamSandwich) {
+        //lightgrey'd
+        sumSwitches2.style.display = "block";
+    } if (dialogue.paintingRoomDiscovered) {
+        //lightgrey'd
+        sumSwitches2b.style.display = "block";
+    } if (dialogue.switchTermSeen) {
+        //mark
+        sumSwitches3.style.display = "block";
+    }
+
+    if (dialogue.matchSetComplete) {
+        sumSwitches2b.style.color = "lightgrey";
+        sumSwitches2.style.color = "lightgrey";
+    }
+    
+    if (dialogue.youshouldcheckin2) {
+        //lightgrey'd
+        sumVerily.style.display = "block";
+    }
+    if (dialogue.haveNowCheckedInOnVerily) {
+        sumVerily.style.color = "lightgrey";
+    }
+    if (dialogue.verilyIsInLobbyThree) {
+        //lightgrey'd
+        sumVerily2.style.display = "block";
+    }
+    if (dialogue.seenVerilyIn3) {
+        sumVerily2.style.color = "lightgrey";
+        sumVerily.style.color = "lightgrey";
+    }
 }
 
 
@@ -7735,6 +8159,9 @@ function notepadPoem() {
     notepadv.style.display = "none";
     notepads.style.display = "none";
     notepadst.style.display = "none";
+    notepadsum.style.display = "none";
+    notebookTextSummary.style.display = "none";
+
     notepadmu.style.display = "none";
     notepadi.style.display = "none";
     notepadisecret.style.display = "none";
@@ -8134,11 +8561,7 @@ function drop1() {
             keys5ne.style.display = "block";
         } if (inventory.slot1 === "sunflower key") {
             keys5sw.style.display = "block";
-        } if (inventory.slot1 === "ruby held up to the sun colored key") {
-            keys6nw.style.display = "block";
-        } if (inventory.slot1 === "pink secret key") {
-            keys6s.style.display = "block";
-        } if (inventory.slot1 === "dusty pink key") {
+        }  if (inventory.slot1 === "dusty pink key") {
             keys8sw.style.display = "block";
         } if (inventory.slot1 === "cyan key") {
             lobbysw.style.display = "block";
@@ -8148,10 +8571,6 @@ function drop1() {
             lobbyse.style.display = "block";
         } if (inventory.slot1 === "sky blue key") {
             keys20sw.style.display = "block";
-        } if (inventory.slot1 === "suntone key") {
-            keys20se.style.display = "block";
-        } if (inventory.slot1 === "fuzzy aged cheddar colored key") {
-            keys22ne.style.display = "block";
         } if (inventory.slot1 === "cherry candy key") {
             keys20ne.style.display = "block";
         } if (inventory.slot1 === "platonic ideal pig colored key") {
@@ -8160,16 +8579,10 @@ function drop1() {
             keys21ne.style.display = "block";
         } if (inventory.slot1 === "strawberry syrup key") {
             keys22nw.style.display = "block";
-        } if (inventory.slot1 === "forrest green key") {
+        } if (inventory.slot1 === "forest green key") {
             keys22se.style.display = "block";
-        } if (inventory.slot1 === "pale sunlight key") {
-            keys24s.style.display = "block";
         } if (inventory.slot1 === "violent fuchsia key") {
             keys10ne.style.display = "block";
-        } if (inventory.slot1 === "just south of platonic ideal pig colored key") {
-            keys11nw.style.display = "block";
-        } if (inventory.slot1 === "hot pink key") {
-            keys11se.style.display = "block";
         } if (inventory.slot1 === "rosegold key") {
             keys13n.style.display = "block";
         } if (inventory.slot1 === "gunwhale grey key") {
@@ -8333,11 +8746,7 @@ function drop2() {
             keys5ne.style.display = "block";
         } if (inventory.slot2 === "sunflower key") {
             keys5sw.style.display = "block";
-        } if (inventory.slot2 === "ruby held up to the sun colored key") {
-            keys6nw.style.display = "block";
-        } if (inventory.slot2 === "pink secret key") {
-            keys6s.style.display = "block";
-        } if (inventory.slot2 === "dusty pink key") {
+        }if (inventory.slot2 === "dusty pink key") {
             keys8sw.style.display = "block";
         } if (inventory.slot2 === "cyan key") {
             lobbysw.style.display = "block";
@@ -8347,10 +8756,6 @@ function drop2() {
             lobbyse.style.display = "block";
         } if (inventory.slot2 === "sky blue key") {
             keys20sw.style.display = "block";
-        } if (inventory.slot2 === "suntone key") {
-            keys20se.style.display = "block";
-        } if (inventory.slot2 === "fuzzy aged cheddar colored key") {
-            keys22ne.style.display = "block";
         } if (inventory.slot2 === "cherry candy key") {
             keys20ne.style.display = "block";
         } if (inventory.slot2 === "platonic ideal pig colored key") {
@@ -8359,16 +8764,10 @@ function drop2() {
             keys21ne.style.display = "block";
         } if (inventory.slot2 === "strawberry syrup key") {
             keys22nw.style.display = "block";
-        } if (inventory.slot2 === "forrest green key") {
+        } if (inventory.slot2 === "forest green key") {
             keys22se.style.display = "block";
-        } if (inventory.slot2 === "pale sunlight key") {
-            keys24s.style.display = "block";
         } if (inventory.slot2 === "violent fuchsia key") {
             keys10ne.style.display = "block";
-        } if (inventory.slot2 === "just south of platonic ideal pig colored key") {
-            keys11nw.style.display = "block";
-        } if (inventory.slot2 === "hot pink key") {
-            keys11se.style.display = "block";
         } if (inventory.slot2 === "rosegold key") {
             keys13n.style.display = "block";
         } if (inventory.slot2 === "gunwhale grey key") {
@@ -8529,10 +8928,6 @@ function drop3() {
             keys5ne.style.display = "block";
         } if (inventory.slot3 === "sunflower key") {
             keys5sw.style.display = "block";
-        } if (inventory.slot3 === "ruby held up to the sun colored key") {
-            keys6nw.style.display = "block";
-        } if (inventory.slot3 === "pink secret key") {
-            keys6s.style.display = "block";
         } if (inventory.slot3 === "dusty pink key") {
             keys8sw.style.display = "block";
         } if (inventory.slot3 === "cyan key") {
@@ -8543,10 +8938,6 @@ function drop3() {
             lobbyse.style.display = "block";
         } if (inventory.slot3 === "sky blue key") {
             keys20sw.style.display = "block";
-        } if (inventory.slot3 === "suntone key") {
-            keys20se.style.display = "block";
-        } if (inventory.slot3 === "fuzzy aged cheddar colored key") {
-            keys22ne.style.display = "block";
         } if (inventory.slot3 === "cherry candy key") {
             keys20ne.style.display = "block";
         } if (inventory.slot3 === "platonic ideal pig colored key") {
@@ -8555,17 +8946,11 @@ function drop3() {
             keys21ne.style.display = "block";
         } if (inventory.slot3 === "strawberry syrup key") {
             keys22nw.style.display = "block";
-        } if (inventory.slot3 === "forrest green key") {
+        } if (inventory.slot3 === "forest green key") {
             keys22se.style.display = "block";
-        } if (inventory.slot3 === "pale sunlight key") {
-            keys24s.style.display = "block";
         } if (inventory.slot3 === "violent fuchsia key") {
             keys10ne.style.display = "block";
-        } if (inventory.slot3 === "just south of platonic ideal pig colored key") {
-            keys11nw.style.display = "block";
-        } if (inventory.slot3 === "hot pink key") {
-            keys11se.style.display = "block";
-        } if (inventory.slot3 === "rosegold key") {
+        }  if (inventory.slot3 === "rosegold key") {
             keys13n.style.display = "block";
         } if (inventory.slot3 === "gunwhale grey key") {
             keys16se.style.display = "block";
@@ -8728,10 +9113,6 @@ function drop4() {
             keys5ne.style.display = "block";
         } if (inventory.slot4 === "sunflower key") {
             keys5sw.style.display = "block";
-        } if (inventory.slot4 === "ruby held up to the sun colored key") {
-            keys6nw.style.display = "block";
-        } if (inventory.slot4 === "pink secret key") {
-            keys6s.style.display = "block";
         } if (inventory.slot4 === "dusty pink key") {
             keys8sw.style.display = "block";
         } if (inventory.slot4 === "cyan key") {
@@ -8744,10 +9125,6 @@ function drop4() {
             keys20sw.style.display = "block";
         } if (inventory.slot1 === "datacube") {
             datacube.style.display = "block";
-        } if (inventory.slot4 === "suntone key") {
-            keys20se.style.display = "block";
-        } if (inventory.slot4 === "fuzzy aged cheddar colored key") {
-            keys22ne.style.display = "block";
         } if (inventory.slot4 === "cherry candy key") {
             keys20ne.style.display = "block";
         } if (inventory.slot4 === "platonic ideal pig colored key") {
@@ -8756,16 +9133,10 @@ function drop4() {
             keys21ne.style.display = "block";
         } if (inventory.slot4 === "strawberry syrup key") {
             keys22nw.style.display = "block";
-        } if (inventory.slot4 === "forrest green key") {
+        } if (inventory.slot4 === "forest green key") {
             keys22se.style.display = "block";
-        } if (inventory.slot4 === "pale sunlight key") {
-            keys24s.style.display = "block";
         } if (inventory.slot4 === "violent fuchsia key") {
             keys10ne.style.display = "block";
-        } if (inventory.slot4 === "just south of platonic ideal pig colored key") {
-            keys11nw.style.display = "block";
-        } if (inventory.slot4 === "hot pink key") {
-            keys11se.style.display = "block";
         } if (inventory.slot4 === "rosegold key") {
             keys13n.style.display = "block";
         } if (inventory.slot4 === "gunwhale grey key") {
@@ -10241,7 +10612,8 @@ function  playLockBoxUnlocksSound() {
             if (pillarLock.c === 0){
                 if (pillarLock.d === 3) {
                     if (!lockbox.solved) {
-                    pillarsSolved.play();   
+                    pillarsSolved.play(); 
+                    dialogue.pillarSolved = true;
                     }
                 }
             }
@@ -10695,6 +11067,7 @@ function wrongCandles() {
     dialogue.wrongCandles = 1;
     k.style.display = "block";
     x1.style.display = "block";
+    dialogue.blockArrowTravel = true;
 document.addEventListener("keydown", function() {
    if (event.key === 'Enter' || event.key === ' ') {
        if (dialogue.wrongCandles === 1) {
@@ -10714,6 +11087,7 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.wrongCandles === 3) {
             x3.style.display = "none";
             k.style.display = "none";
+            dialogue.blockArrowTravel = false;
            return;
        }
  } });
@@ -11444,7 +11818,7 @@ const map = {
 }
 
 const dialogue = {
-    jukebox: false,
+    jukebox: false, //tester. norm false
     opening: false, //the initial dialogue sequence
     lockedconvo: false,
     arbalestAttack: true, //set this to false when you have the art for shuri firing the bolt
@@ -11509,8 +11883,6 @@ document.addEventListener("keydown", function() {
        if (dialogue.opening === 1) {
         if (!dialogue.openingHasPlayed) {
             areyouonmobile.style.display = "none";
-            //dialogue.mobilityUncertain = false;
-            //document.cookie = "mobileUncertaintyResolved=mobileUncertaintyResolved";
             dialogue.blockArrowTravel = true;
            p1.style.display = "none";
            pressEnter.style.display = "none";
@@ -11519,6 +11891,7 @@ document.addEventListener("keydown", function() {
            kn.style.display = "block";
            if (!dialogue.jukebox) {
             penser.play();
+            
            }
            
            dialogue.opening++;
@@ -11631,7 +12004,7 @@ document.addEventListener("keydown", function() {
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
                   //cheat  
                   //document.cookie = "cheat=cheat";
-                  //document.cookie = "karakKyal=karakKyal";
+                  //document.cookie = "karakKyalCheat=karakKyalCheat";
                   return;
        }
    }});
@@ -12289,7 +12662,7 @@ function handleHandle5() {
         ding2.play();
         ding.pause();
         ding3.pause();
-    } if (arcadeGame.score === 350) {
+    } if (arcadeGame.score === 300) {
         prizeglass3.style.display = "none";
        prizes.teddyBear = true;
        ding3.play();
@@ -12370,8 +12743,9 @@ function startCarmanAfterCham() {
             playText11.style.cursor = "pointer";
             playText12.style.cursor = "pointer";
             dialogue.jukebox = true;
+            dialogue.jukeboxSwitchShown = true;
             document.cookie = "jukebox=jukebox";
-    }, 515000); //mark. probably change to 177; the ledngth of buffons 
+    }, 177000); //the ledngth of buffons. the ledgnth I say!
 }
 
 function fadeOut() {
@@ -12436,25 +12810,25 @@ setTimeout(function() {
     }, 129000);
 setTimeout(function() {
             branleChampaigne.volume = 0.2;
-    }, 600);
+    }, 800);
     setTimeout(function() {
             branleChampaigne.volume = 0.3;
-    }, 1200);
+    }, 1600);
     setTimeout(function() {
            branleChampaigne.volume = 0.4;
-    }, 1800);
-    setTimeout(function() {
-            branleChampaigne.volume = 0.5;
     }, 2400);
     setTimeout(function() {
+            branleChampaigne.volume = 0.5;
+    }, 3200);
+    setTimeout(function() {
             branleChampaigne.volume = 0.6;
-    }, 3000);
+    }, 4000);
     setTimeout(function() {
            branleChampaigne.volume = 0.7;
-    }, 3600);
+    }, 4800);
     setTimeout(function() {
             branleChampaigne.volume = 0.8;
-    },4200);
+    },5600);
     
 }
 
@@ -12896,7 +13270,8 @@ lobby.style.display = "none";
                 } else if (dialogue.queneNoteShouldPlayInChapterTwoArea) {
                     if (!dialogue.karakKyal) {
                         if (!dialogue.jukebox) {
-                    queneNote.play();}
+                    queneNote.play();
+                        }
                     }
                 }
         }
@@ -12967,7 +13342,10 @@ lobby.style.display = "none";
                 randomDoorAudio();
                 lockboxRoom.style.display = "none";
                 displayRoom.style.display = "block";
-                current.room = "displayRoom";             
+                current.room = "displayRoom";
+                if (switcha.ison) {
+                    dialogue.seenClue1 = true;
+                }             
         } else if (current.room === "colorLockRoom"){
                 randomDoorAudio();
                 colorLockRoom.style.display = "none";
@@ -13261,6 +13639,7 @@ southlock20.style.display = "none";
                         }
                         lake.style.display = "block";
                         current.room = "lake";  
+                        dialogue.seenTheSouthLakePipes = true;
                         explorers.style.display = "none";
                         randomOarAudio();
                         //checkWater();
@@ -13290,79 +13669,7 @@ southlock20.style.display = "none";
                 lakeShoreSouth.style.display = "block";
                 current.room = "lakeShoreSouth";  
                 explorers.style.display = "block";
-        }  else if (current.room === "keys6") {
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "pink secret key"
-            && inventory.slot2 !== "pink secret key"
-            && inventory.slot3 !== "pink secret key"
-            && inventory.slot4 !== "pink secret key") {
-                keys6s.style.display = "none"; 
-                keypick.play();
-                inventory.slot1 = "pink secret key";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "pink secret key"
-            && inventory.slot2 !== "pink secret key"
-            && inventory.slot3 !== "pink secret key"
-            && inventory.slot4 !== "pink secret key") {
-                keys6s.style.display = "none";
-                keypick.play();
-                inventory.slot2 = "pink secret key";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "pink secret key"
-            && inventory.slot2 !== "pink secret key"
-            && inventory.slot3 !== "pink secret key"
-            && inventory.slot4 !== "pink secret key") {
-                keys6s.style.display = "none";
-                keypick.play();
-                inventory.slot3 = "pink secret key";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "pink secret key"
-            && inventory.slot2 !== "pink secret key"
-            && inventory.slot3 !== "pink secret key"
-            && inventory.slot4 !== "pink secret key") {
-                keys6s.style.display = "none";
-                keypick.play();
-                inventory.slot4 = "pink secret key";}
-        } else {
-            tooHeavyTooKeys();
-        }
-    }     else if (current.room === "keys24") {
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "pale sunlight key"
-            && inventory.slot2 !== "pale sunlight key"
-            && inventory.slot3 !== "pale sunlight key"
-            && inventory.slot4 !== "pale sunlight key") {
-                keys24s.style.display = "none"; 
-                keypick.play();
-                inventory.slot1 = "pale sunlight key";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "pale sunlight key"
-            && inventory.slot2 !== "pale sunlight key"
-            && inventory.slot3 !== "pale sunlight key"
-            && inventory.slot4 !== "pale sunlight key") {
-                keys24s.style.display = "none";
-                keypick.play();
-                inventory.slot2 = "pale sunlight key";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "pale sunlight key"
-            && inventory.slot2 !== "pale sunlight key"
-            && inventory.slot3 !== "pale sunlight key"
-            && inventory.slot4 !== "pale sunlight key") {
-                keys24s.style.display = "none";
-                keypick.play();
-                inventory.slot3 = "pale sunlight key";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "pale sunlight key"
-            && inventory.slot2 !== "pale sunlight key"
-            && inventory.slot3 !== "pale sunlight key"
-            && inventory.slot4 !== "pale sunlight key") {
-                keys24s.style.display = "none";
-                keypick.play();
-                inventory.slot4 = "pale sunlight key";}
-        } else {
-            tooHeavyTooKeys();
-        }
-    } else if (current.room === "platformsHintRoom") {
+        }      else if (current.room === "platformsHintRoom") {
         //Must be a clue.
         if (!dialogue.platformsHint) {
         dialogue.platformsHint = 1;
@@ -13440,6 +13747,7 @@ document.addEventListener("keydown", function() {
             lake1.style.display = "none";
                 lobbyThree.style.display = "block";
                 current.room = "lobbyThree";   
+                dialogue.seenTides = true;
                 triggerStmiNotifWhenOnlyOneSwitchHasBeenFlipped();
                 branle.volume = 0.2;        
                 map.region3 = true;
@@ -13801,7 +14109,8 @@ function goEast() {
                 randomDoorAudio();
                 longPipeRoom.style.display = "none";
                 pipesLobby.style.display = "block";
-                current.room = "pipesLobby";  
+                current.room = "pipesLobby";
+                dialogue.seenlobbypipesp = true;  
         } else if (current.room === "pipesLobby"){
                 randomDoorAudio();
                 pipesLobby.style.display = "none";
@@ -13924,6 +14233,7 @@ function goEast() {
                 lobbyThree.style.display = "none";
                 sink.style.display = "block";
                 current.room = "sink";     
+                dialogue.seenSinkRoom = true;
                 map.region3b = true;
                 map.region3 = false;
                 if (!dialogue.karakKyal) {
@@ -13939,11 +14249,7 @@ function goEast() {
                 if (dialogue.handle5turned || dialogue.handle3turned || dialogue.handle2turned || dialogue.handle1turned || dialogue.handle4turned) {
                     waterFlowing.play();
                 }   
-                if (dialogue.verilyIsInLobbyThree) {
-            verilysprite2.style.display = "block";
-            verilyteapot.style.display = "block";
-            verilysprite.style.display = "none";
-        }
+                
         }   else if (current.room === "keys24") {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "aquamarine key"
@@ -14155,6 +14461,7 @@ if (!inventory.slot1) {
             current.room = "newCellLake";
             explorers.style.display = "none";
         } else if (current.room === "cavernsOne") {
+            verilyGo.play();
             cavernsOne.style.display = "none";
             secretCrackRoom.style.display = "block";
             current.room = "secretCrackRoom";
@@ -14166,10 +14473,12 @@ if (!inventory.slot1) {
                 verilyWhatDidYouSee();
             }
         } else if (current.room === "secretTreeRoom") {
+            verilyGo.play();
             secretTreeRoom.style.display = "none";
             cavernsTwo.style.display = "block";
             current.room = "cavernsTwo";
         } else if (current.room === "cavernsTwo") {
+            verilyGo.play();
             cavernsTwo.style.display = "none";
             cavernsOne.style.display = "block";
             current.room = "cavernsOne";
@@ -14212,6 +14521,7 @@ function goWest() {
                 isSummerSuspicious();
                 lobbyTwo.style.display = "none";
                 gardenWest.style.display = "block";
+                dialogue.seenLockedDoorToWest = true;
                 current.room = "gardenWest";
                 if (!chapterTwoPartTwo.activated && !lobbyThree.achieved && !dialogue.queneNoteShouldPlayInChapterTwoArea && !cookiesHas('lobbyThree')) {
                     if (!dialogue.jukebox) {
@@ -14600,11 +14910,7 @@ function goWest() {
                     redmarkeron.style.display = "block";
                     redmarkeroff.style.display = "none";
                 }    
-                if (dialogue.verilyIsInLobbyThree) {
-            verilysprite2.style.display = "block";
-            verilyteapot.style.display = "block";
-                        verilysprite.style.display = "none";
-        }
+            
         } else if (current.room === "orientationControl") { //HOUSE OF TIDES
             randomOarAudio();    
             orientationControl.style.display = "none";
@@ -14706,6 +15012,7 @@ goWestIntoCrack();
             explorers.style.display = "block";
             mustBeBig();
         } else if (current.room === "lake1") {
+            dialogue.orangeFlowerHasBeenTaken = true;
             if (!dialogue.orangeflowertaken) {
             addOrangeFlowerToInventory();
             } else {
@@ -14720,12 +15027,14 @@ goWestIntoCrack();
         }  else if (current.room === "lake2") {
              orangeLightBulbTalk();
         } else if (current.room === "cavernsOne") {
+            verilyGo.play();
             cavernsOne.style.display = "none";
             cavernsTwo.style.display = "block";
             current.room = "cavernsTwo";
             mapmini.style.display = "none";
             trio.style.display = "none";
         } else if (current.room === "cavernsTwo") {
+            verilyGo.play();
             cavernsTwo.style.display = "none";
             secretTreeRoom.style.display = "block";
             current.room = "secretTreeRoom";
@@ -14794,7 +15103,7 @@ function goNorth() {
 
         else if (current.room === "dias") {
             if (!lock.solved){
-                //instead of "going north" this opens the combinationLock close-up
+                //instead of "goin north" this opens the combinationLock close-up
                 dias.style.display = "none";
                 mapmini.style.display = "none";
                 combinationLock.style.display = "block";
@@ -14921,6 +15230,7 @@ function goNorth() {
                 randomDoorAudio();
                 lockboxRoom.style.display = "none";
                 pillarRoom.style.display = "block";
+                dialogue.seenPillarRoom = true;
                 current.room = "pillarRoom";
                     //pillar the first
                     if (pillarLock.a === 1) {
@@ -15000,6 +15310,7 @@ function goNorth() {
                 gardenNorth.style.display = "none";
                 orchidRoom.style.display = "block";
                 current.room = "orchidRoom";
+                reallyLikeThisRoom();
                 }  
         else if (current.room === "orchidRoom"){
                 randomDoorAudio();
@@ -15011,6 +15322,7 @@ function goNorth() {
                 randomDoorAudio();
                 fernRoom.style.display = "none";
                 colorLockRoom.style.display = "block";
+                dialogue.seenColorLockDoor = true;
                 current.room = "colorLockRoom";
                 if (dialogue.chaseSequence && !dialogue.shuriComplete) {
                     itsaDeadEnd();
@@ -15018,7 +15330,7 @@ function goNorth() {
                 }   
         else if (current.room === "colorLockRoom") {
                 if (!colorLock.solved) {
-                //instead of "going north" this opens the colorLock close-up
+                //instead of "goin north" this opens the colorLock close-up
                 dialogue.colorDoorViewed = true;
                 colorLockRoom.style.display = "none";
                 colorLockCloseUp.style.display = "block";
@@ -15076,7 +15388,13 @@ function goNorth() {
                 current.room = "lobbyThree";    
                 queneNote.volume = 0.3;
                 document.cookie = "lobbyThree=lobbyThree"; 
-                dialogue.lobbythreeachieved = true;        
+                dialogue.lobbythreeachieved = true;    
+                if (dialogue.verilyIsInLobbyThree) {
+            verilysprite2.style.display = "block";
+            verilyteapot.style.display = "block";
+            verilysprite.style.display = "none";
+            
+        }    
         } else if (current.room === "keys26"){ //chapter three KEYS
                 randomDoorAudio();
                 keys26.style.display = "none";
@@ -15403,12 +15721,6 @@ function goNorth() {
             }
         }
        
-        if (dialogue.verilyIsInLobbyThree) {
-            verilysprite2.style.display = "block";
-            verilyteapot.style.display = "block";
-                        verilysprite.style.display = "none";
-
-        }
     }  else if (current.room === "pipesRun2") {
             secretBrick();
     } else if (current.room === "lake1"){ // HOUSE OF TIDES
@@ -15597,6 +15909,7 @@ function goNorth() {
                 randomDoorAudio();   
                 pillarDeadEnd.style.display = "none";
                 switchTerminus.style.display = "block";
+                dialogue.switchTermSeen = true;
                 current.room = "switchTerminus";  
                 explorers.style.zIndex = 0;     
                 trio.style.zIndex = 0;
@@ -15729,9 +16042,10 @@ randomDoorAudio();
                     if (!dialogue.jukebox){
                     branle.pause();
                     saltarello.play();
+                    dialogue.playAntiphonaFromCookies = true;
                     setTimeout(() => {
                         antiphona.play();
-                                }, 226000);
+                                }, 226000); //saltarello file is 2 saltarellos length 3:50; 230 seconds
                 }}
                 }
                 
@@ -16204,6 +16518,7 @@ function takeViolet() {
 
 function atLeastWeCanGetTheseCandles() {
     if (door.tried && !dialogue.tooheavytoovioletcandles) {
+        dialogue.blockArrowTravel = true;
     zd1.style.display = "block";
     k.style.display = "block";
     dialogue.candlesNow = 1;
@@ -16213,6 +16528,7 @@ if (event.key === 'Enter' || event.key === ' ') {
      zd1.style.display = "none";
      k.style.display = "none";
       dialogue.candlesNow = true;
+      dialogue.blockArrowTravel = false;
       door.tried = true;
     }}});}
 
@@ -16962,6 +17278,7 @@ function pickSE() {
     //radio
     else if (current.room === "lobby") {
         if (!dialogue.radio){
+            dialogue.blockArrowTravel = true;
       d1.style.display = "block";
       ra.style.display = "block";
       static.play();
@@ -17023,6 +17340,7 @@ if (event.key === 'Enter' || event.key === ' ') {
         dialogue.radio = true;
         document.cookie = "radio=radio";
         dialogue.radioCheck = true;
+        dialogue.blockArrowTravel = false;
         return;
      }
     }
@@ -17390,77 +17708,41 @@ if (current.room === "keys2") {
         }
     }     else if (current.room === "keys22") {
         if (!inventory.slot1) {
-            if (inventory.slot1 !== "forrest green key"
-            && inventory.slot2 !== "forrest green key"
-            && inventory.slot3 !== "forrest green key"
-            && inventory.slot4 !== "forrest green key") {
+            if (inventory.slot1 !== "forest green key"
+            && inventory.slot2 !== "forest green key"
+            && inventory.slot3 !== "forest green key"
+            && inventory.slot4 !== "forest green key") {
                 keys22se.style.display = "none"; 
                 keypick.play();
-                inventory.slot1 = "forrest green key";}
+                inventory.slot1 = "forest green key";}
         } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "forrest green key"
-            && inventory.slot2 !== "forrest green key"
-            && inventory.slot3 !== "forrest green key"
-            && inventory.slot4 !== "forrest green key") {
+            if (inventory.slot1 !== "forest green key"
+            && inventory.slot2 !== "forest green key"
+            && inventory.slot3 !== "forest green key"
+            && inventory.slot4 !== "forest green key") {
                 keys22se.style.display = "none";
                 keypick.play();
-                inventory.slot2 = "forrest green key";}
+                inventory.slot2 = "forest green key";}
         } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "forrest green key"
-            && inventory.slot2 !== "forrest green key"
-            && inventory.slot3 !== "forrest green key"
-            && inventory.slot4 !== "forrest green key") {
+            if (inventory.slot1 !== "forest green key"
+            && inventory.slot2 !== "forest green key"
+            && inventory.slot3 !== "forest green key"
+            && inventory.slot4 !== "forest green key") {
                 keys22se.style.display = "none";
                 keypick.play();
-                inventory.slot3 = "forrest green key";}
+                inventory.slot3 = "forest green key";}
         }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "forrest green key"
-            && inventory.slot2 !== "forrest green key"
-            && inventory.slot3 !== "forrest green key"
-            && inventory.slot4 !== "forrest green key") {
+            if (inventory.slot1 !== "forest green key"
+            && inventory.slot2 !== "forest green key"
+            && inventory.slot3 !== "forest green key"
+            && inventory.slot4 !== "forest green key") {
                 keys22se.style.display = "none";
                 keypick.play();
-                inventory.slot4 = "forrest green key";}
+                inventory.slot4 = "forest green key";}
         } else {
             tooHeavyTooKeys();
         }
-    }     else if (current.room === "keys20") {
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "suntone key"
-            && inventory.slot2 !== "suntone key"
-            && inventory.slot3 !== "suntone key"
-            && inventory.slot4 !== "suntone key") {
-                keys20se.style.display = "none"; 
-                keypick.play();
-                inventory.slot1 = "suntone key";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "suntone key"
-            && inventory.slot2 !== "suntone key"
-            && inventory.slot3 !== "suntone key"
-            && inventory.slot4 !== "suntone key") {
-                keys20se.style.display = "none";
-                keypick.play();
-                inventory.slot2 = "suntone key";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "suntone key"
-            && inventory.slot2 !== "suntone key"
-            && inventory.slot3 !== "suntone key"
-            && inventory.slot4 !== "suntone key") {
-                keys20se.style.display = "none";
-                keypick.play();
-                inventory.slot3 = "suntone key";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "suntone key"
-            && inventory.slot2 !== "suntone key"
-            && inventory.slot3 !== "suntone key"
-            && inventory.slot4 !== "suntone key") {
-                keys20se.style.display = "none";
-                keypick.play();
-                inventory.slot4 = "suntone key";}
-        } else {
-            tooHeavyTooKeys();
-        }
-    }     else if (current.room === "keysLobby") {
+    }         else if (current.room === "keysLobby") {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "baby violet key"
             && inventory.slot2 !== "baby violet key"
@@ -17533,6 +17815,9 @@ if (current.room === "keys2") {
             tooHeavyTooKeys();
         }
     }     else if (current.room === "keys11") {
+        if (dialogue.allowHotPink) {
+
+        
         if (!inventory.slot1) {
             if (inventory.slot1 !== "hot pink key"
             && inventory.slot2 !== "hot pink key"
@@ -17568,6 +17853,7 @@ if (current.room === "keys2") {
         } else {
             tooHeavyTooKeys();
         }
+    }
     }     else if (current.room === "keys5") {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "literature professor's tweed jacket colored key"
@@ -17806,43 +18092,7 @@ if (current.room === "keys3") {
         } else {
             tooHeavyTooKeys();
         }
-    }   else if (current.room === "keys22") {
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "fuzzy aged cheddar colored key"
-            && inventory.slot2 !== "fuzzy aged cheddar colored key"
-            && inventory.slot3 !== "fuzzy aged cheddar colored key"
-            && inventory.slot4 !== "fuzzy aged cheddar colored key") {
-                keys22ne.style.display = "none"; 
-                keypick.play();
-                inventory.slot1 = "fuzzy aged cheddar colored key";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "fuzzy aged cheddar colored key"
-            && inventory.slot2 !== "fuzzy aged cheddar colored key"
-            && inventory.slot3 !== "fuzzy aged cheddar colored key"
-            && inventory.slot4 !== "fuzzy aged cheddar colored key") {
-                keys22ne.style.display = "none";
-                keypick.play();
-                inventory.slot2 = "fuzzy aged cheddar colored key";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "fuzzy aged cheddar colored key"
-            && inventory.slot2 !== "fuzzy aged cheddar colored key"
-            && inventory.slot3 !== "fuzzy aged cheddar colored key"
-            && inventory.slot4 !== "fuzzy aged cheddar colored key") {
-                keys22ne.style.display = "none";
-                keypick.play();
-                inventory.slot3 = "fuzzy aged cheddar colored key";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "fuzzy aged cheddar colored key"
-            && inventory.slot2 !== "fuzzy aged cheddar colored key"
-            && inventory.slot3 !== "fuzzy aged cheddar colored key"
-            && inventory.slot4 !== "fuzzy aged cheddar colored key") {
-                keys22ne.style.display = "none";
-                keypick.play();
-                inventory.slot4 = "fuzzy aged cheddar colored key";}
-        } else {
-            tooHeavyTooKeys();
-        }
-    }     else if (current.room === "keys10") {
+    }      else if (current.room === "keys10") {
         if (!inventory.slot1) {
             if (inventory.slot1 !== "violent fuchsia key"
             && inventory.slot2 !== "violent fuchsia key"
@@ -18958,43 +19208,10 @@ function pickNW() {
         } else {
             tooHeavyTooKeys();
         }
-    }     else if (current.room === "keys11") {
-        if (!inventory.slot1) {
-            if (inventory.slot1 !== "just south of platonic ideal pig colored key"
-            && inventory.slot2 !== "just south of platonic ideal pig colored key"
-            && inventory.slot3 !== "just south of platonic ideal pig colored key"
-            && inventory.slot4 !== "just south of platonic ideal pig colored key") {
-                keys11nw.style.display = "none"; 
-                keypick.play();
-                inventory.slot1 = "just south of platonic ideal pig colored key";}
-        } else if (!inventory.slot2) {
-            if (inventory.slot1 !== "just south of platonic ideal pig colored key"
-            && inventory.slot2 !== "just south of platonic ideal pig colored key"
-            && inventory.slot3 !== "just south of platonic ideal pig colored key"
-            && inventory.slot4 !== "just south of platonic ideal pig colored key") {
-                keys11nw.style.display = "none";
-                keypick.play();
-                inventory.slot2 = "just south of platonic ideal pig colored key";}
-        } else if (!inventory.slot3) {
-            if (inventory.slot1 !== "just south of platonic ideal pig colored key"
-            && inventory.slot2 !== "just south of platonic ideal pig colored key"
-            && inventory.slot3 !== "just south of platonic ideal pig colored key"
-            && inventory.slot4 !== "just south of platonic ideal pig colored key") {
-                keys11nw.style.display = "none";
-                keypick.play();
-                inventory.slot3 = "just south of platonic ideal pig colored key";}
-        }  else if (!inventory.slot4) {
-            if (inventory.slot1 !== "just south of platonic ideal pig colored key"
-            && inventory.slot2 !== "just south of platonic ideal pig colored key"
-            && inventory.slot3 !== "just south of platonic ideal pig colored key"
-            && inventory.slot4 !== "just south of platonic ideal pig colored key") {
-                keys11nw.style.display = "none";
-                keypick.play();
-                inventory.slot4 = "just south of platonic ideal pig colored key";}
-        } else {
-            tooHeavyTooKeys();
-        }
-    }     else if (current.room === "keys6") {
+    }       else if (current.room === "keys6") {
+        if (dialogue.allowRubyKey) {
+
+        
         if (!inventory.slot1) {
             if (inventory.slot1 !== "ruby held up to the sun colored key"
             && inventory.slot2 !== "ruby held up to the sun colored key"
@@ -19031,6 +19248,7 @@ function pickNW() {
             tooHeavyTooKeys();
         }
     } 
+}
 
 
 }
@@ -19416,9 +19634,9 @@ function removeSecretCorner() {
         dialogue.mysteriousVialTaken = true;
         document.cookie = "mysteriousVialTaken=mysteriousVialTaken";
         dialogue.keyItemsAdded = true;
-        keyitems.style.display = "block";
         vialPloink.play();
         strangeAndMysteriousVial();
+        keyitemsP.style.display = "block";
     }
 }
 
@@ -20386,8 +20604,61 @@ function goWestIntoCrack() {
                 document.body.style.background = "#251d1d";
                 baseroom.style.display = "none";
                 stachel.style.display = "none";
-                keyitems.style.display = "none";
+                keyitemsP.style.display = "none";
                 trio.style.display = "none";
+}
+
+function switchJukeboxMode() {
+    if (dialogue.jukeboxSwitchShown) {
+    if (dialogue.jukebox) {
+        jukeOn.style.display = "none";
+        jukeOff.style.display = "block";
+        dialogue.jukebox = false;
+        pauseAllMusic();
+        if (current.room === "lobbyTwo") {
+            lamano.play(); 
+        } else if (dialogue.karakKyal) {
+            antiphona.play(); 
+        }
+    } else {
+        jukeOn.style.display = "block";
+        jukeOff.style.display = "none";
+        dialogue.jukebox = true;
+        pauseAllMusic();
+    }
+}
+}
+
+function pauseAllMusic() {
+        penser.pause();
+        doihmot.pause();   
+        lamano.pause(); 
+        queneNote.pause(); 
+        elmare.pause(); 
+        loferm.pause(); 
+        sacrumMysterium.pause(); 
+        laudaNovella.pause(); 
+        eightBitTune.pause(); 
+        doihmot.pause(); 
+        branle.pause(); 
+        saltarello.pause(); 
+        antiphona.pause(); 
+        branleChampaigne.pause(); 
+        buffons.pause(); 
+        penser.currentTime = 0;
+        doihmot.currentTime = 0;
+        lamano.currentTime = 0;
+        queneNote.currentTime = 0;
+        elmare.currentTime = 0;
+        loferm.currentTime = 0;
+        sacrumMysterium.currentTime = 0;
+        laudaNovella.currentTime = 0;
+        eightBitTune.currentTime = 0;
+        branle.currentTime = 0;
+        saltarello.currentTime = 0;
+        antiphona.currentTime = 0;
+        branleChampaigne.currentTime = 0;
+        buffons.currentTime = 0;
 }
 
 function goToTheHomePageWhyDontYou(){

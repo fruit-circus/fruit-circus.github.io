@@ -366,7 +366,7 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
         if (dialogue.arcadeGameActive && dialogue.intervalActive && !dialogue.stymieArcadeAlterations2) {
             playerHealth -= 1;}
         else if (dialogue.arcadeGameActive && dialogue.intervalActive && dialogue.stymieArcadeAlterations2) {
-            playerHealth -= 3;}
+            playerHealth -= 9;}
         }
 
     

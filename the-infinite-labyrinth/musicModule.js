@@ -273,7 +273,7 @@ function playEight() {
         loferm.pause(); 
         sacrumMysterium.pause(); 
         laudaNovella.pause(); 
-        eightBitTune.pause(); 
+        eightBitTune.play(); 
         doihmot.pause(); 
         branle.pause(); 
         saltarello.pause(); 
@@ -340,6 +340,7 @@ function playBranle() {
         eightBitTune.pause(); 
         branle.pause(); 
         saltarello.play(); 
+        saltarello.vollume = 1.8;
         antiphona.pause(); 
         branleChampaigne.pause(); 
         buffons.pause(); 
@@ -372,6 +373,7 @@ function playBranle() {
         branle.pause(); 
         saltarello.pause(); 
         antiphona.play(); 
+        antiphona.vollume = 1.8;
         branleChampaigne.pause(); 
         buffons.pause(); 
         penser.currentTime = 0;

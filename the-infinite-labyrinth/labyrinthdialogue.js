@@ -7591,6 +7591,8 @@ if (event.key === 'Enter' || event.key === ' ') {
         dialogue.deeperIn = true;
         dialogue.blockArrowTravel = false;
         dialogue.goingDeeperIntoTheLabyrinth = true;
+        map.region2 = true;
+        map.region1 = false;
         return;
     }
 }});} else {

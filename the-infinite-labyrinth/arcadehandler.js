@@ -192,7 +192,7 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
             break;}
         projectiles.push(projectile);}
       } else if (!dialogue.stymieArcadeAlterations1 && !dialogue.stymieArcadeAlterations2 && !dialogue.stymieArcadeAlterations3) {
-        for (var i = 0; i < 4; i++) { //no alterations //changeAmount
+        for (var i = 0; i < 3; i++) { //no alterations //changeAmount
         var x = Math.random() * gameSquare.size;
         var y = Math.random() * gameSquare.size;
         var direction = Math.floor(Math.random() * 8);
@@ -300,7 +300,7 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
             break;}
         projectiles.push(projectile);}
       }
-      }, 800);}} //mark. normally 700
+      }, 900);}} //mark. normally 700
 
 
     function updateTimer() {
@@ -352,7 +352,7 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
         if (projectile.x < playerX + playerSize &&
           projectile.x + projectile.size > playerX &&
           projectile.y < playerY + playerSize &&
-          projectile.y + projectile.size > playerY && !dialogue.stymieArcadeAlterations3) { //mark check this. after round 3, should not decrease health. shoubl be cyan
+          projectile.y + projectile.size > playerY) { 
           decreaseHealth();
           // Remove the projectile
           projectiles.splice(i, 1);
@@ -367,7 +367,9 @@ function closeTheArcadeGame() { // close arcade game, hide arcade
             playerHealth -= 1;}
         else if (dialogue.arcadeGameActive && dialogue.intervalActive && dialogue.stymieArcadeAlterations2) {
             playerHealth -= 9;}
-        }
+        if (dialogue.stymieArcadeAlterations3) {
+          playerHealth += 2;
+        }}
 
     
     function drawGame() {

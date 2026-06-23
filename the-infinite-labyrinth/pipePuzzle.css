@@ -1,0 +1,59 @@
+.pipe {
+    display: block;
+    cursor: pointer;
+    transform: rotate(0deg);
+    border: 2px dashed transparent;
+    border-radius: 30%;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#pipe-grid {
+    display: grid;
+    top: 80px;
+    position: absolute;
+    border: 2px solid black;
+}
+#pipePuzzle {
+    display: none;
+}
+#pipe-flex {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 90vw;
+}
+
+#row1,
+#row2,
+#row3 {
+    display: flex;
+    flex-direction: row;
+}
+
+#inflow,
+#inflowon {
+    cursor: pointer;
+    right: 190px;
+    top: -200px;
+    position: absolute;
+}
+
+#outflow {
+    right: 190px;
+    top: 550px;
+    position: absolute;
+}
+
+#button {
+    position: absolute;
+    left: 700px;
+    padding: 10px;
+    font-size: large;
+    top: 10px;
+    margin: 10px;
+}

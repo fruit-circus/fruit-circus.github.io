@@ -10,32 +10,36 @@
     <script src="mobiledialogue.js"></script>
     <script src="arcadehandler.js"></script>
     <script src="musicModule.js"></script>
+    <script src="pipework.js"></script>     
+    <link rel="stylesheet" href="pipePuzzle.css">    
     <meta name="description" content="A point and click adventure game about a bird and a frog exploring a labyrinth." />
 
 <style>
 /*
 
-REUPLOAD
-nowAvailable
-notepadsum
-jukeboxMode
-jukeOn
-jukeOff
-youcanplaymusicnow
-treescene 
-caverns2
-lockeddoor.mp3
-verilyGo
-stymiesquint
-
-pipes2blue (pipes)
-w2yellowdull
 no glass smash nosie online ??
+
+reupload:
+arcadehandler
 
 TEST
 reloading from the second lobby cookies: shoould remove locked door symbol for sauna and flashing thing for chasm, curtains for screen are closed. verily is still tampering (possibly only briefly?)
 
 code:
+expand brunhilda 
+drop when goin south into new cell
+change when in hallway, on chasm. 
+in pit (keys pit and alcoves pit)
+drop when going north into tides
+
+not appearing online (microsolf edge):
+lovelyworm takes too long to load
+northshelf not appearing online 
+surprised bridget 
+emptychest
+powerlinestraight
+
+
 make verilytinkering a gif
 boat explorers gif (bridget turns head, kodaly loses balance)
 new sound for: noteScribble
@@ -71,7 +75,6 @@ add various cookies:
 problems for later: 
 change nymph to druid
 have fish in second pond jump
-can't replicate: it's locked! is stuck.in KEYS possibly because of cookies?
 cannot replicate: just in chrome: stymie notif in lobby one increases presumably for labynames and cannot be clicked after wrench dropped after having entered lobby2 but not spoken to verily
 in chrome, if the map is open the smallness of the token allows the user to click on the stuff behind the map
 click on burning shrub to start convo also (portholeRoom would have to use a different map than roommap)
@@ -116,6 +119,14 @@ hiddd
         display: block;
 }
 
+
+#binarywirenwlit {
+        display: none;
+        z-index: -1;
+}
+#binarywirenw {
+     z-index: -1;
+}
 
 #plinthempty,
 #notepadsum,
@@ -603,6 +614,9 @@ z-index: 3;
 #ybbo53,
 #ybbo52,
 #ybbo51,
+#binarywirenelit,
+#binarywireselit,
+#binarywireswlit,
 #pococo1,
 #pococo2,
 #pococo3,
@@ -1365,6 +1379,7 @@ z-index: 3;
 
 
 
+
 </style>
 </head>
 
@@ -1372,6 +1387,9 @@ z-index: 3;
 
         <div> <!--Prime Floaters-->
             <img src="satchel.png" alt="satchel" usemap="#roommap" class="room" id="satchel">
+            <!-- failed plot to make notepad more UI
+            <img src="notepad.png" alt="notepad" onmouseover="shrinkNotepad()" onmouseup="growNotepad()" class="room" id="notepad">
+            -->
             <!--<img src="westregress.png" alt="satchel" usemap="#roommap" class="room" id="westregress">-->
             <img src="floaters/step1g.png" alt="satchel" usemap="#welcomemap" class="room" id="step1g">
             <img src="floaters/arrowBlocker.png" alt="satchel" usemap="#welcomemap" class="room" id="arrowBlocker">
@@ -1402,7 +1420,7 @@ z-index: 3;
             <img src="floaters/nextarrow2.png" alt="arrow" usemap="#nextsketchmap" class="arrow" id="nextarrow2">
             <img src="floaters/prevarrow2.png" alt="arrow" usemap="#nextsketchmap" class="arrow" id="prevarrow2">
             <img src="floaters/prompts.png" alt="satchel" usemap="#roommap" class="room" id="prompts">
-            <img src="floaters/mapmini.png" alt="pull up map" onclick="openMap()" class="room" id="mapmini">
+            <img src="floaters/mapmini.png" alt="pull up map" onmouseover="shrinkMap()" onmouseout="growMap()" onclick="openMap()" class="room" id="mapmini">
             <img src="floaters/region1map.png" alt="map" class="room" class="mapMap" usemap="#minimapMap" id="region1map">
             <img src="floaters/region1mapNew.png" alt="map" class="room" class="mapMap" usemap="#minimapMap" id="region1mapNew">
             <img src="floaters/region2map.png" alt="map" class="room" class="mapMap" usemap="#minimapMap" id="region2map">
@@ -1529,7 +1547,7 @@ Published by the Emerald Cove Commission,<br>
 1293 Finch St.<br>
 Arbin City, Enlan.</p>
                     <p id="pdpage3">began on this book, Old East Kardic was considered a dead language, and the only evidence for its ever having existed at all was the Olmed Book, a thousand-year-old volume of religious poetry from the Astid Kingdom of modern-day Derin, which still remains largely untranslated.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the course of my research among the villages north of Kalhen, </p>
-                    <p id="pdpage5">in the Olmed text.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because of the rigorous requirements of initiation into the rites of the Kardic mystics, the suspicious nature of their doctrine, and the slow and awkward nature of monolingual fieldwork, I was able to determine the veracity of only a handful of textual fragments, before prudence required that I flee the upperlands. I leave this text to enter- prising lexicographers of</p>
+                    <p id="pdpage5">in the Olmed text.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because of the rigorous requirements of initiation into the rites of the Kardic mystics, the suspicious nature of their doctrine, and the slow and awkward nature of monolingual fieldwork, I was able to determine the veracity of only a handful of textual fragments, before prudence required that I flee the upperlands. I leave this text to enterprising lexicographers of</p>
                     <p id="pdpage7">
 I am greatly indebted to the following for their kind assistance:<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Beach Psaulo of Arbia Paper Company, Arbin city, Enlan, and his staff. <br>
@@ -1763,7 +1781,7 @@ Vich – conj. Because.<br><br>
                     <p id="page9">ruh roh bruhbruh burh...<br><br>teddlieliilebebebebbeee***<br><br>riiiiiiip rauuip?<br><br>eeeerk.<br><br>—scooby and tweety</p> <!--Cailyn Lu and Njeri-->
                     <p id="page11">Hear ye, hear ye!<br><br>This quest begins from the great hollows of Chapel Hill, I am overjoyed to be making the voyage through the great Harper's words, coding, and drawings!<br><br>—Lady Krysten</p>
                     <p id="page13">Guess who's back for more labyrinthine queries!<br><br>—Iphis</p>
-                    <p id="page15"></p>
+                    <p id="page15">Hello creator of the Infinite Labyrinth, this is amazingggggg!!!!<br><br>—BAB</p> <!--Nasya-->
                     <p id="page17"></p>
                 </div>
                 <div class="right"> <!--lobby 1 book-->
@@ -1773,7 +1791,7 @@ Vich – conj. Because.<br><br>
                     <p id="page8">This is cooler than my shit that was the shape of a unicorn!<br><br>—Bananamaniac</p> <!--Hannah Fabrigar-->
                     <p id="page10">HI! My name is Alia and I am so excited to be here and explore the labyrinth.<br><br>—Your Mansa Friend</p>
                     <p id="page12">This is so cute! I love this. Did you draw all of this? Everything is so cute, I love this frog, I love the bird, this is so cute!!! I love it!!!<br><br>—Wilson</p>
-                    <p id="page14"> Greetings those who traverse these halls.<br><br>—NaderTheBadder</p>
+                    <p id="page14">Greetings those who traverse these halls.<br><br>—NaderTheBadder</p>
                     <p id="page16"></p>
                     <p id="page18"></p>
                 </div>
@@ -2788,8 +2806,8 @@ Vich – conj. Because.<br><br>
                 <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor">
                 <img src="pipes/platformclue.png" alt="door" usemap="#roommap" class="room" id="platformclue">
              </div>
-
-            <div id="arcadeRoom" usemap="#arcademap"> 
+<!--
+        <div id="arcadeRoom" usemap="#arcademap"> 
                 <img src="southdoor.png" alt="door" usemap="#arcademap" class="room" id="southdoor">
                 <img src="pipes/arcademachine.png" alt="door" usemap="#arcademap" class="room" id="arcademachine">
                 <img src="pipes/cupcake.png" alt="door" usemap="#arcademap" class="room" id="cupcake">
@@ -2799,7 +2817,42 @@ Vich – conj. Because.<br><br>
                 <img src="pipes/prizeglass2.png" alt="glass" usemap="#arcademap" class="room" id="prizeglass2">
                 <img src="pipes/prizeglass3.png" alt="glass" usemap="#arcademap" class="room" id="prizeglass3">
                 <img src="pipes/brokenglass.png" alt="glass" usemap="#arcademap" class="room" id="brokenglass">
+            </div>         
+-->
+            <div id="pipePuzzleRoom" usemap="#pipePuzzleRoomMap"> 
+                <img src="southdoor.png" alt="door" usemap="#pipePuzzleRoomMap" class="room" id="southdoor">
+                <img src="pipes/prizeglassbacking.png" alt="glass" usemap="#pipePuzzleRoomMap" class="room" id="prizeglassbacking">
+                <img src="pipes/curvepipe.png" alt="macaroni pipe" usemap="#pipePuzzleRoomMap" class="room" id="macaronipipe">
+                <img src="pipes/prizeglass2.png" alt="glass" usemap="#pipePuzzleRoomMap" class="room" id="prizeglass2">
+                <img src="pipes/pipePuzzleMini.png" alt="glass" usemap="#pipePuzzleRoomMap" class="room" id="pipePuzzleMini">
             </div>
+
+
+                <div id="pipePuzzle">
+                <div id="pipe-flex">
+                <div id="pipe-grid">
+                        <img id="inflow" onclick="check()" src="pipe-puzzle/inflow.png">
+                        <img id="inflowon" style="display: none;" src="pipe-puzzle/inflowon.png">
+                        <div id="row1">
+                                <img class="pipe" id="pipe1" src="pipe-puzzle/pipe1.png" onclick="rotate1()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe2" src="pipe-puzzle/pipe2.png" onclick="rotate2()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe3" src="pipe-puzzle/pipe3.png" onclick="rotate3()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                        </div>
+                        <div id="row2">
+                                <img class="pipe" id="pipe4" src="pipe-puzzle/pipe4.png" onclick="rotate4()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe5" src="pipe-puzzle/pipe5.png" onclick="rotate5()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe6" src="pipe-puzzle/pipe6.png" onclick="rotate6()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                        </div>
+                        <div id="row3">
+                                <img class="pipe" id="pipe7" src="pipe-puzzle/pipe7.png" onclick="rotate7()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe8" src="pipe-puzzle/pipe8.png" onclick="rotate8()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                                <img class="pipe" id="pipe9" src="pipe-puzzle/pipe9.png" onclick="rotate9()" onmouseover="smaller(this)" onmouseout="bigger(this)">
+                        </div>
+                        <img id="outflow" src="pipe-puzzle/outflow.png">
+                </div>
+                </div>
+                </div>
+        
             
             <div id="yPipeRoom" usemap="#yroommap"> 
                 <img src="westdoor.png" alt="door" usemap="#yroommap" class="room" id="westdoor"> 
@@ -2875,6 +2928,8 @@ Vich – conj. Because.<br><br>
     <img src="boats/boatsouth.png" alt="door" usemap="#lakemap" class="room"> 
         <img src="northdoor.png" alt="door" usemap="#roommap" class="room" id="northdoor"> 
     <img src="tides/northdoor21.png" alt="door" usemap="#roommap" class="room" id="northdoor21"> 
+    <img src="tides/binarywirene.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywirene"> 
+    <img src="tides/binarywirenelit.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywirenelit"> 
     <img src="westshelf.png" alt="door" usemap="#roommap" class="room" id="westshelf"> 
     <img src="redvialwestshelf.png" alt="door" usemap="#roommap" class="room" id="redvialwestshelf"> 
     <img src="westshelfobjects.png" alt="door" usemap="#roommap" class="room" id="westshelfobjects"> 
@@ -2892,6 +2947,8 @@ Vich – conj. Because.<br><br>
         <img src="boats/boatwest.png" alt="door" usemap="#binaryswitchesmap" class="room"> 
     <img src="tides/binaryplate.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
        <img src="tides/binaryplatenumbers.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
+    <img src="tides/binarywirese.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywirese"> 
+    <img src="tides/binarywireselit.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywireselit"> 
     <img src="tides/1on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch1onEast"> 
     <img src="tides/1off.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch1offEast"> 
      <img src="tides/2on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch2onEast"> 
@@ -2945,7 +3002,10 @@ Vich – conj. Because.<br><br>
     <img src="tides/pillaron.png" alt="lake" usemap="#pillarmap" class="room" id="pillaron"> 
     <img src="tides/panel14.png" alt="lake" usemap="#pillarmap" class="room" id="panel14"> 
     <img src="tides/panel14open.png" alt="lake" usemap="#pillarmap" class="room" id="panel14open"> 
-        <img src="tides/panel14rose.png" alt="lake" usemap="#pillarmap" class="room" id="panel14rose"> 
+        <img src="tides/panel14rose.png" alt="lake" usemap="#pillarmap" class="room" id="panel14rose">
+        <img src="tides/binarywirenw.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywirenw"> 
+    <img src="tides/binarywirenwlit.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywirenwlit"> 
+     
 
 </div>
 
@@ -2953,7 +3013,9 @@ Vich – conj. Because.<br><br>
     <img src="rooms/lakewest.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
     <img src="boats/boateast.png" alt="door" usemap="#binaryswitchesmap" class="room">
     <img src="tides/binaryplate.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
-        <img src="tides/binaryplatenumbers.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
+    <img src="tides/binarywiresw.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywiresw"> 
+    <img src="tides/binarywireswlit.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="binarywireswlit"> 
+    <img src="tides/binaryplatenumbers.png" alt="lake" usemap="#binaryswitchesmap" class="room"> 
     <img src="tides/1on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch1on"> 
     <img src="tides/1off.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch1off"> 
      <img src="tides/2on.png" alt="switch" usemap="#binaryswitchesmap" class="room" id="switch2on"> 
@@ -3098,6 +3160,8 @@ Vich – conj. Because.<br><br>
 <div id="cavernsTwo" usemap="#cavernmap2"> 
     <img src="rooms/caverns2.png" alt="caves" usemap="#cavernmap2" class="room">
 </div>
+
+
 
 <!--Adding a new room, stage 1/3-->
 
@@ -3414,6 +3478,17 @@ Vich – conj. Because.<br><br>
         <area shape="rect" coords="332,83,424,286" alt="g2" class="pointer" onclick="takeMacaroniPipe()">
         <area shape="rect" coords="425,0,541,206" alt="g3" class="pointer" onclick="takeTeddyBear()">
         <area shape="rect" coords="734,15,1000,376" alt="game" class="pointer" onclick="bikaipoArcadeGame()">
+    </map>
+
+
+    <map name="pipePuzzleRoomMap">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel"  onclick="showInv()">
+        <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+        <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="showKeyItems()">
+
+        <area shape="circle" coords="519,542,144" alt="southern door" class="pointer" onclick="goSouth()">
+        <area shape="rect" coords="332,83,424,286" alt="g2" class="pointer" onclick="takeMacaroniPipe()">
+        <area shape="rect" coords="734,15,1000,376" alt="game" class="pointer" onclick="openPipePuzzle()">
 
     </map>
 
@@ -3980,6 +4055,8 @@ Vich – conj. Because.<br><br>
 <audio id="keybloop"><source src="sound/keybloop.mp3" type="audio/mpeg"></audio>
 <audio id="keydel"><source src="sound/keydel.mp3" type="audio/mpeg"></audio>
 <audio id="booting"><source src="sound/booting.mp3" type="audio/mpeg"></audio>
+<audio id="clack1"><source src="pipe-puzzle/clack1.mp3" type="audio/mpeg"></audio>
+<audio id="clack2"><source src="pipe-puzzle/clack2.mp3" type="audio/mpeg"></audio>
 <!--
 <audio id="crossbowFire"><source src="sound/crossbowFire.mp3" type="audio/mpeg"></audio> 
 -->
@@ -4012,6 +4089,7 @@ Vich – conj. Because.<br><br>
 <audio id="verilyGo"><source src="sound/verilyGo.mp3" type="audio/mpeg"></audio>
 <audio id="clunk"><source src="sound/mapOpen.mp3" type="audio/mpeg"></audio>
 <audio id="wormSearch"><source src="sound/wormsearch.mp3" type="audio/mpeg"></audio>
+<audio id="bunk"><source src="pipe-puzzle/bunk.mp3" type="audio/mpeg"></audio>
 <audio id="worm1"><source src="sound/worm1.mp3" type="audio/mpeg"></audio>
 <audio id="worm2"><source src="sound/worm2.mp3" type="audio/mpeg"></audio>
 <audio id="worm3"><source src="sound/worm3.mp3" type="audio/mpeg"></audio>
@@ -5623,7 +5701,7 @@ performed by the Baltimore Consort<br>
     <p id="yyu1">It's a poem.</p>
     <p id="yyu2">Do you recognize the language? It looks northern.</p>
     <p id="yyu2a">Yes...</p>
-    <p id="yyu3">It's Old North Kardic. I spoke a very closely related language when I was doing field work around Derin.</p>
+    <p id="yyu3">It's Old East Kardic. I spoke a very closely related language when I was doing field work around Derin.</p>
     <p id="yyu4">Can you read it?</p>
     <p id="yyu5">No, not really. I think there are some cognates, but I would have to have a dictionary to really get into it.</p>
     <p id="yyu6">"Storrel" means "garden".</p>
@@ -5974,7 +6052,7 @@ performed by the Baltimore Consort<br>
     <p id="ybbo9">The labyrinth can repair itself, transmute stone into metal, send signals across hundreds of kilometers. It can even grant <i>sapience</i> to rudimentary scanning devices like the STMI.</p>
     <p id="ybbo10">If you could transport bits of the labyrinth to the surface, you could make a relay network! Potentially even one that could span the surface of the globe.</p>
     <p id="ybbo10a">Imagine that—a world where you could communicate with anyone, anywhere, instantaneously.</p>
-    <p id="ybbo11">Of course, each bit of the labyrinth would still need to be <i>alive</i> in order to receive and send an electric pulse, but...</p>
+    <p id="ybbo11">Of course, each bit of the labyrinth would still need to be <i>alive</i> in order to receive and send an electric pulse, which might be tremendously painful, but all in the name of...</p>
     <p id="ybbo12">...</p>
     <p id="ybbo13">It's just an idea, of course. Purely hypothetical</p>
 
@@ -6280,6 +6358,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
             e.preventDefault();
             hideInv();
         }
+        else if (e.key == "Escape" && dialogue.allowEscapeForPipePuzzle) {
+            e.preventDefault();
+            closePipePuzzle();
+        }
+        else if (e.key == "Enter" && dialogue.allowEscapeForPipePuzzle) {
+            check(); //pipework.js
+        }
         if (dialogue.allowYandN) {
             if (e.key == 'y') {
                 deleteCookies();
@@ -6565,7 +6650,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     if (e.key == 'k') {
                         letterK3.style.display = "block";
                         dialogue.thirdLetterSet = true;
-                        dialogue.arcadeName = "FUK";
+                        dialogue.arcadeName = "FUCK";
                         unlighting.style.display = "none";
                         keybloop.play();
                     }
@@ -12025,7 +12110,7 @@ document.addEventListener("keydown", function() {
                   document.cookie = "open=open;";
                   advanceButt.style.display = "none"; //just in case the user lied and also used keyboard
                   //cheat  
-                  //document.cookie = "cheat=cheat";
+                  document.cookie = "cheat=cheat";
                   //document.cookie = "karakKyalCheat=karakKyalCheat";
                   return;
        }
@@ -13254,17 +13339,21 @@ lobby.style.display = "none";
                 if (!dialogue.locked) {
                     itsLockedSauna();
                     lockeddoor.play();
-                    //southknock.style.display = "block";
-                    //setTimeout(function() {
-                    //southknock.style.display = "none";
-                    //}, 1000);
+                    /*
+                    southknock.style.display = "block";
+                    setTimeout(function() {
+                    southknock.style.display = "none";
+                    }, 1000);
+                    */
                 } else {
                     ahStillLocked();
                     lockeddoor.play();
-                    //southknock.style.display = "block";
-                    //setTimeout(function() {
-                    //southknock.style.display = "none";
-                    //}, 1000);
+                    /*
+                    southknock.style.display = "block";
+                    setTimeout(function() {
+                    southknock.style.display = "none";
+                    }, 1000);
+                    */
                 }
 }} else if (current.room === "chasm"){
             randomDoorAudio();
@@ -13888,6 +13977,11 @@ document.addEventListener("keydown", function() {
             showNotes();
         }   else if (current.room === "blueSwitchRoom") {
             showNotes();
+        }   else if (current.room === "pipePuzzleRoom") {
+                randomDoorAudio();
+                pipePuzzleRoom.style.display = "none";
+                current.room = "gallery";
+                gallery.style.display = "block";
         }
 
         determineTokenPosition();
@@ -16114,6 +16208,8 @@ randomDoorAudio();
             }
         } else if (current.room === "pocketDictionaryRoom") {
             takePocketDictFromPlinth();
+        } else if (current.room === "pipePuzzleRoom") {
+            openPipePuzzle();
         }
         determineTokenPosition();
     }; //end of check going north
@@ -19876,7 +19972,7 @@ function dropDataCube() { //for after talking to stymie. this NONEs the cube
 }
 
 function enterName() {
-    if (dialogue.arcadeName === "PISS" || dialogue.arcadeName === "PEE" || dialogue.arcadeName === "ASS" || dialogue.arcadeName === "FUK") {
+    if (dialogue.arcadeName === "PISS" || dialogue.arcadeName === "PEE" || dialogue.arcadeName === "ASS" || dialogue.arcadeName === "FUCK") {
         yyz11.style.display = "block";
             document.getElementById("scorename").innerHTML = dialogue.arcadeName;
             scorename.style.display = "block";
@@ -20052,6 +20148,9 @@ nextarrow2.style.display = "block";
 }
 
 function closeSketches() {
+    if (dialogue.allowEscapeForPipePuzzle) {
+        closePipePuzzle(); 
+    } else {
     sketch2.style.display = "none";
     sketch1.style.display = "none";
     sketch3.style.display = "none";
@@ -20063,6 +20162,7 @@ function closeSketches() {
     nextarrow2.style.display = "none";
     prevarrow2.style.display = "none";
     closeContactForm();
+    }
 }
 
 function goContact() {
@@ -20397,7 +20497,7 @@ function determineTokenPosition() {
             token.style.transform = "translate(125px, 150px)"
         } else if (current.room === "platformsHintRoom") {
             token.style.transform = "translate(200px, 75px)"
-        } else if (current.room === "arcadeRoom") {
+        } else if (current.room === "pipePuzzleRoom") {
             token.style.transform = "translate(200px, -75px)"
         }
 }
@@ -20681,6 +20781,29 @@ function pauseAllMusic() {
         antiphona.currentTime = 0;
         branleChampaigne.currentTime = 0;
         buffons.currentTime = 0;
+}
+
+function openPipePuzzle() {
+    pipePuzzle.style.display = "block";
+    bigX.style.display = "block";
+    bigX.style.top = "0px"; //mark check if this fucks it up later in sketches and maybe elsewhere
+    pipePuzzleRoom.style.display = "none";
+    baseroom.style.display = "none";
+    explorers.style.display = "none";
+    mapmini.style.display = "none";
+    satchel.style.display = "none";
+    dialogue.allowEscapeForPipePuzzle = true;
+}
+
+function closePipePuzzle() {
+    pipePuzzle.style.display = "none";
+    pipePuzzleRoom.style.display = "block";
+    baseroom.style.display = "block";
+    explorers.style.display = "block";
+    mapmini.style.display = "block";
+    satchel.style.display = "block";
+    dialogue.allowEscapeForPipePuzzle = false;
+    bigX.style.display = "none";
 }
 
 function goToTheHomePageWhyDontYou(){

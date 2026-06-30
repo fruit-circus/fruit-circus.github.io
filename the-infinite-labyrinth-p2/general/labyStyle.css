@@ -1,0 +1,74 @@
+.absolute {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*
+The None Pile
+*/
+#bluerose,
+#pinkWireRoom,
+#w2y2,
+#bluelit,
+#switchTerminus {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+#baseroom {
+    z-index: -2;
+}
+
+body {
+    background: #f5f1e0;
+}
+
+#ambientdark {
+    opacity: .6;
+    z-index: 3;
+    display: none;
+}
+
+#goBack,
+#goForward {
+    border-radius: 20%;
+    display: none;
+    z-index: 3;
+    cursor: pointer;
+    transform: translate(1205px, 660px);
+    width: 70px;
+}
+
+#goForward {
+    transform: translate(1290px, 660px);
+}
+
+#explorers {
+    z-index: 0;
+}
+
+#bdull2,
+#colorwires,
+#pinkon,
+#bcw2 {
+    z-index: -1;
+}
+
+.dialogue-chunk {
+    display: none;
+    position: absolute;
+}
+
+.dialogue-chunk > p {
+    transform: translate(370px, -280px);
+    max-width: 870px;
+    color: black;
+    height: 100px;
+    font-size: 25px;
+    font-family: garamond, serif, 'Times New Roman', Times;
+}

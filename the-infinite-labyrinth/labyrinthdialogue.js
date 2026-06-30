@@ -120,6 +120,25 @@
 //event.key === 'Enter' should match travel = true
 
 
+function shrinkNotepad() {
+  alert("hello");
+  notepad.style.width = "60px";
+}
+
+function shrinkMap() {
+  mapmini.style.width = "132px";
+  mapmini.style.left = "1292px";
+  mapmini.style.top = "1px";
+}
+
+
+function growMap() {
+  mapmini.style.width = "136px";
+  mapmini.style.left = "1290px";
+  mapmini.style.top = "0px";
+
+}
+
 //i sure hope stymie doesn't misrepresent any information
 function stymieDialogue() {
  if (current.room === "lobby") {
@@ -5955,8 +5974,8 @@ document.addEventListener("keydown", function() {
        }
        randomDoorAudio();
         gallery.style.display = "none";
-        arcadeRoom.style.display = "block";
-        current.room = "arcadeRoom";  
+        pipePuzzleRoom.style.display = "block";
+        current.room = "pipePuzzleRoom";  
         dialogue.secretPaintingPassageDiscovered = true; 
         document.cookie = "secretPaintingPassage=secretPaintingPassage";
      }
@@ -5966,8 +5985,8 @@ document.addEventListener("keydown", function() {
   if (current.room === "gallery") {
         randomDoorAudio();
         gallery.style.display = "none";
-        arcadeRoom.style.display = "block";
-        current.room = "arcadeRoom";  
+        pipePuzzleRoom.style.display = "block";
+        current.room = "pipePuzzleRoom";  
   }
    }
 }
@@ -6246,6 +6265,11 @@ document.addEventListener("keydown", function() {
        dialogue.letsGoBoating = true;
        dialogue.letsGoBoating2 = true;
        dialogue.blockArrowTravel = false;
+       if (key.oars) {
+        boatsouth.style.display = "block";
+       boatfloat.style.display = "none";
+       }
+       
      } 
    }});} else if (dialogue.letsGoBoating2 && !key.oars) {
 dialogue.goBoating2 = 1;
@@ -9315,6 +9339,7 @@ document.addEventListener("keydown", function() {
        } else if (dialogue.dfgdfgkjdfjkgnalal === 4) {
           yyz13.style.display = "none";
            yyz14.style.display = "block";
+           alert("sdf"); //mark
            b.style.display = "none";
            st.style.display = "block";
               dialogue.dfgdfgkjdfjkgnalal++;
@@ -9731,6 +9756,7 @@ function noPowerFlowing() {
        ybbi4.style.display = "none";
         b.style.display = "none";
        dialogue.liftilskdmfklngUp = true;
+       dialogue.hekfnjk = true;
      } }});
   }
 

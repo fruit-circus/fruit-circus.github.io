@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bridget and Kodaly Explore the Labyrinth</title>
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+    <link rel="stylesheet" href="general/labyStyle.css">
+    <link rel="icon" type="image/x-icon" href="general/labyfavy.ico">
+    <meta name="description" content="A point and click adventure game about a bird and a frog exploring a labyrinth. (Part 2. The thrilling conclusion.)" />
+</head>
+
+<body>
+<!--
+Table of Contents:
+    Audio
+    Prime Floaters
+    Rooms divs
+    Maps
+    Dialogue
+    Dialogue Children Declaration
+-->
+
+<!--Audios-->
+<audio id="travel1"><source src="sound/travel1.mp3" type="audio/mpeg"></audio>
+<audio id="travel2"><source src="sound/travel2.mp3" type="audio/mpeg"></audio>
+<audio id="travel3"><source src="sound/travel3.mp3" type="audio/mpeg"></audio>
+<audio id="travel4"><source src="sound/travel4.mp3" type="audio/mpeg"></audio>
+<!--Adios-->
+
+
+<div id="centerMe">
+
+<!--Prime floaters-->
+<!--Prime floaters-->
+<!--Prime floaters-->
+<img src="rooms/basicroom.png" alt="basic room" class="absolute" id="baseroom">
+<img src="people/explorers.gif" alt="basic room" class="absolute" id="explorers">
+<img src="general/home-button.png" alt="basic room" onclick="alert('hksdjnfkji')" class="absolute" id="homeButton">
+<img src="general/restart-button.png" alt="basic room" onclick="alert('hisdfsdf')" class="absolute" id="restartButton">
+<img src="general/satchel.png" alt="basic room" onclick="alert('hi')" class="absolute" id="satchel">
+<img src="general/notepad.png" alt="basic room" onclick="alert('hieeee')" class="absolute" id="notepad">
+
+<img src="general/ambientdark.png" alt="basic room" class="absolute" id="ambientdark">
+<img src="general/goBack.png"  title="previous dialogue card" alt="dialogue go back arrow" onmouseover="highlightArrow(this)" onmouseout="unhighlightArrow(this)" onclick="goBackDialogue()" class="absolute" id="goBack">
+<img src="general/goForward.png" title="next dialogue card" alt="dialogue go forward arrow" onmouseover="highlightArrow(this)" onmouseout="unhighlightArrow(this)" onclick="converse(activeTopic)" class="absolute" id="goForward">
+<!--Prime floaters-->
+<!--Prime floaters-->
+<!--Prime floaters-->
+
+<div id="blueWireRoom">
+    <img src="doors/westdoor.png" alt="door" usemap="#roommap" class="absolute">
+    <img src="wires/bluecircuitwires1.png" alt="wires" usemap="#roommap" class="absolute" id="bcw1">
+    <img src="wires/bluecircuitwires2.png" alt="wires" usemap="#roommap" class="absolute" id="bcw2">
+    <img src="wires/bdull2.png" alt="wires" usemap="#roommap" class="absolute" id="bdull2">
+    <img src="wires/bluerose.png" alt="wires" usemap="#roommap" class="absolute" id="bluerose">
+</div>
+
+<div id="switchTerminus">
+    <img src="doors/westdoor.png" alt="door" usemap="#switchTerminusMap" class="absolute">
+    <img src="doors/southdoor.png" alt="door" usemap="#switchTerminusMap" class="absolute">
+    <img src="wires/colorswitchdoor.png" alt="wires" usemap="#switchTerminusMap" class="absolute">
+    <img src="wires/colorwires.png" alt="wires" usemap="#switchTerminusMap" class="absolute" id="colorwires">
+    <img src="wires/yellowrose.png" alt="wires" usemap="#switchTerminusMap" class="absolute" id="yellowrose">
+    <img src="wires/w2y2.png" alt="door" usemap="#switchTerminusMap" class="absolute" id="w2y2">
+    <img src="wires/w2b2.png" alt="door" usemap="#switchTerminusMap" class="absolute" id="w2b2">
+    <img src="wires/redlit.png" alt="door" usemap="#switchTerminusMap" class="absolute" id="redlit">
+    <img src="wires/yellowlit.png" alt="door" usemap="#switchTerminusMap" class="absolute" id="yellowlit">
+    <img src="wires/bluelit.png" alt="door" usemap="#switchTerminusMap" class="absolute" id="bluelit">
+    <img src="doors/eastdoor.png" alt="door" usemap="#switchTerminusMap" class="absolute">
+</div>
+
+<div id="pinkWireRoom">
+    <img src="wires/pinkon.png" alt="wires" usemap="#roommap" class="absolute" id="pinkon">
+    <img src="wires/redrose1.png" alt="wires" usemap="#roommap" class="absolute" id="redrose1">
+    <img src="wires/redrose2.png" alt="wires" usemap="#roommap" class="absolute" id="redrose2">
+    <img src="doors/eastdoor.png" alt="door" usemap="#roommap" class="absolute">
+</div>
+
+</div> <!--End of center me-->
+
+<!--Maps-->
+<!--Maps-->
+<!--Maps-->
+    <map name="roommap"> <!--Basic Room Object Positions-->
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+        <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="showNotes()">
+        <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="showKeyItems()">
+        <area shape="rect" coords="650,9,780,155" alt="stymieterminal" class="pointer" onclick="stymieDialogue()">
+        <area shape="circle" coords="813,48,17" alt="stymieterminal" class="pointer" onclick="stymieDialogue()">
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="880,21,991,121" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="circle" coords="519,542,144" alt="southern door" class="pointer" onclick="goSouth()">
+        <area shape="circle" coords="355,450,90" alt="SW object" class="pointer" onclick="pickSW()">
+        <area shape="rect" coords="680,575,800,695" alt="SE object" class="pointer" onclick="pickSE()">
+        <area shape="rect" coords="960,145,1151,240" alt="NE object" class="pointer" onclick="pickNE()">
+        <area shape="rect" coords="512,220,708,280" alt="NW object" class="pointer" onclick="pickNW()">
+    </map>
+
+    <map name="switchTerminusMap">
+        <area shape="rect" coords="12,630,220,780" alt="satchel" class="pointer" id="satchel" onclick="showInv()">
+        <area shape="rect" coords="240,630,380,770" alt="notepad" class="pointer" onclick="alert('hi')">
+        <area shape="rect" coords="397,660,485,760" alt="notepad" class="pointer" onclick="showKeyItems()">
+        <area shape="circle" coords="400,183,100" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="365,303,56" alt="western door" class="pointer" onclick="goWest()">
+        <area shape="circle" coords="907,186,100" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="880,21,991,121" alt="northern door" class="pointer" onclick="goNorth()">
+        <area shape="rect" coords="999,400,1150,580" alt="eastern door" class="pointer" onclick="goEast()">
+        <area shape="circle" coords="519,542,144" alt="southern door" class="pointer" onclick="goSouth()">
+        <area shape="rect" coords="830,414,910,543" alt="yellow rose" class="pointer" onclick="pickYellowRose()">
+    </map>
+
+
+<!--Dialogue-->
+<!--Dialogue-->
+<!--Dialogue-->
+
+<div id="mirkwood">
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>You ever been to Mirkwood before?</p>
+    </div>
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/bridget.png">
+        <p>No, where's that?</p>
+    </div>
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>Actually I don't know.</p>
+    </div>
+</div>
+
+
+<div id="mirkwood2">
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>I remembered where it is.</p>
+    </div>
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/bridget.png">
+        <p>Oh yeah?</p>
+    </div>
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>It's in the Lord of the Rings</p>
+    </div>
+</div>
+
+
+<div id="mirkwood3">
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/bridget.png">
+        <p>That's not a place.</p>
+    </div>
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>Sure it is</p>
+    </div>
+</div>
+
+
+<div id="pinkRoses">
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/bridget.png">
+        <p>Somehow, these flowers conduct electric current.</p>
+    </div>
+</div>
+
+<div id="noReasonToGoBack">
+    <div class="dialogue-chunk">
+        <img class="portrait" src="portraits/kodaly.png">
+        <p>No reason to go back that way, I suppose.</p>
+    </div>
+</div>
+
+
+
+</body>
+<script>
+
+const mirk = document.getElementById('mirkwood').children;
+const mirk2 = document.getElementById('mirkwood2').children;
+const mirk3 = document.getElementById('mirkwood3').children;
+const pinkRoses = document.getElementById('pinkRoses').children;
+const noReasonToGoBack = document.getElementById('noReasonToGoBack').children;
+
+</script>
+<script src="general/labyScript.js"></script>
+
+</html>

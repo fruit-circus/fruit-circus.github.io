@@ -11,17 +11,25 @@
     width: 100%;
     }
 
-    #peach {
+    #peach,
+    #peach2 {
         position: absolute;
         width: 9%;
         transform: translate(330%,330%);
     }
-    #grape {
+    #peach2,
+    #starfruit2,
+    #grape2 {
+        display: none;
+    }
+    #grape,
+    #grape2 {
         position: absolute;
         width: 8%;
         transform: translate(730%,370%);
     }
-    #starfruit {
+    #starfruit,
+    #starfruit2 {
         position: absolute;
         width: 9%;
         transform: translate(500%,120%);
@@ -34,24 +42,58 @@
 <img src="fruit_tree.png" id="fruittree" alt="fruit tree">
 
 <a href="fiction.html">
-<img src="peach.png" id="peach" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="peach"/>
+<img src="peach.png" id="peach" onmouseover="peachWiggle()" alt="peach"/>
 </a>
+
+<a href="fiction.html">
+<img src="peach2.png" id="peach2" onmouseout="peachUnwiggle()" alt="peach"/>
+</a>
+
 <a href="games.html">
-<img src="starfruit.png" id="starfruit" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="starfruit"/>
+<img src="starfruit.png" id="starfruit" onmouseover="starWiggle()" alt="starfruit"/>
 </a>
+
+<a href="games.html">
+<img src="starfruit2.png" id="starfruit2" onmouseout="starUnwiggle()" alt="starfruit"/>
+</a>
+
 <a href="poetry.html">
-<img src="grape.png" id="grape" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="grape"/>
+<img src="grape.png" id="grape" onmouseover="grapeWiggle()" alt="grape"/>
+</a>
+
+<a href="poetry.html">
+<img src="grape2.png" id="grape2" onmouseout="grapeUnwiggle()" alt="grape"/>
 </a>
 
  
 </div>
 </body>
 <script>
-    function fruitWidthOver(fruit) {
-        fruit.style.border = "2px dashed black";
+    function peachWiggle() {
+        peach.style.display = "none";
+        peach2.style.display = "block";
     }
-    function fruitWidthOut(fruit) {
-        fruit.style.border = "2px dashed transparent";
+    function peachUnwiggle() {
+        peach.style.display = "block";
+        peach2.style.display = "none";
+    }
+
+    function starWiggle() {
+        starfruit.style.display = "none";
+        starfruit2.style.display = "block";
+    }
+    function starUnwiggle() {
+        starfruit.style.display = "block";
+        starfruit2.style.display = "none";
+    }
+
+    function grapeWiggle() {
+        grape.style.display = "none";
+        grape2.style.display = "block";
+    }
+    function grapeUnwiggle() {
+        grape.style.display = "block";
+        grape2.style.display = "none";
     }
 </script>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit Directory</title>
+  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">
+</head>
+<style>
+  
+  #fruittree {
+    position: absolute;
+    width: 100%;
+    }
+
+    #peach {
+        position: absolute;
+        width: 9%;
+        transform: translate(330%,330%);
+    }
+    #grape {
+        position: absolute;
+        width: 8%;
+        transform: translate(730%,370%);
+    }
+    #starfruit {
+        position: absolute;
+        width: 9%;
+        transform: translate(500%,120%);
+        
+    }
+
+</style>
+
+
+<img src="fruit_tree.png" id="fruittree" alt="fruit tree">
+
+<a href="fiction.html">
+<img src="peach.png" id="peach" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="peach"/>
+</a>
+<a href="games.html">
+<img src="starfruit.png" id="starfruit" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="starfruit"/>
+</a>
+<a href="poetry.html">
+<img src="grape.png" id="grape" onmouseover="fruitWidthOver(this)" onmouseout="fruitWidthOut(this)" alt="grape"/>
+</a>
+
+ 
+</div>
+</body>
+<script>
+    function fruitWidthOver(fruit) {
+        fruit.style.border = "2px dashed black";
+    }
+    function fruitWidthOut(fruit) {
+        fruit.style.border = "2px dashed transparent";
+    }
+</script>
+</html>

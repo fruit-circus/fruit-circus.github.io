@@ -13,6 +13,7 @@
 
     #peach,
     #peach2 {
+        cursor: pointer;
         position: absolute;
         width: 9%;
         transform: translate(330%,330%);
@@ -24,46 +25,78 @@
     }
     #grape,
     #grape2 {
+        cursor: pointer;
         position: absolute;
         width: 8%;
         transform: translate(730%,370%);
     }
     #starfruit,
     #starfruit2 {
+        cursor: pointer;
         position: absolute;
         width: 9%;
         transform: translate(500%,120%);
-        
+    }
+    .pointer {
+        cursor: pointer;
+    }
+    #meek {
+        z-index: 2;
+        display: none;
+        position: absolute;
+        width: 100%;
+        transform: translate(-16.5%,-3%);
+    }
+    #meek2 {
+        z-index: 2;
+        display: none;
+        width: 100%;
+        position: absolute;
+        transform: translate(0%,0%);
+    }
+    #t {
+        position: absolute;
+        width: 9%;
+        transform: translate(380%,0%);
+    }
+    #c {
+        position: absolute;
+        width: 10%;
+        transform: translate(691%,0%);
     }
 
 </style>
 
 
 <img src="fruit_tree.png" id="fruittree" alt="fruit tree">
+<img src="the-t.png" id="t" alt="letter t" class="pointer" onclick="activateMeek()">
+<img src="the-c.png" id="c" alt="letter c" class="pointer" onclick="activateMeek2()">
 
-<a href="fiction.html">
-<img src="peach.png" id="peach" onmouseover="peachWiggle()" alt="peach"/>
-</a>
 
-<a href="fiction.html">
-<img src="peach2.png" id="peach2" onmouseout="peachUnwiggle()" alt="peach"/>
-</a>
+<img src="peach.png" id="peach" onclick="fiction()" onmouseover="peachWiggle()" alt="peach"/>
 
-<a href="games.html">
-<img src="starfruit.png" id="starfruit" onmouseover="starWiggle()" alt="starfruit"/>
-</a>
+<img src="peach2.png" id="peach2" onclick="fiction()" onmouseout="peachUnwiggle()" alt="peach"/>
 
-<a href="games.html">
-<img src="starfruit2.png" id="starfruit2" onmouseout="starUnwiggle()" alt="starfruit"/>
-</a>
+<img src="starfruit.png" id="starfruit" onclick="games()" onmouseover="starWiggle()" alt="starfruit"/>
 
-<a href="poetry.html">
-<img src="grape.png" id="grape" onmouseover="grapeWiggle()" alt="grape"/>
-</a>
 
-<a href="poetry.html">
-<img src="grape2.png" id="grape2" onmouseout="grapeUnwiggle()" alt="grape"/>
-</a>
+<img src="starfruit2.png" id="starfruit2" onclick="games()" onmouseout="starUnwiggle()" alt="starfruit"/>
+
+
+<img src="grape.png" id="grape" onclick="poetry()" onmouseover="grapeWiggle()" alt="grape"/>
+
+
+<img src="grape2.png" id="grape2" onclick="poetry()" onmouseout="grapeUnwiggle()" alt="grape"/>
+
+
+<img src="meek.png" id="meek" alt="meekus"/>
+<img src="meek2.png" id="meek2" alt="meekus"/>
+<audio src="knock.mp3" id="knock"></audio>
+<audio src="knock2.mp3" id="knock2"></audio>
+
+        <audio id="pop"> <source src="squelch1.mp3" type="audio/mpeg"> </audio>
+        <audio id="pop2"> <source src="squelch2.mp3" type="audio/mpeg"> </audio>
+        <audio id="pop3"> <source src="squelch1.mp3" type="audio/mpeg"> </audio>
 
  
 </div>
@@ -95,5 +128,54 @@
         grape.style.display = "block";
         grape2.style.display = "none";
     }
+
+    var meekus = false;
+    var meekus2 = false;
+
+    function activateMeek() {
+        if (!meekus) {
+            knock.play();
+            setTimeout(function() {
+                meek.style.display = "block";
+                setTimeout(function() {
+                    meek.style.display = "none";
+                    meekus = true;
+                }, 1500);
+            }, 700);
+        } else {
+            knock2.play();
+        }
+    }
+
+    function activateMeek2() {
+        if (!meekus2) {
+            knock.play();
+            setTimeout(function() {
+                meek2.style.display = "block";
+                setTimeout(function() {
+                    meek2.style.display = "none";
+                    meekus2 = true;
+                }, 2700);
+            }, 700);
+        } else {
+            knock2.play();
+        }
+    }
+
+function poetry() {
+    pop2.play();
+    setTimeout(function() {window.open('poetry.html', '_self');}, 500);
+}
+
+function games() {
+    pop.play();
+    setTimeout(function() {window.open('games.html', '_self');}, 500);
+}
+
+function fiction() {
+    pop.play();
+    setTimeout(function() {window.open('fiction.html', '_self');}, 500);
+}
+
 </script>
 </html>

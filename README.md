@@ -5,8 +5,8 @@ a transformative multi-media experience by Harper Reese (they/them)
 
 🫐 [Fruit Wizard](https://fruit-circus.github.io/fruit_wizard.html)
 
-🍋 [Meekus]([https://fruit-circus.github.io/connections.html](https://fruit-circus.github.io/fruit-directory/meekus/meekus.html))
+🍋 [Meekus](https://fruit-circus.github.io/fruit-directory/meekus/meekus.html)
 
 🍑 [The Infinite Labyrinth](https://fruit-circus.github.io/the-infinite-labyrinth/labyrinth.html) 
 
-🥝 [Heron's House](https://fruit-circus.github.io/herons-house.html) (Coming soon!)
+🥝 [Heron's House](https://fruit-circus.github.io/herons-house/) (Coming soon!)

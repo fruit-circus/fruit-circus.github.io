@@ -68,7 +68,7 @@
 </style>
 
 
-<img src="fruit_tree.png" id="fruittree" alt="fruit tree">
+<img src="fruit_tree.png" onmouseover="allUnwiggle()" id="fruittree" alt="fruit tree">
 <img src="the-t.png" id="t" alt="letter t" class="pointer" onclick="activateMeek()">
 <img src="the-c.png" id="c" alt="letter c" class="pointer" onclick="activateMeek2()">
 
@@ -175,6 +175,12 @@ function games() {
 function fiction() {
     pop.play();
     setTimeout(function() {window.open('fruit-directory/fiction.html', '_self');}, 500);
+}
+
+function allUnwiggle() {
+    starUnwiggle();
+    grapeUnwiggle();
+    peachUnwiggle();
 }
 
 </script>

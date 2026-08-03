@@ -17,10 +17,15 @@
 <style>
 /*
 
-no glass smash nosie online ??
+HIGH PRIOR
+CHECK ybbi4 wont clear
+draw pipe puzzle exterior and upload
+restore and redraw door knocking gif
+doihmot?? plays after solider cuts bridge 
+wasd (possibly arrow keys) and space bar still function when guest book is open
 
-reupload:
-arcadehandler
+LOWER PRIOR
+stymie notif not triggering for checking on verily (possibly after alerting to having lit one of the stones)
 
 TEST
 reloading from the second lobby cookies: shoould remove locked door symbol for sauna and flashing thing for chasm, curtains for screen are closed. verily is still tampering (possibly only briefly?)
@@ -2834,7 +2839,7 @@ Vich – conj. Because.<br><br>
                 <div id="pipePuzzle">
                 <div id="pipe-flex">
                 <div id="pipe-grid">
-                        <img id="inflow" onclick="check()" src="pipe-puzzle/inflow.png">
+                        <img id="inflow" onclick="checkMe()" src="pipe-puzzle/inflow.png">
                         <img id="inflowon" style="display: none;" src="pipe-puzzle/inflowon.png">
                         <div id="row1">
                                 <img class="pipe" id="pipe1" src="pipe-puzzle/pipe1.png" onclick="rotate1()" onmouseover="smaller(this)" onmouseout="bigger(this)">
@@ -3971,7 +3976,7 @@ Vich – conj. Because.<br><br>
         </form>
     </div>
 
-      <!--Arrows lobby guest book-->
+      <!--Third lobby guest book-->
     <div class="entryform" id="entryform3">
         <form action="https://formspree.io/f/xqavojbb" method="POST" target="_blank">      
             <span style="font-family: fantasy;">Message:</span><br>             
@@ -3983,7 +3988,7 @@ Vich – conj. Because.<br><br>
 
       <!--keys 27 secret guest book-->
     <div class="entryform" id="entryform4">
-        <form action="https://formspree.io/f/xzzlqwav" method="POST" target="_blank">
+        <form action="https://formspree.io/f/mgogglaa" method="POST" target="_blank">
             <span style="font-family: fantasy;">Message:</span><br>             
         <textarea for="arrows lobby" style="width:333px; height:460px; background: transparent; resize: none;" id="comments" value="Write your message here." name="comments"></textarea><br><br>
         <span style="font-family: fantasy;">Alias:</span> <input type="text" style="background: transparent;" id="alias" name="alias"><br><br>
@@ -5477,7 +5482,7 @@ performed by the Baltimore Consort<br>
 
         <p id="yye1">(The sound of sixteen feral racoons who have fallen into a chasm)</p>
         <p id="yye2">Did you hear that?</p>
-        <p id="yye3">Nope!!</p> <!---->
+        <p id="yye3">No!!!</p> <!---->
 
         <p id="yyf1">It's missing a handle.</p>
         
@@ -5883,6 +5888,7 @@ performed by the Baltimore Consort<br>
     <p id="ybf22">He's a Kardic Zealot.</p>
     <p id="ybf23">We can't let what happened in Port Armora happen here.</p>
 
+    <!--unused-->
     <p id="ybg1">Ah!!!</p> <!--B blocks a bolt-->
     <p id="ybg2">I guess he's serious.</p>
     <p id="ybg3">YOU THINK?</p>
@@ -5918,8 +5924,8 @@ performed by the Baltimore Consort<br>
     <p id="ybg31">In the same way that a pattern dance can be a secret way of making five hundred liters of strawberry lemonade appear over Swallowden, the labyrinths are believed to be pattern dances that lead the explorer through an intricate set of steps which will transport her directly to heaven.</p> <!--The labyrinth guides us through a magic dance so convoluted that God never discovered it. -->
     <p id="ybg32">A place which can normally only be visited by trained mystics.</p>
     <p id="ybg33">If you or I were to go there, with the full weight of our consciousness, it would corrupt heaven's sacred innocence, the garden of heaven would crumble around you, all the souls residing there would fall to earth, and all new babies would be born with full knowledge of their past lives.</p> <!--, prevent the salvation of all future souls, and cause all infants to be sent to earth with the weight of agency and the burden of loss-->
-    <p id="ybg34">You follow the path of the labyrinth, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
-    <p id="ybg35">If you're a fundamentalist, you might very well be willing to die and kill to prevent that from happening. To prevent people like us from completing the puzzles and reaching the heart. From climbing the golden ladder.</p>
+    <p id="ybg34">You follow the path of the labyrinth, walking the steps of the pattern dance, you reach the heart, and bam. You’re in heaven. And you’ve destroyed heaven forever.</p>
+    <p id="ybg35">If you're a Kardic fundamentalist, you might very well be willing to die and kill to prevent that from happening. To prevent people like us from completing the puzzles and reaching the heart. From climbing the golden ladder.</p>
     <p id="ybg36">Maybe I should have paid better attention in <i>Labyrinths in World Mythology</i>.</p>
     <p id="ybg37">Don't feel bad, I happen to teach a class on it</p>
     <p id="ybg38">I'm mainly a folklorist.</p>
@@ -6363,19 +6369,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //end attribution
 
    document.onkeydown = (e) => {
+    
     if (e.key == 'i' && !inventory.isOpen && !notepad.open && !dialogue.preventI && !dialogue.poemWorkIsOpen) {
             showInv();
         } else if ( (e.key == 'i' || e.key === "Escape") && inventory.isOpen && !dialogue.preventI) {
             e.preventDefault();
             hideInv();
         }
-        else if (e.key == "Escape" && dialogue.allowEscapeForPipePuzzle) {
+        if (e.key == "Enter" && dialogue.allowEscapeForPipePuzzle) {
+            checkMe(); //pipework.js
+        }
+        if (e.key == "Escape" && dialogue.allowEscapeForPipePuzzle) {
             e.preventDefault();
             closePipePuzzle();
         }
-        else if (e.key == "Enter" && dialogue.allowEscapeForPipePuzzle) {
-            check(); //pipework.js
-        }
+        
         if (dialogue.allowYandN) {
             if (e.key == 'y') {
                 deleteCookies();
@@ -7742,6 +7750,26 @@ function increaseNotificationLobbyThree() {
     } else if (!lobbyTwoNotificationLevel.one) {
         L3notifOne.style.display = "block";
         lobbyThreeNotificationLevel.one = true;
+    }
+}
+
+
+function checkMe() {
+    handlesqueak1.play();
+    inflowon.style.display = "block";
+    inflow.style.display = "none";
+    if (pipe.two == 3 && pipe.three == 3 && pipe.six == 2 && (pipe.five == 1 || pipe.five == 3) && pipe.four == 0 && pipe.seven == 3 && pipe.eight == 0) {
+setTimeout(() => {
+    closePipePuzzle();
+    prizeglass2.style.display = "none";
+    prizes.macaroniPipe = true;
+    }, 1000);
+    } else {
+        setTimeout(() => {
+        inflowon.style.display = "none";
+        inflow.style.display = "block";
+        bunk.play();
+    }, 1600);
     }
 }
 
@@ -13322,6 +13350,11 @@ function goSouth() {
             if (dialogue.blueSwitchFlipped) {
         boatsouthsauna.style.display = "block";
         dialogue.theresANewBoatHere = true;
+        if (dialogue.theresANewBoatHere) {
+              if (!dialogue.boatboatboatboat) {
+                theresAPassageToTheSouth();
+              }
+        }
     }
             if (key.brass) {
   if (dialogue.unlocking) {
@@ -14360,6 +14393,7 @@ function goEast() {
                 }
                 lobbyThree.style.display = "none";
                 sink.style.display = "block";
+                dialogue.inThePipeWing = true;
                 current.room = "sink";     
                 dialogue.seenSinkRoom = true;
                 map.region3b = true;
@@ -15022,6 +15056,7 @@ function goWest() {
                 gallery.style.display = "block";
                 current.room = "gallery";             
         } else if (current.room === "sink"){
+                dialogue.inThePipeWing = false;
                 randomDoorAudio();
                 if (dialogue.explorersteddybearworn && !dialogue.teddybeartempnotworn) {
                     takeCareOfBrunhilda();
@@ -15081,11 +15116,20 @@ function goWest() {
             randomDoorAudio();    
             switchTerminus.style.display = "none";
             redCircuit.style.display = "block";
-            current.room = "redCircuit";             
-            if (dialogue.mysteriousVialTaken) {
+            current.room = "redCircuit";   
+            if (dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
+                hiddendoor.style.display = "none";
+                hiddendooropen.style.display = "block";
+            } else if (dialogue.mysteriousVialTaken && !dialogue.vialPlaced) {
                 hiddendoor.style.display = "block";
-            }
+            }  
         } else if (current.room === "redCircuit") {
+            if (dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
+                hiddendoor.style.display = "none";
+                hiddendooropen.style.display = "block";
+            } else if (dialogue.mysteriousVialTaken && !dialogue.vialPlaced) {
+                hiddendoor.style.display = "block";
+            }  
             if (!dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
                 theresAHiddenDoorHere();
             } else if (dialogue.hiddenDoorOpened && dialogue.mysteriousVialTaken) {
@@ -16154,27 +16198,33 @@ function goNorth() {
                     letsCampSoon();
                     dialogue.goneNorthRedGreenBlue = true;
                 } else {
-randomDoorAudio();    
+                randomDoorAudio();    
                 switchTerminus.style.display = "none";
                 interChapterHallway.style.display = "block";
                 current.room = "interChapterHallway";
                 mapmini.style.display = "none";
                 hallexplorers2.style.display = "block";
                 dialogue.endDoorUnlocked = true;
-                if (dialogue.playAntiphonaFromCookies) {
+                if (!dialogue.enteredInterChapterHallway) {
+                    dialogue.enteredInterChapterHallway = true;
                     if (!dialogue.jukebox){
-                        antiphona.play();
+                        branle.pause();
+                        saltarello.play();
+                        doihmot.pause();
+                        dialogue.playAntiphonaFromCookies = true;
+                        setTimeout(() => {
+                            antiphona.play();
+                                    }, 226000);
                     }
-                
                 } else {
-                    if (!dialogue.jukebox){
-                    branle.pause();
-                    saltarello.play();
-                    dialogue.playAntiphonaFromCookies = true;
-                    setTimeout(() => {
-                        antiphona.play();
-                                }, 226000); //saltarello file is 2 saltarellos length 3:50; 230 seconds
-                }}
+                    if (dialogue.playAntiphonaFromCookies) {
+                        if (!dialogue.jukebox){
+                            antiphona.play();
+                        }
+                    
+                    }
+                }
+            
                 }
                 
             } else if (!dialogue.endDoorUnlocked && dialogue.blueSwitchFlipped && dialogue.redSwitchFlipped && dialogue.greenSwitchFlipped) {
@@ -16185,7 +16235,7 @@ randomDoorAudio();
         } else if (current.room === "interChapterHallway") {
                 if (!dialogue.itsAnArbalest) {
                     itsAnArbalest();
-                } else if (!dialogue.arbalestAttack) {
+                } /* else if (!dialogue.arbalestAttack) {
                     dangerZone.style.display = "block";
                     interChapterHallway.style.display = "none";
                     current.room = "dangerZone";
@@ -16193,7 +16243,7 @@ randomDoorAudio();
                     arbalestAttack();
                 } else if (dialogue.arbalestAttack && !dialogue.karakKyal) {
                     iDontThinkThatsAGoodIdeaRightNow();
-                } else if (dialogue.karakKyal) {
+                } */ else if (dialogue.karakKyal) {
                     weShouldRestFirst();
                 }
             } else if (current.room === "keys3") {
@@ -16271,9 +16321,12 @@ function byJoveTheBridgeHasBeenCut() {
     }
 function restartDoIhMotAfterLaudaNovella() {
     if (!dialogue.jukebox) {
+        if (dialogue.inThePipeWing) {
                 doihmot.play();
                 doihmot.currentTime = 0;
-                laudaNovella.pause();
+                    laudaNovella.pause();
+        }
+                
     }
 }
 
@@ -19388,13 +19441,6 @@ function pickNW() {
 //CENTER SOUTH
 function pickCenterS(){
     if (current.room === "sauna") {
-        if (dialogue.theresANewBoatHere) {
-              if (!dialogue.boatboatboatboat) {
-                theresAPassageToTheSouth();
-              } else {
-                goSouth();
-              }
-        }
         if (water.zappy && !water.attempted && !water.yowzerComplete) {
         dialogue.yowzer = 1;
         dialogue.blockArrowTravel = true;
@@ -20796,6 +20842,7 @@ function pauseAllMusic() {
 }
 
 function openPipePuzzle() {
+    keyitemsP.style.display = "none";
     pipePuzzle.style.display = "block";
     bigX.style.display = "block";
     bigX.style.top = "0px"; //mark check if this fucks it up later in sketches and maybe elsewhere
@@ -20805,9 +20852,11 @@ function openPipePuzzle() {
     mapmini.style.display = "none";
     satchel.style.display = "none";
     dialogue.allowEscapeForPipePuzzle = true;
+    document.body.style.background = "#222"; //hex code back to beige
 }
 
 function closePipePuzzle() {
+    keyitemsP.style.display = "block";
     pipePuzzle.style.display = "none";
     pipePuzzleRoom.style.display = "block";
     baseroom.style.display = "block";
@@ -20816,6 +20865,7 @@ function closePipePuzzle() {
     satchel.style.display = "block";
     dialogue.allowEscapeForPipePuzzle = false;
     bigX.style.display = "none";
+    document.body.style.background = "#f5f1e0"; //hex code back to beige
 }
 
 function goToTheHomePageWhyDontYou(){

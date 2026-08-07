@@ -11,6 +11,8 @@ const current = {
     //room: "study",
 }
 
+const stainedGlassMarket = document.getElementById("stainedGlassMarket");
+
 
 //Player movement
 

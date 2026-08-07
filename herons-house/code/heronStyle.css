@@ -683,9 +683,9 @@ button:hover {
     width: 154.5vh;
     height: 30vh;
     position: absolute;
-    border: 3px solid clear;
+    border: 3px solid red;
     margin-top: 60vh;
-    
+    display: none;
     z-index: 3;
 }
 

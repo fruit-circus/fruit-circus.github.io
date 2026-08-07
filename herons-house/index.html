@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="code/heronStyle.css">
+        <title>Heron's House</title>
+        <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="heronFavicon.ico?">
+        <script src="code/heronScript.js"></script>
+        <script src="code/roomContents.js"></script>
+        <script src="code/spellCasting.js"></script>
+        <script src="code/defaultMovement.js"></script>
+        <script src="code/battleMaster.js"></script>
+        <script src="code/tileChecker.js"></script>
+        <script src="code/moveBoy.js"></script>
+        <meta name="description" content="I often visit Heron's house in my dreams, but that time, Heron wasn't at home. I arrived in the great house, empty and dark. I was all alone." />
+    </head>
+
+    <!--
+    TO DO:
+        System UI:
+            Make menus for Dress Up objects 
+            Dress Up changes drawing and bonuses appear in list
+            Draw Asher's dress up
+            spell icons?
+            top button nubs
+            eat button and eadible tag for inv
+            append a button at the end of the inv list "catabolize all non-favorites"
+            disable arrow scrolling in inv and spels 
+            spellListButton2 doesnt color when screen is small. js media query 
+        Game:
+            Different room sizes 
+            make an array of "occupied tiles" for each room that are not allowed to blink to 
+    
+    -->
+    <body>
+        <div id="pageFlexFlex">
+        <div id="pageFlex">
+            <div id="dialogueBar"></div>
+            
+            <div id="interface">
+                
+                <img id="clover" src="assets/portraits/clover.png">
+                
+                <img class="dialogueArrow" src="assets/misc/goBack.png" title="previous dialogue card" alt="dialogue go back arrow" onmouseover="highlightArrow(this)" onmouseout="unhighlightArrow(this)" onclick="goBackDialogue()" id="goBack">
+                <img class="dialogueArrow" src="assets/misc/goForward.png" title="next dialogue card" alt="dialogue go forward arrow" onmouseover="highlightArrow(this)" onmouseout="unhighlightArrow(this)" onclick="converse(activeTopic)" id="goForward">
+
+                <div id="all-dialogue">
+
+                    <div id="birdMerchant">
+                        <div class="dialogue-chunk">
+                            <img class="portrait" src="assets/portraits/clover.png">
+                            <p>rwaaaaaaak!</p>
+                        </div>
+                        <div class="dialogue-chunk">
+                            <img class="portrait" src="assets/portraits/clover.png">
+                            <p>rraa rra!</p>
+                        </div>
+                        <div class="dialogue-chunk">
+                            <img class="portrait" src="assets/portraits/clover.png">
+                            <p>Kwaaaaa!</p>
+                        </div>
+                    </div>
+
+                </div> <!--end of all dialogue-->
+                
+                <div id="interface-buttons-container">
+                        <button id="cloverCharacterButton" class="inactiveButton" onclick="showCloverMenu(); activateButton(this); blur();">Clover</button>
+                        <button id="asherCharacterButton" class="inactiveButton" onclick="showAsherMenu(); activateButton(this); blur();">Asher</button>
+                        <button id="spellListButton" class="inactiveButton" onclick="showSpellMenu(); activateButton(this); blur();">Spell List</button>
+                        <button id="spellListButton2" class="inactiveButton" onclick="showSpellMenu(); activateButton(this); blur();">Spells</button>
+                        <button id="inventoryButton" class="inactiveButton" onclick="showInventory(); activateButton(this); blur();">Inventory</button>
+                </div>
+                <div id="interface-top">
+                    
+                    <div id="cloverSheet" class="dressUpContainer">
+                        <img id="cloak" class="defaultDressUpIcons" src="assets/dress-up/default/cloak.png">
+                        <img id="cloakless" class="defaultDressUpIcons" src="assets/dress-up/default/cloakless.png">
+                        <img id="earrings" class="defaultDressUpIcons" src="assets/dress-up/default/earrings.png">
+                        <img id="earless" class="defaultDressUpIcons" src="assets/dress-up/default/earless.png">
+                        <img id="ring1" class="defaultDressUpIcons" src="assets/dress-up/default/ring1.png">
+                        <img id="ring1less" class="defaultDressUpIcons" src="assets/dress-up/default/ring1less.png">
+                        <img id="ring2" class="defaultDressUpIcons" src="assets/dress-up/default/ring2.png">
+                        <img id="ring2less" class="defaultDressUpIcons" src="assets/dress-up/default/ring2less.png">
+                        <img id="blinkEyes" class="defaultDressUpIcons" src="assets/dress-up/default/blink.png">
+                        <img id="eyes" class="defaultDressUpIcons" src="assets/dress-up/default/eyes.png">
+                        <img id="necklace" class="defaultDressUpIcons" src="assets/dress-up/default/necklace.png">
+                        <img id="neckless" class="defaultDressUpIcons" src="assets/dress-up/default/neckless.png">
+                        <img id="hat" class="defaultDressUpIcons" src="assets/dress-up/default/hat.png">
+                        <img id="hatless" class="defaultDressUpIcons" src="assets/dress-up/default/hatless.png">
+                        <img id="shoes" class="defaultDressUpIcons" src="assets/dress-up/default/shoes.png">
+                        <img id="shoeless" class="defaultDressUpIcons" src="assets/dress-up/default/shoeless.png">
+                        
+                        <!--On body-->
+                        <img id="hat1" class="hat" src="assets/dress-up/on-body/hat1.png">
+                        <img id="hat2" class="hat" src="assets/dress-up/on-body/hat2.png">
+                        <img id="hat3" class="hat" src="assets/dress-up/on-body/hat3.png">
+                        
+                        <img id="earrings1" class="earrings" src="assets/dress-up/on-body/earrings1.png">
+                        <img id="earrings2" class="earrings" src="assets/dress-up/on-body/earrings2.png">
+                        <img id="earrings3" class="earrings" src="assets/dress-up/on-body/earrings3.png">
+                        
+
+                        <svg
+                            viewBox="0 0 400 400"
+                            xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="xMidYMid meet">
+
+                            <image
+                                href="assets/dress-up/default/cloverDressUp.png"
+                                x="0"
+                                y="0"
+                                width="400"
+                                height="400" />
+
+                            <rect
+                                class="hotspot"
+                                x="75"
+                                y="120"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkNecklace()"
+                                onmouseout="unshrinkNecklace()"
+                                onclick="showDressUpMenu(necklaceMenu)" />
+
+                            <rect
+                                class="hotspot"
+                                x="75"
+                                y="200"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkRing2()"
+                                onmouseout="unshrinkRing2()"
+                                onclick="showDressUpMenu(ringMenu)" />
+                            
+                            <rect
+                                class="hotspot"
+                                x="0"
+                                y="200"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkRing1()"
+                                onmouseout="unshrinkRing1()"
+                                onclick="showDressUpMenu(ringMenu)" />
+                            
+                            <rect
+                                class="hotspot"
+                                x="305"
+                                y="40"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkHat()"
+                                onmouseout="unshrinkHat()"
+                                onclick="showDressUpMenu(hatsMenu)"/>
+                            <rect
+                                class="hotspot"
+                                x="305"
+                                y="120"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkEarrings()"
+                                onmouseout="unshrinkEarrings()"
+                                onclick="showDressUpMenu(earringsMenu)" />
+                            <rect
+                                class="hotspot"
+                                x="305"
+                                y="205"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkCloak()"
+                                onmouseout="unshrinkCloak()"
+                                onclick="showDressUpMenu(mantlesMenu)" />
+                            <rect
+                                class="hotspot"
+                                x="305"
+                                y="289"
+                                width="70"
+                                height="70"
+                                onmouseover="shrinkShoes()"
+                                onmouseout="unshrinkShoes()"
+                                onclick="showDressUpMenu(shoesMenu)" />
+                            <rect
+                                class="hotspot"
+                                x="170"
+                                y="89"
+                                width="70"
+                                height="70"
+                                onclick="blinkTheEyes()" />
+                                
+
+                        </svg>
+
+                        
+
+                    </div>
+
+                    <div id="asherSheet" class="dressUpContainer">
+                        <img id="asherDressUp" src="assets/dress-up/default/asherDressUp.png">
+                    </div>
+                    <div id="spellSheet">
+                            
+                            <div class="listItem" id="spellDivider1">Favorites</div>
+
+                            <div class="listItem" id="absoluteZero" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Absolute Zero</div>
+                                <img class="spell-icon" src="assets/misc/zero.png">
+                                <div class="spellDescription">Freeze all other actors in the room for a short time. Mana cost: <span id="azcost">COST</span>. Duration: <span id="azdur">DURATION</span>. Hotkey: Z.</div>
+                            </div>
+                            <div class="listItem" id="blink" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Blink</div>
+                                <img id="blink-icon" class="spell-icon" src="assets/misc/blinkicon.png">
+                                <div class="spellDescription">Travel instantly from one tile to another. Technically less of a teleportation spell and more of a "move all the air molecules out of the way and scoot very quickly" spell.<br>Mana cost: <span id="blinkcost">COST</span>. Hotkey: B.</div>
+                            </div>
+                            <div class="listItem" id="shield" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Shield</div>
+                                <img class="spell-icon" src="assets/misc/sheild.png">
+                                <div class="spellDescription">Protect one character from damage next turn. Mana cost: <span id="shieldcost">COST</span>. Damage blocked: <span id="shieldpercent">PERCENT</span>%. Hotkey: S.</div>
+                            </div>
+                            <div class="listItem" id="dispel" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Dispel</div>
+                                <img class="spell-icon" src="assets/misc/dispel.png">
+                                <div class="spellDescription">Dispel all magical effects on a tile. Mana cost: <span id="dispelcost">COST</span>. Hotkey: X.</div>
+                            </div>
+                            <div class="listItem" id="glamor" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Glamor</div>
+                                <img class="spell-icon" src="assets/misc/flair.png">
+                                <div class="spellDescription">A multi-faceted illusion spell. Insanely complicated to engineer, but easy to cast. Mana cost: <span id="flaircost">COST</span>. Hotkey: G.</div>
+                            </div>
+                            <div class="listItem" id="firecracker" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                
+                                <div class="spellName">Firecracker</div>
+                                <img class="spell-icon" src="assets/misc/fire.png">
+                                <div class="spellDescription">A ray of fire and sparks. I used to call this one "Flare" but I kept confusing it with "Flair" and burning myself. Mana cost: <span id="flarecost">COST</span>. Damage: <span id="flaredamage">COST</span>. Hotkey: F.</div>
+                            </div>
+                            <div class="listItem" id="heal" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                
+                                <div class="spellName">Heal</div>
+                                <img class="spell-icon" src="assets/misc/heal.png">
+                                <div class="spellDescription">Restore the target's health by <span id="healeffect">EFFECT</span> points. Mana cost: <span id="healcost">COST</span>. Hotkey: H.</div>
+                            </div>
+                            <div class="listItem" id="levitate" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                
+                                <div class="spellName">Float</div>
+                                <img class="spell-icon" src="assets/misc/float.png">
+                                <div class="spellDescription">Sustained levitation. Cause one object or character to float until the effect is dispeled or you run out of mana. Mana cost: <span id="floatcost">COST</span>. Mana per turn: <span id="floatcostper">COST</span>. Hotkey: L.</div>
+                            </div>
+                            <div class="listItem" id="moonbolt" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                
+                                <div class="spellName">Moonbolt</div>
+                                <img class="spell-icon" src="assets/misc/moon.png">
+                                <div class="spellDescription">A bolt of elemental light. Mana cost: <span id="mooncost">COST</span>. Damage: <span id="moondamage">DMG</span>. Hotkey: M.</div>
+                            </div>
+                            <div class="listItem" id="pulverize" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Pulverize</div>
+                                <img class="spell-icon" src="assets/misc/pulv.png">
+                                <div class="spellDescription">Crush stone, break bone. Mana cost: <span id="pulvcost">COST</span>. Damage: <span id="pulvdamage">DMG</span>. Hotkey: P.</div>
+                            </div>
+
+                            <!--Undiscovered Spells-->
+                            <!--add spell by calling: discoverSpell(spell id)-->
+                            <div class="listItem" id="shrinkSelf" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Shrink Self</div>
+                                <div class="spellDescription">Reduce yourself to 1/16th your original size. Mana Cost: XX. Duration: XX.</div>
+                            </div>
+                            <div class="listItem" id="magicMirror" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Magic Mirror</div>
+                                <div class="spellDescription">Duplicate an item from your inventory. Mana Cost: 10 / weight.</div>
+                            </div>
+                            <div class="listItem" id="wishingWell" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Wishing Well</div>
+                                <div class="spellDescription">Reach deep into the interstitial space of the current of dreams and pull forth a random object. Mana Cost: 25 * weight.</div>
+                            </div>
+                            <div class="listItem" id="lifeSpike" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Life Spike</div>
+                                <div class="spellDescription">Target takes 3 damage every turn, and you heal 6. Mana cost: XX. Duration: XX.</div>
+                            </div>
+                            <div class="listItem" id="poison" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Poison</div>
+                                <div class="spellDescription">Target takes 1 damage next turn, then 2 the next, then 3, then 5, then 8, and so on until the spell ends. Mana cost: XX. Duration: 10.</div>
+                            </div>
+                            <div class="listItem" id="catapult" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Catapult</div>
+                                <div class="spellDescription">Select an object from the inventory and fire it at an adversary. Mana Cost: XX * Item Weight. Damage: 3 * Item Weight</div>
+                            </div>
+                            <div class="listItem" id="siphonMagic" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Siphon Magic</div>
+                                <div class="spellDescription">Capture a portion of the target's mana every time they cast a spell. Mana cost: XX. Duration: XX. Siphon Percentage: XX.</div>
+                            </div>
+                            <div class="listItem" id="ironWard" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Iron Ward</div>
+                                <div class="spellDescription">Target gains +4 defence against metal weapons for the duration. Mana cost: XX. Duration: XX.</div>
+                            </div>
+                            <div class="listItem" id="armorOfKahel" onclick="selectSpell(this);" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Beetle Armor</div>
+                                <div class="spellDescription">Sustained effect. Form a protective carapace around the target using the objects from your inventory. Incoming damage is reduced by current carry weight. Mana cost: XX. Cost per turn: 1.</div>
+                            </div>
+                            <!--End Undiscovered Spells-->
+
+
+                            <div class="listItem" id="spellDivider">All Other Spells</div>
+
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Alphabetize</div>
+                                <div class="spellDescription">By far my most useful spell. The low mana cost of alphabetize means I can use it even in places where there’s drastically less ambient mana, like on Earth. It works on physical documents as well as digital.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Locate Car Keys</div>
+                                <div class="spellDescription">Unfortunately, when I’m on Earth, I don’t have enough mana to cast it at a range greater than two meters. And here, in the Atrament, I don't own a car.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Generate Color Pallet</div>
+                                <div class="spellDescription">I know there are websites that can do this, but it was a fun spell to make.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Symphony of Tactile Light</div>
+                                <div class="spellDescription">What it says on the tin. It’s a good spell, but I won’t need it here. It will attract unwanted attention.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Summon Washing Machine Manual</div>
+                                <div class="spellDescription">Summon most recent washing machine manual for nearest washing machine to the caster. Most of these spells I discovered on accident. I genuinely don’t know why I spent time refining this one. Like two days. Good practice, I guess.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Tyrian Purple</div>
+                                <div class="spellDescription">I don’t have enough sea snails to cast this. Sea snail cost: 88.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Blink Tether</div>
+                                <div class="spellDescription">Cast on an allied creature. While Blink Tether is active, every time you Blink, the target creature will Blink as well, as long as they can see you.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Reduce Insect</div>
+                                <div class="spellDescription">Reduce the size of one visible insect for two minutes.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Locate Groundwater</div>
+                                <div class="spellDescription">Learn the relative depth of the water table. I couldn’t get it to work unless I’m upside-down. If I ever need to know the distance between the topsoil and the water table, I have to do a handstand. This could be useful if I ever want to be a hydrologist.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Sarcoline Retinue</div>
+                                <div class="spellDescription">There are enough freaks here as it is.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Decaffeinate</div>
+                                <div class="spellDescription">On Earth, it’s simpler just to buy non-caffeinated tea. And in the Starlight Estuary, even if Heron served me caffeinated tea while I was dreaming, and he wouldn’t, because he’s an excellent host, it wouldn’t affect my sleeping body back on Earth. </div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Duplicate Rice</div>
+                                <div class="spellDescription">	For every grain of rice targeted by the spell, now there is another grain of rice. That’s twice the rice. This spell can only be used on grains of rice created using Duplicate Rice.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Alter Secondary Sex Characteristics</div>
+                                <div class="spellDescription">Far more complicated than glamor. Takes two hours to cast. Mana cost: 160.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Liquidate</div>
+                                <div class="spellDescription">I am not casting that. Ever again. </div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Little Wooden Spoon</div>
+                                <div class="spellDescription">At first I thought this spell didn’t work, but it turns out the spoon is just very small.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Offwhite</div>
+                                <div class="spellDescription">Makes any off-white surface one shade lighter or darker. Mana cost: 0.6 / square foot.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Taco Tuesday</div>
+                                <div class="spellDescription">Self-explanatory. Can only be cast on Tuesday. I tried to cast this spell on a Saturday and vaporized a large part of the roof. My best guess is that the spell was trying to make the current day Tuesday, either by speeding up the flow of time or by brainwashing everyone in the universe and rewriting every calendar.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Go Fish</div>
+                                <div class="spellDescription">Opponent draws a card.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Digitize</div>
+                                <div class="spellDescription">Also very useful. When I cast this spell, the scanned documents appear in my email. </div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Dream Anchor</div>
+                                <div class="spellDescription">My last tether to the Atrament. Heron taught me this on my last day in the palace before Devi and I returned to Earth. Now the three of us meet up about every week. I don't know exactly how it works, but Dream Anchor has a limited ability to make dream objects physical. Heron crafted the spell with a number of complicated safe-guards. If it weren't for those safe-guards I could accidentally dream things into reality on Earth, or be killed dreaming of events in the Atrament.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">English to Tagalog</div>
+                                <div class="spellDescription">Real-time translation into Tagalog for spoken English. I created this spell with the help of my friend Devi We’re still working on a Tagalog to English spell, but progress has slowed since we’re both back on Earth and have access to Google Translate. Also because we live on different continents, and because we don’t have enough mana between the two of us to cast it.</div>
+                            </div>
+                            <div class="listItem" onclick="cantSelect()" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Ziq's English to Modern English</div>
+                                <div class="spellDescription">Real-time translation for Ziq’s fucked up weird English that I can kind of understand but sometimes can’t be bothered with. It’s not a perfect spell, but then again, Ziq and I never exactly set down and banged out the grammar, and it’s basically usually mutually intelligible with modern English anyway, so I didn’t put that much time into it. </div>
+                            </div>
+
+                            <!--
+                            <div class="listItem" onmouseover="high(this)" onmouseout="unhigh(this)">
+                                <div class="spellName">Length of Twine</div>
+                                <div class="spellDescription">Generates one Length of Twine.</div>
+                            </div>
+                            -->
+                        </div>
+                            <div id="buttonflex">
+                            <button class="orgOption" id="sortButton" onclick="showShort()">Sort</button>
+
+                            <button class="orgOption" id="chronButton" title="sort inventory from first taken to last taken" onclick="chronologize(), boldify(this), sortSound()">Chronologize</button>
+                            <button class="orgOption" id="alphButton" title="sort alphabetically" onclick="alphabetize(), boldify(this), sortSound()">Alphabetize</button>
+                            <button class="orgOption" id="favButton" title="put favorited items at the top" onclick="favoritesSort(), boldify(this), sortSound()">Favorites</button>
+                            <button class="orgOption" id="weightButton" title="sort from heaviest to lightest" onclick="weightSort(), boldify(this), sortSound()">Weight</button>
+                            </div>
+                            <div id="reallysure" class="listItem">
+                                <div id="really"></div>
+                                <button id="nahJuice" onclick="psych()">Unsure</button>
+                                <button id="yesJuice" onclick="destroy(catabListing)">Sure</button>
+                            </div>
+                    <div id="invSheet">
+                        
+                    </div>
+                        
+
+                </div> <!--end of int top-->
+                <div id="interface-bottom">
+                    <div id="cloverInterfaceBottom">
+                        <div id="nameAndClockContainer">
+                            <div id="cloverName">Clover</div>
+                            <div id="clock">11:30</div>
+                        </div>
+                        <div id="mana-box">
+                            <div id="mana-container">
+                                <div id="mana-bar"></div>
+                                <div id="mana-bar-flash"></div>
+                                <div id="mana-readout">Mana: 160/160</div>
+                            </div>
+                        </div>
+                        <div id="health-box">
+                            <div id="health-container">
+                                <div id="health-bar"></div>
+                                <div id="health-bar-flash"></div>
+                                <div id="health-readout">Health: 120/120</div>
+                            </div>
+                        </div>
+                        <div id="carry-box">
+                            <div id="carry-container">
+                                <div id="carry-bar">
+                                    <div id="carryCapacity">Weight: 0.0/56</div>
+                                    <div id="carryCapacity2">0.0/56</div>
+                                </div>
+                            </div>
+                            <div id="armor-box">
+                                <div id="armor-readout">Armor:</div>
+                                <div id="armor-point" class="full-armor"></div>
+                                <div id="armor-point" class="empty-armor"></div>
+                                <div id="armor-point" class="empty-armor"></div>
+                                <div id="armor-point" class="empty-armor"></div>
+                                <div id="armor-point" class="empty-armor"></div>
+                            </div>
+                        </div>
+                        <div id="statusBox">
+                            <span class="itemText">Imaginary hat:</span> +1 cold resistence.
+                            <br><span class="itemText">Static effect:</span> +1 mana regen / turn.
+                            <br><span class="itemText">Static effect:</span> +1/4 health regen / turn.
+                            <br><span class="itemText">Imaginary cloak:</span> +6 cold resistence.
+                            <br><span class="itemText">Ring of Blinking:</span> -4 blink cost.
+                            <br><span class="itemText">Ring of Blinking:</span> -4 blink cost.
+                            <br><span class="itemText">Tome of Light:</span> Learned the "Dry Cough" spell.
+
+                        </div>
+                    </div> 
+                    
+                    
+                    <div id="asherInterfaceBottom">
+                        <div id="asherName">Asher</div>
+                        <div id="mana-boxA">
+                            <div id="mana-container">
+                                <div id="mana-barA"></div>
+                                <div id="mana-readoutA">Mana: 36/36</div>
+                            </div>
+                        </div>
+                        <div id="health-boxA">
+                            <div id="health-containerA">
+                                <div id="health-barA"></div>
+                                <div id="health-readoutA">Health: 68/68</div>
+                            </div>
+                        </div>
+                        <div id="carry-boxA">
+                            <div id="carry-containerA">
+                                <div id="carry-barA">
+                                    <div id="carryCapacityA">15/21</div>
+                                </div>
+                            </div>
+                            <div id="armor-boxA">
+                                <div id="armor-readoutA">Armor:</div>
+                                <div id="armor-pointA" class="full-armor"></div>
+                                <div id="armor-pointA" class="full-armor"></div>
+                                <div id="armor-pointA" class="empty-armor"></div>
+                            </div>
+                        </div>
+                        <div id="status-boxA">
+                            <span class="itemText">Chosen One:</span> +1 magic defence.
+                            <br><span class="itemText">Pallid sword:</span> glows dimly in the presence of umbral emmisaries.
+                            
+                        </div>
+                    </div> <!--end of int bottom-->
+
+                </div>
+            </div> <!--end of interface-->
+            <div id="menuContainer">
+                
+                <div class="dressUpMenu" id="hatsMenu"></div>
+                <div class="dressUpMenu" id="earringsMenu"></div>
+                <div class="dressUpMenu" id="mantlesMenu"></div>
+                <div class="dressUpMenu" id="shoesMenu"></div>
+                <div class="dressUpMenu" id="necklaceMenu"></div>
+                <div class="dressUpMenu" id="ringMenu"></div>
+                <div id="triangleBorder"></div>
+               <div id="triangleFill"></div>
+            </div>
+
+
+            
+                <div id="parentGrid">
+
+                    <div id="grid">
+                            <div id="a1" class="lighttile" onmouseover="alert('hi')" onclick="castSpell()"></div>
+                            <div id="b1" class="tile" onclick="castSpell()"></div>
+                            <div id="c1" class="lighttile" onclick="castSpell()"></div>
+                            <div id="d1" class="tile" onclick="castSpell()"></div>
+                            <div id="e1" class="lighttile" onclick="castSpell()"></div>
+                            <div id="f1" class="tile" onclick="castSpell()"></div>
+                            <div id="g1" class="lighttile" onclick="castSpell()"></div>
+
+                            <div id="a2" class="tile" onclick="castSpell()"></div>
+                            <div id="b2" class="lighttile" onclick="castSpell()"></div>
+                            <div id="c2" class="tile" onclick="castSpell()"></div>
+                            <div id="d2" class="lighttile" onclick="castSpell()"></div>
+                            <div id="e2" class="tile" onclick="castSpell()"></div>
+                            <div id="f2" class="lighttile" onclick="castSpell()"></div>
+                            <div id="g2" class="tile" onclick="castSpell()"></div>
+
+                            <div id="a3" class="lighttile" onclick="castSpell()"></div>
+                            <div id="b3" class="tile" onclick="castSpell()"></div>
+                            <div id="c3" class="lighttile" onclick="castSpell()"></div>
+                            <div id="d3" class="tile" onclick="castSpell()"></div>
+                            <div id="e3" class="lighttile" onclick="castSpell()"></div>
+                            <div id="f3" class="tile" onclick="castSpell()"></div>
+                            <div id="g3" class="lighttile" onclick="castSpell()"></div>
+
+                            <div id="a4" class="tile" onclick="castSpell()"></div>
+                            <div id="b4" class="lighttile" onclick="castSpell()"></div>
+                            <div id="c4" class="tile" onclick="castSpell()"></div>
+                            <div id="d4" class="lighttile" onclick="castSpell()"></div>
+                            <div id="e4" class="tile" onclick="castSpell()"></div>
+                            <div id="f4" class="lighttile" onclick="castSpell()"></div>
+                            <div id="g4" class="tile" onclick="castSpell()"></div>
+                            
+                            <div id="a5" class="lighttile" onclick="castSpell()"></div>
+                            <div id="b5" class="tile" onclick="castSpell()"></div>
+                            <div id="c5" class="lighttile" onclick="castSpell()"></div>
+                            <div id="d5" class="tile" onclick="castSpell()"></div>
+                            <div id="e5" class="lighttile" onclick="castSpell()"></div>
+                            <div id="f5" class="tile" onclick="castSpell()"></div>
+                            <div id="g5" class="lighttile" onclick="castSpell()"></div>
+                        
+                            <div id="a6" class="tile" onclick="castSpell()"></div>
+                            <div id="b6" class="lighttile" onclick="castSpell()"></div>
+                            <div id="c6" class="tile" onclick="castSpell()"></div>
+                            <div id="d6" class="lighttile" onclick="castSpell()"></div>
+                            <div id="e6" class="tile" onclick="castSpell()"></div>
+                            <div id="f6" class="lighttile" onclick="castSpell()"></div>
+                            <div id="g6" class="tile" onclick="castSpell()"></div>
+
+                            <div id="a7" class="lighttile" onclick="castSpell()"></div>
+                            <div id="b7" class="tile" onclick="castSpell()"></div>
+                            <div id="c7" class="lighttile" onclick="castSpell()"></div>
+                            <div id="d7" class="tile" onclick="castSpell()"></div>
+                            <div id="e7" class="lighttile" onclick="castSpell()"></div>
+                            <div id="f7" class="tile" onclick="castSpell()"></div>
+                            <div id="g7" class="lighttile" onclick="castSpell()"></div>
+                    </div>
+
+                <div id="rooms">
+
+                    <div id="coatRoom" class="grid2">
+                        <img src="assets/room/contents/coat-room-decore.png">
+                        <img id="emptyBox" src="assets/room/objects/emptyBox.png">
+                        <img id="tree" src="assets/room/objects/tree.png">
+                        <img id="treeFloat" class="hidden" src="assets/room/objects/treeFloat.png">
+                    </div>
+
+                    <div id="fountainRoom" class="grid2">
+                        <img src="assets/room/contents/fountainRoom.png">
+                        <img id="mushrooms" src="assets/room/objects/mushrooms.png">
+                        <img id="bucket" src="assets/room/objects/bucket.png">
+                        <img id="rubble1" src="assets/room/objects/rubble1.png">
+                        <img id="rubble2" src="assets/room/objects/rubble2.png">
+                        <img id="rubble3" src="assets/room/objects/rubble3.png">
+                        <img id="brokenGlass" src="assets/room/objects/brokenGlass.png">
+                        <img id="planks" src="assets/room/objects/planks.png">
+                        <img id="coin" src="assets/room/objects/coin.png">
+                        <img id="vase" src="assets/room/objects/vase.png">
+                        <img src="assets/room/characters/bird-merchant.png">
+                        <img src="assets/room/objects/small-table.png">
+                    </div>
+
+                    <div id="groundFloorLanding" class="grid2">
+                        <img src="assets/room/contents/ground-landing.png">
+                    </div>
+
+                    <div id="stainedGlassMarket" class="grid2">
+                        <img src="assets/room/contents/glassmarket.png">
+                        <img id="bottle" src="assets/room/objects/bottle.png">
+                        <img id="broom" src="assets/room/objects/broom.png">
+                    </div>
+
+                    <div id="entryHall" class="grid2">
+                        <img src="assets/room/contents/entry-hall-contents.png">
+                        <img id="jackalStatue" src="assets/room/objects/jackal-statue.png">
+                        <img id="rubble" class="hidden" src="assets/room/objects/rubble.png">
+                    </div>
+
+
+            <div id="weaponsCheck" class="grid2">
+                
+                <img class="threeAcross" src="assets/room/contents/weapons.png">
+                <img id="quarterstaff" class="threeAcross" src="assets/room/objects/quarterstaff.png">
+                <img id="throwingstars" class="threeAcross" src="assets/room/objects/throwing-stars.png">
+                <img id="rustyDaggers" class="threeAcross" src="assets/room/objects/rusty-daggers.png">
+                <img id="fossilizedRoe" class="threeAcross" src="assets/room/objects/fossilized-roe.png">
+                <img id="crumpledNote" class="threeAcross" src="assets/room/objects/crumpled-note.png">
+            </div>
+
+            <div id="groundFloorLanding" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/ground-landing.png">
+            </div>
+
+            <div id="throneRoomWest" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/thronehall.png">
+            </div>
+
+            <div id="throneRoomEast" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/throneroom.png">
+            </div>
+
+            <div id="meadHallWest" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/meadhall.png">
+            </div>
+
+            <div id="meadHallEast" class="grid2">
+                <img id="pumpkin" class="absolute" src="assets/room/objects/pumpkin.png">
+                <img class="sevenAcross" src="assets/room/contents/meadhalle.png">
+            </div>
+
+            <div id="stainedGlassMarket" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/glassmarket.png">
+                <img id="bottle" class="sevenAcross" src="assets/room/objects/bottle.png">
+                <img id="broom" class="sevenAcross" src="assets/room/objects/broom.png">
+            </div>
+
+            <div id="kitchen" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/kitchenDecor.png">
+                <img id="spade" class="absolute" src="assets/room/objects/spade.png">
+            </div>
+
+            <div id="preservesPantry" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/preservesDecor.png">
+            </div>
+
+            <div id="northPorch" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/porchness.png">
+            </div>
+
+            <div id="westernServantsQuartersHallway" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/quartersHall1.png">
+            </div>
+
+            <div id="easternServantsQuartersHallway" class="grid2">
+                
+                <img class="sevenAcross" src="assets/room/contents/quartersHall2.png">
+            </div>
+
+            <div id="servantsQuartersOne" class="grid2">
+                
+                <img class="threeAcross" src="assets/room/contents/sqs2.png">
+            </div>
+
+            <div id="servantsQuartersTwo" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/sqs1.png">
+            </div>
+
+            <div id="servantsQuartersThree" class="grid2">
+                
+                <img class="threeAcross" src="assets/room/contents/sqs2.png">
+            </div>
+
+            <div id="servantsQuartersFour" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/sqs1.png">
+            </div>
+
+            <div id="servantsQuartersFive" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/sqs2.png">
+            </div>
+
+            <div id="servantsQuartersSix" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/sqs1.png">
+            </div>
+
+            <div id="larder" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/larder.png">
+            </div>
+
+            <div id="wineCelar" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/winecellar.png">
+            </div>
+
+            <div id="courtyard" class="grid2">
+            </div>
+
+            <div id="mouseHole" class="grid2">
+            </div>
+
+            <div id="largeHallway" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/large-hall.png">
+            </div>
+
+            <div id="upperWaterfallLanding" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/upper-waterfall.png">
+            </div>
+            
+            <div id="lowerWaterfallLanding" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/lower-waterfall.png">
+
+            </div>
+            
+            <div id="libraryLanding" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/lib-landing.png">
+            </div>
+
+            <div id="libraryNorth" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/libraryNorthDecor.png">
+            </div>
+
+            <div id="librarySouth" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/librarySouthDecor.png">
+            </div>
+
+            <div id="study" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/study.png">
+            </div>
+
+            <div id="storageAccess" class="grid2">
+                <img class="oneAcross" src="assets/room/contents/storageHallDecor.png">
+            </div>
+
+            <div id="gardenAccess" class="grid2">
+                <img class="oneAcross" src="assets/room/contents/gardenHallDecor.png">
+            </div>
+
+            <div id="storageRoomOne" class="grid2">
+            </div>
+            
+            <div id="storageRoomTwo" class="grid2">
+            </div>
+
+            <div id="storageRoomThree" class="grid2">
+            </div>
+
+            <div id="storageRoomFour" class="grid2">
+            </div>
+
+            <div id="storageRoomFive" class="grid2">
+            </div>
+
+            <div id="eastCatacombsLanding" class="grid2">
+                <img class="threeAcross" src="assets/room/contents/catacombStairs.png">
+            </div>
+
+            <div id="catacombs1" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/catacombs1.png">
+            </div>
+            <div id="catacombs2" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/catacombs2.png">
+            </div>
+
+            <div id="groundFloorLanding2" class="grid2"> <!--Above and to the left of groundfloorlanding-->
+            </div>
+
+            <div id="groundFloorLanding3" class="grid2"> <!--Above and to the north of groundfloorlanding2-->
+            </div>
+
+             <div id="upperFloorLanding" class="grid2"> 
+            </div>
+            
+             <div id="canal" class="grid2">
+            </div>
+            
+             <div id="canalMouth" class="grid2"> 
+                <img class="threeAcross" src="assets/room/contents/canalMouthContents.png">
+            </div>
+
+            <div id="hallOfDoors" class="grid2">
+                <img class="sevenAcross" src="assets/room/contents/animal-hall.png">
+                <img class="sevenAcross" id="anh1" src="assets/room/objects/anhall1.png">
+                <img class="sevenAcross" id="anh2" src="assets/room/objects/anhall2.png">
+                <img class="sevenAcross" id="anh3" src="assets/room/objects/anhall3.png">
+                <img class="sevenAcross" id="anh4" src="assets/room/objects/anhall4.png">
+                <img class="sevenAcross" id="anh5" src="assets/room/objects/anhall5.png">
+                <img class="sevenAcross" id="anh6" src="assets/room/objects/anhall6.png">
+                <img class="sevenAcross" id="anh7" src="assets/room/objects/anhall7.png">
+            </div>
+
+            <div id="volcano" class="grid2"> 
+                <img class="sevenAcross" src="assets/room/contents/lava-walls.png">
+                <img class="sevenAcross" src="assets/room/contents/inferno.png">
+            </div>
+
+
+
+                </div> <!--end of rooms-->
+
+                        <div id="magicGrid">
+                            <div id="a1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a1')"></div>
+                            <div id="b1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b1')"></div>
+                            <div id="c1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c1')"></div>
+                            <div id="d1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d1')"></div>
+                            <div id="e1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e1')"></div>
+                            <div id="f1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f1')"></div>
+                            <div id="g1over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g1')"></div>
+
+                            <div id="a2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a2')"></div>
+                            <div id="b2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b2')"></div>
+                            <div id="c2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c2')"></div>
+                            <div id="d2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d2')"></div>
+                            <div id="e2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e2')"></div>
+                            <div id="f2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f2')"></div>
+                            <div id="g2over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g2')"></div>
+
+                            <div id="a3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a3')"></div>
+                            <div id="b3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b3')"></div>
+                            <div id="c3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c3')"></div>
+                            <div id="d3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d3')"></div>
+                            <div id="e3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e3')"></div>
+                            <div id="f3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f3')"></div>
+                            <div id="g3over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g3')"></div>
+
+                            <div id="a4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a4')"></div>
+                            <div id="b4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b4')"></div>
+                            <div id="c4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c4')"></div>
+                            <div id="d4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d4')"></div>
+                            <div id="e4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e4')"></div>
+                            <div id="f4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f4')"></div>
+                            <div id="g4over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g4')"></div>
+                            
+                            <div id="a5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a5')"></div>
+                            <div id="b5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b5')"></div>
+                            <div id="c5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c5')"></div>
+                            <div id="d5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d5')"></div>
+                            <div id="e5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e5')"></div>
+                            <div id="f5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f5')"></div>
+                            <div id="g5over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g5')"></div>
+                        
+                            <div id="a6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a6')"></div>
+                            <div id="b6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b6')"></div>
+                            <div id="c6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c6')"></div>
+                            <div id="d6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d6')"></div>
+                            <div id="e6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e6')"></div>
+                            <div id="f6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f6')"></div>
+                            <div id="g6over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g6')"></div>
+
+                            <div id="a7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('a7')"></div>
+                            <div id="b7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('b7')"></div>
+                            <div id="c7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('c7')"></div>
+                            <div id="d7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('d7')"></div>
+                            <div id="e7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('e7')"></div>
+                            <div id="f7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('f7')"></div>
+                            <div id="g7over" class="transparent" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="castSpell('g7')"></div>
+                    </div>
+
+            </div> <!--End of parent grid-->
+
+
+            <img id="token" src="assets/sprites/cloverA.png">
+            <img class="hidden" id="asher" src="assets/sprites/asher.png">
+
+        </div> <!--page flex-->
+        </div> <!--page flex flex-->
+
+
+    <audio id="thock" src="assets/sound/thocks/thock.mp3"></audio>
+    <audio id="thock2" src="assets/sound/thocks/thock2.mp3"></audio>
+    <audio id="thock3" src="assets/sound/thocks/thock3.mp3"></audio>
+    <audio id="thock4" src="assets/sound/thocks/thock4.mp3"></audio>
+    <audio id="thock5" src="assets/sound/thocks/thock5.mp3"></audio>
+    <audio id="thock6" src="assets/sound/thocks/thock6.mp3"></audio>
+    <audio id="thock7" src="assets/sound/thocks/thock7.mp3"></audio>
+    <audio id="thock8" src="assets/sound/thocks/thock8.mp3"></audio>
+    <audio id="thock9" src="assets/sound/thocks/thock9.mp3"></audio>
+    <audio id="thock10" src="assets/sound/thocks/thock10.mp3"></audio>
+    <audio id="thock11" src="assets/sound/thocks/thock11.mp3"></audio>
+    
+    <audio id="tableSound" src="assets/sound/pip.mp3"></audio>
+    
+    <audio id="pip" src="assets/sound/pip.mp3"></audio>
+    <audio id="grandfatherClock" src="assets/sound/paloop.mp3"></audio>
+    <audio id="shplurp" src="assets/sound/shplurp.mp3"></audio>
+    <audio id="glass" src="assets/sound/glass.mp3"></audio>
+    <audio id="ksjdnfkjsndkfjnsdf" src="assets/sound/favie.mp3"></audio>
+    <audio id="favie" src="assets/sound/like.mp3"></audio>
+    <audio id="nope" src="assets/sound/nope.mp3"></audio>
+    <audio id="paloop" src="assets/sound/paloop.mp3"></audio>
+    <audio id="menun" src="assets/sound/menu.mp3"></audio>
+    <audio id="menoop" src="assets/sound/menoop.mp3"></audio>
+    <audio id="wrong" src="assets/sound/wrong.mp3"></audio>
+    <audio id="tclack" src="assets/sound/tack.mp3"></audio>
+    <audio id="tclock" src="assets/sound/clock.mp3"></audio>
+    <audio id="sort" src="assets/sound/sort.mp3"></audio>
+    <audio id="noSort" src="assets/sound/noSort.mp3"></audio>
+    <audio id="sclick" src="assets/sound/sclick.mp3"></audio>
+    <audio id="eyeBlink" src="assets/sound/eyeBlink.mp3"></audio>
+    <audio id="bottleTake" src="assets/sound/bottleTake.mp3"></audio>
+    <audio id="bucketNoise" src="assets/sound/bucket.mp3"></audio>
+    <audio id="thunk" src="assets/sound/thunk.mp3"></audio>
+    <audio id="stairs1" src="assets/sound/stairs1.mp3"></audio>
+    <audio id="stairs2" src="assets/sound/stairs2.mp3"></audio>
+    <audio id="stairs3" src="assets/sound/stairs3.mp3"></audio>
+    <audio id="stairs4" src="assets/sound/stairs4.mp3"></audio>
+    <audio id="stairs5" src="assets/sound/stairs5.mp3"></audio>
+    <audio id="click" src="assets/sound/select.mp3"></audio>
+    <audio id="unclick" src="assets/sound/unclick.mp3"></audio>
+    <audio id="blinkBloop" src="assets/sound/blinkBloop.mp3"></audio>
+    <audio id="lowMana" src="assets/sound/lowMana.mp3"></audio>
+    <audio id="glam" src="assets/sound/string8.mp3"></audio>
+    <audio id="invalidTarget" src="assets/sound/badkey.mp3"></audio>
+    <audio id="door" src="assets/sound/travel3.mp3"></audio>
+    <audio id="stairs" src="assets/sound/string8.mp3"></audio>
+    <audio id="opening1v" src="assets/sound/string8.mp3"></audio>
+    <audio id="crumble" src="assets/sound/string8.mp3"></audio>
+    <audio id="boxTake" src="assets/sound/box.mp3"></audio>
+    <audio id="metalTake" src="assets/sound/string8.mp3"></audio>
+    <audio id="woodTake" src="assets/sound/plankplonk.mp3"></audio>
+    <audio id="stone2" src="assets/sound/stone2.mp3"></audio>
+    <audio id="squelch" src="assets/sound/string8.mp3"></audio>
+    <audio id="paper" src="assets/sound/string8.mp3"></audio>
+    <audio id="catab" src="assets/sound/vwiu.mp3"></audio>
+    <audio id="heal" src="assets/sound/heal.mp3"></audio>
+    <audio id="dispel" src="assets/sound/dispel.mp3"></audio>
+    <audio id="tink" src="assets/sound/dispel.mp3"></audio>
+    <audio id="miscplaceholder" src="assets/sound/whoops.mp3"></audio>
+    <audio id="excuseMe" src="assets/sound/string8.mp3"></audio>
+    <audio id="pluck" src="assets/sound/mushroomPick.mp3"></audio>
+    <!--player: ouch! (if you add more, just add the ids to "ouchers" array in ouch() : heronScript)-->
+    <audio id="ouch1" src="assets/sound/dia2.mp3"></audio>
+    <audio id="ouch2" src="assets/sound/sound4.mp3"></audio>
+    <!--robin: ouch! see above-->
+    <audio id="bouch1" src="assets/sound/dia2.mp3"></audio>
+    <audio id="bouch2" src="assets/sound/sound4.mp3"></audio>
+    
+    <audio id="dNote" src="assets/sound/notes/d.mp3"></audio>
+    <audio id="dcNote" src="assets/sound/notes/dcopy.mp3"></audio>
+    <audio id="d2Note" src="assets/sound/notes/d2.mp3"></audio>
+    <audio id="gsNote" src="assets/sound/notes/gs.mp3"></audio>
+    <audio id="gNote" src="assets/sound/notes/g.mp3"></audio>
+    <audio id="aNote" src="assets/sound/notes/a.mp3"></audio>
+    <audio id="fNote" src="assets/sound/notes/f.mp3"></audio>
+    <audio id="fcNote" src="assets/sound/notes/fcopy.mp3"></audio>
+    <audio id="cNote" src="assets/sound/notes/c.mp3"></audio>
+    <audio id="ccNote" src="assets/sound/notes/ccopy.mp3"></audio>
+    <audio id="bNote" src="assets/sound/notes/b.mp3"></audio>
+    <audio id="bcNote" src="assets/sound/notes/bc.mp3"></audio>
+    <audio id="bfNote" src="assets/sound/notes/bf.mp3"></audio>
+    <audio id="bfcNote" src="assets/sound/notes/bfc.mp3"></audio>
+    
+    <audio id="chord1" src="assets/sound/chord1.mp3"></audio>
+    
+
+        <script src="code/dialogueRunner.js"></script>
+        <script src="code/conversations.js"></script>
+    </body>
+</html>

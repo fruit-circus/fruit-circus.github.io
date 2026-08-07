@@ -10,6 +10,9 @@ const current = {
     //room: "canalMouth",
 }
 
+const stainedGlassMarket = document.getElementById("stainedGlassMarket");
+
+
 //the default behavior for taking objects is to Halt(),
 //which is a problem if the player didn't move last turn. 
 //if object is taken by bumping a wall, add player.hittingAWall = true;

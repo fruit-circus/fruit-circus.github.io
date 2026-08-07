@@ -1,0 +1,1011 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.portrait {
+    z-index: 2;
+    width: 50%;
+    float: left;
+    display: none;
+}
+
+:root {
+    --magicTileColor : rgb(170, 79, 126);
+    --light-tile: rgb(51, 52, 59);
+    --dark-tile: rgb(38, 37, 38);
+    --random-color: rgb(241, 226, 65);
+    --dress-up: rgb(179, 128, 142);
+    --system-color1: rgb(128, 147, 179);
+    --system-color1a: rgb(179, 128, 128);
+    --system-color2: rgb(144, 163, 163);
+    --system-color3: rgb(141, 116, 148);
+    --system-color4: rgb(52, 194, 121);
+    --system-color5: rgb(105, 105, 153);
+    --system-color6: rgb(187, 215, 205);
+    --system-color7: rgb(200, 228, 218);
+    --system-color8: rgb(153, 147, 105);
+    --system-color9: rgb(105, 153, 129);
+    --system-color10: rgb(153, 105, 105);
+    --favButton-color: rgb(207, 209, 178);
+    --favButton-color2: rgb(240, 241, 213);
+
+    --system-color8-hover: rgb(191, 184, 131);
+    --system-color9-hover: rgb(121, 177, 149);
+    --system-color10-hover: rgb(205, 141, 141);
+
+    --mana-color: rgb(119, 79, 136);
+    --health-color: rgb(180, 93, 97);
+    --carry-color: rgb(149, 107, 58);
+    --armor-color: white;
+    --itemText-color: black;
+
+}
+
+#pageFlexFlex {
+    margin: 0px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+
+#pageFlex {
+    aspect-ratio: 1.618 / 1;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 38.2% 0.01% 61.8%;
+    margin: 20px;
+    margin-top: 10px;
+    margin-left: 0px; /*this puts it deliberately -20px off center for balance, could change later*/
+    max-height: 94vh;
+    
+}
+
+#menuContainer {
+    visibility: hidden;
+    min-height: 10vh;
+    max-height: 50vh;
+    width: 233px;
+    transform: translate(-20%, 20%);
+}
+
+.dressUpMenu {
+    width: 300px;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    overflow-y: scroll;
+    border: 3px solid white;
+    min-height: 10vh;
+    max-height: 50vh;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 1;
+    transform: translate(0%, 0%);
+    background-color: var(--dress-up);
+}
+
+.box {
+    width: 50px;
+    aspect-ratio: 1;
+    border: 3px solid white;
+    margin: 5px;
+}
+
+.box:hover {
+    width: 46px;
+    transform: translate(1px, -2px);
+}
+
+#triangleBorder {
+    width: 0; 
+    height: 0; 
+    z-index: -1;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid white;
+    transform: translate(-100%, -700%);
+}
+
+#triangleFill {
+    z-index: 20;
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid var(--dress-up);
+    transform: translate(-80%, -800%);
+}
+
+
+.dressUpMenu {
+    width: fit-content;
+    height: 100%;
+    padding: 10px;
+}
+
+
+#roomContainer {
+    border: 3px solid white;
+    aspect-ratio: 1 / 1;
+    margin-left: -5px;
+}
+
+#interface {
+    user-select: none;
+    aspect-ratio: 1 / 1.618;
+    border-bottom: 3px solid white;
+    overflow: hidden; /*fix for the rough aprox on interface-bottom*/
+}
+
+#interface-top {
+
+    background-color: var(--system-color1);
+    margin-bottom: 15px;
+    border: 3px solid white;
+    border-top: none;
+    aspect-ratio: 1 / 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: relative;
+}
+
+#interface-buttons-container {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    aspect-ratio: 1.618 / .16;
+
+}
+
+#cloverCharacterButton,
+#asherCharacterButton,
+#spellListButton,
+#spellListButton2,
+#inventoryButton {
+    width: 33%;
+    margin-right: 10px;
+    color: white;
+    height: 100%;
+}
+#asherCharacterButton {
+    display: none;
+}
+.inactiveButton {
+    background-color: var(--system-color2);
+    border-bottom: 3px solid white;
+}
+
+.activeButton {
+    background-color: var(--system-color1);
+    border-bottom: none;
+}
+
+#inventoryButton {
+    margin-right: 0px;
+}
+
+
+
+button {
+    border: 3px solid white;
+    background-color: var(--system-color2);
+    color: white;
+    font-family: monospace;
+}
+
+button:hover {
+    background-color: var(--system-color3);
+   /* background-color: rgb(102, 82, 108); */
+}
+.activeButton:hover {
+    background-color: var(--system-color1);
+}
+
+#cloverDressUp,
+#asherDressUp {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.defaultDressUpIcons {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+#cloverSheet,
+#asherSheet {
+    display: grid;
+    margin: 9%;
+    margin-top: 8%;
+    overflow-x: hidden;
+}
+#asherSheet,
+#spellSheet,
+#invSheet {
+    display: none;
+    user-select: none;
+    overflow-x: hidden;
+}
+.dressUpContainer {
+    display: grid;
+}
+
+.dressUpContainer > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.listItem,
+.objectListItem {
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+    border: 2px dotted white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 15px;
+}
+
+
+#reallysure {
+    display: none;
+    background-color: rgb(246, 241, 241);
+    height: fit-content;
+    color: black;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border: 2px dotted black;
+}
+
+.selected {
+    border: 2px solid white;
+    font-weight: bold;
+    background-color: black;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#spellSheet {
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+.spellName {
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.favFlex {
+    position: relative;
+    float: left;
+}
+
+.fav {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    
+    
+}
+
+
+#interface-bottom {
+    overflow: scroll;
+    border: 3px solid white;
+    aspect-ratio: 1.618 / 1; /*rough aprox, has overflow*/
+    background-color: var(--system-color2);
+}
+
+
+/*interface-bottom*/
+/*interface-bottom*/
+/*interface-bottom*/
+
+#mana-box,
+#health-box,
+#carry-box,
+#armor-box,
+#statusBox {
+    margin-bottom: 0px;
+}
+
+#mana-box {
+    width: 94%;
+    display: flex;
+}
+
+#mana-bar,
+#mana-bar-flash {
+    background-color: var(--mana-color);
+    height: 170%;
+    width: 100%;
+    margin: 0px;
+}
+#mana-bar-flash {
+    background-color: rgb(190, 163, 199);
+    opacity: 0;
+}
+#health-bar-flash {
+    background-color: rgb(242, 224, 225);
+    opacity: 0;
+}
+
+#mana-readout,
+#health-readout,
+#carryCapacity,
+#carryCapacity2,
+#armor-readout,
+#statusBox {
+    padding: 7px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: monospace;
+}
+#carryCapacity {
+    width: 300px;
+}
+#armor-readout {
+    padding-left: 7px;
+}
+
+#health-box {
+    width: 80%;
+    display: flex;
+}
+
+#health-bar,
+#health-bar-flash {
+    background-color: var(--health-color);
+    height: 170%;
+    width: 100%;
+    margin: 0px;
+}
+
+
+#nahJuice,
+#yesJuice {
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--system-color9);
+}
+#nahJuice {
+    background-color: var(--system-color10);
+}
+
+
+#health-container,
+#mana-container {
+    display: grid;
+    margin: 10px;
+    border: 3px solid white;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#health-container > *,
+#mana-container > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+
+#carry-box {
+    width: 40%;
+    display: flex;
+}
+
+#carry-bar {
+    background-color: var(--carry-color);
+    height: 170%;
+    width: 0%;
+    margin: 0px;
+}
+
+#carry-container {
+    margin: 10px;
+    border: 3px solid white;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+#armor-box {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+#armor-point {
+    min-width: 10px;
+    margin: 5px;
+    border: 2px solid var(--armor-color);
+    aspect-ratio: 1/1;
+}
+.full-armor {
+    background-color: white;
+}
+.empty-armor {
+    background-color: transparent;
+}
+
+#statusBox {
+    margin: 10px;
+    border: 3px dotted white;
+    height: 23%;
+    overflow-y: scroll;
+    margin-bottom: 70px;
+}
+
+#paddingDivIDK {
+    height: 10px;
+}
+
+.itemText {
+    color: var(--itemText-color);
+}
+
+#invOrganizerSelector {
+    display: none;
+    margin: 12px;
+}
+
+#chronButton {
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
+.favoredItem {
+    color: var(--random-color);
+}
+
+#weightButton {
+    background-color: var(--system-color8);
+}
+
+#favButton {
+    background-color: var(--system-color9);
+}
+
+#alphButton {
+    background-color: var(--system-color10);
+}
+
+#weightButton:hover {
+    background-color: var(--system-color8-hover);
+}
+
+#favButton:hover {
+    background-color: var(--system-color9-hover);
+}
+
+#alphButton:hover {
+    background-color: var(--system-color10-hover);
+}
+
+#asherInterfaceBottom {
+    display: none;
+}
+
+/*endterface-bottom*/
+/*endterface-bottom*/
+/*endterface-bottom*/
+
+#asherName {
+    display: none;
+    font-family: monospace;
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 5px;
+    color: white;   
+}
+
+
+#nameAndClockContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#cloverName {
+    font-family: monospace;
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 5px;
+    color: white;   
+}
+
+
+#clock {
+    font-family: monospace;
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#mana-boxA,
+#health-boxA,
+#carry-boxA,
+#armor-boxA,
+#status-boxA {
+    margin-bottom: 0px;
+}
+
+#mana-barA {
+    background-color: var(--mana-color);
+    height: 170%;
+    width: 50%;
+    margin: 0px;
+}
+
+#mana-readoutA,
+#health-readoutA,
+#carryCapacityA,
+#armor-readoutA,
+#status-boxA {
+    padding: 7px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: monospace;
+}
+#carryCapacityA {
+    width: 300px;
+}
+#armor-readoutA {
+    padding-left: 7px;
+}
+
+#health-barA {
+    background-color: var(--health-color);
+    height: 170%;
+    width: 90%;
+    margin: 0px;
+}
+
+#health-containerA,
+#mana-containerA {
+    display: grid;
+    margin: 10px;
+    border: 3px solid white;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+#health-containerA > *,
+#mana-containerA > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#carry-boxA {
+    width: 20%;
+    display: flex;
+}
+
+#health-boxA {
+    width: 60%;
+    display: flex;
+}
+
+#mana-boxA {
+    width: 35%;
+    display: flex;
+}
+
+#carry-barA {
+    background-color: var(--carry-color);
+    height: 170%;
+    width: 71%;
+    margin: 0px;
+}
+
+#carry-containerA {
+    margin: 10px;
+    border: 3px solid white;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+#armor-boxA {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+#armor-pointA {
+    min-width: 10px;
+    margin: 5px;
+    border: 2px solid var(--armor-color);
+    aspect-ratio: 1/1;
+}
+.full-armor {
+    background-color: white;
+}
+.empty-armor {
+    background-color: transparent;
+}
+
+#status-boxA {
+    margin: 10px;
+    border: 3px dotted white;
+    height: 23%;
+    overflow-y: scroll;
+    margin-bottom: 100px;
+}
+
+
+#carryCapacity2 {
+    display: none;
+}
+
+#buttonflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dialogueArrow {
+    display: none;
+}
+
+#all-dialogue {
+    display: none;
+}
+
+#dialogueBar {
+    width: 154.5vh;
+    height: 30vh;
+    position: absolute;
+    border: 3px solid clear;
+    margin-top: 60vh;
+    
+    z-index: 3;
+}
+
+
+.orgOption {
+    padding: 10px;
+    margin: 7px;
+    border: 2px solid white;
+    margin-top: 10px;
+    font-size: 12px;
+    background-color: var(--system-color5);
+    cursor: pointer;
+}
+
+
+#sortButton {
+    display: none;
+}
+
+@media (max-height: 690px) {
+#buttonflex {
+    display: flex;
+    flex-direction: column;
+}
+.orgOption {
+    margin-top: 0px;
+    font-size: 14px;
+}
+#chronButton {
+    margin-top: 5px;
+    display: none;
+}
+#favButton {
+    display: none;
+}
+#alphButton {
+    display: none;
+}
+#weightButton {
+    display: none;
+}
+#sortButton {
+    display: block;
+    margin-top: 12px;
+    background-color: rgb(178, 161, 131);
+
+}
+
+}
+
+
+
+
+@media (max-height: 650px) {
+    #carryCapacity {
+        display: none;
+    }
+    #carryCapacity2 {
+        display: block;
+    }
+    #cloverName {
+        margin-bottom: 0px;
+    }
+}
+
+
+
+#spellListButton2 {
+        display: none;
+    }
+
+@media (max-height: 527px) {
+    #spellListButton2 {
+        display: block;
+    }
+    #spellListButton {
+        display: none;
+    }
+}
+
+
+#spellDivider {
+    margin-top: 120px;
+    margin-bottom: 0px;
+    border: none;
+    font-size: 18px;
+}
+
+#spellDivider1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border: none;
+    font-size: 18px;
+}
+
+#shrinkSelf,
+#magicMirror,
+#wishingWell,
+#lifeSpike,
+#poison,
+#catapult,
+#siphonMagic,
+#ironWard,
+#armorOfKahel {
+    display: none;
+}
+
+.objectListItem {
+    border: none;
+}
+
+.objectIcons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 3px;
+}
+
+.objButton {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    color: black;
+    background-color: var(--system-color6);
+    border: 1px solid black;
+}
+
+.objButton:hover {
+    background-color: var(--system-color7);
+}
+
+.objectIcon {
+    width: 35px;
+    margin-top: 15px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border: 2px dotted white;
+}
+
+.objectIcon:hover {
+    border: 2px solid white;
+}
+
+.objectDescription {
+    display: block;
+}
+
+.objectName {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.inactiveInfo {
+    display: none;
+}
+.activeInfo {
+    display: block;
+}
+
+#favoriteButton {
+    background-color: var(--favButton-color);
+}
+#favoriteButton:hover {
+    background-color: var(--favButton-color2);
+}
+
+#square {
+    border: 1px solid rgb(105, 105, 153);
+    aspect-ratio: 1;
+}
+
+#square:hover {
+    background-color: azure;
+}
+
+
+.hotspot {
+    fill: transparent;
+    cursor: pointer;
+}
+
+/*
+.hotspot:hover {
+    fill: rgba(255, 0, 0, 0.3);
+}
+    */
+
+#cloakless,
+#hatless,
+#earless,
+#shoeless,
+#ring1less,
+#ring2less,
+#blinkEyes,
+#neckless {
+    display: none;
+}
+
+#blinkEyes {
+    display: none;
+}
+
+
+.hat {
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.earrings {
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.spell-icon {
+    width: 50px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#blink-icon {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+
+/*ROOM STUFF*/
+#parentGrid {
+    display: grid;
+}
+
+#parentGrid > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#token {
+    display: none;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.tile {
+    position: relative;
+    aspect-ratio: 1;
+    background-color: var(--dark-tile);
+    width: 93%;
+}
+.lighttile {
+    position: relative;
+    aspect-ratio: 1;
+    background-color: var(--light-tile);
+    width: 93%;
+}
+
+#clover {
+    display: none;
+    height: 94vh;
+}
+
+
+
+#grid {
+  display: grid;
+  max-height: 76.4vh;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0px;
+  border: 3px solid white;
+    aspect-ratio: 7 / 7;
+    margin-left: -5px;
+    padding: 11%;
+}
+
+
+
+
+#magicGrid {
+  display: grid;
+  max-height: 76.4vh;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0px;
+  border: 3px solid white;
+    aspect-ratio: 7 / 7;
+    margin-left: -5px;
+    padding: 11%;
+    z-index: 2;
+}
+
+
+.transparent {
+    opacity: 0.01;
+    position: relative;
+    aspect-ratio: 1;
+    width: 93%;
+}
+
+.grid2 {
+  max-height: 76.4vh;
+  gap: 0px;
+  display: none;
+    aspect-ratio: 1;
+    margin-left: -5px;
+    width: 100%;
+}
+
+.grid2 > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.grid2 img {
+    width: 100%;
+    z-index: 1;
+}

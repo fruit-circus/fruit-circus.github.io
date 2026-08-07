@@ -2613,15 +2613,20 @@ function playerToD8() {
         door.play();
     }
     else if (current.room === "fountainRoom") {
+       /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
+            */
         current.room = "stainedGlassMarket";
         room.size = "sevenBySeven";
+        console.log("hi");
         fountainRoom.style.display = "none";
+        console.log("hi2");
         stainedGlassMarket.style.display = "grid";
+        console.log("hi3");
         moveTo(d1);
         //checkWhichTilesShouldBeIncluded();
         door.play();

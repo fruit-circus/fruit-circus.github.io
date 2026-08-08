@@ -43,13 +43,14 @@ function advanceConversation(event) {
       goForward.style.width = "70px";
     }, 200);
     converse(activeTopic);
+    converse(activeTopic.id);
     console.log(activeTopic.id);
     event.preventDefault();
   }
 }
 
 function converse(topicDiv) {
-  console.log("le topic le conversation:", topic);
+  console.log("le topic le conversation:", topicDiv);
   startDialogue();
   let topic = Array.from(topicDiv.children);
   console.log("le topic le conversationnnnnn:", topic);

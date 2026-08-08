@@ -49,9 +49,10 @@ function advanceConversation(event) {
 }
 
 function converse(topicDiv) {
+  console.log("le topic le conversation:", topic);
   startDialogue();
   let topic = Array.from(topicDiv.children);
-  console.log(topic)
+  console.log("le topic le conversationnnnnn:", topic);
 if (!dialogue.goingBackwards) {
   if (currentIndex == 0) {
     dialogue.conversing = true;

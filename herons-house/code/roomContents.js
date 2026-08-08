@@ -181,7 +181,7 @@ else if (player.position === "a5") {
             eastCatacombsLanding.style.display = "none";
             librarySouth.style.display = "grid";
             current.room = "librarySouth";
-            moveTo();
+            moveTo(e4);
                     movement.tempPrevent = true;
             checkWhichTilesShouldBeIncluded();
             stairsNoise();
@@ -212,7 +212,7 @@ else if (player.position === "a5") {
             eastCatacombsLanding.style.display = "none";
             librarySouth.style.display = "grid";
             current.room = "librarySouth";
-            moveTo();
+            moveTo(e4);
                     movement.tempPrevent = true;
             checkWhichTilesShouldBeIncluded();
             stairsNoise();
@@ -310,7 +310,7 @@ else if (player.position === "a5") {
                     eastCatacombsLanding.style.display = "none";
                     librarySouth.style.display = "grid";
                     current.room = "librarySouth";
-                    moveTo();
+                    moveTo(e4);
                     movement.tempPrevent = true;
                     checkWhichTilesShouldBeIncluded();
                     stairsNoise();
@@ -2693,13 +2693,13 @@ function playerToG8() {
 
 function checkIfPlayerIsOnTheTable() {
     if (current.room === "meadHallEast") {
-        if (player.position === "a3" || player.position === "a4" || player.position === "a5" || player.position === "b3" || player.position === "b4" || player.position === "b5" || player.position === "c3" || player.position === "c4" || player.position === "c5" || player.position === "d3" || player.position === "d4" || player.position === "d5" || player.position === "e3" || player.position === "" || player.position === "e5") {
+        if (player.position === "a3" || player.position === "a4" || player.position === "a5" || player.position === "b3" || player.position === "b4" || player.position === "b5" || player.position === "c3" || player.position === "c4" || player.position === "c5" || player.position === "d3" || player.position === "d4" || player.position === "d5" || player.position === "e3" || player.position === "e4" || player.position === "e5") {
             player.onTable = true;
         } else {
             player.onTable = false;
         }
     } else if (current.room === "meadHallWest") {
-        if (player.position === "f3" || player.position === "f4" || player.position === "f5" || player.position === "g3" || player.position === "g4" || player.position === "g5" || player.position === "c3" || player.position === "c4" || player.position === "c5" || player.position === "d3" || player.position === "d4" || player.position === "d5" || player.position === "e3" || player.position === "" || player.position === "e5") {
+        if (player.position === "f3" || player.position === "f4" || player.position === "f5" || player.position === "g3" || player.position === "g4" || player.position === "g5" || player.position === "c3" || player.position === "c4" || player.position === "c5" || player.position === "d3" || player.position === "d4" || player.position === "d5" || player.position === "e3" || player.position === "e4" || player.position === "e5") {
             player.onTable = true;
         } else {
             player.onTable = false;

@@ -336,6 +336,15 @@ button:hover {
     margin-bottom: 0px;
 }
 
+#statusBox {
+       scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE and Edge */
+}
+
+#statusBox::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
+}
+
 #mana-box {
     width: 94%;
     display: flex;

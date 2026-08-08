@@ -1720,10 +1720,11 @@ function playerTo4() {
         room.size = "threeByFive";
         preservesPantry.style.display = "grid";
         kitchen.style.display = "none";
-        moveTo();
+        moveTo(e4);
         movement.tempPrevent = true;
         current.room = "preservesPantry";
         checkWhichTilesShouldBeIncluded();
+        console.log(room.size);
         door.play();
     } else {
         bump(left);

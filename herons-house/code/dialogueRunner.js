@@ -43,7 +43,7 @@ function advanceConversation(event) {
       goForward.style.width = "70px";
     }, 200);
     converse(activeTopic);
-    console.log(activeTopic);
+    console.log(activeTopic.id);
     event.preventDefault();
   }
 }

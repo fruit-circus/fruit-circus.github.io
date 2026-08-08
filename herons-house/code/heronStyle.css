@@ -703,7 +703,7 @@ button:hover {
     position: absolute;
     border: 3px solid red;
     margin-top: 60vh;
-    display: none;
+    display: block;
     z-index: 3;
 }
 

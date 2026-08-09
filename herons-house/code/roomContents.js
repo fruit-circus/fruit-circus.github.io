@@ -10,10 +10,11 @@ const current = {
     //room: "canalMouth",
 }
 
+const stainedGlassMarket = document.getElementById("stainedGlassMarket");
 
 //the default behavior for taking objects is to Halt(),
 //which is a problem if the player didn't move last turn. 
-//if object is taken by bumping a wall, add player.hittingAWall = true;
+//so, if object is taken by bumping a wall, add player.hittingAWall = true;
 
 
 function moveTo(tileId) {
@@ -155,7 +156,7 @@ else if (player.position === "a5") {
     }
 
     else if (player.position === "b1") {
-        if (current.room === "northPorch") {halt()}
+        if (current.room === "northPorch") {halt(right);}
     else if (current.room === "stainedGlassMarket") {
         halt(left);
         alert("talk wizard");
@@ -272,6 +273,8 @@ else if (player.position === "a5") {
         room.size = "threeByThree";
         westernServantsQuartersHallway.style.display = "none";
         servantsQuartersSix.style.display = "grid";
+moveTo(d1);
+movement.tempPrevent = true;
         current.room = "servantsQuartersSix";
         console.log(current.room);
         checkWhichTilesShouldBeIncluded();
@@ -287,12 +290,13 @@ else if (player.position === "a5") {
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
-    else if (room.size === "sevenByOne") {} //southern exits in 7x1 rooms go above this line
-    else if (current.room === "northPorch") {}
+    else if (room.size === "threeByTwo") {halt(left);}
     else if (current.room === "preservesPantry") {
         room.size = "sevenByOne";
         preservesPantry.style.display = "none";
         westernServantsQuartersHallway.style.display = "grid";
+moveTo(g1);
+movement.tempPrevent = true;
         current.room = "westernServantsQuartersHallway";
         checkWhichTilesShouldBeIncluded();
         door.play();
@@ -300,7 +304,7 @@ else if (player.position === "a5") {
     else if (room.size === "threeByTwo") {halt(left);} //place exits in three by three rooms above this line
     else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(left);} //place exits in three by three rooms above this line
     else if (room.size === "threeByFive") {halt(left);} //place exits in three by five rooms above this line
-    
+    else if (room.size === "sevenByOne") {halt(down);}
     }
 
     else if (player.position === "b3") {
@@ -666,6 +670,8 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     room.size = "threeByThree";
                                     easternServantsQuartersHallway.style.display = "none";
                                     servantsQuartersTwo.style.display = "grid";
+moveTo(d1);
+movement.tempPrevent = true;
                                     current.room = "servantsQuartersTwo";
                                     console.log(current.room);
                                     checkWhichTilesShouldBeIncluded();
@@ -766,6 +772,8 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                         room.size = "sevenByOne";
                                         servantsQuartersOne.style.display = "none";
                                         easternServantsQuartersHallway.style.display = "grid";
+moveTo(f1);
+movement.tempPrevent = true;
                                         current.room = "easternServantsQuartersHallway";
                                         checkWhichTilesShouldBeIncluded();
                                         door.play();
@@ -775,6 +783,8 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                         servantsQuartersThree.style.display = "none";
                                         easternServantsQuartersHallway.style.display = "grid";
                                         current.room = "easternServantsQuartersHallway";
+moveTo(b1);
+movement.tempPrevent = true;
                                         checkWhichTilesShouldBeIncluded();
                                         door.play();
                                     } 
@@ -782,6 +792,8 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                         room.size = "sevenByOne";
                                         servantsQuartersFive.style.display = "none";
                                         westernServantsQuartersHallway.style.display = "grid";
+moveTo(d1);
+movement.tempPrevent = true;
                                         current.room = "westernServantsQuartersHallway";
                                         checkWhichTilesShouldBeIncluded();
                                         door.play();
@@ -899,7 +911,7 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                                 checkWhichTilesShouldBeIncluded();
                                                 door.play();
                                             }
-                                            else if (room.size === "sevenByOne") {} //southern exits in 7x1 rooms go above this line
+                                            else if (room.size === "sevenByOne") {halt(down)} //southern exits in 7x1 rooms go above this line
                                             else if (current.room === "coatRoom") {
                                                 player.hasUsedTheArrowKeysToMove = true;
                                                 if (!dialogue.coatsss) {   
@@ -916,7 +928,6 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                                     }
                                                 }
                                             }
-                                            else if (room.size === "oneBySeven") {halt(right);} //block
                                             }
 
     else if (player.position === "e3") {
@@ -976,7 +987,6 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                         else if (room.size === "oneBySeven") {halt(right);} //block
                         else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(down);} //place exits in three by three rooms above this line
                         
-        
                         }
                         
     else if (player.position === "e5") {
@@ -1006,8 +1016,6 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     else if (current.room === "entryHall") {
                                         converse(wolfStatue);
                                     } 
-else if (room.size === "threeByFive") {halt(down);}
-        
                                     }
 
     
@@ -1099,12 +1107,13 @@ else if (room.size === "threeByFive") {halt(down);}
                                         }
                                         else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(right);} //place exits in three by three rooms above this line
                                         else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
-                                        else if (current.room === "northPorch") {
-                                            alert("You: the stairs lead down to a lawn of white grass bordered by a dense, dark forest. The grass was once well-maintained, but is now overgrown and pitted with small crators.")
-                                        }
                                         else if (current.room === "entryHall") {
                                             converse(civetStatue);
                                         }
+                                        else if (room.size === "threeByTwo") {
+                                                halt(right);
+                                                alert("You: the stairs lead down to a lawn of white grass bordered by a dense, dark forest. The grass was once well-maintained, but is now overgrown and pitted with small crators.")
+                                            }
                                         
                                         }
 
@@ -1148,6 +1157,8 @@ else if (room.size === "threeByFive") {halt(down);}
                                                 westernServantsQuartersHallway.style.display = "none";
                                                 servantsQuartersFour.style.display = "grid";
                                                 current.room = "servantsQuartersFour";
+                                                    moveTo(d1);
+                                                    movement.tempPrevent = true;
                                                 console.log(current.room);
                                                 checkWhichTilesShouldBeIncluded();
                                                 door.play();
@@ -1163,13 +1174,14 @@ else if (room.size === "threeByFive") {halt(down);}
                                                 door.play();
                                             }
                                             else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(right);} //place exits in three by three rooms above this line
-                                            else if (room.size === "sevenByOne") {halt(right);} //southern exits in 7x1 rooms go above this line
+                                            else if (room.size === "sevenByOne") {halt(down);} //southern exits in 7x1 rooms go above this line
                                             else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
-                                            else if (current.room === "northPorch") {
+                                            else if (room.size === "threeByTwo") {
+                                                halt(right);
                                                 alert("You: the stairs lead down to a lawn of white grass bordered by a dense, dark forest. The grass was once well-maintained, but is now overgrown and pitted with small crators.")
                                             }
                                             else if (current.room === "weaponsCheck") {halt();}
-                                            
+
                                             }
       else if (player.position === "f3") {
                                                     if (current.room === "stainedGlassMarket") {
@@ -1242,7 +1254,7 @@ else if (room.size === "threeByFive") {halt(down);}
                                                     door.play();
                                                 }
                                                 else if (room.size === "sevenByThree") {halt(down);} //block
-                                                else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
+                                                else if (room.size === "threeByFive") {halt(down);} //place exits in three by five rooms above this line
                                                 
                                                 }
 
@@ -1517,6 +1529,7 @@ function playerTo1() {
         westernServantsQuartersHallway.style.display = "none";
         easternServantsQuartersHallway.style.display = "grid";
         current.room = "easternServantsQuartersHallway";
+moveTo(g1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     } else  {
@@ -1724,7 +1737,6 @@ function playerTo4() {
         movement.tempPrevent = true;
         current.room = "preservesPantry";
         checkWhichTilesShouldBeIncluded();
-        console.log(room.size);
         door.play();
     } else {
         bump(left);
@@ -1873,6 +1885,8 @@ function playerToB() {
         room.size = "threeByThree";
         easternServantsQuartersHallway.style.display = "none";
         servantsQuartersThree.style.display = "grid";
+moveTo(d3);
+movement.tempPrevent = true;
         current.room = "servantsQuartersThree";
                 console.log(current.room);
         checkWhichTilesShouldBeIncluded();
@@ -2016,6 +2030,8 @@ function playerToD() {
     else if (current.room === "servantsQuartersFour") {
         room.size = "sevenByOne";
         servantsQuartersFour.style.display = "none";
+moveTo(f1);
+movement.tempPrevent = true;
         westernServantsQuartersHallway.style.display = "grid";
         current.room = "westernServantsQuartersHallway";
         checkWhichTilesShouldBeIncluded();
@@ -2053,6 +2069,8 @@ function playerToD() {
         room.size = "sevenByOne";
         servantsQuartersTwo.style.display = "none";
         easternServantsQuartersHallway.style.display = "grid";
+	moveTo(d1);
+	movement.tempPrevent = true;
         current.room = "easternServantsQuartersHallway";
         checkWhichTilesShouldBeIncluded();
         door.play();
@@ -2060,6 +2078,8 @@ function playerToD() {
     else if (current.room === "servantsQuartersSix") {
         room.size = "sevenByOne";
         servantsQuartersSix.style.display = "none";
+moveTo(b1);
+movement.tempPrevent = true;
         westernServantsQuartersHallway.style.display = "grid";
         current.room = "westernServantsQuartersHallway";
         checkWhichTilesShouldBeIncluded();
@@ -2069,6 +2089,8 @@ function playerToD() {
         room.size = "threeByThree";
         westernServantsQuartersHallway.style.display = "none";
         servantsQuartersFive.style.display = "grid";
+moveTo(d3);
+movement.tempPrevent = true;
         current.room = "servantsQuartersFive";
         console.log(current.room);
         checkWhichTilesShouldBeIncluded();
@@ -2221,6 +2243,8 @@ function playerToF() {
         easternServantsQuartersHallway.style.display = "none";
         servantsQuartersOne.style.display = "grid";
         current.room = "servantsQuartersOne";
+moveTo(d3);
+movement.tempPrevent = true;
                 console.log(current.room);
         checkWhichTilesShouldBeIncluded();
         door.play();
@@ -2285,12 +2309,15 @@ function playerToH1() {
         easternServantsQuartersHallway.style.display = "none";
         westernServantsQuartersHallway.style.display = "grid";
         current.room = "westernServantsQuartersHallway";
+moveTo(a1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     } else if (current.room === "westernServantsQuartersHallway") {
         room.size = "threeByFive";
         westernServantsQuartersHallway.style.display = "none";
         preservesPantry.style.display = "grid";
+moveTo(c2);
+movement.tempPrevent = true;
         current.room = "preservesPantry";
         checkWhichTilesShouldBeIncluded();
         door.play();
@@ -2617,20 +2644,15 @@ function playerToD8() {
         door.play();
     }
     else if (current.room === "fountainRoom") {
-       /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
-            */
         current.room = "stainedGlassMarket";
         room.size = "sevenBySeven";
-        console.log("hi");
         fountainRoom.style.display = "none";
-        console.log("hi2");
         stainedGlassMarket.style.display = "grid";
-        console.log("hi3");
         moveTo(d1);
         //checkWhichTilesShouldBeIncluded();
         door.play();

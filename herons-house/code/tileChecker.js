@@ -427,7 +427,7 @@ function sevenByOne() {
     highlightableTiles.splice(0, 49);
     highlightableTiles.push("a1", "b1", "c1", "d1", "e1", "f1", "g1");
     console.log("Highlightable Tiles:", highlightableTiles);
-
+	noneAll();
     a1.style.display = "block";
     b1.style.display = "block";
     c1.style.display = "block";
@@ -435,9 +435,25 @@ function sevenByOne() {
     e1.style.display = "block";
     f1.style.display = "block";
     g1.style.display = "block";
+a1over.style.display = "block";
+    b1over.style.display = "block";
+    c1over.style.display = "block";
+    d1over.style.display = "block";
+    e1over.style.display = "block";
+    f1over.style.display = "block";
+    g1over.style.display = "block";
 
     grid.style.aspectRatio = "7/1"
     magicGrid.style.aspectRatio = "7/1"
+
+        grid.style.marginLeft = "0%";
+    magicGrid.style.marginLeft = "0%";
+    rooms.style.marginLeft = "0%";
+    grid.style.gridTemplateColumns = "repeat(7, 1fr)";
+    magicGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
+    grid.style.width = "auto";
+    magicGrid.style.width = "auto";
+
 
 }
 

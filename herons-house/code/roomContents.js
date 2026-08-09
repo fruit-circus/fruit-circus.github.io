@@ -708,6 +708,8 @@ movement.tempPrevent = true;
                                 preservesPantry.style.display = "grid";
                                 northPorch.style.display = "none";
                                 current.room = "preservesPantry";
+                                moveTo(d1);
+                                movement.tempPrevent = true;
                                 checkWhichTilesShouldBeIncluded();
                                 door.play();
                             }
@@ -1051,12 +1053,13 @@ movement.tempPrevent = true;
                                             current.room = "mouseHole";
                                             checkWhichTilesShouldBeIncluded();
                                         } else {
+                                            halt(down)
                                             alert("There's a mousehole here.")
                                         }
                                     } 
                                     else if (room.size === "fiveByFive") {halt(down);} //block
                                     else if (room.size === "oneBySeven") {halt(right);} //block
-                                    else if (room.size === "threeByFive") {halt(left);} //place exits in three by five rooms above this line
+                                    else if (room.size === "threeByFive") {halt(down);} //place exits in three by five rooms above this line
                                     else if (room.size === "sevenByFive") {halt(left);} //exits to 7x5 rooms ought be placed before this line
                                     
                                     }
@@ -1277,7 +1280,7 @@ movement.tempPrevent = true;
                                                     halt(right);
                                                 };
                                             }
-                                            else if (room.size === "threeByFive") {halt(down);} //place exits in three by five rooms above this line
+                                            else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
                                             else if (current.room === "entryHall") {
                                                 converse(hellbenderStatue);
                                             } 
@@ -1538,6 +1541,16 @@ moveTo(g1);
 }
 function playerTo2() {
     if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "largeHallway") {
+        room.size = "threeByThree";
+        largeHallway.style.display = "none";
+        parapet4.style.display = "grid";
+        current.room = "parapet4";
+        moveTo(e2);
+        movement.tempPrevent = true;
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "upperFloorLanding") {
         current.room = "groundFloorLanding3";
         room.size = "fiveByFive";
@@ -1717,11 +1730,13 @@ function playerTo4() {
         moveTo(g4);
         checkWhichTilesShouldBeIncluded();
     } else if (current.room === "fountainRoom") {
+        /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
+            */
         current.room = "entryHall";
         room.size = "sevenByFive";
         entryHall.style.display = "grid";
@@ -2139,11 +2154,13 @@ movement.tempPrevent = true;
             
         }
     } else if (current.room === "fountainRoom") {
+        /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
+            */
         //go to groundFloorLanding
         room.size = "sevenBySeven";
         moveTo(d7);
@@ -2167,6 +2184,8 @@ movement.tempPrevent = true;
     else if (current.room === "preservesPantry") {
         room.size = "threeByTwo";
         northPorch.style.display = "grid";
+        moveTo(d2);
+        movement.tempPrevent = true;
         preservesPantry.style.display = "none";
         current.room = "northPorch";
         checkWhichTilesShouldBeIncluded();
@@ -2476,11 +2495,13 @@ function playerToH4() {
         door.play();
     } 
     else if (current.room === "fountainRoom") {
+        /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
+            */
         current.room = "throneRoomWest";
         room.size = "sevenBySeven";
         fountainRoom.style.display = "none";
@@ -2644,11 +2665,13 @@ function playerToD8() {
         door.play();
     }
     else if (current.room === "fountainRoom") {
+        /*
         if (!dialogue.boyHiden) {
             dialogue.boyMoveAfterMerchantConvComplete = true;
             dialogue.boyHiden = true;
             asher.style.display = "none";
         }
+            */
         current.room = "stainedGlassMarket";
         room.size = "sevenBySeven";
         fountainRoom.style.display = "none";

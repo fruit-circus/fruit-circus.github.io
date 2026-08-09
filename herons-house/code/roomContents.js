@@ -10,8 +10,6 @@ const current = {
     //room: "canalMouth",
 }
 
-const stainedGlassMarket = document.getElementById("stainedGlassMarket");
-
 //the default behavior for taking objects is to Halt(),
 //which is a problem if the player didn't move last turn. 
 //so, if object is taken by bumping a wall, add player.hittingAWall = true;
@@ -2672,12 +2670,13 @@ function playerToD8() {
             asher.style.display = "none";
         }
             */
-        current.room = "stainedGlassMarket";
+        door.play();
         room.size = "sevenBySeven";
         fountainRoom.style.display = "none";
         stainedGlassMarket.style.display = "grid";
+        current.room = "stainedGlassMarket";
         moveTo(d1);
-        //checkWhichTilesShouldBeIncluded();
+        checkWhichTilesShouldBeIncluded();
         door.play();
     }
     else if (current.room === "libraryNorth") {

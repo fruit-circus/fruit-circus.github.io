@@ -2676,6 +2676,7 @@ function playerToD8() {
         stainedGlassMarket.style.display = "grid";
         current.room = "stainedGlassMarket";
         moveTo(d1);
+        console.log("hi");
         checkWhichTilesShouldBeIncluded();
         door.play();
     }

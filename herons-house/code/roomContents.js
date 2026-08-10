@@ -831,6 +831,15 @@ movement.tempPrevent = true;
                                                 halt(up);
                                             } 
                                     }
+                                    else if (current.room === "parapetUpperLanding") {
+                                        room.size = "threeByThree";
+                                        parapetUpperLanding.style.display = "none";
+                                        parapet6.style.display = "grid";
+                                        current.room = "parapet6";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        door.play();
+                                    }
                                     else if (current.room === "parapet1") {
                                     room.size = "threeByThree";
                                     parapet1.style.display = "none";
@@ -2255,6 +2264,15 @@ function playerToD() {
         groundFloorLanding3.style.display = "grid";
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+     else if (current.room === "parapet6") {
+        room.size = "threeByThree";
+        parapet6.style.display = "none";
+        parapetUpperLanding.style.display = "grid";
+        current.room = "parapetUpperLanding";
+        moveTo(d3);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "parapet3") {
         room.size = "threeByThree";

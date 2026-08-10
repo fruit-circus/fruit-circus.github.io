@@ -2277,6 +2277,15 @@ function playerToD() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
+    else if (current.room === "bossHall1") {
+        room.size = "sevenBySeven";
+        bossHall1.style.display = "none";
+        upperFloorLanding.style.display = "grid";
+        current.room = "upperFloorLanding";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
      else if (current.room === "parapet6") {
         room.size = "threeByThree";
         parapet6.style.display = "none";
@@ -2986,6 +2995,24 @@ function playerToD8() {
         gardenAccess.style.display = "none";
         storageAccess.style.display = "grid";
         current.room = "storageAccess";
+        moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "bossHall1") {
+        room.size = "threeBySeven";
+        bossHall1.style.display = "none";
+        bossHall2.style.display = "grid";
+        current.room = "bossHall2";
+        moveTo(b1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "upperFloorLanding") {
+        room.size = "threeBySeven";
+        upperFloorLanding.style.display = "none";
+        bossHall1.style.display = "grid";
+        current.room = "bossHall1";
         moveTo(d1);
         checkWhichTilesShouldBeIncluded();
         door.play();

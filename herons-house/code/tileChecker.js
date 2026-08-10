@@ -49,6 +49,9 @@ function checkWhichTilesShouldBeIncluded() { //width by depth
     } else if (room.size === "fiveByFive") {
         fiveHeight();
         fiveByFive();
+    } else if (room.size === "threeByFour") {
+        fiveHeight();
+        threeByFour();
     }
 
     
@@ -199,6 +202,62 @@ function threeByThree() {
     rooms.style.marginLeft = "22%";
     
 
+    rooms.style.width = "100%";
+}
+
+
+function threeByThree() {
+    highlightableTiles.splice(0, 49);
+    highlightableTiles.push("c1", "d1", "e1");
+    highlightableTiles.push("c2", "d2", "e2");
+    highlightableTiles.push("c3", "d3", "e3");
+    highlightableTiles.push("c4", "d4", "e4");
+    console.log("Highlightable Tiles:", highlightableTiles);
+    
+    noneAll();
+    c1.style.display = "block";
+    d1.style.display = "block";
+    e1.style.display = "block";
+
+    c2.style.display = "block";
+    d2.style.display = "block";
+    e2.style.display = "block";
+
+    c3.style.display = "block";
+    d3.style.display = "block";
+    e3.style.display = "block";
+    
+    c4.style.display = "block";
+    d4.style.display = "block";
+    e4.style.display = "block";
+
+    c1over.style.display = "block";
+    d1over.style.display = "block";
+    e1over.style.display = "block";
+
+    c2over.style.display = "block";
+    d2over.style.display = "block";
+    e2over.style.display = "block";
+
+    c3over.style.display = "block";
+    d3over.style.display = "block";
+    e3over.style.display = "block";
+
+    c4over.style.display = "block";
+    d4over.style.display = "block";
+    e4over.style.display = "block";
+
+    grid.style.aspectRatio = "3/4"
+    magicGrid.style.aspectRatio = "3/4"
+    grid.style.gridTemplateColumns = "repeat(3, 1fr)";
+    magicGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
+    grid.style.width = "35%";
+    magicGrid.style.width = "35%";
+
+    grid.style.marginLeft = "22%";
+    magicGrid.style.marginLeft = "22%";
+    rooms.style.marginLeft = "22%";
+    
     rooms.style.width = "100%";
 }
 

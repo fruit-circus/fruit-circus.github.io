@@ -216,6 +216,15 @@ else if (player.position === "a5") {
             halt(up);
         }
     }
+    else if (current.room === "parapet1") {
+        room.size = "threeByFour";
+        parapet1.style.display = "none";
+        canalMouth.style.display = "grid";
+        current.room = "canalMouth";
+        moveTo(e2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "parapet3") {
         room.size = "threeByThree";
         parapet3.style.display = "none";
@@ -619,6 +628,14 @@ movement.tempPrevent = true;
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
                                     }
+                                    else if (current.room === "parapet6") {
+                                        alert("overlook")
+                                        parapet6.style.display = "none";
+                                        overlook.style.display = "block";
+                                        current.room = "overlook";
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
                                     else if (current.room === "parapet5") {
                                         room.size = "threeByThree";
                                         parapet5.style.display = "none";
@@ -803,6 +820,14 @@ movement.tempPrevent = true;
                                             } else {
                                                 halt(up);
                                             } 
+                                    }
+                                    else if (current.room === "parapet6") {
+                                        alert("overlook")
+                                        parapet6.style.display = "none";
+                                        overlook.style.display = "block";
+                                        current.room = "overlook";
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
                                     }
                                     else if (current.room === "parapet4") {
                                         room.size = "threeByThree";
@@ -1064,6 +1089,14 @@ movement.tempPrevent = true;
                                     halt(up);
                                 }
                             }
+                            else if (current.room === "parapet6") {
+                                        alert("overlook")
+                                        parapet6.style.display = "none";
+                                        overlook.style.display = "block";
+                                        current.room = "overlook";
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
                             else if (current.room === "parapet4") {
                                         room.size = "threeByThree";
                                         parapet4.style.display = "none";
@@ -1259,6 +1292,15 @@ movement.tempPrevent = true;
                                             moveTo(c2);
                                             checkWhichTilesShouldBeIncluded();
                                             stairsNoise();
+                                        }
+                                        else if (current.room === "parapet4") {
+                                            room.size = "sevenByThree";
+                                            parapet4.style.display = "none";
+                                            largeHallway.style.display = "grid";
+                                            current.room = "largeHallway";
+                                            moveTo(a2);
+                                            checkWhichTilesShouldBeIncluded();
+                                            door.play();
                                         }
                                         else if (current.room === "parapet2") {
                                             room.size = "threeByThree";

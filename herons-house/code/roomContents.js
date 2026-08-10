@@ -356,6 +356,7 @@ movement.tempPrevent = true;
                                         alert("shop beetle");
                                     }
                                 }
+                            
                                 else if (current.room === "librarySouth") {
                                     if (!player.inPit) {
                                         halt(right);
@@ -522,6 +523,7 @@ movement.tempPrevent = true;
                                 halt(left);
                                 converse(smallTree);
                             }
+                            
                             else if (current.room === "lowerWaterfallLanding") {
                                         room.size = "threeByThree";
                                         lowerWaterfallLanding.style.display = "none";
@@ -554,6 +556,24 @@ movement.tempPrevent = true;
                                         halt(up);
                                     }
                                 }
+                                else if (current.room === "parapet4") {
+                                        room.size = "threeByThree";
+                                        parapet4.style.display = "none";
+                                        parapet3.style.display = "grid";
+                                        current.room = "parapet3";
+                                        moveTo(c1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
+                                    else if (current.room === "parapet5") {
+                                        room.size = "threeByThree";
+                                        parapet5.style.display = "none";
+                                        parapet4.style.display = "grid";
+                                        current.room = "parapet4";
+                                        moveTo(c1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
                             else if (current.room === "libraryLanding") {
                                         room.size = "threeByTwo";
                                         libraryLanding.style.display = "none";
@@ -729,6 +749,24 @@ movement.tempPrevent = true;
                                             } else {
                                                 halt(up);
                                             } 
+                                    }
+                                    else if (current.room === "parapet4") {
+                                        room.size = "threeByThree";
+                                        parapet4.style.display = "none";
+                                        parapet3.style.display = "grid";
+                                        current.room = "parapet3";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
+                                    else if (current.room === "parapet5") {
+                                        room.size = "threeByThree";
+                                        parapet5.style.display = "none";
+                                        parapet4.style.display = "grid";
+                                        current.room = "parapet4";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
                                     }
                                     else if (current.room === "coatRoom") {
                                         if (!dialogue.coatPainting) {   
@@ -972,6 +1010,24 @@ movement.tempPrevent = true;
                                     halt(up);
                                 }
                             }
+                            else if (current.room === "parapet4") {
+                                        room.size = "threeByThree";
+                                        parapet4.style.display = "none";
+                                        parapet3.style.display = "grid";
+                                        current.room = "parapet3";
+                                        moveTo(e1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
+                                    else if (current.room === "parapet5") {
+                                        room.size = "threeByThree";
+                                        parapet5.style.display = "none";
+                                        parapet4.style.display = "grid";
+                                        current.room = "parapet4";
+                                        moveTo(e1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        stairsNoise();
+                                    }
                             else if (current.room === "libraryLanding") {
                                     room.size = "threeByTwo";
                                     libraryLanding.style.display = "none";
@@ -1547,7 +1603,7 @@ function playerTo2() {
         moveTo(e2);
         movement.tempPrevent = true;
         checkWhichTilesShouldBeIncluded();
-        door.play();
+        stairsNoise();
     }
     else if (current.room === "upperFloorLanding") {
         current.room = "groundFloorLanding3";
@@ -1928,6 +1984,15 @@ movement.tempPrevent = true;
 }
 function playerToC() {
     if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "parapet4") {
+        room.size = "threeByThree";
+        parapet4.style.display = "none";
+        parapet5.style.display = "grid";
+        current.room = "parapet5";
+        moveTo(c3);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "fountainRoom" && !inv.brokenGlass.taken) {
             glass.play();
             brokenGlass.style.display = "none";
@@ -1992,6 +2057,15 @@ function playerToD() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        checkWhichTilesShouldBeIncluded();
+        stairsNoise();
+    }
+    else if (current.room === "parapet4") {
+        room.size = "threeByThree";
+        parapet4.style.display = "none";
+        parapet5.style.display = "grid";
+        current.room = "parapet5";
+        moveTo(d3);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2208,6 +2282,15 @@ function playerToE() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        checkWhichTilesShouldBeIncluded();
+        stairsNoise();
+    }
+    else if (current.room === "parapet4") {
+        room.size = "threeByThree";
+        parapet4.style.display = "none";
+        parapet5.style.display = "grid";
+        current.room = "parapet5";
+        moveTo(e3);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2676,7 +2759,6 @@ function playerToD8() {
         stainedGlassMarket.style.display = "grid";
         current.room = "stainedGlassMarket";
         moveTo(d1);
-        console.log("hi");
         checkWhichTilesShouldBeIncluded();
         door.play();
     }

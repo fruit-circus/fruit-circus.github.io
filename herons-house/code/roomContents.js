@@ -1323,6 +1323,15 @@ movement.tempPrevent = true;
                                                 halt(right);
                                                 alert("shop shrew");
                                             }
+                                            else if (current.room === "parapetUpperLanding") {
+                                                room.size = "threeByThree";
+                                                parapetUpperLanding.style.display = "none";
+                                                bossHall2.style.display = "grid";
+                                                current.room = "bossHall2";
+                                                moveTo(a2);
+                                                checkWhichTilesShouldBeIncluded();
+                                                door.play();
+                                            }
                                             else if (current.room === "parapet6") {
                                             room.size = "threeByThree";
                                             parapet6.style.display = "none";
@@ -1794,6 +1803,15 @@ moveTo(g1);
 }
 function playerTo2() {
     if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "bossHall2") {
+        room.size = "threeByThree";
+        bossHall2.style.display = "none";
+        parapetUpperLanding.style.display = "grid";
+        current.room = "parapetUpperLanding";
+        moveTo(e2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "largeHallway") {
         room.size = "threeByThree";
         largeHallway.style.display = "none";
@@ -1863,7 +1881,25 @@ function playerTo2() {
         movement.tempPrevent = true;
         checkWhichTilesShouldBeIncluded();
         door.play();
-    } 
+    }
+    else if (current.room === "bossHall4") {
+        room.size = "threeBySeven";
+        bossHall4.style.display = "none";
+        bossHall3.style.display = "grid";
+        current.room = "bossHall3";
+        moveTo(f2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "bossHall3") {
+        room.size = "threeBySeven";
+        bossHall3.style.display = "none";
+        bossHall2.style.display = "grid";
+        current.room = "bossHall2";
+        moveTo(f2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "meadHallEast") {
         current.room = "meadHallWest";
         room.size = "sevenBySeven";
@@ -1932,6 +1968,15 @@ function playerTo4() {
         groundFloorLanding3.style.display = "grid";
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "billowingFont") {
+        room.size = "threeBySeven";
+        billowingFont.style.display = "none";
+        bossHall4.style.display = "grid";
+        current.room = "bossHall4";
+        moveTo(f2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "meadHallWest") {
         current.room = "groundFloorLanding";
@@ -2705,6 +2750,33 @@ function playerToH2() {
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
             checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "bossHall2") {
+        room.size = "threeBySeven";
+        bossHall2.style.display = "none";
+        bossHall3.style.display = "grid";
+        current.room = "bossHall3";
+        moveTo(a2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "bossHall3") {
+        room.size = "threeBySeven";
+        bossHall3.style.display = "none";
+        bossHall4.style.display = "grid";
+        current.room = "bossHall4";
+        moveTo(a2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "bossHall4") {
+        room.size = "threeBySeven";
+        bossHall4.style.display = "none";
+        billowingFont.style.display = "grid";
+        current.room = "billowingFont";
+        moveTo(a4);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "fountainRoom") {
             alert("bookshelf")

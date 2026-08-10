@@ -206,7 +206,7 @@ function threeByThree() {
 }
 
 
-function threeByThree() {
+function threeByFour() {
     highlightableTiles.splice(0, 49);
     highlightableTiles.push("c1", "d1", "e1");
     highlightableTiles.push("c2", "d2", "e2");

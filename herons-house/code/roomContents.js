@@ -223,6 +223,7 @@ else if (player.position === "a5") {
         current.room = "canalMouth";
         moveTo(e2);
         checkWhichTilesShouldBeIncluded();
+        movement.tempPrevent = true;
         door.play();
     }
     else if (current.room === "parapet3") {
@@ -619,6 +620,15 @@ movement.tempPrevent = true;
                                         halt(up);
                                     }
                                 }
+                                else if (current.room === "parapet1") {
+                                    room.size = "threeByThree";
+                                    parapet1.style.display = "none";
+                                    parapet2.style.display = "grid";
+                                    current.room = "parapet2";
+                                    moveTo(c1);
+                                    checkWhichTilesShouldBeIncluded();
+                                    stairsNoise();
+                                }
                                 else if (current.room === "parapet4") {
                                         room.size = "threeByThree";
                                         parapet4.style.display = "none";
@@ -821,6 +831,15 @@ movement.tempPrevent = true;
                                                 halt(up);
                                             } 
                                     }
+                                    else if (current.room === "parapet1") {
+                                    room.size = "threeByThree";
+                                    parapet1.style.display = "none";
+                                    parapet2.style.display = "grid";
+                                    current.room = "parapet2";
+                                    moveTo(d1);
+                                    checkWhichTilesShouldBeIncluded();
+                                    stairsNoise();
+                                }
                                     else if (current.room === "parapet6") {
                                         alert("overlook")
                                         parapet6.style.display = "none";
@@ -1089,6 +1108,15 @@ movement.tempPrevent = true;
                                     halt(up);
                                 }
                             }
+                            else if (current.room === "parapet1") {
+                                    room.size = "threeByThree";
+                                    parapet1.style.display = "none";
+                                    parapet2.style.display = "grid";
+                                    current.room = "parapet2";
+                                    moveTo(e1);
+                                    checkWhichTilesShouldBeIncluded();
+                                    stairsNoise();
+                                }
                             else if (current.room === "parapet6") {
                                         alert("overlook")
                                         parapet6.style.display = "none";

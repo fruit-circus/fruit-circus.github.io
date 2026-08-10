@@ -652,6 +652,7 @@ movement.tempPrevent = true;
                                         parapet4.style.display = "grid";
                                         current.room = "parapet4";
                                         moveTo(c1);
+                                        movement.tempPrevent = true;
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
                                     }

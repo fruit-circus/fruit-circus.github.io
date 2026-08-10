@@ -1336,6 +1336,7 @@ movement.tempPrevent = true;
                                             largeHallway.style.display = "grid";
                                             current.room = "largeHallway";
                                             moveTo(a2);
+                                            movement.tempPrevent = true;
                                             checkWhichTilesShouldBeIncluded();
                                             door.play();
                                         }

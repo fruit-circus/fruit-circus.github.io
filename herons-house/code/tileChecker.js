@@ -811,3 +811,8 @@ function oneHeight() {
     grid.style.marginTop = "30%";
     magicGrid.style.marginTop = "30%";
 }
+
+
+function northPorchWalls() {
+    
+}

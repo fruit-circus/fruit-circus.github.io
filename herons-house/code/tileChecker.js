@@ -53,6 +53,9 @@ function checkWhichTilesShouldBeIncluded() { //width by depth
     } else if (room.size === "threeByFour") {
         fiveHeight();
         threeByFour();
+    } else if (room.size === "threeBySeven") {
+        fullHeight();
+        threeBySeven();
     }
 
     
@@ -80,6 +83,25 @@ function sevenBySeven() {
     magicGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
     grid.style.width = "auto";
     magicGrid.style.width = "auto";
+}
+
+function threeBySeven() {
+    noneAll();
+    grid.style.aspectRatio = "3/7"
+    magicGrid.style.aspectRatio = "3/7"
+    highlightableTiles.push("c1", "c2", "c3", "c4", "c5", "c6", "c7");
+    highlightableTiles.push("d1", "d2", "d3", "d4", "d5", "d6", "d7");
+    highlightableTiles.push("e1", "e2", "e3", "e4", "e5", "e6", "e7");
+    console.log("Highlightable Tiles:", highlightableTiles);
+
+    grid.style.width = "35%";
+    magicGrid.style.width = "35%";
+
+    grid.style.marginLeft = "22%";
+    magicGrid.style.marginLeft = "22%";
+    rooms.style.marginLeft = "22%";
+    
+    rooms.style.width = "100%";
 }
 
 
@@ -814,5 +836,5 @@ function oneHeight() {
 
 
 function northPorchWalls() {
-    
+
 }

@@ -1883,7 +1883,7 @@ function playerTo2() {
         door.play();
     }
     else if (current.room === "bossHall4") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall4.style.display = "none";
         bossHall3.style.display = "grid";
         current.room = "bossHall3";
@@ -1892,7 +1892,7 @@ function playerTo2() {
         door.play();
     }
     else if (current.room === "bossHall3") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall3.style.display = "none";
         bossHall2.style.display = "grid";
         current.room = "bossHall2";
@@ -1970,7 +1970,7 @@ function playerTo4() {
         stairsNoise();
     }
     else if (current.room === "billowingFont") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         billowingFont.style.display = "none";
         bossHall4.style.display = "grid";
         current.room = "bossHall4";
@@ -2752,7 +2752,7 @@ function playerToH2() {
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "bossHall2") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall2.style.display = "none";
         bossHall3.style.display = "grid";
         current.room = "bossHall3";
@@ -2761,7 +2761,7 @@ function playerToH2() {
         door.play();
     }
     else if (current.room === "bossHall3") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall3.style.display = "none";
         bossHall4.style.display = "grid";
         current.room = "bossHall4";
@@ -2770,7 +2770,7 @@ function playerToH2() {
         door.play();
     }
     else if (current.room === "bossHall4") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall4.style.display = "none";
         billowingFont.style.display = "grid";
         current.room = "billowingFont";
@@ -3072,7 +3072,7 @@ function playerToD8() {
         door.play();
     }
     else if (current.room === "bossHall1") {
-        room.size = "threeBySeven";
+        room.size = "sevenByThree";
         bossHall1.style.display = "none";
         bossHall2.style.display = "grid";
         current.room = "bossHall2";

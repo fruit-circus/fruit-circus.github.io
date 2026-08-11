@@ -574,7 +574,15 @@ movement.tempPrevent = true;
                                         halt(left);
                                     };}
                                 }
-
+                                else if (current.room === "masterBed") {
+                                    room.size = "sevenBySeven";
+                                    masterBed.style.display = "none";
+                                    observatory.style.display = "grid";
+                                    current.room = "observatory";
+                                    moveTo(f1);
+                                    checkWhichTilesShouldBeIncluded();
+                                    door.play();
+                                }
                                 else if (player.position === "c1") {
                             if (current.room === "stainedGlassMarket" && !inv.bottle.taken) {
                                     bottleTake.play();
@@ -837,6 +845,15 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     canalMouth.style.display = "grid";
                                     checkWhichTilesShouldBeIncluded();
                                     door.play();
+                                    }
+                                    else if (current.room === "secretsDoors") {
+                                        room.size = "sevenByOne";
+                                        secretsDoors.style.display = "none";
+                                        upperFloorHall.style.display = "grid";
+                                        current.room = "upperFloorHall";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        door.play();
                                     }
                                     else if (current.room === "easternServantsQuartersHallway") {
                                     room.size = "threeByThree";
@@ -1943,6 +1960,15 @@ function playerTo2() {
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
+    else if (current.room === "upperFloorHall") {
+        room.size = "sevenBySeven";
+        upperFloorHall.style.display = "none";
+        upperFloorLanding.style.display = "grid";
+        current.room = "upperFloorLanding";
+        moveTo(g4);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "largeHallway") {
         room.size = "threeByThree";
         largeHallway.style.display = "none";
@@ -2104,6 +2130,41 @@ function playerTo4() {
         moveTo(f3);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "observatory") {
+        room.size = "sevenBySeven";
+        observatory.style.display = "none";
+        observatoryHall.style.display = "grid";
+        current.room = "observatoryHall";
+        moveTo(a7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "guestBed3") {
+        room.size = "sevenBySeven";
+        guestBed3.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(g2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "guestBed4") {
+        room.size = "sevenBySeven";
+        guestBed4.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(g6);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "atrium") {
+            room.size = "sevenByThree";
+            atrium.style.display = "none";
+            upperFloorHall.style.display = "grid";
+            current.room = "upperFloorHall";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "billowingFont") {
         room.size = "sevenByThree";
@@ -2312,6 +2373,15 @@ function playerTo7() {
 
 function playerToA() {
     if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "observatoryHall") {
+        room.size = "sevenBySeven";
+        observatoryHall.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(f7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "hallOfDoors") {
         current.room = "volcano";
         room.size = "sevenBySeven";
@@ -2343,6 +2413,14 @@ function playerToB() {
         moveTo(d7);
         checkWhichTilesShouldBeIncluded();
         door.play();
+    }
+    else if (current.room === "atrium") {
+            room.size = "sevenBySeven";
+            atrium.style.display = "none";
+            guestBed1.style.display = "grid";
+            current.room = "guestBed1";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "easternServantsQuartersHallway") {
         room.size = "threeByThree";
@@ -2492,6 +2570,24 @@ function playerToD() {
         moveTo(d5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "guestBed5") {
+        room.size = "sevenBySeven";
+        guestBed5.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(b7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "upperFloorHall") {
+        room.size = "sevenByOne";
+        upperFloorHall.style.display = "none";
+        secretsDoors.style.display = "grid";
+        current.room = "secretsDoors";
+        moveTo(a4);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "labSt2") {
         room.size = "threeByThree";
@@ -2897,6 +2993,23 @@ function playerToF() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
+    else if (current.room === "observatory") {
+        room.size = "fiveByFive";
+        observatory.style.display = "none";
+        masterBed.style.display = "grid";
+        current.room = "masterBed";
+        moveTo(b6);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "atrium") {
+            room.size = "sevenBySeven";
+            atrium.style.display = "none";
+            guestBed2.style.display = "grid";
+            current.room = "guestBed2";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
+    }
     else if (current.room === "hallOfDoors") {
         current.room = "jackalHall";
         room.size = "threeBySeven";
@@ -2971,6 +3084,15 @@ function playerToH1() {
             stairsNoise();
             checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "observatoryHall") {
+        room.size = "sevenBySeven";
+        observatoryHall.style.display = "none";
+        observatory.style.display = "grid";
+        current.room = "observatory";
+        moveTo(a4);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "catacombs1") {
             room.size = "sevenByFive";
             catacombs1.style.display = "none";
@@ -3021,6 +3143,22 @@ function playerToH2() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "atrium") {
+            room.size = "sevenBySeven";
+            atrium.style.display = "none";
+            guestBed3.style.display = "grid";
+            current.room = "guestBed3";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "upperFloorHall") {
+            room.size = "sevenBySeven";
+            upperFloorHall.style.display = "none";
+            atrium.style.display = "grid";
+            current.room = "atrium";
+            door.play();
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "iceCave") {
@@ -3167,6 +3305,15 @@ function playerToH4() {
         moveTo(a4);
         checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "upperFloorLanding") {
+        room.size = "sevenByThree";
+        upperFloorLanding.style.display = "none";
+        upperFloorHall.style.display = "grid";
+        current.room = "upperFloorHall";
+        moveTo(a2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "catacombs1") {
             room.size = "sevenByFive";
             catacombs1.style.display = "none";
@@ -3251,6 +3398,14 @@ function playerToH6() {
         moveTo(a6);
         checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "atrium") {
+            room.size = "sevenBySeven";
+            atrium.style.display = "none";
+            guestBed4.style.display = "grid";
+            current.room = "guestBed4";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
+    }
     else if (current.room === "throneRoomEast") {
         room.size = "oneBySeven";
         throneRoomEast.style.display = "none";
@@ -3318,7 +3473,16 @@ function playerToA8() {
     }
 }
 function playerToB8() {
-    if (current.room === "hypotheticalRoom") {} else  {
+    if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "atrium") {
+            room.size = "sevenBySeven";
+            atrium.style.display = "none";
+            guestBed5.style.display = "grid";
+            current.room = "guestBed5";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
+    }
+    else  {
         bump(down);
     }
 }
@@ -3349,6 +3513,24 @@ function playerToD8() {
         labEntrance.style.display = "grid";
         current.room = "labEntrance";
         moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "guestBed2") {
+        room.size = "sevenBySeven";
+        guestBed2.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(f1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "guestBed1") {
+        room.size = "sevenBySeven";
+        guestBed1.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(b1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -3486,7 +3668,16 @@ function playerToE8() {
     }
 }
 function playerToF8() {
-    if (current.room === "hypotheticalRoom") {} else  {
+    if (current.room === "hypotheticalRoom") {}
+    else if (current.room === "atrium") {
+            room.size = "sevenByOne";
+            atrium.style.display = "none";
+            observatoryHall.style.display = "grid";
+            current.room = "observatoryHall";
+            door.play();
+            checkWhichTilesShouldBeIncluded();
+    }
+    else  {
         bump(down);
     }
 }

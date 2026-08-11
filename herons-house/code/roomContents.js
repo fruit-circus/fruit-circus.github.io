@@ -1905,7 +1905,7 @@ function playerTo2() {
         bossHall4.style.display = "none";
         bossHall3.style.display = "grid";
         current.room = "bossHall3";
-        moveTo(f2);
+        moveTo(g2);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -1914,7 +1914,7 @@ function playerTo2() {
         bossHall3.style.display = "none";
         bossHall2.style.display = "grid";
         current.room = "bossHall2";
-        moveTo(f2);
+        moveTo(g2);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -1995,7 +1995,7 @@ function playerTo4() {
         billowingFont.style.display = "none";
         bossHall4.style.display = "grid";
         current.room = "bossHall4";
-        moveTo(f2);
+        moveTo(g2);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -2837,7 +2837,7 @@ function playerToH2() {
         door.play();
     }
     else if (current.room === "bossHall4") {
-        room.size = "sevenByThree";
+        room.size = "sevenBySeven";
         bossHall4.style.display = "none";
         billowingFont.style.display = "grid";
         current.room = "billowingFont";

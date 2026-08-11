@@ -161,6 +161,7 @@ else if (player.position === "a5") {
             lab.style.display = "grid";
             current.room = "lab";
             moveTo(g1);
+            stairsNoise();
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "labSt3") {
@@ -678,6 +679,7 @@ movement.tempPrevent = true;
                                     labSt2.style.display = "grid";
                                     current.room = "labSt2";
                                     moveTo(c1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                             else if (current.room === "labSt2") {
@@ -686,6 +688,7 @@ movement.tempPrevent = true;
                                     labSt3.style.display = "grid";
                                     current.room = "labSt3";
                                     moveTo(c1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                                 else if (current.room === "parapet1") {
@@ -916,6 +919,7 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     labSt2.style.display = "grid";
                                     current.room = "labSt2";
                                     moveTo(d1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                             else if (current.room === "labSt2") {
@@ -924,6 +928,7 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     labSt3.style.display = "grid";
                                     current.room = "labSt3";
                                     moveTo(d1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                                     else if (current.room === "parapetUpperLanding") {
@@ -1220,6 +1225,7 @@ movement.tempPrevent = true;
                                     labSt2.style.display = "grid";
                                     current.room = "labSt2";
                                     moveTo(e1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                             else if (current.room === "labSt2") {
@@ -1228,6 +1234,7 @@ movement.tempPrevent = true;
                                     labSt3.style.display = "grid";
                                     current.room = "labSt3";
                                     moveTo(e1);
+                                    stairsNoise();
                                     checkWhichTilesShouldBeIncluded();
                             }
                             else if (current.room === "parapet1") {
@@ -2961,6 +2968,7 @@ function playerToH1() {
             labSt1.style.display = "grid";
             current.room = "labSt1";
             moveTo(c2);
+            stairsNoise();
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "catacombs1") {

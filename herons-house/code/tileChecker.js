@@ -887,3 +887,7 @@ function oneHeight() {
 function northPorchWalls() {
 
 }
+
+function undoNorthPorchWalls() {
+
+}

@@ -89,6 +89,7 @@ function threeBySeven() {
     noneAll();
     grid.style.aspectRatio = "3/7"
     magicGrid.style.aspectRatio = "3/7"
+    highlightableTiles.splice(0, 49);
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5", "c6", "c7");
     highlightableTiles.push("d1", "d2", "d3", "d4", "d5", "d6", "d7");
     highlightableTiles.push("e1", "e2", "e3", "e4", "e5", "e6", "e7");

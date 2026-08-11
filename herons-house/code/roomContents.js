@@ -1328,7 +1328,7 @@ movement.tempPrevent = true;
                                                 alert("shop shrew");
                                             }
                                             else if (current.room === "parapetUpperLanding") {
-                                                room.size = "threeByThree";
+                                                room.size = "sevenByThree";
                                                 parapetUpperLanding.style.display = "none";
                                                 bossHall2.style.display = "grid";
                                                 current.room = "bossHall2";
@@ -2569,6 +2569,24 @@ movement.tempPrevent = true;
         dialogue.repeat = "d"
         converse(even, evenV);
     } 
+    else if (current.room === "pierHall") {
+        current.room = "pier";
+        room.size = "sevenBySeven";
+        pierHall.style.display = "none";
+        pier.style.display = "grid";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "jackalHall") {
+        current.room = "jackalCourt";
+        room.size = "sevenBySeven";
+        jackalHall.style.display = "none";
+        jackalCourt.style.display = "grid";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "preservesPantry") {
         room.size = "threeByTwo";
         northPorch.style.display = "grid";
@@ -2602,6 +2620,15 @@ function playerToE() {
         moveTo(e5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "hallOfDoors") {
+        current.room = "pierHall";
+        room.size = "oneBySeven";
+        hallOfDoors.style.display = "none";
+        pierHall.style.display = "grid";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "parapet3") {
         room.size = "threeByThree";
@@ -2671,6 +2698,15 @@ function playerToF() {
         moveTo(f5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "hallOfDoors") {
+        current.room = "jackalHall";
+        room.size = "oneBySeven";
+        hallOfDoors.style.display = "none";
+        jackalHall.style.display = "grid";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
     }
     else if (current.room === "fountainRoom") {
             playPiano();
@@ -3088,6 +3124,42 @@ function playerToD8() {
         storageAccess.style.display = "grid";
         current.room = "storageAccess";
         moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "pier") {
+        current.room = "pierHall";
+        room.size = "oneBySeven";
+        pier.style.display = "none";
+        pierHall.style.display = "grid";
+        moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "jackalCourt") {
+        current.room = "jackalHall";
+        room.size = "oneBySeven";
+        jackalCourt.style.display = "none";
+        jackalHall.style.display = "grid";
+        moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "jackalHall") {
+        current.room = "hallOfDoors";
+        room.size = "sevenByOne";
+        jackalHall.style.display = "none";
+        hallOfDoors.style.display = "grid";
+        moveTo(f1);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "pierHall") {
+        current.room = "hallOfDoors";
+        room.size = "sevenByOne";
+        pierHall.style.display = "none";
+        hallOfDoors.style.display = "grid";
+        moveTo(e1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }

@@ -489,6 +489,7 @@ movement.tempPrevent = true;
                                         room.size = "fiveByFive";
                                         groundFloorLanding3.style.display = "none";
                                         groundFloorLanding2.style.display = "grid";
+                                        moveTo(b1);
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
                                     }
@@ -714,6 +715,7 @@ if (current.room === "librarySouth") {
         room.size = "fiveByFive";
         groundFloorLanding3.style.display = "none";
         groundFloorLanding2.style.display = "grid";
+        moveTo(c1);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -965,6 +967,7 @@ movement.tempPrevent = true;
                                                 current.room = "groundFloorLanding2";
                                                 room.size = "fiveByFive";
                                                 groundFloorLanding3.style.display = "none";
+                                                moveTo(d1);
                                                 groundFloorLanding2.style.display = "grid";
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
@@ -1211,6 +1214,7 @@ movement.tempPrevent = true;
                                         room.size = "fiveByFive";
                                         groundFloorLanding3.style.display = "none";
                                         groundFloorLanding2.style.display = "grid";
+                                        moveTo(e1);
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
                                     }
@@ -1558,6 +1562,7 @@ movement.tempPrevent = true;
                                                 room.size = "fiveByFive";
                                                 groundFloorLanding3.style.display = "none";
                                                 groundFloorLanding2.style.display = "grid";
+                                                moveTo(f1);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1600,6 +1605,7 @@ movement.tempPrevent = true;
                                                     room.size = "sevenBySeven";
                                                     groundFloorLanding2.style.display = "none";
                                                     groundFloorLanding.style.display = "grid";
+                                                    moveTo(a1);
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                                 }
@@ -1630,6 +1636,7 @@ movement.tempPrevent = true;
                                                 room.size = "sevenBySeven";
                                                 groundFloorLanding2.style.display = "none";
                                                 groundFloorLanding.style.display = "grid";
+                                                moveTo(a2);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1662,6 +1669,7 @@ movement.tempPrevent = true;
                                                         room.size = "sevenBySeven";
                                                         groundFloorLanding2.style.display = "none";
                                                         groundFloorLanding.style.display = "grid";
+                                                        moveTo(a3);
                                                         checkWhichTilesShouldBeIncluded();
                                                         stairsNoise();
                                                     }
@@ -1698,6 +1706,7 @@ movement.tempPrevent = true;
                                                 room.size = "sevenBySeven";
                                                 groundFloorLanding2.style.display = "none";
                                                 groundFloorLanding.style.display = "grid";
+                                                moveTo(a4);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1722,6 +1731,7 @@ movement.tempPrevent = true;
                                                 room.size = "sevenBySeven";
                                                 groundFloorLanding2.style.display = "none";
                                                 groundFloorLanding.style.display = "grid";
+                                                moveTo(a5);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1827,6 +1837,7 @@ function playerTo2() {
         room.size = "fiveByFive";
         upperFloorLanding.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f1);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -1937,6 +1948,7 @@ function playerTo3() {
         room.size = "fiveByFive";
         upperFloorLanding.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f2);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -1966,6 +1978,7 @@ function playerTo4() {
         room.size = "fiveByFive";
         upperFloorLanding.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f3);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2070,6 +2083,7 @@ function playerTo5() {
         room.size = "fiveByFive";
         upperFloorLanding.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f4);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2107,6 +2121,7 @@ function playerTo6() {
         room.size = "fiveByFive";
         upperFloorLanding.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2210,6 +2225,7 @@ movement.tempPrevent = true;
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(b5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2297,6 +2313,7 @@ function playerToC() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(c5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2319,6 +2336,7 @@ function playerToD() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(d5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2581,6 +2599,7 @@ function playerToE() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(e5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
@@ -2649,6 +2668,7 @@ function playerToF() {
         room.size = "fiveByFive";
         groundFloorLanding2.style.display = "none";
         groundFloorLanding3.style.display = "grid";
+        moveTo(f5);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }

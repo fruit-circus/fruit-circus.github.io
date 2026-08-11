@@ -94,6 +94,54 @@ function threeBySeven() {
     highlightableTiles.push("e1", "e2", "e3", "e4", "e5", "e6", "e7");
     console.log("Highlightable Tiles:", highlightableTiles);
 
+    c1.style.display = "block";
+    c2.style.display = "block";
+    c3.style.display = "block";
+    c4.style.display = "block";
+    c5.style.display = "block";
+    c6.style.display = "block";
+    c7.style.display = "block";
+
+    e1.style.display = "block";
+    e2.style.display = "block";
+    e3.style.display = "block";
+    e4.style.display = "block";
+    e5.style.display = "block";
+    e6.style.display = "block";
+    e7.style.display = "block";
+
+    d1.style.display = "block";
+    d2.style.display = "block";
+    d3.style.display = "block";
+    d4.style.display = "block";
+    d5.style.display = "block";
+    d6.style.display = "block";
+    d7.style.display = "block";
+
+     c1over.style.display = "block";
+    c2over.style.display = "block";
+    c3over.style.display = "block";
+    c4over.style.display = "block";
+    c5over.style.display = "block";
+    c6over.style.display = "block";
+    c7over.style.display = "block";
+
+    e1over.style.display = "block";
+    e2over.style.display = "block";
+    e3over.style.display = "block";
+    e4over.style.display = "block";
+    e5over.style.display = "block";
+    e6over.style.display = "block";
+    e7over.style.display = "block";
+
+    d1over.style.display = "block";
+    d2over.style.display = "block";
+    d3over.style.display = "block";
+    d4over.style.display = "block";
+    d5over.style.display = "block";
+    d6over.style.display = "block";
+    d7over.style.display = "block";
+
     grid.style.width = "35%";
     magicGrid.style.width = "35%";
 

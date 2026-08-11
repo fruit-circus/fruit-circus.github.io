@@ -163,6 +163,15 @@ else if (player.position === "a5") {
             moveTo(g1);
             checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "labSt3") {
+            room.size = "sevenBySeven";
+            labSt3.style.display = "none";
+            iceCave.style.display = "grid";
+            current.room = "iceCave";
+            moveTo(g2);
+            stairsNoise();
+            checkWhichTilesShouldBeIncluded();
+    }
     else if (current.room === "stainedGlassMarket") {
         halt(left);
         alert("talk wizard");
@@ -223,6 +232,15 @@ else if (player.position === "a5") {
         } else if (player.previousPosition === "b3") {
             halt(up);
         }
+    }
+    else if (current.room === "labSt3") {
+            room.size = "sevenBySeven";
+            labSt3.style.display = "none";
+            iceCave.style.display = "grid";
+            current.room = "iceCave";
+            moveTo(g2);
+            stairsNoise();
+            checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "labSt1") {
             room.size = "sevenBySeven";
@@ -379,6 +397,15 @@ movement.tempPrevent = true;
                     checkWhichTilesShouldBeIncluded();
                     stairsNoise();
             }
+            else if (current.room === "labSt3") {
+            room.size = "sevenBySeven";
+            labSt3.style.display = "none";
+            iceCave.style.display = "grid";
+            current.room = "iceCave";
+            moveTo(g2);
+            stairsNoise();
+            checkWhichTilesShouldBeIncluded();
+    }
             else if (current.room === "labSt1") {
                 room.size = "sevenBySeven";
                 labSt1.style.display = "none";
@@ -2865,7 +2892,7 @@ function playerToF() {
     }
     else if (current.room === "hallOfDoors") {
         current.room = "jackalHall";
-        room.size = "oneBySeven";
+        room.size = "threeBySeven";
         hallOfDoors.style.display = "none";
         jackalHall.style.display = "grid";
         moveTo(d7);
@@ -2986,6 +3013,15 @@ function playerToH2() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "iceCave") {
+            room.size = "threeByThree";
+            iceCave.style.display = "none";
+            labSt3.style.display = "grid";
+            current.room = "labSt3";
+            moveTo(c2);
+            door.play();
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "bossHall2") {

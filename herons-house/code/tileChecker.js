@@ -89,7 +89,7 @@ function threeBySeven() {
     noneAll();
     grid.style.aspectRatio = "3/7"
     magicGrid.style.aspectRatio = "3/7"
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5", "c6", "c7");
     highlightableTiles.push("d1", "d2", "d3", "d4", "d5", "d6", "d7");
     highlightableTiles.push("e1", "e2", "e3", "e4", "e5", "e6", "e7");
@@ -150,12 +150,14 @@ function threeBySeven() {
     magicGrid.style.marginLeft = "22%";
     rooms.style.marginLeft = "22%";
     
+    grid.style.gridTemplateColumns = "repeat(3, 1fr)";
+    magicGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
     rooms.style.width = "100%";
 }
 
 
 function fiveByFive() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("b1", "b2", "b3", "b4", "b5");
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5");
     highlightableTiles.push("d1", "d2", "d3", "d4", "d5");
@@ -231,7 +233,7 @@ function fiveByFive() {
 }
 
 function threeByThree() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("c1", "d1", "e1");
     highlightableTiles.push("c2", "d2", "e2");
     highlightableTiles.push("c3", "d3", "e3");
@@ -279,7 +281,7 @@ function threeByThree() {
 
 
 function threeByFour() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("c1", "d1", "e1");
     highlightableTiles.push("c2", "d2", "e2");
     highlightableTiles.push("c3", "d3", "e3");
@@ -335,7 +337,7 @@ function threeByFour() {
 
 
 function threeByTwo() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("c1", "d1", "e1");
     highlightableTiles.push("c2", "d2", "e2");
     console.log("Highlightable Tiles:", highlightableTiles);
@@ -370,7 +372,7 @@ function threeByTwo() {
 }
 
 function sevenByFive() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("a1", "a2", "a3", "a4", "a5");
     highlightableTiles.push("b1", "b2", "b3", "b4", "b5");
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5");
@@ -427,7 +429,7 @@ function sevenByFive() {
 
 
 function sevenByThree() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("a1", "a2", "a3", "a4", "a5", "a6", "a7");
     highlightableTiles.push("b1", "b2", "b3", "b4", "b5", "b6", "b7");
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5", "c6", "c7");
@@ -498,7 +500,7 @@ function sevenByThree() {
 
 
 function threeByFive() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5");
     highlightableTiles.push("d1", "d2", "d3", "d4", "d5");
     highlightableTiles.push("e1", "e2", "e3", "e4", "e5");
@@ -555,7 +557,7 @@ function threeByFive() {
 
 
 function sevenByOne() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("a1", "b1", "c1", "d1", "e1", "f1", "g1");
     console.log("Highlightable Tiles:", highlightableTiles);
 	noneAll();
@@ -590,7 +592,7 @@ a1over.style.display = "block";
 
 
 function oneBySeven() {
-    highlightableTiles.splice(0, 49);
+    highlightableTiles.splice(0, 200);
     highlightableTiles.push("d1", "d2", "d3", "d4", "d5", "d6", "d7");
     console.log("Highlightable Tiles 1/7:", highlightableTiles);
     noneAll();

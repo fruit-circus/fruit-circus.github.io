@@ -1421,6 +1421,7 @@ movement.tempPrevent = true;
                                                 eastCatacombsLanding.style.display = "none";
                                                 catacombs1.style.display = "grid";
                                                 current.room = "catacombs1";
+                                                moveTo(a1):
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                         }
@@ -1511,6 +1512,7 @@ movement.tempPrevent = true;
                                                     eastCatacombsLanding.style.display = "none";
                                                     catacombs1.style.display = "grid";
                                                     current.room = "catacombs1";
+                                                    moveTo(a2):
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                             }
@@ -1611,6 +1613,7 @@ movement.tempPrevent = true;
                                                                 eastCatacombsLanding.style.display = "none";
                                                                 catacombs1.style.display = "grid";
                                                                 current.room = "catacombs1";
+                                                                moveTo(a2):
                                                                 checkWhichTilesShouldBeIncluded();
                                                                 stairsNoise();
                                                         }
@@ -1746,7 +1749,7 @@ movement.tempPrevent = true;
                                                     room.size = "sevenBySeven";
                                                     groundFloorLanding3.style.display = "none";
                                                     upperFloorLanding.style.display = "grid";
-                                                    moveTo(a1);
+                                                    moveTo(b1);
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                                 }
@@ -1761,7 +1764,7 @@ movement.tempPrevent = true;
                                                 room.size = "sevenBySeven";
                                                 groundFloorLanding3.style.display = "none";
                                                 upperFloorLanding.style.display = "grid";
-                                                moveTo(a2);
+                                                moveTo(a3);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1793,7 +1796,7 @@ movement.tempPrevent = true;
                                                     else if (current.room === "groundFloorLanding3") {
                                                         current.room = "upperFloorLanding";
                                                         room.size = "sevenBySeven";
-                                                        moveTo(a3);
+                                                        moveTo(a4);
                                                         groundFloorLanding3.style.display = "none";
                                                         upperFloorLanding.style.display = "grid";
                                                         checkWhichTilesShouldBeIncluded();
@@ -1831,7 +1834,7 @@ movement.tempPrevent = true;
                                             else if (current.room === "groundFloorLanding3") {
                                                 current.room = "upperFloorLanding";
                                                 room.size = "sevenBySeven";
-                                                moveTo(a4);
+                                                moveTo(a5);
                                                 groundFloorLanding3.style.display = "none";
                                                 upperFloorLanding.style.display = "grid";
                                                 checkWhichTilesShouldBeIncluded();
@@ -1856,10 +1859,10 @@ movement.tempPrevent = true;
                                             if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                             else if (current.room === "groundFloorLanding3") {
                                                 current.room = "upperFloorLanding";
-                                                moveTo(a5);
                                                 room.size = "sevenBySeven";
                                                 groundFloorLanding3.style.display = "none";
                                                 upperFloorLanding.style.display = "grid";
+                                                moveTo(a6);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                             }
@@ -1913,6 +1916,7 @@ function playerTo1() {
             catacombs2.style.display = "none";
             catacombs1.style.display = "grid";
             current.room = "catacombs1";
+            moveTo(g1);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "catacombs1") {
@@ -1920,6 +1924,7 @@ function playerTo1() {
             catacombs1.style.display = "none";
             eastCatacombsLanding.style.display = "grid";
             current.room = "eastCatacombsLanding";
+            moveTo(e1);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "throneRoomEast") {
@@ -2002,6 +2007,7 @@ function playerTo2() {
             catacombs2.style.display = "none";
             catacombs1.style.display = "grid";
             current.room = "catacombs1";
+            moveTo(g2);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "entryHall") {
@@ -2019,6 +2025,7 @@ function playerTo2() {
             room.size = "threeByThree";
             catacombs1.style.display = "none";
             eastCatacombsLanding.style.display = "grid";
+             moveTo(e2);
             current.room = "eastCatacombsLanding";
             checkWhichTilesShouldBeIncluded();
     }
@@ -2114,6 +2121,7 @@ function playerTo3() {
             catacombs2.style.display = "none";
             catacombs1.style.display = "grid";
             current.room = "catacombs1";
+            moveTo(g3);
             checkWhichTilesShouldBeIncluded();
     }
      else  {
@@ -2188,6 +2196,7 @@ function playerTo4() {
             catacombs2.style.display = "none";
             catacombs1.style.display = "grid";
             current.room = "catacombs1";
+            moveTo(g4);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "entryHall") {
@@ -3098,6 +3107,7 @@ function playerToH1() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            moveTo(a1);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "throneRoomWest") {
@@ -3143,6 +3153,7 @@ function playerToH2() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            moveTo(a2);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "atrium") {
@@ -3246,6 +3257,7 @@ function playerToH3() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            moveTo(a3);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "meadHallWest") {
@@ -3319,6 +3331,7 @@ function playerToH4() {
             catacombs1.style.display = "none";
             catacombs2.style.display = "grid";
             current.room = "catacombs2";
+            moveTo(a4);
             checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "throneRoomWest") {

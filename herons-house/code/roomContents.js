@@ -545,6 +545,15 @@ movement.tempPrevent = true;
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
                                     }
+                                    else if (current.room === "masterBed") {
+                                    room.size = "sevenBySeven";
+                                    masterBed.style.display = "none";
+                                    observatory.style.display = "grid";
+                                    current.room = "observatory";
+                                    moveTo(f1);
+                                    checkWhichTilesShouldBeIncluded();
+                                    door.play();
+                                }
                                     else if (room.size === "fiveByFive") {halt(down);} //block
                                     else if (current.room === "entryHall") {
                                         //go to coat room
@@ -574,15 +583,7 @@ movement.tempPrevent = true;
                                         halt(left);
                                     };}
                                 }
-                                else if (current.room === "masterBed") {
-                                    room.size = "sevenBySeven";
-                                    masterBed.style.display = "none";
-                                    observatory.style.display = "grid";
-                                    current.room = "observatory";
-                                    moveTo(f1);
-                                    checkWhichTilesShouldBeIncluded();
-                                    door.play();
-                                }
+        
                                 else if (player.position === "c1") {
                             if (current.room === "stainedGlassMarket" && !inv.bottle.taken) {
                                     bottleTake.play();
@@ -847,7 +848,7 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                     door.play();
                                     }
                                     else if (current.room === "secretsDoors") {
-                                        room.size = "sevenByOne";
+                                        room.size = "sevenBySeven";
                                         secretsDoors.style.display = "none";
                                         upperFloorHall.style.display = "grid";
                                         current.room = "upperFloorHall";
@@ -1749,7 +1750,7 @@ movement.tempPrevent = true;
                                                     room.size = "sevenBySeven";
                                                     groundFloorLanding3.style.display = "none";
                                                     upperFloorLanding.style.display = "grid";
-                                                    moveTo(b1);
+                                                    moveTo(a2);
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                                 }
@@ -2428,6 +2429,7 @@ function playerToB() {
             atrium.style.display = "none";
             guestBed1.style.display = "grid";
             current.room = "guestBed1";
+            moveTo(d7);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -2594,7 +2596,7 @@ function playerToD() {
         upperFloorHall.style.display = "none";
         secretsDoors.style.display = "grid";
         current.room = "secretsDoors";
-        moveTo(a4);
+        moveTo(d1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -3007,7 +3009,7 @@ function playerToF() {
         observatory.style.display = "none";
         masterBed.style.display = "grid";
         current.room = "masterBed";
-        moveTo(b6);
+        moveTo(b5);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -3016,6 +3018,7 @@ function playerToF() {
             atrium.style.display = "none";
             guestBed2.style.display = "grid";
             current.room = "guestBed2";
+            moveTo(d7);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3161,6 +3164,7 @@ function playerToH2() {
             atrium.style.display = "none";
             guestBed3.style.display = "grid";
             current.room = "guestBed3";
+            moveTo(a4);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3169,6 +3173,7 @@ function playerToH2() {
             upperFloorHall.style.display = "none";
             atrium.style.display = "grid";
             current.room = "atrium";
+            moveTo(a4);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3416,6 +3421,7 @@ function playerToH6() {
             atrium.style.display = "none";
             guestBed4.style.display = "grid";
             current.room = "guestBed4";
+            moveTo(a4);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3492,6 +3498,7 @@ function playerToB8() {
             atrium.style.display = "none";
             guestBed5.style.display = "grid";
             current.room = "guestBed5";
+            moveTo(d1);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3687,6 +3694,7 @@ function playerToF8() {
             atrium.style.display = "none";
             observatoryHall.style.display = "grid";
             current.room = "observatoryHall";
+            moveTo(a1);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }

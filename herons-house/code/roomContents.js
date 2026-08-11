@@ -1421,7 +1421,7 @@ movement.tempPrevent = true;
                                                 eastCatacombsLanding.style.display = "none";
                                                 catacombs1.style.display = "grid";
                                                 current.room = "catacombs1";
-                                                moveTo(a1):
+                                                moveTo(a1);
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
                                         }
@@ -1512,7 +1512,7 @@ movement.tempPrevent = true;
                                                     eastCatacombsLanding.style.display = "none";
                                                     catacombs1.style.display = "grid";
                                                     current.room = "catacombs1";
-                                                    moveTo(a2):
+                                                    moveTo(a2);
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                             }

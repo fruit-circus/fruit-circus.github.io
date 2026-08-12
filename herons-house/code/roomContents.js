@@ -110,6 +110,24 @@ else if (player.position === "a4") {
     if (current.room === "stainedGlassMarket") {
         halt(down);
     }
+    else if (current.room === "guestBed3") {
+        room.size = "sevenBySeven";
+        guestBed3.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(g2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
+    else if (current.room === "guestBed4") {
+        room.size = "sevenBySeven";
+        guestBed4.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(g6);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (room.size === "fiveByFive") {halt(left);} //block
     else if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
     else if (current.room === "libraryNorth") {
@@ -1214,6 +1232,24 @@ movement.tempPrevent = true;
                                                 groundFloorLanding2.style.display = "grid";
                                                 checkWhichTilesShouldBeIncluded();
                                                 stairsNoise();
+                                            }
+                                            else if (current.room === "guestBed1") {
+                                                room.size = "sevenBySeven";
+                                                guestBed1.style.display = "none";
+                                                atrium.style.display = "grid";
+                                                current.room = "atrium";
+                                                moveTo(b1);
+                                                checkWhichTilesShouldBeIncluded();
+                                                door.play();
+                                            }
+                                            else if (current.room === "guestBed2") {
+                                                room.size = "sevenBySeven";
+                                                guestBed2.style.display = "none";
+                                                atrium.style.display = "grid";
+                                                current.room = "atrium";
+                                                moveTo(f1);
+                                                checkWhichTilesShouldBeIncluded();
+                                                door.play();
                                             }
                                             else if (current.room === "larder") {
                                                 room.size = "fiveByFive";
@@ -2367,29 +2403,11 @@ function playerTo4() {
         stairsNoise();
     }
     else if (current.room === "observatory") {
-        room.size = "oneBySeven";
+        room.size = "sevenByOne";
         observatory.style.display = "none";
         observatoryHall.style.display = "grid";
         current.room = "observatoryHall";
         moveTo(a7);
-        checkWhichTilesShouldBeIncluded();
-        door.play();
-    }
-    else if (current.room === "guestBed3") {
-        room.size = "sevenBySeven";
-        guestBed3.style.display = "none";
-        atrium.style.display = "grid";
-        current.room = "atrium";
-        moveTo(g2);
-        checkWhichTilesShouldBeIncluded();
-        door.play();
-    }
-    else if (current.room === "guestBed4") {
-        room.size = "sevenBySeven";
-        guestBed4.style.display = "none";
-        atrium.style.display = "grid";
-        current.room = "atrium";
-        moveTo(g6);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -3469,7 +3487,7 @@ function playerToH2() {
             atrium.style.display = "none";
             guestBed3.style.display = "grid";
             current.room = "guestBed3";
-            moveTo(b3);
+            moveTo(b4);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }
@@ -3866,24 +3884,6 @@ function playerToD8() {
             moveTo(b1);
             door.play();
             checkWhichTilesShouldBeIncluded();
-    }
-    else if (current.room === "guestBed2") {
-        room.size = "sevenBySeven";
-        guestBed2.style.display = "none";
-        atrium.style.display = "grid";
-        current.room = "atrium";
-        moveTo(f1);
-        checkWhichTilesShouldBeIncluded();
-        door.play();
-    }
-    else if (current.room === "guestBed1") {
-        room.size = "sevenBySeven";
-        guestBed1.style.display = "none";
-        atrium.style.display = "grid";
-        current.room = "atrium";
-        moveTo(b1);
-        checkWhichTilesShouldBeIncluded();
-        door.play();
     }
     else if (current.room === "gardenAccess") {
         room.size = "oneBySeven";

@@ -16,6 +16,7 @@
 
 
 function checkWhichTilesShouldBeIncluded() { //width by depth
+    console.log(current.room);
     movement.tempPrevent = true;
     if (room.size === "sevenBySeven") {
         fullHeight();

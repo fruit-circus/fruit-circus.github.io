@@ -90,6 +90,15 @@ function checkContents() {
             halt(up);
             alert("hello crab");
         }
+        else if (current.room === "guestBed4") {
+        room.size = "sevenBySeven";
+        guestBed4.style.display = "none";
+        atrium.style.display = "grid";
+        current.room = "atrium";
+        moveTo(g6);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
         else if (current.room === "fountainRoom" && !inv.mushrooms.taken) {
                 pluck.play();
                 mushrooms.style.display = "none";
@@ -119,15 +128,7 @@ else if (player.position === "a4") {
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
-    else if (current.room === "guestBed4") {
-        room.size = "sevenBySeven";
-        guestBed4.style.display = "none";
-        atrium.style.display = "grid";
-        current.room = "atrium";
-        moveTo(g6);
-        checkWhichTilesShouldBeIncluded();
-        door.play();
-    }
+    
     else if (room.size === "fiveByFive") {halt(left);} //block
     else if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
     else if (current.room === "libraryNorth") {
@@ -2407,7 +2408,7 @@ function playerTo4() {
         observatory.style.display = "none";
         observatoryHall.style.display = "grid";
         current.room = "observatoryHall";
-        moveTo(a7);
+        moveTo(g1);
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
@@ -3761,7 +3762,7 @@ function playerToH6() {
             atrium.style.display = "none";
             guestBed4.style.display = "grid";
             current.room = "guestBed4";
-            moveTo(b3);
+            moveTo(b2);
             door.play();
             checkWhichTilesShouldBeIncluded();
     }

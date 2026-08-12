@@ -183,6 +183,14 @@ else if (player.position === "a5") {
                                                     stairsNoise();
                                                     checkWhichTilesShouldBeIncluded();
                                             }
+                                            else if (current.room === "cliffAscent2") {
+                                                            room.size = "threeByThree";
+                                                            cliffAscent2.style.display = "none";
+                                                            cliffAscent1.style.display = "grid";
+                                                            current.room = "cliffAscent1";
+                                                            moveTo(e3);
+                                                            checkWhichTilesShouldBeIncluded();
+                                                        }
                                              else if (current.room === "secretSpiral2") {
                                                 room.size = "threeByThree";
                                                 secretSpiral2.style.display = "none";
@@ -280,7 +288,6 @@ else if (player.position === "a5") {
                                                     librarySouth.style.display = "grid";
                                                     current.room = "librarySouth";
                                                     moveTo(e4);
-                                                            movement.tempPrevent = true;
                                                     checkWhichTilesShouldBeIncluded();
                                                     stairsNoise();
                                             }
@@ -956,7 +963,7 @@ else if (player.position === "a5") {
                                 }
                                 else if (room.size === "sevenByThree") {halt(down);} //block
                                 else if (room.size === "oneBySeven") {halt(left);} //block
-                                else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(down);} //place exits in three by three rooms above this line
+                                else if (room.size === "threeByThree") {halt(down);} //place exits in three by three rooms above this line
                                 
                                 }
 
@@ -979,6 +986,7 @@ if (current.room === "librarySouth") {
         }
     }
     else if (room.size === "oneBySeven") {halt(left);} //block
+    else if (room.size === "threeByFour") {halt(down);} //block
     
     }
 
@@ -1069,7 +1077,15 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                         if (current.room === "coatRoom") {
                                 player.hasUsedTheArrowKeysToMove = true;
                             }
-                            
+                            else if (current.room === "orangeCliffside") {
+                                room.size = "sevenByOne";
+                                orangeCliffside.style.display = "none";
+                                hallOfDoors.style.display = "grid";
+                                current.room = "hallOfDoors";
+                                moveTo(b1);
+                                checkWhichTilesShouldBeIncluded();
+                                door.play();
+                            }
                             else if (current.room === "libraryNorth") {
                                 if (!player.inPit) {
                                     halt(down);
@@ -1112,7 +1128,6 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
     
     else if (player.position === "d4") {
                                 if (current.room === "fountainRoom") {
-                                            
                                             if (player.previousPosition === "d5" && !inv.coin) {
                                                 halt(up);
                                                 metalTake.play();
@@ -1125,7 +1140,22 @@ if (current.room === "volcano" && !mana.levitating) {halt(down);} //block
                                                 halt(up);
                                             } 
                                     }
-                                    
+                                    else if (current.room === "cliffAscent1") {
+                                        room.size = "oneBySeven";
+                                        cliffAscent1.style.display = "none";
+                                        ropeBridge.style.display = "grid";
+                                        current.room = "ropeBridge";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                    }
+                                    else if (current.room === "cliffAscent2") {
+                                        room.size = "threeByThree";
+                                        cliffAscent2.style.display = "none";
+                                        cliffAscent3.style.display = "grid";
+                                        current.room = "cliffAscent3";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                    }
                                 else if (current.room === "secretSpiral1") {
                                     room.size = "threeByThree";
                                     secretSpiral1.style.display = "none";
@@ -1293,7 +1323,7 @@ movement.tempPrevent = true;
                                         door.play();
                                     } 
                                     else if (room.size === "sevenByThree") {halt(down);} //block
-                                    else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(down);} //place exits in three by three rooms above this line
+                                    else if (room.size === "threeByThree") {halt(down);} //place exits in three by three rooms above this line
                                     
                                     }
                                     
@@ -1364,6 +1394,7 @@ movement.tempPrevent = true;
                                                 checkWhichTilesShouldBeIncluded();
                                                 door.play();
                                             }
+                                            else if (room.size === "threeByFour") {halt(down);} //block
                                             else if (room.size === "fiveByFive") {halt(down);} //block
                                             else if (room.size === "threeByFive") {halt(down);} //place exits in three by five rooms above this line
                                             else if (room.size === "sevenByFive") {halt(down);} //exits to 7x5 rooms ought be placed before this line
@@ -1597,7 +1628,7 @@ movement.tempPrevent = true;
                         else if (current.room === "weaponsCheck") {halt(down);}
                         else if (room.size === "sevenByThree") {halt(down);} //block
                         else if (room.size === "oneBySeven") {halt(right);} //block
-                        else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(down);} //place exits in three by three rooms above this line
+                        else if (room.size === "threeByThree") {halt(down);} //place exits in three by three rooms above this line
                         
                         }
                         
@@ -1624,6 +1655,7 @@ movement.tempPrevent = true;
                                         checkWhichTilesShouldBeIncluded();
                                         door.play();
                                     }
+                                    else if (room.size === "threeByFour") {halt(down);} //block
                                     else if (room.size === "oneBySeven") {halt(right);} //block
                                     else if (current.room === "entryHall") {
                                         converse(wolfStatue);
@@ -1678,7 +1710,6 @@ movement.tempPrevent = true;
                                     
     else if (player.position === "e7") {
                                     if (current.room === "volcano" && !mana.levitating) {} //block
-                                        else if (room.size === "oneBySeven") {halt(right);} //block
                                          else if (current.room === "narrowHallway") {
                                             room.size = "threeByThree";
                                             narrowHallway.style.display = "none";
@@ -1776,6 +1807,7 @@ movement.tempPrevent = true;
                                         
                                         else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(right);} //place exits in three by three rooms above this line
                                         else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
+                                        else if (room.size === "oneBySeven") {halt(right);} //block
                                         else if (current.room === "entryHall") {
                                             converse(civetStatue);
                                         }
@@ -1799,6 +1831,14 @@ movement.tempPrevent = true;
                                         moveTo(c2);
                                         checkWhichTilesShouldBeIncluded();
                                         stairsNoise();
+                                    }
+                                    else if (current.room === "cliffAscent3") {
+                                        room.size = "sevenBySeven";
+                                        cliffAscent3.style.display = "none";
+                                        stoneTemple.style.display = "grid";
+                                        current.room = "stoneTemple";
+                                        moveTo(a4);
+                                        checkWhichTilesShouldBeIncluded();
                                     }
                                     else if (current.room === "secretSpiral3") {
                                             room.size = "threeByThree";
@@ -1926,6 +1966,14 @@ movement.tempPrevent = true;
                                                             } else if (player.previousPosition === "f4") {
                                                                 halt(up);
                                                             }
+                                                        }
+                                                        else if (current.room === "cliffAscent1") {
+                                                            room.size = "threeByThree";
+                                                            cliffAscent1.style.display = "none";
+                                                            cliffAscent2.style.display = "grid";
+                                                            current.room = "cliffAscent2";
+                                                            moveTo(c1);
+                                                            checkWhichTilesShouldBeIncluded();
                                                         }
                                                         else if (current.room === "secretSpiral3") {
                                                             room.size = "threeByThree";
@@ -2524,6 +2572,14 @@ function playerTo4() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
+    else if (current.room === "cliffAscent2") {
+        room.size = "threeByThree";
+        cliffAscent2.style.display = "none";
+        cliffAscent3.style.display = "grid";
+        current.room = "cliffAscent3";
+        moveTo(d1);
+        checkWhichTilesShouldBeIncluded();
+    }
     else if (current.room === "observatory") {
         room.size = "sevenByOne";
         observatory.style.display = "none";
@@ -2791,12 +2847,23 @@ function playerToB() {
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
+    else if (current.room === "hallOfDoors") {
+        room.size = "threeByTwo";
+        hallOfDoors.style.display = "none";
+        orangeCliffside.style.display = "grid";
+        current.room = "orangeCliffside";
+        moveTo(d2);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
      else if (current.room === "backstage") {
         room.size = "threeByFour";
         backstage.style.display = "none";
         blockedStairs.style.display = "grid";
         current.room = "blockedStairs";
+        console.log("alert:", player.position);
         moveTo(d4);
+         console.log("alert:", player.position);
         door.play();
         checkWhichTilesShouldBeIncluded();
 }
@@ -3012,6 +3079,31 @@ function playerToD() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
+    else if (current.room === "stoneTemple") {
+        room.size = "threeByThree";
+        stoneTemple.style.display = "none";
+        cliffAscent3.style.display = "grid";
+        current.room = "cliffAscent3";
+        moveTo(e2);
+        checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "ropeBridge") {
+        room.size = "threeByThree";
+        ropeBridge.style.display = "none";
+        cliffAscent1.style.display = "grid";
+        current.room = "cliffAscent1";
+        moveTo(d3);
+        checkWhichTilesShouldBeIncluded();
+    }
+    else if (current.room === "orangeCliffside") {
+        room.size = "oneBySeven";
+        orangeCliffside.style.display = "none";
+        ropeBridge.style.display = "grid";
+        current.room = "ropeBridge";
+        moveTo(d7);
+        checkWhichTilesShouldBeIncluded();
+        door.play();
+    }
     else if (current.room === "secretSpiral2") {
         room.size = "threeByThree";
         secretSpiral2.style.display = "none";
@@ -3021,6 +3113,7 @@ function playerToD() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
+    
      else if (current.room === "secretSpiral3") {
         room.size = "threeByThree";
         secretSpiral3.style.display = "none";

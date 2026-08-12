@@ -164,6 +164,14 @@ else if (player.position === "a5") {
                                                     stairsNoise();
                                                     checkWhichTilesShouldBeIncluded();
                                             }
+                                            else if (current.room === "wings2") {
+                                                    room.size = "sevenByThree";
+                                                    wings2.style.display = "none";
+                                                    backstage.style.display = "grid";
+                                                    current.room = "backstage";
+                                                    moveTo(g2);
+                                                    checkWhichTilesShouldBeIncluded();
+                                            }
                                             else if (current.room === "theaterStairs3") {
                                                 room.size = "sevenByThree";
                                                 theaterStairs3.style.display = "none";
@@ -252,6 +260,14 @@ else if (player.position === "a5") {
                                                 halt(up);
                                             }
                                         }
+                                        else if (current.room === "wings2") {
+                                                    room.size = "sevenByThree";
+                                                    wings2.style.display = "none";
+                                                    backstage.style.display = "grid";
+                                                    current.room = "backstage";
+                                                    moveTo(g3);
+                                                    checkWhichTilesShouldBeIncluded();
+                                            }
                                         else if (current.room === "theaterStairs3") {
                                                 room.size = "sevenByThree";
                                                 theaterStairs3.style.display = "none";
@@ -526,7 +542,14 @@ else if (player.position === "a5") {
                                         alert("shop beetle");
                                     }
                                 }
-                            
+                                else if (current.room === "wings2") {
+                                    current.room = "theater";
+                                    room.size = "sevenBySeven";
+                                    wings2.style.display = "none";
+                                    theater.style.display = "grid";
+                                    moveTo(g1);
+                                    checkWhichTilesShouldBeIncluded();
+                                }
                                 else if (current.room === "librarySouth") {
                                     if (!player.inPit) {
                                         halt(right);
@@ -581,7 +604,7 @@ else if (player.position === "a5") {
                                     
                                 }
 
-            else if (player.position === "b6") {
+    else if (player.position === "b6") {
                                 if (current.room === "libraryNorth") {
                                         if (!player.inPit) {
                                             halt(right);
@@ -624,7 +647,7 @@ else if (player.position === "a5") {
                                     
             }
 
-            else if (player.position === "b7") {
+    else if (player.position === "b7") {
                             if (current.room === "fountainRoom" && !inv.rubble3.taken) {
                                         stone2.play();
                                         rubble3.style.display = "none";
@@ -638,12 +661,21 @@ else if (player.position === "a5") {
                                     };}
                                 }
         
-                                else if (player.position === "c1") {
+    else if (player.position === "c1") {
                             if (current.room === "stainedGlassMarket" && !inv.bottle.taken) {
                                     bottleTake.play();
                                     bottle.style.display = "none";
                                     take(inv.bottle);
                                 }
+                                else if (current.room === "narrowHallway") {
+                                        room.size = "threeByFive";
+                                        narrowHallway.style.display = "none";
+                                        wings2.style.display = "grid";
+                                        current.room = "wings2";
+                                        moveTo(e1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        door.play();
+                                    }
                                 else if (current.room === "volcano" && !mana.levitating) {halt();} //block
                                 else if (current.room === "weaponsCheck" && !inv.crumpledNote.taken) {
                                         paper.play();
@@ -677,21 +709,21 @@ else if (player.position === "a5") {
     }
 
     else if (player.position === "c2") {
-                        if (current.room === "coatRoom") {
-                                if (!dialogue.coatsss) {   
-                                    if (numberOfKeyDowns < coats.length) {
-                                        dialogue.repeat = "e2";
-                                        converse(coats, coatsVo);
-                                    } else if (numberOfKeyDowns == coats.length) {
-                                        if (!dialogue.loopOnceMore) {
-                                            
-                                            dialogue.loopOnceMore = true;
-                                            converse(coats, coatsVo);
-                                            dialogue.loopOnceMore = false;
+                            if (current.room === "coatRoom") {
+                                                if (!dialogue.coatsss) {   
+                                                    if (numberOfKeyDowns < coats.length) {
+                                                        dialogue.repeat = "e2";
+                                                        converse(coats, coatsVo);
+                                            } else if (numberOfKeyDowns == coats.length) {
+                                                if (!dialogue.loopOnceMore) {
+                                                    
+                                                    dialogue.loopOnceMore = true;
+                                                    converse(coats, coatsVo);
+                                                    dialogue.loopOnceMore = false;
+                                                }
+                                                dialogue.coatsss = true;
+                                            }
                                         }
-                                        dialogue.coatsss = true;
-                                    }
-                                }
                             }
                             else if (room.size === "oneBySeven") {halt(left);} //block
                             else if (room.size === "sevenByOne") {halt(down)} //southern exits in 7x1 rooms go above this line
@@ -1163,6 +1195,14 @@ movement.tempPrevent = true;
                                                 halt(down);
                                             }
                                         }
+                                        else if (current.room === "blockedStairs") {
+                                            room.size = "sevenByThree";
+                                            blockedStairs.style.display = "none";
+                                            backstage.style.display = "grid";
+                                            current.room = "backstage";
+                                            moveTo(b1);
+                                            checkWhichTilesShouldBeIncluded();
+                                        }
                                         }
     
     else if (player.position === "d6") {
@@ -1505,6 +1545,16 @@ movement.tempPrevent = true;
                                                 dialogue.paperUnderPiano = true;
                                             }
                                         }
+                                        
+                                        else if (current.room === "wings2") {
+                                        room.size = "oneBySeven";
+                                        wings2.style.display = "none";
+                                        narrowHallway.style.display = "grid";
+                                        current.room = "narrowHallway";
+                                        moveTo(d1);
+                                        checkWhichTilesShouldBeIncluded();
+                                        door.play();
+                                    }
                                         else if (current.room === "theaterStairs1") {
                                         room.size = "threeByThree";
                                         theaterStairs1.style.display = "none";
@@ -1558,6 +1608,15 @@ movement.tempPrevent = true;
                                             } else {
                                                 halt(right);
                                             }
+                                        }
+                                        else if (current.room === "theaterStairs3") {
+                                            room.size = "threeByThree";
+                                            theaterStairs3.style.display = "none";
+                                            theaterStairs2.style.display = "grid";
+                                            current.room = "theaterStairs2";
+                                            moveTo(c1);
+                                            checkWhichTilesShouldBeIncluded();
+                                            stairsNoise();
                                         }
                                         else if (room.size === "threeByThree" || room.size === "threeByFour") {halt(right);} //place exits in three by three rooms above this line
                                         else if (room.size === "threeByFive") {halt(right);} //place exits in three by five rooms above this line
@@ -1673,6 +1732,15 @@ movement.tempPrevent = true;
                                                 checkWhichTilesShouldBeIncluded();
                                                 door.play();
                                             }
+                                            else if (current.room === "theaterStairs3") {
+                                                room.size = "threeByThree";
+                                                theaterStairs3.style.display = "none";
+                                                theaterStairs2.style.display = "grid";
+                                                current.room = "theaterStairs2";
+                                                moveTo(c2);
+                                                checkWhichTilesShouldBeIncluded();
+                                                stairsNoise();
+                                            }
                                             else if (current.room === "libraryLanding") {
                                                 room.size = "sevenBySeven";
                                                 libraryLanding.style.display = "none";
@@ -1703,14 +1771,23 @@ movement.tempPrevent = true;
                                                             }
                                                         }
                                                         else if (current.room === "theaterStairs1") {
-                                        room.size = "threeByThree";
-                                        theaterStairs1.style.display = "none";
-                                        theaterStairs2.style.display = "grid";
-                                        current.room = "theaterStairs2";
-                                        moveTo(c3);
-                                        checkWhichTilesShouldBeIncluded();
-                                        stairsNoise();
-                                    }
+                                                            room.size = "threeByThree";
+                                                            theaterStairs1.style.display = "none";
+                                                            theaterStairs2.style.display = "grid";
+                                                            current.room = "theaterStairs2";
+                                                            moveTo(c3);
+                                                            checkWhichTilesShouldBeIncluded();
+                                                            stairsNoise();
+                                                        }
+                                                        else if (current.room === "theaterStairs3") {
+                                                            room.size = "threeByThree";
+                                                            theaterStairs3.style.display = "none";
+                                                            theaterStairs2.style.display = "grid";
+                                                            current.room = "theaterStairs2";
+                                                            moveTo(c3);
+                                                            checkWhichTilesShouldBeIncluded();
+                                                            stairsNoise();
+                                                        }
                                                         else if (current.room === "parapet6") {
                                                             room.size = "threeByThree";
                                                             parapet6.style.display = "none";
@@ -1777,6 +1854,14 @@ movement.tempPrevent = true;
                                                     } else {
                                                         halt(left);
                                                     }
+                                                }
+                                                else if (current.room === "wings1") {
+                                                    current.room = "theater";
+                                                    room.size = "sevenBySeven";
+                                                    wings1.style.display = "none";
+                                                    theater.style.display = "grid";
+                                                    moveTo(a1);
+                                                    checkWhichTilesShouldBeIncluded();
                                                 }
                                                 else if (current.room === "entryHall" && !dialogue.boyEntry) {
                                                         dialogue.boyEntry = true; //???
@@ -2044,6 +2129,14 @@ function playerTo1() {
         moveTo(f1);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
+    }
+    else if (current.room === "theater") {
+        current.room = "wings1";
+        room.size = "threeByFive";
+        theater.style.display = "none";
+        wings1.style.display = "grid";
+        moveTo(e4);
+        checkWhichTilesShouldBeIncluded();
     }
     else if (current.room === "catacombs2") {
             room.size = "sevenByFive";
@@ -2558,6 +2651,14 @@ function playerToB() {
         checkWhichTilesShouldBeIncluded();
         door.play();
     }
+     else if (current.room === "backstage") {
+        room.size = "threeByFour";
+        backstage.style.display = "none";
+        blockedStairs.style.display = "grid";
+        current.room = "blockedStairs";
+        moveTo(d4);
+        checkWhichTilesShouldBeIncluded();
+}
     else if (current.room === "theaterLobby") {
             room.size = "sevenBySeven";
             theaterLobby.style.display = "none";
@@ -2625,15 +2726,6 @@ function playerToC() {
         parapet4.style.display = "none";
         parapet5.style.display = "grid";
         current.room = "parapet5";
-        moveTo(c3);
-        checkWhichTilesShouldBeIncluded();
-        stairsNoise();
-    }
-    else if (current.room === "theaterStairs3") {
-        room.size = "threeByThree";
-        theaterStairs3.style.display = "none";
-        theaterStairs2.style.display = "grid";
-        current.room = "theaterStairs2";
         moveTo(c3);
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
@@ -2769,15 +2861,6 @@ function playerToD() {
         moveTo(b7);
         checkWhichTilesShouldBeIncluded();
         door.play();
-    }
-    else if (current.room === "theaterStairs3") {
-        room.size = "threeByThree";
-        theaterStairs3.style.display = "none";
-        theaterStairs2.style.display = "grid";
-        current.room = "theaterStairs2";
-        moveTo(d3);
-        checkWhichTilesShouldBeIncluded();
-        stairsNoise();
     }
     else if (current.room === "upperFloorHall") {
         room.size = "sevenByOne";
@@ -3096,15 +3179,6 @@ function playerToE() {
         checkWhichTilesShouldBeIncluded();
         stairsNoise();
     }
-    else if (current.room === "theaterStairs3") {
-        room.size = "threeByThree";
-        theaterStairs3.style.display = "none";
-        theaterStairs2.style.display = "grid";
-        current.room = "theaterStairs2";
-        moveTo(e3);
-        checkWhichTilesShouldBeIncluded();
-        stairsNoise();
-    }
     else if (current.room === "groundFloorLanding") {
         room.size = "threeByThree";
         groundFloorLanding.style.display = "none";
@@ -3311,6 +3385,14 @@ function playerToH1() {
             stairsNoise();
             checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "theater") {
+        current.room = "wings2";
+        room.size = "threeByFive";
+        theater.style.display = "none";
+        wings2.style.display = "grid";
+        moveTo(c4);
+        checkWhichTilesShouldBeIncluded();
+    }
     else if (current.room === "observatoryHall") {
         room.size = "sevenBySeven";
         observatoryHall.style.display = "none";
@@ -3374,6 +3456,14 @@ function playerToH2() {
             moveTo(a2);
             checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "backstage") {
+        room.size = "threeByFive";
+        backstage.style.display = "none";
+        wings2.style.display = "grid";
+        current.room = "wings2";
+        moveTo(b1);
+        checkWhichTilesShouldBeIncluded();
+}
     else if (current.room === "atrium") {
             room.size = "fiveByFive";
             atrium.style.display = "none";
@@ -3489,6 +3579,14 @@ function playerToH3() {
             moveTo(a3);
             checkWhichTilesShouldBeIncluded();
     }
+    else if (current.room === "backstage") {
+        room.size = "threeByFive";
+        backstage.style.display = "none";
+        wings2.style.display = "grid";
+        current.room = "wings2";
+        moveTo(b2);
+        checkWhichTilesShouldBeIncluded();
+}
     else if (current.room === "meadHallWest") {
         current.room = "meadHallEast";
         room.size = "sevenBySeven";

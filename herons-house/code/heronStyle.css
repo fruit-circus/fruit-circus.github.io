@@ -43,6 +43,7 @@ body {
     --carry-color: rgb(149, 107, 58);
     --armor-color: white;
     --itemText-color: black;
+    --targetTile-color: rgb(149, 58, 58);
 
 }
 
@@ -52,6 +53,22 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: center;
+}
+
+.targetTile {
+    border: 6px solid var(--targetTile-color);
+}
+
+#targetGrid {
+    display: grid;
+  max-height: 76.4vh;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0px;
+  border: 3px solid white;
+    aspect-ratio: 7 / 7;
+    margin-left: -5px;
+    padding: 11%;
+    z-index: 2;
 }
 
 

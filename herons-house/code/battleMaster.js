@@ -74,7 +74,7 @@ function spikeTiles() {
     if (spikeHall.turns == 0) {
         console.log("spike1");
         spikeHall.turns++;
-        checker();
+        checkered();
     } else if (spikeHall.turns == 1) {
         spikeHall.turns = 0;
         console.log("spike2");
@@ -82,7 +82,7 @@ function spikeTiles() {
     }
 }
 
-function checker() {
+function checkered() {
     ta1();
     ta3();
     tb2();

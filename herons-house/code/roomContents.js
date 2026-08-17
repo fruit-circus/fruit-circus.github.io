@@ -21,6 +21,7 @@ function moveTo(tileId) {
     theRelentlessMarchOfTime();
     player.position = String(tileId.id);
     checkContents();
+    incurDamage();
     //console.log(current.room);
     checkIfPlayerIsOnTheTable();
     if (!movement.tempPrevent) {

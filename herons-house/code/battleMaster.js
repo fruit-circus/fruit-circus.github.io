@@ -68,7 +68,9 @@ function rubySequence() {
 }
 
 function spikeTiles() {
-    
+    incurDamage(spikeHall.damage);
+    console.log(tilesUnderAttack);
+    console.log(player.position);
     if (spikeHall.turns == 0) {
         console.log("spike1");
         spikeHall.turns++;
@@ -78,8 +80,6 @@ function spikeTiles() {
         console.log("spike2");
         checkerInverse();
     }
-    incurDamage(spikeHall.damage);
-    console.log(tilesUnderAttack);
 }
 
 function checker() {

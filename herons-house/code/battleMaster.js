@@ -79,6 +79,7 @@ function spikeTiles() {
         checkerInverse();
     }
     incurDamage(spikeHall.damage);
+    console.log(tilesUnderAttack);
 }
 
 function checker() {

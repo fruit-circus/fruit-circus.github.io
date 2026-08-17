@@ -58,6 +58,9 @@ body {
 .targetTileOn {
     border: 6px solid var(--targetTile-color);
     margin: 10px;
+    position: relative;
+    aspect-ratio: 1;
+    width: 90%;
 }
 
 

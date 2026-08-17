@@ -55,9 +55,11 @@ body {
     justify-content: center;
 }
 
-.targetTile {
+.targetTileOn {
     border: 6px solid var(--targetTile-color);
+    padding: 10px;
 }
+
 
 #targetGrid {
     display: grid;

@@ -68,6 +68,7 @@ function sevenBySeven() {
     blockAll();
     grid.style.aspectRatio = "7/7"
     magicGrid.style.aspectRatio = "7/7"
+    targetGrid.style.aspectRatio = "7/7"
     highlightableTiles.push("a1", "a2", "a3", "a4", "a5", "a6", "a7");
     highlightableTiles.push("b1", "b2", "b3", "b4", "b5", "b6", "b7");
     highlightableTiles.push("c1", "c2", "c3", "c4", "c5", "c6", "c7");
@@ -79,11 +80,14 @@ function sevenBySeven() {
 
     grid.style.marginLeft = "0%";
     magicGrid.style.marginLeft = "0%";
+    targetGrid.style.marginLeft = "0%";
     rooms.style.marginLeft = "0%";
     grid.style.gridTemplateColumns = "repeat(7, 1fr)";
     magicGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
+    targetGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
     grid.style.width = "auto";
     magicGrid.style.width = "auto";
+    targetGrid.style.width = "auto";
 }
 
 function threeBySeven() {

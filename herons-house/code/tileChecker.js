@@ -876,6 +876,7 @@ function fullHeight() {
     rooms.style.marginTop = "0%";
     grid.style.marginTop = "0%";
     magicGrid.style.marginTop = "0%";
+    targetGrid.style.marginTop = "0%";
 }
 
 function fiveHeight() {

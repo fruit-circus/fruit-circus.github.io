@@ -20,7 +20,7 @@ const spikeHall = {
 
 //file under: relentless march of time
 function battleTimerIncrement() {
-    if (spikeHall.active && current.room === "largeHallway") {
+    if (spikeHall.active) {
         spikeTiles();
     }
     if (inABattle.topaz) {
@@ -84,14 +84,11 @@ function checker() {
     ta1();
     ta3();
     tb2();
-    tc1();
     tc3();
     td2();
-    te1();
     te3();
     tf2();
     tg1();
-    tg3();
 }
 
 function checkerInverse() {
@@ -99,7 +96,6 @@ function checkerInverse() {
     tb1();
     tb3();
     tc2();
-    td1();
     td3();
     te2();
     tf1();

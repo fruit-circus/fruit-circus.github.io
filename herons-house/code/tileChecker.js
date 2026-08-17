@@ -493,14 +493,18 @@ function sevenByThree() {
 
     grid.style.aspectRatio = "7/3"
     magicGrid.style.aspectRatio = "7/3"
+    targetGrid.style.aspectRatio = "7/3"
 
     grid.style.marginLeft = "0%";
     magicGrid.style.marginLeft = "0%";
+    targetGrid.style.marginLeft = "0%";
     rooms.style.marginLeft = "0%";
     grid.style.gridTemplateColumns = "repeat(7, 1fr)";
     magicGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
+    targetGrid.style.gridTemplateColumns = "repeat(7, 1fr)";
     grid.style.width = "auto";
     magicGrid.style.width = "auto";
+    targetGrid.style.width = "auto";
 }
 
 

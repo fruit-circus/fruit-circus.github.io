@@ -882,18 +882,21 @@ function fiveHeight() {
     rooms.style.marginTop = "10%";
     grid.style.marginTop = "10%";
     magicGrid.style.marginTop = "10%";
+    targetGrid.style.marginTop = "10%";
 }
 
 function threeHeight() {
     rooms.style.marginTop = "20%";
     grid.style.marginTop = "20%";
     magicGrid.style.marginTop = "20%";
+    targetGrid.style.marginTop = "20%";
 }
 
 function oneHeight() {
     rooms.style.marginTop = "30%";
     grid.style.marginTop = "30%";
     magicGrid.style.marginTop = "30%";
+    targetGrid.style.marginTop = "30%";
 }
 
 

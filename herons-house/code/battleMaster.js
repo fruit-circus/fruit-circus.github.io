@@ -70,11 +70,13 @@ function rubySequence() {
 function spikeTiles() {
     incurDamage(spikeHall.damage);
     if (spikeHall.turns == 0) {
+        console.log("spike1");
         spikeHall.turns++;
         checker();
     } else if (spikeHall.turns == 1) {
         spikeHall.turns = 0;
-        checkerAlt();
+        console.log("spike2");
+        checkerInverse();
     }
 }
 
@@ -92,7 +94,7 @@ function checker() {
     tg3();
 }
 
-function checkerAlt() {
+function checkerInverse() {
     ta2();
     tb1();
     tb3();
@@ -295,53 +297,53 @@ function ta1() {
 
 function unhighlightAll() {
     tilesUnderAttack.splice(0, 49);
-    tta1.className = "tile2off";
-    tta2.className = "tile2off";
-    tta3.className = "tile2off";
-    tta4.className = "tile2off";
-    tta5.className = "tile2off";
-    tta6.className = "tile2off";
-    tta7.className = "tile2off";
-    ttb1.className = "tile2off";
-    ttb2.className = "tile2off";
-    ttb3.className = "tile2off";
-    ttb4.className = "tile2off";
-    ttb5.className = "tile2off";
-    ttb6.className = "tile2off";
-    ttb7.className = "tile2off";
-    ttc1.className = "tile2off";
-    ttc2.className = "tile2off";
-    ttc3.className = "tile2off";
-    ttc4.className = "tile2off";
-    ttc5.className = "tile2off";
-    ttc6.className = "tile2off";
-    ttc7.className = "tile2off";
-    ttd1.className = "tile2off";
-    ttd2.className = "tile2off";
-    ttd3.className = "tile2off";
-    ttd4.className = "tile2off";
-    ttd5.className = "tile2off";
-    ttd6.className = "tile2off";
-    ttd7.className = "tile2off";
-    tte1.className = "tile2off";
-    tte2.className = "tile2off";
-    tte3.className = "tile2off";
-    tte4.className = "tile2off";
-    tte5.className = "tile2off";
-    tte6.className = "tile2off";
-    tte7.className = "tile2off";
-    ttf1.className = "tile2off";
-    ttf2.className = "tile2off";
-    ttf3.className = "tile2off";
-    ttf4.className = "tile2off";
-    ttf5.className = "tile2off";
-    ttf6.className = "tile2off";
-    ttf7.className = "tile2off";
-    ttf1.className = "tile2off";
-    ttf2.className = "tile2off";
-    ttf3.className = "tile2off";
-    ttf4.className = "tile2off";
-    ttf5.className = "tile2off";
-    ttf6.className = "tile2off";
-    ttf7.className = "tile2off";
+    tta1.className = "targetTileOff";
+    tta2.className = "targetTileOff";
+    tta3.className = "targetTileOff";
+    tta4.className = "targetTileOff";
+    tta5.className = "targetTileOff";
+    tta6.className = "targetTileOff";
+    tta7.className = "targetTileOff";
+    ttb1.className = "targetTileOff";
+    ttb2.className = "targetTileOff";
+    ttb3.className = "targetTileOff";
+    ttb4.className = "targetTileOff";
+    ttb5.className = "targetTileOff";
+    ttb6.className = "targetTileOff";
+    ttb7.className = "targetTileOff";
+    ttc1.className = "targetTileOff";
+    ttc2.className = "targetTileOff";
+    ttc3.className = "targetTileOff";
+    ttc4.className = "targetTileOff";
+    ttc5.className = "targetTileOff";
+    ttc6.className = "targetTileOff";
+    ttc7.className = "targetTileOff";
+    ttd1.className = "targetTileOff";
+    ttd2.className = "targetTileOff";
+    ttd3.className = "targetTileOff";
+    ttd4.className = "targetTileOff";
+    ttd5.className = "targetTileOff";
+    ttd6.className = "targetTileOff";
+    ttd7.className = "targetTileOff";
+    tte1.className = "targetTileOff";
+    tte2.className = "targetTileOff";
+    tte3.className = "targetTileOff";
+    tte4.className = "targetTileOff";
+    tte5.className = "targetTileOff";
+    tte6.className = "targetTileOff";
+    tte7.className = "targetTileOff";
+    ttf1.className = "targetTileOff";
+    ttf2.className = "targetTileOff";
+    ttf3.className = "targetTileOff";
+    ttf4.className = "targetTileOff";
+    ttf5.className = "targetTileOff";
+    ttf6.className = "targetTileOff";
+    ttf7.className = "targetTileOff";
+    ttf1.className = "targetTileOff";
+    ttf2.className = "targetTileOff";
+    ttf3.className = "targetTileOff";
+    ttf4.className = "targetTileOff";
+    ttf5.className = "targetTileOff";
+    ttf6.className = "targetTileOff";
+    ttf7.className = "targetTileOff";
 }

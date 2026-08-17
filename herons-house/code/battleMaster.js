@@ -14,10 +14,11 @@ const inABattle = {
 
 const spikeHall = true;
 const spikeTurns = 0;
+const spikeDamage = 20;
 
 //file under: relentless march of time
 function battleTimerIncrement() {
-    if (spikeHall) {
+    if (spikeHall && current.room === "largeHallway") {
         spikeTiles();
     }
     if (inABattle.topaz) {
@@ -65,9 +66,41 @@ function rubySequence() {
 }
 
 function spikeTiles() {
+    incurDamage(spikeDamage);
     if (spikeTurns == 0) {
-
+        spikeTurns++;
+        checker();
+    } else if (spikeTurns == 1) {
+        spikeTurns = 0;
+        checkerAlt();
     }
+}
+
+function checker() {
+    ta1();
+    ta3();
+    tb2();
+    tc1();
+    tc3();
+    td2();
+    te1();
+    te3();
+    tf2();
+    tg1();
+    tg3();
+}
+
+function checkerAlt() {
+    ta2();
+    tb1();
+    tb3();
+    tc2();
+    td1();
+    td3();
+    te2();
+    tf1();
+    tf3();
+    tg2();
 }
 
 function incurDamage(opponentDamage) {

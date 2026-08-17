@@ -59,15 +59,17 @@ body {
     border: 6px solid var(--targetTile-color);
     position: relative;
     aspect-ratio: 1;
-    width: 90%;
+    margin: 6px;
+    width: 93%;
 }
 
 .targetTileOff {
     opacity: 0.001;
+    margin: 6px;
     border: 6px solid var(--targetTile-color);
     position: relative;
     aspect-ratio: 1;
-    width: 90%;
+    width: 93%;
 }
 
 

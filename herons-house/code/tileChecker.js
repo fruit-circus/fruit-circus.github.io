@@ -465,6 +465,30 @@ function sevenByThree() {
     f3.style.display = "block";
     g3.style.display = "block";
 
+    tta1.style.display = "block";
+    ttb1.style.display = "block";
+    ttc1.style.display = "block";
+    ttd1.style.display = "block";
+    tte1.style.display = "block";
+    ttf1.style.display = "block";
+    ttg1.style.display = "block";
+
+    tta2.style.display = "block";
+    ttb2.style.display = "block";
+    ttc2.style.display = "block";
+    ttd2.style.display = "block";
+    tte2.style.display = "block";
+    ttf2.style.display = "block";
+    ttg2.style.display = "block";
+
+    tta3.style.display = "block";
+    ttb3.style.display = "block";
+    ttc3.style.display = "block";
+    ttd3.style.display = "block";
+    tte3.style.display = "block";
+    ttf3.style.display = "block";
+    ttg3.style.display = "block";
+
     a1over.style.display = "block";
     b1over.style.display = "block";
     c1over.style.display = "block";
@@ -695,6 +719,62 @@ function noneAll() {
     e7.style.display = "none";
     f7.style.display = "none";
     g7.style.display = "none";
+
+    tta1.style.display = "none";
+    ttb1.style.display = "none";
+    ttc1.style.display = "none";
+    ttd1.style.display = "none";
+    tte1.style.display = "none";
+    ttf1.style.display = "none";
+    ttg1.style.display = "none";
+
+    tta2.style.display = "none";
+    ttb2.style.display = "none";
+    ttc2.style.display = "none";
+    ttd2.style.display = "none";
+    tte2.style.display = "none";
+    ttf2.style.display = "none";
+    ttg2.style.display = "none";
+
+    tta3.style.display = "none";
+    ttb3.style.display = "none";
+    ttc3.style.display = "none";
+    ttd3.style.display = "none";
+    tte3.style.display = "none";
+    ttf3.style.display = "none";
+    ttg3.style.display = "none";
+
+    tta4.style.display = "none";
+    ttb4.style.display = "none";
+    ttc4.style.display = "none";
+    ttd4.style.display = "none";
+    tte4.style.display = "none";
+    ttf4.style.display = "none";
+    ttg4.style.display = "none";
+
+    tta5.style.display = "none";
+    ttb5.style.display = "none";
+    ttc5.style.display = "none";
+    ttd5.style.display = "none";
+    tte5.style.display = "none";
+    ttf5.style.display = "none";
+    ttg5.style.display = "none";
+
+    tta6.style.display = "none";
+    ttb6.style.display = "none";
+    ttc6.style.display = "none";
+    ttd6.style.display = "none";
+    tte6.style.display = "none";
+    ttf6.style.display = "none";
+    ttg6.style.display = "none";
+
+    tta7.style.display = "none";
+    ttb7.style.display = "none";
+    ttc7.style.display = "none";
+    ttd7.style.display = "none";
+    tte7.style.display = "none";
+    ttf7.style.display = "none";
+    ttg7.style.display = "none";
 
 
     a1over.style.display = "none";

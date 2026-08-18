@@ -337,11 +337,11 @@ function unhighlightAll() {
     ttf5.className = "targetTile";
     ttf6.className = "targetTile";
     ttf7.className = "targetTile";
-    ttf1.className = "targetTile";
-    ttf2.className = "targetTile";
-    ttf3.className = "targetTile";
-    ttf4.className = "targetTile";
-    ttf5.className = "targetTile";
-    ttf6.className = "targetTile";
-    ttf7.className = "targetTile";
+    ttg1.className = "targetTile";
+    ttg2.className = "targetTile";
+    ttg3.className = "targetTile";
+    ttg4.className = "targetTile";
+    ttg5.className = "targetTile";
+    ttg6.className = "targetTile";
+    ttg7.className = "targetTile";
 }

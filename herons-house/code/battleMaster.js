@@ -107,6 +107,7 @@ function checkerInverse() {
 
 function incurDamage(opponentDamage) {
     if (tilesUnderAttack.includes(player.position)) {
+            console.log("damage:", opponentDamage);
             damagePlayer(opponentDamage);
         }
     if (tilesUnderAttack.includes(boy.position)) {

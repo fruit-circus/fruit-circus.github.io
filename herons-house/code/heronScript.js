@@ -1193,6 +1193,7 @@ function damagePlayer(damage) {
     }
     health.current += armor;
     health.current -= damage;
+    console.log("dagel:", damage);
     updateHealth();
     flashHealthBar();
     //if health is zero, wake up

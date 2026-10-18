@@ -17,12 +17,14 @@
 <style>
 /*
 
+to do
+
 HIGH PRIOR
 CHECK ybbi4 wont clear
 draw pipe puzzle exterior and upload
 restore and redraw door knocking gif
 doihmot?? plays after solider cuts bridge 
-wasd (possibly arrow keys) and space bar still function when guest book is open
+CHECK wasd (possibly arrow keys) and space bar still function when guest book is open
 
 LOWER PRIOR
 stymie notif not triggering for checking on verily (possibly after alerting to having lit one of the stones)
@@ -1799,7 +1801,7 @@ Vich – conj. Because.<br><br>
                     <p id="page12">This is so cute! I love this. Did you draw all of this? Everything is so cute, I love this frog, I love the bird, this is so cute!!! I love it!!!<br><br>—Wilson</p>
                     <p id="page14">Greetings those who traverse these halls.<br><br>—NaderTheBadder</p>
                     <p id="page16">hello<br><br>—mark</p>
-                    <p id="page18"></p>
+                    <p id="page18">This is the coolest Labyrinth I've ever visited. I hope to come back one day soon and see all the future ones crafted by the coolest coder I know! You are an ICON!<br><br>—E-WIZ (ellie 10/18/2026)</p>
                 </div>
 
                 <div class="left"> <!--lobby 2 book-->
@@ -4111,6 +4113,8 @@ Vich – conj. Because.<br><br>
 <audio id="worm3"><source src="sound/worm3.mp3" type="audio/mpeg"></audio>
 <audio id="noteScribble"><source src="sound/noteScribble.mp3" type="audio/mpeg"></audio>
 <audio id="fire" src="sound/fire.mp3" loop></audio> 
+<audio id="successDing"><source src="sound/vialUncork.mp3" type="audio/mpeg"></audio>
+
 
 <audio id="waterFlowing" src="sound/flowing-water.mp3" loop></audio>
     <audio id="penser" src="sound/penser.mp3" loop></audio> <!--Chapter 1-->
@@ -5606,7 +5610,7 @@ performed by the Baltimore Consort<br>
     <p id="yyp34">Dr. Ndazi, the labyrinth <i>itself</i> is the puzzle.</p>
     <p id="yyp35">Do you not see that?</p>
     <p id="yyp36">"Every room in the labyrinth contains the entire sum of the labyrinth."</p>
-    <p id="yyp37">There's no other way to account for it. Nor is there any other way to get to the heart of the puzzle than to push every individual piece to its limit.</p>
+    <p id="yyp37">There's no other way to account for it. Nor is there any other way to get to the heart of the puzzle than to fully explore each piece.</p>
     <p id="yyp38">...</p> <!--Kodaly shocked-->
     <p id="yyp39">You read K.L. Brighton?</p>
     <p id="yyp40">Oh yes.</p>
@@ -6724,7 +6728,9 @@ if (dialogue.arrowsBackAndForth && (e.key == 'ArrowLeft' || e.key == 'a' || e.ke
     e.preventDefault();
     closeSketches();
 }
-
+        if (!dialogue.blockArrowTravel && e.key === " ") {
+            e.preventDefault();
+        }
         if (!dialogue.blockArrowTravel) {
             if (e.key == 'ArrowLeft' || e.key == 'a' || e.key == 'A') {
             goWest();}
@@ -7759,12 +7765,15 @@ function checkMe() {
     inflowon.style.display = "block";
     inflow.style.display = "none";
     if (pipe.two == 3 && pipe.three == 3 && pipe.six == 2 && (pipe.five == 1 || pipe.five == 3) && pipe.four == 0 && pipe.seven == 3 && pipe.eight == 0) {
-setTimeout(() => {
-    closePipePuzzle();
-    prizeglass2.style.display = "none";
-    prizes.macaroniPipe = true;
-    }, 1000);
+        //correct
+        setTimeout(() => {
+            closePipePuzzle();
+            prizeglass2.style.display = "none";
+            prizes.macaroniPipe = true;
+            successDing.play();
+            }, 1000);
     } else {
+        // not correct
         setTimeout(() => {
         inflowon.style.display = "none";
         inflow.style.display = "block";
@@ -20286,7 +20295,6 @@ mapOpen.play();
         region1mapNew.style.display = "none";
         token.style.display = "none";
         mapXhelper.style.display = "none";
-
     }
     
 }
@@ -20856,7 +20864,9 @@ function openPipePuzzle() {
 }
 
 function closePipePuzzle() {
-    keyitemsP.style.display = "block";
+    if (dialogue.mysteriousVialTaken) {
+        keyitemsP.style.display = "block";
+    }
     pipePuzzle.style.display = "none";
     pipePuzzleRoom.style.display = "block";
     baseroom.style.display = "block";

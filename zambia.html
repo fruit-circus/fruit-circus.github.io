@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .back {
+          position: absolute;
+          width: 80px;
+          cursor: pointer;
+          transform: translateY(-40px);
+      }
+      .back {
+        position: absolute;
+        width: 80px;
+        margin-top: 25px;
+    }
+    .linky {
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 15px;
+    }
+    .linky:hover {
+        background-color: rgb(200, 250, 232);
+    }
+
+    #qa:hover {
+        background-color: rgb(250, 240, 200);
+    }
+
+    #kd:hover {
+        background-color: rgb(250, 200, 218);
+    }
+    p {
+        font-size: 18px;
+    }
+
+     .flexy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+        z-index: 1;}
+
+
+    .internal-flexy {
+        font-family: 'Monaco';
+        padding-top: 15px;
+        font-size: 16px;
+        padding: 12px;
+        width: 1000px;
+        width: 80vw;
+        height: 90vh;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        z-index: 2;
+        transform: translate(0%, -5%);}
+
+
+          @media screen and (max-width: 900px) {
+                p {
+                    margin-top: 10px;
+                }
+}
+
+      </style>
+<head>
+  <title>Fruit Circus</title>
+  <link rel="icon" type="image/x-icon" href="fruitcircusfavicon.ico?">  </head>
+  <body>
+      <a href="home.html"><img src="goBack.png" class="back" alt="go back"></a>
+
+
+
+    <h1 style=" font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; font-size: 35px;"></h1>
+   
+
+      <div class="flexy">
+        <div class="internal-flexy">
+
+    <p></p>
+    <p><a class="linky" href="a-to-z.html">The Zambia Update (A to Z)</a></p>
+    
+    <br><br>
+    <p><a class="linky" id="qa" href="q-and-a.html">Questions and Answers</a></p>
+
+    <br><br>
+    <p><a class="linky" id="kd" href="kaonde-dictionary.html">Dictionary ya KiiKaonde</a><br><br></p>
+
+
+</div>
+</div>
+</body>
+  
+</html>

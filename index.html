@@ -11,6 +11,15 @@
     width: 100%;
     }
 
+
+    #blueberry,
+    #blueberry2 {
+        cursor: pointer;
+        position: absolute;
+        width: 4%;
+        transform: translate(1100%,910%);
+    }
+
     #peach,
     #peach2 {
         cursor: pointer;
@@ -20,7 +29,8 @@
     }
     #peach2,
     #starfruit2,
-    #grape2 {
+    #grape2,
+    #blueberry2 {
         display: none;
     }
     #grape,
@@ -54,26 +64,39 @@
         position: absolute;
         transform: translate(0%,0%);
     }
-    #t {
+    #t,
+    #t2 {
         position: absolute;
         width: 9%;
         transform: translate(380%,0%);
     }
-    #c {
+    #c,
+    #c2 {
         position: absolute;
         width: 10%;
         transform: translate(691%,0%);
+    }
+
+    #t2,
+    #c2 {
+        display: none;
     }
 
 </style>
 
 
 <img src="fruit_tree.png" onmouseover="allUnwiggle()" id="fruittree" alt="fruit tree">
-<img src="the-t.png" id="t" alt="letter t" class="pointer" onclick="activateMeek()">
-<img src="the-c.png" id="c" alt="letter c" class="pointer" onclick="activateMeek2()">
+<img src="the-t.png" id="t" alt="letter t" class="pointer" onmouseover="changeT()" onclick="activateMeek()">
+<img src="the-c.png" id="c" alt="letter c" class="pointer" onmouseover="changeC()" onclick="activateMeek2()">
+
+<img src="the-t2.png" id="t2" alt="letter t" class="pointer" onmouseout="revertT()" onclick="activateMeek()">
+<img src="the-c2.png" id="c2" alt="letter c" class="pointer" onmouseout="revertC()" onclick="activateMeek2()">
 
 
 <img src="peach.png" id="peach" onclick="fiction()" onmouseover="peachWiggle()" alt="peach"/>
+
+<img src="blueberry.png" id="blueberry" onclick="zambia()" onmouseover="blueWiggle()" alt="blueberry"/>
+<img src="blueberry2.png" id="blueberry2" onclick="zambia()" onmouseout="blueUnwiggle()" alt="blueberry"/>
 
 <img src="peach2.png" id="peach2" onclick="fiction()" onmouseout="peachUnwiggle()" alt="peach"/>
 
@@ -109,6 +132,16 @@
     function peachUnwiggle() {
         peach.style.display = "block";
         peach2.style.display = "none";
+    }
+
+
+    function blueWiggle() {
+        blueberry.style.display = "none";
+        blueberry2.style.display = "block";
+    }
+    function blueUnwiggle() {
+        blueberry.style.display = "block";
+        blueberry2.style.display = "none";
     }
 
     function starWiggle() {
@@ -162,18 +195,41 @@
         }
     }
 
+function changeT() {
+    t.style.display = "none";
+    t2.style.display = "block";
+}
+function changeC() {
+    c.style.display = "none";
+    c2.style.display = "block";
+}
+
+function revertT() {
+    t2.style.display = "none";
+    t.style.display = "block";
+}
+function revertC() {
+    c2.style.display = "none";
+    c.style.display = "block";
+}
+
 function poetry() {
     pop2.play();
     setTimeout(function() {window.open('fruit-directory/poetry.html', '_self');}, 500);
 }
 
-function games() {
+function zambia() {
     pop2.play();
+    setTimeout(function() {window.open('fruit-directory/zambia.html', '_self');}, 500);
+}
+
+function games() {
+    pop.play();
     setTimeout(function() {window.open('fruit-directory/games.html', '_self');}, 500);
 }
 
 function fiction() {
-    pop2.play();
+    pop.play();
     setTimeout(function() {window.open('fruit-directory/fiction.html', '_self');}, 500);
 }
 
